@@ -4,47 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Olivier Bourgeois">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="style.css" media="screen">
 
     <title>XIV Sandbox</title>
   </head>
-  <body style="font-family: 'Noto Sans JP', sans-serif;">
+  <body style="font-family: 'Quicksand', sans-serif;">
     <main class="flex-shrink-0">
       <div class="container">
         <h1 id="c_name">Loading character...</h1>
 
         <div id="error" class="alert alert-danger" role="alert" style="display: none;"></div>
 
+
         <div class="row">
+          <h2>A Realm Reborn</h2>
+
           <div class="col">
-            <h3>Dungeons (A Realm Reborn)</h3>
+            <h3>Dungeons</h3>
             <ul id="arr_dungeons" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
             </ul>
             <br />
+          </div>
+          <div class="col">
+            <h3>Trials</h3>
+            <ul id="arr_trials" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
 
-            <h3>Dungeons (Heavensward)</h3>
+            <h3>High-end Trials</h3>
+            <ul id="arr_trials_ex" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+          </div>
+          <div class="col">
+            <h3>Raids</h3>
+            <ul id="arr_raids" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+
+            <h3>High-end Raids</h3>
+            <ul id="arr_raids_s" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <h2>Heavensward</h2>
+
+          <div class="col">
+            <h3>Dungeons</h3>
             <ul id="hw_dungeons" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
             </ul>
             <br />
-
-            <h3>Dungeons (Stormblood)</h3>
-            <ul id="sb_dungeons" class="list-group list-group-flush">
+          </div>
+          <div class="col">
+            <h3>Trials</h3>
+            <ul id="hw_trials" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
             </ul>
             <br />
 
-            <h3>Dungeons (Shadowbringers)</h3>
+            <h3>High-end Trials</h3>
+            <ul id="hw_trials_ex" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+          </div>
+          <div class="col">
+            <h3>Raids</h3>
+            <ul id="hw_raids" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+
+            <h3>High-end Raids</h3>
+            <ul id="hw_raids_s" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <h2>Stormblood</h2>
+
+          <div class="col">
+            <h3>Dungeons</h3>
+            <ul id="sb_dungeons" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+          </div>
+          <div class="col">
+            <h3>Trials</h3>
+            <ul id="sb_trials" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+
+            <h3>High-end Trials</h3>
+            <ul id="sb_trials_ex" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+          </div>
+          <div class="col">
+            <h3>Raids</h3>
+            <ul id="sb_raids" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+
+            <h3>High-end Raids</h3>
+            <ul id="sb_raids_s" class="list-group list-group-flush">
+              <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </ul>
+            <br />
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <h2>Shadowbringers</h2>
+
+          <div class="col">
+            <h3>Dungeons</h3>
             <ul id="shb_dungeons" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -53,31 +177,7 @@
             <br />
           </div>
           <div class="col">
-            <h3>Trials (A Realm Reborn)</h3>
-            <ul id="arr_trials" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>Trials (Heavensward)</h3>
-            <ul id="hw_trials" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>Trials (Stormblood)</h3>
-            <ul id="sb_trials" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>Trials (Shadowbringers)</h3>
+            <h3>Trials</h3>
             <ul id="shb_trials" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -85,31 +185,7 @@
             </ul>
             <br />
 
-            <h3>High-end Trials (A Realm Reborn)</h3>
-            <ul id="arr_trials_ex" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>High-end Trials (Heavensward)</h3>
-            <ul id="hw_trials_ex" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>High-end Trials (Stormblood)</h3>
-            <ul id="sb_trials_ex" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>High-end Trials (Shadowbringers)</h3>
+            <h3>High-end Trials</h3>
             <ul id="shb_trials_ex" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -118,31 +194,7 @@
             <br />
           </div>
           <div class="col">
-            <h3>Raids (A Realm Reborn)</h3>
-            <ul id="arr_raids" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>Raids (Heavensward)</h3>
-            <ul id="hw_raids" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>Raids (Stormblood)</h3>
-            <ul id="sb_raids" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>Raids (Shadowbringers)</h3>
+            <h3>Raids</h3>
             <ul id="shb_raids" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -150,31 +202,7 @@
             </ul>
             <br />
 
-            <h3>High-end Raids (A Realm Reborn)</h3>
-            <ul id="arr_raids_s" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>High-end Raids (Heavensward)</h3>
-            <ul id="hw_raids_s" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>High-end Raids (Stormblood)</h3>
-            <ul id="sb_raids_s" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br />
-
-            <h3>High-end Raids (Shadowbringers)</h3>
+            <h3>High-end Raids</h3>
             <ul id="shb_raids_s" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
