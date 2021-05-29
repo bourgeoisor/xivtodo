@@ -1,6 +1,7 @@
 let searchParams = new URLSearchParams(window.location.search)
 if (!searchParams.has("id")) {
-  alert("You forgot your ID.")
+  $("#error").show()
+  $("#error").html("<b>Error:</b> The URL must contain a character ID.")
   throw new Error();
 }
 let characterID = searchParams.get("id")
@@ -75,11 +76,14 @@ $.ajax({
       achievements.set(data["Achievements"]["List"][i]["ID"], data["Achievements"]["List"][i]["Date"])
     }
 
-    console.log(achievements)
 		console.log(data)
 
-
     $("#c_name").html(character["Name"])
+
+    if (!data["AchievementsPublic"]) {
+      $("#error").show()
+      $("#error").html("<b>Error:</b> The achievements for this character are not set as public.")
+    }
 
     renderList("#arr_trials_ex", arr_trials_ex)
     renderList("#hw_trials_ex", hw_trials_ex)
