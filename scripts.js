@@ -1,3 +1,146 @@
+let arr_dungeons = [
+  {Name: "Sastasha", ID: 663},
+  {Name: "The Tam-Tara Deepcroft", ID: 669},
+  {Name: "Copperbell Mines", ID: 666},
+  {Name: "Halatali", ID: 667},
+  {Name: "The Thousand Maws of Toto-Rak", ID: 673},
+  {Name: "Haukke Manor", ID: 670},
+  {Name: "Brayflox's Longstop", ID: 674},
+  {Name: "The Sunken Temple of Qarn", ID: 668},
+  {Name: "Cutter's Cry", ID: 674},
+  {Name: "The Stone Vigil", ID: 672},
+  {Name: "Dzemael Darkhold", ID: 675},
+  {Name: "The Aurum Vale", ID: 676},
+  {Name: "Castrum Meridianum", ID: 678},
+  {Name: "The Praetorium", ID: 679},
+  {Name: "The Wanderer's Palace", ID: 665},
+  {Name: "Amdapor Keep", ID: 671},
+  {Name: "Pharos Sirius", ID: 873},
+  {Name: "Copperbell Mines (Hard)", ID: 871},
+  {Name: "Haukke Manor (Hard)", ID: 872},
+  {Name: "The Lost City of Amdapor", ID: 897},
+  {Name: "Halatali (Hard)", ID: 895},
+  {Name: "Brayflox's Longstop (Hard)", ID: 896},
+  {Name: "Hullbreaker Isle", ID: 993},
+  {Name: "The Stone Vigil (Hard)", ID: 992},
+  {Name: "The Tam-Tara Deepcroft (Hard)", ID: 991},
+  {Name: "Snowcloak", ID: 1039},
+  {Name: "Sastasha (Hard)", ID: 1038},
+  {Name: "The Sunken Temple of Qarn (Hard)", ID: 1037},
+  {Name: "The Keeper of the Lake", ID: 1072},
+  {Name: "The Wanderer's Palace (Hard)", ID: 1071},
+  {Name: "Amdapor Keep (Hard)", ID: 1070}
+]
+
+let hw_dungeons = [
+  {Name: "The Dusk Vigil", ID: 1208},
+  {Name: "Sohm Al", ID: 1209},
+  {Name: "The Aery", ID: 1210},
+  {Name: "The Vault", ID: 1211},
+  {Name: "The Great Gubal Library", ID: 1212},
+  {Name: "The Aetherochemical Research Facility", ID: 1213},
+  {Name: "Neverreap", ID: 1214},
+  {Name: "The Fractal Continuum", ID: 1215},
+  {Name: "Saint Mocianne's Arboretum", ID: 1402},
+  {Name: "Pharos Sirius (Hard)", ID: 1403},
+  {Name: "The Antitower", ID: 1486},
+  {Name: "The Lost City of Amdapor (Hard)", ID: 1487},
+  {Name: "Sohr Khai", ID: 1599},
+  {Name: "Hullbreaker Isle (Hard)", ID: 1600},
+  {Name: "Xelphatol", ID: 1637},
+  {Name: "The Great Gubal Library (Hard)", ID: 1638},
+  {Name: "Baelsar's Wall", ID: 1686},
+  {Name: "Sohm Al (Hard)", ID: 1687}
+]
+
+let sb_dungeons = [
+  {Name: "The Sirensong Sea", ID: 1883},
+  {Name: "Shisui of the Violet Tides", ID: 1884},
+  {Name: "Bardam's Mettle", ID: 1885},
+  {Name: "Doma Castle", ID: 1886},
+  {Name: "Castrum Abania", ID: 1887},
+  {Name: "Ala Mhigo", ID: 1888},
+  {Name: "Kugane Castle", ID: 1889},
+  {Name: "The Temple of the Fist", ID: 1890},
+  {Name: "The Drowned City of Skalla", ID: 1988},
+  {Name: "Hells' Lid", ID: 2021},
+  {Name: "The Fractal Continuum (Hard)", ID: 2022},
+  {Name: "The Swallow's Compass", ID: 2057},
+  {Name: "Saint Mocianne's Arboretum (Hard)", ID: 2116},
+  {Name: "The Burn", ID: 2115},
+  {Name: "The Ghimlyt Dark", ID: 2162}
+]
+
+let shb_dungeons = [
+  {Name: "Holminster Switch", ID: 2377},
+  {Name: "Dohn Mheg", ID: 2378},
+  {Name: "The Qitana Ravel", ID: 2379},
+  {Name: "Malikah's Well", ID: 2380},
+  {Name: "Mt. Gulg", ID: 2381},
+  {Name: "Amaurot", ID: 2382},
+  {Name: "The Twinning", ID: 2383},
+  {Name: "Akadaemia Anyder", ID: 2384},
+  {Name: "The Grand Cosmos", ID: 2440},
+  {Name: "Anamnesis Anyder", ID: 2589},
+  {Name: "The Heroes' Gauntlet", ID: 2618},
+  {Name: "Matoya's Relict", ID: 2717},
+  {Name: "Paglth'an", ID: 2849}
+]
+
+let arr_trials = [
+  {Name: "The Bowl of Embers", ID: -1},
+  {Name: "The Navel", ID: -1},
+  {Name: "The Howling Eye", ID: -1},
+  {Name: "Cape Westwind", ID: -1},
+  {Name: "The Chrysalis", ID: 1067},
+  {Name: "The Steps of Faith", ID: 1065},
+  {Name: "A Relic Reborn: The Chimera", ID: -1},
+  {Name: "A Relic Reborn: The Hydra", ID: -1},
+  {Name: "Battle on the Big Bridge", ID: -1},
+  {Name: "The Dragon's Neck", ID: -1},
+  {Name: "Battle in the Big Keep", ID: 1066},
+  {Name: "The Bowl of Embers (Hard)", ID: -1},
+  {Name: "The Howling Eye (Hard)", ID: -1},
+  {Name: "The Navel (Hard)", ID: -1},
+  {Name: "Thornmarch (Hard)", ID: -1},
+  {Name: "The Whorleater (Hard)", ID: -1},
+  {Name: "The Striking Tree (Hard)", ID: -1},
+  {Name: "Akh Afah Amphitheatre (Hard) 	", ID: -1},
+  {Name: "Urth's Fount", ID: 1064}
+]
+
+let hw_trials = [
+  {Name: "Thok ast Thok (Hard)", ID: -1},
+  {Name: "The Limitless Blue (Hard) 	", ID: -1},
+  {Name: "The Singularity Reactor", ID: -1},
+  {Name: "The Final Steps of Faith", ID: -1},
+  {Name: "Containment Bay S1T7", ID: -1},
+  {Name: "Containment Bay P1T6", ID: -1},
+  {Name: "Containment Bay Z1T9", ID: -1}
+]
+
+let sb_trials = [
+  {Name: "The Pool of Tribute", ID: -1},
+  {Name: "Emanation", ID: -1},
+  {Name: "The Royal Menagerie", ID: -1},
+  {Name: "Castrum Fluminis", ID: -1},
+  {Name: "Kugane Ohashi", ID: 2236},
+  {Name: "The Great Hunt", ID: -1},
+  {Name: "The Jade Stoa", ID: -1},
+  {Name: "Hells' Kier", ID: -1},
+  {Name: "The Wreath of Snakes", ID: -1}
+]
+
+let shb_trials = [
+  {Name: "The Dancing Plague", ID: -1},
+  {Name: "The Crown of the Immaculate", ID: -1},
+  {Name: "The Dying Gasp", ID: -1},
+  {Name: "Cinder Drift", ID: -1},
+  {Name: "The Seat of Sacrifice", ID: -1},
+  {Name: "Castrum Marinum", ID: -1},
+  {Name: "The Cloud Deck", ID: -1}
+]
+
 let arr_trials_ex = [
   {Name: "The Minstrel's Ballad: Ultima's Bane", ID: -1},
   {Name: "The Howling Eye (Extreme)", ID: 856},
@@ -145,6 +288,16 @@ $.ajax({
       $("#error").show()
       $("#error").html("<b>Error:</b> The achievements for this character are not set as public.")
     }
+
+    renderList("#arr_dungeons", arr_dungeons)
+    renderList("#hw_dungeons", hw_dungeons)
+    renderList("#sb_dungeons", sb_dungeons)
+    renderList("#shb_dungeons", shb_dungeons)
+
+    renderList("#arr_trials", arr_trials)
+    renderList("#hw_trials", hw_trials)
+    renderList("#sb_trials", sb_trials)
+    renderList("#shb_trials", shb_trials)
 
     renderList("#arr_trials_ex", arr_trials_ex)
     renderList("#hw_trials_ex", hw_trials_ex)
