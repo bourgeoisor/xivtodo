@@ -290,7 +290,7 @@ $.ajax({
 
     if (!data["AchievementsPublic"]) {
       $("#error").show()
-      $("#error").html("<b>Error:</b> The achievements for this character are not set as public.")
+      $("#error").html("<b>Error:</b> The achievements for this character are not set as public. If you are the owner of the character, you need to set Achievements to Public <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>here</a>.")
     }
 
     renderList("#arr_dungeons", arr_dungeons)
