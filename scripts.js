@@ -259,13 +259,17 @@ function renderList(id, list) {
   let html = ""
     for (let i = 0; i < list.length; i++) {
       if (list[i]["ID"] == -1) {
-        html += "<li>"
+        html += "<li class='list-group-item d-flex justify-content-between align-items-center'>"
       } else if (achievements.has(list[i]["ID"])) {
-        html += "<li style='color: green;'>"
+        html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: green;'>"
       } else {
-        html += "<li style='color: red;'>"
+        html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: red;'>"
       }
-      html += list[i]["Name"] + "</li>"
+      html += list[i]["Name"]
+      if (list[i]["ID"] == -1) {
+        html += "<span class='badge rounded-pill bg-secondary' data-bs-toggle='tooltip' data-bs-placement='top' title='There are no achivement associated with this duty.'>Unknown</span>"
+      }
+      html += "</li>"
     }
     $(id).html(html)
 }
@@ -313,5 +317,12 @@ $.ajax({
     renderList("#hw_raids_s", hw_raids_s)
     renderList("#sb_raids_s", sb_raids_s)
     renderList("#shb_raids_s", shb_raids_s)
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
 	}
 });
+
+
