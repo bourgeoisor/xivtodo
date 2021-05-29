@@ -259,15 +259,15 @@ function renderList(id, list) {
   let html = ""
     for (let i = 0; i < list.length; i++) {
       if (list[i]["ID"] == -1) {
-        html += "<li class='list-group-item d-flex justify-content-between align-items-center'>"
+        html += "<li class='list-group-item d-flex justify-content-between align-items-center'><span class='bi-slash-square'>"
       } else if (achievements.has(list[i]["ID"])) {
-        html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: green;'>"
+        html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: green;'><span class='bi-check-square'>"
       } else {
-        html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: red;'>"
+        html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: firebrick;'><span class='bi-square'>"
       }
-      html += list[i]["Name"]
+      html += "&nbsp;&nbsp;" + list[i]["Name"] + "</span>"
       if (list[i]["ID"] == -1) {
-        html += "<span class='badge rounded-pill bg-secondary' data-bs-toggle='tooltip' data-bs-placement='top' title='There are no achivement associated with this duty.'>Unknown</span>"
+        html += "<span class='badge rounded-pill bg-secondary' data-bs-toggle='tooltip' data-bs-placement='top' title='There are no achivement associated with this duty.'>?</span>"
       }
       html += "</li>"
     }
