@@ -11,9 +11,9 @@ let arr_dungeons = [
   {Name: "The Stone Vigil", ID: 672},
   {Name: "Dzemael Darkhold", ID: 675},
   {Name: "The Aurum Vale", ID: 676},
+  {Name: "The Wanderer's Palace", ID: 665},
   {Name: "Castrum Meridianum", ID: 678},
   {Name: "The Praetorium", ID: 679},
-  {Name: "The Wanderer's Palace", ID: 665},
   {Name: "Amdapor Keep", ID: 671},
   {Name: "Pharos Sirius", ID: 873},
   {Name: "Copperbell Mines (Hard)", ID: 871},
@@ -66,8 +66,8 @@ let sb_dungeons = [
   {Name: "Hells' Lid", ID: 2021},
   {Name: "The Fractal Continuum (Hard)", ID: 2022},
   {Name: "The Swallow's Compass", ID: 2057},
-  {Name: "Saint Mocianne's Arboretum (Hard)", ID: 2116},
   {Name: "The Burn", ID: 2115},
+  {Name: "Saint Mocianne's Arboretum (Hard)", ID: 2116},
   {Name: "The Ghimlyt Dark", ID: 2162}
 ]
 
@@ -254,16 +254,17 @@ function renderList(id, list) {
   let html = ""
   for (let i = 0; i < list.length; i++) {
     if (list[i]["ID"] == -1) {
-      html += "<li class='list-group-item d-flex justify-content-between align-items-center'><span class='bi-slash-square'>"
+      html += "<li class='list-group-item d-flex justify-content-between align-items-center'><span class='bi-question-square'>"
     } else if (achievements.has(list[i]["ID"])) {
       html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: green;'><span class='bi-check-square'>"
     } else {
       html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: firebrick;'><span class='bi-square'>"
     }
     html += "&nbsp;&nbsp;" + list[i]["Name"] + "</span>"
-    if (list[i]["ID"] == -1) {
-      html += "<span class='badge rounded-pill bg-secondary' data-bs-toggle='tooltip' data-bs-placement='top' title='There are no achivement associated with this duty.'>?</span>"
-    }
+    // @TODO: Display date (on hover?)
+    // if (achievements.has(list[i]["ID"])) {
+    //   html += moment.unix(achievements.get(list[i]["ID"])).format('dddd, MMMM Do, YYYY h:mm:ss A')
+    // }
     html += "</li>"
   }
   $(id).html(html)
@@ -347,5 +348,3 @@ $.ajax({
     })
 	}
 });
-
-
