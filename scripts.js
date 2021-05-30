@@ -1,35 +1,35 @@
 let arr_dungeons = [
-  {Name: "Sastasha", ID: 663},
-  {Name: "The Tam-Tara Deepcroft", ID: 669},
-  {Name: "Copperbell Mines", ID: 666},
-  {Name: "Halatali", ID: 667},
-  {Name: "The Thousand Maws of Toto-Rak", ID: 673},
-  {Name: "Haukke Manor", ID: 670},
-  {Name: "Brayflox's Longstop", ID: 674},
-  {Name: "The Sunken Temple of Qarn", ID: 668},
-  {Name: "Cutter's Cry", ID: 674},
-  {Name: "The Stone Vigil", ID: 672},
-  {Name: "Dzemael Darkhold", ID: 675},
-  {Name: "The Aurum Vale", ID: 676},
-  {Name: "The Wanderer's Palace", ID: 665},
-  {Name: "Castrum Meridianum", ID: 678},
-  {Name: "The Praetorium", ID: 679},
-  {Name: "Amdapor Keep", ID: 671},
-  {Name: "Pharos Sirius", ID: 873},
-  {Name: "Copperbell Mines (Hard)", ID: 871},
-  {Name: "Haukke Manor (Hard)", ID: 872},
-  {Name: "The Lost City of Amdapor", ID: 897},
-  {Name: "Halatali (Hard)", ID: 895},
-  {Name: "Brayflox's Longstop (Hard)", ID: 896},
-  {Name: "Hullbreaker Isle", ID: 993},
-  {Name: "The Stone Vigil (Hard)", ID: 992},
-  {Name: "The Tam-Tara Deepcroft (Hard)", ID: 991},
-  {Name: "Snowcloak", ID: 1039},
-  {Name: "Sastasha (Hard)", ID: 1038},
-  {Name: "The Sunken Temple of Qarn (Hard)", ID: 1037},
-  {Name: "The Keeper of the Lake", ID: 1072},
-  {Name: "The Wanderer's Palace (Hard)", ID: 1071},
-  {Name: "Amdapor Keep (Hard)", ID: 1070}
+  {Name: "Sastasha", MaxID: 663},
+  {Name: "The Tam-Tara Deepcroft", MaxID: 669},
+  {Name: "Copperbell Mines", MaxID: 666},
+  {Name: "Halatali", MaxID: 667},
+  {Name: "The Thousand Maws of Toto-Rak", MaxID: 673},
+  {Name: "Haukke Manor", MaxID: 670},
+  {Name: "Brayflox's Longstop", MaxID: 674},
+  {Name: "The Sunken Temple of Qarn", MaxID: 668},
+  {Name: "Cutter's Cry", MaxID: 674},
+  {Name: "The Stone Vigil", MaxID: 672},
+  {Name: "Dzemael Darkhold", MaxID: 675},
+  {Name: "The Aurum Vale", MaxID: 676},
+  {Name: "The Wanderer's Palace", MaxID: 665},
+  {Name: "Castrum Meridianum", MaxID: 678},
+  {Name: "The Praetorium", MaxID: 679},
+  {Name: "Amdapor Keep", MaxID: 671},
+  {Name: "Pharos Sirius", MaxID: 873},
+  {Name: "Copperbell Mines (Hard)", MaxID: 871},
+  {Name: "Haukke Manor (Hard)", MaxID: 872},
+  {Name: "The Lost City of Amdapor", MaxID: 897},
+  {Name: "Halatali (Hard)", MaxID: 895},
+  {Name: "Brayflox's Longstop (Hard)", MaxID: 896},
+  {Name: "Hullbreaker Isle", MaxID: 993},
+  {Name: "The Stone Vigil (Hard)", MaxID: 992},
+  {Name: "The Tam-Tara Deepcroft (Hard)", MaxID: 991},
+  {Name: "Snowcloak", MaxID: 1039},
+  {Name: "Sastasha (Hard)", MaxID: 1038},
+  {Name: "The Sunken Temple of Qarn (Hard)", MaxID: 1037},
+  {Name: "The Keeper of the Lake", MaxID: 1072},
+  {Name: "The Wanderer's Palace (Hard)", MaxID: 1071},
+  {Name: "Amdapor Keep (Hard)", MaxID: 1070}
 ]
 
 let hw_dungeons = [
@@ -88,61 +88,61 @@ let shb_dungeons = [
 ]
 
 let arr_trials = [
-  {Name: "The Bowl of Embers", ID: -1},
-  {Name: "The Navel", ID: -1},
-  {Name: "The Howling Eye", ID: -1},
-  {Name: "Cape Westwind", ID: -1},
+  {Name: "The Bowl of Embers"},
+  {Name: "The Navel"},
+  {Name: "The Howling Eye"},
+  {Name: "Cape Westwind"},
   {Name: "The Chrysalis", ID: 1067},
   {Name: "The Steps of Faith", ID: 1065},
-  {Name: "A Relic Reborn: The Chimera", ID: -1},
-  {Name: "A Relic Reborn: The Hydra", ID: -1},
-  {Name: "Battle on the Big Bridge", ID: -1},
-  {Name: "The Dragon's Neck", ID: -1},
+  {Name: "A Relic Reborn: The Chimera"},
+  {Name: "A Relic Reborn: The Hydra"},
+  {Name: "Battle on the Big Bridge"},
+  {Name: "The Dragon's Neck"},
   {Name: "Battle in the Big Keep", ID: 1066},
-  {Name: "The Bowl of Embers (Hard)", ID: -1},
-  {Name: "The Howling Eye (Hard)", ID: -1},
-  {Name: "The Navel (Hard)", ID: -1},
-  {Name: "Thornmarch (Hard)", ID: -1},
-  {Name: "The Whorleater (Hard)", ID: -1},
-  {Name: "The Striking Tree (Hard)", ID: -1},
-  {Name: "Akh Afah Amphitheatre (Hard) 	", ID: -1},
+  {Name: "The Bowl of Embers (Hard)"},
+  {Name: "The Howling Eye (Hard)"},
+  {Name: "The Navel (Hard)"},
+  {Name: "Thornmarch (Hard)"},
+  {Name: "The Whorleater (Hard)"},
+  {Name: "The Striking Tree (Hard)"},
+  {Name: "Akh Afah Amphitheatre (Hard) 	"},
   {Name: "Urth's Fount", ID: 1064}
 ]
 
 let hw_trials = [
-  {Name: "Thok ast Thok (Hard)", ID: -1},
-  {Name: "The Limitless Blue (Hard) 	", ID: -1},
-  {Name: "The Singularity Reactor", ID: -1},
-  {Name: "The Final Steps of Faith", ID: -1},
-  {Name: "Containment Bay S1T7", ID: -1},
-  {Name: "Containment Bay P1T6", ID: -1},
-  {Name: "Containment Bay Z1T9", ID: -1}
+  {Name: "Thok ast Thok (Hard)"},
+  {Name: "The Limitless Blue (Hard)"},
+  {Name: "The Singularity Reactor"},
+  {Name: "The Final Steps of Faith"},
+  {Name: "Containment Bay S1T7"},
+  {Name: "Containment Bay P1T6"},
+  {Name: "Containment Bay Z1T9"}
 ]
 
 let sb_trials = [
-  {Name: "The Pool of Tribute", ID: -1},
-  {Name: "Emanation", ID: -1},
-  {Name: "The Royal Menagerie", ID: -1},
-  {Name: "Castrum Fluminis", ID: -1},
+  {Name: "The Pool of Tribute"},
+  {Name: "Emanation"},
+  {Name: "The Royal Menagerie"},
+  {Name: "Castrum Fluminis"},
   {Name: "Kugane Ohashi", ID: 2236},
-  {Name: "The Great Hunt", ID: -1},
-  {Name: "The Jade Stoa", ID: -1},
-  {Name: "Hells' Kier", ID: -1},
-  {Name: "The Wreath of Snakes", ID: -1}
+  {Name: "The Great Hunt"},
+  {Name: "The Jade Stoa"},
+  {Name: "Hells' Kier"},
+  {Name: "The Wreath of Snakes"}
 ]
 
 let shb_trials = [
-  {Name: "The Dancing Plague", ID: -1},
-  {Name: "The Crown of the Immaculate", ID: -1},
-  {Name: "The Dying Gasp", ID: -1},
-  {Name: "Cinder Drift", ID: -1},
-  {Name: "The Seat of Sacrifice", ID: -1},
-  {Name: "Castrum Marinum", ID: -1},
-  {Name: "The Cloud Deck", ID: -1}
+  {Name: "The Dancing Plague"},
+  {Name: "The Crown of the Immaculate"},
+  {Name: "The Dying Gasp"},
+  {Name: "Cinder Drift"},
+  {Name: "The Seat of Sacrifice"},
+  {Name: "Castrum Marinum"},
+  {Name: "The Cloud Deck"}
 ]
 
 let arr_trials_ex = [
-  {Name: "The Minstrel's Ballad: Ultima's Bane", ID: -1},
+  {Name: "The Minstrel's Ballad: Ultima's Bane"},
   {Name: "The Howling Eye (Extreme)", ID: 856},
   {Name: "The Navel (Extreme)", ID: 857},
   {Name: "The Bowl of Embers (Extreme)", ID: 855},
@@ -253,12 +253,19 @@ function renderError(message) {
 function renderList(id, list) {
   let html = ""
   for (let i = 0; i < list.length; i++) {
-    if (list[i]["ID"] == -1) {
-      html += "<li class='list-group-item d-flex justify-content-between align-items-center'><span class='bi-question-square'>"
-    } else if (achievements.has(list[i]["ID"])) {
-      html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: green;'><span class='bi-check-square'>"
+    let cleared = 0 // Not cleared
+    if ("ID" in list[i] && achievements.has(list[i]["ID"])) cleared = 1 // Cleared
+    else if ("MaxID" in list[i] && achievements.has(list[i]["MaxID"])) cleared = 1 // Cleared
+    else if ("MinID" in list[i] && achievements.has(list[i]["MinID"])) cleared = -1 // Maybe
+    else if (!("ID" in list[i])) cleared = -1 // Maybe
+
+    html += "<li class='list-group-item d-flex justify-content-between align-items-center'"
+    if (cleared == -1) {
+      html += "><span class='bi-question-square'>"
+    } else if (cleared == 1) {
+      html += " style='color: green;'><span class='bi-check-square'>"
     } else {
-      html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: firebrick;'><span class='bi-square'>"
+      html += " style='color: firebrick;'><span class='bi-square'>"
     }
     html += "&nbsp;&nbsp;" + list[i]["Name"] + "</span>"
     // @TODO: Display date (on hover?)
