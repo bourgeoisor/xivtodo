@@ -245,38 +245,60 @@ let shb_raids_s = [
   {Name: "The Epic of Alexander (Ultimate)", ID: 2444}
 ]
 
-let searchParams = new URLSearchParams(window.location.search)
-if (!searchParams.has("id")) {
-  $("#error").show()
-  $("#error").html("<b>Error:</b> The URL must contain a character ID.")
-  throw new Error();
+function renderError(message) {
+  $("#error-block").show()
+  $("#error-msg").html(message)
 }
-let characterID = searchParams.get("id")
-
-let achievements
 
 function renderList(id, list) {
   let html = ""
-    for (let i = 0; i < list.length; i++) {
-      if (list[i]["ID"] == -1) {
-        html += "<li class='list-group-item d-flex justify-content-between align-items-center'><span class='bi-slash-square'>"
-      } else if (achievements.has(list[i]["ID"])) {
-        html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: green;'><span class='bi-check-square'>"
-      } else {
-        html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: firebrick;'><span class='bi-square'>"
-      }
-      html += "&nbsp;&nbsp;" + list[i]["Name"] + "</span>"
-      if (list[i]["ID"] == -1) {
-        html += "<span class='badge rounded-pill bg-secondary' data-bs-toggle='tooltip' data-bs-placement='top' title='There are no achivement associated with this duty.'>?</span>"
-      }
-      html += "</li>"
+  for (let i = 0; i < list.length; i++) {
+    if (list[i]["ID"] == -1) {
+      html += "<li class='list-group-item d-flex justify-content-between align-items-center'><span class='bi-slash-square'>"
+    } else if (achievements.has(list[i]["ID"])) {
+      html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: green;'><span class='bi-check-square'>"
+    } else {
+      html += "<li class='list-group-item d-flex justify-content-between align-items-center' style='color: firebrick;'><span class='bi-square'>"
     }
-    $(id).html(html)
+    html += "&nbsp;&nbsp;" + list[i]["Name"] + "</span>"
+    if (list[i]["ID"] == -1) {
+      html += "<span class='badge rounded-pill bg-secondary' data-bs-toggle='tooltip' data-bs-placement='top' title='There are no achivement associated with this duty.'>?</span>"
+    }
+    html += "</li>"
+  }
+  $(id).html(html)
 }
+
+function renderEmpty() {
+  let categories = ["arr_dungeons", "hw_dungeons", "sb_dungeons", "shb_dungeons",
+                  "arr_trials", "hw_trials", "sb_trials", "shb_trials",
+                  "arr_trials_ex", "hw_trials_ex", "sb_trials_ex", "shb_trials_ex",
+                  "arr_raids", "hw_raids", "sb_raids", "shb_raids",
+                  "arr_raids_s", "hw_raids_s", "sb_raids_s", "shb_raids_s"]
+
+  for (let i = 0; i < categories.length; i++) {
+    $("#" + categories[i]).html("<li>No data to display</li>")
+  }
+}
+
+let searchParams = new URLSearchParams(window.location.search)
+if (!searchParams.has("id")) {
+  $("#c_name").html("&lt;Unknown Character&gt;")
+  renderError("The URL must contain a character ID. For example, <a class='alert-link' href='?id=32741501'>/xivtodo/?id=32741501</a>")
+  renderEmpty()
+  throw new Error();
+}
+let characterID = searchParams.get("id")
+let achievements
 
 $.ajax({
 	url: "https://xivapi.com/character/" + characterID + "?data=AC",
 	dataType: "json",
+  error: function(XMLHttpRequest, textStatus, errorThrown) { 
+    $("#c_name").html("&lt;Unknown Character&gt;")
+    renderError("The URL must contain a valid character ID. For example, <a class='alert-link' href='?id=32741501'>/xivtodo/?id=32741501</a>")
+    renderEmpty()
+  },
 	success: function(data) {
     let character = data["Character"]
     achievements = new Map()
@@ -289,8 +311,9 @@ $.ajax({
     $("#c_name").html(character["Name"])
 
     if (!data["AchievementsPublic"]) {
-      $("#error").show()
-      $("#error").html("<b>Error:</b> The achievements for this character are not set as public. If you are the owner of the character, you need to set Achievements to Public <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>here</a>.")
+      renderError("The achievements for this character are not public. If you are the owner of this character, you can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>character settings</a>.")
+      renderEmpty()
+      return
     }
 
     renderList("#arr_dungeons", arr_dungeons)
