@@ -6,3 +6,11 @@ main {
 h2 {
     text-decoration: underline;
 }
+
+hr {
+    height: 0px;
+    border: none;
+    border-top: 1px solid #c8c8c8;
+    opacity: 1;
+    background-color: initial;
+}
