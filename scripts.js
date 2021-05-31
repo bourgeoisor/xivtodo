@@ -1,4 +1,4 @@
-let arr_dungeons = [
+let arrDungeons = [
   {Name: "Sastasha", MaxID: 783, MaxAltID: 663},
   {Name: "The Tam-Tara Deepcroft", MaxID: 783, MaxAltID: 669},
   {Name: "Copperbell Mines", MaxID: 783, MaxAltID: 666},
@@ -32,7 +32,7 @@ let arr_dungeons = [
   {Name: "Amdapor Keep (Hard)", MaxAltID: 1070}
 ]
 
-let hw_dungeons = [
+let hwDungeons = [
   {Name: "The Dusk Vigil", ID: 1208},
   {Name: "Sohm Al", ID: 1209},
   {Name: "The Aery", ID: 1210},
@@ -53,7 +53,7 @@ let hw_dungeons = [
   {Name: "Sohm Al (Hard)", ID: 1687}
 ]
 
-let sb_dungeons = [
+let sbDungeons = [
   {Name: "The Sirensong Sea", ID: 1883},
   {Name: "Shisui of the Violet Tides", ID: 1884},
   {Name: "Bardam's Mettle", ID: 1885},
@@ -71,7 +71,7 @@ let sb_dungeons = [
   {Name: "The Ghimlyt Dark", ID: 2162}
 ]
 
-let shb_dungeons = [
+let shbDungeons = [
   {Name: "Holminster Switch", ID: 2377},
   {Name: "Dohn Mheg", ID: 2378},
   {Name: "The Qitana Ravel", ID: 2379},
@@ -87,7 +87,7 @@ let shb_dungeons = [
   {Name: "Paglth'an", ID: 2849}
 ]
 
-let arr_trials = [
+let arrTrials = [
   {Name: "The Bowl of Embers", MaxID: 783},
   {Name: "The Navel", MinID: 784, MaxID: 785},
   {Name: "The Howling Eye", MinID: 786, MaxID: 787},
@@ -109,7 +109,7 @@ let arr_trials = [
   {Name: "Urth's Fount", MinID: 788, ID: 1064}
 ]
 
-let hw_trials = [
+let hwTrials = [
   {Name: "Thok ast Thok (Hard)", MinID: 1134, MaxID: 1135},
   {Name: "The Limitless Blue (Hard)", MinID: 1136, MaxID: 1137},
   {Name: "The Singularity Reactor", MinID: 1138, MaxID: 1139},
@@ -119,7 +119,7 @@ let hw_trials = [
   {Name: "Containment Bay Z1T9", MinID: 1139, MaxAltID: 1685}
 ]
 
-let sb_trials = [
+let sbTrials = [
   {Name: "The Pool of Tribute", MinID: 1788, MaxID: 1789},
   {Name: "Emanation", MinID: 1792, MaxID: 1793},
   {Name: "The Royal Menagerie", MinID: 1793, MaxID: 1794},
@@ -131,7 +131,7 @@ let sb_trials = [
   {Name: "The Wreath of Snakes", MinID: 2057, MaxAltID: 2165}
 ]
 
-let shb_trials = [
+let shbTrials = [
   {Name: "The Dancing Plague", MinID: 2293, MaxID: 2294},
   {Name: "The Crown of the Immaculate", MinID: 2296, MaxID: 2297},
   {Name: "The Dying Gasp", MinID: 2297, MaxID: 2298},
@@ -141,7 +141,7 @@ let shb_trials = [
   {Name: "The Cloud Deck", MinID: 2424, MaxID: 2887, MaxAltID: 2846}
 ]
 
-let arr_trials_ex = [
+let arrTrialsEx = [
   {Name: "The Minstrel's Ballad: Ultima's Bane"},
   {Name: "The Howling Eye (Extreme)", ID: 856},
   {Name: "The Navel (Extreme)", ID: 857},
@@ -152,7 +152,7 @@ let arr_trials_ex = [
   {Name: "Akh Afah Amphitheatre (Extreme)", ID: 1045}
 ]
 
-let hw_trials_ex = [
+let hwTrialsEx = [
   {Name: "The Limitless Blue (Extreme)", ID: 1220},
   {Name: "Thok ast Thok (Extreme)", ID: 1221},
   {Name: "The Minstrel's Ballad: Thordan's Reign 	", ID: 1400},
@@ -162,7 +162,7 @@ let hw_trials_ex = [
   {Name: "Containment Bay Z1T9 (Extreme)", ID: 1685}
 ]
 
-let sb_trials_ex = [
+let sbTrialsEx = [
   {Name: "The Pool of Tribute (Extreme)", ID: 1902},
   {Name: "Emanation (Extreme)", ID: 1901},
   {Name: "The Minstrel's Ballad: Shinryu's Domain", ID: 1989},
@@ -173,7 +173,7 @@ let sb_trials_ex = [
   {Name: "The Wreath of Snakes (Extreme)", ID: 2165}
 ]
 
-let shb_trials_ex = [
+let shbTrialsEx = [
   {Name: "The Dancing Plague (Extreme)", ID: 2385},
   {Name: "The Crown of the Immaculate (Extreme)", ID: 2386},
   {Name: "Minstrel's Ballad: Hades's Elegy", ID: 2441},
@@ -184,7 +184,7 @@ let shb_trials_ex = [
   {Name: "The Cloud Deck (Extreme)", ID: 2846}
 ]
 
-let arr_raids = [
+let arrRaids = [
   {Name: "Labyrinth of the Ancients", ID: 883},
   {Name: "Syrcus Tower", ID: 995},
   {Name: "The World of Darkness", ID: 1068},
@@ -193,7 +193,7 @@ let arr_raids = [
   {Name: "The Final Coil of Bahamut", ID: 1040}
 ]
 
-let hw_raids = [
+let hwRaids = [
   {Name: "The Void Ark", ID: 1399},
   {Name: "The Weeping City of Mhach", ID: 1574},
   {Name: "Dun Scaith", ID: 1689},
@@ -202,7 +202,7 @@ let hw_raids = [
   {Name: "Alexander: The Creator", ID: 1639}
 ]
 
-let sb_raids = [
+let sbRaids = [
   {Name: "The Royal City of Rabanastre 	", ID: 1992},
   {Name: "The Ridorana Lighthouse", ID: 2106},
   {Name: "The Orbonne Monastery", ID: 2164},
@@ -211,7 +211,7 @@ let sb_raids = [
   {Name: "Omega: Alphascape", ID: 2118}
 ]
 
-let shb_raids = [
+let shbRaids = [
   {Name: "The Copied Factory", ID: 2443},
   {Name: "The Puppets' Bunker", ID: 2622},
   {Name: "The Tower at Paradigm's Breach", ID: 2847},
@@ -220,17 +220,17 @@ let shb_raids = [
   {Name: "Eden's Promise", ID: 2719}
 ]
 
-let arr_raids_s = [
+let arrRaidsS = [
   {Name: "The Second Coil of Bahamut (Savage)", ID: 1000}
 ]
 
-let hw_raids_s = [
+let hwRaidsS = [
   {Name: "Alexander: Gordias (Savage)", ID: 1231},
   {Name: "Alexander: Midas (Savage)", ID: 1479},
   {Name: "Alexander: The Creator (Savage)", ID: 1642}
 ]
 
-let sb_raids_s = [
+let sbRaidsS = [
   {Name: "Omega: Deltascape (Savage)", ID: 1898},
   {Name: "Omega: Sigmascape (Savage)", ID: 2027},
   {Name: "Omega: Alphascape (Savage)", ID: 2121},
@@ -238,7 +238,7 @@ let sb_raids_s = [
   {Name: "The Minstrel's Ballad: The Weapon's Refrain (Ultimate)", ID: 2107}
 ]
 
-let shb_raids_s = [
+let shbRaidsS = [
   {Name: "Eden's Gate (Savage)", ID: 2412},
   {Name: "Eden's Verse (Savage)", ID: 2594},
   {Name: "Eden's Promise (Savage)", ID: 2722},
@@ -280,11 +280,11 @@ function renderList(id, list) {
 }
 
 function renderEmpty() {
-  let categories = ["arr_dungeons", "hw_dungeons", "sb_dungeons", "shb_dungeons",
-                  "arr_trials", "hw_trials", "sb_trials", "shb_trials",
-                  "arr_trials_ex", "hw_trials_ex", "sb_trials_ex", "shb_trials_ex",
-                  "arr_raids", "hw_raids", "sb_raids", "shb_raids",
-                  "arr_raids_s", "hw_raids_s", "sb_raids_s", "shb_raids_s"]
+  let categories = ["arr-dungeons", "hw-dungeons", "sb-dungeons", "shb-dungeons",
+                  "arr-trials", "hw-trials", "sb-trials", "shb-trials",
+                  "arr-trials-ex", "hw-trials-ex", "sb-trials-ex", "shb-trials-ex",
+                  "arr-raids", "hw-raids", "sb-raids", "shb-raids",
+                  "arr-raids-s", "hw-raids-s", "sb-raids-s", "shb-raids-s"]
 
   for (let i = 0; i < categories.length; i++) {
     $("#" + categories[i]).html("<li>No data to display</li>")
@@ -293,7 +293,7 @@ function renderEmpty() {
 
 let searchParams = new URLSearchParams(window.location.search)
 if (!searchParams.has("id")) {
-  $("#c_name").html("&lt;Unknown Character&gt;")
+  $("#character-name").html("&lt;Unknown Character&gt;")
   renderError("The URL must contain a character ID. For example, <a class='alert-link' href='?id=32741501'>/xivtodo/?id=32741501</a>")
   renderEmpty()
   throw new Error();
@@ -305,7 +305,7 @@ $.ajax({
 	url: "https://xivapi.com/character/" + characterID + "?data=AC",
 	dataType: "json",
   error: function(XMLHttpRequest, textStatus, errorThrown) { 
-    $("#c_name").html("&lt;Unknown Character&gt;")
+    $("#character-name").html("&lt;Unknown Character&gt;")
     renderError("The URL must contain a valid character ID. For example, <a class='alert-link' href='?id=32741501'>/xivtodo/?id=32741501</a>")
     renderEmpty()
   },
@@ -318,7 +318,7 @@ $.ajax({
 
 		console.log(data)
 
-    $("#c_name").html(character["Name"])
+    $("#character-name").html(character["Name"])
 
     if (!data["AchievementsPublic"]) {
       renderError("The achievements for this character are not public. If you are the owner of this character, you can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>character settings</a>.")
@@ -326,30 +326,30 @@ $.ajax({
       return
     }
 
-    renderList("#arr_dungeons", arr_dungeons)
-    renderList("#hw_dungeons", hw_dungeons)
-    renderList("#sb_dungeons", sb_dungeons)
-    renderList("#shb_dungeons", shb_dungeons)
+    renderList("#arr-dungeons", arrDungeons)
+    renderList("#hw-dungeons", hwDungeons)
+    renderList("#sb-dungeons", sbDungeons)
+    renderList("#shb-dungeons", shbDungeons)
 
-    renderList("#arr_trials", arr_trials)
-    renderList("#hw_trials", hw_trials)
-    renderList("#sb_trials", sb_trials)
-    renderList("#shb_trials", shb_trials)
+    renderList("#arr-trials", arrTrials)
+    renderList("#hw-trials", hwTrials)
+    renderList("#sb-trials", sbTrials)
+    renderList("#shb-trials", shbTrials)
 
-    renderList("#arr_trials_ex", arr_trials_ex)
-    renderList("#hw_trials_ex", hw_trials_ex)
-    renderList("#sb_trials_ex", sb_trials_ex)
-    renderList("#shb_trials_ex", shb_trials_ex)
+    renderList("#arr-trials-ex", arrTrialsEx)
+    renderList("#hw-trials-ex", hwTrialsEx)
+    renderList("#sb-trials-ex", sbTrialsEx)
+    renderList("#shb-trials-ex", shbTrialsEx)
 
-    renderList("#arr_raids", arr_raids)
-    renderList("#hw_raids", hw_raids)
-    renderList("#sb_raids", sb_raids)
-    renderList("#shb_raids", shb_raids)
+    renderList("#arr-raids", arrRaids)
+    renderList("#hw-raids", hwRaids)
+    renderList("#sb-raids", sbRaids)
+    renderList("#shb-raids", shbRaids)
 
-    renderList("#arr_raids_s", arr_raids_s)
-    renderList("#hw_raids_s", hw_raids_s)
-    renderList("#sb_raids_s", sb_raids_s)
-    renderList("#shb_raids_s", shb_raids_s)
+    renderList("#arr-raids-s", arrRaidsS)
+    renderList("#hw-raids-s", hwRaidsS)
+    renderList("#sb-raids-s", sbRaidsS)
+    renderList("#shb-raids-s", shbRaidsS)
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
