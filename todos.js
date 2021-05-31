@@ -3,15 +3,17 @@ let weeklies = [
     {Name: "Hunt marks"},
     {Name: "Challenge logs"},
     {Name: "Beast tribes"},
+    {Name: "Squadron priority mission"},
     {Name: "Custom delivery"},
     {Name: "Wondrous Tails"},
     {Name: "Cap weekly tomestone"},
     {Name: "Faux Hollows"},
     {Name: "Masque Carnivale"},
     {Name: "Blue mage logs"},
-    {Name: "Normal raid lockout"},
-    {Name: "Alliance raid lockout"},
-    {Name: "Doman reconstruction donation"},
+    {Name: "Normal raid lockouts"},
+    {Name: "Savage raid lockouts"},
+    {Name: "Alliance raid lockouts"},
+    {Name: "Doman enclave donation"},
     {Name: "Gold Saucer tournaments"},
     {Name: "Fashion report"},
     {Name: "Jumbo Cactpot"}
@@ -25,7 +27,9 @@ let dailies = [
     {Name: "Grand company turn-ins"},
     {Name: "Duty roulettes"},
     {Name: "Mini Cactpot"},
-    {Name: "Retainer ventures"}
+    {Name: "Retainer ventures"},
+    {Name: "Housing gardening"},
+    {Name: "Daily leve allowance"}
 ]
 
 // Render the weeklies checklist.
