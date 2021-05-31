@@ -1,6 +1,7 @@
 main {
     font-family: 'Quicksand', sans-serif;
     padding-top: 10px;
+    font-size: 18px;
 }
 
 h2 {
@@ -14,3 +15,26 @@ hr {
     opacity: 1;
     background-color: initial;
 }
+
+/* @TODO: Implement dark theme. */
+/* main {
+    background-color: #222;
+    color: white;
+}
+
+.list-group-item {
+    background-color: #222;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.text-secondary {
+    color: silver;
+}
+
+.text-success {
+    color: #66d766;
+}
+
+.text-danger {
+    color: #ff4646;;
+} */

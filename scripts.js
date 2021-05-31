@@ -261,13 +261,13 @@ function renderList(id, list) {
     else if ("MinID" in list[i] && !achievements.has(list[i]["MinID"])) cleared = 0 // Not cleared
     else if (!("ID" in list[i])) cleared = -1 // Maybe
 
-    html += "<li class='list-group-item d-flex justify-content-between align-items-center'"
+    html += "<li class='list-group-item d-flex justify-content-between align-items-center "
     if (cleared == -1) {
-      html += "><span class='bi-question-square'>"
+      html += "text-secondary'><span class='bi-question-square'>"
     } else if (cleared == 1) {
-      html += " style='color: green;'><span class='bi-check-square'>"
+      html += "text-success'><span class='bi-check-square'>"
     } else {
-      html += " style='color: firebrick;'><span class='bi-square'>"
+      html += "text-danger'><span class='bi-square'>"
     }
     html += "&nbsp;&nbsp;" + list[i]["Name"] + "</span>"
     // @TODO: Display date (on hover?)
