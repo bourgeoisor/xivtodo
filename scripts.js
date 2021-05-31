@@ -245,6 +245,17 @@ let shbRaidsS = [
   {Name: "The Epic of Alexander (Ultimate)", ID: 2444}
 ]
 
+let sbExploratory = [
+  {Name: "Baldesion Arsenal", ID: 2227}
+]
+
+let shbExploratory = [
+  {Name: "Castrum Lacus Litore", ID: 2680},
+  {Name: "Delubrum Reginae", ID: 2762},
+  {Name: "Delubrum Reginae (Savage)", ID: 2765},
+  {Name: "Dalriada", ID: 2874}
+]
+
 function renderError(message) {
   $("#error-block").show()
   $("#error-msg").html(message)
@@ -284,7 +295,8 @@ function renderEmpty() {
                   "arr-trials", "hw-trials", "sb-trials", "shb-trials",
                   "arr-trials-ex", "hw-trials-ex", "sb-trials-ex", "shb-trials-ex",
                   "arr-raids", "hw-raids", "sb-raids", "shb-raids",
-                  "arr-raids-s", "hw-raids-s", "sb-raids-s", "shb-raids-s"]
+                  "arr-raids-s", "hw-raids-s", "sb-raids-s", "shb-raids-s",
+                  "sb-exploratory", "shb-exploratory"]
 
   for (let i = 0; i < categories.length; i++) {
     $("#" + categories[i]).html("<li>No data to display</li>")
@@ -350,6 +362,9 @@ $.ajax({
     renderList("#hw-raids-s", hwRaidsS)
     renderList("#sb-raids-s", sbRaidsS)
     renderList("#shb-raids-s", shbRaidsS)
+
+    renderList("#sb-exploratory", sbExploratory)
+    renderList("#shb-exploratory", shbExploratory)
 
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
