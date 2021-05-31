@@ -294,25 +294,30 @@ function renderEmpty() {
                     "sb-exploratory", "shb-exploratory"]
 
   for (let i = 0; i < categories.length; i++) {
-    $("#" + categories[i]).html("<li>No data to display</li>")
+    $("#" + categories[i]).html("<li class='list-group-item d-flex justify-content-between align-items-center'>No data to display.</li>")
   }
 }
 
-let characterData = JSON.parse(localStorage.getItem("character"))
-let achievementData = JSON.parse(localStorage.getItem("achievements"))
-let achievementsPublic = JSON.parse(localStorage.getItem("achievementsPublic"))
+function renderPage() {
+  if (characterData == null) {
+    $("#character-name").html("No Data")
+    renderError("Character data could not be found. You can load a character from the <a class='alert-link' href='settings.html'>Settings</a>.")
+    renderEmpty()
+    return
+  }
 
-let achievements = new Map()
-for (let i = 0; i < achievementData["List"].length; i++) {
-    achievements.set(achievementData["List"][i]["ID"], achievementData["List"][i]["Date"])
-}
+  $("#character-name").html(characterData["Name"])
 
-$("#character-name").html(characterData["Name"])
+  if (!achievementsPublicData) {
+    renderError("The achievements for this character are not public. You can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>character settings</a>.")
+    renderEmpty()
+    return
+  }
 
-if (!achievementsPublic) {
-  renderError("The achievements for this character are not public. If you are the owner of this character, you can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>character settings</a>.")
-  renderEmpty()
-} else {
+  for (let i = 0; i < achievementData["List"].length; i++) {
+      achievements.set(achievementData["List"][i]["ID"], achievementData["List"][i]["Date"])
+  }
+
   renderList("#arr-dungeons", arrDungeons)
   renderList("#hw-dungeons", hwDungeons)
   renderList("#sb-dungeons", sbDungeons)
@@ -341,3 +346,9 @@ if (!achievementsPublic) {
   renderList("#sb-exploratory", sbExploratory)
   renderList("#shb-exploratory", shbExploratory)
 }
+
+let characterData = JSON.parse(localStorage.getItem("character"))
+let achievementData = JSON.parse(localStorage.getItem("achievements"))
+let achievementsPublicData = JSON.parse(localStorage.getItem("achievementsPublic"))
+let achievements = new Map()
+renderPage()
