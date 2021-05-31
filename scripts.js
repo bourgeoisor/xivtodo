@@ -256,11 +256,6 @@ let shbExploratory = [
   {Name: "Dalriada", ID: 2874}
 ]
 
-function renderError(message) {
-  $("#error-block").show()
-  $("#error-msg").html(message)
-}
-
 function renderList(id, list) {
   let html = ""
   for (let i = 0; i < list.length; i++) {
@@ -292,83 +287,57 @@ function renderList(id, list) {
 
 function renderEmpty() {
   let categories = ["arr-dungeons", "hw-dungeons", "sb-dungeons", "shb-dungeons",
-                  "arr-trials", "hw-trials", "sb-trials", "shb-trials",
-                  "arr-trials-ex", "hw-trials-ex", "sb-trials-ex", "shb-trials-ex",
-                  "arr-raids", "hw-raids", "sb-raids", "shb-raids",
-                  "arr-raids-s", "hw-raids-s", "sb-raids-s", "shb-raids-s",
-                  "sb-exploratory", "shb-exploratory"]
+                    "arr-trials", "hw-trials", "sb-trials", "shb-trials",
+                    "arr-trials-ex", "hw-trials-ex", "sb-trials-ex", "shb-trials-ex",
+                    "arr-raids", "hw-raids", "sb-raids", "shb-raids",
+                    "arr-raids-s", "hw-raids-s", "sb-raids-s", "shb-raids-s",
+                    "sb-exploratory", "shb-exploratory"]
 
   for (let i = 0; i < categories.length; i++) {
     $("#" + categories[i]).html("<li>No data to display</li>")
   }
 }
 
-let searchParams = new URLSearchParams(window.location.search)
-if (!searchParams.has("id")) {
-  $("#character-name").html("&lt;Unknown Character&gt;")
-  renderError("The URL must contain a character ID. For example, <a class='alert-link' href='?id=32741501'>/xivtodo/?id=32741501</a>")
-  renderEmpty()
-  throw new Error();
+let characterData = JSON.parse(localStorage.getItem("character"))
+let achievementData = JSON.parse(localStorage.getItem("achievements"))
+let achievementsPublic = JSON.parse(localStorage.getItem("achievementsPublic"))
+
+let achievements = new Map()
+for (let i = 0; i < achievementData["List"].length; i++) {
+    achievements.set(achievementData["List"][i]["ID"], achievementData["List"][i]["Date"])
 }
-let characterID = searchParams.get("id")
-let achievements
 
-$.ajax({
-	url: "https://xivapi.com/character/" + characterID + "?data=AC",
-	dataType: "json",
-  error: function(XMLHttpRequest, textStatus, errorThrown) { 
-    $("#character-name").html("&lt;Unknown Character&gt;")
-    renderError("The URL must contain a valid character ID. For example, <a class='alert-link' href='?id=32741501'>/xivtodo/?id=32741501</a>")
-    renderEmpty()
-  },
-	success: function(data) {
-    let character = data["Character"]
-    achievements = new Map()
-    for (let i = 0; i < data["Achievements"]["List"].length; i++) {
-      achievements.set(data["Achievements"]["List"][i]["ID"], data["Achievements"]["List"][i]["Date"])
-    }
+$("#character-name").html(characterData["Name"])
 
-		console.log(data)
+if (!achievementsPublic) {
+  renderError("The achievements for this character are not public. If you are the owner of this character, you can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>character settings</a>.")
+  renderEmpty()
+} else {
+  renderList("#arr-dungeons", arrDungeons)
+  renderList("#hw-dungeons", hwDungeons)
+  renderList("#sb-dungeons", sbDungeons)
+  renderList("#shb-dungeons", shbDungeons)
 
-    $("#character-name").html(character["Name"])
+  renderList("#arr-trials", arrTrials)
+  renderList("#hw-trials", hwTrials)
+  renderList("#sb-trials", sbTrials)
+  renderList("#shb-trials", shbTrials)
 
-    if (!data["AchievementsPublic"]) {
-      renderError("The achievements for this character are not public. If you are the owner of this character, you can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>character settings</a>.")
-      renderEmpty()
-      return
-    }
+  renderList("#arr-trials-ex", arrTrialsEx)
+  renderList("#hw-trials-ex", hwTrialsEx)
+  renderList("#sb-trials-ex", sbTrialsEx)
+  renderList("#shb-trials-ex", shbTrialsEx)
 
-    renderList("#arr-dungeons", arrDungeons)
-    renderList("#hw-dungeons", hwDungeons)
-    renderList("#sb-dungeons", sbDungeons)
-    renderList("#shb-dungeons", shbDungeons)
+  renderList("#arr-raids", arrRaids)
+  renderList("#hw-raids", hwRaids)
+  renderList("#sb-raids", sbRaids)
+  renderList("#shb-raids", shbRaids)
 
-    renderList("#arr-trials", arrTrials)
-    renderList("#hw-trials", hwTrials)
-    renderList("#sb-trials", sbTrials)
-    renderList("#shb-trials", shbTrials)
+  renderList("#arr-raids-s", arrRaidsS)
+  renderList("#hw-raids-s", hwRaidsS)
+  renderList("#sb-raids-s", sbRaidsS)
+  renderList("#shb-raids-s", shbRaidsS)
 
-    renderList("#arr-trials-ex", arrTrialsEx)
-    renderList("#hw-trials-ex", hwTrialsEx)
-    renderList("#sb-trials-ex", sbTrialsEx)
-    renderList("#shb-trials-ex", shbTrialsEx)
-
-    renderList("#arr-raids", arrRaids)
-    renderList("#hw-raids", hwRaids)
-    renderList("#sb-raids", sbRaids)
-    renderList("#shb-raids", shbRaids)
-
-    renderList("#arr-raids-s", arrRaidsS)
-    renderList("#hw-raids-s", hwRaidsS)
-    renderList("#sb-raids-s", sbRaidsS)
-    renderList("#shb-raids-s", shbRaidsS)
-
-    renderList("#sb-exploratory", sbExploratory)
-    renderList("#shb-exploratory", shbExploratory)
-
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
-	}
-});
+  renderList("#sb-exploratory", sbExploratory)
+  renderList("#shb-exploratory", shbExploratory)
+}
