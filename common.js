@@ -37,7 +37,7 @@ function renderList(id, list) {
       html += "text-danger'><span class='bi-square'>"
     }
     html += "&nbsp;&nbsp;"
-    if (list[i]["Bold"]) html += "<b>" + list[i]["Name"] + "</b>"
+    if (list[i]["Bold"]) html += "<span style='font-weight: 700;'>" + list[i]["Name"] + "</span>"
     else html += list[i]["Name"]
     html += "</span>"
     // @TODO: Display date (on hover?)
