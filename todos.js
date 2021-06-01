@@ -1,43 +1,54 @@
 let weeklies = [
-    {Name: "Weekly repeatable quests"},
-    {Name: "Hunt marks"},
-    {Name: "Challenge logs"},
-    {Name: "Beast tribes"},
-    {Name: "Squadron priority mission"},
-    {Name: "Custom delivery"},
-    {Name: "Wondrous Tails"},
-    {Name: "Cap weekly tomestone"},
-    {Name: "Faux Hollows"},
-    {Name: "Masque Carnivale"},
-    {Name: "Blue mage logs"},
-    {Name: "Normal raid lockouts"},
-    {Name: "Savage raid lockouts"},
-    {Name: "Alliance raid lockouts"},
-    {Name: "Doman enclave donation"},
-    {Name: "Gold Saucer tournaments"},
-    {Name: "Fashion report"},
-    {Name: "Jumbo Cactpot"}
+    {ID: 100, Name: "Weekly repeatable quests"},
+    {ID: 101, Name: "Hunt marks"},
+    {ID: 102, Name: "Challenge logs"},
+    {ID: 103, Name: "Beast tribes"},
+    {ID: 104, Name: "Squadron priority mission"},
+    {ID: 105, Name: "Custom delivery"},
+    {ID: 106, Name: "Wondrous Tails"},
+    {ID: 107, Name: "Cap weekly tomestone"},
+    {ID: 108, Name: "Faux Hollows"},
+    {ID: 109, Name: "Masque Carnivale"},
+    {ID: 110, Name: "Blue mage logs"},
+    {ID: 111, Name: "Normal raid lockouts"},
+    {ID: 112, Name: "Savage raid lockouts"},
+    {ID: 113, Name: "Alliance raid lockouts"},
+    {ID: 114, Name: "Doman enclave donation"},
+    {ID: 115, Name: "Gold Saucer tournaments"},
+    {ID: 116, Name: "Fashion report"},
+    {ID: 117, Name: "Jumbo Cactpot"}
 ]
 
 let dailies = [
-    {Name: "Daily repeatable quests"},
-    {Name: "Hunt marks"},
-    {Name: "Map allocation"},
-    {Name: "Squadron missions"},
-    {Name: "Grand company turn-ins"},
-    {Name: "Duty roulettes"},
-    {Name: "Mini Cactpot"},
-    {Name: "Retainer ventures"},
-    {Name: "Housing gardening"},
-    {Name: "Daily leve allowance"}
+    {ID: 200, Name: "Daily repeatable quests"},
+    {ID: 201, Name: "Hunt marks"},
+    {ID: 202, Name: "Map allocation"},
+    {ID: 203, Name: "Squadron missions"},
+    {ID: 204, Name: "Grand company turn-ins"},
+    {ID: 205, Name: "Duty roulettes"},
+    {ID: 206, Name: "Mini Cactpot"},
+    {ID: 207, Name: "Retainer ventures"},
+    {ID: 208, Name: "Housing gardening"},
+    {ID: 209, Name: "Daily leve allowance"}
 ]
+
+let todosHidden = new Set()
+let todosHiddenData = JSON.parse(localStorage.getItem("todosHidden"))
+if (todosHiddenData != null) todosHidden = new Set(todosHiddenData)
+
+let todosCompleted = new Set()
+let todosCompletedData = JSON.parse(localStorage.getItem("todosCompleted"))
+if (todosCompletedData != null) todosCompleted = new Set(todosCompletedData)
 
 // Render the weeklies checklist.
 let weekliesHtml = ""
 for (let i = 0; i < weeklies.length; i++) {
+    if (todosHidden.has(weeklies[i]["ID"])) continue
     weekliesHtml += "<li class='list-group-item d-flex justify-content-between align-items-center'>"
                  + "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='"
-                 + weeklies[i]["Name"] + "'><label class='form-check-label' for='" + weeklies[i]["Name"] + "'>"
+                 + weeklies[i]["Name"] + "' onclick='todoToggled(" + weeklies[i]["ID"] + ")'"
+    if (todosCompleted.has(weeklies[i]["ID"])) weekliesHtml += " checked"
+    weekliesHtml += "><label class='form-check-label' for='" + weeklies[i]["Name"] + "'>"
                  + weeklies[i]["Name"] + "</label></div></li>"
 }
 $("#weeklies").html(weekliesHtml)
@@ -45,12 +56,25 @@ $("#weeklies").html(weekliesHtml)
 // Render the dailies checklist.
 let dailiesHtml = ""
 for (let i = 0; i < dailies.length; i++) {
+    if (todosHidden.has(dailies[i]["ID"])) continue
     dailiesHtml += "<li class='list-group-item d-flex justify-content-between align-items-center'>"
                 + "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='"
-                + dailies[i]["Name"] + "'><label class='form-check-label' for='" + dailies[i]["Name"] + "'>"
+                + dailies[i]["Name"] + "' onclick='todoToggled(" + dailies[i]["ID"] + ")'"
+    if (todosCompleted.has(dailies[i]["ID"])) dailiesHtml += " checked"
+    dailiesHtml += "><label class='form-check-label' for='" + dailies[i]["Name"] + "'>"
                 + dailies[i]["Name"] + "</label></div></li>"
 }
 $("#dailies").html(dailiesHtml)
+
+function todoToggled(id) {
+    if (todosCompleted.has(id)) {
+        todosCompleted.delete(id)
+    } else {
+        todosCompleted.add(id)
+    }
+
+    localStorage.setItem("todosCompleted", JSON.stringify(Array.from(todosCompleted)))
+}
 
 // Find the timings between now and the next daily and weekly resets,
 // and render those timings. Note that the reset times are in JST.
