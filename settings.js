@@ -8,12 +8,13 @@ function saveSettings() {
         url: "https://xivapi.com/character/" + settingsFormValues.get("inputCharacterID") + "?data=AC",
         dataType: "json",
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
-            renderError("Could not find character ID.")
+            renderError("The character ID you've entered does not exist.")
 
             $("#settings-save-btn").prop('disabled', false)
             $("#settings-save-btn").html("Save")
         },
         success: function(data) {
+            localStorage.setItem("characterID", settingsFormValues.get("inputCharacterID"))
             localStorage.setItem("character", JSON.stringify(data["Character"]))
             localStorage.setItem("achievements", JSON.stringify(data["Achievements"]))
             localStorage.setItem("achievementsPublic", JSON.stringify(data["AchievementsPublic"]))
@@ -22,4 +23,9 @@ function saveSettings() {
             $("#settings-save-btn").html("Save")
         }
     })
+}
+
+let characterID = localStorage.getItem("characterID")
+if (characterID != null) {
+    $("#inputCharacterID").val(characterID)
 }
