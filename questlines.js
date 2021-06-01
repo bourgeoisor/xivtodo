@@ -52,9 +52,4 @@ function renderPage() {
 
       renderList("#main-story-quests", mainStoryQuests)
 }
-
-let characterData = JSON.parse(localStorage.getItem("character"))
-let achievementData = JSON.parse(localStorage.getItem("achievements"))
-let achievementsPublicData = JSON.parse(localStorage.getItem("achievementsPublic"))
-let achievements = new Map()
 renderPage()

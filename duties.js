@@ -1,129 +1,129 @@
 let arrDungeons = [
-  {Name: "Sastasha", Bold: true, MaxID: 783, MaxAltID: 663},
-  {Name: "The Tam-Tara Deepcroft", Bold: true, MaxID: 783, MaxAltID: 669},
-  {Name: "Copperbell Mines", Bold: true, MaxID: 783, MaxAltID: 666},
+  {Name: "Sastasha", Bold: true, Spoilers: true, MaxID: 783, MaxAltID: 663},
+  {Name: "The Tam-Tara Deepcroft", Bold: true, Spoilers: true, MaxID: 783, MaxAltID: 669},
+  {Name: "Copperbell Mines", Bold: true, Spoilers: true, MaxID: 783, MaxAltID: 666},
   {Name: "Halatali", MaxAltID: 667},
-  {Name: "The Thousand Maws of Toto-Rak", Bold: true, MaxID: 783, MaxAltID: 673},
-  {Name: "Haukke Manor", Bold: true, MinID: 783, MaxID: 784, MaxAltID: 670},
-  {Name: "Brayflox's Longstop", Bold: true, MinID: 784, MaxID: 785, MaxAltID: 674},
+  {Name: "The Thousand Maws of Toto-Rak", Bold: true, Spoilers: true, MaxID: 783, MaxAltID: 673},
+  {Name: "Haukke Manor", Bold: true, Spoilers: true, MinID: 783, MaxID: 784, MaxAltID: 670},
+  {Name: "Brayflox's Longstop", Bold: true, Spoilers: true, MinID: 784, MaxID: 785, MaxAltID: 674},
   {Name: "The Sunken Temple of Qarn", MaxAltID: 668},
   {Name: "Cutter's Cry", MaxAltID: 674},
-  {Name: "The Stone Vigil", Bold: true, MinID: 785, MaxID: 786, MaxAltID: 672},
+  {Name: "The Stone Vigil", Bold: true, Spoilers: true, MinID: 785, MaxID: 786, MaxAltID: 672},
   {Name: "Dzemael Darkhold", MaxAltID: 675},
   {Name: "The Aurum Vale", MaxAltID: 676},
   {Name: "The Wanderer's Palace", MaxAltID: 665},
-  {Name: "Castrum Meridianum", Bold: true, MinID: 787, MaxID: 788, MaxAltID: 678},
-  {Name: "The Praetorium", Bold: true, MinID: 787, MaxID: 788, MaxAltID: 679},
+  {Name: "Castrum Meridianum", Bold: true, Spoilers: true, MinID: 787, MaxID: 788, MaxAltID: 678},
+  {Name: "The Praetorium", Bold: true, Spoilers: true, MinID: 787, MaxID: 788, MaxAltID: 679},
   {Name: "Amdapor Keep", MaxAltID: 671},
   {Name: "Pharos Sirius", MaxAltID: 873},
-  {Name: "Copperbell Mines (Hard)", MaxAltID: 871},
-  {Name: "Haukke Manor (Hard)", MaxAltID: 872},
+  {Name: "Copperbell Mines (Hard)", Spoilers: true, SpoilersUntil: 783, MaxAltID: 871},
+  {Name: "Haukke Manor (Hard)", Spoilers: true, SpoilersUntil: 784, MaxAltID: 872},
   {Name: "The Lost City of Amdapor", MaxAltID: 897},
   {Name: "Halatali (Hard)", MaxAltID: 895},
-  {Name: "Brayflox's Longstop (Hard)", MaxAltID: 896},
+  {Name: "Brayflox's Longstop (Hard)", Spoilers: true, SpoilersUntil: 785, MaxAltID: 896},
   {Name: "Hullbreaker Isle", MaxAltID: 993},
-  {Name: "The Stone Vigil (Hard)", MaxAltID: 992},
-  {Name: "The Tam-Tara Deepcroft (Hard)", MaxAltID: 991},
-  {Name: "Snowcloak", Bold: true, MinID: 1001, MaxID: 1029, MaxAltID: 1039},
-  {Name: "Sastasha (Hard)", MaxAltID: 1038},
+  {Name: "The Stone Vigil (Hard)", Spoilers: true, SpoilersUntil: 786, MaxAltID: 992},
+  {Name: "The Tam-Tara Deepcroft (Hard)", Spoilers: true, SpoilersUntil: 783, MaxAltID: 991},
+  {Name: "Snowcloak", Bold: true, Spoilers: true, MinID: 1001, MaxID: 1029, MaxAltID: 1039},
+  {Name: "Sastasha (Hard)", Spoilers: true, SpoilersUntil: 783, MaxAltID: 1038},
   {Name: "The Sunken Temple of Qarn (Hard)", MaxAltID: 1037},
-  {Name: "The Keeper of the Lake", Bold: true, MinID: 1029, MaxID: 1129, MaxAltID: 1072},
+  {Name: "The Keeper of the Lake", Bold: true, Spoilers: true, MinID: 1029, MaxID: 1129, MaxAltID: 1072},
   {Name: "The Wanderer's Palace (Hard)", MaxAltID: 1071},
   {Name: "Amdapor Keep (Hard)", MaxAltID: 1070}
 ]
 
 let hwDungeons = [
-  {Name: "The Dusk Vigil", Bold: true, ID: 1208},
-  {Name: "Sohm Al", Bold: true, ID: 1209},
-  {Name: "The Aery", Bold: true, ID: 1210},
-  {Name: "The Vault", Bold: true, ID: 1211},
-  {Name: "The Great Gubal Library", Bold: true, ID: 1212},
-  {Name: "The Aetherochemical Research Facility", Bold: true, ID: 1213},
+  {Name: "The Dusk Vigil", Bold: true, Spoilers: true, ID: 1208},
+  {Name: "Sohm Al", Bold: true, Spoilers: true, ID: 1209},
+  {Name: "The Aery", Bold: true, Spoilers: true, ID: 1210},
+  {Name: "The Vault", Bold: true, Spoilers: true, ID: 1211},
+  {Name: "The Great Gubal Library", Bold: true, Spoilers: true, ID: 1212},
+  {Name: "The Aetherochemical Research Facility", Bold: true, Spoilers: true, ID: 1213},
   {Name: "Neverreap", ID: 1214},
   {Name: "The Fractal Continuum", ID: 1215},
   {Name: "Saint Mocianne's Arboretum", ID: 1402},
   {Name: "Pharos Sirius (Hard)", ID: 1403},
-  {Name: "The Antitower", Bold: true, ID: 1486},
+  {Name: "The Antitower", Bold: true, Spoilers: true, ID: 1486},
   {Name: "The Lost City of Amdapor (Hard)", ID: 1487},
-  {Name: "Sohr Khai", Bold: true, ID: 1599},
+  {Name: "Sohr Khai", Bold: true, Spoilers: true, ID: 1599},
   {Name: "Hullbreaker Isle (Hard)", ID: 1600},
-  {Name: "Xelphatol", Bold: true, ID: 1637},
-  {Name: "The Great Gubal Library (Hard)", ID: 1638},
-  {Name: "Baelsar's Wall", Bold: true, ID: 1686},
-  {Name: "Sohm Al (Hard)", ID: 1687}
+  {Name: "Xelphatol", Bold: true, Spoilers: true, ID: 1637},
+  {Name: "The Great Gubal Library (Hard)", Spoilers: true, SpoilersUntil: 1212, ID: 1638},
+  {Name: "Baelsar's Wall", Bold: true, Spoilers: true, ID: 1686},
+  {Name: "Sohm Al (Hard)", Spoilers: true, SpoilersUntil: 1209, ID: 1687}
 ]
 
 let sbDungeons = [
-  {Name: "The Sirensong Sea", Bold: true, ID: 1883},
-  {Name: "Shisui of the Violet Tides", Bold: true, ID: 1884},
-  {Name: "Bardam's Mettle", Bold: true, ID: 1885},
-  {Name: "Doma Castle", Bold: true, ID: 1886},
-  {Name: "Castrum Abania", Bold: true, ID: 1887},
-  {Name: "Ala Mhigo", Bold: true, ID: 1888},
+  {Name: "The Sirensong Sea", Bold: true, Spoilers: true, ID: 1883},
+  {Name: "Shisui of the Violet Tides", Bold: true, Spoilers: true, ID: 1884},
+  {Name: "Bardam's Mettle", Bold: true, Spoilers: true, ID: 1885},
+  {Name: "Doma Castle", Bold: true, Spoilers: true, ID: 1886},
+  {Name: "Castrum Abania", Bold: true, Spoilers: true, ID: 1887},
+  {Name: "Ala Mhigo", Bold: true, Spoilers: true, ID: 1888},
   {Name: "Kugane Castle", ID: 1889},
   {Name: "The Temple of the Fist", ID: 1890},
-  {Name: "The Drowned City of Skalla", Bold: true, ID: 1988},
+  {Name: "The Drowned City of Skalla", Bold: true, Spoilers: true, ID: 1988},
   {Name: "Hells' Lid", ID: 2021},
   {Name: "The Fractal Continuum (Hard)", ID: 2022},
   {Name: "The Swallow's Compass", ID: 2057},
-  {Name: "The Burn", Bold: true, ID: 2115},
+  {Name: "The Burn", Bold: true, Spoilers: true, ID: 2115},
   {Name: "Saint Mocianne's Arboretum (Hard)", ID: 2116},
-  {Name: "The Ghimlyt Dark", Bold: true, ID: 2162}
+  {Name: "The Ghimlyt Dark", Bold: true, Spoilers: true, ID: 2162}
 ]
 
 let shbDungeons = [
-  {Name: "Holminster Switch", Bold: true, ID: 2377},
-  {Name: "Dohn Mheg", Bold: true, ID: 2378},
-  {Name: "The Qitana Ravel", Bold: true, ID: 2379},
-  {Name: "Malikah's Well", Bold: true, ID: 2380},
-  {Name: "Mt. Gulg", Bold: true, ID: 2381},
-  {Name: "Amaurot", Bold: true, ID: 2382},
+  {Name: "Holminster Switch", Bold: true, Spoilers: true, ID: 2377},
+  {Name: "Dohn Mheg", Bold: true, Spoilers: true, ID: 2378},
+  {Name: "The Qitana Ravel", Bold: true, Spoilers: true, ID: 2379},
+  {Name: "Malikah's Well", Bold: true, Spoilers: true, ID: 2380},
+  {Name: "Mt. Gulg", Bold: true, Spoilers: true, ID: 2381},
+  {Name: "Amaurot", Bold: true, Spoilers: true, ID: 2382},
   {Name: "The Twinning", ID: 2383},
   {Name: "Akadaemia Anyder", ID: 2384},
-  {Name: "The Grand Cosmos", Bold: true, ID: 2440},
-  {Name: "Anamnesis Anyder", Bold: true, ID: 2589},
-  {Name: "The Heroes' Gauntlet", Bold: true, ID: 2618},
-  {Name: "Matoya's Relict", Bold: true, ID: 2717},
-  {Name: "Paglth'an", Bold: true, ID: 2849}
+  {Name: "The Grand Cosmos", Bold: true, Spoilers: true, ID: 2440},
+  {Name: "Anamnesis Anyder", Bold: true, Spoilers: true, ID: 2589},
+  {Name: "The Heroes' Gauntlet", Bold: true, Spoilers: true, ID: 2618},
+  {Name: "Matoya's Relict", Bold: true, Spoilers: true, ID: 2717},
+  {Name: "Paglth'an", Bold: true, Spoilers: true, ID: 2849}
 ]
 
 let arrTrials = [
-  {Name: "The Bowl of Embers", Bold: true, MaxID: 783},
-  {Name: "The Navel", Bold: true, MinID: 784, MaxID: 785},
-  {Name: "The Howling Eye", Bold: true, MinID: 786, MaxID: 787},
-  {Name: "Cape Westwind", Bold: true, MinID: 787, MaxID: 788},
-  {Name: "The Chrysalis", Bold: true, ID: 1067, MinID: 1029, MaxID: 1129},
-  {Name: "The Steps of Faith", Bold: true, ID: 1065, MinID: 1029, MaxID: 1129},
+  {Name: "The Bowl of Embers", Bold: true, Spoilers: true, MaxID: 783},
+  {Name: "The Navel", Bold: true, Spoilers: true, MinID: 784, MaxID: 785},
+  {Name: "The Howling Eye", Bold: true, Spoilers: true, MinID: 786, MaxID: 787},
+  {Name: "Cape Westwind", Bold: true, Spoilers: true, MinID: 787, MaxID: 788},
+  {Name: "The Chrysalis", Bold: true, Spoilers: true, ID: 1067, MinID: 1029, MaxID: 1129},
+  {Name: "The Steps of Faith", Bold: true, Spoilers: true, ID: 1065, MinID: 1029, MaxID: 1129},
   {Name: "A Relic Reborn: The Chimera", MinID: 788},
   {Name: "A Relic Reborn: The Hydra", MinID: 788},
   {Name: "Battle on the Big Bridge", MinID: 788, MaxID: 1061},
   {Name: "The Dragon's Neck", MinID: 788, MaxID: 1061},
   {Name: "Battle in the Big Keep", ID: 1066},
-  {Name: "The Bowl of Embers (Hard)", MinID: 788, MaxID: 747, MaxAltID: 855},
-  {Name: "The Howling Eye (Hard)", MinID: 788, MaxID: 747, MaxAltID: 856},
-  {Name: "The Navel (Hard)", MinID: 788, MaxID: 747, MaxAltID: 857},
-  {Name: "Thornmarch (Hard)", Bold: true, MinID: 788, MaxID: 898},
-  {Name: "The Whorleater (Hard)", Bold: true, MinID: 898, MaxID: 899},
-  {Name: "The Striking Tree (Hard)", Bold: true, MinID: 899, MaxID: 1001},
-  {Name: "Akh Afah Amphitheatre (Hard)", Bold: true, MinID: 1001, MaxID: 1029},
+  {Name: "The Bowl of Embers (Hard)", Spoilers: true, SpoilersUntil: 783, MinID: 788, MaxID: 747, MaxAltID: 855},
+  {Name: "The Howling Eye (Hard)", Spoilers: true, SpoilersUntil: 787, MinID: 788, MaxID: 747, MaxAltID: 856},
+  {Name: "The Navel (Hard)", Spoilers: true, SpoilersUntil: 785, MinID: 788, MaxID: 747, MaxAltID: 857},
+  {Name: "Thornmarch (Hard)", Bold: true, Spoilers: true, MinID: 788, MaxID: 898},
+  {Name: "The Whorleater (Hard)", Bold: true, Spoilers: true, MinID: 898, MaxID: 899},
+  {Name: "The Striking Tree (Hard)", Bold: true, Spoilers: true, MinID: 899, MaxID: 1001},
+  {Name: "Akh Afah Amphitheatre (Hard)", Bold: true, Spoilers: true, MinID: 1001, MaxID: 1029},
   {Name: "Urth's Fount", MinID: 788, ID: 1064}
 ]
 
 let hwTrials = [
-  {Name: "Thok ast Thok (Hard)", Bold: true, MinID: 1134, MaxID: 1135},
-  {Name: "The Limitless Blue (Hard)", Bold: true, MinID: 1136, MaxID: 1137},
-  {Name: "The Singularity Reactor", Bold: true, MinID: 1138, MaxID: 1139},
-  {Name: "The Final Steps of Faith", Bold: true, MinID: 1493, MaxID: 1594},
+  {Name: "Thok ast Thok (Hard)", Bold: true, Spoilers: true, MinID: 1134, MaxID: 1135},
+  {Name: "The Limitless Blue (Hard)", Bold: true, Spoilers: true, MinID: 1136, MaxID: 1137},
+  {Name: "The Singularity Reactor", Bold: true, Spoilers: true, MinID: 1138, MaxID: 1139},
+  {Name: "The Final Steps of Faith", Bold: true, Spoilers: true, MinID: 1493, MaxID: 1594},
   {Name: "Containment Bay S1T7", MinID: 1139, MaxAltID: 1485},
   {Name: "Containment Bay P1T6", MinID: 1139, MaxAltID: 1636},
   {Name: "Containment Bay Z1T9", MinID: 1139, MaxAltID: 1685}
 ]
 
 let sbTrials = [
-  {Name: "The Pool of Tribute", Bold: true, MinID: 1788, MaxID: 1789},
-  {Name: "Emanation", Bold: true, MinID: 1792, MaxID: 1793},
-  {Name: "The Royal Menagerie", Bold: true, MinID: 1793, MaxID: 1794},
-  {Name: "Castrum Fluminis", Bold: true, MinID: 2013, MaxID: 2098},
+  {Name: "The Pool of Tribute", Bold: true, Spoilers: true, MinID: 1788, MaxID: 1789},
+  {Name: "Emanation", Bold: true, Spoilers: true, MinID: 1792, MaxID: 1793},
+  {Name: "The Royal Menagerie", Bold: true, Spoilers: true, MinID: 1793, MaxID: 1794},
+  {Name: "Castrum Fluminis", Bold: true, Spoilers: true, MinID: 2013, MaxID: 2098},
   {Name: "Kugane Ohashi", ID: 2236},
   {Name: "The Great Hunt", ID: 2108},
   {Name: "The Jade Stoa", MinID: 2057, MaxAltID: 2023},
@@ -132,41 +132,41 @@ let sbTrials = [
 ]
 
 let shbTrials = [
-  {Name: "The Dancing Plague", Bold: true, MinID: 2293, MaxID: 2294},
-  {Name: "The Crown of the Immaculate", Bold: true, MinID: 2296, MaxID: 2297},
-  {Name: "The Dying Gasp", Bold: true, MinID: 2297, MaxID: 2298},
+  {Name: "The Dancing Plague", Bold: true, Spoilers: true, MinID: 2293, MaxID: 2294},
+  {Name: "The Crown of the Immaculate", Bold: true, Spoilers: true, MinID: 2296, MaxID: 2297},
+  {Name: "The Dying Gasp", Bold: true, Spoilers: true, MinID: 2297, MaxID: 2298},
   {Name: "Cinder Drift", MinID: 2424, MaxID: 2887, MaxAltID: 2590},
-  {Name: "The Seat of Sacrifice", Bold: true, MinID: 2587, MaxID: 2642},
+  {Name: "The Seat of Sacrifice", Bold: true, Spoilers: true, MinID: 2587, MaxID: 2642},
   {Name: "Castrum Marinum", MinID: 2424, MaxID: 2887, MaxAltID: 2718},
   {Name: "The Cloud Deck", MinID: 2424, MaxID: 2887, MaxAltID: 2846}
 ]
 
 let arrTrialsEx = [
-  {Name: "The Minstrel's Ballad: Ultima's Bane"},
-  {Name: "The Howling Eye (Extreme)", ID: 856},
-  {Name: "The Navel (Extreme)", ID: 857},
-  {Name: "The Bowl of Embers (Extreme)", ID: 855},
-  {Name: "Thornmarch (Extreme)", ID: 894},
-  {Name: "The Whorleater (Extreme)", ID: 893},
-  {Name: "The Striking Tree (Extreme)", ID: 994},
-  {Name: "Akh Afah Amphitheatre (Extreme)", ID: 1045}
+  {Name: "The Minstrel's Ballad: Ultima's Bane", Spoilers: true, SpoilersUntil: 788},
+  {Name: "The Howling Eye (Extreme)", Spoilers: true, SpoilersUntil: 787, ID: 856},
+  {Name: "The Navel (Extreme)", Spoilers: true, SpoilersUntil: 785, ID: 857},
+  {Name: "The Bowl of Embers (Extreme)", Spoilers: true, SpoilersUntil: 783, ID: 855},
+  {Name: "Thornmarch (Extreme)", Spoilers: true, SpoilersUntil: 898, ID: 894},
+  {Name: "The Whorleater (Extreme)", Spoilers: true, SpoilersUntil: 899, ID: 893},
+  {Name: "The Striking Tree (Extreme)", Spoilers: true, SpoilersUntil: 1001, ID: 994},
+  {Name: "Akh Afah Amphitheatre (Extreme)", Spoilers: true, SpoilersUntil: 1029, ID: 1045}
 ]
 
 let hwTrialsEx = [
-  {Name: "The Limitless Blue (Extreme)", ID: 1220},
-  {Name: "Thok ast Thok (Extreme)", ID: 1221},
-  {Name: "The Minstrel's Ballad: Thordan's Reign 	", ID: 1400},
-  {Name: "The Minstrel's Ballad: Nidhogg's Rage", ID: 1601},
+  {Name: "The Limitless Blue (Extreme)", Spoilers: true, SpoilersUntil: 1137, ID: 1220},
+  {Name: "Thok ast Thok (Extreme)", Spoilers: true, SpoilersUntil: 1135, ID: 1221},
+  {Name: "The Minstrel's Ballad: Thordan's Reign", Spoilers: true, SpoilersUntil: 1139, ID: 1400},
+  {Name: "The Minstrel's Ballad: Nidhogg's Rage", Spoilers: true, SpoilersUntil: 1594, ID: 1601},
   {Name: "Containment Bay S1T7 (Extreme)", ID: 1485},
   {Name: "Containment Bay P1T6 (Extreme)", ID: 1636},
   {Name: "Containment Bay Z1T9 (Extreme)", ID: 1685}
 ]
 
 let sbTrialsEx = [
-  {Name: "The Pool of Tribute (Extreme)", ID: 1902},
-  {Name: "Emanation (Extreme)", ID: 1901},
-  {Name: "The Minstrel's Ballad: Shinryu's Domain", ID: 1989},
-  {Name: "The Minstrel's Ballad: Tsukuyomi's Pain", ID: 2060},
+  {Name: "The Pool of Tribute (Extreme)", Spoilers: true, SpoilersUntil: 1789, ID: 1902},
+  {Name: "Emanation (Extreme)", Spoilers: true, SpoilersUntil: 1793, ID: 1901},
+  {Name: "The Minstrel's Ballad: Shinryu's Domain", Spoilers: true, SpoilersUntil: 1794, ID: 1989},
+  {Name: "The Minstrel's Ballad: Tsukuyomi's Pain", Spoilers: true, SpoilersUntil: 2098, ID: 2060},
   {Name: "The Great Hunt (Extreme)", ID: 2109},
   {Name: "The Jade Stoa (Extreme)", ID: 2023},
   {Name: "Hells' Kier (Extreme)", ID: 2117},
@@ -174,20 +174,20 @@ let sbTrialsEx = [
 ]
 
 let shbTrialsEx = [
-  {Name: "The Dancing Plague (Extreme)", ID: 2385},
-  {Name: "The Crown of the Immaculate (Extreme)", ID: 2386},
-  {Name: "Minstrel's Ballad: Hades's Elegy", ID: 2441},
+  {Name: "The Dancing Plague (Extreme)", Spoilers: true, SpoilersUntil: 2294, ID: 2385},
+  {Name: "The Crown of the Immaculate (Extreme)", Spoilers: true, SpoilersUntil: 2297, ID: 2386},
+  {Name: "Minstrel's Ballad: Hades's Elegy", Spoilers: true, SpoilersUntil: 2298, ID: 2441},
   {Name: "Cinder Drift (Extreme)", ID: 2590},
   {Name: "Memoria Misera (Extreme)", ID: 2586},
-  {Name: "The Seat of Sacrifice (Extreme)", ID:2621},
+  {Name: "The Seat of Sacrifice (Extreme)", Spoilers: true, SpoilersUntil: 2642, ID:2621},
   {Name: "Castrum Marinum (Extreme)", ID: 2718},
   {Name: "The Cloud Deck (Extreme)", ID: 2846}
 ]
 
 let arrRaids = [
-  {Name: "Labyrinth of the Ancients", Bold: true, ID: 883},
-  {Name: "Syrcus Tower", Bold: true, ID: 995},
-  {Name: "The World of Darkness", Bold: true, ID: 1068},
+  {Name: "Labyrinth of the Ancients", Bold: true, Spoilers: true, ID: 883},
+  {Name: "Syrcus Tower", Bold: true, Spoilers: true, ID: 995},
+  {Name: "The World of Darkness", Bold: true, Spoilers: true, ID: 1068},
   {Name: "The Binding Coil of Bahamut", ID: 747},
   {Name: "The Second Coil of Bahamut", ID: 887},
   {Name: "The Final Coil of Bahamut", ID: 1040}
@@ -311,9 +311,4 @@ function renderPage() {
   renderList("#sb-exploratory", sbExploratory)
   renderList("#shb-exploratory", shbExploratory)
 }
-
-let characterData = JSON.parse(localStorage.getItem("character"))
-let achievementData = JSON.parse(localStorage.getItem("achievements"))
-let achievementsPublicData = JSON.parse(localStorage.getItem("achievementsPublic"))
-let achievements = new Map()
 renderPage()

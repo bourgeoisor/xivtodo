@@ -17,6 +17,8 @@ function saveSettings() {
         },
         success: function(data) {
             localStorage.setItem("characterID", settingsFormValues.get("inputCharacterID"))
+            localStorage.setItem("spoilersOption", settingsFormValues.get("inputSpoilersOption"))
+
             localStorage.setItem("character", JSON.stringify(data["Character"]))
             localStorage.setItem("achievements", JSON.stringify(data["Achievements"]))
             localStorage.setItem("achievementsPublic", JSON.stringify(data["AchievementsPublic"]))
@@ -28,7 +30,10 @@ function saveSettings() {
 }
 
 // Fill in the form with predefined values.
-let characterID = localStorage.getItem("characterID")
 if (characterID != null) {
     $("#inputCharacterID").val(characterID)
+}
+if (spoilersOption != null) {
+    $("#inputSpoilersOption").val(spoilersOption);
+    $('input:radio[name=inputSpoilersOption]')[spoilersOption].checked = true;
 }

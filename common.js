@@ -37,9 +37,21 @@ function renderList(id, list) {
       html += "text-danger'><span class='bi-square'>"
     }
     html += "&nbsp;&nbsp;"
-    if (list[i]["Bold"]) html += "<span style='font-weight: 700;'>" + list[i]["Name"] + "</span>"
-    else html += list[i]["Name"]
-    html += "</span>"
+    let style = ""
+    if (list[i]["Bold"]) style += "font-weight: 700;"
+    if (list[i]["Spoilers"] && spoilersOption != 2) { 
+      let showIfAllowed = false
+      if ("SpoilersUntil" in list[i] && achievements.has(list[i]["SpoilersUntil"])) showIfAllowed = true
+
+      if (spoilersOption == 0 || (cleared != 1 && !showIfAllowed)) {
+        style += "text-shadow: 0 0 20px "
+        if (cleared == 1) style += "rgba(0, 80, 0, 0.40)" 
+        else if (cleared == 0) style += "rgba(80, 0, 0, 0.40)" 
+        else style += "rgba(80, 80, 80, 0.50)" 
+        style += "; color: transparent; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;"
+      }
+    }
+    html += "<span style='" + style + "'>" + list[i]["Name"] + "</span></span>"
     // @TODO: Display date (on hover?)
     // if (achievements.has(list[i]["ID"])) {
     //   html += moment.unix(achievements.get(list[i]["ID"])).format('dddd, MMMM Do, YYYY h:mm:ss A')
@@ -55,3 +67,11 @@ function renderEmpty(categories) {
     $("#" + categories[i]).html("<li class='list-group-item d-flex justify-content-between align-items-center'>No data to display.</li>")
   }
 }
+
+// Set global variables from local storage data
+let characterID = localStorage.getItem("characterID")
+let spoilersOption = localStorage.getItem("spoilersOption")
+let characterData = JSON.parse(localStorage.getItem("character"))
+let achievementData = JSON.parse(localStorage.getItem("achievements"))
+let achievementsPublicData = JSON.parse(localStorage.getItem("achievementsPublic"))
+let achievements = new Map()
