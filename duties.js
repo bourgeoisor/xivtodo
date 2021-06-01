@@ -94,8 +94,8 @@ let arrTrials = [
   {Name: "Cape Westwind", Bold: true, Spoilers: true, MinID: 787, MaxID: 788},
   {Name: "The Chrysalis", Bold: true, Spoilers: true, ID: 1067, MinID: 1029, MaxID: 1129},
   {Name: "The Steps of Faith", Bold: true, Spoilers: true, ID: 1065, MinID: 1029, MaxID: 1129},
-  {Name: "A Relic Reborn: The Chimera", MinID: 788},
-  {Name: "A Relic Reborn: The Hydra", MinID: 788},
+  {Name: "A Relic Reborn: The Chimera", MinID: 788, MaxID: 925},
+  {Name: "A Relic Reborn: The Hydra", MinID: 788, MaxID: 925},
   {Name: "Battle on the Big Bridge", MinID: 788, MaxID: 1061},
   {Name: "The Dragon's Neck", MinID: 788, MaxID: 1061},
   {Name: "Battle in the Big Keep", ID: 1066},
@@ -257,11 +257,11 @@ let shbExploratory = [
 ]
 
 let categories = ["arr-dungeons", "hw-dungeons", "sb-dungeons", "shb-dungeons",
-                    "arr-trials", "hw-trials", "sb-trials", "shb-trials",
-                    "arr-trials-ex", "hw-trials-ex", "sb-trials-ex", "shb-trials-ex",
-                    "arr-raids", "hw-raids", "sb-raids", "shb-raids",
-                    "arr-raids-s", "hw-raids-s", "sb-raids-s", "shb-raids-s",
-                    "sb-exploratory", "shb-exploratory"]
+                  "arr-trials", "hw-trials", "sb-trials", "shb-trials",
+                  "arr-trials-ex", "hw-trials-ex", "sb-trials-ex", "shb-trials-ex",
+                  "arr-raids", "hw-raids", "sb-raids", "shb-raids",
+                  "arr-raids-s", "hw-raids-s", "sb-raids-s", "shb-raids-s",
+                  "sb-exploratory", "shb-exploratory"]
 
 function renderPage() {
   if (characterData == null) {
