@@ -1,3 +1,5 @@
+// Validate the form, fetch Lodestone data, and save it in local storage.
+// This is called from the "Save" button.
 function saveSettings() {
     let settingsFormValues = new FormData(document.querySelector("#settings-form"))
 
@@ -25,6 +27,7 @@ function saveSettings() {
     })
 }
 
+// Fill in the form with predefined values.
 let characterID = localStorage.getItem("characterID")
 if (characterID != null) {
     $("#inputCharacterID").val(characterID)
