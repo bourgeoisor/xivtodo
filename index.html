@@ -10,20 +10,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
 
-    <title>XIV|ToDo</title>
+    <title>XIV|ToDo - Dashboard</title>
   </head>
   <body class="d-flex flex-column min-vh-100">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">XIV|ToDo</span>
+          <a class="navbar-brand mb-0 h1" href="index.html">XIV|ToDo</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" href="index.html">Duties</a>
+                <a class="nav-link active" href="index.html">Dashboard</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="duties.html">Duties</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="questlines.html">Questlines</a>
@@ -42,7 +45,7 @@
 
     <main class="flex-shrink-0"  style="display: none;">
       <div class="container">
-        <h1>Duties <small class="text-muted">&mdash; <span id="character-name">Loading character...</span></small></h1>
+        <h1>Dashboard <small class="text-muted">&mdash; <span id="character-name">Loading character...</span></small></h1>
 
         <div id="error-block" class="alert alert-danger" role="alert" style="display: none;">
           <span class="bi-exclamation-triangle-fill"></span>&nbsp;
@@ -52,209 +55,11 @@
         <hr>
 
         <div class="row">
-          <h2>A Realm Reborn</h2>
+          <h2>foobar</h2>
 
           <div class="col-md">
-            <h3>Dungeons</h3>
-            <ul id="arr-dungeons" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-          <div class="col-md">
-            <h3>Trials</h3>
-            <ul id="arr-trials" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>High-end Trials</h3>
-            <ul id="arr-trials-ex" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-          <div class="col-md">
-            <h3>Raids</h3>
-            <ul id="arr-raids" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>High-end Raids</h3>
-            <ul id="arr-raids-s" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <h2>Heavensward</h2>
-
-          <div class="col-md">
-            <h3>Dungeons</h3>
-            <ul id="hw-dungeons" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-          <div class="col-md">
-            <h3>Trials</h3>
-            <ul id="hw-trials" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>High-end Trials</h3>
-            <ul id="hw-trials-ex" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-          <div class="col-md">
-            <h3>Raids</h3>
-            <ul id="hw-raids" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>High-end Raids</h3>
-            <ul id="hw-raids-s" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <h2>Stormblood</h2>
-
-          <div class="col-md">
-            <h3>Dungeons</h3>
-            <ul id="sb-dungeons" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-          <div class="col-md">
-            <h3>Trials</h3>
-            <ul id="sb-trials" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>High-end Trials</h3>
-            <ul id="sb-trials-ex" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-          <div class="col-md">
-            <h3>Raids</h3>
-            <ul id="sb-raids" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>High-end Raids</h3>
-            <ul id="sb-raids-s" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>Exploratory Missions</h3>
-            <ul id="sb-exploratory" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-        </div>
-        <hr>
-        <div class="row">
-          <h2>Shadowbringers</h2>
-
-          <div class="col-md">
-            <h3>Dungeons</h3>
-            <ul id="shb-dungeons" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-          <div class="col-md">
-            <h3>Trials</h3>
-            <ul id="shb-trials" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>High-end Trials</h3>
-            <ul id="shb-trials-ex" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-          </div>
-          <div class="col-md">
-            <h3>Raids</h3>
-            <ul id="shb-raids" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>High-end Raids</h3>
-            <ul id="shb-raids-s" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-            <br>
-
-            <h3>Exploratory Missions</h3>
-            <ul id="shb-exploratory" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
+            <h3>foobar</h3>
+            
             <br>
           </div>
         </div>
@@ -270,6 +75,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script type="text/javascript" src="common.js"></script>
-    <script type="text/javascript" src="duties.js"></script>
+    <script type="text/javascript" src="dashboard.js"></script>
   </body>
 </html>
