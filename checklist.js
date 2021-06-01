@@ -88,7 +88,7 @@ function setTimeUntilResets() {
 
     let dailiesReset = ""
     if (dailyResetDuration.hours()%24 > 0) dailiesReset = dailyResetDuration.hours()%24 + "h " + dailyResetDuration.minutes() + "m"
-    else dailiesReset = dailyResetDuration.minutes() + "m " + dailyResetDuration.seconds() + "s"
+    else dailiesReset = dailyResetDuration.minutes() + "m"
     $("#dailies-reset").html(dailiesReset)
 
     // Find the diff until the next Tuesday 5pm JST and render it.
@@ -98,7 +98,7 @@ function setTimeUntilResets() {
     let weekliesReset = ""
     if (weeklyResetDuration.days()%7 > 0) weekliesReset = weeklyResetDuration.days()%7 + "d " + weeklyResetDuration.hours() + "h"
     else if (weeklyResetDuration.hours() > 0) weekliesReset = weeklyResetDuration.hours() + "h " + weeklyResetDuration.minutes() + "m"
-    else weekliesReset = weeklyResetDuration.minutes() + "m " + weeklyResetDuration.seconds() + "s"
+    else weekliesReset = weeklyResetDuration.minutes() + "m"
     $("#weeklies-reset").html(weekliesReset)
 }
 setTimeUntilResets()
