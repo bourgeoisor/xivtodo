@@ -256,53 +256,18 @@ let shbExploratory = [
   {Name: "Dalriada", ID: 2874}
 ]
 
-function renderList(id, list) {
-  let html = ""
-  for (let i = 0; i < list.length; i++) {
-    let cleared = 0 // Not cleared
-    if ("ID" in list[i] && achievements.has(list[i]["ID"])) cleared = 1 // Cleared
-    else if ("MaxID" in list[i] && achievements.has(list[i]["MaxID"])) cleared = 1 // Cleared
-    else if ("MaxAltID" in list[i] && achievements.has(list[i]["MaxAltID"])) cleared = 1 // Cleared
-    else if ("MinID" in list[i] && achievements.has(list[i]["MinID"])) cleared = -1 // Maybe
-    else if ("MinID" in list[i] && !achievements.has(list[i]["MinID"])) cleared = 0 // Not cleared
-    else if (!("ID" in list[i])) cleared = -1 // Maybe
-
-    html += "<li class='list-group-item d-flex justify-content-between align-items-center "
-    if (cleared == -1) {
-      html += "text-secondary'><span class='bi-question-square'>"
-    } else if (cleared == 1) {
-      html += "text-success'><span class='bi-check-square'>"
-    } else {
-      html += "text-danger'><span class='bi-square'>"
-    }
-    html += "&nbsp;&nbsp;" + list[i]["Name"] + "</span>"
-    // @TODO: Display date (on hover?)
-    // if (achievements.has(list[i]["ID"])) {
-    //   html += moment.unix(achievements.get(list[i]["ID"])).format('dddd, MMMM Do, YYYY h:mm:ss A')
-    // }
-    html += "</li>"
-  }
-  $(id).html(html)
-}
-
-function renderEmpty() {
-  let categories = ["arr-dungeons", "hw-dungeons", "sb-dungeons", "shb-dungeons",
+let categories = ["arr-dungeons", "hw-dungeons", "sb-dungeons", "shb-dungeons",
                     "arr-trials", "hw-trials", "sb-trials", "shb-trials",
                     "arr-trials-ex", "hw-trials-ex", "sb-trials-ex", "shb-trials-ex",
                     "arr-raids", "hw-raids", "sb-raids", "shb-raids",
                     "arr-raids-s", "hw-raids-s", "sb-raids-s", "shb-raids-s",
                     "sb-exploratory", "shb-exploratory"]
 
-  for (let i = 0; i < categories.length; i++) {
-    $("#" + categories[i]).html("<li class='list-group-item d-flex justify-content-between align-items-center'>No data to display.</li>")
-  }
-}
-
 function renderPage() {
   if (characterData == null) {
     $("#character-name").html("No Data")
     renderError("Character data could not be found. You can load a character from the <a class='alert-link' href='settings.html'>Settings</a>.")
-    renderEmpty()
+    renderEmpty(categories)
     return
   }
 
@@ -310,7 +275,7 @@ function renderPage() {
 
   if (!achievementsPublicData) {
     renderError("The achievements for this character are not public. You can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>character settings</a>.")
-    renderEmpty()
+    renderEmpty(categories)
     return
   }
 
