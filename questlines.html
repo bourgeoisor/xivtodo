@@ -26,7 +26,10 @@
                 <a class="nav-link" href="index.html">Duties</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="todos.html">ToDo's</a>
+                <a class="nav-link active" href="questlines.html">Questlines</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="checklist.html">Checklist</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="settings.html">Settings</a>
@@ -39,7 +42,7 @@
 
     <main class="flex-shrink-0">
       <div class="container">
-        <h1>ToDo's</h1>
+        <h1 id="character-name">Loading character...</h1>
 
         <div id="error-block" class="alert alert-danger" role="alert" style="display: none;">
           <span class="bi-exclamation-triangle-fill"></span>&nbsp;
@@ -49,27 +52,17 @@
         <hr>
 
         <div class="row">
-          <h2>Things to do</h2>
+          <h2>Questlines</h2>
 
           <div class="col-md">
-            <h3>Weeklies <small class="text-muted">&mdash; <span id="weeklies-reset">?</span> until reset</small></h3>
-
-            <ul id="weeklies" class="list-group list-group-flush">
+            <h3>Main Story Quest</h3>
+            <ul id="main-story-quest" class="list-group list-group-flush">
               <div class="spinner-border spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
               </div>
             </ul>
+            <br>
           </div>
-
-          <div class="col-md">
-            <h3>Dailies <small class="text-muted">&mdash; <span id="dailies-reset">?</span> until reset</small></h3>
-
-            <ul id="dailies" class="list-group list-group-flush">
-              <div class="spinner-border spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </ul>
-          </div>       
         </div>
         
       </div>
@@ -83,6 +76,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script type="text/javascript" src="common.js"></script>
-    <script type="text/javascript" src="todos.js"></script>
+    <script type="text/javascript" src="questlines.js"></script>
   </body>
 </html>
