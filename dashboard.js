@@ -7,5 +7,13 @@ function renderPage() {
     }
   
     $("#character-name").html(characterData["Name"])
+
+    let characterInfo = "World: " + characterData["DC"] + "/" + characterData["Server"] + "<br><br>"
+    characterInfo += "Achievements: " + achievementData["List"].length + "<br><br>"
+    characterInfo += "Elemental level: " + characterData["ClassJobsElemental"]["Level"] + "<br>"
+    characterInfo += "Resistance rank: " + characterData["ClassJobsBozjan"]["Level"]
+    $("#character-info").html(characterInfo)
+
+    $("#character-portrait").html("<img width='300px' class='img-thumbnail' src='" + characterData["Portrait"] + "'>")
 }
 renderPage()
