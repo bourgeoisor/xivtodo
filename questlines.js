@@ -44,23 +44,23 @@ sideStoryQuests = [
 dutiesQuests = [
   {Name: "Bahamut", ID: 1030},
   {Name: "Alexander", ID: 1629},
-  {Name: "Omega"},
-  {Name: "Eden"}, 
+  {Name: "Omega", MinID: 2118},
+  {Name: "Eden", MinID: 2719},
   {Name: "Crystal Tower", ID: 1060},
-  {Name: "Shadow of Mhach"},
+  {Name: "Shadow of Mhach", MinID: 1689},
   {Name: "Return to Ivalice", ID: 2243},
   {Name: "YoRHa: Dark Apocalypse", ID: 2852},
-  {Name: "The Warring Triad"},
-  {Name: "The Four Lords"},
+  {Name: "The Warring Triad", MinID: 1685},
+  {Name: "The Four Lords", MinID: 2165},
   {Name: "The Sorrow of Werlyt", ID: 2887}
 ]
 
 relicQuests = [
-  {Name: "Zodiac Weapons"},
-  {Name: "Anima Weapons"},
-  {Name: "The Forbidden Land, Eureka"},
-  {Name: "Resistance Weapons"},
-  {Name: "Skysteel Tools"},
+  {Name: "Zodiac Weapons", ID: 1081},
+  {Name: "Anima Weapons", MinID: 1394},
+  {Name: "The Forbidden Land, Eureka", ID: 2231},
+  {Name: "Resistance Weapons", MinID: 2884},
+  {Name: "Skysteel Tools", ID: 2798}
 ]
 
 beastTribeQuests = [
@@ -142,7 +142,6 @@ roleQuests = [
   {Name: "Void Quests", ID: 2715}
 ]
 
-// TODO: update following list:
 let categories = ["main-story-quest", "side-story-quests", "duties-quests", "relic-quests",
                   "beast-tribe-quests", "allied-beast-tribe-quests", "custom-delivery-quests",
                   "combat-job-quests", "gatherer-job-quests", "crafter-job-quests", "role-quests"]
