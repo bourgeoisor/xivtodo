@@ -1,8 +1,9 @@
+// Render character information.
 function renderPage() {
     if (characterData == null) {
-      renderError("Character data could not be found. You can load a character from the <a class='alert-link' href='settings.html'>Settings</a>.")
-      renderEmpty(categories)
-      return
+        renderError("Character data could not be found. You can load a character from the <a class='alert-link' href='settings.html'>Settings</a>.")
+        renderEmpty(categories)
+        return
     }
 
     let characterInfo = "World: " + characterData["DC"] + "/" + characterData["Server"] + "<br><br>"
