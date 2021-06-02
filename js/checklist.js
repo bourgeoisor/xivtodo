@@ -44,12 +44,11 @@ if (todosCompletedData != null) todosCompleted = new Set(todosCompletedData)
 let weekliesHtml = ""
 for (let i = 0; i < weeklies.length; i++) {
     if (todosHidden.has(weeklies[i]["ID"])) continue
-    weekliesHtml += "<li class='list-group-item d-flex justify-content-between align-items-center'>"
-                 + "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='"
+
+    weekliesHtml += "<label class='list-group-item user-select-none'><input class='form-check-input' type='checkbox' value='' id='"
                  + weeklies[i]["Name"] + "' onclick='todoToggled(" + weeklies[i]["ID"] + ")'"
     if (todosCompleted.has(weeklies[i]["ID"])) weekliesHtml += " checked"
-    weekliesHtml += "><label class='form-check-label' for='" + weeklies[i]["Name"] + "'>"
-                 + weeklies[i]["Name"] + "</label></div></li>"
+    weekliesHtml += ">&nbsp;&nbsp;" + weeklies[i]["Name"] + "</label>"
 }
 $("#weeklies").html(weekliesHtml)
 
@@ -57,12 +56,11 @@ $("#weeklies").html(weekliesHtml)
 let dailiesHtml = ""
 for (let i = 0; i < dailies.length; i++) {
     if (todosHidden.has(dailies[i]["ID"])) continue
-    dailiesHtml += "<li class='list-group-item d-flex justify-content-between align-items-center'>"
-                + "<div class='form-check'><input class='form-check-input' type='checkbox' value='' id='"
-                + dailies[i]["Name"] + "' onclick='todoToggled(" + dailies[i]["ID"] + ")'"
+
+    dailiesHtml += "<label class='list-group-item user-select-none'><input class='form-check-input' type='checkbox' value='' id='"
+                 + dailies[i]["Name"] + "' onclick='todoToggled(" + dailies[i]["ID"] + ")'"
     if (todosCompleted.has(dailies[i]["ID"])) dailiesHtml += " checked"
-    dailiesHtml += "><label class='form-check-label' for='" + dailies[i]["Name"] + "'>"
-                + dailies[i]["Name"] + "</label></div></li>"
+    dailiesHtml += ">&nbsp;&nbsp;" + dailies[i]["Name"] + "</label>"
 }
 $("#dailies").html(dailiesHtml)
 
