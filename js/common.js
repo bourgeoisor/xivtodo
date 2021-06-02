@@ -69,6 +69,7 @@ function renderEmpty(categories) {
 }
 
 // Set global variables from local storage data
+let lastUpdated = localStorage.getItem("lastUpdated")
 let characterID = localStorage.getItem("characterID")
 let spoilersOption = localStorage.getItem("spoilersOption")
 let characterData = JSON.parse(localStorage.getItem("character"))

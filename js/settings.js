@@ -16,12 +16,17 @@ function saveSettings() {
             $("#settings-save-btn").html("Save")
         },
         success: function(data) {
+            lastUpdated = parseInt(Date.now()/1000)
+            localStorage.setItem("lastUpdated", lastUpdated)
+
             localStorage.setItem("characterID", settingsFormValues.get("inputCharacterID"))
             localStorage.setItem("spoilersOption", settingsFormValues.get("inputSpoilersOption"))
 
             localStorage.setItem("character", JSON.stringify(data["Character"]))
             localStorage.setItem("achievements", JSON.stringify(data["Achievements"]))
             localStorage.setItem("achievementsPublic", JSON.stringify(data["AchievementsPublic"]))
+
+            $("#last-updated").html("Last updated on " + moment.unix(lastUpdated).format("lll") + ".")
 
             $("#settings-save-btn").prop('disabled', false)
             $("#settings-save-btn").html("Save")
@@ -36,4 +41,8 @@ if (characterID != null) {
 if (spoilersOption != null) {
     $("#inputSpoilersOption").val(spoilersOption);
     $('input:radio[name=inputSpoilersOption]')[spoilersOption].checked = true;
+}
+
+if (lastUpdated != null) {
+    $("#last-updated").html("Last updated on " + moment.unix(lastUpdated).format("lll") + ".")
 }
