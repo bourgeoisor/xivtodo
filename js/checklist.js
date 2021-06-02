@@ -1,19 +1,19 @@
 let weeklies = [
     {ID: 100, Name: "Weekly repeatable quests"},
-    {ID: 101, Name: "Hunt marks"},
+    {ID: 101, Name: "Weekly hunt marks"},
+    {ID: 104, Name: "Squadron priority mission"},
     {ID: 102, Name: "Challenge logs"},
     {ID: 103, Name: "Beast tribes"},
-    {ID: 104, Name: "Squadron priority mission"},
     {ID: 105, Name: "Custom delivery"},
     {ID: 106, Name: "Wondrous Tails"},
     {ID: 107, Name: "Cap weekly tomestone"},
+    {ID: 114, Name: "Doman enclave donation"},
+    {ID: 111, Name: "Normal raid lockouts"},
+    {ID: 112, Name: "Savage raid lockouts"},
+    {ID: 113, Name: "Alliance raid lockout"},
     {ID: 108, Name: "Faux Hollows"},
     {ID: 109, Name: "Masque Carnivale"},
     {ID: 110, Name: "Blue mage logs"},
-    {ID: 111, Name: "Normal raid lockouts"},
-    {ID: 112, Name: "Savage raid lockouts"},
-    {ID: 113, Name: "Alliance raid lockouts"},
-    {ID: 114, Name: "Doman enclave donation"},
     {ID: 115, Name: "Gold Saucer tournaments"},
     {ID: 116, Name: "Fashion report"},
     {ID: 117, Name: "Jumbo Cactpot"}
@@ -21,15 +21,15 @@ let weeklies = [
 
 let dailies = [
     {ID: 200, Name: "Daily repeatable quests"},
-    {ID: 201, Name: "Hunt marks"},
-    {ID: 202, Name: "Map allocation"},
+    {ID: 201, Name: "Daily hunt marks"},
     {ID: 203, Name: "Squadron missions"},
     {ID: 204, Name: "Grand company turn-ins"},
-    {ID: 205, Name: "Duty roulettes"},
-    {ID: 206, Name: "Mini Cactpot"},
     {ID: 207, Name: "Retainer ventures"},
     {ID: 208, Name: "Housing gardening"},
-    {ID: 209, Name: "Daily leve allowance"}
+    {ID: 202, Name: "Treasure map allowance"},
+    {ID: 209, Name: "Leve allowance"},
+    {ID: 205, Name: "Duty roulettes"},
+    {ID: 206, Name: "Mini Cactpot"}
 ]
 
 let todosHidden = new Set()
