@@ -68,7 +68,7 @@ function renderEmpty(categories) {
   }
 }
 
-// Set global variables from local storage data
+// Set global variables from local storage data.
 let lastUpdated = localStorage.getItem("lastUpdated")
 let characterID = localStorage.getItem("characterID")
 let spoilersOption = localStorage.getItem("spoilersOption")
@@ -76,3 +76,6 @@ let characterData = JSON.parse(localStorage.getItem("character"))
 let achievementData = JSON.parse(localStorage.getItem("achievements"))
 let achievementsPublicData = JSON.parse(localStorage.getItem("achievementsPublic"))
 let achievements = new Map()
+
+// Render the character name, if available.
+if (characterData != null) $("#character-name").html("&nbsp;&mdash; " + characterData["Name"])

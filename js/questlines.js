@@ -148,13 +148,10 @@ let categories = ["main-story-quest", "side-story-quests", "duties-quests", "rel
 
 function renderPage() {
     if (characterData == null) {
-        $("#character-name").html("No Data")
         renderError("Character data could not be found. You can load a character from the <a class='alert-link' href='settings.html'>Settings</a>.")
         renderEmpty(categories)
         return
       }
-    
-      $("#character-name").html(characterData["Name"])
 
       if (!achievementsPublicData) {
         renderError("The achievements for this character are not public. You can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/'>character settings</a>.")
