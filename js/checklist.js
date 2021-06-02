@@ -40,30 +40,32 @@ let todosCompleted = new Set()
 let todosCompletedData = JSON.parse(localStorage.getItem("todosCompleted"))
 if (todosCompletedData != null) todosCompleted = new Set(todosCompletedData)
 
+// Render a checklist.
+function renderChecklist(htmlID, checklist) {
+    let html = ""
+    for (let i = 0; i < checklist.length; i++) {
+        if (todosHidden.has(checklist[i]["ID"])) continue
+
+        html += "<label class='list-group-item user-select-none'><input class='form-check-input' type='checkbox' value='' id='"
+                        + checklist[i]["Name"] + "' onclick='todoToggled(" + checklist[i]["ID"] + ")'"
+        if (todosCompleted.has(checklist[i]["ID"])) html += " checked"
+        html += ">&nbsp;&nbsp;"
+        if (todosCompleted.has(checklist[i]["ID"])) html += "<span class='text-primary text-decoration-line-through'>"
+        html += checklist[i]["Name"]
+        if (todosCompleted.has(checklist[i]["ID"])) html += "</span>"
+        html += "</label>"
+    }
+    $(htmlID).html(html)
+}
+
 // Render the weeklies checklist.
-let weekliesHtml = ""
-for (let i = 0; i < weeklies.length; i++) {
-    if (todosHidden.has(weeklies[i]["ID"])) continue
-
-    weekliesHtml += "<label class='list-group-item user-select-none'><input class='form-check-input' type='checkbox' value='' id='"
-                 + weeklies[i]["Name"] + "' onclick='todoToggled(" + weeklies[i]["ID"] + ")'"
-    if (todosCompleted.has(weeklies[i]["ID"])) weekliesHtml += " checked"
-    weekliesHtml += ">&nbsp;&nbsp;" + weeklies[i]["Name"] + "</label>"
+function renderPage() {
+    renderChecklist("#weeklies", weeklies)
+    renderChecklist("#dailies", dailies)
 }
-$("#weeklies").html(weekliesHtml)
+renderPage()
 
-// Render the dailies checklist.
-let dailiesHtml = ""
-for (let i = 0; i < dailies.length; i++) {
-    if (todosHidden.has(dailies[i]["ID"])) continue
-
-    dailiesHtml += "<label class='list-group-item user-select-none'><input class='form-check-input' type='checkbox' value='' id='"
-                 + dailies[i]["Name"] + "' onclick='todoToggled(" + dailies[i]["ID"] + ")'"
-    if (todosCompleted.has(dailies[i]["ID"])) dailiesHtml += " checked"
-    dailiesHtml += ">&nbsp;&nbsp;" + dailies[i]["Name"] + "</label>"
-}
-$("#dailies").html(dailiesHtml)
-
+// Save the state of todos. This is called from toggling a todo.
 function todoToggled(id) {
     if (todosCompleted.has(id)) {
         todosCompleted.delete(id)
@@ -72,6 +74,7 @@ function todoToggled(id) {
     }
 
     localStorage.setItem("todosCompleted", JSON.stringify(Array.from(todosCompleted)))
+    renderPage()
 }
 
 // Find the timings between now and the next daily and weekly resets,
