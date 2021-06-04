@@ -50,6 +50,7 @@ dutiesQuests = [
     {Name: "Shadow of Mhach", MinID: 1689},
     {Name: "Return to Ivalice", ID: 2243},
     {Name: "YoRHa: Dark Apocalypse", ID: 2852},
+    {Name: "Primals", MinID: 788},
     {Name: "The Warring Triad", MinID: 1685},
     {Name: "The Four Lords", MinID: 2165},
     {Name: "The Sorrow of Werlyt", ID: 2887}
@@ -81,9 +82,9 @@ beastTribeQuests = [
 ]
 
 alliedBeastTribeQuests = [
-    {Name: "A Realm Reborn", ID: 1026},
-    {Name: "Heavensward", ID: 1627},
-    {Name: "Stormblood", ID: 2235}
+    {Name: "Allied Beast Tribe", ID: 1026},
+    {Name: "Heavensward Beast Tribe", ID: 1627},
+    {Name: "Stormblood Beast Tribe", ID: 2235}
 ]
 
 customDeliveryQuests = [
@@ -114,24 +115,24 @@ combatJobQuests = [
     {Name: "Black Mage", ID: 2312},
     {Name: "Summoner", ID: 2313},
     {Name: "Red Mage", ID: 2319},
-    {Name: "Blue Mage"}
+    {Name: "Blue Mage", MinID: 2725}
 ]
 
 gathererJobQuests = [
-    {Name: "Miner"},
-    {Name: "Botanist"},
-    {Name: "Fisher"}
+    {Name: "Miner", MinID: 2273},
+    {Name: "Botanist", MinID: 2272},
+    {Name: "Fisher", MinID: 2274}
 ]
 
 crafterJobQuests = [
-    {Name: "Carpenter"},
-    {Name: "Blacksmith"},
-    {Name: "Armorer"},
-    {Name: "Goldsmith"},
-    {Name: "Leatherworker"},
-    {Name: "Weaver"},
-    {Name: "Alchemist"},
-    {Name: "Culinarian"}
+    {Name: "Carpenter", MinID: 2264},
+    {Name: "Blacksmith", MinID: 2265},
+    {Name: "Armorer", MinID: 2266},
+    {Name: "Goldsmith", MinID: 2267},
+    {Name: "Leatherworker", MinID: 2268},
+    {Name: "Weaver", MinID: 2269},
+    {Name: "Alchemist", MinID: 2270},
+    {Name: "Culinarian", MinID: 2271}
 ]
 
 roleQuests = [

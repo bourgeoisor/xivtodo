@@ -142,7 +142,7 @@ let shbTrials = [
 ]
 
 let arrTrialsEx = [
-    {Name: "The Minstrel's Ballad: Ultima's Bane", Spoilers: true, SpoilersUntil: 788},
+    {Name: "The Minstrel's Ballad: Ultima's Bane", Spoilers: true, SpoilersUntil: 788, MaxID: 1000},
     {Name: "The Howling Eye (Extreme)", Spoilers: true, SpoilersUntil: 787, ID: 856},
     {Name: "The Navel (Extreme)", Spoilers: true, SpoilersUntil: 785, ID: 857},
     {Name: "The Bowl of Embers (Extreme)", Spoilers: true, SpoilersUntil: 783, ID: 855},
