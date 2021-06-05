@@ -27,6 +27,10 @@ const routes = [
     name: "Settings",
     component: () => import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
   },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/",
+  },
 ];
 
 const router = createRouter({
