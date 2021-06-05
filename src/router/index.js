@@ -10,26 +10,22 @@ const routes = [
   {
     path: "/duties",
     name: "Duties",
-    component: () =>
-      import(/* webpackChunkName: "duties" */ "../views/Duties.vue"),
+    component: () => import(/* webpackChunkName: "duties" */ "../views/Duties.vue"),
   },
   {
     path: "/questlines",
     name: "Questlines",
-    component: () =>
-      import(/* webpackChunkName: "questlines" */ "../views/Questlines.vue"),
+    component: () => import(/* webpackChunkName: "questlines" */ "../views/Questlines.vue"),
   },
   {
     path: "/checklist",
     name: "Checklist",
-    component: () =>
-      import(/* webpackChunkName: "checklist" */ "../views/Checklist.vue"),
+    component: () => import(/* webpackChunkName: "checklist" */ "../views/Checklist.vue"),
   },
   {
     path: "/settings",
     name: "Settings",
-    component: () =>
-      import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
+    component: () => import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
   },
 ];
 
