@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="author" content="Olivier Bourgeois">
+    <title>404</title>
     <script>
-        const segment = 1
-
-        sessionStorage.redirect = '/' + location.pathname.slice(1).split('/').slice(segment).join('/')
-
-        location.replace(
-            location.pathname.split('/').slice(0, 1 + segment).join('/')
-        )
+        sessionStorage.redirect = location.pathname
+        location.replace("/")
     </script>
 </head>
 </html>
