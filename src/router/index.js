@@ -29,7 +29,9 @@ const routes = [
   },
   {
     path: "/:catchAll(.*)",
-    redirect: "/",
+    redirect: {
+      name: "Dashboard",
+    },
   },
 ];
 
