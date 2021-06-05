@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Settings</h1>
-    <hr>
+    <hr />
     <form name="settings-form" id="settings-form">
       <div class="row">
         <div class="col-md-6">
@@ -27,16 +27,21 @@
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="inputSpoilersOption" id="inputSpoilersOption2" value="2">
-            <label class="form-check-label" for="inputSpoilersOption2">
-              Show all duties
-            </label>
+            <label class="form-check-label" for="inputSpoilersOption2">Show all duties</label>
           </div>
           <div class="form-text">Select your preference in spoiler tags.</div>
 
-          <br>
-          <button type="button" id="settings-save-btn" class="btn btn-primary" onclick="saveSettings()">Save</button>
+          <br />
+          <button
+            type="button"
+            id="settings-save-btn"
+            class="btn btn-primary"
+            onclick="saveSettings()"
+          >
+            Save
+          </button>
 
-          <br><br>
+          <br /><br />
           <span id="last-updated" class="text-muted"></span>
         </div>
       </div>

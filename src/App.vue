@@ -10,22 +10,22 @@
 
 <style lang="scss">
 #app {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 hr {
-    height: 0px;
-    border: none;
-    border-top: 1px solid #c8c8c8;
-    opacity: 1;
-    background-color: initial;
+  height: 0px;
+  border: none;
+  border-top: 1px solid #c8c8c8;
+  opacity: 1;
+  background-color: initial;
 }
 </style>
 
@@ -38,6 +38,6 @@ export default {
   components: {
     TheNavbar,
     TheFooter,
-  }
-}
+  },
+};
 </script>

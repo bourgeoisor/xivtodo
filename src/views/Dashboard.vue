@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Dashboard</h1>
-    <hr>
+    <hr />
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>

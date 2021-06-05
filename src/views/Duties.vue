@@ -1,6 +1,6 @@
 <template>
   <div class="container">
     <h1>Duties</h1>
-    <hr>
+    <hr />
   </div>
 </template>
