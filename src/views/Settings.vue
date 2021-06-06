@@ -1,6 +1,12 @@
 <template>
   <div class="container">
-    <h1>Settings</h1>
+    <h1>
+      Settings
+      <small v-if="this.$store.getters.character.Name" class="text-muted">
+        - {{ this.$store.getters.character.Name }}
+      </small>
+    </h1>
+    <Alert v-if="error" :msg="error" />
     <hr />
     <form name="settings-form" id="settings-form">
       <div class="row">
@@ -9,6 +15,7 @@
 
           <div class="form-floating mb-3">
             <input
+              v-model="settings.characterId"
               type="text"
               class="form-control"
               name="inputCharacterID"
@@ -29,6 +36,7 @@
 
           <div class="form-check">
             <input
+              v-model="settings.spoilersOption"
               class="form-check-input"
               type="radio"
               name="inputSpoilersOption"
@@ -41,12 +49,12 @@
           </div>
           <div class="form-check">
             <input
+              v-model="settings.spoilersOption"
               class="form-check-input"
               type="radio"
               name="inputSpoilersOption"
               id="inputSpoilersOption1"
               value="1"
-              checked
             />
             <label class="form-check-label" for="inputSpoilersOption1">
               Blur out non-completed story-related duties
@@ -54,6 +62,7 @@
           </div>
           <div class="form-check">
             <input
+              v-model="settings.spoilersOption"
               class="form-check-input"
               type="radio"
               name="inputSpoilersOption"
@@ -66,18 +75,80 @@
 
           <br />
           <button
+            v-if="saving"
             type="button"
             id="settings-save-btn"
             class="btn btn-primary"
-            onclick="saveSettings()"
+            disabled
+          >
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Saving...
+          </button>
+          <button
+            v-else
+            @click="saveSettings"
+            type="button"
+            id="settings-save-btn"
+            class="btn btn-primary"
           >
             Save
           </button>
 
           <br /><br />
-          <span id="last-updated" class="text-muted"></span>
+          <span v-if="settings.lastUpdated" class="text-muted">
+            Last updated on {{ new Date(settings.lastUpdated).toISOString() }}.
+          </span>
         </div>
       </div>
     </form>
   </div>
 </template>
+
+<script>
+import Alert from "@/components/Alert.vue";
+
+export default {
+  name: "Settings",
+  data() {
+    return {
+      saving: false,
+      error: "",
+      settings: { ...this.$store.state.settings },
+    };
+  },
+  components: {
+    Alert,
+  },
+  methods: {
+    saveSettings() {
+      this.saving = true;
+
+      fetch("https://xivapi.com/character/" + this.settings.characterId + "?data=AC", {
+        method: "GET",
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw response;
+          }
+        })
+        .then((characterData) => {
+          this.settings.lastUpdated = parseInt(Date.now());
+          this.$store.commit("updateSettings", this.settings);
+          this.$store.commit("updateCharacterData", characterData);
+        })
+        .catch((err) => {
+          if (err.status == 404) {
+            this.error = "The character ID you have entered does not exist.";
+          } else {
+            this.error = "An unknown error has ocurred while fetching character data.";
+          }
+        })
+        .finally(() => {
+          this.saving = false;
+        });
+    },
+  },
+};
+</script>

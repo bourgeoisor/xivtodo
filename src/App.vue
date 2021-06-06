@@ -1,10 +1,10 @@
 <template>
   <div class="d-flex flex-column min-vh-100">
-    <TheNavbar></TheNavbar>
+    <TheNavbar />
     <main class="flex-shrink-0">
       <router-view />
     </main>
-    <TheFooter></TheFooter>
+    <TheFooter />
   </div>
 </template>
 
