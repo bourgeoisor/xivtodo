@@ -11,12 +11,12 @@
           <small class="text-muted">&mdash; <span id="weeklies-reset">?</span> until reset</small>
         </h3>
 
-        <ul id="weeklies" class="list-group list-group-flush">
+        <ul class="list-group list-group-flush">
           <ChecklistItem
             v-for="item of weeklies"
-            :key="item.Name"
+            :key="item.Title"
             :id="item.ID"
-            :title="item.Name"
+            :title="item.Title"
           />
         </ul>
         <br />
@@ -28,8 +28,13 @@
           <small class="text-muted">&mdash; <span id="dailies-reset">?</span> until reset</small>
         </h3>
 
-        <ul id="dailies" class="list-group list-group-flush">
-          <ChecklistItem v-for="item of dailies" :key="item.ID" :id="item.ID" :title="item.Name" />
+        <ul class="list-group list-group-flush">
+          <ChecklistItem
+            v-for="item of dailies"
+            :key="item.Title"
+            :id="item.ID"
+            :title="item.Title"
+          />
         </ul>
         <br />
       </div>
@@ -45,36 +50,36 @@ export default {
   data() {
     return {
       weeklies: [
-        { ID: 100, Name: "Weekly repeatable quests" },
-        { ID: 101, Name: "Weekly hunt marks" },
-        { ID: 102, Name: "Squadron priority mission" },
-        { ID: 103, Name: "Challenge logs" },
-        { ID: 104, Name: "Custom delivery" },
-        { ID: 105, Name: "Wondrous Tails" },
-        { ID: 106, Name: "Cap weekly tomestone" },
-        { ID: 107, Name: "Doman enclave donation" },
-        { ID: 108, Name: "Normal raid lockouts" },
-        { ID: 109, Name: "Savage raid lockouts" },
-        { ID: 110, Name: "Alliance raid lockout" },
-        { ID: 111, Name: "Faux Hollows" },
-        { ID: 112, Name: "Masque Carnivale" },
-        { ID: 113, Name: "Blue mage logs" },
-        { ID: 114, Name: "Gold Saucer tournaments" },
-        { ID: 115, Name: "Fashion report" },
-        { ID: 116, Name: "Jumbo Cactpot" },
+        { ID: 100, Title: "Weekly repeatable quests" },
+        { ID: 101, Title: "Weekly hunt marks" },
+        { ID: 102, Title: "Squadron priority mission" },
+        { ID: 103, Title: "Challenge logs" },
+        { ID: 104, Title: "Custom delivery" },
+        { ID: 105, Title: "Wondrous Tails" },
+        { ID: 106, Title: "Cap weekly tomestone" },
+        { ID: 107, Title: "Doman enclave donation" },
+        { ID: 108, Title: "Normal raid lockouts" },
+        { ID: 109, Title: "Savage raid lockouts" },
+        { ID: 110, Title: "Alliance raid lockout" },
+        { ID: 111, Title: "Faux Hollows" },
+        { ID: 112, Title: "Masque Carnivale" },
+        { ID: 113, Title: "Blue mage logs" },
+        { ID: 114, Title: "Gold Saucer tournaments" },
+        { ID: 115, Title: "Fashion report" },
+        { ID: 116, Title: "Jumbo Cactpot" },
       ],
       dailies: [
-        { ID: 200, Name: "Daily repeatable quests" },
-        { ID: 201, Name: "Daily hunt marks" },
-        { ID: 202, Name: "Squadron missions" },
-        { ID: 203, Name: "Grand company turn-ins" },
-        { ID: 204, Name: "Retainer ventures" },
-        { ID: 205, Name: "Housing gardening" },
-        { ID: 206, Name: "Beast tribe quests" },
-        { ID: 207, Name: "Treasure map allowance" },
-        { ID: 208, Name: "Leve allowance" },
-        { ID: 209, Name: "Duty roulettes" },
-        { ID: 210, Name: "Mini Cactpot" },
+        { ID: 200, Title: "Daily repeatable quests" },
+        { ID: 201, Title: "Daily hunt marks" },
+        { ID: 202, Title: "Squadron missions" },
+        { ID: 203, Title: "Grand company turn-ins" },
+        { ID: 204, Title: "Retainer ventures" },
+        { ID: 205, Title: "Housing gardening" },
+        { ID: 206, Title: "Beast tribe quests" },
+        { ID: 207, Title: "Treasure map allowance" },
+        { ID: 208, Title: "Leve allowance" },
+        { ID: 209, Title: "Duty roulettes" },
+        { ID: 210, Title: "Mini Cactpot" },
       ],
     };
   },
@@ -82,4 +87,30 @@ export default {
     ChecklistItem,
   },
 };
+
+// function setTimeUntilResets() {
+//     // JST is +9 hours relative to UTC.
+//     let now = moment().utc().add(9, 'hours')
+
+//     // Find the diff until the next midnight JST and render it.
+//     let nextDailyReset = now.clone().startOf('day').add(1, 'day')
+//     let dailyResetDuration = moment.duration(nextDailyReset.diff(now))
+
+//     let dailiesReset = ""
+//     if (dailyResetDuration.hours()%24 > 0) dailiesReset = dailyResetDuration.hours()%24 + "h " + dailyResetDuration.minutes() + "m"
+//     else dailiesReset = dailyResetDuration.minutes() + "m"
+//     $("#dailies-reset").html(dailiesReset)
+
+//     // Find the diff until the next Tuesday 5pm JST and render it.
+//     let nextWeeklyReset = now.clone().startOf('isoWeek').add(1, 'week').add(17 , 'hours').day("tuesday")
+//     let weeklyResetDuration = moment.duration(nextWeeklyReset.diff(now))
+
+//     let weekliesReset = ""
+//     if (weeklyResetDuration.days()%7 > 0) weekliesReset = weeklyResetDuration.days()%7 + "d " + weeklyResetDuration.hours() + "h"
+//     else if (weeklyResetDuration.hours() > 0) weekliesReset = weeklyResetDuration.hours() + "h " + weeklyResetDuration.minutes() + "m"
+//     else weekliesReset = weeklyResetDuration.minutes() + "m"
+//     $("#weeklies-reset").html(weekliesReset)
+// }
+// setTimeUntilResets()
+// setInterval(setTimeUntilResets, 60*1000)
 </script>

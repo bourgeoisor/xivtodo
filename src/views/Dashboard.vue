@@ -17,7 +17,6 @@
         <span v-if="this.$store.getters.character.Bio != '-'">
           <b>Bio:</b> {{ this.$store.getters.character.Bio }}
         </span>
-        <span v-else class="text-muted fst-italic">This character doesn't have a bio.</span>
         <br />
       </div>
 
