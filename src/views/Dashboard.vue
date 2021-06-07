@@ -1,11 +1,6 @@
 <template>
   <div class="container">
-    <h1>
-      Dashboard
-      <small v-if="this.$store.getters.characterData" class="text-muted">
-        - {{ this.$store.getters.character.Name }}
-      </small>
-    </h1>
+    <h1>Dashboard</h1>
     <Alert
       v-if="!this.$store.getters.characterData"
       msg="Character data could not be found. You can load a character from the <a href='/settings' class='alert-link'>Settings</router-link>."

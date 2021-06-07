@@ -1,11 +1,6 @@
 <template>
   <div class="container">
-    <h1>
-      Settings
-      <small v-if="this.$store.getters.character.Name" class="text-muted">
-        - {{ this.$store.getters.character.Name }}
-      </small>
-    </h1>
+    <h1>Settings</h1>
     <Alert v-if="error" :msg="error" />
     <hr />
     <form name="settings-form" id="settings-form">

@@ -32,19 +32,47 @@
               <router-link to="/settings" class="nav-link">Settings</router-link>
             </li>
           </ul>
+          <li
+            v-if="this.$store.getters.characterData"
+            id="avatar-name"
+            class="navbar-nav nav-item d-none d-lg-block"
+          >
+            <span class="nav-link">{{ this.$store.getters.character.Name }}</span>
+          </li>
+          <img
+            v-if="this.$store.getters.characterData"
+            class="avatar d-none d-lg-block"
+            :src="this.$store.getters.character.Avatar"
+          />
         </div>
       </div>
     </nav>
   </header>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 nav {
   margin-bottom: 10px;
 
   .router-link-exact-active {
     color: white !important;
   }
+}
+
+#avatar-name {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.nav-link:hover {
+  color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 34px;
 }
 </style>
 

@@ -9,7 +9,7 @@
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #footer-copyrights {
   font-size: 0.6rem;
 }
