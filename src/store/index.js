@@ -13,6 +13,15 @@ export default createStore({
     character(state) {
       return state.characterData?.Character || {};
     },
+    characterData(state) {
+      return state.characterData?.Character?.Name;
+    },
+    achievements(state) {
+      return state.characterData?.Achievements || {};
+    },
+    achievementsPublic(state) {
+      return state.characterData?.AchievementsPublic || false;
+    },
   },
   mutations: {
     initialiseStore(state) {

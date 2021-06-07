@@ -1,7 +1,7 @@
 <template>
   <div id="error-block" class="alert alert-danger" role="alert">
     <span class="bi-exclamation-triangle-fill"></span>&nbsp;
-    <span>{{ msg }}</span>
+    <span v-html="msg"></span>
   </div>
 </template>
 
