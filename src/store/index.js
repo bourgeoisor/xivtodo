@@ -8,6 +8,8 @@ export default createStore({
       spoilersOption: "1",
     },
     characterData: {},
+    todosChecked: [],
+    todosHidden: [],
   },
   getters: {
     character(state) {
@@ -34,6 +36,14 @@ export default createStore({
     },
     updateCharacterData(state, payload) {
       state.characterData = payload;
+    },
+    todoChecked(state, payload) {
+      let present = state.todosChecked.indexOf(payload.id) >= 0;
+      if (present && !payload.checked) {
+        state.todosChecked = state.todosChecked.filter((item) => item != payload.id);
+      } else if (!present && payload.checked) {
+        state.todosChecked.push(payload.id);
+      }
     },
   },
   actions: {},

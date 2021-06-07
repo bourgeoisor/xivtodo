@@ -34,8 +34,7 @@
           </ul>
           <li
             v-if="this.$store.getters.characterData"
-            id="avatar-name"
-            class="navbar-nav nav-item d-none d-lg-block"
+            class="navbar-nav nav-item d-none d-lg-block user-select-none"
           >
             <span class="nav-link">{{ this.$store.getters.character.Name }}</span>
           </li>
@@ -57,13 +56,6 @@ nav {
   .router-link-exact-active {
     color: white !important;
   }
-}
-
-#avatar-name {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 .nav-link:hover {
