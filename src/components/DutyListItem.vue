@@ -2,24 +2,24 @@
   <li
     class="list-group-item d-flex justify-content-between align-items-center"
     :class="{
-      'text-secondary': duty.clearedMaybe,
-      'text-success': duty.clearedYes,
-      'text-danger': duty.clearedNo,
+      'text-secondary': duty.cleared == -1,
+      'text-success': duty.cleared == 1,
+      'text-danger': duty.cleared == 0,
     }"
   >
     <span
       :class="{
-        'bi-slash-square': duty.clearedMaybe,
-        'bi-check-square': duty.clearedYes,
-        'bi-square': duty.clearedNo,
+        'bi-slash-square': duty.cleared == -1,
+        'bi-check-square': duty.cleared == 1,
+        'bi-square': duty.cleared == 0,
       }"
     >
       &nbsp;
       <span
         :class="{
-          'blur-maybe': duty.blur && duty.clearedMaybe,
-          'blur-cleared': duty.blur && duty.clearedYes,
-          'blur-uncleared': duty.blur && duty.clearedNo,
+          'blur-maybe': duty.blur && duty.cleared == -1,
+          'blur-cleared': duty.blur && duty.cleared == 1,
+          'blur-uncleared': duty.blur && duty.cleared == 0,
           'user-select-none': duty.blur,
           bold: duty.Bold,
         }"

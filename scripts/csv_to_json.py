@@ -10,17 +10,19 @@ def csv_to_json(csvFilePath, jsonFilePath, minified=True):
     jsonObject = {}
 
     with open(csvFilePath, encoding='utf-8') as csvf: 
-        csvReader = csv.DictReader(csvf) 
+        csvReader = csv.DictReader(csvf)
 
         for row in csvReader:
             rowRef = row.copy()
             for key in rowRef.keys():
                 if row[key] == "TRUE":
                     row[key] = True
-                if row[key] == "FALSE":
+                elif row[key] == "FALSE":
                     row[key] = False
-                if row[key] == "":
+                elif row[key] == "":
                     row.pop(key)
+                elif key in ["ID", "MinID", "MaxID", "MaxAltID", "SpoilersUntil"]:
+                    row[key] = int(row[key])
             
             if len(row) > 0:
                 if row["Category"] not in jsonObject:
