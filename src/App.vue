@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column min-vh-100">
+  <div :class="{ night: isNight }" class="d-flex flex-column min-vh-100">
     <TheNavbar />
     <main class="flex-shrink-0">
       <router-view />
@@ -14,6 +14,21 @@
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.night {
+  color: #dddddd;
+  background-color: #1c2024;
+
+  .text-secondary {
+    color: #a2a4a6 !important;
+  }
+
+  .list-group-item {
+    color: #dddddd;
+    background-color: #1c2024;
+    border-color: #aaa;
+  }
 }
 
 h2 {
@@ -35,6 +50,11 @@ import TheFooter from "@/components/TheFooter.vue";
 
 export default {
   name: "App",
+  data() {
+    return {
+      isNight: true,
+    };
+  },
   components: {
     TheNavbar,
     TheFooter,

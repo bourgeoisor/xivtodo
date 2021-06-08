@@ -9,7 +9,7 @@
   >
     <span
       :class="{
-        'bi-question-square': clearedMaybe,
+        'bi-slash-square': clearedMaybe,
         'bi-check-square': clearedYes,
         'bi-square': clearedNo,
       }"

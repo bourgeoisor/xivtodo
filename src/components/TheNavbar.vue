@@ -58,6 +58,10 @@ nav {
   }
 }
 
+.night nav {
+  border-bottom: 1px solid #333333;
+}
+
 span.nav-link:hover {
   color: rgba(255, 255, 255, 0.55) !important;
 }
