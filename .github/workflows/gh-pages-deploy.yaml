@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - vuejs
+      - main
 jobs:
   gh-pages-deploy:
     name: Deploying to GitHub Pages
