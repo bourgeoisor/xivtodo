@@ -10,9 +10,9 @@
       <div v-if="this.$store.getters.characterData" class="col-md d-none d-md-block">
         <img id="character-portrait" :src="this.$store.getters.character.Portrait" />
         <br />
-        <!-- <span v-if="this.$store.getters.character.Bio != '-'">
-          <b>Bio:</b> {{ this.$store.getters.character.Bio }}
-        </span> -->
+        <span v-if="this.$store.getters.character.Bio != '-'" class="fst-italic">
+          “{{ this.$store.getters.character.Bio }}”
+        </span>
         <br />
       </div>
 
@@ -43,16 +43,10 @@
               ]
             }}<br /><br />
           </template>
-          <b>Achievements: </b>
-          <span v-if="this.$store.getters.achievementsPublic">
+          <template v-if="this.$store.getters.achievementsPublic">
+            <b>Achievements:</b>
             {{ this.$store.getters.achievements.List?.length }}
-          </span>
-          <span v-else class="text-muted"> Unknown</span>
-          <br /><br />
-          <b>Elemental level:</b>
-          {{ this.$store.getters.character.ClassJobsElemental?.Level || "0" }}<br />
-          <b>Resistance rank:</b>
-          {{ this.$store.getters.character.ClassJobsBozjan?.Level || "0" }}
+          </template>
         </div>
         <div v-else>
           <h2>Character Information</h2>
@@ -64,7 +58,14 @@
         </div>
         <br />
       </div>
-      <div class="col-md"></div>
+      <div class="col-md">
+        <!-- <h2>Jobs</h2>
+        WAR (1)<br /><br />
+        <b>Elemental level:</b>
+        {{ this.$store.getters.character.ClassJobsElemental?.Level || "0" }}<br />
+        <b>Resistance rank:</b>
+        {{ this.$store.getters.character.ClassJobsBozjan?.Level || "0" }} -->
+      </div>
     </div>
   </div>
 </template>
