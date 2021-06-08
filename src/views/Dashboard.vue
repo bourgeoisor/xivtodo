@@ -32,15 +32,17 @@
           <b>Guardian:</b>
           {{ guardians[this.$store.getters.character.GuardianDeity - 1] }}<br /><br />
           <b>City-state:</b>
-          {{ cities[this.$store.getters.character.Town - 1] }}<br /> 
-          <b>Grand Company:</b>
-          {{ gcNames[this.$store.getters.character.GrandCompany.NameID - 1] }}<br />
-          <b>Rank:</b>
-          {{
-            gcRanks[this.$store.getters.character.GrandCompany.NameID - 1][
-              this.$store.getters.character.GrandCompany.RankID - 1
-            ]
-          }}<br /><br />
+          {{ cities[this.$store.getters.character.Town - 1] }}<br />
+          <template v-if="this.$store.getters.character.GrandCompany">
+            <b>Grand Company:</b>
+            {{ gcNames[this.$store.getters.character.GrandCompany.NameID - 1] }}<br />
+            <b>Rank:</b>
+            {{
+              gcRanks[this.$store.getters.character.GrandCompany.NameID - 1][
+                this.$store.getters.character.GrandCompany.RankID - 1
+              ]
+            }}<br /><br />
+          </template>
           <b>Achievements: </b>
           <span v-if="this.$store.getters.achievementsPublic">
             {{ this.$store.getters.achievements.List?.length }}

@@ -17,10 +17,11 @@
               id="inputCharacterID"
               placeholder=""
             />
-            <label for="inputCharacterID">Character ID</label>
+            <label class="floating-label" for="inputCharacterID">Character ID</label>
             <div class="form-text">
               Enter your character ID. You can find it in
               <a
+                class="text-reset"
                 href="https://na.finalfantasyxiv.com/lodestone/character/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -91,13 +92,19 @@
 
           <br /><br />
           <span v-if="settings.lastUpdated" class="text-muted">
-            Last updated on {{ new Date(settings.lastUpdated).toISOString() }}.
+            Last updated on {{ new Date(settings.lastUpdated).toISOString() }}
           </span>
         </div>
       </div>
     </form>
   </div>
 </template>
+
+<style lang="scss">
+.night .floating-label {
+  color: #212529;
+}
+</style>
 
 <script>
 import Alert from "@/components/Alert.vue";
