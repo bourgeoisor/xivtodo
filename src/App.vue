@@ -47,6 +47,10 @@ hr {
   opacity: 1;
   background-color: initial;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
 </style>
 
 <script>

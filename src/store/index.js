@@ -46,6 +46,14 @@ export default createStore({
         state.todosChecked.push(payload.id);
       }
     },
+    todoHidden(state, payload) {
+      let present = state.todosHidden.indexOf(payload.id) >= 0;
+      if (present && !payload.hidden) {
+        state.todosHidden = state.todosHidden.filter((item) => item != payload.id);
+      } else if (!present && payload.hidden) {
+        state.todosHidden.push(payload.id);
+      }
+    },
   },
   actions: {},
   modules: {},
