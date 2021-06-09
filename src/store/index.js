@@ -6,6 +6,7 @@ export default createStore({
       lastUpdated: "",
       characterId: "",
       spoilersOption: "1",
+      nightMode: true,
     },
     characterData: {},
     todosChecked: [],

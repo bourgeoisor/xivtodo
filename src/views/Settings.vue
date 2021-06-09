@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-6">
           <h2>General</h2>
-
+          <br />
           <div class="form-floating mb-3">
             <input
               v-model="settings.characterId"
@@ -67,27 +67,40 @@
             />
             <label class="form-check-label" for="inputSpoilersOption2">Show all duties</label>
           </div>
-          <div class="form-text">Select your preference in spoiler tags.</div>
+          <div class="form-text">Select your preference in spoiler tags.</div><br />
+
+          <div class="form-check">
+            <input
+              v-model="settings.nightMode"
+              class="form-check-input"
+              type="checkbox"
+              id="inputNightMode"
+            />
+            <label class="form-check-label" for="inputNightMode"> Night mode</label>
+          </div>
+          <div class="form-text">
+            A more eye-friendly theme for the site. Refresh after updating settings to take effect.
+          </div>
 
           <br />
           <button
             v-if="saving"
             type="button"
             id="settings-save-btn"
-            class="btn btn-primary"
+            class="btn btn-secondary"
             disabled
           >
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Saving...
+            Updating, please wait...
           </button>
           <button
             v-else
             @click="saveSettings"
             type="button"
             id="settings-save-btn"
-            class="btn btn-primary"
+            class="btn btn-secondary"
           >
-            Save
+            Update
           </button>
 
           <br /><br />
@@ -102,7 +115,12 @@
 
 <style lang="scss">
 .night .floating-label {
-  color: #212529;
+  color: #b9bbbe;
+}
+
+.night .form-control {
+  color: #dbdcdd;
+  background-color: #262b2f;
 }
 </style>
 

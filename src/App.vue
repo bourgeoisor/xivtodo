@@ -29,6 +29,11 @@
     background-color: #1c2024;
     border-color: #aaa;
   }
+
+  .form-check-input {
+    background-color: #1c2024;
+    border: 1px solid rgb(255, 255, 255);
+  }
 }
 
 h2 {
@@ -52,7 +57,7 @@ export default {
   name: "App",
   data() {
     return {
-      isNight: true,
+      isNight: this.$store.state.settings.nightMode,
     };
   },
   components: {
