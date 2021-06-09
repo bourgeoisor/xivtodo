@@ -8,7 +8,7 @@
       <div class="col-md">
         <h3>
           Weeklies
-          <small class="text-muted">&mdash; <span id="weeklies-reset">?</span> until reset</small>
+          <small class="text-muted">&mdash; {{ weeklyReset }} until reset</small>
         </h3>
 
         <ul class="list-group list-group-flush">
@@ -25,7 +25,7 @@
       <div class="col-md">
         <h3>
           Dailies
-          <small class="text-muted">&mdash; <span id="dailies-reset">?</span> until reset</small>
+          <small class="text-muted">&mdash; {{ dailyReset }} until reset</small>
         </h3>
 
         <ul class="list-group list-group-flush">
@@ -49,6 +49,8 @@ export default {
   name: "Checklist",
   data() {
     return {
+      dailyReset: this.dailyResetTime(),
+      weeklyReset: this.weeklyResetTime(),
       weeklies: [
         { ID: 100, Title: "Weekly repeatable quests" },
         { ID: 101, Title: "Weekly hunt marks" },
@@ -86,31 +88,34 @@ export default {
   components: {
     ChecklistItem,
   },
+  mounted() {
+    setInterval(() => {
+      this.weeklyReset = this.weeklyResetTime();
+      this.dailyReset = this.dailyResetTime();
+    }, 1000);
+  },
+  methods: {
+    weeklyResetTime() {
+      let now = new Date();
+      let then = new Date();
+      then.setUTCHours(12, 0, 0);
+      then.setDate(then.getDate() + ((12 - then.getDay()) % 7));
+      let diff = new Date(then - now);
+
+      if (diff.getDay() > 0) return diff.getDay() + "d " + diff.getHours() + "h";
+      else if (diff.getHours() > 0) return diff.getHours() + "h " + diff.getMinutes() + "m";
+      else return diff.getMinutes() + "m " + diff.getSeconds() + "s";
+    },
+    dailyResetTime() {
+      let now = new Date();
+      let then = new Date();
+      then.setUTCHours(19, 0, 0);
+      then.setDate(then.getDate() + 1);
+      let diff = new Date(then - now);
+
+      if (diff.getHours() > 0) return diff.getHours() + "h " + diff.getMinutes() + "m";
+      else return diff.getMinutes() + "m " + diff.getSeconds() + "s";
+    },
+  },
 };
-
-// function setTimeUntilResets() {
-//     // JST is +9 hours relative to UTC.
-//     let now = moment().utc().add(9, 'hours')
-
-//     // Find the diff until the next midnight JST and render it.
-//     let nextDailyReset = now.clone().startOf('day').add(1, 'day')
-//     let dailyResetDuration = moment.duration(nextDailyReset.diff(now))
-
-//     let dailiesReset = ""
-//     if (dailyResetDuration.hours()%24 > 0) dailiesReset = dailyResetDuration.hours()%24 + "h " + dailyResetDuration.minutes() + "m"
-//     else dailiesReset = dailyResetDuration.minutes() + "m"
-//     $("#dailies-reset").html(dailiesReset)
-
-//     // Find the diff until the next Tuesday 5pm JST and render it.
-//     let nextWeeklyReset = now.clone().startOf('isoWeek').add(1, 'week').add(17 , 'hours').day("tuesday")
-//     let weeklyResetDuration = moment.duration(nextWeeklyReset.diff(now))
-
-//     let weekliesReset = ""
-//     if (weeklyResetDuration.days()%7 > 0) weekliesReset = weeklyResetDuration.days()%7 + "d " + weeklyResetDuration.hours() + "h"
-//     else if (weeklyResetDuration.hours() > 0) weekliesReset = weeklyResetDuration.hours() + "h " + weeklyResetDuration.minutes() + "m"
-//     else weekliesReset = weeklyResetDuration.minutes() + "m"
-//     $("#weeklies-reset").html(weekliesReset)
-// }
-// setTimeUntilResets()
-// setInterval(setTimeUntilResets, 60*1000)
 </script>
