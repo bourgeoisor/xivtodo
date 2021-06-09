@@ -98,23 +98,23 @@ export default {
     weeklyResetTime() {
       let now = new Date();
       let then = new Date();
-      then.setUTCHours(12, 0, 0);
-      then.setDate(then.getDate() + ((12 - then.getDay()) % 7));
+      then.setUTCHours(8, 0, 0);
+      then.setUTCDate(then.getUTCDate() + ((12 - then.getUTCDay()) % 7));
       let diff = new Date(then - now);
 
-      if (diff.getDay() > 0) return diff.getDay() + "d " + diff.getHours() + "h";
-      else if (diff.getHours() > 0) return diff.getHours() + "h " + diff.getMinutes() + "m";
-      else return diff.getMinutes() + "m " + diff.getSeconds() + "s";
+      if (diff.getUTCDay() > 0) return diff.getUTCDay() + "d " + diff.getUTCHours() + "h";
+      else if (diff.getUTCHours() > 0) return diff.getUTCHours() + "h " + diff.getUTCMinutes() + "m";
+      else return diff.getUTCMinutes() + "m " + diff.getUTCSeconds() + "s";
     },
     dailyResetTime() {
       let now = new Date();
       let then = new Date();
-      then.setUTCHours(19, 0, 0);
-      then.setDate(then.getDate() + 1);
+      then.setUTCHours(15, 0, 0);
+      then.setUTCDate(then.getDate() + 1);
       let diff = new Date(then - now);
 
-      if (diff.getHours() > 0) return diff.getHours() + "h " + diff.getMinutes() + "m";
-      else return diff.getMinutes() + "m " + diff.getSeconds() + "s";
+      if (diff.getUTCHours() > 0) return diff.getUTCHours() + "h " + diff.getUTCMinutes() + "m";
+      else return diff.getUTCMinutes() + "m " + diff.getUTCSeconds() + "s";
     },
   },
 };
