@@ -1,5 +1,8 @@
 <template>
-  <div :class="{ night: isNight }" class="d-flex flex-column min-vh-100">
+  <div
+    :class="{ night: this.$store.state.settings.nightMode }"
+    class="d-flex flex-column min-vh-100"
+  >
     <TheNavbar />
     <main class="flex-shrink-0">
       <router-view />
@@ -59,11 +62,6 @@ import TheFooter from "@/components/TheFooter.vue";
 
 export default {
   name: "App",
-  data() {
-    return {
-      isNight: this.$store.state.settings.nightMode,
-    };
-  },
   components: {
     TheNavbar,
     TheFooter,

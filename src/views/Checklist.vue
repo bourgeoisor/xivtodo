@@ -41,14 +41,17 @@
         <br />
         <span v-if="showHidden" class="text-muted float-end">
           <a class="text-reset cursor-pointer" @click="showHidden = false">Hide hidden todos.</a>
+          <br /><br />
         </span>
         <span v-else-if="this.$store.state.todosHidden.length == 1" class="text-muted float-end">
           There is 1 hidden todo.
           <a class="text-reset cursor-pointer" @click="showHidden = true">Show it.</a>
+          <br /><br />
         </span>
         <span v-else-if="this.$store.state.todosHidden.length > 1" class="text-muted float-end">
           There are {{ this.$store.state.todosHidden.length }} hidden todos.
           <a class="text-reset cursor-pointer" @click="showHidden = true">Show them.</a>
+          <br /><br />
         </span>
       </div>
     </div>

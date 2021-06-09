@@ -78,9 +78,7 @@
             />
             <label class="form-check-label" for="inputNightMode"> Night mode</label>
           </div>
-          <div class="form-text">
-            A more eye-friendly theme for the site. Refresh after updating settings to take effect.
-          </div>
+          <div class="form-text">A more eye-friendly theme for the site.</div>
 
           <br />
           <button

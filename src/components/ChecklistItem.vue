@@ -10,8 +10,22 @@
         {{ title }}
       </span>
     </label>
-    <a v-if="hidden" class="bi-eye-slash text-secondary cursor-pointer" @click="hid"></a>
-    <a v-else class="bi-eye text-success cursor-pointer" @click="hid"></a>
+    <a
+      v-if="hidden"
+      class="bi-eye-slash text-secondary cursor-pointer"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Unhide"
+      @click="hid"
+    ></a>
+    <a
+      v-else
+      class="bi-eye text-success cursor-pointer"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Hide"
+      @click="hid"
+    ></a>
   </span>
 </template>
 
