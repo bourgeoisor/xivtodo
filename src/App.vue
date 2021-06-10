@@ -54,6 +54,10 @@ hr {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.text-danger {
+  color: #cd3442 !important;
+}
 </style>
 
 <script>
