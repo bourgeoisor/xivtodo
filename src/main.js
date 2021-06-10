@@ -13,6 +13,10 @@ createApp(App)
     {
       config: {
         id: "G-9WXY5M43Z0",
+        params: {
+          cookie_domain: "https://xivtodo.com",
+          cookie_flags: "SameSite=None;Secure",
+        },
       },
     },
     router
