@@ -15,7 +15,12 @@
       }"
     >
       &nbsp;
-      <span
+      <a
+        v-if="duty.LodestoneID && !duty.blur"
+        class="text-reset lodestone-tooltip eorzeadb_link"
+        :href="'https://na.finalfantasyxiv.com/lodestone/playguide/db/duty/' + duty.LodestoneID"
+        target="_blank"
+        rel="noopener noreferrer"
         :class="{
           'blur-maybe': duty.blur && duty.cleared == -1,
           'blur-cleared': duty.blur && duty.cleared == 1,
@@ -23,8 +28,21 @@
           'user-select-none': duty.blur,
           bold: duty.Bold,
         }"
-        >{{ duty.Name }}</span
       >
+        {{ duty.Name }}
+      </a>
+      <span
+        v-else
+        :class="{
+          'blur-maybe': duty.blur && duty.cleared == -1,
+          'blur-cleared': duty.blur && duty.cleared == 1,
+          'blur-uncleared': duty.blur && duty.cleared == 0,
+          'user-select-none': duty.blur,
+          bold: duty.Bold,
+        }"
+      >
+        {{ duty.Name }}
+      </span>
     </span>
   </li>
 </template>
@@ -32,6 +50,12 @@
 <style lang="scss">
 .bold {
   font-weight: 700;
+}
+
+.lodestone-tooltip {
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  cursor: help;
 }
 
 .blur-maybe {
