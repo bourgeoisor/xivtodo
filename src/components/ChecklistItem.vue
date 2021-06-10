@@ -6,7 +6,7 @@
     <label class="user-select-none">
       <input v-model="checked" class="form-check-input" type="checkbox" :id="title" />
       &nbsp;
-      <span :class="{ 'text-primary': checked, 'text-decoration-line-through': checked }">
+      <span :class="{ 'checklist-checked': checked }">
         {{ title }}
       </span>
     </label>
@@ -28,6 +28,14 @@
     ></a>
   </span>
 </template>
+
+<style lang="scss">
+.checklist-checked {
+  color: #198754;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+</style>
 
 <script>
 export default {

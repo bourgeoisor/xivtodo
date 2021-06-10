@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <router-link to="/" class="navbar-brand mb-0 h1">XIV|ToDo</router-link>
+        <router-link to="/" class="navbar-brand mb-0 h1">XIV-ToDo</router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -50,6 +50,10 @@
 </template>
 
 <style lang="scss">
+.navbar-brand {
+  font-family: "Pacifico", cursive;
+}
+
 nav {
   margin-bottom: 10px;
 

@@ -20,23 +20,31 @@
         <div v-if="this.$store.getters.characterData">
           <h2>{{ this.$store.getters.character.Name }}</h2>
           <b>World:</b>
+          &nbsp;
           {{ this.$store.getters.character.Server }} ({{ this.$store.getters.character.DC }})<br />
           <b>Free Company:</b>
+          &nbsp;
           {{ this.$store.getters.character.FreeCompanyName }}<br /><br />
           <b>Race/Clan:</b>
+          &nbsp;
           {{ races[this.$store.getters.character.Race - 1] }} /
           {{ tribes[this.$store.getters.character.Tribe - 1] }}
           {{ genders[this.$store.getters.character.Gender - 1] }}<br />
           <b>Nameday:</b>
+          &nbsp;
           {{ this.$store.getters.character.Nameday }}<br />
           <b>Guardian:</b>
+          &nbsp;
           {{ guardians[this.$store.getters.character.GuardianDeity - 1] }}<br /><br />
           <b>City-state:</b>
+          &nbsp;
           {{ cities[this.$store.getters.character.Town - 1] }}<br />
           <template v-if="this.$store.getters.character.GrandCompany">
             <b>Grand Company:</b>
+            &nbsp;
             {{ gcNames[this.$store.getters.character.GrandCompany.NameID - 1] }}<br />
             <b>Rank:</b>
+            &nbsp;
             {{
               gcRanks[this.$store.getters.character.GrandCompany.NameID - 1][
                 this.$store.getters.character.GrandCompany.RankID - 1
@@ -45,6 +53,7 @@
           </template>
           <template v-if="this.$store.getters.achievementsPublic">
             <b>Achievements:</b>
+            &nbsp;
             {{ this.$store.getters.achievements.List?.length }}
           </template>
         </div>

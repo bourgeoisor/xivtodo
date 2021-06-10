@@ -19,7 +19,7 @@
             />
             <label class="floating-label" for="inputCharacterID">Character ID</label>
             <div class="form-text">
-              Enter your character ID. You can find it in
+              Your character ID. You can find it in
               <a
                 class="text-reset"
                 href="https://na.finalfantasyxiv.com/lodestone/character/"
@@ -67,7 +67,8 @@
             />
             <label class="form-check-label" for="inputSpoilersOption2">Show all duties</label>
           </div>
-          <div class="form-text">Select your preference in spoiler tags.</div><br />
+          <div class="form-text">Preference in hiding potential spoilers.</div>
+          <br />
 
           <div class="form-check">
             <input
@@ -78,7 +79,7 @@
             />
             <label class="form-check-label" for="inputNightMode"> Night mode</label>
           </div>
-          <div class="form-text">A more eye-friendly theme for the site.</div>
+          <div class="form-text">An eye-friendly darker theme for the site.</div>
 
           <br />
           <button
@@ -103,7 +104,7 @@
 
           <br /><br />
           <span v-if="settings.lastUpdated" class="text-muted">
-            Last updated on {{ new Date(settings.lastUpdated).toISOString() }}
+            Last updated {{ lastUpdatedAt(settings.lastUpdated) }}
           </span>
         </div>
       </div>
@@ -166,6 +167,20 @@ export default {
         .finally(() => {
           this.saving = false;
         });
+    },
+    lastUpdatedAt(timestamp) {
+      let now = new Date();
+      let diff = now - timestamp;
+      let months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30));
+      let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      let hours = Math.floor(diff / (1000 * 60 * 60));
+      let minutes = Math.floor(diff / (1000 * 60));
+
+      if (minutes < 5) return "less than a couple minutes ago.";
+      else if (minutes < 120) return minutes + " minutes ago.";
+      else if (hours < 48) return hours + " hours ago.";
+      else if (days < 60) return days + " days ago.";
+      else return months + " months ago.";
     },
   },
 };

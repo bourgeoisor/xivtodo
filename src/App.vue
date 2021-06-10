@@ -13,7 +13,7 @@
 
 <style lang="scss">
 #app {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
