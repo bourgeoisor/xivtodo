@@ -88,6 +88,7 @@ export default {
   },
   created() {
     this.setWindowTitle();
+    console.log("App version " + process.env.VUE_APP_VERSION);
   },
   methods: {
     setWindowTitle() {

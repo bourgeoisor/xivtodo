@@ -25,6 +25,13 @@ jobs:
           run: |
             npm install
 
+        - name: Compute app version
+          run: |
+            GIT_COUNT=`git rev-list --count main`
+            GIT_HASH=`git rev-parse --short main`
+            APP_VERSION=$GIT_COUNT.$GIT_HASH
+            echo "VUE_APP_VERSION=$APP_VERSION" > .env.production
+
         - name: Deploy
           run: |
             git checkout --orphan gh-pages

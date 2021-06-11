@@ -103,9 +103,10 @@
           </button>
 
           <br /><br />
-          <span v-if="settings.lastUpdated" class="text-muted">
-            Last updated {{ lastUpdatedAt(settings.lastUpdated) }}
-          </span>
+          <template v-if="settings.lastUpdated">
+            <span class="text-muted"> Last updated {{ lastUpdatedAt(settings.lastUpdated) }}</span>
+            <br /><br />
+          </template>
         </div>
       </div>
     </form>
