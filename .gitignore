@@ -2,6 +2,7 @@
 node_modules
 /dist
 *.csv*
+*Zone.Identifier
 
 # local env files
 .env.local

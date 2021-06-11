@@ -7,16 +7,16 @@
     />
     <hr />
     <div class="row">
-      <div v-if="this.$store.getters.characterData" class="col-md d-none d-md-block">
+      <div v-if="this.$store.getters.characterData" class="col-lg d-none d-lg-block">
         <img id="character-portrait" :src="this.$store.getters.character.Portrait" />
         <br />
-        <span v-if="this.$store.getters.character.Bio != '-'" class="fst-italic">
+        <span v-if="this.$store.getters.character.Bio != '-'" class="fst-italic text-break">
           “{{ this.$store.getters.character.Bio }}”
         </span>
         <br />
       </div>
 
-      <div class="col-md">
+      <div class="col-lg">
         <div v-if="this.$store.getters.characterData">
           <h2>{{ this.$store.getters.character.Name }}</h2>
           <b>World:</b>
@@ -67,7 +67,7 @@
         </div>
         <br />
       </div>
-      <div class="col-md">
+      <div class="col-lg">
         <!-- <h2>Jobs</h2>
         WAR (1)<br /><br />
         <b>Elemental level:</b>

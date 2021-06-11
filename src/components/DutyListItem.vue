@@ -26,7 +26,6 @@
           'blur-cleared': duty.blur && duty.cleared == 1,
           'blur-uncleared': duty.blur && duty.cleared == 0,
           'user-select-none': duty.blur,
-          bold: duty.Bold,
         }"
       >
         {{ duty.Name }}
@@ -38,12 +37,18 @@
           'blur-cleared': duty.blur && duty.cleared == 1,
           'blur-uncleared': duty.blur && duty.cleared == 0,
           'user-select-none': duty.blur,
-          bold: duty.Bold,
         }"
       >
         {{ duty.Name }}
       </span>
     </span>
+    <span
+      v-if="duty.Bold"
+      class="icon-marker-msq"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="MSQ content"
+    ></span>
   </li>
 </template>
 

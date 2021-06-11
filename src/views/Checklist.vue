@@ -120,7 +120,8 @@ export default {
       let diff = new Date(then - now);
 
       if (diff.getUTCDay() > 0) return diff.getUTCDay() + "d " + diff.getUTCHours() + "h";
-      else if (diff.getUTCHours() > 0) return diff.getUTCHours() + "h " + diff.getUTCMinutes() + "m";
+      else if (diff.getUTCHours() > 0)
+        return diff.getUTCHours() + "h " + diff.getUTCMinutes() + "m";
       else return diff.getUTCMinutes() + "m " + diff.getUTCSeconds() + "s";
     },
     dailyResetTime() {

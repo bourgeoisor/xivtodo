@@ -13,17 +13,17 @@
     <div class="row">
       <h2>Stories</h2>
 
-      <div class="col-md">
+      <div class="col-lg">
         <DutyList title="Main Story Quest" :duties="questlines.mainStoryQuest" />
       </div>
 
-      <div class="col-md">
+      <div class="col-lg">
         <DutyList title="Side Story Quests" :duties="questlines.sideStoryQuests" />
         <DutyList title="Duties Quests" :duties="questlines.dutiesQuests" />
         <DutyList title="Relic Quests" :duties="questlines.relicQuests" />
       </div>
 
-      <div class="col-md">
+      <div class="col-lg">
         <DutyList title="Beast Tribe Quests" :duties="questlines.beastTribeQuests" />
         <DutyList title="Allied Beast Tribe Quests" :duties="questlines.alliedBeastTribeQuests" />
         <DutyList title="Custom Delivery Quests" :duties="questlines.customDeliveryQuests" />
@@ -33,14 +33,14 @@
     <div class="row">
       <h2>Job Quests</h2>
 
-      <div class="col-md">
+      <div class="col-lg">
         <DutyList title="Combat Job Quests" :duties="questlines.combatJobQuests" />
       </div>
-      <div class="col-md">
+      <div class="col-lg">
         <DutyList title="Gatherer Job Quests" :duties="questlines.gathererJobQuests" />
         <DutyList title="Crafter Job Quests" :duties="questlines.crafterJobQuests" />
       </div>
-      <div class="col-md">
+      <div class="col-lg">
         <DutyList title="Role Quests" :duties="questlines.roleQuests" />
       </div>
     </div>
