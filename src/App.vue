@@ -70,5 +70,29 @@ export default {
     TheNavbar,
     TheFooter,
   },
+  computed: {
+    computeWindowTitle() {
+      const routeName = this.$route.name;
+      const home = routeName === "home";
+
+      let title = "XIV-ToDo";
+      if (!home) {
+        title = title + " / " + routeName;
+      }
+
+      return title;
+    },
+  },
+  watch: {
+    computeWindowTitle: "setWindowTitle",
+  },
+  created() {
+    this.setWindowTitle();
+  },
+  methods: {
+    setWindowTitle() {
+      document.title = this.computeWindowTitle;
+    },
+  },
 };
 </script>
