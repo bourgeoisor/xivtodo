@@ -25,11 +25,9 @@ jobs:
           run: |
             npm install
 
-        - name: Compute app version
+        - name: Generate app version
           run: |
-            GIT_COUNT=`git rev-list --count main`
-            GIT_HASH=`git rev-parse --short main`
-            APP_VERSION=$GIT_COUNT.$GIT_HASH
+            APP_VERSION=$GITHUB_RUN_NUMBER.$GITHUB_SHA
             echo "VUE_APP_VERSION=$APP_VERSION" > .env.production
 
         - name: Deploy
