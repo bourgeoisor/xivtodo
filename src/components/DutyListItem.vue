@@ -37,13 +37,14 @@
           'blur-cleared': duty.blur && duty.cleared == 1,
           'blur-uncleared': duty.blur && duty.cleared == 0,
           'user-select-none': duty.blur,
+          'text-bold': duty.Bold,
         }"
       >
         {{ duty.Name }}
       </span>
     </span>
     <span
-      v-if="duty.Bold"
+      v-if="duty.IsMSQ"
       class="icon-marker-msq"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
@@ -53,16 +54,6 @@
 </template>
 
 <style lang="scss">
-.bold {
-  font-weight: 700;
-}
-
-.lodestone-tooltip {
-  text-decoration-style: dashed;
-  text-decoration-thickness: 1px;
-  cursor: help;
-}
-
 .blur-maybe {
   color: transparent;
   text-shadow: 0 0 20px rgb(148, 148, 148);

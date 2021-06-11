@@ -24,6 +24,14 @@ export default {
     DutyListItem,
   },
   methods: {
+    hasMaxIDOneOf(achievements, item) {
+      if (item.MaxIDOneOf.length > 0) {
+        for (let id of item.MaxIDOneOf) {
+          if (achievements.has(id)) return true;
+        }
+      }
+      return false;
+    },
     injectDutyCompletion(duties) {
       let achievementList = this.$store.getters.achievements.List || [];
       let achievements = new Map();
@@ -37,9 +45,13 @@ export default {
         let cleared = 0;
         if (!this.$store.getters.achievementsPublic) cleared = -1;
         else if (item.ID && achievements.has(item.ID)) cleared = 1;
-        else if (item.MaxID && achievements.has(item.MaxID)) cleared = 1;
-        else if (item.MaxAltID && achievements.has(item.MaxAltID)) cleared = 1;
-        else if (item.MinID && achievements.has(item.MinID)) cleared = -1;
+        else if (item.MaxIDOneOf && this.hasMaxIDOneOf(achievements, item)) cleared = 1;
+        else if (item.MaxIDAllOf && item.MaxIDAllOf.length > 0) {
+          cleared = 1;
+          for (let id of item.MaxIDAllOf) {
+            if (!achievements.has(id)) cleared = 0;
+          }
+        } else if (item.MinID && achievements.has(item.MinID)) cleared = -1;
         else if (item.MinID && !achievements.has(item.MinID)) cleared = 0;
         else if (!item.ID) cleared = -1;
         item.cleared = cleared;

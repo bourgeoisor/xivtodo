@@ -58,6 +58,16 @@ hr {
 .text-danger {
   color: #cd3442 !important;
 }
+
+.text-bold {
+  font-weight: 700;
+}
+
+.lodestone-tooltip {
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  cursor: help;
+}
 </style>
 
 <script>
@@ -88,7 +98,7 @@ export default {
   },
   created() {
     this.setWindowTitle();
-    console.log("App version " + process.env.VUE_APP_VERSION);
+    console.log("Using build " + process.env.VUE_APP_VERSION);
   },
   methods: {
     setWindowTitle() {
