@@ -14,19 +14,19 @@
       <h2>Stories</h2>
 
       <div class="col-lg">
-        <DutyList title="Main Story Quest" :duties="questlines.mainStoryQuest" />
+        <DutyList title="Main Story Quest" :duties="db.mainStoryQuest" />
       </div>
 
       <div class="col-lg">
-        <DutyList title="Side Story Quests" :duties="questlines.sideStoryQuests" />
-        <DutyList title="Duties Quests" :duties="questlines.dutiesQuests" />
-        <DutyList title="Relic Quests" :duties="questlines.relicQuests" />
+        <DutyList title="Side Story Quests" :duties="db.sideStoryQuests" />
+        <DutyList title="Duties Quests" :duties="db.dutiesQuests" />
+        <DutyList title="Relic Quests" :duties="db.relicQuests" />
       </div>
 
       <div class="col-lg">
-        <DutyList title="Beast Tribe Quests" :duties="questlines.beastTribeQuests" />
-        <DutyList title="Allied Beast Tribe Quests" :duties="questlines.alliedBeastTribeQuests" />
-        <DutyList title="Custom Delivery Quests" :duties="questlines.customDeliveryQuests" />
+        <DutyList title="Beast Tribe Quests" :duties="db.beastTribeQuests" />
+        <DutyList title="Allied Beast Tribe Quests" :duties="db.alliedBeastTribeQuests" />
+        <DutyList title="Custom Delivery Quests" :duties="db.customDeliveryQuests" />
       </div>
     </div>
     <hr />
@@ -34,14 +34,14 @@
       <h2>Job Quests</h2>
 
       <div class="col-lg">
-        <DutyList title="Combat Job Quests" :duties="questlines.combatJobQuests" />
+        <DutyList title="Combat Job Quests" :duties="db.combatJobQuests" />
       </div>
       <div class="col-lg">
-        <DutyList title="Gatherer Job Quests" :duties="questlines.gathererJobQuests" />
-        <DutyList title="Crafter Job Quests" :duties="questlines.crafterJobQuests" />
+        <DutyList title="Gatherer Job Quests" :duties="db.gathererJobQuests" />
+        <DutyList title="Crafter Job Quests" :duties="db.crafterJobQuests" />
       </div>
       <div class="col-lg">
-        <DutyList title="Role Quests" :duties="questlines.roleQuests" />
+        <DutyList title="Role Quests" :duties="db.roleQuests" />
       </div>
     </div>
   </div>
@@ -51,13 +51,13 @@
 import Alert from "@/components/Alert.vue";
 import DutyList from "@/components/DutyList.vue";
 
-import questlinesJson from "@/assets/questlines.json";
+import dbJson from "@/assets/db.json";
 
 export default {
   name: "Questlines",
   data() {
     return {
-      questlines: questlinesJson,
+      db: dbJson,
     };
   },
   components: {

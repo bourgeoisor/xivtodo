@@ -4,10 +4,10 @@
     class="list-group-item d-flex justify-content-between align-items-center"
   >
     <label class="user-select-none">
-      <input v-model="checked" class="form-check-input" type="checkbox" :id="title" />
+      <input v-model="checked" class="form-check-input" type="checkbox" :id="item.Name" />
       &nbsp;
       <span :class="{ 'checklist-checked': checked }">
-        {{ title }}
+        {{ item.Name }}
       </span>
     </label>
     <a
@@ -41,24 +41,23 @@
 export default {
   data() {
     return {
-      checked: this.$store.state.todosChecked.indexOf(this.id) >= 0,
-      hidden: this.$store.state.todosHidden.indexOf(this.id) >= 0,
+      checked: this.$store.state.todosChecked.indexOf(this.item.ID) >= 0,
+      hidden: this.$store.state.todosHidden.indexOf(this.item.ID) >= 0,
     };
   },
   props: {
-    id: Number,
-    title: String,
+    item: Object,
     showHidden: Boolean,
   },
   watch: {
     checked() {
-      this.$store.commit("todoChecked", { id: this.id, checked: this.checked });
+      this.$store.commit("todoChecked", { id: this.item.ID, checked: this.checked });
     },
   },
   methods: {
     hid() {
       this.hidden = !this.hidden;
-      this.$store.commit("todoHidden", { id: this.id, hidden: this.hidden });
+      this.$store.commit("todoHidden", { id: this.item.ID, hidden: this.hidden });
     },
   },
 };

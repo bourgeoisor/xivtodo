@@ -13,10 +13,9 @@
 
         <ul class="list-group list-group-flush">
           <ChecklistItem
-            v-for="item of weeklies"
-            :key="item.Title"
-            :id="item.ID"
-            :title="item.Title"
+            v-for="item of db.weeklyChecklist"
+            :key="item.ID"
+            :item="item"
             :showHidden="showHidden"
           />
         </ul>
@@ -31,10 +30,9 @@
 
         <ul class="list-group list-group-flush">
           <ChecklistItem
-            v-for="item of dailies"
-            :key="item.Title"
-            :id="item.ID"
-            :title="item.Title"
+            v-for="item of db.dailyChecklist"
+            :key="item.ID"
+            :item="item"
             :showHidden="showHidden"
           />
         </ul>
@@ -61,45 +59,16 @@
 <script>
 import ChecklistItem from "@/components/ChecklistItem.vue";
 
+import dbJson from "@/assets/db.json";
+
 export default {
   name: "Checklist",
   data() {
     return {
+      db: dbJson,
       showHidden: false,
       dailyReset: this.dailyResetTime(),
       weeklyReset: this.weeklyResetTime(),
-      weeklies: [
-        { ID: 100, Title: "Weekly repeatable quests" },
-        { ID: 101, Title: "Weekly hunt marks" },
-        { ID: 102, Title: "Squadron priority mission" },
-        { ID: 103, Title: "Challenge logs" },
-        { ID: 104, Title: "Custom delivery" },
-        { ID: 105, Title: "Wondrous Tails" },
-        { ID: 106, Title: "Cap weekly tomestone" },
-        { ID: 107, Title: "Doman enclave donation" },
-        { ID: 108, Title: "Normal raid lockouts" },
-        { ID: 109, Title: "Savage raid lockouts" },
-        { ID: 110, Title: "Alliance raid lockout" },
-        { ID: 111, Title: "Faux Hollows" },
-        { ID: 112, Title: "Masque Carnivale" },
-        { ID: 113, Title: "Blue mage logs" },
-        { ID: 114, Title: "Gold Saucer tournaments" },
-        { ID: 115, Title: "Fashion report" },
-        { ID: 116, Title: "Jumbo Cactpot" },
-      ],
-      dailies: [
-        { ID: 200, Title: "Daily repeatable quests" },
-        { ID: 201, Title: "Daily hunt marks" },
-        { ID: 202, Title: "Squadron missions" },
-        { ID: 203, Title: "Grand company turn-ins" },
-        { ID: 204, Title: "Retainer ventures" },
-        { ID: 205, Title: "Housing gardening" },
-        { ID: 206, Title: "Beast tribe quests" },
-        { ID: 207, Title: "Treasure map allowance" },
-        { ID: 208, Title: "Leve allowance" },
-        { ID: 209, Title: "Duty roulettes" },
-        { ID: 210, Title: "Mini Cactpot" },
-      ],
     };
   },
   components: {

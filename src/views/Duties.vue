@@ -14,15 +14,15 @@
       <h2>A Realm Reborn</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="duties.arrDungeons" />
+        <DutyList title="Dungeons" :duties="db.arrDungeons" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="duties.arrTrials" />
-        <DutyList title="High-end Trials" :duties="duties.arrTrialsEx" />
+        <DutyList title="Trials" :duties="db.arrTrials" />
+        <DutyList title="High-end Trials" :duties="db.arrTrialsEx" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="duties.arrRaids" />
-        <DutyList title="High-end Raids" :duties="duties.arrRaidsSavUlt" />
+        <DutyList title="Raids" :duties="db.arrRaids" />
+        <DutyList title="High-end Raids" :duties="db.arrRaidsSavUlt" />
       </div>
     </div>
     <hr />
@@ -30,15 +30,15 @@
       <h2>Heavensward</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="duties.hwDungeons" />
+        <DutyList title="Dungeons" :duties="db.hwDungeons" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="duties.hwTrials" />
-        <DutyList title="High-end Trials" :duties="duties.hwTrialsEx" />
+        <DutyList title="Trials" :duties="db.hwTrials" />
+        <DutyList title="High-end Trials" :duties="db.hwTrialsEx" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="duties.hwRaids" />
-        <DutyList title="High-end Raids" :duties="duties.hwRaidsSavUlt" />
+        <DutyList title="Raids" :duties="db.hwRaids" />
+        <DutyList title="High-end Raids" :duties="db.hwRaidsSavUlt" />
       </div>
     </div>
     <hr />
@@ -46,16 +46,16 @@
       <h2>Stormblood</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="duties.sbDungeons" />
+        <DutyList title="Dungeons" :duties="db.sbDungeons" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="duties.sbTrials" />
-        <DutyList title="High-end Trials" :duties="duties.sbTrialsEx" />
+        <DutyList title="Trials" :duties="db.sbTrials" />
+        <DutyList title="High-end Trials" :duties="db.sbTrialsEx" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="duties.sbRaids" />
-        <DutyList title="High-end Raids" :duties="duties.sbRaidsSavUlt" />
-        <DutyList title="Exploratory Missions" :duties="duties.sbExploratory" />
+        <DutyList title="Raids" :duties="db.sbRaids" />
+        <DutyList title="High-end Raids" :duties="db.sbRaidsSavUlt" />
+        <DutyList title="Exploratory Missions" :duties="db.sbExploratory" />
       </div>
     </div>
     <hr />
@@ -63,16 +63,16 @@
       <h2>Shadowbringers</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="duties.shbDungeons" />
+        <DutyList title="Dungeons" :duties="db.shbDungeons" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="duties.shbTrials" />
-        <DutyList title="High-end Trials" :duties="duties.shbTrialsEx" />
+        <DutyList title="Trials" :duties="db.shbTrials" />
+        <DutyList title="High-end Trials" :duties="db.shbTrialsEx" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="duties.shbRaids" />
-        <DutyList title="High-end Raids" :duties="duties.shbRaidsSavUlt" />
-        <DutyList title="Exploratory Missions" :duties="duties.shbExploratory" />
+        <DutyList title="Raids" :duties="db.shbRaids" />
+        <DutyList title="High-end Raids" :duties="db.shbRaidsSavUlt" />
+        <DutyList title="Exploratory Missions" :duties="db.shbExploratory" />
       </div>
     </div>
   </div>
@@ -82,13 +82,13 @@
 import Alert from "@/components/Alert.vue";
 import DutyList from "@/components/DutyList.vue";
 
-import dutiesJson from "@/assets/duties.json";
+import dbJson from "@/assets/db.json";
 
 export default {
   name: "Duties",
   data() {
     return {
-      duties: dutiesJson,
+      db: dbJson,
     };
   },
   components: {
