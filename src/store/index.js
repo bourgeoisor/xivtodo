@@ -11,6 +11,8 @@ export default createStore({
     characterData: {},
     todosChecked: [],
     todosHidden: [],
+    todosNextDailyReset: 0,
+    todosNextWeeklyReset: 0,
   },
   getters: {
     character(state) {

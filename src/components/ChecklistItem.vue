@@ -3,7 +3,7 @@
     v-if="!hidden && !showHidden"
     class="list-group-item d-flex justify-content-between align-items-center user-select-none"
   >
-    <span :class="{ 'checklist-checked': checked }">
+    <span>
       <input
         v-if="!showHidden"
         v-model="checked"
@@ -11,7 +11,7 @@
         type="checkbox"
         :id="item.Name"
       />
-      &nbsp;&nbsp;{{ item.Name }}
+      &nbsp;&nbsp;<span :class="{ 'checklist-checked': checked }">{{ item.Name }}</span>
     </span>
   </label>
   <span v-if="showHidden" class="list-group-item d-flex justify-content-between align-items-center">
@@ -56,11 +56,15 @@ export default {
   props: {
     item: Object,
     showHidden: Boolean,
+    rerender: Number,
   },
   watch: {
     checked() {
       this.$store.commit("todoChecked", { id: this.item.ID, checked: this.checked });
     },
+    rerender() {
+      this.checked = this.$store.state.todosChecked.indexOf(this.item.ID) >= 0;
+    }
   },
   methods: {
     hid() {
