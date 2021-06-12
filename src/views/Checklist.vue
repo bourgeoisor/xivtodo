@@ -91,6 +91,14 @@ export default {
       let existingWeeklies = this.db.weeklyChecklist.map((item) => item.ID);
       let existingIds = existingDailies.concat(existingWeeklies);
 
+      // Clear checked if they don't exist anymore.
+      let todosChecked = this.$store.state.todosChecked;
+      for (let id of todosChecked) {
+        if (existingIds.indexOf(id) == -1) {
+          this.$store.commit("todoChecked", { id: id, checked: false });
+        }
+      }
+
       // Clear hidden if they don't exist anymore.
       let todosHidden = this.$store.state.todosHidden;
       for (let id of todosHidden) {
