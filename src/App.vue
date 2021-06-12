@@ -13,8 +13,9 @@
 
 <style lang="scss">
 #app {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 18px;
+  font-weight: 600;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,6 +26,10 @@
 
   .text-secondary {
     color: #a2a4a6 !important;
+  }
+
+  .text-danger {
+    color: #cd3442 !important;
   }
 
   .list-group-item {
@@ -39,8 +44,24 @@
   }
 }
 
+.list-group-item {
+  padding-bottom: 0.4rem;
+}
+
+hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 0px !important;
+}
+
 h2 {
   text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 hr {
@@ -55,17 +76,14 @@ hr {
   cursor: pointer;
 }
 
-.text-danger {
-  color: #cd3442 !important;
-}
-
 .text-bold {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .lodestone-tooltip {
   text-decoration-style: dashed;
   text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
   cursor: help;
 }
 </style>
@@ -85,9 +103,9 @@ export default {
       const routeName = this.$route.name;
       const home = routeName === "home";
 
-      let title = "XIV-ToDo";
+      let title = "XIV·ToDo";
       if (!home) {
-        title = title + " · " + routeName;
+        title = title + " - " + routeName;
       }
 
       return title;

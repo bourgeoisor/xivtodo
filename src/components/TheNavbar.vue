@@ -1,8 +1,8 @@
 <template>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <router-link to="/" class="navbar-brand mb-0 h1">XIV-ToDo</router-link>
+      <div class="container-fluid user-select-none">
+        <router-link to="/" class="navbar-brand mb-0 h1">XIV ·ToDo</router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -34,7 +34,7 @@
           </ul>
           <li
             v-if="this.$store.getters.characterData"
-            class="navbar-nav nav-item d-none d-lg-block user-select-none"
+            class="navbar-nav nav-item d-none d-lg-block"
           >
             <span class="nav-link">{{ this.$store.getters.character.Name }}</span>
           </li>
@@ -57,8 +57,10 @@
 nav {
   margin-bottom: 10px;
 
-  .router-link-exact-active {
+  .nav-link.router-link-exact-active {
     color: white !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
 }
 

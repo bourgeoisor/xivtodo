@@ -1,9 +1,9 @@
-# XIV-ToDo
+# XIV·ToDo
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fxivtodo.com)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bourgeoisor/xivtodo)
 
-XIV-ToDo is a series of helpful dashboards, checklists and tools to help visualize and clear Final Fantasy XIV's various content.
+XIV·ToDo is a series of helpful dashboards, checklists and tools to help visualize and clear Final Fantasy XIV's various content.
 
 This site is currently hosted at [https://xivtodo.com](https://xivtodo.com).
 

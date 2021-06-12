@@ -1,15 +1,14 @@
 <template>
   <footer class="footer d-flex justify-content-between mt-auto py-2 px-2 bg-light">
-    <div id="footer-copyrights" class="text-muted d-none d-lg-block col-3">
+    <div class="footer-copyrights text-muted d-none d-lg-block col-3">
       FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br />
       FINAL FANTASY XIV © SQUARE ENIX CO., LTD.
     </div>
     <div class="flex-fill text-center text-muted">
-      <a class="link-dark footer-brand" href="https://xivtodo.com">XIV-ToDo</a> was coded with love
-      by
+      <a class="link-dark" href="https://xivtodo.com">XIV·ToDo</a> was coded with love by
       <a class="link-dark" href="https://github.com/bourgeoisor/xivtodo">Olivier Bourgeois</a>
     </div>
-    <div class="text-muted footer-build text-end align-text-bottom my-auto d-none d-lg-block col-3">
+    <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-3">
       Build {{ build }}
     </div>
   </footer>
@@ -30,17 +29,8 @@
   }
 }
 
-#footer-copyrights {
+.footer-copyrights {
   font-size: 0.6rem;
-}
-
-.footer-brand {
-  font-family: "Pacifico", cursive;
-  font-size: 15px;
-}
-
-.footer-build {
-  font-size: 0.5rem;
 }
 </style>
 
