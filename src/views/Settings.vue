@@ -104,7 +104,9 @@
 
           <br /><br />
           <template v-if="settings.lastUpdated">
-            <span class="text-muted"> Last updated {{ lastUpdatedAt(settings.lastUpdated) }}</span>
+            <span class="text-muted fw-light">
+              Last updated {{ lastUpdatedAt(settings.lastUpdated) }}
+            </span>
             <br /><br />
           </template>
         </div>

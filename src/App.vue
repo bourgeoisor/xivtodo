@@ -87,7 +87,7 @@ export default {
 
       let title = "XIV-ToDo";
       if (!home) {
-        title = title + " / " + routeName;
+        title = title + " · " + routeName;
       }
 
       return title;
@@ -98,7 +98,6 @@ export default {
   },
   created() {
     this.setWindowTitle();
-    console.log("Using build " + process.env.VUE_APP_VERSION);
   },
   methods: {
     setWindowTitle() {
