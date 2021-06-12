@@ -2,7 +2,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid user-select-none">
-        <router-link to="/" class="navbar-brand mb-0 h1">XIV ·ToDo</router-link>
+        <router-link to="/" class="navbar-brand mb-0 h1"><i class="bi bi-check-all"></i> XIV ·ToDo</router-link>
         <button
           class="navbar-toggler"
           type="button"
