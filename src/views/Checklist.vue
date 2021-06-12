@@ -1,6 +1,16 @@
 <template>
   <div class="container">
-    <h1>Checklist</h1>
+    <h1 class="d-flex align-items-end">
+      <span class="me-auto">Checklist</span>
+      <button
+        type="button"
+        class="btn float-end"
+        :class="{ 'btn-outline-secondary': !showHidden, 'btn-outline-success': showHidden }"
+        @click="showHidden = !showHidden"
+      >
+        Customize
+      </button>
+    </h1>
     <hr />
     <div class="row">
       <h2>Things to do</h2>
@@ -37,20 +47,6 @@
           />
         </ul>
         <br />
-        <span v-if="showHidden" class="text-muted float-end">
-          <a class="text-reset cursor-pointer" @click="showHidden = false">Hide hidden todos.</a>
-          <br /><br />
-        </span>
-        <span v-else-if="this.$store.state.todosHidden.length == 1" class="text-muted float-end">
-          There is 1 hidden todo.
-          <a class="text-reset cursor-pointer" @click="showHidden = true">Show it.</a>
-          <br /><br />
-        </span>
-        <span v-else-if="this.$store.state.todosHidden.length > 1" class="text-muted float-end">
-          There are {{ this.$store.state.todosHidden.length }} hidden todos.
-          <a class="text-reset cursor-pointer" @click="showHidden = true">Show them.</a>
-          <br /><br />
-        </span>
       </div>
     </div>
   </div>

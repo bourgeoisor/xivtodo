@@ -1,17 +1,25 @@
 <template>
-  <span
-    v-if="!hidden || showHidden"
-    class="list-group-item d-flex justify-content-between align-items-center"
+  <label
+    v-if="!hidden && !showHidden"
+    class="list-group-item d-flex justify-content-between align-items-center user-select-none"
   >
-    <label class="user-select-none">
-      <input v-model="checked" class="form-check-input" type="checkbox" :id="item.Name" />
-      &nbsp;
-      <span :class="{ 'checklist-checked': checked }">
-        {{ item.Name }}
-      </span>
-    </label>
+    <span :class="{ 'checklist-checked': checked }">
+      <input
+        v-if="!showHidden"
+        v-model="checked"
+        class="form-check-input"
+        type="checkbox"
+        :id="item.Name"
+      />
+      &nbsp;&nbsp;{{ item.Name }}
+    </span>
+  </label>
+  <span v-if="showHidden" class="list-group-item d-flex justify-content-between align-items-center">
+    <span :class="{ 'text-muted': hidden }" class="user-select-none">
+      {{ item.Name }}
+    </span>
     <a
-      v-if="hidden"
+      v-if="showHidden && hidden"
       class="bi-eye-slash text-secondary cursor-pointer"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
@@ -19,7 +27,7 @@
       @click="hid"
     ></a>
     <a
-      v-else
+      v-else-if="showHidden && !hidden"
       class="bi-eye text-success cursor-pointer"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
