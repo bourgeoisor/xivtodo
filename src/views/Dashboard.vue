@@ -19,42 +19,63 @@
       <div class="col-lg">
         <div v-if="this.$store.getters.characterData">
           <h2>{{ this.$store.getters.character.Name }}</h2>
-          <b>World:</b>
-          &nbsp;
-          {{ this.$store.getters.character.Server }} ({{ this.$store.getters.character.DC }})<br />
-          <b>Free Company:</b>
-          &nbsp;
-          {{ this.$store.getters.character.FreeCompanyName }}<br /><br />
-          <b>Race/Clan:</b>
-          &nbsp;
-          {{ races[this.$store.getters.character.Race - 1] }} /
-          {{ tribes[this.$store.getters.character.Tribe - 1] }}
-          {{ genders[this.$store.getters.character.Gender - 1] }}<br />
-          <b>Nameday:</b>
-          &nbsp;
-          {{ this.$store.getters.character.Nameday }}<br />
-          <b>Guardian:</b>
-          &nbsp;
-          {{ guardians[this.$store.getters.character.GuardianDeity - 1] }}<br /><br />
-          <b>City-state:</b>
-          &nbsp;
-          {{ cities[this.$store.getters.character.Town - 1] }}<br />
+          <div class="info-block">
+            <b>World</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ this.$store.getters.character.Server }} ({{ this.$store.getters.character.DC }})
+          </div>
+
+          <div class="info-block">
+            <b>Free Company</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ this.$store.getters.character.FreeCompanyName }}
+          </div>
+
+          <div class="info-block">
+            <b>Race/Clan</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ races[this.$store.getters.character.Race - 1] }} /
+            {{ tribes[this.$store.getters.character.Tribe - 1] }}
+            <i v-if="this.$store.getters.character.Gender == 1" class="bi bi-gender-male"></i>
+            <i v-else class="bi bi-gender-female"></i>
+          </div>
+
+          <div class="info-block">
+            <b>Nameday</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ this.$store.getters.character.Nameday }}
+          </div>
+
+          <div class="info-block">
+            <b>Guardian</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ guardians[this.$store.getters.character.GuardianDeity - 1] }}
+          </div>
+
+          <div class="info-block">
+            <b>City-state</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ cities[this.$store.getters.character.Town - 1] }}
+          </div>
+
           <template v-if="this.$store.getters.character.GrandCompany">
-            <b>Grand Company:</b>
-            &nbsp;
-            {{ gcNames[this.$store.getters.character.GrandCompany.NameID - 1] }}<br />
-            <b>Rank:</b>
-            &nbsp;
-            {{
-              gcRanks[this.$store.getters.character.GrandCompany.NameID - 1][
-                this.$store.getters.character.GrandCompany.RankID - 1
-              ]
-            }}<br /><br />
+            <div class="info-block">
+              <b>Grand Company</b><br />
+              <i class="bi bi-arrow-return-right"></i>
+              {{ gcNames[this.$store.getters.character.GrandCompany.NameID - 1] }} /
+              {{
+                gcRanks[this.$store.getters.character.GrandCompany.NameID - 1][
+                  this.$store.getters.character.GrandCompany.RankID - 1
+                ]
+              }}
+            </div>
           </template>
           <template v-if="this.$store.getters.achievementsPublic">
-            <b>Achievements:</b>
-            &nbsp;
-            {{ this.$store.getters.achievements.List?.length }}
+            <div class="info-block">
+              <b>Achievements</b><br />
+              <i class="bi bi-arrow-return-right"></i>
+              {{ this.$store.getters.achievements.List?.length }}
+            </div>
           </template>
         </div>
         <div v-else>
@@ -80,6 +101,11 @@
 </template>
 
 <style lang="scss">
+.info-block {
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
 #character-portrait {
   width: 100%;
   border-radius: 20px;
@@ -99,7 +125,6 @@ export default {
   name: "Dashboard",
   data() {
     return {
-      genders: ["♂", "♀"],
       races: ["Hyur", "Elezen", "Lalafell", "Miqo'te", "Roegadyn", "Au Ra", "Hrothgar", "Viera"],
       tribes: [
         "Midlander",

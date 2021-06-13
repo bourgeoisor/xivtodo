@@ -2,7 +2,9 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid user-select-none">
-        <router-link to="/" class="navbar-brand mb-0 h1"><i class="bi bi-check-all"></i> XIV ·ToDo</router-link>
+        <router-link to="/" class="navbar-brand mb-0 h1">
+          <img style="height: 28px" src="../assets/brand.png" />
+        </router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -58,9 +60,10 @@ nav {
   margin-bottom: 10px;
 
   .nav-link.router-link-exact-active {
-    color: white !important;
+    color: #41b883 !important;
     text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
   }
 }
 
@@ -69,7 +72,19 @@ nav {
 }
 
 span.nav-link:hover {
-  color: rgba(255, 255, 255, 0.55) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
 }
 
 .avatar {

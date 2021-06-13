@@ -48,17 +48,12 @@
   padding-bottom: 0.4rem;
 }
 
-hr {
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
 h1 {
   font-weight: 700;
   margin-bottom: 0px !important;
 }
 
-h2 {
+.row h2 {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
@@ -70,6 +65,8 @@ hr {
   border-top: 1px solid #c8c8c8;
   opacity: 1;
   background-color: initial;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .cursor-pointer {
