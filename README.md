@@ -1,7 +1,7 @@
-# XIV·ToDo
-
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fxivtodo.com)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bourgeoisor/xivtodo)
+
+![brand_green](https://user-images.githubusercontent.com/3271352/121793388-ecb93c80-cbd4-11eb-9c88-549be5832789.png)
 
 XIV·ToDo is a series of helpful dashboards, checklists and tools to help visualize and clear Final Fantasy XIV's various content.
 
