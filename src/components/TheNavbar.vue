@@ -34,14 +34,11 @@
               <router-link to="/settings" class="nav-link">Settings</router-link>
             </li>
           </ul>
-          <li
-            v-if="this.$store.getters.characterData"
-            class="navbar-nav nav-item d-none d-lg-block"
-          >
+          <li v-if="this.$store.getters.character" class="navbar-nav nav-item d-none d-lg-block">
             <span class="nav-link">{{ this.$store.getters.character.Name }}</span>
           </li>
           <img
-            v-if="this.$store.getters.characterData"
+            v-if="this.$store.getters.character"
             class="avatar d-none d-lg-block"
             :src="this.$store.getters.character.Avatar"
           />

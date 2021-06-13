@@ -156,8 +156,21 @@ export default {
           }
         })
         .then((characterData) => {
+          // Save user settings.
           this.settings.lastUpdated = parseInt(Date.now());
           this.$store.commit("updateSettings", this.settings);
+
+          // Inject character data.
+          let achievementList = characterData.Achievements?.List || [];
+          console.log(achievementList);
+          for (let i = 0; i < achievementList.length; i++) {
+            if (achievementList[i].ID == 789) {
+              console.log(achievementList[i].Date);
+              characterData.PlayingSince = achievementList[i].Date;
+            }
+          }
+
+          // Save character data.
           this.$store.commit("updateCharacterData", characterData);
         })
         .catch((err) => {

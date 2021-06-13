@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Questlines</h1>
     <Alert
-      v-if="!this.$store.getters.characterData"
+      v-if="!this.$store.getters.character"
       msg="Character data could not be found. You can load a character from the <a href='/settings' class='alert-link'>Settings</router-link>."
     />
     <Alert

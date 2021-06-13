@@ -33,7 +33,7 @@ export default {
       return false;
     },
     injectDutyCompletion(duties) {
-      let achievementList = this.$store.getters.achievements.List || [];
+      let achievementList = this.$store.getters.achievements;
       let achievements = new Map();
       for (let i = 0; i < achievementList.length; i++) {
         achievements.set(achievementList[i].ID, achievementList[i].Date);

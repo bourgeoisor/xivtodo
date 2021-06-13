@@ -15,14 +15,14 @@ export default createStore({
     todosNextWeeklyReset: 0,
   },
   getters: {
-    character(state) {
-      return state.characterData?.Character || {};
-    },
     characterData(state) {
-      return state.characterData?.Character?.Name;
+      return state.characterData || {};
+    },
+    character(state) {
+      return state.characterData?.Character;
     },
     achievements(state) {
-      return state.characterData?.Achievements || {};
+      return state.characterData?.Achievements?.List || {};
     },
     achievementsPublic(state) {
       return state.characterData?.AchievementsPublic || false;

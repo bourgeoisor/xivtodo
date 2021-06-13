@@ -2,12 +2,12 @@
   <div class="container">
     <h1>Dashboard</h1>
     <Alert
-      v-if="!this.$store.getters.characterData"
+      v-if="!this.$store.getters.character"
       msg="Character data could not be found. You can load a character from the <a href='/settings' class='alert-link'>Settings</router-link>."
     />
     <hr />
     <div class="row">
-      <div v-if="this.$store.getters.characterData" class="col-lg d-none d-lg-block">
+      <div v-if="this.$store.getters.character" class="col-lg d-none d-lg-block">
         <img id="character-portrait" :src="this.$store.getters.character.Portrait" />
         <br />
         <span v-if="this.$store.getters.character.Bio != '-'" class="fst-italic text-break">
@@ -17,7 +17,7 @@
       </div>
 
       <div class="col-lg">
-        <div v-if="this.$store.getters.characterData">
+        <div v-if="this.$store.getters.character">
           <h2>{{ this.$store.getters.character.Name }}</h2>
           <div class="info-block">
             <b>World</b><br />
@@ -32,7 +32,7 @@
           </div>
 
           <div class="info-block">
-            <b>Race/Clan</b><br />
+            <b>Race / Clan</b><br />
             <i class="bi bi-arrow-return-right"></i>
             {{ races[this.$store.getters.character.Race - 1] }} /
             {{ tribes[this.$store.getters.character.Tribe - 1] }}
@@ -70,11 +70,18 @@
               }}
             </div>
           </template>
+          <template v-if="this.$store.getters.characterData.PlayingSince">
+            <div class="info-block">
+              <b>Playing since</b><br />
+              <i class="bi bi-arrow-return-right"></i>
+              {{ new Date(this.$store.getters.characterData.PlayingSince * 1000).toDateString() }}
+            </div>
+          </template>
           <template v-if="this.$store.getters.achievementsPublic">
             <div class="info-block">
               <b>Achievements</b><br />
               <i class="bi bi-arrow-return-right"></i>
-              {{ this.$store.getters.achievements.List?.length }}
+              {{ this.$store.getters.achievements.length }}
             </div>
           </template>
         </div>
