@@ -11,7 +11,8 @@
       </a>
     </div>
     <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-4">
-      Build {{ build }}
+      Build version {{ buildNum }}<br />
+      Deployed on {{ buildDate }}
     </div>
   </footer>
 </template>
@@ -41,7 +42,8 @@ export default {
   Name: "TheFooter",
   data() {
     return {
-      build: process.env.VUE_APP_VERSION,
+      buildNum: process.env.VUE_APP_BUILD_NUM,
+      buildDate: process.env.VUE_APP_BUILD_DATE,
     };
   },
 };

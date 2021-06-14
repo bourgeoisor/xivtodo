@@ -25,12 +25,14 @@ jobs:
           run: |
             npm install
 
-        - name: Generate app version
+        - name: Generate build number and date
           run: |
-            APP_VERSION=$GITHUB_RUN_NUMBER.$GITHUB_SHA
-            echo "VUE_APP_VERSION=$APP_VERSION" > .env.production
+            APP_BUILD_NUM=$GITHUB_RUN_NUMBER.$GITHUB_SHA
+            APP_BUILD_DATE=`date`
+            echo "VUE_APP_BUILD_NUM=$APP_BUILD_NUM" > .env.production
+            echo "VUE_APP_BUILD_DATE=$APP_BUILD_DATE" >> .env.production
 
-        - name: Deploy
+        - name: Deploy to gh-pages
           run: |
             git checkout --orphan gh-pages
             npm run build
