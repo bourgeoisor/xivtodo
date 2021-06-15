@@ -5,7 +5,7 @@
       <button
         type="button"
         class="btn float-end"
-        :class="{ 'btn-outline-secondary': !showHidden, 'btn-outline-success': showHidden }"
+        :class="{ 'btn-outline-success': !showHidden, 'btn-success': showHidden }"
         @click="showHidden = !showHidden"
       >
         Customize

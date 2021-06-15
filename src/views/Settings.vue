@@ -86,7 +86,7 @@
             v-if="saving"
             type="button"
             id="settings-save-btn"
-            class="btn btn-secondary"
+            class="btn btn-success"
             disabled
           >
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
@@ -97,7 +97,7 @@
             @click="saveSettings"
             type="button"
             id="settings-save-btn"
-            class="btn btn-secondary"
+            class="btn btn-success"
           >
             Update
           </button>
