@@ -20,6 +20,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  padding-top: 75px;
+}
+
 .night {
   color: #dddddd;
   background-color: #1c2024;
@@ -41,6 +45,14 @@
   .form-check-input {
     background-color: #1c2024;
     border: 1px solid rgb(255, 255, 255);
+  }
+
+  .border {
+    border-color: #444444 !important;
+  }
+
+  .border-bottom {
+    border-color: #444444 !important;
   }
 }
 
@@ -98,11 +110,12 @@ export default {
   computed: {
     computeWindowTitle() {
       const routeName = this.$route.name;
-      const home = routeName === "home";
 
-      let title = "XIV·ToDo";
-      if (!home) {
-        title = title + " - " + routeName;
+      let title = "XIV ToDo";
+      if (routeName === "Home") {
+        title = `${title}: Dashboards, checklists and tools for FFXIV`;
+      } else {
+        title = `${title} - ${routeName}`;
       }
 
       return title;

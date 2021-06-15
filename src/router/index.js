@@ -1,12 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Dashboard from "../views/Dashboard.vue";
+import Home from "../views/Home.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Dashboard",
-    component: Dashboard,
-    beforeEnter: (to, from, next) => {
+    name: "Home",
+    component: Home,
+    beforeEnter: (_to, _from, next) => {
       if (sessionStorage.getItem("redirect") !== null) {
         const redirect = sessionStorage.redirect;
         delete sessionStorage.redirect;
@@ -15,6 +15,11 @@ const routes = [
         next();
       }
     },
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: () => import(/* webpackChunkName: "duties" */ "../views/Profile.vue"),
   },
   {
     path: "/duties",
@@ -37,9 +42,24 @@ const routes = [
     component: () => import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
   },
   {
+    path: "/about",
+    name: "About",
+    component: () => import(/* webpackChunkName: "settings" */ "../views/About.vue"),
+  },
+  {
+    path: "/faq",
+    name: "FAQ",
+    component: () => import(/* webpackChunkName: "settings" */ "../views/FAQ.vue"),
+  },
+  {
+    path: "/privacy",
+    name: "Privacy Policy",
+    component: () => import(/* webpackChunkName: "settings" */ "../views/PrivacyPolicy.vue"),
+  },
+  {
     path: "/:catchAll(.*)",
     redirect: {
-      name: "Dashboard",
+      name: "Home",
     },
   },
 ];
@@ -47,6 +67,10 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  // eslint-disable-next-line no-unused-vars
+  scrollBehavior(to, from, savedPosition) {
+    document.getElementById("app").scrollIntoView();
+  },
 });
 
 export default router;

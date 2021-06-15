@@ -3,7 +3,7 @@
 
 ![brand_green](https://user-images.githubusercontent.com/3271352/121793388-ecb93c80-cbd4-11eb-9c88-549be5832789.png)
 
-XIV·ToDo is a series of helpful dashboards, checklists and tools to help visualize and clear Final Fantasy XIV's various content.
+XIV ToDo is a series of helpful dashboards, checklists and tools to help visualize and clear Final Fantasy XIV's various content.
 
 This site is currently hosted at [https://xivtodo.com](https://xivtodo.com).
 
@@ -37,3 +37,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+---
+
+FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.
+
+FINAL FANTASY XIV © SQUARE ENIX CO., LTD.

@@ -1,14 +1,24 @@
 <template>
-  <footer class="footer d-flex justify-content-between mt-auto py-2 px-2 bg-light">
-    <div class="footer-copyrights text-muted d-none d-lg-block col-4">
+  <footer class="footer d-flex justify-content-between mt-auto py-2 px-3 bg-light user-select-none">
+    <div class="footer-copyrights text-muted my-auto d-none d-lg-block col-4">
       FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br />
       FINAL FANTASY XIV © SQUARE ENIX CO., LTD.
     </div>
     <div class="flex-fill text-center text-muted">
-      <a class="link-dark text-reset" href="https://xivtodo.com">XIV·ToDo</a> was coded with love by
-      <a class="link-dark text-reset" href="https://github.com/bourgeoisor/xivtodo">
-        Olivier Bourgeois
+      <img src="../assets/brand_grey.png" alt="XIV ToDo branding" /><br />
+      <!-- <router-link to="/about"><small>About</small></router-link>
+      ·
+      <router-link to="/faq"><small>FAQ</small></router-link>
+      · -->
+      <router-link to="/privacy"><small>Privacy Policy</small></router-link>
+      ·
+      <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
+        <small>Contact</small>
       </a>
+      <!-- ·
+      <a href="https://forms.gle/bd8aPJpS9gnLQkP69" target="_blank" rel="noopener noreferrer">
+        <small>Feedback</small>
+      </a> -->
     </div>
     <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-4">
       Build version {{ buildNum }}<br />
@@ -28,12 +38,22 @@
   }
 
   a:hover {
-    color: #bbbbbb;
+    color: #eeeeee;
   }
 }
 
 .footer-copyrights {
   font-size: 0.6rem;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer img {
+  height: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 </style>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Dashboard</h1>
+    <h1>Profile</h1>
     <Alert
       v-if="!this.$store.getters.character"
       msg="Character data could not be found. You can load a character from the <a href='/settings' class='alert-link'>Settings</router-link>."
@@ -8,7 +8,11 @@
     <hr />
     <div class="row">
       <div v-if="this.$store.getters.character" class="col-lg d-none d-lg-block">
-        <img id="character-portrait" :src="this.$store.getters.character.Portrait" />
+        <img
+          id="character-portrait"
+          :src="this.$store.getters.character.Portrait"
+          alt="Portrait of your character"
+        />
         <br />
         <span v-if="this.$store.getters.character.Bio != '-'" class="fst-italic text-break">
           “{{ this.$store.getters.character.Bio }}”
@@ -129,7 +133,7 @@
 import Alert from "@/components/Alert.vue";
 
 export default {
-  name: "Dashboard",
+  name: "Profile",
   data() {
     return {
       races: ["Hyur", "Elezen", "Lalafell", "Miqo'te", "Roegadyn", "Au Ra", "Hrothgar", "Viera"],

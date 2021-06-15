@@ -1,9 +1,9 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid user-select-none">
         <router-link to="/" class="navbar-brand mb-0 h1">
-          <img style="height: 28px" src="../assets/brand.png" />
+          <img style="height: 28px" src="../assets/brand.png" alt="XIV ToDo branding" />
         </router-link>
         <button
           class="navbar-toggler"
@@ -19,19 +19,28 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link to="/" class="nav-link">Dashboard</router-link>
+              <router-link to="/" class="nav-link" @click="collapseNav">Home</router-link>
+            </li>
+            <li v-if="this.$store.getters.character" class="nav-item">
+              <router-link to="/profile" class="nav-link" @click="collapseNav">Profile</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/duties" class="nav-link">Duties</router-link>
+              <router-link to="/duties" class="nav-link" @click="collapseNav">Duties</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/questlines" class="nav-link">Questlines</router-link>
+              <router-link to="/questlines" class="nav-link" @click="collapseNav">
+                Questlines
+              </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/checklist" class="nav-link">Checklist</router-link>
+              <router-link to="/checklist" class="nav-link" @click="collapseNav">
+                Checklist
+              </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/settings" class="nav-link">Settings</router-link>
+              <router-link to="/settings" class="nav-link" @click="collapseNav">
+                Settings
+              </router-link>
             </li>
           </ul>
           <li v-if="this.$store.getters.character" class="navbar-nav nav-item d-none d-lg-block">
@@ -41,6 +50,7 @@
             v-if="this.$store.getters.character"
             class="avatar d-none d-lg-block"
             :src="this.$store.getters.character.Avatar"
+            alt="Portrait of your character"
           />
         </div>
       </div>
@@ -93,5 +103,11 @@ span.nav-link:hover {
 <script>
 export default {
   Name: "TheNavbar",
+  methods: {
+    collapseNav() {
+      let navCollapse = document.getElementById("navbarSupportedContent");
+      navCollapse.classList.remove("show");
+    },
+  },
 };
 </script>
