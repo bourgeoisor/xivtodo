@@ -11,15 +11,17 @@
       <p class="lead mb-4">
         XIV ToDo provides useful dashboards, tailored checklists and tools for Final Fantasy XIV;
         whether you are a new player to the game or more experienced. In its current form, XIV ToDo
-        offers customizable daily and weekly checklists as well as automated completition trackers
-        of duties and questlines, with much more to come!
+        offers customizable daily and weekly checklists as well as automated completion trackers of
+        duties and questlines, with much more to come!
       </p>
       <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-sm-center">
         <router-link v-if="!this.$store.getters.character" to="/settings">
           <button type="button" class="btn btn-success btn-lg px-4 gap-3">Add a character</button>
         </router-link>
         <router-link v-else to="/profile">
-          <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">View your profile</button>
+          <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">
+            View your profile
+          </button>
         </router-link>
         <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn more</button> -->
       </div>
@@ -80,8 +82,8 @@
         <div>
           <h4 class="fw-bold mb-0">Dailies &amp; weeklies</h4>
           <p>
-            Comprehensive list of daily and weekly objectives which can be ticked off and get
-            automatically cleared on reset.
+              Comprehensive list of daily and weekly objectives which can be ticked off and get
+              automatically cleared on reset.
           </p>
         </div>
       </div>
@@ -109,7 +111,7 @@
         <div>
           <h4 class="fw-bold mb-0">Customizable</h4>
           <p>
-            Personilization is available like hiding select objectives from the checklists, with
+            Personalization is available like hiding select objectives from the checklists, with
             more to come soon.
           </p>
         </div>
