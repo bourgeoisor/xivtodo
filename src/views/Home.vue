@@ -1,8 +1,16 @@
 <template>
   <div class="px-4 py-4 my-4 text-center">
     <img
+      v-if="this.$store.state.settings.nightMode"
       class="d-block mx-auto mb-4"
       src="../assets/brand.png"
+      alt="XIV ToDo branding"
+      width="300"
+    />
+    <img
+      v-else
+      class="d-block mx-auto mb-4"
+      src="../assets/brand_black.png"
       alt="XIV ToDo branding"
       width="300"
     />
@@ -35,7 +43,7 @@
           style="width: 400%"
         />
       </div>
-      <div class="d-none d-sm-block col-10 col-md-7 col-lg-4 px-0">
+      <div class="col-11 col-md-7 col-lg-4 px-0">
         <img
           src="../assets/screen_duties.png"
           class="border rounded-3 mb-4"

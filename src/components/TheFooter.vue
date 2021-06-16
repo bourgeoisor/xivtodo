@@ -28,6 +28,17 @@
 </template>
 
 <style lang="scss">
+footer {
+  a,
+  a:focus {
+    color: #555555;
+  }
+
+  a:hover {
+    color: #222222;
+  }
+}
+
 .night footer {
   background-color: #212529 !important;
   border-top: 1px solid #333333;
