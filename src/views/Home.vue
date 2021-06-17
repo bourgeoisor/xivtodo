@@ -32,6 +32,7 @@
           </button>
         </router-link>
         <button
+          v-if="!this.$store.getters.character"
           type="button"
           class="btn btn-outline-secondary btn-lg px-4"
           @click="goto('features')"
