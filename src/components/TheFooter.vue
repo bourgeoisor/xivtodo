@@ -6,9 +6,9 @@
     </div>
     <div class="flex-fill text-center text-muted">
       <img src="../assets/brand_grey.png" alt="XIV ToDo branding" /><br />
-      <!-- <router-link to="/about"><small>About</small></router-link>
+      <router-link to="/"><small>About</small></router-link>
       ·
-      <router-link to="/faq"><small>FAQ</small></router-link>
+      <!-- <router-link to="/faq"><small>FAQ</small></router-link>
       · -->
       <router-link to="/privacy"><small>Privacy Policy</small></router-link>
       ·

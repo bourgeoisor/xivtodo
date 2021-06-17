@@ -17,12 +17,12 @@
     <h1 class="visually-hidden">XIV ToDo</h1>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">
-        XIV ToDo provides useful dashboards, tailored checklists and tools for Final Fantasy XIV;
+        XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV;
         whether you are a new player to the game or more experienced. In its current form, XIV ToDo
         offers customizable daily and weekly checklists as well as automated completion trackers of
         duties and questlines, with much more to come!
       </p>
-      <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-sm-center">
+      <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
         <router-link v-if="!this.$store.getters.character" to="/settings">
           <button type="button" class="btn btn-success btn-lg px-4 gap-3">Add a character</button>
         </router-link>
@@ -31,7 +31,13 @@
             View your profile
           </button>
         </router-link>
-        <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Learn more</button> -->
+        <button
+          type="button"
+          class="btn btn-outline-secondary btn-lg px-4"
+          @click="goto('features')"
+        >
+          Learn more
+        </button>
       </div>
     </div>
     <div class="overflow-hidden border-bottom row justify-content-center" style="max-height: 20vh">
@@ -62,8 +68,8 @@
     </div>
   </div>
 
-  <div class="container px-4 py-2" id="icon-grid">
-    <h2 class="display-6 pb-2 border-bottom">Features</h2>
+  <div class="container px-4 py-2 mb-5 border-bottom" id="icon-grid">
+    <h1 ref="features" class="pb-2 border-bottom">Features</h1>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
       <div class="col d-flex align-items-start">
@@ -90,8 +96,8 @@
         <div>
           <h4 class="fw-bold mb-0">Dailies &amp; weeklies</h4>
           <p>
-              Comprehensive list of daily and weekly objectives which can be ticked off and get
-              automatically cleared on reset.
+            Comprehensive list of daily and weekly objectives which can be ticked off and get
+            automatically cleared on reset.
           </p>
         </div>
       </div>
@@ -140,10 +146,67 @@
       </div> -->
     </div>
   </div>
+
+  <div class="container col-xxl-8 px-4 pb-5">
+    <div class="row align-items-center g-5 pb-5">
+      <div class="d-none d-md-block col-md-3 col-lg-3">
+        <img
+          src="../assets/hamster_avatar.png"
+          style="border-radius: 50%; width: 100%"
+          class="d-block mx-lg-auto"
+          alt="Bootstrap Themes"
+        />
+      </div>
+      <div class="col-11 col-md-9 col-lg-8">
+        <h1 class="pb-2 border-bottom mb-3">About XIV ToDo</h1>
+        <p class="lead">
+          XIV ToDo is a project started in mid-2021 by
+          <a
+            class="text-reset"
+            href="https://bourgeois.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Olivier</a
+          >, a software developer from Canada. After realizing that there were no methods for
+          quickly visualizing which of the numerous duties and questlines that had been cleared by
+          my characters, the idea had sparked. XIV ToDo currently is and remains free and open
+          source under the xivtodo GitHub repository. You can
+          <a
+            class="text-reset"
+            href="https://forms.gle/2t5nLB28xDyi3Tn6A"
+            target="_blank"
+            rel="noopener noreferrer"
+            >contact</a
+          >
+          me with any questions or feedback. Thank you for using and supporting this project!
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a
+            href="https://github.com/bourgeoisor/xivtodo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-md-2">
+              View project on GitHub
+            </button>
+          </a>
+          <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Home",
+  methods: {
+    goto(refName) {
+      var element = this.$refs[refName];
+      var top = element.offsetTop;
+
+      window.scrollTo(0, top - 70);
+    },
+  },
 };
 </script>
