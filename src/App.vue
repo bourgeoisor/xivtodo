@@ -113,7 +113,7 @@ export default {
 
       let title = "XIV ToDo";
       if (routeName === "Home") {
-        title = `${title}: Dashboards, checklists and tools for FFXIV`;
+        title = `${title}: Dashboards, checklists, and tools for FFXIV`;
       } else {
         title = `${title} - ${routeName}`;
       }
