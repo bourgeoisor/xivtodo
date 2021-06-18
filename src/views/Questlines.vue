@@ -42,6 +42,7 @@
       </div>
       <div class="col-lg">
         <DutyList title="Role Quests" :duties="db.roleQuests" />
+        <DutyList title="Crystalline Mean Quests" :duties="db.crystallineMeanQuests" />
       </div>
     </div>
   </div>
