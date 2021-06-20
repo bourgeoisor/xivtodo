@@ -1,13 +1,14 @@
 <template>
   <div class="container">
-    <h1>Duties</h1>
+    <h1>
+      Duties
+      <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
+        cleared by {{ this.$store.getters.character.Name }}
+      </span>
+    </h1>
     <Alert
-      v-if="!this.$store.getters.character"
-      msg="Character data could not be found. You can load a character from the <a href='/settings' class='alert-link'>Settings</router-link>."
-    />
-    <Alert
-      v-else-if="!this.$store.getters.achievementsPublic"
-      msg="The achievements for this character are not public. You can set Achievements to Public in your <a class='alert-link' href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' target='_blank' rel='noopener noreferrer'>character settings</a>."
+      v-if="!this.$store.getters.hasCharacter"
+      msg="Character data could not be found. You can load a character from the <a href='/settings' class='alert-link'>Settings</a>."
     />
     <hr />
     <div class="row">

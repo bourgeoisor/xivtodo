@@ -21,7 +21,7 @@
             <li class="nav-item">
               <router-link to="/" class="nav-link" @click="collapseNav">Home</router-link>
             </li>
-            <li v-if="this.$store.getters.character" class="nav-item">
+            <li v-if="this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/profile" class="nav-link" @click="collapseNav">Profile</router-link>
             </li>
             <li class="nav-item">
@@ -37,21 +37,54 @@
                 Checklist
               </router-link>
             </li>
-            <li class="nav-item">
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li v-if="!this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/settings" class="nav-link" @click="collapseNav">
                 Settings
               </router-link>
             </li>
+            <li v-else class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {{ this.$store.getters.characterData.Character.Name }}
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
+                aria-labelledby="navbarDropdown"
+              >
+                <li><h6 class="dropdown-header">Change active character</h6></li>
+                <li v-for="(item, i) of this.$store.state.characters" :key="item.ID">
+                  <span
+                    v-if="i == this.$store.state.activeCharacterID"
+                    class="dropdown-item active"
+                    >{{ item.characterData.Character.Name }}</span
+                  >
+                  <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
+                    {{ item.characterData.Character.Name }}
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <router-link to="/settings" class="dropdown-item" @click="collapseNav">
+                    Settings
+                  </router-link>
+                </li>
+              </ul>
+            </li>
+            <img
+              v-if="this.$store.getters.hasCharacter"
+              class="avatar-nav d-none d-lg-inline"
+              :src="this.$store.getters.character.Avatar"
+              alt="Portrait of your character"
+            />
           </ul>
-          <li v-if="this.$store.getters.character" class="navbar-nav nav-item d-none d-lg-block">
-            <span class="nav-link">{{ this.$store.getters.character.Name }}</span>
-          </li>
-          <img
-            v-if="this.$store.getters.character"
-            class="avatar d-none d-lg-block"
-            :src="this.$store.getters.character.Avatar"
-            alt="Portrait of your character"
-          />
         </div>
       </div>
     </nav>
@@ -94,9 +127,15 @@ span.nav-link:hover {
   text-underline-offset: 7px;
 }
 
-.avatar {
+.avatar-nav {
   border-radius: 50%;
-  height: 34px;
+  height: 43px;
+  margin-left: 10px;
+}
+
+.dropdown-menu-dark .dropdown-item.active,
+.dropdown-menu-dark .dropdown-item:focus {
+  background-color: #262b30;
 }
 </style>
 
@@ -107,6 +146,10 @@ export default {
     collapseNav() {
       let navCollapse = document.getElementById("navbarSupportedContent");
       navCollapse.classList.remove("show");
+    },
+    changeActiveCharacter(i) {
+      this.$store.commit("changeActiveCharacter", i);
+      this.collapseNav();
     },
   },
 };

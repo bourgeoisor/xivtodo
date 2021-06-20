@@ -65,6 +65,10 @@ h1 {
   margin-bottom: 0px !important;
 }
 
+h3 {
+  font-weight: 700;
+}
+
 .row h2 {
   text-decoration: underline;
   text-decoration-thickness: 2px;

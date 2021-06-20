@@ -1,13 +1,9 @@
 <template>
   <div class="container">
-    <h1>Profile</h1>
-    <Alert
-      v-if="!this.$store.getters.character"
-      msg="Character data could not be found. You can load a character from the <a href='/settings' class='alert-link'>Settings</router-link>."
-    />
+    <h1>{{ this.$store.getters.character.Name }}</h1>
     <hr />
     <div class="row">
-      <div v-if="this.$store.getters.character" class="col-lg d-none d-lg-block">
+      <div class="col-lg d-none d-lg-block">
         <img
           id="character-portrait"
           :src="this.$store.getters.character.Portrait"
@@ -21,82 +17,72 @@
       </div>
 
       <div class="col-lg">
-        <div v-if="this.$store.getters.character">
-          <h2>{{ this.$store.getters.character.Name }}</h2>
-          <div class="info-block">
-            <b>World</b><br />
-            <i class="bi bi-arrow-return-right"></i>
-            {{ this.$store.getters.character.Server }} ({{ this.$store.getters.character.DC }})
-          </div>
-
-          <div class="info-block">
-            <b>Free Company</b><br />
-            <i class="bi bi-arrow-return-right"></i>
-            {{ this.$store.getters.character.FreeCompanyName }}
-          </div>
-
-          <div class="info-block">
-            <b>Race / Clan</b><br />
-            <i class="bi bi-arrow-return-right"></i>
-            {{ races[this.$store.getters.character.Race - 1] }} /
-            {{ tribes[this.$store.getters.character.Tribe - 1] }}
-            <i v-if="this.$store.getters.character.Gender == 1" class="bi bi-gender-male"></i>
-            <i v-else class="bi bi-gender-female"></i>
-          </div>
-
-          <div class="info-block">
-            <b>Nameday</b><br />
-            <i class="bi bi-arrow-return-right"></i>
-            {{ this.$store.getters.character.Nameday }}
-          </div>
-
-          <div class="info-block">
-            <b>Guardian</b><br />
-            <i class="bi bi-arrow-return-right"></i>
-            {{ guardians[this.$store.getters.character.GuardianDeity - 1] }}
-          </div>
-
-          <div class="info-block">
-            <b>City-state</b><br />
-            <i class="bi bi-arrow-return-right"></i>
-            {{ cities[this.$store.getters.character.Town - 1] }}
-          </div>
-
-          <template v-if="this.$store.getters.character.GrandCompany">
-            <div class="info-block">
-              <b>Grand Company</b><br />
-              <i class="bi bi-arrow-return-right"></i>
-              {{ gcNames[this.$store.getters.character.GrandCompany.NameID - 1] }} /
-              {{
-                gcRanks[this.$store.getters.character.GrandCompany.NameID - 1][
-                  this.$store.getters.character.GrandCompany.RankID - 1
-                ]
-              }}
-            </div>
-          </template>
-          <template v-if="this.$store.getters.characterData.PlayingSince">
-            <div class="info-block">
-              <b>Playing since</b><br />
-              <i class="bi bi-arrow-return-right"></i>
-              {{ new Date(this.$store.getters.characterData.PlayingSince * 1000).toDateString() }}
-            </div>
-          </template>
-          <template v-if="this.$store.getters.achievementsPublic">
-            <div class="info-block">
-              <b>Achievements</b><br />
-              <i class="bi bi-arrow-return-right"></i>
-              {{ this.$store.getters.achievements.length }}
-            </div>
-          </template>
+        <h2>Character Information</h2>
+        <div class="info-block">
+          <b>World</b><br />
+          <i class="bi bi-arrow-return-right"></i>
+          {{ this.$store.getters.character.Server }} ({{ this.$store.getters.character.DC }})
         </div>
-        <div v-else>
-          <h2>Character Information</h2>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              No data to display.
-            </li>
-          </ul>
+
+        <div v-if="this.$store.getters.character.FreeCompanyName" class="info-block">
+          <b>Free Company</b><br />
+          <i class="bi bi-arrow-return-right"></i>
+          {{ this.$store.getters.character.FreeCompanyName }}
         </div>
+
+        <div class="info-block">
+          <b>Race / Clan</b><br />
+          <i class="bi bi-arrow-return-right"></i>
+          {{ races[this.$store.getters.character.Race - 1] }} /
+          {{ tribes[this.$store.getters.character.Tribe - 1] }}
+          <i v-if="this.$store.getters.character.Gender == 1" class="bi bi-gender-male"></i>
+          <i v-else class="bi bi-gender-female"></i>
+        </div>
+
+        <div class="info-block">
+          <b>Nameday</b><br />
+          <i class="bi bi-arrow-return-right"></i>
+          {{ this.$store.getters.character.Nameday }}
+        </div>
+
+        <div class="info-block">
+          <b>Guardian</b><br />
+          <i class="bi bi-arrow-return-right"></i>
+          {{ guardians[this.$store.getters.character.GuardianDeity - 1] }}
+        </div>
+
+        <div class="info-block">
+          <b>City-state</b><br />
+          <i class="bi bi-arrow-return-right"></i>
+          {{ cities[this.$store.getters.character.Town - 1] }}
+        </div>
+
+        <template v-if="this.$store.getters.character.GrandCompany">
+          <div class="info-block">
+            <b>Grand Company</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ gcNames[this.$store.getters.character.GrandCompany.NameID - 1] }} /
+            {{
+              gcRanks[this.$store.getters.character.GrandCompany.NameID - 1][
+                this.$store.getters.character.GrandCompany.RankID - 1
+              ]
+            }}
+          </div>
+        </template>
+        <template v-if="this.$store.getters.characterData.PlayingSince">
+          <div class="info-block">
+            <b>Playing since</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ new Date(this.$store.getters.characterData.PlayingSince * 1000).toDateString() }}
+          </div>
+        </template>
+        <template v-if="this.$store.getters.achievementsPublic">
+          <div class="info-block">
+            <b>Achievements</b><br />
+            <i class="bi bi-arrow-return-right"></i>
+            {{ this.$store.getters.achievements.length }}
+          </div>
+        </template>
         <br />
       </div>
       <div class="col-lg">
@@ -130,8 +116,6 @@
 </style>
 
 <script>
-import Alert from "@/components/Alert.vue";
-
 export default {
   name: "Profile",
   data() {
@@ -213,9 +197,6 @@ export default {
         ],
       ],
     };
-  },
-  components: {
-    Alert,
   },
 };
 </script>

@@ -23,25 +23,33 @@
         duties and questlines, with much more to come!
       </p>
       <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
-        <router-link v-if="!this.$store.getters.character" to="/settings">
-          <button type="button" class="btn btn-success btn-lg px-4 gap-3">Add a character</button>
-        </router-link>
-        <router-link v-else to="/profile">
-          <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">
-            View your profile
+        <template v-if="!this.$store.getters.hasCharacter">
+          <router-link to="/settings">
+            <button type="button" class="btn btn-success btn-lg px-4 gap-3">Add a character</button>
+          </router-link>
+          <button
+            type="button"
+            class="btn btn-outline-secondary btn-lg px-4"
+            @click="goto('features')"
+          >
+            Learn more
           </button>
-        </router-link>
-        <button
-          v-if="!this.$store.getters.character"
-          type="button"
-          class="btn btn-outline-secondary btn-lg px-4"
-          @click="goto('features')"
-        >
-          Learn more
-        </button>
+        </template>
+        <template v-else>
+          <router-link to="/profile">
+            <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">
+              View your profile
+            </button>
+          </router-link>
+          <router-link to="/settings">
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3">
+              Settings
+            </button>
+          </router-link>
+        </template>
       </div>
     </div>
-    <div class="overflow-hidden border-bottom row justify-content-center" style="max-height: 20vh">
+    <div class="overflow-hidden border-bottom row justify-content-center" style="max-height: 25vh">
       <div class="d-none d-md-block col-2 col-lg-1 px-0 pt-5">
         <img
           src="../assets/screen_checklist.png"
@@ -50,7 +58,7 @@
           style="width: 400%"
         />
       </div>
-      <div class="col-11 col-md-7 col-lg-4 px-0">
+      <div class="col-11 col-md-7 col-lg-5 px-0">
         <img
           src="../assets/screen_duties.png"
           class="border rounded-3 mb-4"

@@ -7,29 +7,7 @@
       <div class="row">
         <div class="col-md-6">
           <h2>General</h2>
-          <br />
-          <div class="form-floating mb-3">
-            <input
-              v-model="settings.characterId"
-              type="text"
-              class="form-control"
-              name="inputCharacterID"
-              id="inputCharacterID"
-              placeholder=""
-            />
-            <label class="floating-label" for="inputCharacterID">Character ID</label>
-            <div class="form-text">
-              Your character ID. You can find it in
-              <a
-                class="text-reset"
-                href="https://na.finalfantasyxiv.com/lodestone/character/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Lodestone</a
-              >.
-            </div>
-          </div>
-
+          <h3>Content spoilers</h3>
           <div class="form-check">
             <input
               v-model="settings.spoilersOption"
@@ -70,6 +48,7 @@
           <div class="form-text">Preference in hiding potential spoilers.</div>
           <br />
 
+          <h3>Theme color</h3>
           <div class="form-check">
             <input
               v-model="settings.nightMode"
@@ -83,32 +62,113 @@
 
           <br />
           <button
-            v-if="saving"
+            @click="saveSettings"
+            type="button"
+            id="settings-save-btn"
+            class="btn btn-success"
+          >
+            Update settings
+          </button>
+          <br /><br />
+        </div>
+        <div class="col-md-6">
+          <h2>Characters</h2>
+          <h3>List of characters</h3>
+          <ul v-if="!this.$store.getters.hasCharacter" class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              There are no loaded characters yet.
+            </li>
+          </ul>
+          <ul v-else class="list-group list-group-flush">
+            <li
+              v-for="(item, i) of this.$store.state.characters"
+              :key="item.ID"
+              class="list-group-item d-flex justify-content-between align-items-start"
+            >
+              <div class="ms-2 me-auto">
+                <img
+                  style="display: block; float: left; height: 50px"
+                  class="avatar-list"
+                  :src="item.characterData.Character.Avatar"
+                  alt="Portrait of your character"
+                />
+                <div style="float: left">
+                  <span class="fw-bold">{{ item.characterData.Character.Name }}</span>
+                  <br />
+                  <span v-if="item.characterData.AchievementsPublic" class="text-muted fw-light">
+                    Last updated {{ lastUpdatedAt(item.lastUpdated) }}.
+                  </span>
+                  <span v-else class="text-warning fw-light">
+                    <abbr
+                      title="The achievements for this characters are not set to public in Lodestone."
+                    >
+                      Achievements non-public.
+                    </abbr>
+                  </span>
+                </div>
+              </div>
+              <a
+                class="bi-trash text-danger cursor-pointer"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Remove"
+                @click="removeCharacter(i)"
+              ></a>
+            </li>
+          </ul>
+
+          <br />
+          <h3>Add a new character</h3>
+
+          <div class="form-floating mb-3">
+            <input
+              v-model="profileURL"
+              type="text"
+              class="form-control"
+              name="inputCharacterID"
+              id="inputCharacterID"
+              placeholder=""
+            />
+            <label class="floating-label" for="inputCharacterID">
+              Lodestone character profile URL
+            </label>
+            <div class="form-text">
+              <abbr
+                title="Hint: It looks like this: finalfantasyxiv.com/lodestone/character/32741501/"
+              >
+                Profile URL
+              </abbr>
+              for your character. You can find it in
+              <a
+                class="text-reset"
+                href="https://na.finalfantasyxiv.com/lodestone/character/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Lodestone</a
+              >.
+            </div>
+          </div>
+
+          <button
+            v-if="adding"
             type="button"
             id="settings-save-btn"
             class="btn btn-success"
             disabled
           >
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Updating, please wait...
+            Adding, please wait...
           </button>
           <button
             v-else
-            @click="saveSettings"
+            @click="addCharacter"
             type="button"
             id="settings-save-btn"
             class="btn btn-success"
           >
-            Update
+            Add character
           </button>
-
           <br /><br />
-          <template v-if="settings.lastUpdated">
-            <span class="text-muted fw-light">
-              Last updated {{ lastUpdatedAt(settings.lastUpdated) }}
-            </span>
-            <br /><br />
-          </template>
         </div>
       </div>
     </form>
@@ -124,6 +184,12 @@
   color: #dbdcdd;
   background-color: #262b2f;
 }
+
+.avatar-list {
+  border-radius: 50%;
+  height: 43px;
+  margin-right: 10px;
+}
 </style>
 
 <script>
@@ -133,8 +199,9 @@ export default {
   name: "Settings",
   data() {
     return {
-      saving: false,
+      adding: false,
       error: "",
+      profileURL: "",
       settings: { ...this.$store.state.settings },
     };
   },
@@ -143,9 +210,15 @@ export default {
   },
   methods: {
     saveSettings() {
-      this.saving = true;
+      this.$store.commit("updateSettings", this.settings);
+    },
+    addCharacter() {
+      this.adding = true;
 
-      fetch("https://xivapi.com/character/" + this.settings.characterId + "?data=AC", {
+      if (this.profileURL.endsWith("/")) this.profileURL = this.profileURL.slice(0, -1);
+      let profileID = this.profileURL.split("/").slice(-1).pop();
+
+      fetch("https://xivapi.com/character/" + profileID + "?data=AC", {
         method: "GET",
       })
         .then((response) => {
@@ -156,33 +229,31 @@ export default {
           }
         })
         .then((characterData) => {
-          // Save user settings.
-          this.settings.lastUpdated = parseInt(Date.now());
-          this.$store.commit("updateSettings", this.settings);
-
           // Inject character data.
           let achievementList = characterData.Achievements?.List || [];
-          console.log(achievementList);
           for (let i = 0; i < achievementList.length; i++) {
             if (achievementList[i].ID == 789) {
-              console.log(achievementList[i].Date);
               characterData.PlayingSince = achievementList[i].Date;
             }
           }
 
           // Save character data.
-          this.$store.commit("updateCharacterData", characterData);
+          this.$store.commit("addCharacter", characterData);
         })
         .catch((err) => {
           if (err.status == 404) {
-            this.error = "The character ID you have entered does not exist.";
+            this.error = "The character profile you have entered does not exist.";
           } else {
             this.error = "An unknown error has ocurred while fetching character data.";
           }
         })
         .finally(() => {
-          this.saving = false;
+          this.profileURL = "";
+          this.adding = false;
         });
+    },
+    removeCharacter(id) {
+      this.$store.commit("removeCharacter", id);
     },
     lastUpdatedAt(timestamp) {
       let now = new Date();
@@ -192,11 +263,11 @@ export default {
       let hours = Math.floor(diff / (1000 * 60 * 60));
       let minutes = Math.floor(diff / (1000 * 60));
 
-      if (minutes < 5) return "less than a couple minutes ago.";
-      else if (minutes < 120) return minutes + " minutes ago.";
-      else if (hours < 48) return hours + " hours ago.";
-      else if (days < 60) return days + " days ago.";
-      else return months + " months ago.";
+      if (minutes < 1) return "less than a minute ago";
+      else if (minutes < 120) return minutes + " minutes ago";
+      else if (hours < 48) return hours + " hours ago";
+      else if (days < 60) return days + " days ago";
+      else return months + " months ago";
     },
   },
 };

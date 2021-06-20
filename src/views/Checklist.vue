@@ -1,8 +1,14 @@
 <template>
   <div class="container">
     <h1 class="d-flex align-items-end">
-      <span class="me-auto">Checklist</span>
+      <span class="me-auto">
+        Checklist
+        <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
+          for {{ this.$store.getters.character.Name }}
+        </span>
+      </span>
       <button
+        v-if="this.$store.getters.hasCharacter"
         type="button"
         class="btn float-end"
         :class="{ 'btn-outline-success': !showHidden, 'btn-success': showHidden }"
@@ -18,7 +24,7 @@
       <div class="col-md">
         <h3>
           Weeklies
-          <small class="text-muted">&mdash; {{ weeklyReset }} until reset</small>
+          <small class="fw-lighter text-muted">&mdash; {{ weeklyReset }} until reset</small>
         </h3>
 
         <ul class="list-group list-group-flush">
@@ -36,7 +42,7 @@
       <div class="col-md">
         <h3>
           Dailies
-          <small class="text-muted">&mdash; {{ dailyReset }} until reset</small>
+          <small class="fw-lighter text-muted">&mdash; {{ dailyReset }} until reset</small>
         </h3>
 
         <ul class="list-group list-group-flush">
@@ -50,16 +56,16 @@
         </ul>
         <br />
         <span
-          v-if="this.$store.state.todosHidden.length == 1"
+          v-if="this.$store.getters.todosHidden.length == 1"
           class="text-muted fw-light float-end"
         >
           There is 1 hidden task.<br /><br />
         </span>
         <span
-          v-else-if="this.$store.state.todosHidden.length > 1"
+          v-else-if="this.$store.getters.todosHidden.length > 1"
           class="text-muted fw-light float-end"
         >
-          There are {{ this.$store.state.todosHidden.length }} hidden tasks.<br /><br />
+          There are {{ this.$store.getters.todosHidden.length }} hidden tasks.<br /><br />
         </span>
       </div>
     </div>
@@ -87,12 +93,15 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
+      // Skip this if no active character is set.
+      if (!this.$store.getters.hasCharacter) return;
+
       let existingDailies = this.db.dailyChecklist.map((item) => item.ID);
       let existingWeeklies = this.db.weeklyChecklist.map((item) => item.ID);
       let existingIds = existingDailies.concat(existingWeeklies);
 
       // Clear checked if they don't exist anymore.
-      let todosChecked = this.$store.state.todosChecked;
+      let todosChecked = this.$store.getters.todosChecked;
       for (let id of todosChecked) {
         if (existingIds.indexOf(id) == -1) {
           this.$store.commit("todoChecked", { id: id, checked: false });
@@ -100,7 +109,7 @@ export default {
       }
 
       // Clear hidden if they don't exist anymore.
-      let todosHidden = this.$store.state.todosHidden;
+      let todosHidden = this.$store.getters.todosHidden;
       for (let id of todosHidden) {
         if (existingIds.indexOf(id) == -1) {
           this.$store.commit("todoHidden", { id: id, checked: false });
@@ -110,29 +119,31 @@ export default {
     setInterval(() => {
       this.weeklyReset = this.formatTimeDiff(this.weeklyResetTime(), true);
       this.dailyReset = this.formatTimeDiff(this.dailyResetTime(), false);
+      this.rerender++;
+
+      // Skip this if no active character is set.
+      if (!this.$store.getters.hasCharacter) return;
 
       // Clear checked if past weekly reset time.
-      if (this.$store.state.todosNextWeeklyReset < Date.now()) {
-        this.$store.state.todosNextWeeklyReset = this.weeklyResetTime();
-        let todosChecked = this.$store.state.todosChecked;
+      if (this.$store.getters.todosNextWeeklyReset < Date.now()) {
+        this.$store.commit("todosNextWeeklyReset", this.weeklyResetTime());
+        let todosChecked = this.$store.getters.todosChecked;
         for (let id of todosChecked) {
           if (id >= 1000 && id < 2000) {
             this.$store.commit("todoChecked", { id: id, checked: false });
           }
         }
-        this.rerender++;
       }
 
       // Clear checked if past daily reset time.
-      if (this.$store.state.todosNextDailyReset < Date.now()) {
-        this.$store.state.todosNextDailyReset = this.dailyResetTime();
-        let todosChecked = this.$store.state.todosChecked;
+      if (this.$store.getters.todosNextDailyReset < Date.now()) {
+        this.$store.commit("todosNextDailyReset", this.dailyResetTime());
+        let todosChecked = this.$store.getters.todosChecked;
         for (let id of todosChecked) {
           if (id >= 2000 && id < 3000) {
             this.$store.commit("todoChecked", { id: id, checked: false });
           }
         }
-        this.rerender++;
       }
     }, 1000);
   },
