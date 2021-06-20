@@ -52,6 +52,10 @@ main {
   }
 
   .border-bottom {
+    border-color: #41b883 !important;
+  }
+
+  .border-grey {
     border-color: #444444 !important;
   }
 }
@@ -65,12 +69,17 @@ h1 {
   margin-bottom: 0px !important;
 }
 
+h1 .border-bottom {
+  border-color: #41b883 !important;
+}
+
 h3 {
   font-weight: 700;
 }
 
 .row h2 {
   text-decoration: underline;
+  text-decoration-color: #41b883;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
@@ -78,7 +87,7 @@ h3 {
 hr {
   height: 0px;
   border: none;
-  border-top: 1px solid #c8c8c8;
+  border-top: 1px solid #41b883;
   opacity: 1;
   background-color: initial;
   margin-top: 12px;
@@ -91,6 +100,16 @@ hr {
 
 .text-bold {
   font-weight: 800;
+}
+
+.text-justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.btn-outline-success {
+  color: #41b883;
+  border-color: #41b883;
 }
 
 .lodestone-tooltip {

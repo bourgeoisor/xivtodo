@@ -49,7 +49,10 @@
         </template>
       </div>
     </div>
-    <div class="overflow-hidden border-bottom row justify-content-center" style="max-height: 25vh">
+    <div
+      class="overflow-hidden border-bottom border-grey row justify-content-center"
+      style="max-height: 25vh"
+    >
       <div class="d-none d-md-block col-2 col-lg-1 px-0 pt-5">
         <img
           src="../assets/screen_checklist.png"
@@ -77,12 +80,12 @@
     </div>
   </div>
 
-  <div class="container px-4 py-2 mb-5 border-bottom" id="icon-grid">
+  <div id="features-grid" class="container px-4 py-2 mb-5 border-bottom border-grey">
     <h1 ref="features" class="pb-2 border-bottom">Features</h1>
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
       <div class="col d-flex align-items-start">
-        <i class="bi bi-list-ul flex-shrink-0 me-3" style="font-size: 1.75em"></i>
+        <i class="bi bi-list-ul flex-shrink-0 me-3"></i>
         <div>
           <h4 class="fw-bold mb-0">Duties &amp; questlines</h4>
           <p>
@@ -91,7 +94,7 @@
         </div>
       </div>
       <div class="col d-flex align-items-start">
-        <i class="bi bi-card-checklist flex-shrink-0 me-3" style="font-size: 1.75em"></i>
+        <i class="bi bi-card-checklist flex-shrink-0 me-3"></i>
         <div>
           <h4 class="fw-bold mb-0">Content completion</h4>
           <p>
@@ -101,7 +104,7 @@
         </div>
       </div>
       <div class="col d-flex align-items-start">
-        <i class="bi bi-list-check flex-shrink-0 me-3" style="font-size: 1.75em"></i>
+        <i class="bi bi-list-check flex-shrink-0 me-3"></i>
         <div>
           <h4 class="fw-bold mb-0">Dailies &amp; weeklies</h4>
           <p>
@@ -111,7 +114,7 @@
         </div>
       </div>
       <div class="col d-flex align-items-start">
-        <i class="bi bi-moon-stars flex-shrink-0 me-3" style="font-size: 1.75em"></i>
+        <i class="bi bi-moon-stars flex-shrink-0 me-3"></i>
         <div>
           <h4 class="fw-bold mb-0">Day &amp; and night themes</h4>
           <p>
@@ -121,7 +124,7 @@
         </div>
       </div>
       <div class="col d-flex align-items-start">
-        <i class="bi bi-eye-slash flex-shrink-0 me-3" style="font-size: 1.75em"></i>
+        <i class="bi bi-eye-slash flex-shrink-0 me-3"></i>
         <div>
           <h4 class="fw-bold mb-0">Spoiler-free</h4>
           <p>
@@ -130,7 +133,7 @@
         </div>
       </div>
       <div class="col d-flex align-items-start">
-        <i class="bi bi-palette flex-shrink-0 me-3" style="font-size: 1.75em"></i>
+        <i class="bi bi-palette flex-shrink-0 me-3"></i>
         <div>
           <h4 class="fw-bold mb-0">Customizable</h4>
           <p>
@@ -140,14 +143,14 @@
         </div>
       </div>
       <!-- <div class="col d-flex align-items-start">
-        <i class="bi bi-bookmark-star flex-shrink-0 me-3" style="font-size: 1.75em"></i>
+        <i class="bi bi-bookmark-star flex-shrink-0 me-3"></i>
         <div>
           <h4 class="fw-bold mb-0">Feature title</h4>
           <p>Paragraph of text beneath the heading to explain the heading.</p>
         </div>
       </div>
       <div class="col d-flex align-items-start">
-        <i class="bi bi-bookmark-star flex-shrink-0 me-3" style="font-size: 1.75em"></i>
+        <i class="bi bi-bookmark-star flex-shrink-0 me-3"></i>
         <div>
           <h4 class="fw-bold mb-0">Feature title</h4>
           <p>Paragraph of text beneath the heading to explain the heading.</p>
@@ -168,14 +171,14 @@
       </div>
       <div class="col-11 col-md-9 col-lg-8">
         <h1 class="pb-2 border-bottom mb-3">About XIV ToDo</h1>
-        <p class="lead">
+        <p class="lead text-justify">
           XIV ToDo is a project started in mid-2021 by
           <a
             class="text-reset"
             href="https://bourgeois.io"
             target="_blank"
             rel="noopener noreferrer"
-            >Olivier</a
+            >Olivier Bourgeois</a
           >, a software developer from Canada. After realizing that there were no methods for
           quickly visualizing which of the numerous duties and questlines that had been cleared by
           my characters, the idea had sparked. XIV ToDo currently is and remains free and open
@@ -185,9 +188,9 @@
             href="https://forms.gle/2t5nLB28xDyi3Tn6A"
             target="_blank"
             rel="noopener noreferrer"
-            >contact</a
+            >contact me</a
           >
-          me with any questions or feedback. Thank you for using and supporting this project!
+          with any questions or feedback. Thank you for using and supporting this project!
         </p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <a
@@ -205,6 +208,18 @@
     </div>
   </div>
 </template>
+
+<style lang="scss">
+#features-grid h4 {
+  text-decoration: underline;
+  text-decoration-color: #41b883;
+}
+
+#features-grid .bi {
+  color: #41b883;
+  font-size: 1.75em;
+}
+</style>
 
 <script>
 export default {
