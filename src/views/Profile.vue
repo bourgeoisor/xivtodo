@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <h1>{{ this.$store.getters.character.Name }}</h1>
+    <h1>
+      Profile
+      <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
+        of {{ this.$store.getters.character.Name }}
+      </span>
+    </h1>
     <hr />
     <div class="row">
       <div class="col-lg d-none d-lg-block">
@@ -20,19 +25,19 @@
         <h2>Character Information</h2>
         <div class="info-block">
           <b>World</b><br />
-          <i class="bi bi-arrow-return-right"></i>
+          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.Server }} ({{ this.$store.getters.character.DC }})
         </div>
 
         <div v-if="this.$store.getters.character.FreeCompanyName" class="info-block">
           <b>Free Company</b><br />
-          <i class="bi bi-arrow-return-right"></i>
+          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.FreeCompanyName }}
         </div>
 
         <div class="info-block">
           <b>Race / Clan</b><br />
-          <i class="bi bi-arrow-return-right"></i>
+          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ races[this.$store.getters.character.Race - 1] }} /
           {{ tribes[this.$store.getters.character.Tribe - 1] }}
           <i v-if="this.$store.getters.character.Gender == 1" class="bi bi-gender-male"></i>
@@ -41,26 +46,26 @@
 
         <div class="info-block">
           <b>Nameday</b><br />
-          <i class="bi bi-arrow-return-right"></i>
+          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.Nameday }}
         </div>
 
         <div class="info-block">
           <b>Guardian</b><br />
-          <i class="bi bi-arrow-return-right"></i>
+          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ guardians[this.$store.getters.character.GuardianDeity - 1] }}
         </div>
 
         <div class="info-block">
           <b>City-state</b><br />
-          <i class="bi bi-arrow-return-right"></i>
+          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ cities[this.$store.getters.character.Town - 1] }}
         </div>
 
         <template v-if="this.$store.getters.character.GrandCompany">
           <div class="info-block">
             <b>Grand Company</b><br />
-            <i class="bi bi-arrow-return-right"></i>
+            <i class="bi bi-arrow-return-right text-muted"></i>
             {{ gcNames[this.$store.getters.character.GrandCompany.NameID - 1] }} /
             {{
               gcRanks[this.$store.getters.character.GrandCompany.NameID - 1][
@@ -72,14 +77,14 @@
         <template v-if="this.$store.getters.characterData.PlayingSince">
           <div class="info-block">
             <b>Playing since</b><br />
-            <i class="bi bi-arrow-return-right"></i>
+            <i class="bi bi-arrow-return-right text-muted"></i>
             {{ new Date(this.$store.getters.characterData.PlayingSince * 1000).toDateString() }}
           </div>
         </template>
         <template v-if="this.$store.getters.achievementsPublic">
           <div class="info-block">
             <b>Achievements</b><br />
-            <i class="bi bi-arrow-return-right"></i>
+            <i class="bi bi-arrow-return-right text-muted"></i>
             {{ this.$store.getters.achievements.length }}
           </div>
         </template>
@@ -101,6 +106,10 @@
 .info-block {
   line-height: 1.2;
   margin-bottom: 10px;
+
+  b {
+    color: #41b883;
+  }
 }
 
 #character-portrait {
