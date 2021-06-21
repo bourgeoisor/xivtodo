@@ -237,6 +237,52 @@ export default {
             }
           }
 
+          characterData.Jobs = {};
+          let jobInitials = [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "CRP",
+            "BSM",
+            "ARM",
+            "GSM",
+            "LTW",
+            "WVR",
+            "ALC",
+            "CUL",
+            "MIN",
+            "BTN",
+            "FSH",
+            "PLD",
+            "MNK",
+            "WAR",
+            "DRG",
+            "BRD",
+            "WHM",
+            "BLM",
+            "",
+            "SMN",
+            "SCH",
+            "",
+            "NIN",
+            "MCH",
+            "DRK",
+            "AST",
+            "SAM",
+            "RDM",
+            "BLU",
+            "GNB",
+            "DNC",
+          ];
+          for (let classJob of characterData.Character.ClassJobs) {
+            characterData.Jobs[jobInitials[classJob.JobID]] = classJob;
+          }
+
           // Save character data.
           this.$store.commit("addCharacter", characterData);
         })
@@ -244,6 +290,7 @@ export default {
           if (err.status == 404) {
             this.error = "The character profile you have entered does not exist.";
           } else {
+            console.log(err);
             this.error = "An unknown error has ocurred while fetching character data.";
           }
         })

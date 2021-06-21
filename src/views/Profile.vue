@@ -15,9 +15,9 @@
           alt="Portrait of your character"
         />
         <br />
-        <span v-if="this.$store.getters.character.Bio != '-'" class="fst-italic text-break">
+        <div v-if="this.$store.getters.character.Bio != '-'" class="fst-italic text-break pt-2">
           “{{ this.$store.getters.character.Bio }}”
-        </span>
+        </div>
         <br />
       </div>
 
@@ -27,12 +27,6 @@
           <b>World</b><br />
           <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.Server }} ({{ this.$store.getters.character.DC }})
-        </div>
-
-        <div v-if="this.$store.getters.character.FreeCompanyName" class="info-block">
-          <b>Free Company</b><br />
-          <i class="bi bi-arrow-return-right text-muted"></i>
-          {{ this.$store.getters.character.FreeCompanyName }}
         </div>
 
         <div class="info-block">
@@ -56,6 +50,14 @@
           {{ guardians[this.$store.getters.character.GuardianDeity - 1] }}
         </div>
 
+        <br />
+
+        <div v-if="this.$store.getters.character.FreeCompanyName" class="info-block">
+          <b>Free Company</b><br />
+          <i class="bi bi-arrow-return-right text-muted"></i>
+          {{ this.$store.getters.character.FreeCompanyName }}
+        </div>
+
         <div class="info-block">
           <b>City-state</b><br />
           <i class="bi bi-arrow-return-right text-muted"></i>
@@ -74,14 +76,13 @@
             }}
           </div>
         </template>
-        <template v-if="this.$store.getters.characterData.PlayingSince">
+        <template v-if="this.$store.getters.achievementsPublic">
+          <br />
           <div class="info-block">
             <b>Playing since</b><br />
             <i class="bi bi-arrow-return-right text-muted"></i>
             {{ new Date(this.$store.getters.characterData.PlayingSince * 1000).toDateString() }}
           </div>
-        </template>
-        <template v-if="this.$store.getters.achievementsPublic">
           <div class="info-block">
             <b>Achievements</b><br />
             <i class="bi bi-arrow-return-right text-muted"></i>
@@ -91,12 +92,85 @@
         <br />
       </div>
       <div class="col-lg">
-        <!-- <h2>Jobs</h2>
-        WAR (1)<br /><br />
-        <b>Elemental level:</b>
-        {{ this.$store.getters.character.ClassJobsElemental?.Level || "0" }}<br />
-        <b>Resistance rank:</b>
-        {{ this.$store.getters.character.ClassJobsBozjan?.Level || "0" }} -->
+        <h2>Job Levels</h2>
+        <div class="info-block row">
+          <b>Tanks</b><br />
+          <div class="text-center pt-1">
+            <JobLevel initial="pld" />
+            <JobLevel initial="war" />
+            <JobLevel initial="drk" />
+            <JobLevel initial="gnb" />
+          </div>
+        </div>
+        <div class="info-block row">
+          <b>Healers</b><br />
+          <div class="text-center pt-1">
+            <JobLevel initial="whm" />
+            <JobLevel initial="sch" />
+            <JobLevel initial="ast" />
+          </div>
+        </div>
+        <div class="info-block row">
+          <b>DPS</b><br />
+          <div class="text-center pt-1">
+            <JobLevel initial="mnk" />
+            <JobLevel initial="drg" />
+            <JobLevel initial="nin" />
+            <JobLevel initial="sam" />
+            <JobLevel initial="brd" />
+            <JobLevel initial="mch" />
+            <JobLevel initial="dnc" />
+            <JobLevel initial="blm" />
+            <JobLevel initial="smn" />
+            <JobLevel initial="rdm" />
+            <JobLevel initial="blu" />
+          </div>
+        </div>
+        <br />
+        <div class="info-block row">
+          <b>Gatherers</b><br />
+          <div class="text-center pt-1">
+            <JobLevel initial="min" />
+            <JobLevel initial="btn" />
+            <JobLevel initial="fsh" />
+          </div>
+        </div>
+        <div class="info-block row">
+          <b>Crafters</b><br />
+          <div class="text-center pt-1">
+            <JobLevel initial="crp" />
+            <JobLevel initial="bsm" />
+            <JobLevel initial="arm" />
+            <JobLevel initial="gsm" />
+            <JobLevel initial="ltw" />
+            <JobLevel initial="wvr" />
+            <JobLevel initial="alc" />
+            <JobLevel initial="cul" />
+          </div>
+        </div>
+        <br />
+        <div class="info-block">
+          <b>Elemental level</b><br />
+          <span
+            :class="{
+              'text-success': this.$store.getters.character.ClassJobsElemental?.Level == 60,
+            }"
+          >
+            <i class="bi bi-arrow-return-right text-muted"></i>
+            {{ this.$store.getters.character.ClassJobsElemental?.Level || "0" }}
+          </span>
+        </div>
+        <div class="info-block">
+          <b>Resistance rank</b><br />
+          <span
+            :class="{
+              'text-success': this.$store.getters.character.ClassJobsBozjan?.Level == 25,
+            }"
+          >
+            <i class="bi bi-arrow-return-right text-muted"></i>
+            {{ this.$store.getters.character.ClassJobsBozjan?.Level || "0" }}
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -104,11 +178,14 @@
 
 <style lang="scss">
 .info-block {
-  line-height: 1.2;
-  margin-bottom: 10px;
+  line-height: 1.3;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-weight: 300;
 
   b {
     color: #41b883;
+    font-weight: 800;
   }
 }
 
@@ -125,6 +202,8 @@
 </style>
 
 <script>
+import JobLevel from "@/components/JobLevel.vue";
+
 export default {
   name: "Profile",
   data() {
@@ -206,6 +285,9 @@ export default {
         ],
       ],
     };
+  },
+  components: {
+    JobLevel,
   },
 };
 </script>
