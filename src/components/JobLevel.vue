@@ -1,6 +1,16 @@
 <template>
   <div class="job-level fw-lighter">
-    <i :class="iconClass"></i><br />
+    <span
+      :class="{
+        'job-type-tank': type == 'tank',
+        'job-type-healer': type == 'healer',
+        'job-type-dps': type == 'dps',
+        'job-type-gatherer': type == 'gatherer',
+        'job-type-crafter': type == 'crafter',
+      }"
+      ><i :class="iconClass"></i>
+    </span>
+    <br />
     <span
       v-if="!this.$store.getters.characterData.Jobs[this.initial.toUpperCase()]?.Level"
       class="text-secondary"
@@ -9,7 +19,7 @@
     </span>
     <span
       v-else-if="this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level == 80"
-      class="text-success"
+      class="fw-bold"
     >
       {{ this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level }}
     </span>
@@ -18,7 +28,7 @@
         this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level == 70 &&
         this.initial == 'blu'
       "
-      class="text-success"
+      class="fw-bold"
     >
       {{ this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level }}
     </span>
@@ -36,6 +46,26 @@
   margin-bottom: 5px;
   width: 22px;
 }
+
+.job-type-tank {
+  color: #81b8ff;
+}
+
+.job-type-healer {
+  color: #a7ff7f;
+}
+
+.job-type-dps {
+  color: #ffa37f;
+}
+
+.job-type-gatherer {
+  color: #ffdf7e;
+}
+
+.job-type-crafter {
+  color: #cb7eff;
+}
 </style>
 
 <script>
@@ -47,6 +77,7 @@ export default {
   },
   props: {
     initial: String,
+    type: String,
   },
 };
 </script>

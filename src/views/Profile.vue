@@ -96,56 +96,55 @@
         <div class="info-block row">
           <b>Tanks</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="pld" />
-            <JobLevel initial="war" />
-            <JobLevel initial="drk" />
-            <JobLevel initial="gnb" />
+            <JobLevel initial="pld" type="tank" />
+            <JobLevel initial="war" type="tank" />
+            <JobLevel initial="drk" type="tank" />
+            <JobLevel initial="gnb" type="tank" />
           </div>
         </div>
         <div class="info-block row">
           <b>Healers</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="whm" />
-            <JobLevel initial="sch" />
-            <JobLevel initial="ast" />
+            <JobLevel initial="whm" type="healer" />
+            <JobLevel initial="sch" type="healer" />
+            <JobLevel initial="ast" type="healer" />
           </div>
         </div>
         <div class="info-block row">
           <b>DPS</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="mnk" />
-            <JobLevel initial="drg" />
-            <JobLevel initial="nin" />
-            <JobLevel initial="sam" />
-            <JobLevel initial="brd" />
-            <JobLevel initial="mch" />
-            <JobLevel initial="dnc" />
-            <JobLevel initial="blm" />
-            <JobLevel initial="smn" />
-            <JobLevel initial="rdm" />
-            <JobLevel initial="blu" />
-          </div>
-        </div>
-        <br />
-        <div class="info-block row">
-          <b>Gatherers</b><br />
-          <div class="text-center pt-1">
-            <JobLevel initial="min" />
-            <JobLevel initial="btn" />
-            <JobLevel initial="fsh" />
+            <JobLevel initial="mnk" type="dps" />
+            <JobLevel initial="drg" type="dps" />
+            <JobLevel initial="nin" type="dps" />
+            <JobLevel initial="sam" type="dps" />
+            <JobLevel initial="brd" type="dps" />
+            <JobLevel initial="mch" type="dps" />
+            <JobLevel initial="dnc" type="dps" />
+            <JobLevel initial="blm" type="dps" />
+            <JobLevel initial="smn" type="dps" />
+            <JobLevel initial="rdm" type="dps" />
+            <JobLevel initial="blu" type="dps" />
           </div>
         </div>
         <div class="info-block row">
           <b>Crafters</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="crp" />
-            <JobLevel initial="bsm" />
-            <JobLevel initial="arm" />
-            <JobLevel initial="gsm" />
-            <JobLevel initial="ltw" />
-            <JobLevel initial="wvr" />
-            <JobLevel initial="alc" />
-            <JobLevel initial="cul" />
+            <JobLevel initial="crp" type="crafter" />
+            <JobLevel initial="bsm" type="crafter" />
+            <JobLevel initial="arm" type="crafter" />
+            <JobLevel initial="gsm" type="crafter" />
+            <JobLevel initial="ltw" type="crafter" />
+            <JobLevel initial="wvr" type="crafter" />
+            <JobLevel initial="alc" type="crafter" />
+            <JobLevel initial="cul" type="crafter" />
+          </div>
+        </div>
+        <div class="info-block row">
+          <b>Gatherers</b><br />
+          <div class="text-center pt-1">
+            <JobLevel initial="min" type="gatherer" />
+            <JobLevel initial="btn" type="gatherer" />
+            <JobLevel initial="fsh" type="gatherer" />
           </div>
         </div>
         <br />
@@ -153,7 +152,7 @@
           <b>Elemental level</b><br />
           <span
             :class="{
-              'text-success': this.$store.getters.character.ClassJobsElemental?.Level == 60,
+              'fw-bold': this.$store.getters.character.ClassJobsElemental?.Level == 60,
             }"
           >
             <i class="bi bi-arrow-return-right text-muted"></i>
@@ -164,7 +163,7 @@
           <b>Resistance rank</b><br />
           <span
             :class="{
-              'text-success': this.$store.getters.character.ClassJobsBozjan?.Level == 25,
+              'fw-bold': this.$store.getters.character.ClassJobsBozjan?.Level == 25,
             }"
           >
             <i class="bi bi-arrow-return-right text-muted"></i>
