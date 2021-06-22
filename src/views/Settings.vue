@@ -120,25 +120,17 @@
           <br />
           <h3>Add a new character</h3>
 
-          <div class="form-floating mb-3">
+          <div class="mb-3">
+            <label for="inputCharacterID" class="form-label">Profile URL</label>
             <input
               v-model="profileURL"
               type="text"
               class="form-control"
-              name="inputCharacterID"
               id="inputCharacterID"
-              placeholder=""
+              placeholder="https://na.finalfantasyxiv.com/lodestone/character/12345/"
             />
-            <label class="floating-label" for="inputCharacterID">
-              Lodestone character profile URL
-            </label>
             <div class="form-text">
-              <abbr
-                title="Hint: It looks like this: finalfantasyxiv.com/lodestone/character/32741501/"
-              >
-                Profile URL
-              </abbr>
-              for your character. You can find it in
+              The URL for your character profile. You can find it in
               <a
                 class="text-reset"
                 href="https://na.finalfantasyxiv.com/lodestone/character/"

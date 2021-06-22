@@ -22,10 +22,8 @@
       <h2>Things to do</h2>
 
       <div class="col-md">
-        <h3>
-          Weeklies
-          <small class="fw-lighter text-muted">&mdash; {{ weeklyReset }} until reset</small>
-        </h3>
+        <h3>Weeklies</h3>
+        <small class="fw-lighter text-muted">{{ weeklyReset }} until reset</small>
 
         <ul class="list-group list-group-flush">
           <ChecklistItem
@@ -40,10 +38,8 @@
       </div>
 
       <div class="col-md">
-        <h3>
-          Dailies
-          <small class="fw-lighter text-muted">&mdash; {{ dailyReset }} until reset</small>
-        </h3>
+        <h3>Dailies</h3>
+        <small class="fw-lighter text-muted">{{ dailyReset }} until reset</small>
 
         <ul class="list-group list-group-flush">
           <ChecklistItem

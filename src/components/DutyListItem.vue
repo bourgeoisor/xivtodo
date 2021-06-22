@@ -4,13 +4,14 @@
     :class="{
       'text-secondary': duty.cleared == -1,
       'text-success': duty.cleared == 1,
+      'text-danger': duty.cleared == 0,
     }"
   >
     <span
       :class="{
-        'bi-question-square': duty.cleared == -1,
-        'bi-check-square': duty.cleared == 1,
-        'bi-square': duty.cleared == 0,
+        'bi-slash-circle': duty.cleared == -1,
+        'bi-check-circle': duty.cleared == 1,
+        'bi-circle': duty.cleared == 0,
       }"
     >
       &nbsp;
@@ -60,12 +61,12 @@
 
 .blur-cleared {
   color: transparent;
-  text-shadow: 0 0 20px rgb(50, 194, 132);
+  text-shadow: 0 0 20px #53b462;
 }
 
 .blur-uncleared {
   color: transparent;
-  text-shadow: 0 0 20px rgb(148, 148, 148);
+  text-shadow: 0 0 20px #b45353;
 }
 </style>
 

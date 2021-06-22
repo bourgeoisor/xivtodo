@@ -32,10 +32,6 @@ main {
     color: #a2a4a6 !important;
   }
 
-  .text-danger {
-    color: #cd3442 !important;
-  }
-
   .list-group-item {
     color: #dddddd;
     background-color: #1c2024;
@@ -64,6 +60,14 @@ main {
   padding-bottom: 0.4rem;
 }
 
+a, a:focus {
+  color: #41b883;
+}
+
+a:hover {
+  color: #22e38d;
+}
+
 h1 {
   font-weight: 700;
   margin-bottom: 0px !important;
@@ -75,6 +79,7 @@ h1 .border-bottom {
 
 h3 {
   font-weight: 700;
+  text-decoration: underline;
 }
 
 .row h2 {
@@ -107,6 +112,14 @@ hr {
   text-justify: inter-word;
 }
 
+.text-success {
+  color: #53b462 !important;
+}
+
+.text-danger {
+  color: #b45353 !important;
+}
+
 .btn-outline-success {
   color: #41b883;
   border-color: #41b883;
@@ -117,6 +130,18 @@ hr {
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   cursor: help;
+}
+
+.text-secondary .lodestone-tooltip {
+  text-decoration-color: rgba(162, 164, 166, 0.5);
+}
+
+.text-success .lodestone-tooltip {
+  text-decoration-color: rgba(83, 180, 98, 0.5);
+}
+
+.text-danger .lodestone-tooltip {
+  text-decoration-color: rgba(180, 83, 83, 0.5);
 }
 </style>
 

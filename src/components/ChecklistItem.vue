@@ -46,7 +46,7 @@
 
 <style lang="scss">
 .checklist-checked {
-  color: #41b883;
+  color: #53b462;
   text-decoration: line-through;
   text-decoration-thickness: 2px;
 }
@@ -57,7 +57,7 @@
   }
 
   .form-check-input.checkbox-checked {
-    border-color: #41b883;
+    border-color: #53b462;
   }
 
   .list-group-item-action:focus,

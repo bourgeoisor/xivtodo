@@ -170,6 +170,7 @@
             {{ this.$store.getters.character.ClassJobsBozjan?.Level || "0" }}
           </span>
         </div>
+        <br />
       </div>
     </div>
   </div>
@@ -185,6 +186,7 @@
   b {
     color: #41b883;
     font-weight: 800;
+    text-decoration: underline;
   }
 }
 
