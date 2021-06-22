@@ -53,6 +53,7 @@ export default {
           }
         } else if (item.MinID && achievements.has(item.MinID)) cleared = -1;
         else if (item.MinID && !achievements.has(item.MinID)) cleared = 0;
+        else if (!item.MinID && item.MaxIDOneOf) cleared = 0;
         else if (!item.ID) cleared = -1;
         item.cleared = cleared;
 
@@ -60,9 +61,10 @@ export default {
         if (item.Spoilers && spoilersOption != "2") {
           let showIfAllowed = false;
           if (item.SpoilersUntil && achievements.has(item.SpoilersUntil)) showIfAllowed = true;
-          if (spoilersOption == "0" || (cleared != 1 && !showIfAllowed)) {
+          if (spoilersOption == "0" || (cleared == 0 && !showIfAllowed)) {
             blur = true;
           }
+          if (!this.$store.getters.achievementsPublic && !showIfAllowed) blur = true;
         }
         item.blur = blur;
       }
