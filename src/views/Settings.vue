@@ -48,7 +48,7 @@
           <div class="form-text">Preference in hiding potential spoilers.</div>
           <br />
 
-          <h3>Theme color</h3>
+          <!-- <h3>Theme color</h3>
           <div class="form-check">
             <input
               v-model="settings.nightMode"
@@ -59,8 +59,8 @@
             <label class="form-check-label" for="inputNightMode"> Night mode</label>
           </div>
           <div class="form-text">An eye-friendly darker theme for the site.</div>
+          <br /> -->
 
-          <br />
           <button
             @click="saveSettings"
             type="button"
@@ -73,7 +73,50 @@
         </div>
         <div class="col-md-6">
           <h2>Characters</h2>
-          <h3>List of characters</h3>
+
+          <h3>Add a new character</h3>
+          <div class="mb-3">
+            <label for="inputCharacterID" class="form-label">Profile URL</label>
+            <input
+              v-model="profileURL"
+              type="text"
+              class="form-control"
+              id="inputCharacterID"
+              placeholder="https://na.finalfantasyxiv.com/lodestone/character/12345/"
+            />
+            <div class="form-text">
+              The URL for your character profile. You can find it in
+              <a
+                class="text-reset"
+                href="https://na.finalfantasyxiv.com/lodestone/character/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Lodestone</a
+              >.
+            </div>
+          </div>
+          <button
+            v-if="adding"
+            type="button"
+            id="settings-save-btn"
+            class="btn btn-success"
+            disabled
+          >
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Adding, please wait...
+          </button>
+          <button
+            v-else
+            @click="addCharacter"
+            type="button"
+            id="settings-save-btn"
+            class="btn btn-success"
+          >
+            Add character
+          </button>
+          <br /><br />
+
+          <h3>Your characters</h3>
           <ul v-if="!this.$store.getters.hasCharacter" class="list-group list-group-flush">
             <li class="list-group-item d-flex justify-content-between align-items-start">
               There are no loaded characters yet.
@@ -116,51 +159,7 @@
               ></a>
             </li>
           </ul>
-
           <br />
-          <h3>Add a new character</h3>
-
-          <div class="mb-3">
-            <label for="inputCharacterID" class="form-label">Profile URL</label>
-            <input
-              v-model="profileURL"
-              type="text"
-              class="form-control"
-              id="inputCharacterID"
-              placeholder="https://na.finalfantasyxiv.com/lodestone/character/12345/"
-            />
-            <div class="form-text">
-              The URL for your character profile. You can find it in
-              <a
-                class="text-reset"
-                href="https://na.finalfantasyxiv.com/lodestone/character/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Lodestone</a
-              >.
-            </div>
-          </div>
-
-          <button
-            v-if="adding"
-            type="button"
-            id="settings-save-btn"
-            class="btn btn-success"
-            disabled
-          >
-            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Adding, please wait...
-          </button>
-          <button
-            v-else
-            @click="addCharacter"
-            type="button"
-            id="settings-save-btn"
-            class="btn btn-success"
-          >
-            Add character
-          </button>
-          <br /><br />
         </div>
       </div>
     </form>

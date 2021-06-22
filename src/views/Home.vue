@@ -114,12 +114,12 @@
         </div>
       </div>
       <div class="col d-flex align-items-start">
-        <i class="bi bi-moon-stars flex-shrink-0 me-3"></i>
+        <i class="bi bi-person-plus flex-shrink-0 me-3"></i>
         <div>
-          <h4 class="fw-bold mb-0">Day &amp; and night themes</h4>
+          <h4 class="fw-bold mb-0">Alt-friendly</h4>
           <p>
-            In addition to a lighter day color theme, there is also a darker night color theme
-            available.
+            Support for adding as many alt characters as you need, with all features being kept
+            character-specific.
           </p>
         </div>
       </div>
