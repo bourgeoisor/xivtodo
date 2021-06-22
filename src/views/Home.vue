@@ -55,7 +55,7 @@
     >
       <div class="d-none d-md-block col-2 col-lg-1 px-0 pt-5">
         <img
-          src="../assets/screen_checklist.png"
+          src="../assets/screen_checklist_mockup.png"
           class="border rounded-3 mb-4"
           alt="Screenshot of checklist page"
           style="width: 400%"
@@ -63,7 +63,7 @@
       </div>
       <div class="col-11 col-md-7 col-lg-5 px-0">
         <img
-          src="../assets/screen_duties.png"
+          src="../assets/screen_duties_mockup.png"
           class="border rounded-3 mb-4"
           alt="Screenshot of duties page"
           style="z-index: +1000; position: relative; width: 100%"
@@ -71,7 +71,7 @@
       </div>
       <div class="d-none d-md-block col-2 col-lg-1 px-0 pt-5">
         <img
-          src="../assets/screen_questlines.png"
+          src="../assets/screen_questlines_mockup.png"
           class="border rounded-3 mb-4 float-end"
           alt="Screenshot of questlines page"
           style="width: 400%"
@@ -173,21 +173,13 @@
         <h1 class="pb-2 border-bottom mb-3">About XIV ToDo</h1>
         <p class="lead text-justify">
           XIV ToDo is a project started in mid-2021 by
-          <a
-            class="text-reset"
-            href="https://bourgeois.io"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer"
             >Olivier Bourgeois</a
           >, a software developer from Canada. After realizing that there were no methods for
           quickly visualizing which of the numerous duties and questlines that had been cleared by
           my characters, the idea had sparked. XIV ToDo currently is and remains free and open
           source under the xivtodo GitHub repository. You can
-          <a
-            class="text-reset"
-            href="https://forms.gle/2t5nLB28xDyi3Tn6A"
-            target="_blank"
-            rel="noopener noreferrer"
+          <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer"
             >contact me</a
           >
           with any questions or feedback. Thank you for using and supporting this project!
