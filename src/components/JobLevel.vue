@@ -1,5 +1,5 @@
 <template>
-  <div class="job-level fw-lighter">
+  <div class="job-level fw-lighter" :title="title">
     <span
       :class="{
         'job-type-tank': type == 'tank',
@@ -77,6 +77,7 @@ export default {
   },
   props: {
     initial: String,
+    title: String,
     type: String,
   },
 };

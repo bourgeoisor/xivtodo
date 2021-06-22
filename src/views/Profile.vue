@@ -96,55 +96,55 @@
         <div class="info-block row">
           <b>Tanks</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="pld" type="tank" />
-            <JobLevel initial="war" type="tank" />
-            <JobLevel initial="drk" type="tank" />
-            <JobLevel initial="gnb" type="tank" />
+            <JobLevel initial="pld" title="Paladin" type="tank" />
+            <JobLevel initial="war" title="Warrior" type="tank" />
+            <JobLevel initial="drk" title="Dark Knight" type="tank" />
+            <JobLevel initial="gnb" title="Gunbreaker" type="tank" />
           </div>
         </div>
         <div class="info-block row">
           <b>Healers</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="whm" type="healer" />
-            <JobLevel initial="sch" type="healer" />
-            <JobLevel initial="ast" type="healer" />
+            <JobLevel initial="whm" title="White Mage" type="healer" />
+            <JobLevel initial="sch" title="Scholar" type="healer" />
+            <JobLevel initial="ast" title="Astrologian" type="healer" />
           </div>
         </div>
         <div class="info-block row">
           <b>DPS</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="mnk" type="dps" />
-            <JobLevel initial="drg" type="dps" />
-            <JobLevel initial="nin" type="dps" />
-            <JobLevel initial="sam" type="dps" />
-            <JobLevel initial="brd" type="dps" />
-            <JobLevel initial="mch" type="dps" />
-            <JobLevel initial="dnc" type="dps" />
-            <JobLevel initial="blm" type="dps" />
-            <JobLevel initial="smn" type="dps" />
-            <JobLevel initial="rdm" type="dps" />
-            <JobLevel initial="blu" type="dps" />
+            <JobLevel initial="mnk" title="Monk" type="dps" />
+            <JobLevel initial="drg" title="Dragoon" type="dps" />
+            <JobLevel initial="nin" title="Ninja" type="dps" />
+            <JobLevel initial="sam" title="Samurai" type="dps" />
+            <JobLevel initial="brd" title="Bard" type="dps" />
+            <JobLevel initial="mch" title="Machinist" type="dps" />
+            <JobLevel initial="dnc" title="Dancer" type="dps" />
+            <JobLevel initial="blm" title="Black Mage" type="dps" />
+            <JobLevel initial="smn" title="Summoner" type="dps" />
+            <JobLevel initial="rdm" title="Red Mage" type="dps" />
+            <JobLevel initial="blu" title="Blue Mage" type="dps" />
           </div>
         </div>
         <div class="info-block row">
           <b>Crafters</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="crp" type="crafter" />
-            <JobLevel initial="bsm" type="crafter" />
-            <JobLevel initial="arm" type="crafter" />
-            <JobLevel initial="gsm" type="crafter" />
-            <JobLevel initial="ltw" type="crafter" />
-            <JobLevel initial="wvr" type="crafter" />
-            <JobLevel initial="alc" type="crafter" />
-            <JobLevel initial="cul" type="crafter" />
+            <JobLevel initial="crp" title="Carpenter" type="crafter" />
+            <JobLevel initial="bsm" title="Blacksmith" type="crafter" />
+            <JobLevel initial="arm" title="Armorer" type="crafter" />
+            <JobLevel initial="gsm" title="Goldsmith" type="crafter" />
+            <JobLevel initial="ltw" title="Leatherworker" type="crafter" />
+            <JobLevel initial="wvr" title="Weaver" type="crafter" />
+            <JobLevel initial="alc" title="Alchemist" type="crafter" />
+            <JobLevel initial="cul" title="Culinarian" type="crafter" />
           </div>
         </div>
         <div class="info-block row">
           <b>Gatherers</b><br />
           <div class="text-center pt-1">
-            <JobLevel initial="min" type="gatherer" />
-            <JobLevel initial="btn" type="gatherer" />
-            <JobLevel initial="fsh" type="gatherer" />
+            <JobLevel initial="min" title="Miner" type="gatherer" />
+            <JobLevel initial="btn" title="Botanist" type="gatherer" />
+            <JobLevel initial="fsh" title="Fisher" type="gatherer" />
           </div>
         </div>
         <br />
