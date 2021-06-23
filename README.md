@@ -7,7 +7,7 @@
 
 ## Screenshots
 
-<img src="https://user-images.githubusercontent.com/3271352/123179273-6cf66200-d45f-11eb-8090-4817af88b9d2.png" width=450 /> <img src="https://user-images.githubusercontent.com/3271352/123179295-74b60680-d45f-11eb-93a8-0f7271d7c6af.png" width=450 /> <img src="https://user-images.githubusercontent.com/3271352/123179310-7aabe780-d45f-11eb-8fd2-606aaa03b8a2.png" width=450 /> <img src="https://user-images.githubusercontent.com/3271352/123179315-7da6d800-d45f-11eb-907d-0254f08455b2.png" width=450 />
+<img src="https://user-images.githubusercontent.com/3271352/123179273-6cf66200-d45f-11eb-8090-4817af88b9d2.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/123179295-74b60680-d45f-11eb-93a8-0f7271d7c6af.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/123179310-7aabe780-d45f-11eb-8fd2-606aaa03b8a2.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/123179315-7da6d800-d45f-11eb-907d-0254f08455b2.png" width=400 />
 
 ## Development
 
