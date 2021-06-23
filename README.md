@@ -7,9 +7,7 @@
 
 ## Screenshots
 
-![screen_duties](https://user-images.githubusercontent.com/3271352/122274269-c0ddd580-ceb8-11eb-8d7e-e5f44dfbe0d5.png)
-![screen_checklist](https://user-images.githubusercontent.com/3271352/122274330-d226e200-ceb8-11eb-813f-9cc2831b91e2.png)
-
+<img src="https://user-images.githubusercontent.com/3271352/123179273-6cf66200-d45f-11eb-8090-4817af88b9d2.png" width=450 /> <img src="https://user-images.githubusercontent.com/3271352/123179295-74b60680-d45f-11eb-93a8-0f7271d7c6af.png" width=450 /> <img src="https://user-images.githubusercontent.com/3271352/123179310-7aabe780-d45f-11eb-8fd2-606aaa03b8a2.png" width=450 /> <img src="https://user-images.githubusercontent.com/3271352/123179315-7da6d800-d45f-11eb-907d-0254f08455b2.png" width=450 />
 
 ## Development
 
