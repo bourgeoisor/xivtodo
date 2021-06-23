@@ -16,7 +16,11 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          v-if="this.$route.name != 'Character'"
+          class="collapse navbar-collapse"
+          id="navbarSupportedContent"
+        >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <router-link to="/" class="nav-link" @click="collapseNav">Home</router-link>
@@ -86,6 +90,50 @@
             />
           </ul>
         </div>
+
+        <div v-else class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="nav navbar-nav me-auto mb-2 mb-lg-0" id="nav-tab" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                id="nav-profile-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-profile"
+                type="button"
+                role="tab"
+                @click="collapseNav"
+              >
+                Profile
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="nav-duties-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-duties"
+                type="button"
+                role="tab"
+                @click="collapseNav"
+              >
+                Duties
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="nav-questlines-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-questlines"
+                type="button"
+                role="tab"
+                @click="collapseNav"
+              >
+                Questlines
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </header>
@@ -123,6 +171,14 @@ span.nav-link:hover {
 .navbar-dark .navbar-nav .nav-link:hover {
   color: rgba(255, 255, 255, 1);
   text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+  color: #a1ff7f;
+  text-decoration: underline;
+  text-decoration-thickness: auto;
   text-decoration-thickness: 2px;
   text-underline-offset: 7px;
 }

@@ -19,7 +19,7 @@ const routes = [
   {
     path: "/profile",
     name: "Profile",
-    component: () => import(/* webpackChunkName: "duties" */ "../views/Profile.vue"),
+    component: () => import(/* webpackChunkName: "profile" */ "../views/Profile.vue"),
   },
   {
     path: "/duties",
@@ -42,14 +42,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
   },
   {
+    path: "/character/:id",
+    name: "Character",
+    component: () => import(/* webpackChunkName: "character" */ "../views/Character.vue"),
+  },
+  {
     path: "/faq",
     name: "FAQ",
-    component: () => import(/* webpackChunkName: "settings" */ "../views/FAQ.vue"),
+    component: () => import(/* webpackChunkName: "faq" */ "../views/FAQ.vue"),
   },
   {
     path: "/privacy",
     name: "Privacy Policy",
-    component: () => import(/* webpackChunkName: "settings" */ "../views/PrivacyPolicy.vue"),
+    component: () => import(/* webpackChunkName: "privacy" */ "../views/PrivacyPolicy.vue"),
   },
   {
     path: "/:catchAll(.*)",

@@ -60,7 +60,8 @@ main {
   padding-bottom: 0.4rem;
 }
 
-a, a:focus {
+a,
+a:focus {
   color: #41b883;
 }
 
