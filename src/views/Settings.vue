@@ -138,7 +138,16 @@
                 <div style="float: left">
                   <span class="fw-bold">{{ item.characterData.Character.Name }}</span>
                   <br />
-                  <span v-if="item.characterData.AchievementsPublic" class="text-muted fw-light">
+                  <span
+                    v-if="this.updating == item.characterData.Character.ID"
+                    class="text-info fw-light"
+                  >
+                    Loading data from Lodestone...
+                  </span>
+                  <span
+                    v-else-if="item.characterData.AchievementsPublic"
+                    class="text-muted fw-light"
+                  >
                     Last updated {{ lastUpdatedAt(item.lastUpdated) }}.
                   </span>
                   <span v-else class="text-warning fw-light">
@@ -151,10 +160,19 @@
                 </div>
               </div>
               <a
+                v-if="this.updating != item.characterData.Character.ID"
+                class="bi-arrow-repeat text-secondary cursor-pointer"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="Update data"
+                @click="refreshCharacter(item.characterData.Character.ID)"
+              ></a>
+              &nbsp;
+              <a
                 class="bi-trash text-danger cursor-pointer"
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
-                title="Remove"
+                title="Remove character"
                 @click="removeCharacter(i)"
               ></a>
             </li>
@@ -185,12 +203,14 @@
 
 <script>
 import Alert from "@/components/Alert.vue";
+import { fetchCharacterData } from "@/utilities/xivapi.js";
 
 export default {
   name: "Settings",
   data() {
     return {
       adding: false,
+      updating: 0,
       error: "",
       profileURL: "",
       settings: { ...this.$store.state.settings },
@@ -209,85 +229,33 @@ export default {
       if (this.profileURL.endsWith("/")) this.profileURL = this.profileURL.slice(0, -1);
       let profileID = this.profileURL.split("/").slice(-1).pop();
 
-      fetch("https://xivapi.com/character/" + profileID + "?data=AC", {
-        method: "GET",
-      })
-        .then((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw response;
-          }
-        })
+      fetchCharacterData(profileID)
         .then((characterData) => {
-          // Inject character data.
-          let achievementList = characterData.Achievements?.List || [];
-          for (let i = 0; i < achievementList.length; i++) {
-            if (achievementList[i].ID == 789) {
-              characterData.PlayingSince = achievementList[i].Date;
-            }
-          }
-
-          characterData.Jobs = {};
-          let jobInitials = [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "CRP",
-            "BSM",
-            "ARM",
-            "GSM",
-            "LTW",
-            "WVR",
-            "ALC",
-            "CUL",
-            "MIN",
-            "BTN",
-            "FSH",
-            "PLD",
-            "MNK",
-            "WAR",
-            "DRG",
-            "BRD",
-            "WHM",
-            "BLM",
-            "",
-            "SMN",
-            "SCH",
-            "",
-            "NIN",
-            "MCH",
-            "DRK",
-            "AST",
-            "SAM",
-            "RDM",
-            "BLU",
-            "GNB",
-            "DNC",
-          ];
-          for (let classJob of characterData.Character.ClassJobs) {
-            characterData.Jobs[jobInitials[classJob.JobID]] = classJob;
-          }
-
-          // Save character data.
           this.$store.commit("addCharacter", characterData);
         })
         .catch((err) => {
-          if (err.status == 404) {
-            this.error = "The character profile you have entered does not exist.";
-          } else {
-            console.log(err);
-            this.error = "An unknown error has ocurred while fetching character data.";
-          }
+          console.log(err);
+          this.error = err;
         })
         .finally(() => {
           this.profileURL = "";
           this.adding = false;
+        });
+    },
+    refreshCharacter(id) {
+      this.updating = id;
+
+      fetchCharacterData(id)
+        .then((characterData) => {
+          this.$store.commit("addCharacter", characterData);
+        })
+        .catch((err) => {
+          console.log(err);
+          this.error = err;
+        })
+        .finally(() => {
+          this.profileURL = "";
+          this.updating = null;
         });
     },
     removeCharacter(id) {
