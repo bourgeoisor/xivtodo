@@ -160,7 +160,7 @@
                 </div>
               </div>
               <a
-                v-if="this.updating != item.characterData.Character.ID"
+                v-if="!this.updating"
                 class="bi-arrow-repeat text-secondary cursor-pointer"
                 data-bs-toggle="tooltip"
                 data-bs-placement="top"
