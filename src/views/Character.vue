@@ -1,17 +1,32 @@
 <template>
   <div class="text-center py-1" id="nav-warning">
-    You are currently viewing a shared profile. To go back to XIV ToDo,
+    You are currently viewing a shared profile. To get back to your characters,
     <router-link to="/" class="text-reset">click here</router-link>.
   </div>
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane fade show active" id="nav-profile" role="tabpanel">
-      <Profile />
+      <Profile v-if="this.$store.getters.activeCharacter" />
+      <div v-else class="d-flex align-content-center justify-content-center mt-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     </div>
     <div class="tab-pane fade" id="nav-duties" role="tabpanel">
-      <Duties />
+      <Duties v-if="this.$store.getters.activeCharacter" />
+      <div v-else class="d-flex align-content-center justify-content-center mt-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     </div>
     <div class="tab-pane fade" id="nav-questlines" role="tabpanel">
-      <Questlines />
+      <Questlines v-if="this.$store.getters.activeCharacter" />
+      <div v-else class="d-flex align-content-center justify-content-center mt-5">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>

@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import router from "../router";
 
 export default createStore({
   state: {
@@ -13,29 +14,38 @@ export default createStore({
     hasCharacter(state) {
       return state.characters.length > 0;
     },
-    characterData(state) {
-      return state.characters[state.activeCharacterID]?.characterData || {};
+    activeCharacter(state) {
+      console.log(router.currentRoute._value.name);
+      console.log(router.currentRoute._value.params.id);
+      if (router.currentRoute._value.name == "Character") {
+        return null;
+      } else {
+        return state.characters[state.activeCharacterID];
+      }
     },
-    character(state) {
-      return state.characters[state.activeCharacterID]?.characterData.Character || {};
+    characterData(state, getters) {
+      return getters.activeCharacter?.characterData || {};
     },
-    achievements(state) {
-      return state.characters[state.activeCharacterID]?.characterData.Achievements?.List || [];
+    character(state, getters) {
+      return getters.activeCharacter?.characterData.Character || {};
     },
-    achievementsPublic(state) {
-      return state.characters[state.activeCharacterID]?.characterData.AchievementsPublic || false;
+    achievements(state, getters) {
+      return getters.activeCharacter?.characterData.Achievements?.List || [];
     },
-    todosChecked(state) {
-      return state.characters[state.activeCharacterID]?.todosChecked || [];
+    achievementsPublic(state, getters) {
+      return getters.activeCharacter?.characterData.AchievementsPublic || false;
     },
-    todosHidden(state) {
-      return state.characters[state.activeCharacterID]?.todosHidden || [];
+    todosChecked(state, getters) {
+      return getters.activeCharacter?.todosChecked || [];
     },
-    todosNextDailyReset(state) {
-      return state.characters[state.activeCharacterID]?.todosNextDailyReset || 0;
+    todosHidden(state, getters) {
+      return getters.activeCharacter?.todosHidden || [];
     },
-    todosNextWeeklyReset(state) {
-      return state.characters[state.activeCharacterID]?.todosNextWeeklyReset || 0;
+    todosNextDailyReset(state, getters) {
+      return getters.activeCharacter?.todosNextDailyReset || 0;
+    },
+    todosNextWeeklyReset(state, getters) {
+      return getters.activeCharacter?.todosNextWeeklyReset || 0;
     },
   },
   mutations: {

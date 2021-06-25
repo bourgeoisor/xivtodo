@@ -142,7 +142,7 @@
                     v-if="this.updating == item.characterData.Character.ID"
                     class="text-info fw-light"
                   >
-                    Loading data from Lodestone...
+                    Loading latest character data...
                   </span>
                   <span
                     v-else-if="item.characterData.AchievementsPublic"
