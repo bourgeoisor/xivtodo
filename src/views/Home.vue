@@ -142,20 +142,6 @@
           </p>
         </div>
       </div>
-      <!-- <div class="col d-flex align-items-start">
-        <i class="bi bi-bookmark-star flex-shrink-0 me-3"></i>
-        <div>
-          <h4 class="fw-bold mb-0">Feature title</h4>
-          <p>Paragraph of text beneath the heading to explain the heading.</p>
-        </div>
-      </div>
-      <div class="col d-flex align-items-start">
-        <i class="bi bi-bookmark-star flex-shrink-0 me-3"></i>
-        <div>
-          <h4 class="fw-bold mb-0">Feature title</h4>
-          <p>Paragraph of text beneath the heading to explain the heading.</p>
-        </div>
-      </div> -->
     </div>
   </div>
 
@@ -194,7 +180,6 @@
               View project on GitHub
             </button>
           </a>
-          <!-- <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button> -->
         </div>
       </div>
     </div>

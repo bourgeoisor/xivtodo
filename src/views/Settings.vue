@@ -48,19 +48,6 @@
           <div class="form-text">Preference in hiding potential spoilers.</div>
           <br />
 
-          <!-- <h3>Theme color</h3>
-          <div class="form-check">
-            <input
-              v-model="settings.nightMode"
-              class="form-check-input"
-              type="checkbox"
-              id="inputNightMode"
-            />
-            <label class="form-check-label" for="inputNightMode"> Night mode</label>
-          </div>
-          <div class="form-text">An eye-friendly darker theme for the site.</div>
-          <br /> -->
-
           <button
             @click="saveSettings"
             type="button"
