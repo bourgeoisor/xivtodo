@@ -131,18 +131,16 @@
                   >
                     Loading latest character data...
                   </span>
-                  <span
-                    v-else-if="item.characterData.AchievementsPublic"
-                    class="text-muted fw-light"
-                  >
+                  <span v-else class="text-muted fw-light">
                     Last updated {{ lastUpdatedAt(item.lastUpdated) }}.
-                  </span>
-                  <span v-else class="text-warning fw-light">
-                    <abbr
-                      title="The achievements for this characters are not set to public in Lodestone."
-                    >
-                      Achievements non-public.
-                    </abbr>
+                    <span v-if="!item.characterData.AchievementsPublic" class="text-warning">
+                      <br />
+                      <abbr
+                        title="The achievements for this characters are not set to public in Lodestone."
+                      >
+                        Achievements are not public.
+                      </abbr>
+                    </span>
                   </span>
                 </div>
               </div>
