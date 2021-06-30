@@ -15,8 +15,8 @@ export default createStore({
       return state.characters.length > 0;
     },
     activeCharacter(state) {
-      console.log(router.currentRoute._value.name);
-      console.log(router.currentRoute._value.params.id);
+      // console.log(router.currentRoute._value.name);
+      // console.log(router.currentRoute._value.params.id);
       if (router.currentRoute._value.name == "Character") {
         return null;
       } else {

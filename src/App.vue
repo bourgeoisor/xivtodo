@@ -149,12 +149,43 @@ hr {
 <script>
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
+import { fetchCharacterData } from "@/utilities/xivapi.js";
 
 export default {
   name: "App",
+  data() {
+    return {
+      updating: false,
+    };
+  },
   components: {
     TheNavbar,
     TheFooter,
+  },
+  mounted() {
+    setInterval(() => {
+      let now = new Date();
+      let msBeforeUpdate = 1000 * 60 * 15;
+
+      for (let character of this.$store.state.characters) {
+        if (!this.updating && now > character.lastUpdated + msBeforeUpdate) {
+          console.log("Updating data for " + character.characterData.Character.Name + "...");
+          this.updating = true;
+          fetchCharacterData(character.characterData.Character.ID)
+            .then((characterData) => {
+              this.$store.commit("addCharacter", characterData);
+              console.log("Data for " + character.characterData.Character.Name + " updated.");
+            })
+            .catch((err) => {
+              console.log(err);
+              this.error = err;
+            })
+            .finally(() => {
+              this.updating = false;
+            });
+        }
+      }
+    }, 1000);
   },
   computed: {
     computeWindowTitle() {
