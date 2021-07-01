@@ -182,7 +182,6 @@
   b {
     color: #41b883;
     font-weight: 800;
-    text-decoration: underline;
   }
 }
 
