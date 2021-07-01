@@ -45,6 +45,7 @@
             type="button"
             id="settings-save-btn"
             class="btn btn-success"
+            :class="{ disabled: !profileURL }"
           >
             Add character
           </button>
