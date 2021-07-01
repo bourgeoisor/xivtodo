@@ -35,7 +35,7 @@ main {
   .list-group-item {
     color: #dddddd;
     background-color: #1c2024;
-    border-color: #aaa;
+    border-color: #484848;
   }
 
   .form-check-input {

@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>FAQ</h1>
+    <h1>Help</h1>
     <hr />
     <div class="row">
       <div class="col-lg-10">
@@ -17,6 +17,6 @@
 
 <script>
 export default {
-  name: "FAQ",
+  name: "Help",
 };
 </script>

@@ -5,60 +5,7 @@
     <hr />
     <form name="settings-form" id="settings-form">
       <div class="row">
-        <div class="col-md-6">
-          <h2>General</h2>
-          <h3>Content spoilers</h3>
-          <div class="form-check">
-            <input
-              v-model="settings.spoilersOption"
-              class="form-check-input"
-              type="radio"
-              name="inputSpoilersOption"
-              id="inputSpoilersOption0"
-              value="0"
-            />
-            <label class="form-check-label" for="inputSpoilersOption0">
-              Blur out all story-related duties
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              v-model="settings.spoilersOption"
-              class="form-check-input"
-              type="radio"
-              name="inputSpoilersOption"
-              id="inputSpoilersOption1"
-              value="1"
-            />
-            <label class="form-check-label" for="inputSpoilersOption1">
-              Blur out non-completed story-related duties
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              v-model="settings.spoilersOption"
-              class="form-check-input"
-              type="radio"
-              name="inputSpoilersOption"
-              id="inputSpoilersOption2"
-              value="2"
-            />
-            <label class="form-check-label" for="inputSpoilersOption2">Show all duties</label>
-          </div>
-          <div class="form-text">Preference in hiding potential spoilers.</div>
-          <br />
-
-          <button
-            @click="saveSettings"
-            type="button"
-            id="settings-save-btn"
-            class="btn btn-success"
-          >
-            Update settings
-          </button>
-          <br /><br />
-        </div>
-        <div class="col-md-6">
+        <div class="col-lg-6">
           <h2>Characters</h2>
 
           <h3>Add a new character</h3>
@@ -152,7 +99,7 @@
                 title="Update data"
                 @click="refreshCharacter(item.characterData.Character.ID)"
               ></a>
-              &nbsp;
+              &nbsp;&nbsp;
               <a
                 class="bi-trash text-danger cursor-pointer"
                 data-bs-toggle="tooltip"
@@ -163,6 +110,59 @@
             </li>
           </ul>
           <br />
+        </div>
+        <div class="col-lg-6">
+          <h2>General</h2>
+          <h3>Content spoilers</h3>
+          <div class="form-check">
+            <input
+              v-model="settings.spoilersOption"
+              class="form-check-input"
+              type="radio"
+              name="inputSpoilersOption"
+              id="inputSpoilersOption0"
+              value="0"
+            />
+            <label class="form-check-label" for="inputSpoilersOption0">
+              Blur out all story-related duties
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              v-model="settings.spoilersOption"
+              class="form-check-input"
+              type="radio"
+              name="inputSpoilersOption"
+              id="inputSpoilersOption1"
+              value="1"
+            />
+            <label class="form-check-label" for="inputSpoilersOption1">
+              Blur out non-completed story-related duties
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              v-model="settings.spoilersOption"
+              class="form-check-input"
+              type="radio"
+              name="inputSpoilersOption"
+              id="inputSpoilersOption2"
+              value="2"
+            />
+            <label class="form-check-label" for="inputSpoilersOption2">Show all duties</label>
+          </div>
+          <div class="form-text">Preference in hiding potential spoilers.</div>
+          <br />
+
+          <button
+            @click="saveSettings"
+            type="button"
+            id="settings-save-btn"
+            class="btn btn-success"
+          >
+            Update settings
+          </button>
+          <br /><br />
         </div>
       </div>
     </form>
@@ -254,7 +254,7 @@ export default {
       let hours = Math.floor(diff / (1000 * 60 * 60));
       let minutes = Math.floor(diff / (1000 * 60));
 
-      if (minutes < 1) return "less than a minute ago";
+      if (minutes < 2) return "a couple seconds ago";
       else if (minutes < 120) return minutes + " minutes ago";
       else if (hours < 48) return hours + " hours ago";
       else if (days < 60) return days + " days ago";

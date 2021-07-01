@@ -23,7 +23,7 @@
 
       <div class="col-md">
         <h3>Weeklies</h3>
-        <small class="fw-lighter text-muted">{{ weeklyReset }} until reset</small>
+        <span class="fw-lighter text-muted">{{ weeklyReset }} until reset</span>
 
         <ul class="list-group list-group-flush">
           <ChecklistItem
@@ -39,7 +39,7 @@
 
       <div class="col-md">
         <h3>Dailies</h3>
-        <small class="fw-lighter text-muted">{{ dailyReset }} until reset</small>
+        <span class="fw-lighter text-muted">{{ dailyReset }} until reset</span>
 
         <ul class="list-group list-group-flush">
           <ChecklistItem

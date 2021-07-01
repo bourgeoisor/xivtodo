@@ -5,12 +5,27 @@
       FINAL FANTASY XIV © SQUARE ENIX CO., LTD.
     </div>
     <div class="flex-fill text-center text-muted">
-      <img src="../assets/brand_grey.png" alt="XIV ToDo branding" /><br />
+      <img src="../assets/brand_grey.png" alt="XIV ToDo branding" />
+      &nbsp;
+      <a
+        class="bi bi-twitter"
+        href="https://twitter.com/XIVToDo"
+        target="_blank"
+        rel="noopener noreferrer"
+      ></a>
+      &nbsp;
+      <a
+        class="bi bi-github"
+        href="https://github.com/bourgeoisor/xivtodo"
+        target="_blank"
+        rel="noopener noreferrer"
+      ></a>
+      <br />
       <router-link to="/"><small>About</small></router-link>
       ·
-      <!-- <router-link to="/faq"><small>FAQ</small></router-link>
+      <!-- <router-link to="/help"><small>Help</small></router-link>
       · -->
-      <router-link to="/privacy"><small>Privacy Policy</small></router-link>
+      <router-link to="/privacy"><small>Privacy</small></router-link>
       ·
       <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
         <small>Contact</small>
@@ -31,7 +46,7 @@
 footer {
   a,
   a:focus {
-    color: #555555;
+    color: #6c757d;
   }
 
   a:hover {
@@ -45,7 +60,7 @@ footer {
 
   a,
   a:focus {
-    color: #bbbbbb;
+    color: #6c757d;
   }
 
   a:hover {
@@ -62,7 +77,7 @@ footer a {
 }
 
 footer img {
-  height: 20px;
+  height: 1em;
   margin-bottom: 5px;
   margin-top: 5px;
 }

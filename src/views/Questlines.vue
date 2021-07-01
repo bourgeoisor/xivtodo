@@ -2,8 +2,17 @@
   <div class="container">
     <h1>
       Questlines
-      <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
+      <span
+        v-if="this.$store.getters.hasCharacter && this.$store.getters.achievementsPublic"
+        class="fs-3 fw-lighter"
+      >
         cleared by {{ this.$store.getters.character.Name }}
+      </span>
+      <span v-else-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter text-warning">
+        <abbr title="The achievements for this characters are not set to public in Lodestone.">
+          cleared by {{ this.$store.getters.character.Name }}
+        </abbr>
+        &nbsp;<span class="bi bi-cloud-slash"></span>
       </span>
     </h1>
     <Alert
