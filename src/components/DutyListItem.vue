@@ -9,7 +9,7 @@
   >
     <span
       :class="{
-        'bi-slash-circle': duty.cleared == -1,
+        'bi-question-circle': duty.cleared == -1,
         'bi-check-circle': duty.cleared == 1,
         'bi-circle': duty.cleared == 0,
       }"
