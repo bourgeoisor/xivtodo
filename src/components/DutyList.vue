@@ -1,5 +1,5 @@
 <template>
-  <h3>{{ title }}</h3>
+  <h3><img v-if="type" :src="'/icons/duty-' + type + '.png'" />{{ title }}</h3>
   <ul class="list-group list-group-flush">
     <DutyListItem
       v-for="item of injectDutyCompletion(duties)"
@@ -19,6 +19,7 @@ export default {
   props: {
     title: String,
     duties: Object,
+    type: String,
   },
   components: {
     DutyListItem,

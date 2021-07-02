@@ -81,6 +81,12 @@ h1 .border-bottom {
 h3 {
   font-weight: 700;
   text-decoration: underline;
+
+  img {
+    height: 1em;
+    margin-right: 10px;
+    padding-bottom: 2px;
+  }
 }
 
 .row h2 {

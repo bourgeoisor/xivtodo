@@ -24,15 +24,15 @@
       <h2>A Realm Reborn</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.arrDungeons" />
+        <DutyList title="Dungeons" :duties="db.arrDungeons" type="dngs" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.arrTrials" />
-        <DutyList title="High-end Trials" :duties="db.arrTrialsEx" />
+        <DutyList title="Trials" :duties="db.arrTrials" type="trials" />
+        <DutyList title="High-end Trials" :duties="db.arrTrialsEx" type="high" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.arrRaids" />
-        <DutyList title="High-end Raids" :duties="db.arrRaidsSavUlt" />
+        <DutyList title="Raids" :duties="db.arrRaids" type="raids" />
+        <DutyList title="High-end Raids" :duties="db.arrRaidsSavUlt" type="high" />
       </div>
     </div>
     <hr />
@@ -40,15 +40,15 @@
       <h2>Heavensward</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.hwDungeons" />
+        <DutyList title="Dungeons" :duties="db.hwDungeons" type="dngs" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.hwTrials" />
-        <DutyList title="High-end Trials" :duties="db.hwTrialsEx" />
+        <DutyList title="Trials" :duties="db.hwTrials" type="trials" />
+        <DutyList title="High-end Trials" :duties="db.hwTrialsEx" type="high" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.hwRaids" />
-        <DutyList title="High-end Raids" :duties="db.hwRaidsSavUlt" />
+        <DutyList title="Raids" :duties="db.hwRaids" type="raids" />
+        <DutyList title="High-end Raids" :duties="db.hwRaidsSavUlt" type="high" />
       </div>
     </div>
     <hr />
@@ -56,16 +56,16 @@
       <h2>Stormblood</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.sbDungeons" />
+        <DutyList title="Dungeons" :duties="db.sbDungeons" type="dngs" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.sbTrials" />
-        <DutyList title="High-end Trials" :duties="db.sbTrialsEx" />
+        <DutyList title="Trials" :duties="db.sbTrials" type="trials" />
+        <DutyList title="High-end Trials" :duties="db.sbTrialsEx" type="high" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.sbRaids" />
-        <DutyList title="High-end Raids" :duties="db.sbRaidsSavUlt" />
-        <DutyList title="Exploratory Missions" :duties="db.sbExploratory" />
+        <DutyList title="Raids" :duties="db.sbRaids" type="raids" />
+        <DutyList title="High-end Raids" :duties="db.sbRaidsSavUlt" type="high" />
+        <DutyList title="Exploratory Missions" :duties="db.sbExploratory" type="expl" />
       </div>
     </div>
     <hr />
@@ -73,16 +73,16 @@
       <h2>Shadowbringers</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.shbDungeons" />
+        <DutyList title="Dungeons" :duties="db.shbDungeons" type="dngs" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.shbTrials" />
-        <DutyList title="High-end Trials" :duties="db.shbTrialsEx" />
+        <DutyList title="Trials" :duties="db.shbTrials" type="trials" />
+        <DutyList title="High-end Trials" :duties="db.shbTrialsEx" type="high" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.shbRaids" />
-        <DutyList title="High-end Raids" :duties="db.shbRaidsSavUlt" />
-        <DutyList title="Exploratory Missions" :duties="db.shbExploratory" />
+        <DutyList title="Raids" :duties="db.shbRaids" type="raids" />
+        <DutyList title="High-end Raids" :duties="db.shbRaidsSavUlt" type="high" />
+        <DutyList title="Exploratory Missions" :duties="db.shbExploratory" type="expl" />
       </div>
     </div>
   </div>

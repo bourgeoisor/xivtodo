@@ -32,8 +32,8 @@
         <div class="info-block">
           <b>Race / Clan</b><br />
           <i class="bi bi-arrow-return-right text-muted"></i>
-          {{ this.$store.getters.character.Race }} /
-          {{ this.$store.getters.character.Tribe }}
+          {{ this.$store.getters.character.Race?.Name }} /
+          {{ this.$store.getters.character.Tribe?.Name }}
           <i v-if="this.$store.getters.character.Gender == 1" class="bi bi-gender-male"></i>
           <i v-else class="bi bi-gender-female"></i>
         </div>
@@ -47,7 +47,7 @@
         <div class="info-block">
           <b>Guardian</b><br />
           <i class="bi bi-arrow-return-right text-muted"></i>
-          {{ this.$store.getters.character.GuardianDeity }}
+          {{ this.$store.getters.character.GuardianDeity?.Name }}
         </div>
 
         <br />
@@ -61,15 +61,25 @@
         <div class="info-block">
           <b>City-state</b><br />
           <i class="bi bi-arrow-return-right text-muted"></i>
-          {{ this.$store.getters.character.Town }}
+          <img :src="'/icons/town-' + this.$store.getters.character.Town?.ID + '.png'" />
+          {{ this.$store.getters.character.Town?.Name }}
         </div>
 
         <template v-if="this.$store.getters.character.GrandCompany">
           <div class="info-block">
             <b>Grand Company</b><br />
             <i class="bi bi-arrow-return-right text-muted"></i>
-            {{ this.$store.getters.character.GrandCompany.Name }} /
-            {{ this.$store.getters.character.GrandCompany.Rank }}
+            <img
+              :src="
+                '/icons/gc-' +
+                this.$store.getters.character.GrandCompany.Company?.ID +
+                '-' +
+                this.$store.getters.character.GrandCompany.Rank?.ID +
+                '.png'
+              "
+            />
+            {{ this.$store.getters.character.GrandCompany.Company?.Name }} /
+            {{ this.$store.getters.character.GrandCompany.Rank?.Name }}
           </div>
         </template>
         <template v-if="this.$store.getters.achievementsPublic">
@@ -182,6 +192,11 @@
   b {
     color: #41b883;
     font-weight: 800;
+  }
+
+  img {
+    height: 1.3em;
+    margin-left: 5px;
   }
 }
 
