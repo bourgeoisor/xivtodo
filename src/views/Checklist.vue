@@ -17,6 +17,10 @@
         Customize
       </button>
     </h1>
+    <Alert
+      v-if="!this.$store.getters.hasCharacter"
+      msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
+    />
     <hr />
     <div class="row">
       <h2>Things to do</h2>
@@ -69,6 +73,7 @@
 </template>
 
 <script>
+import Alert from "@/components/Alert.vue";
 import ChecklistItem from "@/components/ChecklistItem.vue";
 
 import dbJson from "@/assets/db.json";
@@ -85,6 +90,7 @@ export default {
     };
   },
   components: {
+    Alert,
     ChecklistItem,
   },
   mounted() {

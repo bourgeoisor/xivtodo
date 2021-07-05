@@ -17,7 +17,7 @@
     </h1>
     <Alert
       v-if="!this.$store.getters.hasCharacter"
-      msg="Character data could not be found. You can load a character from the <a href='/settings' class='alert-link'>Settings</router-link>."
+      msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
     />
     <hr />
     <div class="row">

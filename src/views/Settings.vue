@@ -54,7 +54,7 @@
           <h3>Your characters</h3>
           <ul v-if="!this.$store.getters.hasCharacter" class="list-group list-group-flush">
             <li class="list-group-item d-flex justify-content-between align-items-start">
-              There are no loaded characters yet.
+              Once you add your characters, they will appear here.
             </li>
           </ul>
           <ul v-else class="list-group list-group-flush">
