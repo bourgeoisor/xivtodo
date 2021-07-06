@@ -19,6 +19,7 @@
     </h1>
     <Alert
       v-if="!this.$store.getters.hasCharacter"
+      type="normal"
       msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
     />
     <hr />

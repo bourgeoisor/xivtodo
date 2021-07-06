@@ -1,6 +1,25 @@
 <template>
-  <div id="error-block" class="alert alert-dark" role="alert">
-    <span class="bi-exclamation-triangle-fill"></span>&nbsp;
+  <div
+    id="error-block"
+    class="alert"
+    :class="{
+      'alert-dark': type == 'normal',
+      'alert-danger': type == 'error',
+      'alert-warning': type == 'warning',
+      'alert-success': type == 'success',
+    }"
+    role="alert"
+  >
+    <span
+      class="bi"
+      :class="{
+        'bi-info-circle-fill': type == 'normal',
+        'bi-exclamation-triangle-fill': type == 'error' || type == 'warning',
+        'bi-check-circle-fill': type == 'success',
+      }"
+    >
+    </span
+    >&nbsp;
     <span v-html="msg"></span>
   </div>
 </template>
@@ -14,7 +33,7 @@
   .alert-danger {
     color: #dddddd;
     background-color: #631414;
-    border-color: #631414;
+    border-color: #dddddd;
   }
 
   .alert-danger .alert-link {
@@ -30,12 +49,33 @@
   .alert-primary .alert-link {
     color: #04376a;
   }
+
+  .alert-warning {
+    color: #524b35;
+    background-color: #f6e275;
+    border-color: #fff5bc;
+  }
+
+  .alert-warning .alert-link {
+    color: #524b35;
+  }
+
+  .alert-success {
+    color: #1e342a;
+    background-color: #41b883;
+    border-color: #4ea57e;
+  }
+
+  .alert-success .alert-link {
+    color: #1e342a;
+  }
 }
 </style>
 
 <script>
 export default {
   props: {
+    type: String,
     msg: String,
   },
 };

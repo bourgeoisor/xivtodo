@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>Settings</h1>
-    <Alert v-if="error" :msg="error" />
+    <Alert v-if="error.msg" :type="error.type" :msg="error.msg" />
     <hr />
     <form name="settings-form" id="settings-form">
       <div class="row">
@@ -197,7 +197,7 @@ export default {
     return {
       adding: false,
       updating: 0,
-      error: "",
+      error: {},
       profileURL: "",
       settings: { ...this.$store.state.settings },
     };
@@ -211,6 +211,7 @@ export default {
     },
     addCharacter() {
       this.adding = true;
+      this.error = {};
 
       if (this.profileURL.endsWith("/")) this.profileURL = this.profileURL.slice(0, -1);
       let profileID = this.profileURL.split("/").slice(-1).pop();
@@ -218,10 +219,22 @@ export default {
       fetchCharacterData(profileID)
         .then((characterData) => {
           this.$store.commit("addCharacter", characterData);
+
+          if (!characterData.AchievementsPublic) {
+            this.error = {
+              type: "warning",
+              msg: `Character <b>${characterData.Character.Name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then re-add the character.`,
+            };
+          } else {
+            this.error = {
+              type: "success",
+              msg: `Character <b>${characterData.Character.Name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.`,
+            };
+          }
         })
         .catch((err) => {
           console.log(err);
-          this.error = err;
+          this.error = { type: "error", msg: err };
         })
         .finally(() => {
           this.profileURL = "";
@@ -230,6 +243,7 @@ export default {
     },
     refreshCharacter(id) {
       this.updating = id;
+      this.error = {};
 
       fetchCharacterData(id)
         .then((characterData) => {
@@ -237,7 +251,7 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-          this.error = err;
+          this.error = { type: "error", msg: err };
         })
         .finally(() => {
           this.profileURL = "";

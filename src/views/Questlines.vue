@@ -12,11 +12,12 @@
         <abbr title="The achievements for this characters are not set to public in Lodestone.">
           cleared by {{ this.$store.getters.character.Name }}
         </abbr>
-        &nbsp;<span class="bi bi-cloud-slash"></span>
+        &nbsp;<span class="bi bi-patch-exclamation"></span>
       </span>
     </h1>
     <Alert
       v-if="!this.$store.getters.hasCharacter"
+      type="normal"
       msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
     />
     <hr />

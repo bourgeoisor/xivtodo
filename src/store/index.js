@@ -67,6 +67,7 @@ export default createStore({
         if (state.characters[i].characterData.Character.ID == payload.Character.ID) {
           state.characters[i].characterData = payload;
           state.characters[i].lastUpdated = parseInt(Date.now());
+          state.activeCharacterID = i;
           return;
         }
       }
