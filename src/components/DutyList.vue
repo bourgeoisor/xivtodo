@@ -18,7 +18,7 @@ import DutyListItem from "@/components/DutyListItem.vue";
 export default {
   props: {
     title: String,
-    duties: Object,
+    duties: Array,
     type: String,
   },
   components: {
@@ -70,6 +70,9 @@ export default {
         item.blur = blur;
       }
       return duties;
+    },
+    numClearedDuties() {
+      return this.injectDutyCompletion(this.duties).filter((obj) => obj.cleared == 1).length;
     },
   },
 };

@@ -4,7 +4,6 @@
     :class="{
       'text-secondary': duty.cleared == -1,
       'text-success': duty.cleared == 1,
-      'text-danger': duty.cleared == 0,
     }"
   >
     <span
@@ -13,6 +12,7 @@
         'bi-check-circle': duty.cleared == 1,
         'bi-circle': duty.cleared == 0,
       }"
+      :title="clearedIconTitle"
     >
       &nbsp;
       <a
@@ -66,7 +66,7 @@
 
 .blur-uncleared {
   color: transparent;
-  text-shadow: 0 0 20px #b45353;
+  text-shadow: 0 0 20px #c2c2c2;
 }
 </style>
 
@@ -74,6 +74,13 @@
 export default {
   props: {
     duty: Object,
+  },
+  computed: {
+    clearedIconTitle() {
+      if (this.duty.cleared == 0) return "Uncleared";
+      if (this.duty.cleared == 1) return "Cleared";
+      else return "Unknown";
+    },
   },
 };
 </script>

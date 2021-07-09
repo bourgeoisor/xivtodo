@@ -139,6 +139,10 @@ hr {
   cursor: help;
 }
 
+.lodestone-tooltip {
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+}
+
 .text-secondary .lodestone-tooltip {
   text-decoration-color: rgba(162, 164, 166, 0.5);
 }
