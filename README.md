@@ -19,25 +19,31 @@
 
 ## Development
 
-### Project setup
+This project requires Node.js version 10+ as well as a Node package manager such as `npm` installed.
+
+To install the required dependencies, run the following from the `xivtodo` directory:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+The following commands then becomes available:
 ```
+# Compiles and hot-reloads for development
 npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+# Compiles and minifies for production
+npm run build 
 
-### Lints and fixes files
-```
+# Lints and fixes files
 npm run lint
+
+# Runs Vue.js' UI
+vue ui
 ```
+
+## Contributing
+
+Contributions are welcome and appreciated. Simply open up a new issue, or fork the repository to open up a new pull request against the upstream main branch.
 
 ---
 
