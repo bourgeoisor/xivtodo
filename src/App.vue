@@ -54,6 +54,15 @@ main {
   .border-grey {
     border-color: #444444 !important;
   }
+
+  .floating-label {
+    color: #b9bbbe;
+  }
+
+  .form-control {
+    color: #dbdcdd;
+    background-color: #262b2f;
+  }
 }
 
 .list-group-item {

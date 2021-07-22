@@ -25,22 +25,32 @@
     <span :class="{ 'text-muted': hidden }" class="user-select-none">
       {{ item.Name }}
     </span>
-    <a
-      v-if="showHidden && hidden"
-      class="bi-eye-slash text-secondary cursor-pointer"
-      data-bs-toggle="tooltip"
-      data-bs-placement="top"
-      title="Unhide"
-      @click="hid"
-    ></a>
-    <a
-      v-else-if="showHidden && !hidden"
-      class="bi-eye text-success cursor-pointer"
-      data-bs-toggle="tooltip"
-      data-bs-placement="top"
-      title="Hide"
-      @click="hid"
-    ></a>
+    <span v-if="showHidden">
+      <a
+        v-if="item.Custom"
+        class="bi-trash text-danger cursor-pointer"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Remove"
+        @click="remove"
+      ></a>
+      <a
+        v-else-if="hidden"
+        class="bi-eye-slash text-secondary cursor-pointer"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Unhide"
+        @click="hid"
+      ></a>
+      <a
+        v-else-if="!hidden"
+        class="bi-eye text-success cursor-pointer"
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="Hide"
+        @click="hid"
+      ></a>
+    </span>
   </span>
 </template>
 
@@ -97,6 +107,9 @@ export default {
     hid() {
       this.hidden = !this.hidden;
       this.$store.commit("todoHidden", { id: this.item.ID, hidden: this.hidden });
+    },
+    remove() {
+      this.$store.commit("todosRemoveCustom", this.item.ID);
     },
   },
 };

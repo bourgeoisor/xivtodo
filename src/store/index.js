@@ -51,6 +51,12 @@ export default createStore({
     todosNextWeeklyReset(state, getters) {
       return getters.activeCharacter?.todosNextWeeklyReset || 0;
     },
+    todosCustomDailies(state, getters) {
+      return getters.activeCharacter?.todosCustomDailies || [];
+    },
+    todosCustomWeeklies(state, getters) {
+      return getters.activeCharacter?.todosCustomWeeklies || [];
+    },
   },
   mutations: {
     initialiseStore(state) {
@@ -122,6 +128,54 @@ export default createStore({
     },
     todosNextWeeklyReset(state, payload) {
       state.characters[state.activeCharacterID].todosNextWeeklyReset = payload;
+    },
+    todosAddCustomDaily(state, payload) {
+      let id = 2900;
+      if (state.characters[state.activeCharacterID].todosCustomDailies == null) {
+        state.characters[state.activeCharacterID].todosCustomDailies = [];
+      } else {
+        let lengthTasks = state.characters[state.activeCharacterID].todosCustomDailies.length;
+        if (lengthTasks > 0) {
+          id = state.characters[state.activeCharacterID].todosCustomDailies[lengthTasks - 1].ID + 1;
+        }
+      }
+
+      let task = {
+        Name: payload,
+        ID: id,
+        Custom: true,
+      };
+
+      state.characters[state.activeCharacterID].todosCustomDailies.push(task);
+    },
+    todosAddCustomWeekly(state, payload) {
+      let id = 1900;
+      if (state.characters[state.activeCharacterID].todosCustomWeeklies == null) {
+        state.characters[state.activeCharacterID].todosCustomWeeklies = [];
+      } else {
+        let lengthTasks = state.characters[state.activeCharacterID].todosCustomWeeklies.length;
+        if (lengthTasks > 0) {
+          id =
+            state.characters[state.activeCharacterID].todosCustomWeeklies[lengthTasks - 1].ID + 1;
+        }
+      }
+
+      let task = {
+        Name: payload,
+        ID: id,
+        Custom: true,
+      };
+
+      state.characters[state.activeCharacterID].todosCustomWeeklies.push(task);
+    },
+    todosRemoveCustom(state, payload) {
+      state.characters[state.activeCharacterID].todosCustomDailies = state.characters[
+        state.activeCharacterID
+      ].todosCustomDailies.filter((item) => item.ID != payload);
+
+      state.characters[state.activeCharacterID].todosCustomWeeklies = state.characters[
+        state.activeCharacterID
+      ].todosCustomWeeklies.filter((item) => item.ID != payload);
     },
   },
   actions: {},

@@ -28,11 +28,18 @@
 
       <div class="col-md">
         <h3>Weeklies</h3>
-        <span class="fw-lighter text-muted">{{ weeklyReset }} until reset</span>
+        <span v-if="!showHidden" class="fw-lighter text-muted">{{ weeklyReset }} until reset</span>
+
+        <div v-if="showHidden" class="input-group mt-3 mb-2">
+          <input v-model="customWeekly" type="text" class="form-control" placeholder="Custom weekly" />
+          <button class="btn btn-outline-success" :class="{ disabled: !customWeekly }" type="button" id="button-addon2" @click="addCustomWeekly">
+            Add custom weekly
+          </button>
+        </div>
 
         <ul class="list-group list-group-flush">
           <ChecklistItem
-            v-for="item of db.weeklyChecklist"
+            v-for="item of [...db.weeklyChecklist, ...this.$store.getters.todosCustomWeeklies]"
             :key="item.ID"
             :item="item"
             :showHidden="showHidden"
@@ -44,11 +51,18 @@
 
       <div class="col-md">
         <h3>Dailies</h3>
-        <span class="fw-lighter text-muted">{{ dailyReset }} until reset</span>
+        <span v-if="!showHidden" class="fw-lighter text-muted">{{ dailyReset }} until reset</span>
+
+        <div v-if="showHidden" class="input-group mt-3 mb-2">
+          <input v-model="customDaily" type="text" class="form-control" placeholder="Custom daily" />
+          <button class="btn btn-outline-success" :class="{ disabled: !customDaily }" type="button" id="button-addon2" @click="addCustomDaily">
+            Add custom daily
+          </button>
+        </div>
 
         <ul class="list-group list-group-flush">
           <ChecklistItem
-            v-for="item of db.dailyChecklist"
+            v-for="item of [...db.dailyChecklist, ...this.$store.getters.todosCustomDailies]"
             :key="item.ID"
             :item="item"
             :showHidden="showHidden"
@@ -88,6 +102,8 @@ export default {
       showHidden: false,
       weeklyReset: this.formatTimeDiff(this.weeklyResetTime(), true),
       dailyReset: this.formatTimeDiff(this.dailyResetTime(), false),
+      customWeekly: "",
+      customDaily: "",
     };
   },
   components: {
@@ -99,14 +115,16 @@ export default {
       // Skip this if no active character is set.
       if (!this.$store.getters.hasCharacter) return;
 
-      let existingDailies = this.db.dailyChecklist.map((item) => item.ID);
-      let existingWeeklies = this.db.weeklyChecklist.map((item) => item.ID);
-      let existingIds = existingDailies.concat(existingWeeklies);
+      let dailiesIds = this.db.dailyChecklist.map((item) => item.ID);
+      let weekliesIds = this.db.weeklyChecklist.map((item) => item.ID);
+      let customDailiesIds = this.$store.getters.todosCustomDailies.map((item) => item.ID);
+      let customWeekliesIds = this.$store.getters.todosCustomWeeklies.map((item) => item.ID);
+      let ids = [...dailiesIds, ...weekliesIds, ...customDailiesIds, ...customWeekliesIds];
 
       // Clear checked if they don't exist anymore.
       let todosChecked = this.$store.getters.todosChecked;
       for (let id of todosChecked) {
-        if (existingIds.indexOf(id) == -1) {
+        if (ids.indexOf(id) == -1) {
           this.$store.commit("todoChecked", { id: id, checked: false });
         }
       }
@@ -114,7 +132,7 @@ export default {
       // Clear hidden if they don't exist anymore.
       let todosHidden = this.$store.getters.todosHidden;
       for (let id of todosHidden) {
-        if (existingIds.indexOf(id) == -1) {
+        if (ids.indexOf(id) == -1) {
           this.$store.commit("todoHidden", { id: id, checked: false });
         }
       }
@@ -194,6 +212,14 @@ export default {
       } else {
         return `${minutes}m ${seconds}s`;
       }
+    },
+    addCustomWeekly() {
+      this.$store.commit("todosAddCustomWeekly", this.customWeekly);
+      this.customWeekly = "";
+    },
+    addCustomDaily() {
+      this.$store.commit("todosAddCustomDaily", this.customDaily);
+      this.customDaily = "";
     },
   },
 };

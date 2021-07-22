@@ -171,15 +171,6 @@
 </template>
 
 <style lang="scss">
-.night .floating-label {
-  color: #b9bbbe;
-}
-
-.night .form-control {
-  color: #dbdcdd;
-  background-color: #262b2f;
-}
-
 .avatar-list {
   border-radius: 50%;
   height: 43px;
