@@ -23,8 +23,8 @@
       <br />
       <router-link to="/"><small>About</small></router-link>
       ·
-      <!-- <router-link to="/help"><small>Help</small></router-link>
-      · -->
+      <router-link to="/help"><small>Help</small></router-link>
+      ·
       <router-link to="/privacy"><small>Privacy</small></router-link>
       ·
       <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">

@@ -65,6 +65,10 @@ main {
   }
 }
 
+.indent-paragraphs p {
+  margin-left: 20px;
+}
+
 .list-group-item {
   padding-bottom: 0.4rem;
 }
