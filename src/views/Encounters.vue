@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>
-      Duties
+      Encounters
       <span
         v-if="this.$store.getters.hasCharacter && this.$store.getters.achievementsPublic"
         class="fs-3 fw-lighter"
@@ -96,7 +96,7 @@ import DutyList from "@/components/DutyList.vue";
 import dbJson from "@/assets/db.json";
 
 export default {
-  name: "Duties",
+  name: "Encounters",
   data() {
     return {
       db: dbJson,

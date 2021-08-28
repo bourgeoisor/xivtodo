@@ -21,7 +21,7 @@
           XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV;
           whether you are a new player to the game or more experienced. In its current form, XIV
           ToDo ToDo offers customizable daily and weekly checklists as well as automated completion
-          trackers of duties and questlines, with much more to come!
+          trackers of encounters and questlines, with much more to come!
         </p>
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
           <template v-if="!this.$store.getters.hasCharacter">
@@ -68,7 +68,7 @@
           <img
             src="../assets/screen_duties_mockup.png"
             class="border rounded-3 mb-4"
-            alt="Screenshot of duties page"
+            alt="Screenshot of encounters page"
             style="z-index: +1000; position: relative; width: 100%"
           />
         </div>
@@ -90,9 +90,10 @@
         <div class="col d-flex align-items-start">
           <i class="bi bi-list-ul flex-shrink-0 me-3"></i>
           <div>
-            <h4 class="fw-bold mb-0">Duties &amp; questlines</h4>
+            <h4 class="fw-bold mb-0">Encounters &amp; questlines</h4>
             <p>
-              Complete listing of all duties, main and side story questlines available in the game.
+              Complete listing of all encounters, main and side story questlines available in the
+              game.
             </p>
           </div>
         </div>
@@ -166,9 +167,9 @@
             <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer"
               >Olivier Bourgeois</a
             >, a software developer from Canada. After realizing that there were no methods for
-            quickly visualizing which of the numerous duties and questlines that had been cleared by
-            my characters, the idea had sparked. XIV ToDo currently is and remains free and open
-            source under the <span class="font-monospace">bourgeoisor/xivtodo</span> GitHub
+            quickly visualizing which of the numerous encounters and questlines that had been
+            cleared by my characters, the idea had sparked. XIV ToDo currently is and remains free
+            and open source under the <span class="font-monospace">bourgeoisor/xivtodo</span> GitHub
             repository. You can
             <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer"
               >contact me</a

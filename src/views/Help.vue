@@ -34,9 +34,9 @@
         <br />
         <h2>Enable public achievements</h2>
         <p>
-          If you add a character and your duty and questline completions aren't getting registered,
-          likely the achievements are not set to public visibility for that character. You can
-          verify this by logging into
+          If you add a character and your encounter and questline completions aren't getting
+          registered, likely the achievements are not set to public visibility for that character.
+          You can verify this by logging into
           <a
             href="https://na.finalfantasyxiv.com/lodestone/"
             target="_blank"
@@ -70,7 +70,7 @@
         </p>
 
         <br />
-        <h2>Duties and questlines completion</h2>
+        <h2>Encounter and questline completion</h2>
         <p>
           <span class="bi bi-check-circle text-success"> Sastasha</span><br />
           &nbsp;&nbsp;Your active character has cleared this encounter.<br />

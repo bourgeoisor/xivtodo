@@ -14,7 +14,7 @@ function injectData(characterData) {
 
 const fetchCharacterData = (id) =>
   new Promise((resolve, reject) => {
-    fetch("https://xivapi.com/character/" + id + "?extended=1&data=AC,MIMO", {
+    fetch("https://xivapi.com/character/" + id + "?extended=1&data=AC", {
       method: "GET",
     })
       .then((response) => {

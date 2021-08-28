@@ -30,7 +30,7 @@
 
       <div class="col-lg">
         <DutyList title="Side Story Quests" :duties="db.sideStoryQuests" />
-        <DutyList title="Duties Quests" :duties="db.dutiesQuests" />
+        <DutyList title="Encounter Quests" :duties="db.dutiesQuests" />
         <DutyList title="Relic Quests" :duties="db.relicQuests" />
       </div>
 

@@ -125,7 +125,7 @@
               value="0"
             />
             <label class="form-check-label" for="inputSpoilersOption0">
-              Blur out all story-related duties
+              Blur out all story-related encounters
             </label>
           </div>
           <div class="form-check">
@@ -138,7 +138,7 @@
               value="1"
             />
             <label class="form-check-label" for="inputSpoilersOption1">
-              Blur out non-completed story-related duties
+              Blur out non-completed story-related encounters
             </label>
           </div>
           <div class="form-check">
@@ -150,7 +150,7 @@
               id="inputSpoilersOption2"
               value="2"
             />
-            <label class="form-check-label" for="inputSpoilersOption2">Show all duties</label>
+            <label class="form-check-label" for="inputSpoilersOption2">Show all encounters</label>
           </div>
           <div class="form-text">Preference in hiding potential spoilers.</div>
           <br />

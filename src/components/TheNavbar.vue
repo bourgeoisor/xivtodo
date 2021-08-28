@@ -29,7 +29,9 @@
               <router-link to="/profile" class="nav-link" @click="collapseNav">Profile</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/duties" class="nav-link" @click="collapseNav">Duties</router-link>
+              <router-link to="/encounters" class="nav-link" @click="collapseNav">
+                Encounters
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/questlines" class="nav-link" @click="collapseNav">
@@ -116,7 +118,7 @@
                 role="tab"
                 @click="collapseNav"
               >
-                Duties
+                Encounters
               </a>
             </li>
             <li class="nav-item">

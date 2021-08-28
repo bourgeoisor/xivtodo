@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="tab-pane fade" id="nav-duties" role="tabpanel">
-      <Duties v-if="this.$store.getters.activeCharacter" />
+      <Encounters v-if="this.$store.getters.activeCharacter" />
       <div v-else class="d-flex align-content-center justify-content-center mt-5">
         <div class="spinner-border" role="status">
           <span class="visually-hidden">Loading...</span>
@@ -42,7 +42,7 @@
 
 <script>
 import Profile from "@/views/Profile.vue";
-import Duties from "@/views/Duties.vue";
+import Encounters from "@/views/Encounters.vue";
 import Questlines from "@/views/Questlines.vue";
 
 // this.$route.params.id
@@ -51,7 +51,7 @@ export default {
   name: "Character",
   components: {
     Profile,
-    Duties,
+    Encounters,
     Questlines,
   },
 };
