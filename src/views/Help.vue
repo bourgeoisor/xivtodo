@@ -30,6 +30,8 @@
           You can add as many characters as you want, and switch between them at any time using the
           dropdown at the end of the main navigation bar.
         </p>
+
+        <br />
         <h2>Enable public achievements</h2>
         <p>
           If you add a character and your duty and questline completions aren't getting registered,
@@ -56,6 +58,8 @@
           the <router-link to="/settings">Settings</router-link> page on XIV ToDo for it to take
           effect.
         </p>
+
+        <br />
         <h2>Customize character checklists</h2>
         <p>
           Daily and weekly checklists can be customized by clicking on the
@@ -64,6 +68,8 @@
           entries as well as hide entries that you don't want to see. To stop customizing, simply
           click the <b>Customize</b> button again.
         </p>
+
+        <br />
         <h2>Duties and questlines completion</h2>
         <p>
           <span class="bi bi-check-circle text-success"> Sastasha</span><br />
@@ -74,6 +80,8 @@
           <span class="bi bi-circle"> Sastasha</span><br />
           &nbsp;&nbsp;Your active character has not cleared this encounter yet.
         </p>
+
+        <br />
         <h2>Other questions</h2>
         <p>
           Contact me

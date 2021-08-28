@@ -31,8 +31,19 @@
         <span v-if="!showHidden" class="fw-lighter text-muted">{{ weeklyReset }} until reset</span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input v-model="customWeekly" type="text" class="form-control" placeholder="Custom weekly" />
-          <button class="btn btn-outline-success" :class="{ disabled: !customWeekly }" type="button" id="button-addon2" @click="addCustomWeekly">
+          <input
+            v-model="customWeekly"
+            type="text"
+            class="form-control"
+            placeholder="Custom weekly"
+          />
+          <button
+            class="btn btn-outline-success"
+            :class="{ disabled: !customWeekly }"
+            type="button"
+            id="button-addon2"
+            @click="addCustomWeekly"
+          >
             Add custom weekly
           </button>
         </div>
@@ -54,8 +65,19 @@
         <span v-if="!showHidden" class="fw-lighter text-muted">{{ dailyReset }} until reset</span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input v-model="customDaily" type="text" class="form-control" placeholder="Custom daily" />
-          <button class="btn btn-outline-success" :class="{ disabled: !customDaily }" type="button" id="button-addon2" @click="addCustomDaily">
+          <input
+            v-model="customDaily"
+            type="text"
+            class="form-control"
+            placeholder="Custom daily"
+          />
+          <button
+            class="btn btn-outline-success"
+            :class="{ disabled: !customDaily }"
+            type="button"
+            id="button-addon2"
+            @click="addCustomDaily"
+          >
             Add custom daily
           </button>
         </div>
