@@ -24,6 +24,27 @@ main {
   padding-top: 75px;
 }
 
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #41b883 #262b2f;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #262b2f;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #41b883;
+  border-radius: 20px;
+  border: 3px solid #262b2f;
+}
+
 .night {
   color: #dddddd;
   background-color: #1c2024;
