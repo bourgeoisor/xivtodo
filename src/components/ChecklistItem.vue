@@ -26,30 +26,15 @@
       {{ item.Name }}
     </span>
     <span v-if="showHidden">
-      <a
-        v-if="item.Custom"
-        class="bi-trash text-danger cursor-pointer"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Remove"
-        @click="remove"
-      ></a>
-      <a
-        v-else-if="hidden"
-        class="bi-eye-slash text-secondary cursor-pointer"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Unhide"
-        @click="hid"
-      ></a>
-      <a
-        v-else-if="!hidden"
-        class="bi-eye text-success cursor-pointer"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="Hide"
-        @click="hid"
-      ></a>
+      <a v-if="item.Custom" class="bi-trash text-danger cursor-pointer tt" @click="remove">
+        <span class="tt-text">Remove</span>
+      </a>
+      <a v-else-if="hidden" class="bi-eye-slash text-secondary cursor-pointer tt" @click="hid">
+        <span class="tt-text">Show</span>
+      </a>
+      <a v-else-if="!hidden" class="bi-eye text-success cursor-pointer tt" @click="hid">
+        <span class="tt-text">Hide</span>
+      </a>
     </span>
   </span>
 </template>

@@ -45,6 +45,42 @@ main {
   border: 3px solid #262b2f;
 }
 
+/* Tooltips */
+.tt {
+  position: relative;
+}
+
+.tt .tt-text {
+  visibility: hidden;
+  width: auto;
+  white-space: nowrap;
+  background-color: #111213;
+  color: #c5c6c7;
+  text-align: center;
+  border-radius: 6px;
+  padding: 7px 7px;
+  position: absolute;
+  z-index: 10;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tt .tt-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #111213 transparent transparent transparent;
+}
+
+.tt:hover .tt-text {
+  visibility: visible;
+}
+
 .night {
   color: #dddddd;
   background-color: #1c2024;

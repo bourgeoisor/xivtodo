@@ -1,5 +1,6 @@
 <template>
-  <div class="job-level fw-lighter" :title="title">
+  <div class="job-level fw-lighter user-select-none tt">
+    <span class="tt-text">{{ title }}</span>
     <span
       :class="{
         'job-type-tank': type == 'tank',

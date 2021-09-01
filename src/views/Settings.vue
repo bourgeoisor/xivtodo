@@ -94,20 +94,15 @@
               </div>
               <a
                 v-if="!this.updating"
-                class="bi-arrow-repeat text-secondary cursor-pointer"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                title="Update data"
+                class="bi-arrow-repeat text-secondary cursor-pointer tt"
                 @click="refreshCharacter(item.characterData.Character.ID)"
-              ></a>
+              >
+                <span class="tt-text">Update data</span>
+              </a>
               &nbsp;&nbsp;
-              <a
-                class="bi-trash text-danger cursor-pointer"
-                data-bs-toggle="tooltip"
-                data-bs-placement="top"
-                title="Remove character"
-                @click="removeCharacter(i)"
-              ></a>
+              <a class="bi-trash text-danger cursor-pointer tt" @click="removeCharacter(i)">
+                <span class="tt-text">Remove character</span>
+              </a>
             </li>
           </ul>
           <br />
