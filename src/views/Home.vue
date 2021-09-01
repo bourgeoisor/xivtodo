@@ -20,7 +20,7 @@
         <p class="lead mb-4">
           XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV;
           whether you are a new player to the game or more experienced. In its current form, XIV
-          ToDo ToDo offers customizable daily and weekly checklists as well as automated completion
+          ToDo offers customizable daily and weekly checklists as well as automated completion
           trackers of encounters and questlines, with much more to come!
         </p>
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
