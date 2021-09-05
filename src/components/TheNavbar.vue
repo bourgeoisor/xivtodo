@@ -70,8 +70,9 @@
                   <span
                     v-if="i == this.$store.state.activeCharacterID"
                     class="dropdown-item active"
-                    >{{ item.characterData.Character.Name }}</span
                   >
+                    {{ item.characterData.Character.Name }} <span class="bi-check" />
+                  </span>
                   <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
                     {{ item.characterData.Character.Name }}
                   </a>
@@ -79,7 +80,7 @@
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <router-link to="/settings" class="dropdown-item" @click="collapseNav">
-                    Settings
+                    <span class="bi-gear" /> Settings
                   </router-link>
                 </li>
               </ul>

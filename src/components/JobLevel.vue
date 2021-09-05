@@ -49,23 +49,23 @@
 }
 
 .job-type-tank {
-  color: #81b8ff;
+  color: #9dd1ff;
 }
 
 .job-type-healer {
-  color: #a7ff7f;
+  color: #a6ff93;
 }
 
 .job-type-dps {
-  color: #ffa37f;
+  color: #ff8f8f;
 }
 
 .job-type-gatherer {
-  color: #ffdf7e;
+  color: #ffd99d;
 }
 
 .job-type-crafter {
-  color: #cb7eff;
+  color: #bdaaff;
 }
 </style>
 
