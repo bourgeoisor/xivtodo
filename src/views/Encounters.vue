@@ -48,7 +48,7 @@
         <DutyList title="High-end Trials" :duties="db.hwTrialsEx" type="high" showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.hwRaids" type="raids" />
+        <DutyList title="Raids" :duties="db.hwRaids" type="raids" showTotal="true" />
         <DutyList title="High-end Raids" :duties="db.hwRaidsSavUlt" type="high" showTotal="true" />
       </div>
     </div>
