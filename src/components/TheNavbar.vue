@@ -39,6 +39,11 @@
               </router-link>
             </li>
             <li class="nav-item">
+              <router-link to="/challenges" class="nav-link" @click="collapseNav">
+                Challenges
+              </router-link>
+            </li>
+            <li class="nav-item">
               <router-link to="/checklist" class="nav-link" @click="collapseNav">
                 Checklist
               </router-link>
