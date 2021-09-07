@@ -169,13 +169,17 @@ export default createStore({
       state.characters[state.activeCharacterID].todosCustomWeeklies.push(task);
     },
     todosRemoveCustom(state, payload) {
-      state.characters[state.activeCharacterID].todosCustomDailies = state.characters[
-        state.activeCharacterID
-      ].todosCustomDailies.filter((item) => item.ID != payload);
+      if (state.characters[state.activeCharacterID].todosCustomDailies) {
+        state.characters[state.activeCharacterID].todosCustomDailies = state.characters[
+          state.activeCharacterID
+        ].todosCustomDailies.filter((item) => item.ID != payload);
+      }
 
-      state.characters[state.activeCharacterID].todosCustomWeeklies = state.characters[
-        state.activeCharacterID
-      ].todosCustomWeeklies.filter((item) => item.ID != payload);
+      if (state.characters[state.activeCharacterID].todosCustomWeeklies) {
+        state.characters[state.activeCharacterID].todosCustomWeeklies = state.characters[
+          state.activeCharacterID
+        ].todosCustomWeeklies.filter((item) => item.ID != payload);
+      }
     },
   },
   actions: {},
