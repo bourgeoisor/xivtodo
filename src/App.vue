@@ -64,6 +64,10 @@ main {
   bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
+  pointer-events: none;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  user-select: none !important;
 }
 
 .tt .tt-text::after {
