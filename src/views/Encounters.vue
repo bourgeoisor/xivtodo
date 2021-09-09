@@ -25,15 +25,20 @@
       <h2>A Realm Reborn</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.arrDungeons" type="dngs" showTotal="true" />
+        <DutyList title="Dungeons" :duties="db.arrDungeons" type="dngs" :showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.arrTrials" type="trials" showTotal="true" />
-        <DutyList title="High-end Trials" :duties="db.arrTrialsEx" type="high" showTotal="true" />
+        <DutyList title="Trials" :duties="db.arrTrials" type="trials" :showTotal="true" />
+        <DutyList title="High-end Trials" :duties="db.arrTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.arrRaids" type="raids" showTotal="true" />
-        <DutyList title="High-end Raids" :duties="db.arrRaidsSavUlt" type="high" showTotal="true" />
+        <DutyList title="Raids" :duties="db.arrRaids" type="raids" :showTotal="true" />
+        <DutyList
+          title="High-end Raids"
+          :duties="db.arrRaidsSavUlt"
+          type="high"
+          :showTotal="true"
+        />
       </div>
     </div>
     <hr />
@@ -41,15 +46,15 @@
       <h2>Heavensward</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.hwDungeons" type="dngs" showTotal="true" />
+        <DutyList title="Dungeons" :duties="db.hwDungeons" type="dngs" :showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.hwTrials" type="trials" showTotal="true" />
-        <DutyList title="High-end Trials" :duties="db.hwTrialsEx" type="high" showTotal="true" />
+        <DutyList title="Trials" :duties="db.hwTrials" type="trials" :showTotal="true" />
+        <DutyList title="High-end Trials" :duties="db.hwTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.hwRaids" type="raids" showTotal="true" />
-        <DutyList title="High-end Raids" :duties="db.hwRaidsSavUlt" type="high" showTotal="true" />
+        <DutyList title="Raids" :duties="db.hwRaids" type="raids" :showTotal="true" />
+        <DutyList title="High-end Raids" :duties="db.hwRaidsSavUlt" type="high" :showTotal="true" />
       </div>
     </div>
     <hr />
@@ -57,20 +62,20 @@
       <h2>Stormblood</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.sbDungeons" type="dngs" showTotal="true" />
+        <DutyList title="Dungeons" :duties="db.sbDungeons" type="dngs" :showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.sbTrials" type="trials" showTotal="true" />
-        <DutyList title="High-end Trials" :duties="db.sbTrialsEx" type="high" showTotal="true" />
+        <DutyList title="Trials" :duties="db.sbTrials" type="trials" :showTotal="true" />
+        <DutyList title="High-end Trials" :duties="db.sbTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.sbRaids" type="raids" showTotal="true" />
-        <DutyList title="High-end Raids" :duties="db.sbRaidsSavUlt" type="high" showTotal="true" />
+        <DutyList title="Raids" :duties="db.sbRaids" type="raids" :showTotal="true" />
+        <DutyList title="High-end Raids" :duties="db.sbRaidsSavUlt" type="high" :showTotal="true" />
         <DutyList
           title="Exploratory Missions"
           :duties="db.sbExploratory"
           type="expl"
-          showTotal="true"
+          :showTotal="true"
         />
       </div>
     </div>
@@ -79,20 +84,25 @@
       <h2>Shadowbringers</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.shbDungeons" type="dngs" showTotal="true" />
+        <DutyList title="Dungeons" :duties="db.shbDungeons" type="dngs" :showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.shbTrials" type="trials" showTotal="true" />
-        <DutyList title="High-end Trials" :duties="db.shbTrialsEx" type="high" showTotal="true" />
+        <DutyList title="Trials" :duties="db.shbTrials" type="trials" :showTotal="true" />
+        <DutyList title="High-end Trials" :duties="db.shbTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.shbRaids" type="raids" showTotal="true" />
-        <DutyList title="High-end Raids" :duties="db.shbRaidsSavUlt" type="high" showTotal="true" />
+        <DutyList title="Raids" :duties="db.shbRaids" type="raids" :showTotal="true" />
+        <DutyList
+          title="High-end Raids"
+          :duties="db.shbRaidsSavUlt"
+          type="high"
+          :showTotal="true"
+        />
         <DutyList
           title="Exploratory Missions"
           :duties="db.shbExploratory"
           type="expl"
-          showTotal="true"
+          :showTotal="true"
         />
       </div>
     </div>
