@@ -54,11 +54,11 @@ main {
   visibility: hidden;
   width: auto;
   white-space: nowrap;
-  background-color: #111213;
+  background-color: #2b3136;
   color: #c5c6c7;
   text-align: center;
-  border-radius: 6px;
-  padding: 7px 7px;
+  border-radius: 10px;
+  padding: 8px 10px;
   position: absolute;
   z-index: 10;
   bottom: 130%;
@@ -78,7 +78,13 @@ main {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #111213 transparent transparent transparent;
+  border-color: #2b3136 transparent transparent transparent;
+}
+
+@media only screen and (max-width: 800px) {
+  .tt .tt-text {
+    display: none;
+  }
 }
 
 .tt:hover .tt-text {
