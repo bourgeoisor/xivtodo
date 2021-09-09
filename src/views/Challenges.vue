@@ -39,9 +39,11 @@
       <h2>Blue Mage</h2>
 
       <div class="col-lg">
-        <DutyList title="BLU Encounters (A Realm Reborn)" :duties="db.arrBlu" />
-        <DutyList title="BLU Encounters (Heavensward)" :duties="db.hwBlu" />
-        <DutyList title="BLU Encounters (Stormblood)" :duties="db.sbBlu" />
+        <DutyList title="BLU Encounters (ARR)" :duties="db.arrBlu" />
+        <DutyList title="BLU Encounters (HW)" :duties="db.hwBlu" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="BLU Encounters (SB)" :duties="db.sbBlu" />
       </div>
       <div class="col-lg">
         <DutyList title="Masked Carnivale" :duties="db.maskedCarnivale" />
