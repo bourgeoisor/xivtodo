@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Help</h1>
+    <h1>{{ $t("page.help") }}</h1>
     <hr />
     <div class="row">
       <div class="col-lg-10 indent-paragraphs">

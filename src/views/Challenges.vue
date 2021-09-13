@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>
-      Challenges
+      {{ $t("page.challenges") }}
       <span
         v-if="this.$store.getters.hasCharacter && this.$store.getters.achievementsPublic"
         class="fs-3 fw-lighter"

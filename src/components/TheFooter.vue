@@ -21,14 +21,20 @@
         rel="noopener noreferrer"
       ></a>
       <br />
-      <router-link to="/"><small>About</small></router-link>
+      <router-link to="/">
+        <small>{{ $t("page.about") }}</small>
+      </router-link>
       ·
-      <router-link to="/help"><small>Help</small></router-link>
+      <router-link to="/help">
+        <small>{{ $t("page.help") }}</small>
+      </router-link>
       ·
-      <router-link to="/privacy"><small>Privacy</small></router-link>
+      <router-link to="/privacy">
+        <small>{{ $t("page.privacy") }}</small>
+      </router-link>
       ·
       <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
-        <small>Contact</small>
+        <small>{{ $t("page.contact") }}</small>
       </a>
       <!-- ·
       <a href="https://forms.gle/bd8aPJpS9gnLQkP69" target="_blank" rel="noopener noreferrer">

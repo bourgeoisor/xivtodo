@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>
-      Questlines
+      {{ $t("page.questlines") }}
       <span
         v-if="this.$store.getters.hasCharacter && this.$store.getters.achievementsPublic"
         class="fs-3 fw-lighter"

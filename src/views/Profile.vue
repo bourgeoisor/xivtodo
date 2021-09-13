@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>
-      Profile
+      {{ $t("page.profile") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
         of {{ this.$store.getters.character.Name }}
       </span>

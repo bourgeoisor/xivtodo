@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Privacy Policy</h1>
+    <h1>{{ $t("page.privacy") }}</h1>
     <hr />
     <div class="row">
       <div class="col-lg-10">

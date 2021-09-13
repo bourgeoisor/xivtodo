@@ -23,36 +23,40 @@
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <router-link to="/" class="nav-link" @click="collapseNav">Home</router-link>
+              <router-link to="/" class="nav-link" @click="collapseNav">
+                {{ $t("page.home") }}
+              </router-link>
             </li>
             <li v-if="this.$store.getters.hasCharacter" class="nav-item">
-              <router-link to="/profile" class="nav-link" @click="collapseNav">Profile</router-link>
+              <router-link to="/profile" class="nav-link" @click="collapseNav">
+                {{ $t("page.profile") }}
+              </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/encounters" class="nav-link" @click="collapseNav">
-                Encounters
+                {{ $t("page.encounters") }}
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/questlines" class="nav-link" @click="collapseNav">
-                Questlines
+                {{ $t("page.questlines") }}
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/challenges" class="nav-link" @click="collapseNav">
-                Challenges
+                {{ $t("page.challenges") }}
               </router-link>
             </li>
             <li class="nav-item">
               <router-link to="/checklist" class="nav-link" @click="collapseNav">
-                Checklist
+                {{ $t("page.checklist") }}
               </router-link>
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li v-if="!this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/settings" class="nav-link" @click="collapseNav">
-                Settings
+                {{ $t("page.settings") }}
               </router-link>
             </li>
             <li v-else class="nav-item dropdown">
@@ -70,7 +74,9 @@
                 class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
                 aria-labelledby="navbarDropdown"
               >
-                <li><h6 class="dropdown-header">Change active character</h6></li>
+                <li>
+                  <h6 class="dropdown-header">{{ $t("message.changeActiveCharacter") }}</h6>
+                </li>
                 <li v-for="(item, i) of this.$store.state.characters" :key="item.ID">
                   <span
                     v-if="i == this.$store.state.activeCharacterID"
@@ -85,7 +91,7 @@
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <router-link to="/settings" class="dropdown-item" @click="collapseNav">
-                    <span class="bi-gear" /> Settings
+                    <span class="bi-gear" /> {{ $t("page.settings") }}
                   </router-link>
                 </li>
               </ul>

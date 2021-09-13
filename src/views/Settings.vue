@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Settings</h1>
+    <h1>{{ $t("page.settings") }}</h1>
     <Alert v-if="error.msg" :type="error.type" :msg="error.msg" />
     <hr />
     <form name="settings-form" id="settings-form">

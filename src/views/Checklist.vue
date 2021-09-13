@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="d-flex align-items-end">
       <span class="me-auto">
-        Checklist
+        {{ $t("page.checklist") }}
         <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
           for {{ this.$store.getters.character.Name }}
         </span>
