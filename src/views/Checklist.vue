@@ -4,7 +4,7 @@
       <span class="me-auto">
         {{ $t("page.checklist") }}
         <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
-          for {{ this.$store.getters.character.Name }}
+          {{ $t("message.forCharacter", { characterName: this.$store.getters.character.Name }) }}
         </span>
       </span>
       <button

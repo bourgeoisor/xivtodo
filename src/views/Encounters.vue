@@ -6,11 +6,15 @@
         v-if="this.$store.getters.hasCharacter && this.$store.getters.achievementsPublic"
         class="fs-3 fw-lighter"
       >
-        cleared by {{ this.$store.getters.character.Name }}
+        {{
+          $t("message.clearedByCharacter", { characterName: this.$store.getters.character.Name })
+        }}
       </span>
       <span v-else-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter text-warning">
         <abbr title="The achievements for this characters are not set to public in Lodestone.">
-          cleared by {{ this.$store.getters.character.Name }}
+          {{
+            $t("message.clearedByCharacter", { characterName: this.$store.getters.character.Name })
+          }}
         </abbr>
         &nbsp;<span class="bi bi-patch-exclamation"></span>
       </span>
@@ -22,19 +26,39 @@
     />
     <hr />
     <div class="row">
-      <h2>A Realm Reborn</h2>
+      <h2>{{ $t("misc.expansion.arr") }}</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.arrDungeons" type="dngs" :showTotal="true" />
-      </div>
-      <div class="col-lg">
-        <DutyList title="Trials" :duties="db.arrTrials" type="trials" :showTotal="true" />
-        <DutyList title="High-end Trials" :duties="db.arrTrialsEx" type="high" :showTotal="true" />
-      </div>
-      <div class="col-lg">
-        <DutyList title="Raids" :duties="db.arrRaids" type="raids" :showTotal="true" />
         <DutyList
-          title="High-end Raids"
+          :title="$t('encounters.dungeons')"
+          :duties="db.arrDungeons"
+          type="dngs"
+          :showTotal="true"
+        />
+      </div>
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.trials')"
+          :duties="db.arrTrials"
+          type="trials"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.heTrials')"
+          :duties="db.arrTrialsEx"
+          type="high"
+          :showTotal="true"
+        />
+      </div>
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.raids')"
+          :duties="db.arrRaids"
+          type="raids"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.heRaids')"
           :duties="db.arrRaidsSavUlt"
           type="high"
           :showTotal="true"
@@ -43,36 +67,86 @@
     </div>
     <hr />
     <div class="row">
-      <h2>Heavensward</h2>
+      <h2>{{ $t("misc.expansion.hw") }}</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.hwDungeons" type="dngs" :showTotal="true" />
+        <DutyList
+          :title="$t('encounters.dungeons')"
+          :duties="db.hwDungeons"
+          type="dngs"
+          :showTotal="true"
+        />
       </div>
       <div class="col-lg">
-        <DutyList title="Trials" :duties="db.hwTrials" type="trials" :showTotal="true" />
-        <DutyList title="High-end Trials" :duties="db.hwTrialsEx" type="high" :showTotal="true" />
+        <DutyList
+          :title="$t('encounters.trials')"
+          :duties="db.hwTrials"
+          type="trials"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.heTrials')"
+          :duties="db.hwTrialsEx"
+          type="high"
+          :showTotal="true"
+        />
       </div>
       <div class="col-lg">
-        <DutyList title="Raids" :duties="db.hwRaids" type="raids" :showTotal="true" />
-        <DutyList title="High-end Raids" :duties="db.hwRaidsSavUlt" type="high" :showTotal="true" />
+        <DutyList
+          :title="$t('encounters.raids')"
+          :duties="db.hwRaids"
+          type="raids"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.heRaids')"
+          :duties="db.hwRaidsSavUlt"
+          type="high"
+          :showTotal="true"
+        />
       </div>
     </div>
     <hr />
     <div class="row">
-      <h2>Stormblood</h2>
+      <h2>{{ $t("misc.expansion.sb") }}</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.sbDungeons" type="dngs" :showTotal="true" />
-      </div>
-      <div class="col-lg">
-        <DutyList title="Trials" :duties="db.sbTrials" type="trials" :showTotal="true" />
-        <DutyList title="High-end Trials" :duties="db.sbTrialsEx" type="high" :showTotal="true" />
-      </div>
-      <div class="col-lg">
-        <DutyList title="Raids" :duties="db.sbRaids" type="raids" :showTotal="true" />
-        <DutyList title="High-end Raids" :duties="db.sbRaidsSavUlt" type="high" :showTotal="true" />
         <DutyList
-          title="Exploratory Missions"
+          :title="$t('encounters.dungeons')"
+          :duties="db.sbDungeons"
+          type="dngs"
+          :showTotal="true"
+        />
+      </div>
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.trials')"
+          :duties="db.sbTrials"
+          type="trials"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.heTrials')"
+          :duties="db.sbTrialsEx"
+          type="high"
+          :showTotal="true"
+        />
+      </div>
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.raids')"
+          :duties="db.sbRaids"
+          type="raids"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.heRaids')"
+          :duties="db.sbRaidsSavUlt"
+          type="high"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.exploratory')"
           :duties="db.sbExploratory"
           type="expl"
           :showTotal="true"
@@ -81,25 +155,45 @@
     </div>
     <hr />
     <div class="row">
-      <h2>Shadowbringers</h2>
+      <h2>{{ $t("misc.expansion.shb") }}</h2>
 
       <div class="col-lg">
-        <DutyList title="Dungeons" :duties="db.shbDungeons" type="dngs" :showTotal="true" />
-      </div>
-      <div class="col-lg">
-        <DutyList title="Trials" :duties="db.shbTrials" type="trials" :showTotal="true" />
-        <DutyList title="High-end Trials" :duties="db.shbTrialsEx" type="high" :showTotal="true" />
-      </div>
-      <div class="col-lg">
-        <DutyList title="Raids" :duties="db.shbRaids" type="raids" :showTotal="true" />
         <DutyList
-          title="High-end Raids"
+          :title="$t('encounters.dungeons')"
+          :duties="db.shbDungeons"
+          type="dngs"
+          :showTotal="true"
+        />
+      </div>
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.trials')"
+          :duties="db.shbTrials"
+          type="trials"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.heTrials')"
+          :duties="db.shbTrialsEx"
+          type="high"
+          :showTotal="true"
+        />
+      </div>
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.raids')"
+          :duties="db.shbRaids"
+          type="raids"
+          :showTotal="true"
+        />
+        <DutyList
+          :title="$t('encounters.heRaids')"
           :duties="db.shbRaidsSavUlt"
           type="high"
           :showTotal="true"
         />
         <DutyList
-          title="Exploratory Missions"
+          :title="$t('encounters.exploratory')"
           :duties="db.shbExploratory"
           type="expl"
           :showTotal="true"
