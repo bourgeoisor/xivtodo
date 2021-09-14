@@ -1,0 +1,209 @@
+{
+  "page": {
+    "home": "Home",
+    "profile": "Profile",
+    "encounters": "Encounters",
+    "questlines": "Questlines",
+    "challenges": "Challenges",
+    "checklist": "Checklist",
+    "settings": "Settings",
+    "about": "About",
+    "help": "Help",
+    "privacy": "Privacy Policy",
+    "contact": "Contact"
+  },
+  "message": {
+    "changeActiveCharacter": "Active character",
+    "ofCharacter": "of {characterName}",
+    "clearedByCharacter": "cleared by {characterName}",
+    "forCharacter": "for {characterName}"
+  },
+  "misc": {
+    "expansion": {
+      "arr": "A Realm Reborn",
+      "hw": "Heavensward",
+      "sb": "Stormblood",
+      "shb": "Shadowbringers"
+    },
+    "errors": {
+      "notPublic": "The achievements for this characters are not set to public in Lodestone.",
+      "noCharacters": "No characters found. You can add your characters from the {0}",
+      "characterAddedSuccess": "Character {0} added! You can now access your {0} and all character completion pages.",
+      "characterAddedNoPublic": "Character {0} added, but their achievements are not set to public. You can change that setting {0}, and then re-add the character.",
+      "characterNotExist": "The character profile you have entered does not exist.",
+      "unknownError": "An unknown error has ocurred while fetching character data. Please try again."
+    }
+  },
+  "footer": {
+    "trademark": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.",
+    "copyright": "FINAL FANTASY XIV © SQUARE ENIX CO., LTD.",
+    "buildVersion": "Version {buildNum}",
+    "buildDate": "Deployed on {buildDate}"
+  },
+  "home": {
+    "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV; whether you are a new player to the game or more experienced. In its current form, XIV ToDo offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come!",
+    "addCharacter": "Add a character",
+    "learnMore": "Learn more",
+    "viewProfile": "View your profile",
+    "features": "Features",
+    "feature": {
+      "encountersQuestlines": {
+        "title": "Encounters & questlines",
+        "description": "Complete listing of all encounters, main and side story questlines available in the game."
+      },
+      "contentCompletion": {
+        "title": "Content completion",
+        "description": "Add your character to quickly visualize which content you've cleared and which ones are still pending."
+      },
+      "dailiesWeeklies": {
+        "title": "Dailies & weeklies",
+        "description": "Comprehensive list of daily and weekly objectives which can be ticked off and get automatically cleared on reset."
+      },
+      "altFriendly": {
+        "title": "Alt-friendly",
+        "description": "Support for adding as many alt characters as you need, with all features being kept character-specific."
+      },
+      "spoilerFree": {
+        "title": "Spoiler-free",
+        "description": "Main story content is blurred by default until they are cleared to avoid accidental spoilers."
+      },
+      "customizable": {
+        "title": "Customizable",
+        "description": "Personalization is available like hiding select objectives from the checklists, with more to come soon."
+      }
+    },
+    "about": {
+      "header": "About XIV ToDo",
+      "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo currently is and remains free and open source under the {1} GitHub repository. You can {2} with any questions or feedback. Thank you for using and supporting this project!",
+      "name": "Olivier Bourgeois",
+      "repo": "bourgeoisor/xivtodo",
+      "contact": "contact me"
+    },
+    "viewGitHub": "View project on GitHub"
+  },
+  "profile": {
+    "characterInfo": "Character Information",
+    "world": "World",
+    "raceClan": "Race / Clan",
+    "nameday": "Nameday",
+    "guardian": "Guardian",
+    "freeCompany": "Free Company",
+    "cityState": "City-state",
+    "grandCompany": "Grand Company",
+    "playingSince": "Playing since",
+    "achievements": "Achievements",
+    "jobLevels": "Job Levels",
+    "tanks": "Tanks",
+    "healers": "Healers",
+    "dps": "DPS",
+    "crafters": "Crafters",
+    "gatherers": "Gatherers",
+    "elementalLevel": "Elemental level",
+    "resistanceRank": "Resistance rank",
+    "job": {
+      "pld": "Paladin",
+      "war": "Warrior",
+      "drk": "Dark Knight",
+      "gnb": "Gunbreaker",
+      "whm": "White Mage",
+      "sch": "Scholar",
+      "ast": "Astrologian",
+      "mnk": "Monk",
+      "drg": "Dragoon",
+      "nin": "Ninja",
+      "sam": "Samurai",
+      "brd": "Bard",
+      "mch": "Machinist",
+      "dnc": "Dancer",
+      "blm": "Black Mage",
+      "smn": "Summoner",
+      "rdm": "Red Mage",
+      "blu": "Blue Mage",
+      "crp": "Carpenter",
+      "bsm": "Blacksmith",
+      "arm": "Armorer",
+      "gsm": "Goldsmith",
+      "ltw": "Leatherworker",
+      "wvr": "Weaver",
+      "alc": "Alchemist",
+      "cul": "Culinarian",
+      "min": "Miner",
+      "btn": "Botanist",
+      "fsh": "Fisher"
+    }
+  },
+  "encounters": {
+    "dungeons": "Dungeons",
+    "trials": "Trials",
+    "raids": "Raids",
+    "heTrials": "High-end Trials",
+    "heRaids": "High-end Raids",
+    "exploratory": "Exploratory Missions"
+  },
+  "questlines": {
+    "stories": "Stories",
+    "mainStoryQuest": "Main Story Quest",
+    "sideStoryQuests": "Side Story Quests",
+    "encounterQuests": "Encounter Quests",
+    "relicQuests": "Relic Quests",
+    "beastTribeQuests": "Beast Tribe Quests",
+    "alliedBeastTribeQuests": "Allied Beast Tribe Quests",
+    "customDeliveryQuests": "Custom Delivery Quests",
+    "jobQuests": "Job Quests",
+    "combatJobQuests": "Combat Job Quests",
+    "gathererJobQuests": "Gatherer Job Quests",
+    "crafterJobQuests": "Crafter Job Quests",
+    "roleQuests": "Role Quests",
+    "crystallineMeanQuests": "Crystalline Mean Quests"
+  },
+  "challenges": {
+    "deepDungeons": "Deep Dungeons",
+    "potd": "Palace of the Dead",
+    "hoh": "Heaven-on-High",
+    "potdSolo": "Palace of the Dead (Solo)",
+    "hohSolo": "Heaven-on-High (Solo)",
+    "blueMage": "Blue Mage",
+    "blueArr": "BLU Encounters (ARR)",
+    "blueHw": "BLU Encounters (HW)",
+    "blueSb": "BLU Encounters (SB)",
+    "maskedCarnivale": "Masked Carnivale"
+  },
+  "checklist": {
+    "thingsToDo": "Things to do",
+    "weeklies": "Weeklies",
+    "dailies": "Dailies",
+    "customize": "Customize",
+    "customWeekly": "Custom weekly",
+    "customDaily": "Custom daily",
+    "addCustomWeekly": "Add custom weekly",
+    "addCustomDaily": "Add custom daily",
+    "hide": "Hide",
+    "show": "Show",
+    "remove": "Remove"
+  },
+  "settings": {
+    "characters": "Characters",
+    "addNew": "Add a new character",
+    "profileUrl": "Profile URL",
+    "profileUrlPlaceholder": "https://na.finalfantasyxiv.com/lodestone/character/12345/",
+    "profileUrlHint": "The URL for your character profile. You can find it in {0}",
+    "lodestone": "Lodestone",
+    "lodestoneUrl": "https://na.finalfantasyxiv.com/lodestone/character/",
+    "lodestoneSettingsUrl": "https://na.finalfantasyxiv.com/lodestone/my/setting/account/",
+    "addCharacter": "Add character",
+    "yourCharacters": "Your characters",
+    "characterPlaceholder": "Once you add your characters, they will appear here.",
+    "characterLoading": "Loading latest character data...",
+    "characterNotPublic": "The achievements for this characters are not set to public in Lodestone.",
+    "updateData": "Update data",
+    "removeCharacter": "Remove character",
+    "lastUpdated": "Last updated",
+    "general": "General",
+    "contentSpoilers": "Content spoilers",
+    "contentSpoilers1": "Blur out all story-related encounters",
+    "contentSpoilers2": "Blur out non-completed story-related encounters",
+    "contentSpoilers3": "Show all encounters",
+    "contentSpoilersHint": "Preference in hiding potential spoilers.",
+    "updateSettings": "Update settings"
+  }
+}

@@ -7,13 +7,17 @@
         class="fs-3 fw-lighter"
       >
         {{
-          $tc("message.clearedByCharacter", 2, { characterName: this.$store.getters.character.Name })
+          $tc("message.clearedByCharacter", 2, {
+            characterName: this.$store.getters.character.Name,
+          })
         }}
       </span>
       <span v-else-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter text-warning">
         <abbr title="The achievements for this characters are not set to public in Lodestone.">
           {{
-            $tc("message.clearedByCharacter", 2, { characterName: this.$store.getters.character.Name })
+            $tc("message.clearedByCharacter", 2, {
+              characterName: this.$store.getters.character.Name,
+            })
           }}
         </abbr>
         &nbsp;<span class="bi bi-patch-exclamation"></span>
