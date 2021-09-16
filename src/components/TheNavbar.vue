@@ -54,6 +54,33 @@
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item d-none d-lg-inline">
+              <a
+                class="nav-link"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasWithBackdrop"
+                aria-controls="offcanvasWithBackdrop"
+                @click="seenLatestNews()"
+              >
+                <span class="bi bi-bell position-relative">
+                  <span
+                    v-if="this.$store.getters.latestNewsSeen < news.latestID"
+                    class="
+                      position-absolute
+                      top-0
+                      start-100
+                      translate-middle
+                      p-1
+                      bg-success
+                      border border-light
+                      rounded-circle
+                    "
+                  >
+                  </span>
+                </span>
+              </a>
+            </li>
             <li v-if="!this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/settings" class="nav-link" @click="collapseNav">
                 {{ $t("page.settings") }}
@@ -151,6 +178,30 @@
       </div>
     </nav>
   </header>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">XIV ToDo - Updates</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div v-for="item in news.news" :key="item.ID">
+        <h3>{{ item.title }}</h3>
+        <small class="text-muted">
+          Posted on <b>{{ item.published }}</b>
+          <span
+            v-if="this.$store.getters.latestNewsSeenPrevious < item.ID"
+            class="badge bg-success"
+          >
+            New
+          </span>
+        </small>
+        <br />
+        <p v-html="item.content"></p>
+        <br />
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
@@ -207,11 +258,28 @@ span.nav-link:hover {
 .dropdown-menu-dark .dropdown-item:focus {
   background-color: #262b30;
 }
+
+.offcanvas {
+  background-color: #1c2024;
+}
+
+.offcanvas-header .btn-close {
+  background: transparent
+    url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ddd'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")
+    center/1em auto no-repeat;
+}
 </style>
 
 <script>
+import news from "@/assets/news.json";
+
 export default {
   Name: "TheNavbar",
+  data() {
+    return {
+      news: news,
+    };
+  },
   methods: {
     collapseNav() {
       let navCollapse = document.getElementById("navbarSupportedContent");
@@ -220,6 +288,9 @@ export default {
     changeActiveCharacter(i) {
       this.$store.commit("changeActiveCharacter", i);
       this.collapseNav();
+    },
+    seenLatestNews() {
+      this.$store.commit("seenLatestNews", news.latestID);
     },
   },
 };

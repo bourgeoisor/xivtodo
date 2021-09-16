@@ -9,8 +9,16 @@ export default createStore({
     },
     activeCharacterID: 0,
     characters: [],
+    latestNewsSeen: 0,
+    latestNewsSeenPrevious: 0,
   },
   getters: {
+    latestNewsSeen(state) {
+      return state.latestNewsSeen || 0;
+    },
+    latestNewsSeenPrevious(state) {
+      return state.latestNewsSeenPrevious || 0;
+    },
     hasCharacter(state) {
       return state.characters.length > 0;
     },
@@ -66,6 +74,10 @@ export default createStore({
     },
     updateSettings(state, payload) {
       state.settings = { ...payload };
+    },
+    seenLatestNews(state, payload) {
+      state.latestNewsSeenPrevious = state.latestNewsSeen;
+      state.latestNewsSeen = payload;
     },
     addCharacter(state, payload) {
       // If character already loaded, update it.
