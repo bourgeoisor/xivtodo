@@ -255,7 +255,7 @@ export default {
   mounted() {
     setInterval(() => {
       let now = new Date();
-      let msBeforeUpdate = 1000 * 60 * 15;
+      let msBeforeUpdate = 1000 * 60 * 30; // 30 minutes
 
       for (let character of this.$store.state.characters) {
         if (!this.updating && now > character.lastUpdated + msBeforeUpdate) {
