@@ -1,0 +1,11 @@
+{
+    "latestID": 210916,
+    "news": [
+        {
+            "ID": 210916,
+            "title": "Lodestone rate-limiting",
+            "published": "September 15, 2021",
+            "content": "Firstly, thank you all for your support and interest! After the traction this site has gotten from a <a href='https://www.reddit.com/r/ffxiv/comments/powkci/overwhelmed_with_the_amount_of_content_and_not/'>Reddit thread</a>, the API I use to get information from Lodestone (<a href='https://xivapi.com/'>XIVAPI</a>) is getting rate-limited by the sheer amount of people trying out XIV ToDo at the same time. Unfortunately, this means that the Lodestone is returning errors and incomplete data-sets. As such, you may be unable to add a character or get a complete and accurate view of your progression until the load stabilizes. I am looking into mitigating this issue in the future, but in the meantime please try refreshing your characters again later. Thank you!"
+        }
+    ]
+}
