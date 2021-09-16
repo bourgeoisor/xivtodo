@@ -109,10 +109,12 @@
                     v-if="i == this.$store.state.activeCharacterID"
                     class="dropdown-item active"
                   >
-                    {{ item.characterData.Character.Name }} <span class="bi-check" />
+                    <b>{{ item.characterData.Character.Name }}</b>
+                    – {{ item.characterData.Character.Server }} <span class="bi-check" />
                   </span>
                   <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
-                    {{ item.characterData.Character.Name }}
+                    <b>{{ item.characterData.Character.Name }}</b>
+                    – {{ item.characterData.Character.Server }}
                   </a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>

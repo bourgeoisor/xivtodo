@@ -72,6 +72,7 @@
                 />
                 <div style="float: left">
                   <span class="fw-bold">{{ item.characterData.Character.Name }}</span>
+                  – {{ item.characterData.Character.Server }}
                   <br />
                   <span
                     v-if="this.updating == item.characterData.Character.ID"
