@@ -4,7 +4,7 @@
     <!-- @TODO: remove me. -->
     <Alert
       type="muted"
-      msg="Due to an unexpectedly high amount of interest, adding a new character may take a few tries, and character completion may not be fully accurate for the next couple of days due to a Lodestone API rate-limit. I am actively working on a fix; thank you for your patience and support! Feel free to click the <span class='bi bi-bell'></span> icon or follow the <a href='https://twitter.com/xivtodo' target='_blank' rel='noopener noreferrer'>Twitter account</a> for updates on this."
+      msg="Due to an unexpectedly high amount of interest, adding a new character may take a few tries, and character completion may not be fully accurate for the next couple of days due to a Lodestone API rate-limit. I am actively working on a fix; thank you for your patience and support!<br />Feel free to click the <span class='bi bi-bell'></span> icon in the top-right or follow the <a href='https://twitter.com/xivtodo' target='_blank' rel='noopener noreferrer'>Twitter account</a> for updates on this."
     />
     <Alert v-if="error.msg" :type="error.type" :msg="error.msg" />
     <hr />
