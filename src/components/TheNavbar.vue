@@ -54,7 +54,7 @@
             </li>
           </ul>
           <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item d-none d-lg-inline">
+            <li class="nav-item">
               <a
                 class="nav-link"
                 type="button"
@@ -63,6 +63,7 @@
                 aria-controls="offcanvasWithBackdrop"
                 @click="seenLatestNews()"
               >
+                <span class="d-inline d-lg-none">Updates </span>
                 <span class="bi bi-bell position-relative">
                   <span
                     v-if="this.$store.getters.latestNewsSeen < news.latestID"
@@ -190,7 +191,8 @@
       <div v-for="item in news.news" :key="item.ID">
         <h3>{{ item.title }}</h3>
         <small class="text-muted">
-          Posted on <b>{{ item.published }}</b>
+          Posted on <b class="text-success">{{ item.published }}</b>
+          &nbsp;
           <span
             v-if="this.$store.getters.latestNewsSeenPrevious < item.ID"
             class="badge bg-success"
