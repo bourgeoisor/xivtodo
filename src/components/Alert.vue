@@ -4,6 +4,7 @@
     class="alert"
     :class="{
       'alert-dark': type == 'normal',
+      'alert-muted': type == 'muted',
       'alert-danger': type == 'error',
       'alert-warning': type == 'warning',
       'alert-success': type == 'success',
@@ -13,7 +14,7 @@
     <span
       class="bi"
       :class="{
-        'bi-info-circle-fill': type == 'normal',
+        'bi-info-circle-fill': type == 'normal' || type == 'muted',
         'bi-exclamation-triangle-fill': type == 'error' || type == 'warning',
         'bi-check-circle-fill': type == 'success',
       }"
@@ -30,6 +31,11 @@
 }
 
 .night {
+  .alert-muted {
+    color: #dddddd;
+    background-color: #30363d;
+  }
+
   .alert-danger {
     color: #dddddd;
     background-color: #631414;
