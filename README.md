@@ -1,5 +1,8 @@
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fxivtodo.com)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bourgeoisor/xivtodo)
+<span class="badge-buymeacoffee">
+<a href="https://ko-fi.com/olivi_eh" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-blue.svg" alt="Buy Me A Coffee donate button" /></a>
+</span>
 
 # XIV ToDo
 
