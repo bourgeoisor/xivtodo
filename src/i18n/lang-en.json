@@ -10,7 +10,8 @@
     "about": "About",
     "help": "Help",
     "privacy": "Privacy Policy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "donate": "Donate"
   },
   "message": {
     "changeActiveCharacter": "Active character",

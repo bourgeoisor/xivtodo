@@ -36,6 +36,10 @@
       <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
         <small>{{ $t("page.contact") }}</small>
       </a>
+      ·
+      <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
+        <small>{{ $t("page.donate") }}</small>
+      </a>
     </div>
     <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-4">
       {{ $t("footer.buildVersion", { buildNum: buildNum }) }}<br />
