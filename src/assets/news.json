@@ -1,6 +1,12 @@
 {
-    "latestID": 210917,
+    "latestID": 210924,
     "news": [
+        {
+            "ID": 210924,
+            "title": "Rate-limiting update #2",
+            "published": "September 24, 2021",
+            "content": "After a week of work, I've just updated XIV ToDo to fix a handful of issues that were reported. You will notice that your characters will auto-update the first time the page is loaded after this update; this is normal. Additionally, I've scaled up my infrastructure to be able to accomodate for unexpected influx of users. Thank you for your support!"
+        },
         {
             "ID": 210917,
             "title": "Rate-limiting update #1",

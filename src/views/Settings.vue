@@ -4,7 +4,7 @@
     <!-- @TODO: remove me. -->
     <Alert
       type="muted"
-      msg="Due to an unexpectedly high amount of interest, adding a new character may take a few tries, and character completion may not be fully accurate for the next couple of days due to a Lodestone API rate-limit. I am actively working on a fix; thank you for your patience and support!<br />Feel free to click the <span class='bi bi-bell'></span> icon in the top-right or follow the <a href='https://twitter.com/xivtodo' target='_blank' rel='noopener noreferrer'>Twitter account</a> for updates on this."
+      msg="I've scaled up my infrastructure which should reduce the rate of errors adding or updating characters. I will be watching closely to make sure everything is smooth. Thank you for your patience and support! Click the <span class='bi bi-bell'></span> icon in the top-right or follow the <a href='https://twitter.com/xivtodo' target='_blank' rel='noopener noreferrer'>Twitter account</a> for updates or questions."
     />
     <Alert v-if="error.msg" :type="error.type" :msg="error.msg" />
     <hr />
@@ -77,17 +77,27 @@
                 />
                 <div style="float: left">
                   <span class="fw-bold">{{ item.characterData.Character.Name }}</span>
-                  – {{ item.characterData.Character.Server }}
+                  – {{ item.characterData.Character.World }}
                   <br />
                   <span
-                    v-if="this.updating == item.characterData.Character.ID"
+                    v-if="
+                      this.updating == item.characterData.Character.ID ||
+                      this.$store.getters.characterOutOfDate(i)
+                    "
                     class="text-info fw-light"
                   >
-                    Loading latest character data...
+                    <div class="spinner-border spinner-border-sm" role="status"></div>
+                    Updating character data...
                   </span>
                   <span v-else class="text-muted fw-light">
                     Last updated {{ lastUpdatedAt(item.lastUpdated) }}.
-                    <span v-if="!item.characterData.AchievementsPublic" class="text-warning">
+                    <span
+                      v-if="
+                        !item.characterData.Achievements ||
+                        item.characterData.Achievements.length == 0
+                      "
+                      class="text-warning"
+                    >
                       <br />
                       <abbr
                         title="The achievements for this characters are not set to public in Lodestone."
@@ -98,17 +108,18 @@
                   </span>
                 </div>
               </div>
-              <a
-                v-if="!this.updating"
-                class="bi-arrow-repeat text-secondary cursor-pointer tt"
-                @click="refreshCharacter(item.characterData.Character.ID)"
-              >
-                <span class="tt-text">Update data</span>
-              </a>
-              &nbsp;&nbsp;
-              <a class="bi-trash text-danger cursor-pointer tt" @click="removeCharacter(i)">
-                <span class="tt-text">Remove character</span>
-              </a>
+              <div v-if="!updating && !this.$store.getters.characterOutOfDate(i)">
+                <a
+                  class="bi-arrow-repeat text-secondary cursor-pointer tt"
+                  @click="refreshCharacter(item.characterData.Character.ID)"
+                >
+                  <span class="tt-text">Update data</span>
+                </a>
+                &nbsp;&nbsp;
+                <a class="bi-trash text-danger cursor-pointer tt" @click="removeCharacter(i)">
+                  <span class="tt-text">Remove character</span>
+                </a>
+              </div>
             </li>
           </ul>
           <br />
@@ -181,7 +192,7 @@
 
 <script>
 import Alert from "@/components/Alert.vue";
-import { fetchCharacterData } from "@/utilities/xivapi.js";
+import { fetchCharacterData } from "@/utilities/gcf.js";
 
 export default {
   name: "Settings",
@@ -212,15 +223,15 @@ export default {
         .then((characterData) => {
           this.$store.commit("addCharacter", characterData);
 
-          if (!characterData.AchievementsPublic) {
-            this.error = {
-              type: "warning",
-              msg: `Character <b>${characterData.Character.Name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then re-add the character.`,
-            };
-          } else {
+          if (characterData.Achievements && characterData.Achievements.length > 0) {
             this.error = {
               type: "success",
               msg: `Character <b>${characterData.Character.Name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.`,
+            };
+          } else {
+            this.error = {
+              type: "warning",
+              msg: `Character <b>${characterData.Character.Name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then re-add the character.`,
             };
           }
         })

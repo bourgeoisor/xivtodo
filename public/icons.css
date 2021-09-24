@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?u423qp');
-  src:  url('fonts/icomoon.eot?u423qp#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?u423qp') format('truetype'),
-    url('fonts/icomoon.woff?u423qp') format('woff'),
-    url('fonts/icomoon.svg?u423qp#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?fq4zmn');
+  src:  url('fonts/icomoon.eot?fq4zmn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?fq4zmn') format('truetype'),
+    url('fonts/icomoon.woff?fq4zmn') format('woff'),
+    url('fonts/icomoon.svg?fq4zmn#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-job-thm:before {
+  content: "\e920";
+}
+.icon-job-acn:before {
+  content: "\e921";
+}
+.icon-job-rog:before {
+  content: "\e922";
+}
+.icon-job-pgl:before {
+  content: "\e923";
+}
+.icon-job-lnc:before {
+  content: "\e924";
+}
+.icon-job-arc:before {
+  content: "\e925";
+}
+.icon-job-cnj:before {
+  content: "\e926";
+}
+.icon-job-gla:before {
+  content: "\e927";
+}
+.icon-job-mrd:before {
+  content: "\e928";
+}
 .icon-job-sge:before {
   content: "\e91f";
 }

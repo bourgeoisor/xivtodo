@@ -4,6 +4,10 @@
       {{ $t("page.profile") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
         {{ $t("message.ofCharacter", { characterName: this.$store.getters.character.Name }) }}
+        <div v-if="this.$store.getters.characterOutOfDateACT" class="text-info fs-6">
+          <div class="spinner-border spinner-border-sm" role="status"></div>
+          Updating character data, this may take a minute...
+        </div>
       </span>
     </h1>
     <hr />
@@ -26,7 +30,7 @@
         <div class="info-block">
           <b>{{ $t("profile.world") }}</b><br />
           <i class="bi bi-arrow-return-right text-muted"></i>
-          {{ this.$store.getters.character.Server }} ({{ this.$store.getters.character.DC }})
+          {{ this.$store.getters.character.World }} ({{ this.$store.getters.character.DC }})
         </div>
 
         <div class="info-block">
@@ -87,7 +91,7 @@
           <div class="info-block">
             <b>{{ $t("profile.playingSince") }}</b><br />
             <i class="bi bi-arrow-return-right text-muted"></i>
-            {{ new Date(this.$store.getters.characterData.PlayingSince * 1000).toDateString() }}
+            {{ new Date(this.$store.getters.characterData.PlayingSince).toDateString() }}
           </div>
           <div class="info-block">
             <b>{{ $t("profile.achievements") }}</b><br />
@@ -102,7 +106,9 @@
         <div class="info-block row">
           <b>{{ $t("profile.tanks") }}</b><br />
           <div class="text-center pt-1">
+            <JobLevel initial="gla" :title="$t('profile.job.gla')" type="tank" />
             <JobLevel initial="pld" :title="$t('profile.job.pld')" type="tank" />
+            <JobLevel initial="mrd" :title="$t('profile.job.mrd')" type="tank" />
             <JobLevel initial="war" :title="$t('profile.job.war')" type="tank" />
             <JobLevel initial="drk" :title="$t('profile.job.drk')" type="tank" />
             <JobLevel initial="gnb" :title="$t('profile.job.gnb')" type="tank" />
@@ -111,6 +117,7 @@
         <div class="info-block row">
           <b>{{ $t("profile.healers") }}</b><br />
           <div class="text-center pt-1">
+            <JobLevel initial="cnj" :title="$t('profile.job.cnj')" type="healer" />
             <JobLevel initial="whm" :title="$t('profile.job.whm')" type="healer" />
             <JobLevel initial="sch" :title="$t('profile.job.sch')" type="healer" />
             <JobLevel initial="ast" :title="$t('profile.job.ast')" type="healer" />
@@ -119,14 +126,20 @@
         <div class="info-block row">
           <b>{{ $t("profile.dps") }}</b><br />
           <div class="text-center pt-1">
+            <JobLevel initial="pgl" :title="$t('profile.job.pgl')" type="dps" />
             <JobLevel initial="mnk" :title="$t('profile.job.mnk')" type="dps" />
+            <JobLevel initial="lnc" :title="$t('profile.job.lnc')" type="dps" />
             <JobLevel initial="drg" :title="$t('profile.job.drg')" type="dps" />
+            <JobLevel initial="rog" :title="$t('profile.job.rog')" type="dps" />
             <JobLevel initial="nin" :title="$t('profile.job.nin')" type="dps" />
             <JobLevel initial="sam" :title="$t('profile.job.sam')" type="dps" />
+            <JobLevel initial="arc" :title="$t('profile.job.arc')" type="dps" />
             <JobLevel initial="brd" :title="$t('profile.job.brd')" type="dps" />
             <JobLevel initial="mch" :title="$t('profile.job.mch')" type="dps" />
             <JobLevel initial="dnc" :title="$t('profile.job.dnc')" type="dps" />
+            <JobLevel initial="thm" :title="$t('profile.job.thm')" type="dps" />
             <JobLevel initial="blm" :title="$t('profile.job.blm')" type="dps" />
+            <JobLevel initial="acn" :title="$t('profile.job.acn')" type="dps" />
             <JobLevel initial="smn" :title="$t('profile.job.smn')" type="dps" />
             <JobLevel initial="rdm" :title="$t('profile.job.rdm')" type="dps" />
             <JobLevel initial="blu" :title="$t('profile.job.blu')" type="dps" />
@@ -158,22 +171,22 @@
           <b>{{ $t("profile.elementalLevel") }}</b><br />
           <span
             :class="{
-              'fw-bold': this.$store.getters.character.ClassJobsElemental?.Level == 60,
+              'fw-bold': this.$store.getters.character.ClassJobElemental?.Level == 60,
             }"
           >
             <i class="bi bi-arrow-return-right text-muted"></i>
-            {{ this.$store.getters.character.ClassJobsElemental?.Level || "0" }}
+            {{ this.$store.getters.character.ClassJobElemental?.Level || "0" }}
           </span>
         </div>
         <div class="info-block">
           <b>{{ $t("profile.resistanceRank") }}</b><br />
           <span
             :class="{
-              'fw-bold': this.$store.getters.character.ClassJobsBozjan?.Level == 25,
+              'fw-bold': this.$store.getters.character.ClassJobBozjan?.Level == 25,
             }"
           >
             <i class="bi bi-arrow-return-right text-muted"></i>
-            {{ this.$store.getters.character.ClassJobsBozjan?.Level || "0" }}
+            {{ this.$store.getters.character.ClassJobBozjan?.Level || "0" }}
           </span>
         </div>
         <br />

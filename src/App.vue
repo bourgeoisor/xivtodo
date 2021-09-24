@@ -207,6 +207,10 @@ hr {
   color: #b45353 !important;
 }
 
+.text-info {
+  color: #9dd1ff !important;
+}
+
 .btn-outline-success {
   color: #41b883;
   border-color: #41b883;
@@ -239,43 +243,21 @@ hr {
 <script>
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import { fetchCharacterData } from "@/utilities/xivapi.js";
+import { fetchCharacterData } from "@/utilities/gcf.js";
 
 export default {
   name: "App",
-  data() {
-    return {
-      updating: false,
-    };
-  },
   components: {
     TheNavbar,
     TheFooter,
   },
   mounted() {
+    this.$nextTick(function () {
+      this.updateCharactersData();
+    });
     setInterval(() => {
-      let now = new Date();
-      let msBeforeUpdate = 1000 * 60 * 60; // 60 minutes
-
-      for (let character of this.$store.state.characters) {
-        if (!this.updating && now > character.lastUpdated + msBeforeUpdate) {
-          console.log("Updating data for " + character.characterData.Character.Name + "...");
-          this.updating = true;
-          fetchCharacterData(character.characterData.Character.ID)
-            .then((characterData) => {
-              this.$store.commit("addCharacter", characterData);
-              console.log("Data for " + character.characterData.Character.Name + " updated.");
-            })
-            .catch((err) => {
-              console.log(err);
-              this.error = err;
-            })
-            .finally(() => {
-              this.updating = false;
-            });
-        }
-      }
-    }, 1000);
+      this.updateCharactersData();
+    }, 1000 * 60); // 1 minute
   },
   computed: {
     computeWindowTitle() {
@@ -300,6 +282,24 @@ export default {
   methods: {
     setWindowTitle() {
       document.title = this.computeWindowTitle;
+    },
+    updateCharactersData() {
+      let i = 0;
+      for (let character of this.$store.state.characters) {
+        if (this.$store.getters.characterOutOfDate(i)) {
+          console.log("Updating data for " + character.characterData.Character.Name + "...");
+          fetchCharacterData(character.characterData.Character.ID)
+            .then((characterData) => {
+              this.$store.commit("addCharacter", characterData);
+              console.log("Data for " + character.characterData.Character.Name + " updated.");
+            })
+            .catch((err) => {
+              console.log(err);
+              this.error = err;
+            });
+        }
+        i++;
+      }
     },
   },
 };

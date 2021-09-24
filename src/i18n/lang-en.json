@@ -130,7 +130,16 @@
       "cul": "Culinarian",
       "min": "Miner",
       "btn": "Botanist",
-      "fsh": "Fisher"
+      "fsh": "Fisher",
+      "gla": "Gladiator",
+      "mrd": "Marauder",
+      "cnj": "Conjurer",
+      "pgl": "Pugilist",
+      "lnc": "Lancer",
+      "rog": "Rogue",
+      "arc": "Archer",
+      "acn": "Arcanist",
+      "thm": "Thaumaturge"
     }
   },
   "encounters": {
