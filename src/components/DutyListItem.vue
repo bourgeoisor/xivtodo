@@ -79,7 +79,7 @@ export default {
     clearedIconTitle() {
       if (this.duty.cleared == 0) return "Uncleared";
       if (this.duty.cleared == 1) return "Cleared";
-      else return "Unknown";
+      else return "Unknown based on current achievements";
     },
   },
 };
