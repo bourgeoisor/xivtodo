@@ -1,5 +1,8 @@
 <template>
-  <div class="job-level fw-lighter user-select-none tt">
+  <div
+    v-if="this.$store.getters.characterData.Jobs[this.initial]"
+    class="job-level fw-lighter user-select-none tt"
+  >
     <span class="tt-text">{{ title }}</span>
     <span
       :class="{
@@ -13,28 +16,27 @@
     </span>
     <br />
     <span
-      v-if="!this.$store.getters.characterData.Jobs[this.initial.toUpperCase()]?.Level"
+      v-if="this.$store.getters.characterData.Jobs[this.initial].Level == 0"
       class="text-secondary"
     >
       -
     </span>
     <span
-      v-else-if="this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level == 80"
+      v-else-if="this.$store.getters.characterData.Jobs[this.initial].Level == 80"
       class="fw-bold"
     >
-      {{ this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level }}
+      {{ this.$store.getters.characterData.Jobs[this.initial].Level }}
     </span>
     <span
       v-else-if="
-        this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level == 70 &&
-        this.initial == 'blu'
+        this.$store.getters.characterData.Jobs[this.initial].Level == 70 && this.initial == 'blu'
       "
       class="fw-bold"
     >
-      {{ this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level }}
+      {{ this.$store.getters.characterData.Jobs[this.initial].Level }}
     </span>
     <span v-else>
-      {{ this.$store.getters.characterData.Jobs[this.initial.toUpperCase()].Level }}
+      {{ this.$store.getters.characterData.Jobs[this.initial].Level }}
     </span>
   </div>
 </template>

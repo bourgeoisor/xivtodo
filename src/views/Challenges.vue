@@ -2,21 +2,17 @@
   <div class="container">
     <h1>
       {{ $t("page.challenges") }}
-      <span
-        v-if="this.$store.getters.hasCharacter && this.$store.getters.achievementsPublic"
-        class="fs-3 fw-lighter"
-      >
+      <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
         {{
           $t("message.clearedByCharacter", { characterName: this.$store.getters.character.Name })
         }}
-      </span>
-      <span v-else-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter text-warning">
-        <abbr title="The achievements for this characters are not set to public in Lodestone.">
-          {{
-            $t("message.clearedByCharacter", { characterName: this.$store.getters.character.Name })
-          }}
-        </abbr>
-        &nbsp;<span class="bi bi-patch-exclamation"></span>
+        <div v-if="this.$store.getters.characterOutOfDateACT" class="text-info fs-6">
+          <div class="spinner-border spinner-border-sm" role="status"></div>
+          Updating character data, this may take a minute...
+        </div>
+        <div v-else-if="!this.$store.getters.achievementsPublic" class="text-warning fs-6">
+          The achievements for this characters are not set to public in Lodestone.
+        </div>
       </span>
     </h1>
     <Alert

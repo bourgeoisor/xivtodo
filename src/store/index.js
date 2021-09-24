@@ -35,6 +35,18 @@ export default createStore({
         return state.characters[state.activeCharacterID];
       }
     },
+    characterOutOfDateACT(state, getters) {
+      return getters.characterOutOfDate(state.activeCharacterID);
+    },
+    characterOutOfDate: (state) => (id) => {
+      let now = new Date();
+      let msBeforeUpdate = 1000 * 60 * 60 * 8; // 8 hours
+
+      return (
+        state.characters[id].modelVersion != "v2" ||
+        now > state.characters[id].lastUpdated + msBeforeUpdate
+      );
+    },
     characterData(state, getters) {
       return getters.activeCharacter?.characterData || {};
     },
@@ -42,10 +54,10 @@ export default createStore({
       return getters.activeCharacter?.characterData.Character || {};
     },
     achievements(state, getters) {
-      return getters.activeCharacter?.characterData.Achievements?.List || [];
+      return getters.activeCharacter?.characterData.Achievements || [];
     },
     achievementsPublic(state, getters) {
-      return getters.activeCharacter?.characterData.AchievementsPublic || false;
+      return getters.activeCharacter?.characterData.Achievements.length > 0 || false;
     },
     todosChecked(state, getters) {
       return getters.activeCharacter?.todosChecked || [];
@@ -85,6 +97,7 @@ export default createStore({
         if (state.characters[i].characterData.Character.ID == payload.Character.ID) {
           state.characters[i].characterData = payload;
           state.characters[i].lastUpdated = parseInt(Date.now());
+          state.characters[i].modelVersion = "v2";
           return;
         }
       }
@@ -93,6 +106,7 @@ export default createStore({
       let character = {
         characterData: payload,
         lastUpdated: parseInt(Date.now()),
+        modelVersion: "v2",
       };
 
       state.characters.push(character);

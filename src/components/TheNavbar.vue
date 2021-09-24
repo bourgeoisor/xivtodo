@@ -111,11 +111,11 @@
                     class="dropdown-item active"
                   >
                     <b>{{ item.characterData.Character.Name }}</b>
-                    – {{ item.characterData.Character.Server }} <span class="bi-check" />
+                    – {{ item.characterData.Character.World }} <span class="bi-check" />
                   </span>
                   <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
                     <b>{{ item.characterData.Character.Name }}</b>
-                    – {{ item.characterData.Character.Server }}
+                    – {{ item.characterData.Character.World }}
                   </a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>

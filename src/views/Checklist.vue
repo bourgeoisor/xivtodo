@@ -158,36 +158,12 @@ export default {
           this.$store.commit("todoHidden", { id: id, checked: false });
         }
       }
+
+      // Reset old completions.
+      this.resetDailliesWeeklies();
     });
     setInterval(() => {
-      this.weeklyReset = this.formatTimeDiff(this.weeklyResetTime(), true);
-      this.dailyReset = this.formatTimeDiff(this.dailyResetTime(), false);
-      this.rerender++;
-
-      // Skip this if no active character is set.
-      if (!this.$store.getters.hasCharacter) return;
-
-      // Clear checked if past weekly reset time.
-      if (this.$store.getters.todosNextWeeklyReset < Date.now()) {
-        this.$store.commit("todosNextWeeklyReset", this.weeklyResetTime());
-        let todosChecked = this.$store.getters.todosChecked;
-        for (let id of todosChecked) {
-          if (id >= 1000 && id < 2000) {
-            this.$store.commit("todoChecked", { id: id, checked: false });
-          }
-        }
-      }
-
-      // Clear checked if past daily reset time.
-      if (this.$store.getters.todosNextDailyReset < Date.now()) {
-        this.$store.commit("todosNextDailyReset", this.dailyResetTime());
-        let todosChecked = this.$store.getters.todosChecked;
-        for (let id of todosChecked) {
-          if (id >= 2000 && id < 3000) {
-            this.$store.commit("todoChecked", { id: id, checked: false });
-          }
-        }
-      }
+      this.resetDailliesWeeklies();
     }, 1000);
   },
   methods: {
@@ -233,6 +209,36 @@ export default {
         return `${hours}h ${minutes}m`;
       } else {
         return `${minutes}m ${seconds}s`;
+      }
+    },
+    resetDailliesWeeklies() {
+      this.weeklyReset = this.formatTimeDiff(this.weeklyResetTime(), true);
+      this.dailyReset = this.formatTimeDiff(this.dailyResetTime(), false);
+      this.rerender++;
+
+      // Skip this if no active character is set.
+      if (!this.$store.getters.hasCharacter) return;
+
+      // Clear checked if past weekly reset time.
+      if (this.$store.getters.todosNextWeeklyReset < Date.now()) {
+        this.$store.commit("todosNextWeeklyReset", this.weeklyResetTime());
+        let todosChecked = this.$store.getters.todosChecked;
+        for (let id of todosChecked) {
+          if (id >= 1000 && id < 2000) {
+            this.$store.commit("todoChecked", { id: id, checked: false });
+          }
+        }
+      }
+
+      // Clear checked if past daily reset time.
+      if (this.$store.getters.todosNextDailyReset < Date.now()) {
+        this.$store.commit("todosNextDailyReset", this.dailyResetTime());
+        let todosChecked = this.$store.getters.todosChecked;
+        for (let id of todosChecked) {
+          if (id >= 2000 && id < 3000) {
+            this.$store.commit("todoChecked", { id: id, checked: false });
+          }
+        }
       }
     },
     addCustomWeekly() {
