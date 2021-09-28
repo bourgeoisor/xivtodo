@@ -40,7 +40,7 @@ export default createStore({
     },
     characterOutOfDate: (state) => (id) => {
       let now = new Date();
-      let msBeforeUpdate = 1000 * 60 * 60 * 8; // 8 hours
+      let msBeforeUpdate = 1000 * 60 * 60 * 48; // 48 hours
 
       return (
         state.characters[id].modelVersion != "v2" ||
