@@ -1,11 +1,6 @@
 <template>
   <div class="container">
     <h1>{{ $t("page.settings") }}</h1>
-    <!-- @TODO: remove me. -->
-    <Alert
-      type="muted"
-      msg="I've scaled up my infrastructure which should reduce the rate of errors adding or updating characters. I will be watching closely to make sure everything is smooth. Thank you for your patience and support! Click the <span class='bi bi-bell'></span> icon in the top-right or follow the <a href='https://twitter.com/xivtodo' target='_blank' rel='noopener noreferrer'>Twitter account</a> for updates or questions."
-    />
     <Alert v-if="error.msg" :type="error.type" :msg="error.msg" />
     <hr />
     <form name="settings-form" id="settings-form">
