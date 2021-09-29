@@ -96,13 +96,13 @@
           v-if="this.$store.getters.todosHidden.length == 1"
           class="text-muted fw-light float-end"
         >
-          There is 1 hidden task.<br /><br />
+          1 hidden task<br /><br />
         </span>
         <span
           v-else-if="this.$store.getters.todosHidden.length > 1"
           class="text-muted fw-light float-end"
         >
-          There are {{ this.$store.getters.todosHidden.length }} hidden tasks.<br /><br />
+          {{ this.$store.getters.todosHidden.length }} hidden tasks<br /><br />
         </span>
       </div>
     </div>

@@ -38,8 +38,8 @@
   "footer": {
     "trademark": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.",
     "copyright": "FINAL FANTASY XIV © SQUARE ENIX CO., LTD.",
-    "buildVersion": "Version {buildNum}",
-    "buildDate": "Deployed on {buildDate}"
+    "buildVersion": "{buildNum}",
+    "buildDate": "{buildDate}"
   },
   "home": {
     "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV; whether you are a new player to the game or more experienced. In its current form, XIV ToDo offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come!",

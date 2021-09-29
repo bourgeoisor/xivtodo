@@ -85,7 +85,7 @@
                     Updating character data...
                   </span>
                   <span v-else class="text-muted fw-light">
-                    Last updated {{ lastUpdatedAt(item.lastUpdated) }}.
+                    Last updated {{ lastUpdatedAt(item.lastUpdated) }}
                     <span
                       v-if="
                         !item.characterData.Achievements ||
@@ -97,7 +97,7 @@
                       <abbr
                         title="The achievements for this characters are not set to public in Lodestone."
                       >
-                        Achievements are not public.
+                        Achievements are not public
                       </abbr>
                     </span>
                   </span>
