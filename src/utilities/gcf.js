@@ -73,7 +73,9 @@ const fetchCharacterData = (id) =>
         if (err.status == 404) {
           reject("The character profile you have entered does not exist.");
         } else {
-          reject("An unknown error has ocurred while fetching character data. Please try again.");
+          reject(
+            "Could not reach Lodestone; There may be an ongoing maintenance. Please try again later."
+          );
         }
       });
   });
