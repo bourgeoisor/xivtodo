@@ -169,9 +169,8 @@ h3 {
 
 .row h2 {
   text-decoration: underline;
-  text-decoration-color: #41b883;
+  text-decoration-color: #dddddd;
   text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
 }
 
 hr {
