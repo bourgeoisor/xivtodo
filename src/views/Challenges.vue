@@ -36,14 +36,27 @@
       </div>
     </div>
     <div class="row">
+      <h2>Exploration</h2>
+
+      <div class="col-lg">
+        <DutyList title="A Realm Reborn" :duties="db.arrExploration" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="Heavensward" :duties="db.hwExploration" />
+        <DutyList title="Stormblood" :duties="db.sbExploration" />
+        <DutyList title="Shadowbringers" :duties="db.shbExploration" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="Sightseeing Logs" :duties="db.sightseeingLogs" />
+      </div>
+    </div>
+    <div class="row">
       <h2>Blue Mage</h2>
 
       <div class="col-lg">
-        <DutyList title="BLU Encounters (ARR)" :duties="db.arrBlu" />
-        <DutyList title="BLU Encounters (HW)" :duties="db.hwBlu" />
-      </div>
-      <div class="col-lg">
-        <DutyList title="BLU Encounters (SB)" :duties="db.sbBlu" />
+        <DutyList title="BLU Encounters (A Realm Reborn)" :duties="db.arrBlu" />
+        <DutyList title="BLU Encounters (Heavensward)" :duties="db.hwBlu" />
+        <DutyList title="BLU Encounters (Stormblood)" :duties="db.sbBlu" />
       </div>
       <div class="col-lg">
         <DutyList title="Masked Carnivale" :duties="db.maskedCarnivale" />
