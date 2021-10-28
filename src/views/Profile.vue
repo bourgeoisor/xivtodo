@@ -167,6 +167,7 @@
           </div>
         </div>
         <br />
+        <!-- @TODO: https://github.com/bourgeoisor/xivtodo/issues/14
         <div class="info-block">
           <b>{{ $t("profile.elementalLevel") }}</b><br />
           <span
@@ -189,7 +190,7 @@
             {{ this.$store.getters.character.ClassJobBozjan?.Level || "0" }}
           </span>
         </div>
-        <br />
+        <br /> -->
       </div>
     </div>
   </div>
