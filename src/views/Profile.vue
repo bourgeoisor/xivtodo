@@ -28,13 +28,15 @@
       <div class="col-lg">
         <h2>{{ $t("profile.characterInfo") }}</h2>
         <div class="info-block">
-          <b>{{ $t("profile.world") }}</b><br />
+          <b>{{ $t("profile.world") }}</b>
+          <br />
           <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.World }} ({{ this.$store.getters.character.DC }})
         </div>
 
         <div class="info-block">
-          <b>{{ $t("profile.raceClan") }}</b><br />
+          <b>{{ $t("profile.raceClan") }}</b>
+          <br />
           <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.Race?.Name }} /
           {{ this.$store.getters.character.Tribe?.Name }}
@@ -43,13 +45,15 @@
         </div>
 
         <div class="info-block">
-          <b>{{ $t("profile.nameday") }}</b><br />
+          <b>{{ $t("profile.nameday") }}</b>
+          <br />
           <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.Nameday }}
         </div>
 
         <div class="info-block">
-          <b>{{ $t("profile.guardian") }}</b><br />
+          <b>{{ $t("profile.guardian") }}</b>
+          <br />
           <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.GuardianDeity?.Name }}
         </div>
@@ -57,13 +61,15 @@
         <br />
 
         <div v-if="this.$store.getters.character.FreeCompanyName" class="info-block">
-          <b>{{ $t("profile.freeCompany") }}</b><br />
+          <b>{{ $t("profile.freeCompany") }}</b>
+          <br />
           <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.FreeCompanyName }}
         </div>
 
         <div class="info-block">
-          <b>{{ $t("profile.cityState") }}</b><br />
+          <b>{{ $t("profile.cityState") }}</b>
+          <br />
           <i class="bi bi-arrow-return-right text-muted"></i>
           <img :src="'/icons/town-' + this.$store.getters.character.Town?.ID + '.png'" />
           {{ this.$store.getters.character.Town?.Name }}
@@ -71,7 +77,8 @@
 
         <template v-if="this.$store.getters.character.GrandCompany">
           <div class="info-block">
-            <b>{{ $t("profile.grandCompany") }}</b><br />
+            <b>{{ $t("profile.grandCompany") }}</b>
+            <br />
             <i class="bi bi-arrow-return-right text-muted"></i>
             <img
               :src="
@@ -97,7 +104,8 @@
             {{ new Date(this.$store.getters.characterData.PlayingSince).toDateString() }}
           </div>
           <div class="info-block">
-            <b>{{ $t("profile.achievements") }}</b><br />
+            <b>{{ $t("profile.achievements") }}</b>
+            <br />
             <i class="bi bi-arrow-return-right text-muted"></i>
             {{ this.$store.getters.achievements.length }}
           </div>
@@ -107,7 +115,8 @@
       <div class="col-lg">
         <h2>{{ $t("profile.jobLevels") }}</h2>
         <div class="info-block row">
-          <b>{{ $t("profile.tanks") }}</b><br />
+          <b>{{ $t("profile.tanks") }}</b>
+          <br />
           <div class="text-center pt-1">
             <JobLevel initial="gla" :title="$t('profile.job.gla')" type="tank" />
             <JobLevel initial="pld" :title="$t('profile.job.pld')" type="tank" />
@@ -118,7 +127,8 @@
           </div>
         </div>
         <div class="info-block row">
-          <b>{{ $t("profile.healers") }}</b><br />
+          <b>{{ $t("profile.healers") }}</b>
+          <br />
           <div class="text-center pt-1">
             <JobLevel initial="cnj" :title="$t('profile.job.cnj')" type="healer" />
             <JobLevel initial="whm" :title="$t('profile.job.whm')" type="healer" />
@@ -127,7 +137,8 @@
           </div>
         </div>
         <div class="info-block row">
-          <b>{{ $t("profile.dps") }}</b><br />
+          <b>{{ $t("profile.dps") }}</b>
+          <br />
           <div class="text-center pt-1">
             <JobLevel initial="pgl" :title="$t('profile.job.pgl')" type="dps" />
             <JobLevel initial="mnk" :title="$t('profile.job.mnk')" type="dps" />
@@ -149,7 +160,8 @@
           </div>
         </div>
         <div class="info-block row">
-          <b>{{ $t("profile.crafters") }}</b><br />
+          <b>{{ $t("profile.crafters") }}</b>
+          <br />
           <div class="text-center pt-1">
             <JobLevel initial="crp" :title="$t('profile.job.crp')" type="crafter" />
             <JobLevel initial="bsm" :title="$t('profile.job.bsm')" type="crafter" />
@@ -162,7 +174,8 @@
           </div>
         </div>
         <div class="info-block row">
-          <b>{{ $t("profile.gatherers") }}</b><br />
+          <b>{{ $t("profile.gatherers") }}</b>
+          <br />
           <div class="text-center pt-1">
             <JobLevel initial="min" :title="$t('profile.job.min')" type="gatherer" />
             <JobLevel initial="btn" :title="$t('profile.job.btn')" type="gatherer" />
