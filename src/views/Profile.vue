@@ -89,7 +89,10 @@
         <template v-if="this.$store.getters.achievementsPublic">
           <br />
           <div class="info-block">
-            <b>{{ $t("profile.playingSince") }}</b><br />
+            <b>
+              <abbr title="Does not include 1.0">{{ $t("profile.playingSince") }}</abbr>
+            </b>
+            <br />
             <i class="bi bi-arrow-return-right text-muted"></i>
             {{ new Date(this.$store.getters.characterData.PlayingSince).toDateString() }}
           </div>
