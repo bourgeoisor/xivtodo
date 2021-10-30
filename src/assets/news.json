@@ -11,17 +11,17 @@
       "title": "Moogle Treasure Trove",
       "description": "Latest edition of the Moogle Treasure Trove event, entitled The Hunt for Lore. For more details, <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202110/7pBwXOpUFp' target='_blank' rel='noopener noreferrer'>click here</a>.",
       "start": 1634630400,
-      "end": 1637312400
+      "end": 1636794000
     },
     {
       "title": "Endwalker (Early Access)",
       "description": "Early access release of the next expansion, Endwalker. For more details, <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>click here</a>.",
-      "start": 1637312400
+      "start": 1636794000
     },
     {
       "title": "Endwalker",
       "description": "General availability of the next expansion, Endwalker. For more details, <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>click here</a>.",
-      "start": 1636794000
+      "start": 1637312400
     }
   ],
   "latestID": 210924,
