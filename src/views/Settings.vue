@@ -103,18 +103,17 @@
                   </span>
                 </div>
               </div>
-              <div v-if="!updating && !this.$store.getters.characterOutOfDate(i)">
-                <a
-                  class="bi-arrow-repeat text-secondary cursor-pointer tt"
-                  @click="refreshCharacter(item.characterData.Character.ID)"
-                >
-                  <span class="tt-text">Update data</span>
-                </a>
-                &nbsp;&nbsp;
-                <a class="bi-trash text-danger cursor-pointer tt" @click="removeCharacter(i)">
-                  <span class="tt-text">Remove character</span>
-                </a>
-              </div>
+              <a
+                v-if="!updating && !this.$store.getters.characterOutOfDate(i)"
+                class="bi-arrow-repeat text-secondary cursor-pointer tt"
+                @click="refreshCharacter(item.characterData.Character.ID)"
+              >
+                <span class="tt-text">Update data</span>
+              </a>
+              &nbsp;&nbsp;
+              <a class="bi-trash text-danger cursor-pointer tt" @click="removeCharacter(i)">
+                <span class="tt-text">Remove character</span>
+              </a>
             </li>
           </ul>
           <br />
