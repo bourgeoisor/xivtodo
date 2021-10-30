@@ -59,8 +59,36 @@
                 class="nav-link"
                 type="button"
                 data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasWithBackdrop"
-                aria-controls="offcanvasWithBackdrop"
+                data-bs-target="#offcanvasCountdowns"
+                aria-controls="offcanvasCountdowns"
+                @click="seenLatestCountdown()"
+              >
+                <span class="d-inline d-lg-none">Countdowns </span>
+                <span class="bi bi-clock position-relative">
+                  <span
+                    v-if="this.$store.getters.latestCountdownSeen < news.latestCountdownID"
+                    class="
+                      position-absolute
+                      top-0
+                      start-100
+                      translate-middle
+                      p-1
+                      bg-success
+                      border border-light
+                      rounded-circle
+                    "
+                  >
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasUpdates"
+                aria-controls="offcanvasUpdates"
                 @click="seenLatestNews()"
               >
                 <span class="d-inline d-lg-none">Updates </span>
@@ -182,9 +210,36 @@
     </nav>
   </header>
 
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop">
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCountdowns">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">XIV ToDo - Updates</h5>
+      <h5 class="offcanvas-title" id="offcanvasCountdownsLabel">XIV ToDo - Countdowns</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div v-for="item in news.countdowns" :key="item.title">
+        <h3>{{ item.title }}</h3>
+        <small v-if="item.end && new Date() / 1000 > item.end" class="text-danger">
+          This event has ended
+        </small>
+        <small v-else-if="item.start && new Date() / 1000 < item.start" class="text-muted">
+          Starting in <b class="text-info">{{ timeLeft(item.start) }}</b>
+        </small>
+        <small v-else-if="item.end" class="text-muted">
+          Ending in <b class="text-success">{{ timeLeft(item.end) }}</b>
+        </small>
+        <small v-else class="text-success">This is now available</small>
+        <br />
+        <!-- <a :href="item.url">View on Lodestone</a>
+        <br /> -->
+        <p v-html="item.description"></p>
+        <br />
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasUpdates">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasUpdatesLabel">XIV ToDo - Updates</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
@@ -295,6 +350,20 @@ export default {
     },
     seenLatestNews() {
       this.$store.commit("seenLatestNews", news.latestID);
+    },
+    seenLatestCountdown() {
+      this.$store.commit("seenLatestCountdown", news.latestCountdownID);
+    },
+    timeLeft(timestamp) {
+      let now = new Date() / 1000;
+      let diff = timestamp - now;
+      let days = Math.floor(diff / (1 * 60 * 60 * 24));
+      let hours = Math.floor(diff / (1 * 60 * 60));
+      let minutes = Math.floor(diff / (1 * 60));
+
+      if (days > 0) return days + "d " + (hours - days * 24) + "h";
+      else if (hours > 0) return hours + "h " + (minutes - hours * 60) + "m";
+      else return minutes + "m";
     },
   },
 };

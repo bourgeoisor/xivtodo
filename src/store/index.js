@@ -11,6 +11,7 @@ export default createStore({
     characters: [],
     latestNewsSeen: 0,
     latestNewsSeenPrevious: 0,
+    latestCountdownSeen: 0,
   },
   getters: {
     latestNewsSeen(state) {
@@ -18,6 +19,9 @@ export default createStore({
     },
     latestNewsSeenPrevious(state) {
       return state.latestNewsSeenPrevious || 0;
+    },
+    latestCountdownSeen(state) {
+      return state.latestCountdownSeen || 0;
     },
     hasCharacter(state) {
       return state.characters.length > 0;
@@ -90,6 +94,9 @@ export default createStore({
     seenLatestNews(state, payload) {
       state.latestNewsSeenPrevious = state.latestNewsSeen;
       state.latestNewsSeen = payload;
+    },
+    seenLatestCountdown(state, payload) {
+      state.latestCountdownSeen = payload;
     },
     addCharacter(state, payload) {
       // If character already loaded, update it.

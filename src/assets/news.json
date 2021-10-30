@@ -1,23 +1,48 @@
 {
-    "latestID": 210924,
-    "news": [
-        {
-            "ID": 210924,
-            "title": "Rate-limiting update #2",
-            "published": "September 24, 2021",
-            "content": "After a week of work, I've just updated XIV ToDo to fix a handful of issues that were reported. You will notice that your characters will auto-update the first time the page is loaded after this update; this is normal. Additionally, I've scaled up my infrastructure to be able to accomodate for unexpected influx of users. Thank you for your support!"
-        },
-        {
-            "ID": 210917,
-            "title": "Rate-limiting update #1",
-            "published": "September 17, 2021",
-            "content": "Following yesterday's update, things have started to calm down a bit and the API seems to be returning slightly more consistent results. Adding characters should be a smoother experience now. That said, the API is still not 100% consistent and I am still working on stabilization before I move on to new features. Feel free to keep making full use of the <a href='/checklist'>Checklist</a> page in the meantime, since that feature doesn't rely on Lodestone. Again, thank you for your patience!"
-        },
-        {
-            "ID": 210916,
-            "title": "Lodestone rate-limiting",
-            "published": "September 16, 2021",
-            "content": "Firstly, thank you all for your support and interest! After the traction this site has gotten from a <a href='https://www.reddit.com/r/ffxiv/comments/powkci/overwhelmed_with_the_amount_of_content_and_not/' target='_blank' rel='noopener noreferrer'>Reddit thread</a>, the API I use to get information from Lodestone is getting rate-limited by the amount of people trying out XIV ToDo at the same time. Unfortunately, this means that the Lodestone is returning errors and incomplete data-sets. As such, you may be unable to add a character or get a complete and accurate view of your progression until the load stabilizes. I am looking into mitigating this issue in the future, but in the meantime please try refreshing your characters again later. Thank you!"
-        }
-    ]
+  "latestCountdownID": 1,
+  "countdowns": [
+    {
+      "title": "Breaking Brick Mountains",
+      "description": "Return of the Dragon Quest crossover event. For more details, <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2021/Theres_Golems_in_Those_Hills/l18qvanob6' target='_blank' rel='noopener noreferrer'>click here</a>.",
+      "start": 1634630400,
+      "end": 1636642800
+    },
+    {
+      "title": "Moogle Treasure Trove",
+      "description": "Latest edition of the Moogle Treasure Trove event, entitled The Hunt for Lore. For more details, <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202110/7pBwXOpUFp' target='_blank' rel='noopener noreferrer'>click here</a>.",
+      "start": 1634630400,
+      "end": 1637312400
+    },
+    {
+      "title": "Endwalker (Early Access)",
+      "description": "Early access release of the next expansion, Endwalker. For more details, <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>click here</a>.",
+      "start": 1637312400
+    },
+    {
+      "title": "Endwalker",
+      "description": "General availability of the next expansion, Endwalker. For more details, <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>click here</a>.",
+      "start": 1636794000
+    }
+  ],
+  "latestID": 210924,
+  "news": [
+    {
+        "ID": 210924,
+        "title": "Rate-limiting update #2",
+        "published": "September 24, 2021",
+        "content": "After a week of work, I've just updated XIV ToDo to fix a handful of issues that were reported. You will notice that your characters will auto-update the first time the page is loaded after this update; this is normal. Additionally, I've scaled up my infrastructure to be able to accomodate for unexpected influx of users. Thank you for your support!"
+    },
+    {
+        "ID": 210917,
+        "title": "Rate-limiting update #1",
+        "published": "September 17, 2021",
+        "content": "Following yesterday's update, things have started to calm down a bit and the API seems to be returning slightly more consistent results. Adding characters should be a smoother experience now. That said, the API is still not 100% consistent and I am still working on stabilization before I move on to new features. Feel free to keep making full use of the <a href='/checklist'>Checklist</a> page in the meantime, since that feature doesn't rely on Lodestone. Again, thank you for your patience!"
+    },
+    {
+        "ID": 210916,
+        "title": "Lodestone rate-limiting",
+        "published": "September 16, 2021",
+        "content": "Firstly, thank you all for your support and interest! After the traction this site has gotten from a <a href='https://www.reddit.com/r/ffxiv/comments/powkci/overwhelmed_with_the_amount_of_content_and_not/' target='_blank' rel='noopener noreferrer'>Reddit thread</a>, the API I use to get information from Lodestone is getting rate-limited by the amount of people trying out XIV ToDo at the same time. Unfortunately, this means that the Lodestone is returning errors and incomplete data-sets. As such, you may be unable to add a character or get a complete and accurate view of your progression until the load stabilizes. I am looking into mitigating this issue in the future, but in the meantime please try refreshing your characters again later. Thank you!"
+    }
+  ]
 }
