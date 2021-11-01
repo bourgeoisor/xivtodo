@@ -55,13 +55,13 @@ export default createStore({
       return getters.activeCharacter?.characterData || {};
     },
     character(state, getters) {
-      return getters.activeCharacter?.characterData.Character || {};
+      return getters.activeCharacter?.characterData?.Character || {};
     },
     achievements(state, getters) {
-      return getters.activeCharacter?.characterData.Achievements || [];
+      return getters.activeCharacter?.characterData?.Achievements || [];
     },
     achievementsPublic(state, getters) {
-      return getters.activeCharacter?.characterData.Achievements.length > 0 || false;
+      return getters.activeCharacter?.characterData?.Achievements?.length > 0 || false;
     },
     todosChecked(state, getters) {
       return getters.activeCharacter?.todosChecked || [];
