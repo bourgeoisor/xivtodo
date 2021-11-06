@@ -1,5 +1,5 @@
 {
-  "latestCountdownID": 1,
+  "latestCountdownID": 2,
   "countdowns": [
     {
       "title": "Breaking Brick Mountains",
@@ -22,12 +22,12 @@
     {
       "title": "Endwalker (Early Access)",
       "description": "Early access release of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1637312400
+      "start": 1638536400
     },
     {
       "title": "Endwalker",
       "description": "General availability of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1637658000
+      "start": 1638882000
     }
   ],
   "latestID": 210924,
