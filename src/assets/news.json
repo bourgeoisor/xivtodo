@@ -5,26 +5,26 @@
       "title": "Moogle Treasure Trove",
       "description": "Latest edition of the Moogle Treasure Trove event, entitled The Hunt for Lore. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202110/7pBwXOpUFp' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1634630400,
-      "end": 1638536400
+      "end": 1638522000
     },
     {
       "title": "Endwalker (Early Access)",
       "description": "Early access release of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1638536400
+      "start": 1638522000
     },
     {
       "title": "Endwalker",
       "description": "General availability of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1638882000
+      "start": 1638867600
     },
     {
       "title": "Patch 6.01",
-      "description": "Release of the first Pandaemonium raid tier, Asphodelos.",
+      "description": "Release of patch 6.01 and the first Pandaemonium raid tier, Asphodelos.",
       "start": 1640091600
     },
     {
       "title": "Patch 6.05",
-      "description": "Release of the first Pandaemonium (Savage) raid tier, Asphodelos.",
+      "description": "Release of patch 6.05 and the first Pandaemonium (Savage) raid tier, Asphodelos.",
       "start": 1641301200
     }
   ],
