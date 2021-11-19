@@ -222,15 +222,19 @@
           This event has ended
         </small>
         <small v-else-if="item.start && new Date() / 1000 < item.start" class="text-muted">
-          Starting in <b class="text-info">{{ timeLeft(item.start) }}</b>
+          Starting in
+          <b class="text-info">
+            <abbr :title="dateFormat(item.start)">{{ timeLeft(item.start) }}</abbr>
+          </b>
         </small>
         <small v-else-if="item.end" class="text-muted">
-          Ending in <b class="text-success">{{ timeLeft(item.end) }}</b>
+          Ending in
+          <b class="text-success">
+            <abbr :title="dateFormat(item.end)">{{ timeLeft(item.end) }}</abbr>
+          </b>
         </small>
-        <small v-else class="text-success">This is now available</small>
+        <small v-else class="text-success">Currently available</small>
         <br />
-        <!-- <a :href="item.url">View on Lodestone</a>
-        <br /> -->
         <p v-html="item.description"></p>
         <br />
       </div>
@@ -364,6 +368,10 @@ export default {
       if (days > 0) return days + "d " + (hours - days * 24) + "h";
       else if (hours > 0) return hours + "h " + (minutes - hours * 60) + "m";
       else return minutes + "m";
+    },
+    dateFormat(timestamp) {
+      let date = new Date(timestamp * 1000);
+      return date;
     },
   },
 };
