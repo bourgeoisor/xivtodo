@@ -47,6 +47,7 @@
         <DutyList title="Shadowbringers" :duties="db.shbExploration" />
       </div>
       <div class="col-lg">
+        <DutyList title="Exploratory Missions" :duties="db.explExploration" />
         <DutyList title="Sightseeing Logs" :duties="db.sightseeingLogs" />
       </div>
     </div>
