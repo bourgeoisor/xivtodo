@@ -37,6 +37,8 @@ const jobInitials = {
   36: "blu",
   37: "gnb",
   38: "dnc",
+  39: "rpr",
+  40: "sge",
 };
 
 function injectData(characterData) {

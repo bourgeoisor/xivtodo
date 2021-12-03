@@ -24,7 +24,8 @@
       "arr": "A Realm Reborn",
       "hw": "Heavensward",
       "sb": "Stormblood",
-      "shb": "Shadowbringers"
+      "shb": "Shadowbringers",
+      "ew": "Endwalker"
     },
     "errors": {
       "notPublic": "The achievements for this characters are not set to public in Lodestone.",
@@ -109,10 +110,12 @@
       "whm": "White Mage",
       "sch": "Scholar",
       "ast": "Astrologian",
+      "sge": "Sage",
       "mnk": "Monk",
       "drg": "Dragoon",
       "nin": "Ninja",
       "sam": "Samurai",
+      "rpr": "Reaper",
       "brd": "Bard",
       "mch": "Machinist",
       "dnc": "Dancer",

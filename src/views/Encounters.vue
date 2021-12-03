@@ -196,6 +196,27 @@
         />
       </div>
     </div>
+    <hr />
+    <div class="row">
+      <h2>{{ $t("misc.expansion.ew") }}</h2>
+
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.dungeons')"
+          :duties="db.ewDungeons"
+          type="dngs"
+          :showTotal="true"
+        />
+      </div>
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.trials')"
+          :duties="db.ewTrials"
+          type="trials"
+          :showTotal="true"
+        />
+      </div>
+    </div>
   </div>
 </template>
 

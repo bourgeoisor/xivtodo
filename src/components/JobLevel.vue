@@ -22,7 +22,7 @@
       -
     </span>
     <span
-      v-else-if="this.$store.getters.characterData.Jobs[this.initial].Level == 80"
+      v-else-if="this.$store.getters.characterData.Jobs[this.initial].Level == 90"
       class="fw-bold"
     >
       {{ this.$store.getters.characterData.Jobs[this.initial].Level }}

@@ -1,20 +1,14 @@
 {
-  "latestCountdownID": 2,
+  "latestCountdownID": 3,
   "countdowns": [
     {
-      "title": "Moogle Treasure Trove",
-      "description": "Latest edition of the Moogle Treasure Trove event, entitled The Hunt for Lore. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202110/7pBwXOpUFp' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1634630400,
-      "end": 1638522000
-    },
-    {
       "title": "Endwalker (Early Access)",
-      "description": "Early access release of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "Early access release of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/bdd208b52ddababad086dc9679e96a8412962edf' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1638522000
     },
     {
       "title": "Endwalker",
-      "description": "General availability of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "General availability of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/bdd208b52ddababad086dc9679e96a8412962edf' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1638867600
     },
     {
@@ -24,12 +18,18 @@
     },
     {
       "title": "Patch 6.05",
-      "description": "Release of patch 6.05 and the first Pandaemonium (Savage) raid tier, Asphodelos.",
+      "description": "Release of patch 6.05, the treasure hunt instance Excitatron 6000 and the first Pandaemonium (Savage) raid tier, Asphodelos.",
       "start": 1641301200
     }
   ],
-  "latestID": 210924,
+  "latestID": 211202,
   "news": [
+    {
+      "ID": 211202,
+      "title": "Release of Endwalker",
+      "published": "December 2, 2021",
+      "content": "With Endwalker's impending release, I've started to add placeholders for the various additions that the expansion brings. I am working hard to make sure that XIV ToDo gets updated with Endwalker content as soon as possible! In the meantime, I hope to see you all once the game is up and running again!"
+  },
     {
         "ID": 210924,
         "title": "Rate-limiting update #2",

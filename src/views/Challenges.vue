@@ -40,11 +40,12 @@
 
       <div class="col-lg">
         <DutyList title="A Realm Reborn" :duties="db.arrExploration" />
+        <DutyList title="Heavensward" :duties="db.hwExploration" />
       </div>
       <div class="col-lg">
-        <DutyList title="Heavensward" :duties="db.hwExploration" />
         <DutyList title="Stormblood" :duties="db.sbExploration" />
         <DutyList title="Shadowbringers" :duties="db.shbExploration" />
+        <DutyList title="Endwalker" :duties="db.ewExploration" />
       </div>
       <div class="col-lg">
         <DutyList title="Exploratory Missions" :duties="db.explExploration" />

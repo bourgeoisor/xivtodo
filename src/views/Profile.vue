@@ -134,6 +134,7 @@
             <JobLevel initial="whm" :title="$t('profile.job.whm')" type="healer" />
             <JobLevel initial="sch" :title="$t('profile.job.sch')" type="healer" />
             <JobLevel initial="ast" :title="$t('profile.job.ast')" type="healer" />
+            <JobLevel initial="sge" :title="$t('profile.job.sge')" type="healer" />
           </div>
         </div>
         <div class="info-block row">
@@ -147,6 +148,7 @@
             <JobLevel initial="rog" :title="$t('profile.job.rog')" type="dps" />
             <JobLevel initial="nin" :title="$t('profile.job.nin')" type="dps" />
             <JobLevel initial="sam" :title="$t('profile.job.sam')" type="dps" />
+            <JobLevel initial="rpr" :title="$t('profile.job.rpr')" type="dps" />
             <JobLevel initial="arc" :title="$t('profile.job.arc')" type="dps" />
             <JobLevel initial="brd" :title="$t('profile.job.brd')" type="dps" />
             <JobLevel initial="mch" :title="$t('profile.job.mch')" type="dps" />
