@@ -215,6 +215,12 @@
           type="trials"
           :showTotal="true"
         />
+        <DutyList
+          :title="$t('encounters.heTrials')"
+          :duties="db.ewTrialsEx"
+          type="high"
+          :showTotal="true"
+        />
       </div>
     </div>
   </div>
