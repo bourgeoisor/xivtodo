@@ -51,6 +51,19 @@ function injectData(characterData) {
 
   characterData.Jobs = {};
   for (let classJob of characterData.Character.ClassJobs) {
+    // @todo: fix this.
+    if (classJob.JobID == 0) {
+      if (classJob.Name == "Sage") {
+        characterData.Jobs["sge"] = classJob;
+      }
+
+      if (classJob.Name == "Reaper") {
+        characterData.Jobs["rpr"] = classJob;
+      }
+
+      continue;
+    }
+
     characterData.Jobs[jobInitials[classJob.JobID]] = classJob;
   }
 }
