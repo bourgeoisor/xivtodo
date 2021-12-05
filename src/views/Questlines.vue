@@ -46,14 +46,16 @@
 
       <div class="col-lg">
         <DutyList title="Combat Job Quests" :duties="db.combatJobQuests" />
-      </div>
-      <div class="col-lg">
         <DutyList title="Gatherer Job Quests" :duties="db.gathererJobQuests" />
         <DutyList title="Crafter Job Quests" :duties="db.crafterJobQuests" />
       </div>
       <div class="col-lg">
-        <DutyList title="Role Quests" :duties="db.roleQuests" />
+        <DutyList title="Role Quests - Shadowbringers" :duties="db.shbRoleQuests" />
+        <DutyList title="Role Quests - Endwalker" :duties="db.ewRoleQuests" />
+      </div>
+      <div class="col-lg">
         <DutyList title="Crystalline Mean Quests" :duties="db.crystallineMeanQuests" />
+        <DutyList title="Studium Delivery Quests" :duties="db.studiumDeliveryQuests" />
       </div>
     </div>
   </div>
