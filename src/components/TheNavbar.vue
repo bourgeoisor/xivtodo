@@ -268,10 +268,6 @@
 </template>
 
 <style lang="scss">
-.navbar-brand {
-  font-family: "Pacifico", cursive;
-}
-
 nav {
   margin-bottom: 10px;
 
