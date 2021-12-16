@@ -1,11 +1,6 @@
 {
-  "latestCountdownID": 4,
+  "latestCountdownID": 5,
   "countdowns": [
-    {
-      "title": "Endwalker",
-      "description": "General availability of the next expansion, Endwalker. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/bdd208b52ddababad086dc9679e96a8412962edf' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1638867600
-    },
     {
       "title": "Starlight Celebration",
       "description": "Seasonal Starlight event for 2021. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2021/The_Starlight_Celebration/mc0uc43gq6' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
