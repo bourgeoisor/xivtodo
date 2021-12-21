@@ -222,6 +222,14 @@
           :showTotal="true"
         />
       </div>
+      <div class="col-lg">
+        <DutyList
+          :title="$t('encounters.raids')"
+          :duties="db.ewRaids"
+          type="raids"
+          :showTotal="true"
+        />
+      </div>
     </div>
   </div>
 </template>
