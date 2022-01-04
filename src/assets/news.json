@@ -9,7 +9,7 @@
     },
     {
       "title": "Patch 6.05",
-      "description": "Release of patch 6.05, the treasure hunt instance Excitatron 6000 and the first Pandaemonium (Savage) raid tier, Asphodelos.",
+      "description": "Release of patch 6.05, the treasure hunt instance Excitatron 6000 and the first Pandaemonium (Savage) raid tier, Asphodelos. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/a03d26b7aca93ae712a2f0f298076f0dc763f7ad' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1641290400
     }
   ],
@@ -20,7 +20,7 @@
       "title": "Release of Endwalker",
       "published": "December 2, 2021",
       "content": "With Endwalker's impending release, I've started to add placeholders for the various additions that the expansion brings. I am working hard to make sure that XIV ToDo gets updated with Endwalker content as soon as possible! In the meantime, I hope to see you all once the game is up and running again!"
-  },
+    },
     {
         "ID": 210924,
         "title": "Rate-limiting update #2",
