@@ -1,22 +1,11 @@
 {
-  "latestCountdownID": 6,
+  "latestCountdownID": 7,
   "countdowns": [
-    {
-      "title": "Starlight Celebration",
-      "description": "Seasonal Starlight event for 2021. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2021/The_Starlight_Celebration/mc0uc43gq6' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1639641600,
-      "end": 1640962800
-    },
     {
       "title": "Heavensturn",
       "description": "Seasonal Heavensturn event for 2022. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/Heavensturn/22lsrul3tu' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1641369600,
       "end": 1642604400
-    },
-    {
-      "title": "Patch 6.01",
-      "description": "Release of patch 6.01 and the first Pandaemonium raid tier, Asphodelos. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/bba3f0b1f5c8d2708d7a126957ad76fb30c4eb71' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1640080800
     },
     {
       "title": "Patch 6.05",

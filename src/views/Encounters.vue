@@ -229,6 +229,12 @@
           type="raids"
           :showTotal="true"
         />
+        <DutyList
+          :title="$t('encounters.heRaids')"
+          :duties="db.ewRaidsSavUlt"
+          type="high"
+          :showTotal="true"
+        />
       </div>
     </div>
   </div>
