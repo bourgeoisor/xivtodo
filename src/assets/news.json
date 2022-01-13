@@ -1,15 +1,21 @@
 {
-  "latestCountdownID": 7,
+  "latestCountdownID": 8,
   "countdowns": [
     {
       "title": "Heavensturn",
-      "description": "Seasonal Heavensturn event for 2022. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/Heavensturn/22lsrul3tu' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "Seasonal Heavensturn event for 2022.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/Heavensturn/22lsrul3tu' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1641369600,
       "end": 1642604400
     },
     {
+      "title": "All Saints' Wake",
+      "description": "Seasonal All Saints' Wake event for 2022.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/All_Saints_Wake/rjk7wevhuy' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "start": 1642665600,
+      "end": 1643814000
+    },
+    {
       "title": "Patch 6.05",
-      "description": "Release of patch 6.05, the treasure hunt instance Excitatron 6000 and the first Pandaemonium (Savage) raid tier, Asphodelos. <a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/a03d26b7aca93ae712a2f0f298076f0dc763f7ad' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "Release of patch 6.05, the treasure hunt instance Excitatron 6000 and the first Pandaemonium (Savage) raid tier, Asphodelos.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/a03d26b7aca93ae712a2f0f298076f0dc763f7ad' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1641290400
     }
   ],
