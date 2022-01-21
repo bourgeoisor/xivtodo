@@ -11,7 +11,8 @@
     "help": "Help",
     "privacy": "Privacy Policy",
     "contact": "Contact",
-    "donate": "Donate"
+    "donate": "Donate",
+    "twitter": "Twitter"
   },
   "message": {
     "changeActiveCharacter": "Active character",

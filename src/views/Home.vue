@@ -32,13 +32,6 @@
         alt="XIV ToDo branding"
         width="300"
       />
-      <img
-        v-else
-        class="d-block mx-auto mb-4"
-        src="../assets/brand_black.png"
-        alt="XIV ToDo branding"
-        width="300"
-      />
       <h1 class="visually-hidden">XIV ToDo</h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">
@@ -190,6 +183,11 @@
                 {{ $t("home.viewGitHub") }}
               </button>
             </a>
+            <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
+              <button type="button" class="btn btn-outline-success btn-lg px-4 me-md-2">
+                {{ $t("page.donate") }}
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -198,11 +196,6 @@
 </template>
 
 <style lang="scss">
-#features-grid h4 {
-  text-decoration: underline;
-  text-decoration-color: #41b883;
-}
-
 #features-grid .bi {
   color: #41b883;
   font-size: 1.75em;

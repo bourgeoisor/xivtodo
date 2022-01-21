@@ -6,20 +6,6 @@
     </div>
     <div class="flex-fill text-center text-muted">
       <img src="../assets/brand_grey.png" alt="XIV ToDo branding" />
-      &nbsp;
-      <a
-        class="bi bi-twitter"
-        href="https://twitter.com/XIVToDo"
-        target="_blank"
-        rel="noopener noreferrer"
-      ></a>
-      &nbsp;
-      <a
-        class="bi bi-github"
-        href="https://github.com/bourgeoisor/xivtodo"
-        target="_blank"
-        rel="noopener noreferrer"
-      ></a>
       <br />
       <router-link to="/">
         <small>{{ $t("page.about") }}</small>
@@ -39,6 +25,10 @@
       ·
       <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
         <small>{{ $t("page.donate") }}</small>
+      </a>
+      ·
+      <a href="https://twitter.com/XIVToDo" target="_blank" rel="noopener noreferrer">
+        <small>{{ $t("page.twitter") }}</small>
       </a>
     </div>
     <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-4">
@@ -83,7 +73,7 @@ footer a {
 }
 
 footer img {
-  height: 1em;
+  height: 22px;
   margin-bottom: 5px;
   margin-top: 5px;
 }
