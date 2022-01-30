@@ -1,10 +1,16 @@
 <template>
-  <div
-    :class="{ night: this.$store.state.settings.nightMode }"
-    class="d-flex flex-column min-vh-100"
-  >
+  <div :class="{ night: true }" class="d-flex flex-column min-vh-100">
     <TheNavbar />
     <main class="flex-shrink-0">
+      <div
+        v-if="this.$store.state.characters && this.$store.state.characters.length > 0"
+        class="container"
+      >
+        <Alert type="normal" :msg="getMigrationMessage()" />
+      </div>
+      <div v-if="this.$store.state.signIn" class="container">
+        <Alert type="normal" msg="Signing in with Discord..." />
+      </div>
       <router-view />
     </main>
     <TheFooter />
@@ -240,13 +246,15 @@ hr {
 <script>
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import { fetchCharacterData } from "@/utilities/gcf.js";
+import Alert from "@/components/Alert.vue";
+// import { fetchCharacterData } from "@/utilities/gcf.js";
 
 export default {
   name: "App",
   components: {
     TheNavbar,
     TheFooter,
+    Alert,
   },
   mounted() {
     this.$nextTick(function () {
@@ -280,23 +288,59 @@ export default {
     setWindowTitle() {
       document.title = this.computeWindowTitle;
     },
-    updateCharactersData() {
-      let i = 0;
+    // @TODO: remove this after a few months
+    getMigrationMessage() {
+      let str =
+        "Since the last time you've used XIV ToDo, support for Discord sign ins was added.<br /><br />" +
+        "This means being able to sign in from multiple places (like both your desktop and your mobile), and keeping the data in-sync. " +
+        "To help you start out with the new account system, below is a list of your previously-added characters.<br />";
+
       for (let character of this.$store.state.characters) {
-        if (this.$store.getters.characterOutOfDate(i)) {
-          console.log("Updating data for " + character.characterData.Character.Name + "...");
-          fetchCharacterData(character.characterData.Character.ID)
-            .then((characterData) => {
-              this.$store.commit("addCharacter", characterData);
-              console.log("Data for " + character.characterData.Character.Name + " updated.");
-            })
-            .catch((err) => {
-              console.log(err);
-              this.error = err;
-            });
+        str +=
+          "<br />&nbsp;&nbsp;&nbsp;" +
+          "<a href='https://na.finalfantasyxiv.com/lodestone/character/" +
+          character.characterData.Character.ID +
+          "' class='alert-link'>" +
+          character.characterData.Character.Name +
+          "</a>";
+        if (character.todosCustomWeeklies && character.todosCustomWeeklies.length > 0) {
+          str += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom weeklies:";
+          for (let weekly of character.todosCustomWeeklies) {
+            str += " '" + weekly.Name + "'";
+          }
         }
-        i++;
+        if (character.todosCustomDailies && character.todosCustomDailies.length > 0) {
+          str += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom dailies:";
+          for (let weekly of character.todosCustomDailies) {
+            str += " '" + weekly.Name + "'";
+          }
+        }
       }
+
+      str +=
+        "<br /><br />Make sure to note this information down, as it will disappear once you <a href='" +
+        this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
+        "' class='alert-link'>sign in with Discord</a>.";
+
+      return str;
+    },
+    updateCharactersData() {
+      // let i = 0;
+      // for (let character of this.$store.state.characters) {
+      //   if (this.$store.getters.characterOutOfDate(i)) {
+      //     console.log("Updating data for " + character.characterData.Character.Name + "...");
+      //     fetchCharacterData(character.characterData.Character.ID)
+      //       .then((characterData) => {
+      //         this.$store.commit("addCharacter", characterData);
+      //         console.log("Data for " + character.characterData.Character.Name + " updated.");
+      //       })
+      //       .catch((err) => {
+      //         console.log(err);
+      //         this.error = err;
+      //       });
+      //   }
+      //   i++;
+      // }
     },
   },
 };

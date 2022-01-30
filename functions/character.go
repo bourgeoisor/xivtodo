@@ -42,20 +42,22 @@ func LodestoneCharacter(w http.ResponseWriter, r *http.Request) {
 	}
 	characterResponse.Character = character
 
-	achievements, allAchievementsInfo, err := scraper.FetchCharacterAchievements(uint32(id))
-	if err == nil {
-		characterResponse.Achievements = achievements
-		characterResponse.AllAchievementInfo = allAchievementsInfo
-	}
+	if r.URL.Query().Get("basic") != "true" {
+		achievements, allAchievementsInfo, err := scraper.FetchCharacterAchievements(uint32(id))
+		if err == nil {
+			characterResponse.Achievements = achievements
+			characterResponse.AllAchievementInfo = allAchievementsInfo
+		}
 
-	minions, err := scraper.FetchCharacterMinions(uint32(id))
-	if err == nil {
-		characterResponse.Minions = minions
-	}
+		minions, err := scraper.FetchCharacterMinions(uint32(id))
+		if err == nil {
+			characterResponse.Minions = minions
+		}
 
-	mounts, err := scraper.FetchCharacterMounts(uint32(id))
-	if err == nil {
-		characterResponse.Mounts = mounts
+		mounts, err := scraper.FetchCharacterMounts(uint32(id))
+		if err == nil {
+			characterResponse.Mounts = mounts
+		}
 	}
 
 	cJSON, err := json.Marshal(characterResponse)

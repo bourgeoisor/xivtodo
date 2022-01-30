@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="this.$store.getters.characterData.Jobs[this.initial]"
+    v-if="this.$store.getters.lodestoneData.Jobs[this.initial]"
     class="job-level fw-lighter user-select-none tt"
   >
     <span class="tt-text">{{ title }}</span>
@@ -16,27 +16,27 @@
     </span>
     <br />
     <span
-      v-if="this.$store.getters.characterData.Jobs[this.initial].Level == 0"
+      v-if="this.$store.getters.lodestoneData.Jobs[this.initial].Level == 0"
       class="text-secondary"
     >
       -
     </span>
     <span
-      v-else-if="this.$store.getters.characterData.Jobs[this.initial].Level == 90"
+      v-else-if="this.$store.getters.lodestoneData.Jobs[this.initial].Level == 90"
       class="fw-bold"
     >
-      {{ this.$store.getters.characterData.Jobs[this.initial].Level }}
+      {{ this.$store.getters.lodestoneData.Jobs[this.initial].Level }}
     </span>
     <span
       v-else-if="
-        this.$store.getters.characterData.Jobs[this.initial].Level == 70 && this.initial == 'blu'
+        this.$store.getters.lodestoneData.Jobs[this.initial].Level == 70 && this.initial == 'blu'
       "
       class="fw-bold"
     >
-      {{ this.$store.getters.characterData.Jobs[this.initial].Level }}
+      {{ this.$store.getters.lodestoneData.Jobs[this.initial].Level }}
     </span>
     <span v-else>
-      {{ this.$store.getters.characterData.Jobs[this.initial].Level }}
+      {{ this.$store.getters.lodestoneData.Jobs[this.initial].Level }}
     </span>
   </div>
 </template>

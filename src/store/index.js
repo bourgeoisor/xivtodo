@@ -1,19 +1,54 @@
 import { createStore } from "vuex";
-import router from "../router";
 
-export default createStore({
+const store = createStore({
   state: {
-    settings: {
-      spoilersOption: "1",
-      nightMode: true,
-    },
+    env: {},
+    userData: null,
     activeCharacterID: 0,
-    characters: [],
+
     latestNewsSeen: 0,
     latestNewsSeenPrevious: 0,
     latestCountdownSeen: 0,
   },
   getters: {
+    userData(state) {
+      return state.userData || null;
+    },
+    discordUser(state) {
+      return state.userData?.discordUser || {};
+    },
+    settings(state) {
+      return state.userData?.settings || {};
+    },
+    characters(state) {
+      return state.userData?.characters || [];
+    },
+    hasCharacter(state, getters) {
+      return getters.characters?.length > 0 || false;
+    },
+    activeCharacter(state, getters) {
+      if (state.activeCharacterID >= getters.characters.length) {
+        state.activeCharacterID = 0;
+      }
+
+      return getters.characters[state.activeCharacterID];
+    },
+    lodestoneData(state, getters) {
+      return getters.activeCharacter?.lodestoneData || {};
+    },
+    character(state, getters) {
+      return getters.activeCharacter?.lodestoneData?.Character || {};
+    },
+    achievements(state, getters) {
+      return getters.activeCharacter?.lodestoneData?.Achievements || [];
+    },
+    achievementsPublic(state, getters) {
+      return getters.activeCharacter?.lodestoneData?.Achievements?.length > 0 || false;
+    },
+
+
+
+    
     latestNewsSeen(state) {
       return state.latestNewsSeen || 0;
     },
@@ -23,46 +58,24 @@ export default createStore({
     latestCountdownSeen(state) {
       return state.latestCountdownSeen || 0;
     },
-    hasCharacter(state) {
-      return state.characters.length > 0;
-    },
-    activeCharacter(state) {
-      if (state.activeCharacterID >= state.characters.length) {
-        state.activeCharacterID = 0;
-      }
-
-      // console.log(router.currentRoute._value.name);
-      // console.log(router.currentRoute._value.params.id);
-      if (router.currentRoute._value.name == "Character") {
-        return null;
-      } else {
-        return state.characters[state.activeCharacterID];
-      }
-    },
     characterOutOfDateACT(state, getters) {
       return getters.characterOutOfDate(state.activeCharacterID);
     },
     characterOutOfDate: (state) => (id) => {
-      let now = new Date();
-      let msBeforeUpdate = 1000 * 60 * 60 * 48; // 48 hours
+      if (state) {
+        id;
+      }
+      return false;
+    },
+    // characterOutOfDate: (state) => (id) => {
+    //   let now = new Date();
+    //   let msBeforeUpdate = 1000 * 60 * 60 * 48; // 48 hours
 
-      return (
-        state.characters[id].modelVersion != "v2" ||
-        now > state.characters[id].lastUpdated + msBeforeUpdate
-      );
-    },
-    characterData(state, getters) {
-      return getters.activeCharacter?.characterData || {};
-    },
-    character(state, getters) {
-      return getters.activeCharacter?.characterData?.Character || {};
-    },
-    achievements(state, getters) {
-      return getters.activeCharacter?.characterData?.Achievements || [];
-    },
-    achievementsPublic(state, getters) {
-      return getters.activeCharacter?.characterData?.Achievements?.length > 0 || false;
-    },
+    //   return (
+    //     state.characters[id].modelVersion != "v2" ||
+    //     now > state.characters[id].lastUpdated + msBeforeUpdate
+    //   );
+    // },
     todosChecked(state, getters) {
       return getters.activeCharacter?.todosChecked || [];
     },
@@ -87,7 +100,63 @@ export default createStore({
       if (localStorage.getItem("store")) {
         this.replaceState(Object.assign(state, JSON.parse(localStorage.getItem("store"))));
       }
+
+      state.env = process.env;
     },
+
+    signIn(state) {
+      delete state.characters;
+      delete state.characterData;
+      delete state.latestNewsSeen;
+      delete state.latestNewsSeenPrevious;
+      delete state.latestCountdownSeen;
+      delete state.settings;
+      delete state.todosChecked;
+      delete state.todosHidden;
+      delete state.todosNextDailyReset;
+      delete state.todosNextWeeklyReset;
+
+      state.signIn = true;
+    },
+
+    setUserData(state, payload) {
+      state.userData = { ...payload };
+      if (state.userData.characters == null) {
+        state.userData.characters = [];
+      }
+
+      delete state.signIn;
+    },
+    deleteUserData(state) {
+      state.userData = null;
+    },
+    addCharacter(state, payload) {
+      for (let i = 0; i < state.userData.characters.length; i++) {
+        if (
+          state.userData.characters[i].lodestoneData.Character.ID ==
+          payload.lodestoneData.Character.ID
+        ) {
+          return;
+        }
+      }
+
+      state.userData.characters.push(payload);
+      state.activeCharacterID = state.userData.characters.length - 1;
+    },
+    removeCharacter(state, payload) {
+      state.userData.characters.splice(payload, 1);
+      if (state.activeCharacterID == payload) {
+        state.activeCharacterID = 0;
+      }
+    },
+    changeActiveCharacter(state, payload) {
+      state.activeCharacterID = payload;
+    },
+
+
+
+
+
     updateSettings(state, payload) {
       state.settings = { ...payload };
     },
@@ -97,36 +166,6 @@ export default createStore({
     },
     seenLatestCountdown(state, payload) {
       state.latestCountdownSeen = payload;
-    },
-    addCharacter(state, payload) {
-      // If character already loaded, update it.
-      for (let i = 0; i < state.characters.length; i++) {
-        if (state.characters[i].characterData.Character.ID == payload.Character.ID) {
-          state.characters[i].characterData = payload;
-          state.characters[i].lastUpdated = parseInt(Date.now());
-          state.characters[i].modelVersion = "v2";
-          return;
-        }
-      }
-
-      // Else, create a new character entry.
-      let character = {
-        characterData: payload,
-        lastUpdated: parseInt(Date.now()),
-        modelVersion: "v2",
-      };
-
-      state.characters.push(character);
-      state.activeCharacterID = state.characters.length - 1;
-    },
-    removeCharacter(state, payload) {
-      state.characters.splice(payload, 1);
-      if (state.activeCharacterID == payload) {
-        state.activeCharacterID = 0;
-      }
-    },
-    changeActiveCharacter(state, payload) {
-      state.activeCharacterID = payload;
     },
     todoChecked(state, payload) {
       if (state.characters[state.activeCharacterID].todosChecked == null) {
@@ -218,3 +257,5 @@ export default createStore({
   actions: {},
   modules: {},
 });
+
+export default store;

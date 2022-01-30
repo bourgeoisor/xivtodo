@@ -16,7 +16,16 @@
       </span>
     </h1>
     <Alert
-      v-if="!this.$store.getters.hasCharacter"
+      v-if="!this.$store.getters.userData"
+      type="normal"
+      :msg="
+        'No characters found. You can <a href=\'' +
+        this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
+        '\' class=\'alert-link\'>sign in with Discord</a> to add them.'
+      "
+    />
+    <Alert
+      v-else-if="!this.$store.getters.hasCharacter"
       type="normal"
       msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
     />

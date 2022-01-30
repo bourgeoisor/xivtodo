@@ -23,17 +23,17 @@
         <small>{{ $t("page.contact") }}</small>
       </a>
       ·
-      <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
-        <small>{{ $t("page.donate") }}</small>
-      </a>
-      ·
       <a href="https://twitter.com/XIVToDo" target="_blank" rel="noopener noreferrer">
         <small>{{ $t("page.twitter") }}</small>
       </a>
+      ·
+      <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
+        <small>{{ $t("page.donate") }}</small>
+      </a>
     </div>
     <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-4">
-      {{ $t("footer.buildVersion", { buildNum: buildNum }) }}<br />
-      {{ $t("footer.buildDate", { buildDate: buildDate }) }}
+      {{ $t("footer.buildVersion", { buildNum: this.$store.state.env.VUE_APP_BUILD_NUM }) }}<br />
+      {{ $t("footer.buildDate", { buildDate: this.$store.state.env.VUE_APP_BUILD_DATE }) }}
     </div>
   </footer>
 </template>
@@ -82,11 +82,5 @@ footer img {
 <script>
 export default {
   Name: "TheFooter",
-  data() {
-    return {
-      buildNum: process.env.VUE_APP_BUILD_NUM,
-      buildDate: process.env.VUE_APP_BUILD_DATE,
-    };
-  },
 };
 </script>

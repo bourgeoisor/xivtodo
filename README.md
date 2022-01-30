@@ -44,6 +44,13 @@ npm run lint
 vue ui
 ```
 
+```
+// @TODO: talk about Go env
+GOOGLE_APPLICATION_CREDENTIALS=
+DISCORD_CLIENT_SECRET=
+DISCORD_REDIRECT_URI=
+```
+
 ## Contributing
 
 Contributions are welcome and appreciated. Simply open up a new issue, or fork the repository to open up a new pull request against the upstream main branch.

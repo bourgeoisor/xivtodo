@@ -101,7 +101,7 @@
             </b>
             <br />
             <i class="bi bi-arrow-return-right text-muted"></i>
-            {{ new Date(this.$store.getters.characterData.PlayingSince).toDateString() }}
+            {{ new Date(this.$store.getters.lodestoneData.PlayingSince).toDateString() }}
           </div>
           <div class="info-block">
             <b>{{ $t("profile.achievements") }}</b>

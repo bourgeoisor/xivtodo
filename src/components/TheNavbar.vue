@@ -110,10 +110,10 @@
                 </span>
               </a>
             </li>
-            <li v-if="!this.$store.getters.hasCharacter" class="nav-item">
-              <router-link to="/settings" class="nav-link" @click="collapseNav">
-                {{ $t("page.settings") }}
-              </router-link>
+            <li v-if="!this.$store.getters.userData" class="nav-item">
+              <a class="nav-link" :href="this.$store.state.env.VUE_APP_DISCORD_AUTH_URI">
+                Sign in with Discord
+              </a>
             </li>
             <li v-else class="nav-item dropdown">
               <a
@@ -124,26 +124,46 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {{ this.$store.getters.characterData.Character.Name }}
+                <span v-if="this.$store.getters.hasCharacter">
+                  {{ this.$store.getters.lodestoneData.Character.Name }}
+                </span>
+                <span v-else>
+                  {{ $t("page.settings") }}
+                </span>
               </a>
               <ul
                 class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
                 aria-labelledby="navbarDropdown"
               >
+                <div v-if="this.$store.getters.hasCharacter">
+                  <li>
+                    <h6 class="dropdown-header">{{ $t("message.changeActiveCharacter") }}</h6>
+                  </li>
+                  <li v-for="(item, i) of this.$store.getters.characters" :key="item.ID">
+                    <span
+                      v-if="i == this.$store.state.activeCharacterID"
+                      class="dropdown-item active"
+                    >
+                      <b>{{ item.lodestoneData.Character.Name }}</b>
+                      – {{ item.lodestoneData.Character.World }} <span class="bi-check" />
+                    </span>
+                    <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
+                      <b>{{ item.lodestoneData.Character.Name }}</b>
+                      – {{ item.lodestoneData.Character.World }}
+                    </a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                </div>
                 <li>
-                  <h6 class="dropdown-header">{{ $t("message.changeActiveCharacter") }}</h6>
+                  <h6 class="dropdown-header">
+                    {{ this.$store.getters.discordUser.username }}#{{
+                      this.$store.getters.discordUser.discriminator
+                    }}
+                  </h6>
                 </li>
-                <li v-for="(item, i) of this.$store.state.characters" :key="item.ID">
-                  <span
-                    v-if="i == this.$store.state.activeCharacterID"
-                    class="dropdown-item active"
-                  >
-                    <b>{{ item.characterData.Character.Name }}</b>
-                    – {{ item.characterData.Character.World }} <span class="bi-check" />
-                  </span>
-                  <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
-                    <b>{{ item.characterData.Character.Name }}</b>
-                    – {{ item.characterData.Character.World }}
+                <li>
+                  <a class="dropdown-item cursor-pointer" @click="signOut">
+                    <span class="bi-power" /> Sign out
                   </a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
@@ -340,6 +360,10 @@ export default {
     };
   },
   methods: {
+    signOut() {
+      this.$store.commit("deleteUserData");
+      this.$router.push("/");
+    },
     collapseNav() {
       let navCollapse = document.getElementById("navbarSupportedContent");
       navCollapse.classList.remove("show");

@@ -1,0 +1,144 @@
+package models
+
+import (
+	"server/models/gcrank"
+	"server/models/gender"
+	"time"
+)
+
+type DiscordAuthResponse struct {
+	AccessToken      string `json:"access_token"`
+	ExpiresIn        int    `json:"expires_in"`
+	RefreshToken     string `json:"refresh_token"`
+	Scope            string `json:"scope"`
+	TokenType        string `json:"token_type"`
+	Error            string `json:"error"`
+	ErrorDescription string `json:"error_description"`
+}
+
+type DiscordUser struct {
+	ID            string `json:"id"`
+	Username      string `json:"username"`
+	Discriminator string `json:"discriminator"`
+}
+
+type User struct {
+	DiscordUser         *DiscordUser `json:"discordUser"`
+	Characters          []*Character `json:"characters"`
+	Settings            *Settings    `json:"settings"`
+	LatestNewsSeen      int          `json:"latestNewsSeen"`
+	LatestCountdownSeen int          `json:"latestCountdownSeen"`
+}
+
+type Settings struct {
+	AuthorizationCode  string `json:"authorizationCode"`
+	CharacterClaimCode string `json:"characterClaimCode"`
+	SpoilersOption     int    `json:"spoilersOption"`
+}
+
+type Character struct {
+	Updated       int64             `json:"updated"`
+	LodestoneData *LodestoneProfile `json:"lodestoneData"`
+	//ChecklistData *ChecklistData
+	//EncounterData *EncounterData
+}
+
+type LodestoneProfile struct {
+	Achievements       []*AchievementInfo
+	AllAchievementInfo *AllAchievementInfo
+	Character          *CharacterData
+	Minions            []*Minion
+	Mounts             []*Mount
+}
+
+type CharacterData struct {
+	ActiveClassJob    *ClassJob
+	Avatar            string
+	Bio               string
+	ClassJobs         []*ClassJob
+	ClassJobBozjan    *ClassJobBozja
+	ClassJobElemental *ClassJobEureka
+	DC                string
+	FreeCompanyID     string
+	FreeCompanyName   string
+	//GearSet           *GearSet
+	Gender           gender.Gender
+	GrandCompanyInfo *GrandCompanyInfo
+	GuardianDeity    *IconedNamedEntity
+	ID               uint32
+	Name             string
+	Nameday          string
+	ParseDate        time.Time
+	Portrait         string
+	PvPTeamID        string
+	Race             *GenderedEntity
+	Title            *Title
+	Town             *IconedNamedEntity
+	Tribe            *GenderedEntity
+	World            string
+}
+
+type ClassJob struct {
+	ClassID       uint8
+	ExpLevel      uint32
+	ExpLevelMax   uint32
+	ExpLevelTogo  uint32
+	IsSpecialized bool
+	JobID         uint8
+	Level         uint8
+	Name          string
+	UnlockedState ClassJobUnlockedState
+}
+
+type AchievementInfo struct {
+	*NamedEntity
+	Date time.Time
+}
+
+type AllAchievementInfo struct {
+	Private                bool
+	TotalAchievements      uint32
+	TotalAchievementPoints uint32
+}
+
+type ClassJobBozja struct {
+	Level  uint8
+	Mettle uint32
+	//mettleRaw *colly.HTMLElement // TODO: https://github.com/xivapi/godestone/issues/17
+	Name string
+}
+
+type ClassJobEureka struct {
+	ExpLevel     uint32
+	ExpLevelMax  uint32
+	ExpLevelTogo uint32
+	Level        uint8
+	Name         string
+}
+
+type ClassJobUnlockedState struct {
+	ID   uint8
+	Name string
+}
+
+type GrandCompanyInfo struct {
+	GrandCompany *NamedEntity
+	RankID       gcrank.GCRank
+}
+
+type Title struct {
+	*TitleInternal
+}
+
+type Minion struct {
+	*IconedNamedEntity
+}
+
+type Mount struct {
+	*IconedNamedEntity
+}
+
+type TitleInternal struct {
+	*GenderedEntity
+	Prefix bool
+}

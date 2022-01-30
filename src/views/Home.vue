@@ -26,7 +26,6 @@
     </div> -->
     <div class="px-4 py-4 my-4 text-center">
       <img
-        v-if="this.$store.state.settings.nightMode"
         class="d-block mx-auto mb-4"
         src="../assets/brand.png"
         alt="XIV ToDo branding"
@@ -39,11 +38,16 @@
         </p>
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
           <template v-if="!this.$store.getters.hasCharacter">
-            <router-link to="/settings">
+            <router-link v-if="this.$store.getters.userData" to="/settings">
               <button type="button" class="btn btn-success btn-lg px-4 gap-3">
                 {{ $t("home.addCharacter") }}
               </button>
             </router-link>
+            <a v-else :href="this.$store.state.env.VUE_APP_DISCORD_AUTH_URI">
+              <button type="button" class="btn btn-success btn-lg px-4 gap-3">
+                Sign in with Discord
+              </button>
+            </a>
             <button
               type="button"
               class="btn btn-outline-secondary btn-lg px-4"
