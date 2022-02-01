@@ -170,8 +170,10 @@ export default {
     weeklyResetTime() {
       let now = new Date();
       let then = new Date();
+
       then.setUTCHours(8, 0, 0);
-      then.setDate(now.getDate() + (7 + 2 - now.getDay()));
+      then.setUTCDate(now.getUTCDate() + (7 + 2 - now.getUTCDay()));
+      
 
       let diff = then - now;
       let delta = 1000 * 60 * 60 * 24 * 7;
@@ -182,7 +184,7 @@ export default {
       let now = new Date();
       let then = new Date();
       then.setUTCHours(15, 0, 0);
-      then.setUTCDate(then.getDate() + 1);
+      then.setUTCDate(then.getUTCDate() + 1);
 
       let diff = then - now;
       let delta = 1000 * 60 * 60 * 24;
