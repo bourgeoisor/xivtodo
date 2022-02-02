@@ -1,11 +1,17 @@
 {
-  "latestCountdownID": 9,
+  "latestCountdownID": 10,
   "countdowns": [
     {
       "title": "All Saints' Wake",
       "description": "Seasonal All Saints' Wake event for 2022.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/All_Saints_Wake/rjk7wevhuy' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1642665600,
       "end": 1643814000
+    },
+    {
+      "title": "Valentione's Day",
+      "description": "Seasonal Valentione's Day event for 2022.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/Valentiones_Day/wcm6ffa3hm' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "start": 1644307200,
+      "end": 1645455600
     },
     {
       "title": "Letter from the Producer LIVE Part LXVIII",
