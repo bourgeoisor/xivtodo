@@ -22,11 +22,6 @@
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <router-link to="/" class="nav-link" @click="collapseNav">
-                {{ $t("page.home") }}
-              </router-link>
-            </li>
             <li v-if="this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/profile" class="nav-link" @click="collapseNav">
                 {{ $t("page.profile") }}
@@ -295,14 +290,6 @@ span.nav-link:hover {
 .navbar-dark .navbar-nav .nav-link:hover {
   color: rgba(255, 255, 255, 1);
   text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 7px;
-}
-
-.navbar-dark .navbar-nav .nav-link.active {
-  color: #a1ff7f;
-  text-decoration: underline;
-  text-decoration-thickness: auto;
   text-decoration-thickness: 2px;
   text-underline-offset: 7px;
 }
