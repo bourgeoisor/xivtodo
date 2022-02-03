@@ -5,7 +5,7 @@
       {{ $t("footer.copyright") }}
     </div>
     <div class="flex-fill text-center text-muted">
-      <img src="../assets/brand_grey.png" alt="XIV ToDo branding" />
+      <img src="../assets/brand.png" alt="XIV ToDo branding" />
       <br />
       <router-link to="/">
         <small>{{ $t("page.about") }}</small>
@@ -23,12 +23,16 @@
         <small>{{ $t("page.contact") }}</small>
       </a>
       ·
+      <a href="https://github.com/bourgeoisor/xivtodo" target="_blank" rel="noopener noreferrer">
+        <small>{{ $t("page.github") }}</small>
+      </a>
+      ·
       <a href="https://twitter.com/XIVToDo" target="_blank" rel="noopener noreferrer">
         <small>{{ $t("page.twitter") }}</small>
       </a>
-      ·
+      <br />
       <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
-        <small>{{ $t("page.donate") }}</small>
+        <small>{{ $t("page.donate") }} <i class="bi bi-balloon-heart"></i></small>
       </a>
     </div>
     <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-4">
@@ -76,6 +80,13 @@ footer img {
   height: 22px;
   margin-bottom: 5px;
   margin-top: 5px;
+  filter: brightness(70%) grayscale(100%);
+  -webkit-filter: brightness(70%) grayscale(100%);
+}
+
+footer img:hover {
+  filter: brightness(100%) grayscale(0%);
+  -webkit-filter: brightness(100%) grayscale(0%);
 }
 </style>
 

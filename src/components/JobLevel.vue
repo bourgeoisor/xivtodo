@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="this.$store.getters.lodestoneData.Jobs[this.initial]"
-    class="job-level fw-lighter user-select-none tt"
+    class="job-level text-center fw-lighter user-select-none tt"
   >
     <span class="tt-text">{{ title }}</span>
     <span

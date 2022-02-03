@@ -97,7 +97,9 @@
           <br />
           <div class="info-block">
             <b>
-              <abbr title="Does not include 1.0">{{ $t("profile.playingSince") }}</abbr>
+              <abbr title="May not be accurate for legacy characters">
+                {{ $t("profile.playingSince") }}
+              </abbr>
             </b>
             <br />
             <i class="bi bi-arrow-return-right text-muted"></i>
@@ -117,7 +119,7 @@
         <div class="info-block row">
           <b>{{ $t("profile.tanks") }}</b>
           <br />
-          <div class="text-center pt-1">
+          <div class="pt-1">
             <JobLevel initial="gla" :title="$t('profile.job.gla')" type="tank" />
             <JobLevel initial="pld" :title="$t('profile.job.pld')" type="tank" />
             <JobLevel initial="mrd" :title="$t('profile.job.mrd')" type="tank" />
@@ -129,7 +131,7 @@
         <div class="info-block row">
           <b>{{ $t("profile.healers") }}</b>
           <br />
-          <div class="text-center pt-1">
+          <div class="pt-1">
             <JobLevel initial="cnj" :title="$t('profile.job.cnj')" type="healer" />
             <JobLevel initial="whm" :title="$t('profile.job.whm')" type="healer" />
             <JobLevel initial="sch" :title="$t('profile.job.sch')" type="healer" />
@@ -140,31 +142,35 @@
         <div class="info-block row">
           <b>{{ $t("profile.dps") }}</b>
           <br />
-          <div class="text-center pt-1">
-            <JobLevel initial="pgl" :title="$t('profile.job.pgl')" type="dps" />
-            <JobLevel initial="mnk" :title="$t('profile.job.mnk')" type="dps" />
-            <JobLevel initial="lnc" :title="$t('profile.job.lnc')" type="dps" />
-            <JobLevel initial="drg" :title="$t('profile.job.drg')" type="dps" />
-            <JobLevel initial="rog" :title="$t('profile.job.rog')" type="dps" />
-            <JobLevel initial="nin" :title="$t('profile.job.nin')" type="dps" />
-            <JobLevel initial="sam" :title="$t('profile.job.sam')" type="dps" />
-            <JobLevel initial="rpr" :title="$t('profile.job.rpr')" type="dps" />
-            <JobLevel initial="arc" :title="$t('profile.job.arc')" type="dps" />
-            <JobLevel initial="brd" :title="$t('profile.job.brd')" type="dps" />
-            <JobLevel initial="mch" :title="$t('profile.job.mch')" type="dps" />
-            <JobLevel initial="dnc" :title="$t('profile.job.dnc')" type="dps" />
-            <JobLevel initial="thm" :title="$t('profile.job.thm')" type="dps" />
-            <JobLevel initial="blm" :title="$t('profile.job.blm')" type="dps" />
-            <JobLevel initial="acn" :title="$t('profile.job.acn')" type="dps" />
-            <JobLevel initial="smn" :title="$t('profile.job.smn')" type="dps" />
-            <JobLevel initial="rdm" :title="$t('profile.job.rdm')" type="dps" />
-            <JobLevel initial="blu" :title="$t('profile.job.blu')" type="dps" />
+          <div class="pt-1">
+            <div style="display: inline-block">
+              <JobLevel initial="pgl" :title="$t('profile.job.pgl')" type="dps" />
+              <JobLevel initial="mnk" :title="$t('profile.job.mnk')" type="dps" />
+              <JobLevel initial="lnc" :title="$t('profile.job.lnc')" type="dps" />
+              <JobLevel initial="drg" :title="$t('profile.job.drg')" type="dps" />
+              <JobLevel initial="rog" :title="$t('profile.job.rog')" type="dps" />
+              <JobLevel initial="nin" :title="$t('profile.job.nin')" type="dps" />
+              <JobLevel initial="sam" :title="$t('profile.job.sam')" type="dps" />
+              <JobLevel initial="rpr" :title="$t('profile.job.rpr')" type="dps" />
+              <JobLevel initial="arc" :title="$t('profile.job.arc')" type="dps" />
+              <JobLevel initial="brd" :title="$t('profile.job.brd')" type="dps" />
+            </div>
+            <div style="display: inline-block">
+              <JobLevel initial="mch" :title="$t('profile.job.mch')" type="dps" />
+              <JobLevel initial="dnc" :title="$t('profile.job.dnc')" type="dps" />
+              <JobLevel initial="thm" :title="$t('profile.job.thm')" type="dps" />
+              <JobLevel initial="blm" :title="$t('profile.job.blm')" type="dps" />
+              <JobLevel initial="acn" :title="$t('profile.job.acn')" type="dps" />
+              <JobLevel initial="smn" :title="$t('profile.job.smn')" type="dps" />
+              <JobLevel initial="rdm" :title="$t('profile.job.rdm')" type="dps" />
+              <JobLevel initial="blu" :title="$t('profile.job.blu')" type="dps" />
+            </div>
           </div>
         </div>
         <div class="info-block row">
           <b>{{ $t("profile.crafters") }}</b>
           <br />
-          <div class="text-center pt-1">
+          <div class="pt-1">
             <JobLevel initial="crp" :title="$t('profile.job.crp')" type="crafter" />
             <JobLevel initial="bsm" :title="$t('profile.job.bsm')" type="crafter" />
             <JobLevel initial="arm" :title="$t('profile.job.arm')" type="crafter" />
@@ -178,7 +184,7 @@
         <div class="info-block row">
           <b>{{ $t("profile.gatherers") }}</b>
           <br />
-          <div class="text-center pt-1">
+          <div class="pt-1">
             <JobLevel initial="min" :title="$t('profile.job.min')" type="gatherer" />
             <JobLevel initial="btn" :title="$t('profile.job.btn')" type="gatherer" />
             <JobLevel initial="fsh" :title="$t('profile.job.fsh')" type="gatherer" />

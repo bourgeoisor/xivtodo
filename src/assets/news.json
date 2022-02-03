@@ -1,16 +1,22 @@
 {
-  "latestCountdownID": 8,
+  "latestCountdownID": 10,
   "countdowns": [
     {
-      "title": "All Saints' Wake",
-      "description": "Seasonal All Saints' Wake event for 2022.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/All_Saints_Wake/rjk7wevhuy' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1642665600,
-      "end": 1643814000
+      "title": "Valentione's Day",
+      "description": "Seasonal Valentione's Day event for 2022.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/Valentiones_Day/wcm6ffa3hm' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "start": 1644307200,
+      "end": 1645455600
     },
     {
-      "title": "Patch 6.05",
-      "description": "Release of patch 6.05, the treasure hunt instance Excitatron 6000 and the first Pandaemonium (Savage) raid tier, Asphodelos.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/a03d26b7aca93ae712a2f0f298076f0dc763f7ad' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1641290400
+      "title": "Letter from the Producer LIVE Part LXVIII",
+      "description": "The next Letter from the Producer LIVE focuses on what's in store for the future of FFXIV.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/5175441f879605c8dfcde948dae13fbfd00f760b' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "start": 1645236000,
+      "end": 1645246800
+    },
+    {
+      "title": "Patch 6.08",
+      "description": "Release of patch 6.08, which brings a number of additions and refinements to the realm, and marks the opening of the Oceanian data center.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/9325d2a5dae2ac34b9f970c803848e8fb1c3aaf7' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "start": 1643104800
     }
   ],
   "latestID": 211202,

@@ -167,7 +167,6 @@
               <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer">
                 {{ $t("home.about.name") }}
               </a>
-              <span class="font-monospace">{{ $t("home.about.repo") }}</span>
               <a
                 href="https://forms.gle/2t5nLB28xDyi3Tn6A"
                 target="_blank"
@@ -178,18 +177,9 @@
             </i18n-t>
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a
-              href="https://github.com/bourgeoisor/xivtodo"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4 me-md-2">
-                {{ $t("home.viewGitHub") }}
-              </button>
-            </a>
             <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
-              <button type="button" class="btn btn-outline-success btn-lg px-4 me-md-2">
-                {{ $t("page.donate") }}
+              <button type="button" class="btn btn-success btn-lg px-4 me-md-2">
+                <i class="bi bi-chat-heart"></i> {{ $t("page.donate") }}
               </button>
             </a>
           </div>
