@@ -53,6 +53,18 @@
       </div>
     </div>
     <div class="row">
+      <h2>Aether Currents</h2>
+      
+      <div class="col-lg">
+        <DutyList title="Heavensward" :duties="db.hwFreebird" />
+        <DutyList title="Stormblood" :duties="db.sbFreebird" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="Shadowbringers" :duties="db.shbFreebird" />
+        <DutyList title="Endwalker" :duties="db.ewFreebird" />
+      </div>
+    </div>
+    <div class="row">
       <h2>Blue Mage</h2>
 
       <div class="col-lg">
