@@ -167,12 +167,6 @@ h3 {
   }
 }
 
-.row h2 {
-  text-decoration: underline;
-  text-decoration-color: #dddddd;
-  text-decoration-thickness: 2px;
-}
-
 hr {
   height: 0px;
   border: none;
