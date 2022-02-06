@@ -35,6 +35,7 @@
         <DutyList title="Heaven-on-High (Solo)" :duties="db.hohSolo" />
       </div>
     </div>
+    <hr />
     <div class="row">
       <h2>Exploration</h2>
 
@@ -52,26 +53,35 @@
         <DutyList title="Sightseeing Logs" :duties="db.sightseeingLogs" />
       </div>
     </div>
+    <hr />
+    <div class="row">
+      <h2>Miscellaneous</h2>
+
+      <div class="col-lg">
+        <DutyList title="Shared FATE (ShB)" :duties="db.shbSharedFATE" />
+        <DutyList title="Shared FATE (EW)" :duties="db.ewSharedFATE" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="Bozjan Southern Front" :duties="db.bozjanChallenges" />
+        <DutyList title="Zadnor" :duties="db.zadnorChallenges" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="Treasure Hunt Clears" :duties="db.treasureHunts" />
+      </div>
+    </div>
+    <hr />
     <div class="row">
       <h2>Blue Mage</h2>
 
       <div class="col-lg">
-        <DutyList title="BLU Encounters (A Realm Reborn)" :duties="db.arrBlu" />
-        <DutyList title="BLU Encounters (Heavensward)" :duties="db.hwBlu" />
-        <DutyList title="BLU Encounters (Stormblood)" :duties="db.sbBlu" />
+        <DutyList title="BLU Encounters (ARR)" :duties="db.arrBlu" />
+        <DutyList title="BLU Encounters (HW)" :duties="db.hwBlu" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="BLU Encounters (SB)" :duties="db.sbBlu" />
       </div>
       <div class="col-lg">
         <DutyList title="Masked Carnivale" :duties="db.maskedCarnivale" />
-      </div>
-    </div>
-    <div class="row">
-      <h2>Shared FATE</h2>
-
-      <div class="col-lg">
-        <DutyList title="Shadowbringers" :duties="db.shbSharedFATE" />
-      </div>
-      <div class="col-lg">
-        <DutyList title="Endwalker" :duties="db.ewSharedFATE" />
       </div>
     </div>
   </div>
