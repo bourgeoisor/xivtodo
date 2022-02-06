@@ -30,7 +30,8 @@ func LodestoneCharacter(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.ParseUint(r.URL.Query().Get("id"), 10, 32)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
-		log.Fatalln(err)
+		log.Println(err)
+		return
 	}
 
 	characterResponse := CharacterResponse{}
@@ -38,7 +39,8 @@ func LodestoneCharacter(w http.ResponseWriter, r *http.Request) {
 	character, err := scraper.FetchCharacter(uint32(id))
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
-		log.Fatalln(err)
+		log.Println(err)
+		return
 	}
 	characterResponse.Character = character
 
