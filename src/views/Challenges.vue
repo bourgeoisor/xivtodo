@@ -64,6 +64,16 @@
         <DutyList title="Masked Carnivale" :duties="db.maskedCarnivale" />
       </div>
     </div>
+    <div class="row">
+      <h2>Shared FATE</h2>
+
+      <div class="col-lg">
+        <DutyList title="Shadowbringers" :duties="db.shbSharedFATE" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="Endwalker" :duties="db.ewSharedFATE" />
+      </div>
+    </div>
   </div>
 </template>
 
