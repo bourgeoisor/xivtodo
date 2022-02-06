@@ -89,7 +89,7 @@ const fetchCharacterData = (id) =>
           reject("The character profile you have entered does not exist.");
         } else {
           reject(
-            "Could not reach Lodestone; There may be an ongoing maintenance. Please try again later."
+            "Could not reach Lodestone. There may be an ongoing maintenance, or an ad-blocker extension may be blocking the request. Please try again later."
           );
         }
       });
