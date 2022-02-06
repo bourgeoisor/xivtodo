@@ -27,10 +27,11 @@ const routes = [
         })
         .catch((err) => {
           // @TODO: handle rendering error to user
+          store.commit("signIn", false);
           console.log(err);
         });
 
-      store.commit("signIn");
+      store.commit("signIn", true);
       next("Home");
     },
   },

@@ -75,7 +75,6 @@ function injectData(characterData) {
 
 const authenticate = (code) =>
   new Promise((resolve, reject) => {
-    console.log(apiEndpoint + "/auth?code=" + code);
     fetch(apiEndpoint + "/auth?code=" + code, {
       method: "GET",
     })

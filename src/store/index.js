@@ -104,7 +104,7 @@ const store = createStore({
       state.env = process.env;
     },
 
-    signIn(state) {
+    signIn(state, payload) {
       delete state.characters;
       delete state.characterData;
       delete state.latestNewsSeen;
@@ -116,7 +116,7 @@ const store = createStore({
       delete state.todosNextDailyReset;
       delete state.todosNextWeeklyReset;
 
-      state.signIn = true;
+      state.signIn = payload;
     },
 
     setUserData(state, payload) {
