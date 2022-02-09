@@ -67,6 +67,23 @@
       </div>
       <div class="col-lg">
         <DutyList title="Treasure Hunt Clears" :duties="db.treasureHunts" />
+        <DutyList title="Trusts" :duties="db.trusts" />
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <h2>Achievement FATEs</h2>
+
+      <div class="col-lg">
+        <DutyList title="A Realm Reborn" :duties="db.arrFATEs" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="Heavensward" :duties="db.hwFATEs" />
+        <DutyList title="Stormblood" :duties="db.sbFATEs" />
+      </div>
+      <div class="col-lg">
+        <DutyList title="Shadowbringer" :duties="db.shbFATEs" />
+        <DutyList title="Endwalker" :duties="db.ewFATEs" />
       </div>
     </div>
     <hr />
