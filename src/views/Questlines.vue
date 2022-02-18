@@ -33,17 +33,17 @@
     <div class="row">
       <h2>Stories</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Main Story Quest" :duties="db.mainStoryQuest" />
       </div>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Side Story Quests" :duties="db.sideStoryQuests" />
         <DutyList title="Encounter Quests" :duties="db.dutiesQuests" />
         <DutyList title="Relic Quests" :duties="db.relicQuests" />
       </div>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Beast Tribe Quests" :duties="db.beastTribeQuests" />
         <DutyList title="Allied Beast Tribe Quests" :duties="db.alliedBeastTribeQuests" />
         <DutyList title="Custom Delivery Quests" :duties="db.customDeliveryQuests" />
@@ -53,16 +53,16 @@
     <div class="row">
       <h2>Job Quests</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Combat Job Quests" :duties="db.combatJobQuests" />
         <DutyList title="Gatherer Job Quests" :duties="db.gathererJobQuests" />
         <DutyList title="Crafter Job Quests" :duties="db.crafterJobQuests" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Role Quests - Shadowbringers" :duties="db.shbRoleQuests" />
         <DutyList title="Role Quests - Endwalker" :duties="db.ewRoleQuests" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Crystalline Mean Quests" :duties="db.crystallineMeanQuests" />
         <DutyList title="Studium Delivery Quests" :duties="db.studiumDeliveryQuests" />
       </div>

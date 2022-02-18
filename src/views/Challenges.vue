@@ -33,13 +33,13 @@
     <div class="row">
       <h2>Deep Dungeons</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Palace of the Dead" :duties="db.potd" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Heaven-on-High" :duties="db.hoh" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Palace of the Dead (Solo)" :duties="db.potdSolo" />
         <DutyList title="Heaven-on-High (Solo)" :duties="db.hohSolo" />
       </div>
@@ -48,16 +48,16 @@
     <div class="row">
       <h2>Exploration</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="A Realm Reborn" :duties="db.arrExploration" />
         <DutyList title="Heavensward" :duties="db.hwExploration" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Stormblood" :duties="db.sbExploration" />
         <DutyList title="Shadowbringers" :duties="db.shbExploration" />
         <DutyList title="Endwalker" :duties="db.ewExploration" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Exploratory Missions" :duties="db.explExploration" />
         <DutyList title="Sightseeing Logs" :duties="db.sightseeingLogs" />
       </div>
@@ -66,15 +66,15 @@
     <div class="row">
       <h2>Miscellaneous</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Shared FATE (ShB)" :duties="db.shbSharedFATE" />
         <DutyList title="Shared FATE (EW)" :duties="db.ewSharedFATE" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Bozjan Southern Front" :duties="db.bozjanChallenges" />
         <DutyList title="Zadnor" :duties="db.zadnorChallenges" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Treasure Hunt Clears" :duties="db.treasureHunts" />
         <DutyList title="Trusts" :duties="db.trusts" />
       </div>
@@ -83,14 +83,14 @@
     <div class="row">
       <h2>Achievement FATEs</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="A Realm Reborn" :duties="db.arrFATEs" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Heavensward" :duties="db.hwFATEs" />
         <DutyList title="Stormblood" :duties="db.sbFATEs" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Shadowbringer" :duties="db.shbFATEs" />
         <DutyList title="Endwalker" :duties="db.ewFATEs" />
       </div>
@@ -99,14 +99,14 @@
     <div class="row">
       <h2>Blue Mage</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="BLU Encounters (ARR)" :duties="db.arrBlu" />
         <DutyList title="BLU Encounters (HW)" :duties="db.hwBlu" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="BLU Encounters (SB)" :duties="db.sbBlu" />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList title="Masked Carnivale" :duties="db.maskedCarnivale" />
       </div>
     </div>
