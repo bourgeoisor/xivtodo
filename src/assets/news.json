@@ -1,5 +1,5 @@
 {
-  "latestCountdownID": 10,
+  "latestCountdownID": 11,
   "countdowns": [
     {
       "title": "Valentione's Day",
@@ -8,10 +8,10 @@
       "end": 1645455600
     },
     {
-      "title": "Letter from the Producer LIVE Part LXVIII",
-      "description": "The next Letter from the Producer LIVE focuses on what's in store for the future of FFXIV.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/5175441f879605c8dfcde948dae13fbfd00f760b' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1645236000,
-      "end": 1645246800
+      "title": "Letter from the Producer LIVE Part LXIX",
+      "description": "The next Letter from the Producer LIVE focuses on the 6.1 patch.",
+      "start": 1646391600,
+      "end": 1646402400
     },
     {
       "title": "Patch 6.08",
