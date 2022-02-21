@@ -2,14 +2,8 @@
   "latestCountdownID": 11,
   "countdowns": [
     {
-      "title": "Valentione's Day",
-      "description": "Seasonal Valentione's Day event for 2022.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/Valentiones_Day/wcm6ffa3hm' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
-      "start": 1644307200,
-      "end": 1645455600
-    },
-    {
       "title": "Letter from the Producer LIVE Part LXIX",
-      "description": "The next Letter from the Producer LIVE focuses on the 6.1 patch.",
+      "description": "The next Letter from the Producer LIVE focuses on the 6.1 patch.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/9c4b11b82c2eb95cf1aa053d93e0b2cdfe7d87d2' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1646391600,
       "end": 1646402400
     },
