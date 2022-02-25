@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"errors"
 	"log"
 	"net/http"
 	"server/models"
@@ -20,14 +21,22 @@ func SettingsHandler() http.Handler {
 			return
 		}
 
-		// @TODO validate settings changed before updating
-		decoder := json.NewDecoder(r.Body)
-		err := decoder.Decode(&userData.Settings)
+		settings := models.Settings{}
+		err := json.NewDecoder(r.Body).Decode(&settings)
 		if err != nil {
 			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 			log.Printf("failed to decode settings: %v", err)
 			return
 		}
+
+		err = validateSettings(&userData, &settings)
+		if err != nil {
+			http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+			log.Printf("requested settings invalid: %v", err)
+			return
+		}
+
+		userData.Settings = &settings
 
 		_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, userData)
 		if err != nil {
@@ -45,4 +54,16 @@ func SettingsHandler() http.Handler {
 		}
 	}
 	return http.HandlerFunc(fn)
+}
+
+func validateSettings(userData *models.User, payload *models.Settings) error {
+	if payload.AuthorizationCode != userData.Settings.AuthorizationCode {
+		return errors.New("AuthorizationCode is immutable")
+	}
+
+	if payload.CharacterClaimCode != userData.Settings.CharacterClaimCode {
+		return errors.New("CharacterClaimCode is immutable")
+	}
+
+	return nil
 }
