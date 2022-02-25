@@ -132,7 +132,7 @@
               type="radio"
               name="inputSpoilersOption"
               id="inputSpoilersOption0"
-              value="0"
+              :value="0"
             />
             <label class="form-check-label" for="inputSpoilersOption0">
               Blur out non-completed story-related encounters
@@ -145,7 +145,7 @@
               type="radio"
               name="inputSpoilersOption"
               id="inputSpoilersOption1"
-              value="1"
+              :value="1"
             />
             <label class="form-check-label" for="inputSpoilersOption1">
               Blur out all story-related encounters
@@ -158,15 +158,25 @@
               type="radio"
               name="inputSpoilersOption"
               id="inputSpoilersOption2"
-              value="2"
+              :value="2"
             />
             <label class="form-check-label" for="inputSpoilersOption2">Show all encounters</label>
           </div>
           <div class="form-text">Preference in hiding potential spoilers.</div>
           <br />
-
           <button
-            @click="saveSettings"
+            v-if="updatingSettings"
+            type="button"
+            id="settings-save-btn"
+            class="btn btn-success"
+            disabled
+          >
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Updating, please wait...
+          </button>
+          <button
+            v-else
+            @click="updateSettings"
             type="button"
             id="settings-save-btn"
             class="btn btn-success"
@@ -190,13 +200,14 @@
 
 <script>
 import Alert from "@/components/Alert.vue";
-import { addCharacter, removeCharacter } from "@/utilities/backend.js";
+import { updateSettings, addCharacter, removeCharacter } from "@/utilities/backend.js";
 
 export default {
   name: "Settings",
   data() {
     return {
       adding: false,
+      updatingSettings: false,
       updating: 0,
       error: {},
       profileURL: "",
@@ -207,8 +218,28 @@ export default {
     Alert,
   },
   methods: {
-    saveSettings() {
-      this.$store.commit("updateSettings", this.settings);
+    updateSettings() {
+      this.updatingSettings = true;
+      this.error = {};
+
+      updateSettings(this.settings)
+        .then((response) => {
+          this.$store.commit("setSettings", response);
+
+          this.error = {
+            type: "success",
+            msg: `Settings updated!`,
+          };
+        })
+        .catch((err) => {
+          this.error = {
+            type: "error",
+            msg: `Settings could not be updated: ${err}`,
+          };
+        })
+        .finally(() => {
+          this.updatingSettings = false;
+        });
     },
     addCharacter() {
       this.adding = true;
@@ -221,10 +252,20 @@ export default {
         .then((characterData) => {
           this.$store.commit("addCharacter", characterData);
 
-          this.error = {
-            type: "success",
-            msg: `Character <b>${characterData.lodestoneData.Character.Name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.`,
-          };
+          if (
+            !characterData.lodestoneData.Achievements ||
+            characterData.lodestoneData.Achievements.length == 0
+          ) {
+            this.error = {
+              type: "warning",
+              msg: `Character <b>${characterData.lodestoneData.Character.Name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then update the character's data.`,
+            };
+          } else {
+            this.error = {
+              type: "success",
+              msg: `Character <b>${characterData.lodestoneData.Character.Name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.`,
+            };
+          }
         })
         .catch((err) => {
           console.log(err);

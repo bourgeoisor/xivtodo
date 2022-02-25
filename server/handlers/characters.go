@@ -2,152 +2,101 @@ package handlers
 
 import (
 	"encoding/json"
-	"errors"
 	"log"
 	"net/http"
 	"server/models"
 	"server/store"
 	"server/utils"
 	"strconv"
-	"strings"
 	"time"
 )
 
-func AddCharacterHandler() http.Handler {
+func CharactersHandler() http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != http.MethodGet {
-			http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
-			log.Printf("MethodNotAllowed: %s", r.Method)
+		if utils.ValidateMethodOrFail(w, r, http.MethodGet, http.MethodDelete) != nil {
 			return
 		}
-
-		id := r.URL.Query().Get("id")
-		authorization := strings.Split(r.Header.Get("Authorization"), ":")
-		if id == "" || len(authorization) != 2 {
-			http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
-			log.Println("Invalid id query or Authorization header")
-			return
-		}
-
-		discordID := authorization[0]
-		authorizationCode := authorization[1]
 
 		userData := models.User{}
-		err := getUserDataAndAuthn(&userData, discordID, authorizationCode)
-		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
-			log.Printf("Failed to get User data: %v", err)
+		if utils.GetUserWithAuthnOrFail(w, r, &userData) != nil {
 			return
 		}
 
-		if userHasMaxCharacters(&userData) || characterIsInUser(&userData, id) {
+		characterID := r.URL.Query().Get("id")
+		if characterID == "" {
 			http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
-			log.Println("User has 16 characters or character already in user")
+			log.Println("missing id query")
 			return
 		}
 
-		lodestoneProfile, err := utils.GetLodestoneProfile(id, false)
-		if err != nil {
-			// @TODO: handle 404 vs. Lodestone maintenance
-			http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
-			log.Printf("Failed to get Lodestone data: %v", err)
-			return
-		}
-
-		character := models.Character{
-			Updated:       time.Now().Unix(),
-			LodestoneData: lodestoneProfile,
-		}
-		userData.Characters = append(userData.Characters, &character)
-
-		_, err = store.Client.Collection("users").Doc(discordID).Set(store.Ctx, userData)
-		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
-			log.Printf("Failed to store User data: %v", err)
-			return
-		}
-
-		w.WriteHeader(http.StatusOK)
-		err = json.NewEncoder(w).Encode(character)
-		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
-			log.Printf("Failed to send Character data: %v", err)
-			return
+		switch r.Method {
+		case http.MethodGet:
+			addCharacter(w, &userData, characterID)
+		case http.MethodDelete:
+			removeCharacter(w, &userData, characterID)
 		}
 	}
 	return http.HandlerFunc(fn)
 }
 
-func RemoveCharacterHandler() http.Handler {
-	fn := func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != http.MethodDelete {
-			http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
-			log.Printf("MethodNotAllowed: %s", r.Method)
-			return
-		}
-
-		id := r.URL.Query().Get("id")
-		authorization := strings.Split(r.Header.Get("Authorization"), ":")
-		if id == "" || len(authorization) != 2 {
-			http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
-			return
-		}
-
-		discordID := authorization[0]
-		authorizationCode := authorization[1]
-
-		userData := models.User{}
-		err := getUserDataAndAuthn(&userData, discordID, authorizationCode)
-		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
-			log.Printf("Failed to get User data: %v", err)
-			return
-		}
-
-		for i, v := range userData.Characters {
-			if strconv.Itoa(int(v.LodestoneData.Character.ID)) == id {
-				userData.Characters = append(userData.Characters[:i], userData.Characters[i+1:]...)
-			}
-		}
-
-		_, err = store.Client.Collection("users").Doc(discordID).Set(store.Ctx, userData)
-		if err != nil {
-			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
-			log.Printf("Failed to store User data: %v", err)
-			return
-		}
-
-		w.WriteHeader(http.StatusOK)
-	}
-	return http.HandlerFunc(fn)
-}
-
-func getUserDataAndAuthn(userData *models.User, id, authorizationCode string) error {
-	user, err := store.Client.Collection("users").Doc(id).Get(store.Ctx)
-	if err != nil || !user.Exists() {
-		return err
+func addCharacter(w http.ResponseWriter, userData *models.User, characterID string) {
+	if userHasMaxCharacters(userData) || characterIsInUser(userData, characterID) {
+		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+		log.Println("user has 16 characters or character already in user")
+		return
 	}
 
-	m := user.Data()
-	jsonbody, err := json.Marshal(m)
+	lodestoneProfile, err := utils.GetLodestoneProfile(characterID, false)
 	if err != nil {
-		return err
-	}
-	if err := json.Unmarshal(jsonbody, userData); err != nil {
-		return err
-	}
-
-	// @TODO: figure out why this is not working
-	//err = user.DataTo(&userData)
-	//if err != nil {
-	//	return err
-	//}
-
-	if userData.Settings.AuthorizationCode != authorizationCode {
-		return errors.New("invalid authorization code")
+		// @TODO: handle 404 vs. Lodestone maintenance
+		http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
+		log.Printf("failed to get Lodestone data: %v", err)
+		return
 	}
 
-	return nil
+	character := models.Character{
+		Updated:       time.Now().Unix(),
+		LodestoneData: lodestoneProfile,
+	}
+	userData.Characters = append(userData.Characters, &character)
+
+	_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, userData)
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		log.Printf("failed to store User data: %v", err)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
+	err = json.NewEncoder(w).Encode(character)
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		log.Printf("failed to send Character data: %v", err)
+		return
+	}
+}
+
+func removeCharacter(w http.ResponseWriter, userData *models.User, characterID string) {
+	if !characterIsInUser(userData, characterID) {
+		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+		log.Println("character is not in user")
+		return
+	}
+
+	for i, v := range userData.Characters {
+		if strconv.Itoa(int(v.LodestoneData.Character.ID)) == characterID {
+			userData.Characters = append(userData.Characters[:i], userData.Characters[i+1:]...)
+		}
+	}
+
+	_, err := store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, userData)
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		log.Printf("Failed to store User data: %v", err)
+		return
+	}
+
+	w.WriteHeader(http.StatusOK)
 }
 
 func userHasMaxCharacters(userData *models.User) bool {

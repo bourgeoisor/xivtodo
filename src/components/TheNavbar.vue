@@ -266,13 +266,6 @@
         <h3>{{ item.title }}</h3>
         <small class="text-muted">
           Posted on <b class="text-success">{{ item.published }}</b>
-          &nbsp;
-          <span
-            v-if="this.$store.getters.latestNewsSeenPrevious < item.ID"
-            class="badge bg-success"
-          >
-            New
-          </span>
         </small>
         <br />
         <p v-html="item.content"></p>
@@ -338,6 +331,7 @@ span.nav-link:hover {
 
 <script>
 import news from "@/assets/news.json";
+import { updateSettings } from "@/utilities/backend.js";
 
 export default {
   Name: "TheNavbar",
@@ -360,10 +354,16 @@ export default {
       this.collapseNav();
     },
     seenLatestNews() {
-      this.$store.commit("seenLatestNews", news.latestID);
+      let settings = { ...this.$store.getters.settings };
+      settings.latestNewsSeen = news.latestID;
+      this.$store.commit("setSettings", settings);
+      updateSettings(settings);
     },
     seenLatestCountdown() {
-      this.$store.commit("seenLatestCountdown", news.latestCountdownID);
+      let settings = { ...this.$store.getters.settings };
+      settings.latestCountdownSeen = news.latestCountdownID;
+      this.$store.commit("setSettings", settings);
+      updateSettings(settings);
     },
     timeLeft(timestamp) {
       let now = new Date() / 1000;

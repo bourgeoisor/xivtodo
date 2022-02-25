@@ -23,17 +23,17 @@ type DiscordUser struct {
 }
 
 type User struct {
-	DiscordUser         *DiscordUser `json:"discordUser"`
-	Characters          []*Character `json:"characters"`
-	Settings            *Settings    `json:"settings"`
-	LatestNewsSeen      int          `json:"latestNewsSeen"`
-	LatestCountdownSeen int          `json:"latestCountdownSeen"`
+	DiscordUser *DiscordUser `json:"discordUser"`
+	Characters  []*Character `json:"characters"`
+	Settings    *Settings    `json:"settings"`
 }
 
 type Settings struct {
-	AuthorizationCode  string `json:"authorizationCode"`
-	CharacterClaimCode string `json:"characterClaimCode"`
-	SpoilersOption     int    `json:"spoilersOption"`
+	AuthorizationCode   string `json:"authorizationCode"`
+	CharacterClaimCode  string `json:"characterClaimCode"`
+	LatestNewsSeen      int    `json:"latestNewsSeen"`
+	LatestCountdownSeen int    `json:"latestCountdownSeen"`
+	SpoilersOption      int    `json:"spoilersOption"`
 }
 
 type Character struct {

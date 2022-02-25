@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"server/models"
 	"server/store"
+	"server/utils"
 )
 
 func UsersHandler() http.Handler {
@@ -17,6 +18,10 @@ func UsersHandler() http.Handler {
 		// @TODO: reset checklist / etc when reset happens
 		// @TODO: verify auth code
 		// @TODO: "updated" on user, only send full user if a) character list changed
+
+		if utils.ValidateMethodOrFail(w, r, http.MethodGet) != nil {
+			return
+		}
 
 		id := "123"
 

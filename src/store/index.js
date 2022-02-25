@@ -5,10 +5,6 @@ const store = createStore({
     env: {},
     userData: null,
     activeCharacterID: 0,
-
-    latestNewsSeen: 0,
-    latestNewsSeenPrevious: 0,
-    latestCountdownSeen: 0,
   },
   getters: {
     userData(state) {
@@ -45,19 +41,15 @@ const store = createStore({
     achievementsPublic(state, getters) {
       return getters.activeCharacter?.lodestoneData?.Achievements?.length > 0 || false;
     },
+    latestNewsSeen(state, getters) {
+      return getters.settings.latestNewsSeen || 0;
+    },
+    latestCountdownSeen(state, getters) {
+      return getters.settings.latestCountdownSeen || 0;
+    },
 
 
 
-    
-    latestNewsSeen(state) {
-      return state.latestNewsSeen || 0;
-    },
-    latestNewsSeenPrevious(state) {
-      return state.latestNewsSeenPrevious || 0;
-    },
-    latestCountdownSeen(state) {
-      return state.latestCountdownSeen || 0;
-    },
     characterOutOfDateACT(state, getters) {
       return getters.characterOutOfDate(state.activeCharacterID);
     },
@@ -105,6 +97,7 @@ const store = createStore({
     },
 
     signIn(state, payload) {
+      // @TODO: deprecate this cleanup step
       delete state.characters;
       delete state.characterData;
       delete state.latestNewsSeen;
@@ -129,6 +122,9 @@ const store = createStore({
     },
     deleteUserData(state) {
       state.userData = null;
+    },
+    setSettings(state, payload) {
+      state.userData.settings = { ...payload };
     },
     addCharacter(state, payload) {
       for (let i = 0; i < state.userData.characters.length; i++) {
@@ -157,16 +153,7 @@ const store = createStore({
 
 
 
-    updateSettings(state, payload) {
-      state.settings = { ...payload };
-    },
-    seenLatestNews(state, payload) {
-      state.latestNewsSeenPrevious = state.latestNewsSeen;
-      state.latestNewsSeen = payload;
-    },
-    seenLatestCountdown(state, payload) {
-      state.latestCountdownSeen = payload;
-    },
+
     todoChecked(state, payload) {
       if (state.characters[state.activeCharacterID].todosChecked == null) {
         state.characters[state.activeCharacterID].todosChecked = [];

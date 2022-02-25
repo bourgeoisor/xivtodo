@@ -16,7 +16,7 @@ func withHeaders(handler http.Handler) http.Handler {
 		w.Header().Set("Access-Control-Allow-Origin", "*")
 
 		if r.Method == http.MethodOptions {
-			w.Header().Set("Access-Control-Allow-Methods", "GET, DELETE")
+			w.Header().Set("Access-Control-Allow-Methods", "GET, PUT, DELETE")
 			w.Header().Set("Access-Control-Allow-Headers", "Content-Type, Authorization")
 			w.Header().Set("Access-Control-Max-Age", "3600")
 			w.WriteHeader(http.StatusNoContent)
@@ -57,12 +57,11 @@ func main() {
 	mux := http.NewServeMux()
 	mux.Handle("/auth", withHeaders(withRateLimit(handlers.AuthHandler())))
 	mux.Handle("/users", withHeaders(withRateLimit(handlers.UsersHandler())))
-	mux.Handle("/characters/add", withHeaders(withRateLimit(handlers.AddCharacterHandler())))
-	mux.Handle("/characters/remove", withHeaders(withRateLimit(handlers.RemoveCharacterHandler())))
+	mux.Handle("/characters", withHeaders(withRateLimit(handlers.CharactersHandler())))
 	mux.Handle("/settings", withHeaders(withRateLimit(handlers.SettingsHandler())))
 	mux.Handle("/encounters", withHeaders(withRateLimit(handlers.EncountersHandler())))
 	mux.Handle("/checklist", withHeaders(withRateLimit(handlers.ChecklistHandler())))
 
-	log.Println("Listening to", listenTo)
+	log.Println("listening to", listenTo)
 	log.Fatal(http.ListenAndServe(listenTo, mux))
 }

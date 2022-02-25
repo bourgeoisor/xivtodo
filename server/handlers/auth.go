@@ -13,6 +13,7 @@ import (
 	"os"
 	"server/models"
 	"server/store"
+	"server/utils"
 	"strconv"
 	"time"
 )
@@ -41,9 +42,7 @@ func init() {
 
 func AuthHandler() http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
-		if r.Method != http.MethodGet {
-			http.Error(w, http.StatusText(http.StatusMethodNotAllowed), http.StatusMethodNotAllowed)
-			log.Printf("MethodNotAllowed: %s", r.Method)
+		if utils.ValidateMethodOrFail(w, r, http.MethodGet) != nil {
 			return
 		}
 

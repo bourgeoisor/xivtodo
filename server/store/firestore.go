@@ -22,5 +22,5 @@ func init() {
 		log.Fatalf("Failed to create Firestore client: %v", err)
 	}
 
-	log.Println("Initialized Firestore client for project", gcpProjectID)
+	log.Println("initialized Firestore client for project", gcpProjectID)
 }

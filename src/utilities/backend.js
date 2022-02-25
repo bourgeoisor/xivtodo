@@ -96,9 +96,34 @@ const authenticate = (code) =>
       });
   });
 
+const updateSettings = (payload) =>
+  new Promise((resolve, reject) => {
+    fetch(apiEndpoint + "/settings", {
+      headers: {
+        Authorization:
+          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+      },
+      body: JSON.stringify(payload),
+      method: "PUT",
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then((settings) => {
+        resolve(settings);
+      })
+      .catch((err) => {
+        reject("Could not update settings: " + err);
+      });
+  });
+
 const addCharacter = (id) =>
   new Promise((resolve, reject) => {
-    fetch(apiEndpoint + "/characters/add?id=" + id, {
+    fetch(apiEndpoint + "/characters?id=" + id, {
       headers: {
         Authorization:
           store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
@@ -121,7 +146,7 @@ const addCharacter = (id) =>
           reject("The character profile you have entered does not exist.");
         } else if (err.status == 400) {
           reject(
-            "Invalid request. You may have already added this character, or have reached the limit of characters. "
+            "Could not add character. You may have already added this character, or have reached the limit of characters. "
           );
         } else {
           reject(
@@ -133,7 +158,7 @@ const addCharacter = (id) =>
 
 const removeCharacter = (id) =>
   new Promise((resolve, reject) => {
-    fetch(apiEndpoint + "/characters/remove?id=" + id, {
+    fetch(apiEndpoint + "/characters?id=" + id, {
       headers: {
         Authorization:
           store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
@@ -152,4 +177,4 @@ const removeCharacter = (id) =>
       });
   });
 
-export { authenticate, addCharacter, removeCharacter };
+export { authenticate, updateSettings, addCharacter, removeCharacter };
