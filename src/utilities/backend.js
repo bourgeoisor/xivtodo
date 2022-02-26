@@ -177,4 +177,26 @@ const removeCharacter = (id) =>
       });
   });
 
-export { authenticate, updateSettings, addCharacter, removeCharacter };
+const updateChecklist = (id, payload) =>
+  new Promise((resolve, reject) => {
+    fetch(apiEndpoint + "/checklist?id=" + id, {
+      headers: {
+        Authorization:
+          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+      },
+      body: JSON.stringify(payload),
+      method: "PUT",
+    })
+      .then((response) => {
+        if (response.ok) {
+          resolve(response);
+        } else {
+          throw response;
+        }
+      })
+      .catch((err) => {
+        reject("Could not update checklist. Please try again later." + err);
+      });
+  });
+
+export { authenticate, updateSettings, addCharacter, removeCharacter, updateChecklist };

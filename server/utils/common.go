@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"server/models"
 	"server/store"
+	"strconv"
 	"strings"
 )
 
@@ -63,4 +64,14 @@ func GetUserWithAuthnOrFail(w http.ResponseWriter, r *http.Request, userData *mo
 	}
 
 	return nil
+}
+
+func CharacterIndexInUser(userData *models.User, id string) int {
+	for i, character := range userData.Characters {
+		if strconv.Itoa(int(character.LodestoneData.Character.ID)) == id {
+			return i
+		}
+	}
+
+	return -1
 }

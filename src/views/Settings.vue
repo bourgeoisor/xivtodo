@@ -106,7 +106,7 @@
               <a
                 v-if="!updating && !this.$store.getters.characterOutOfDate(i)"
                 class="bi-arrow-repeat text-secondary cursor-pointer tt"
-                @click="refreshCharacter(item.lodestoneData.Character.ID)"
+                @click="updateCharacter(item.lodestoneData.Character.ID)"
               >
                 <span class="tt-text">Update data</span>
               </a>
@@ -276,22 +276,22 @@ export default {
           this.adding = false;
         });
     },
-    refreshCharacter(id) {
-      this.updating = id;
+    updateCharacter(characterID) {
+      this.updating = characterID;
       this.error = {};
 
-      // fetchCharacterData(id)
-      //   .then((characterData) => {
-      //     this.$store.commit("addCharacter", characterData);
-      //   })
-      //   .catch((err) => {
-      //     console.log(err);
-      //     this.error = { type: "error", msg: err.toString() };
-      //   })
-      //   .finally(() => {
-      //     this.profileURL = "";
-      //     this.updating = null;
-      //   });
+      addCharacter(characterID)
+        .then((characterData) => {
+          this.$store.commit("addCharacter", characterData);
+        })
+        .catch((err) => {
+          console.log(err);
+          this.error = { type: "error", msg: err.toString() };
+        })
+        .finally(() => {
+          this.profileURL = "";
+          this.updating = null;
+        });
     },
     removeCharacter(id) {
       this.updating = true;

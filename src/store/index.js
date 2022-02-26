@@ -33,19 +33,51 @@ const store = createStore({
       return getters.activeCharacter?.lodestoneData || {};
     },
     character(state, getters) {
-      return getters.activeCharacter?.lodestoneData?.Character || {};
+      return getters.lodestoneData.Character || {};
     },
     achievements(state, getters) {
-      return getters.activeCharacter?.lodestoneData?.Achievements || [];
+      return getters.lodestoneData.Achievements || [];
     },
     achievementsPublic(state, getters) {
-      return getters.activeCharacter?.lodestoneData?.Achievements?.length > 0 || false;
+      return getters.lodestoneData.Achievements?.length > 0 || false;
     },
     latestNewsSeen(state, getters) {
       return getters.settings.latestNewsSeen || 0;
     },
     latestCountdownSeen(state, getters) {
       return getters.settings.latestCountdownSeen || 0;
+    },
+    checklistData(state, getters) {
+      return getters.activeCharacter?.checklistData || {};
+    },
+    checklistWeeklies(state, getters) {
+      return getters.checklistData.weeklyChecklist || [];
+    },
+    checklistDailies(state, getters) {
+      return getters.checklistData.dailyChecklist || [];
+    },
+    checklistAdhocs(state, getters) {
+      return getters.checklistData.adhocChecklist || [];
+    },
+    checklistLenHiddens(state, getters) {
+      let hiddens = 0;
+      for (let item of getters.checklistWeeklies) {
+        if (item.hidden) {
+          hiddens++;
+        }
+      }
+      for (let item of getters.checklistDailies) {
+        if (item.hidden) {
+          hiddens++;
+        }
+      }
+      return hiddens;
+    },
+    checklistNextWeeklyReset(state, getters) {
+      return getters.checklistData.nextWeeklyReset || 0;
+    },
+    checklistNextDailyReset(state, getters) {
+      return getters.checklistData.nextDailyReset || 0;
     },
 
 
@@ -68,24 +100,6 @@ const store = createStore({
     //     now > state.characters[id].lastUpdated + msBeforeUpdate
     //   );
     // },
-    todosChecked(state, getters) {
-      return getters.activeCharacter?.todosChecked || [];
-    },
-    todosHidden(state, getters) {
-      return getters.activeCharacter?.todosHidden || [];
-    },
-    todosNextDailyReset(state, getters) {
-      return getters.activeCharacter?.todosNextDailyReset || 0;
-    },
-    todosNextWeeklyReset(state, getters) {
-      return getters.activeCharacter?.todosNextWeeklyReset || 0;
-    },
-    todosCustomDailies(state, getters) {
-      return getters.activeCharacter?.todosCustomDailies || [];
-    },
-    todosCustomWeeklies(state, getters) {
-      return getters.activeCharacter?.todosCustomWeeklies || [];
-    },
   },
   mutations: {
     initialiseStore(state) {
@@ -132,6 +146,7 @@ const store = createStore({
           state.userData.characters[i].lodestoneData.Character.ID ==
           payload.lodestoneData.Character.ID
         ) {
+          state.userData.characters[i] = payload;
           return;
         }
       }
@@ -148,97 +163,20 @@ const store = createStore({
     changeActiveCharacter(state, payload) {
       state.activeCharacterID = payload;
     },
-
-
-
-
-
-
-    todoChecked(state, payload) {
-      if (state.characters[state.activeCharacterID].todosChecked == null) {
-        state.characters[state.activeCharacterID].todosChecked = [];
-      }
-
-      let present = state.characters[state.activeCharacterID].todosChecked.indexOf(payload.id) >= 0;
-      if (present && !payload.checked) {
-        state.characters[state.activeCharacterID].todosChecked = state.characters[
-          state.activeCharacterID
-        ].todosChecked.filter((item) => item != payload.id);
-      } else if (!present && payload.checked) {
-        state.characters[state.activeCharacterID].todosChecked.push(payload.id);
-      }
+    checklistNextWeeklyReset(state, payload) {
+      state.userData.characters[state.activeCharacterID].checklistData.nextWeeklyReset = payload;
     },
-    todoHidden(state, payload) {
-      if (state.characters[state.activeCharacterID].todosHidden == null) {
-        state.characters[state.activeCharacterID].todosHidden = [];
-      }
-
-      let present = state.characters[state.activeCharacterID].todosHidden.indexOf(payload.id) >= 0;
-      if (present && !payload.hidden) {
-        state.characters[state.activeCharacterID].todosHidden = state.characters[
-          state.activeCharacterID
-        ].todosHidden.filter((item) => item != payload.id);
-      } else if (!present && payload.hidden) {
-        state.characters[state.activeCharacterID].todosHidden.push(payload.id);
-      }
+    checklistNextDailyReset(state, payload) {
+      state.userData.characters[state.activeCharacterID].checklistData.nextDailyReset = payload;
     },
-    todosNextDailyReset(state, payload) {
-      state.characters[state.activeCharacterID].todosNextDailyReset = payload;
+    setChecklistWeeklies(state, payload) {
+      state.userData.characters[state.activeCharacterID].checklistData.weeklyChecklist = payload;
     },
-    todosNextWeeklyReset(state, payload) {
-      state.characters[state.activeCharacterID].todosNextWeeklyReset = payload;
+    setChecklistDailies(state, payload) {
+      state.userData.characters[state.activeCharacterID].checklistData.dailyChecklist = payload;
     },
-    todosAddCustomDaily(state, payload) {
-      let id = 2900;
-      if (state.characters[state.activeCharacterID].todosCustomDailies == null) {
-        state.characters[state.activeCharacterID].todosCustomDailies = [];
-      } else {
-        let lengthTasks = state.characters[state.activeCharacterID].todosCustomDailies.length;
-        if (lengthTasks > 0) {
-          id = state.characters[state.activeCharacterID].todosCustomDailies[lengthTasks - 1].ID + 1;
-        }
-      }
-
-      let task = {
-        Name: payload,
-        ID: id,
-        Custom: true,
-      };
-
-      state.characters[state.activeCharacterID].todosCustomDailies.push(task);
-    },
-    todosAddCustomWeekly(state, payload) {
-      let id = 1900;
-      if (state.characters[state.activeCharacterID].todosCustomWeeklies == null) {
-        state.characters[state.activeCharacterID].todosCustomWeeklies = [];
-      } else {
-        let lengthTasks = state.characters[state.activeCharacterID].todosCustomWeeklies.length;
-        if (lengthTasks > 0) {
-          id =
-            state.characters[state.activeCharacterID].todosCustomWeeklies[lengthTasks - 1].ID + 1;
-        }
-      }
-
-      let task = {
-        Name: payload,
-        ID: id,
-        Custom: true,
-      };
-
-      state.characters[state.activeCharacterID].todosCustomWeeklies.push(task);
-    },
-    todosRemoveCustom(state, payload) {
-      if (state.characters[state.activeCharacterID].todosCustomDailies) {
-        state.characters[state.activeCharacterID].todosCustomDailies = state.characters[
-          state.activeCharacterID
-        ].todosCustomDailies.filter((item) => item.ID != payload);
-      }
-
-      if (state.characters[state.activeCharacterID].todosCustomWeeklies) {
-        state.characters[state.activeCharacterID].todosCustomWeeklies = state.characters[
-          state.activeCharacterID
-        ].todosCustomWeeklies.filter((item) => item.ID != payload);
-      }
+    setChecklistAdhocs(state, payload) {
+      state.userData.characters[state.activeCharacterID].checklistData.adhocChecklist = payload;
     },
   },
   actions: {},

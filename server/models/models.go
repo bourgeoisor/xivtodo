@@ -39,7 +39,7 @@ type Settings struct {
 type Character struct {
 	Updated       int64             `json:"updated"`
 	LodestoneData *LodestoneProfile `json:"lodestoneData"`
-	//ChecklistData *ChecklistData
+	ChecklistData *ChecklistData    `json:"checklistData"`
 	//EncounterData *EncounterData
 }
 
@@ -141,4 +141,19 @@ type Mount struct {
 type TitleInternal struct {
 	*GenderedEntity
 	Prefix bool
+}
+
+type ChecklistData struct {
+	WeeklyChecklist []*ChecklistItem `json:"weeklyChecklist"`
+	DailyChecklist  []*ChecklistItem `json:"dailyChecklist"`
+	AdhocChecklist  []*ChecklistItem `json:"adhocChecklist"`
+	NextWeeklyReset int              `json:"nextWeeklyReset"`
+	NextDailyReset  int              `json:"nextDailyReset"`
+}
+
+type ChecklistItem struct {
+	Name    string `json:"name"`
+	Custom  bool   `json:"custom"`
+	Checked bool   `json:"checked"`
+	Hidden  bool   `json:"hidden"`
 }

@@ -40,9 +40,10 @@ func CharactersHandler() http.Handler {
 }
 
 func addCharacter(w http.ResponseWriter, userData *models.User, characterID string) {
-	if userHasMaxCharacters(userData) || characterIsInUser(userData, characterID) {
+	characterIndex := utils.CharacterIndexInUser(userData, characterID)
+	if userHasMaxCharacters(userData) && characterIndex == -1 {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
-		log.Println("user has 16 characters or character already in user")
+		log.Println("user already has 8 characters")
 		return
 	}
 
@@ -54,11 +55,22 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 		return
 	}
 
-	character := models.Character{
-		Updated:       time.Now().Unix(),
-		LodestoneData: lodestoneProfile,
+	if characterIndex == -1 {
+		character := models.Character{
+			Updated:       time.Now().Unix(),
+			LodestoneData: lodestoneProfile,
+			ChecklistData: &models.ChecklistData{
+				WeeklyChecklist: []*models.ChecklistItem{},
+				DailyChecklist:  []*models.ChecklistItem{},
+				AdhocChecklist:  []*models.ChecklistItem{},
+			},
+		}
+		userData.Characters = append(userData.Characters, &character)
+		characterIndex = len(userData.Characters) - 1
+	} else {
+		userData.Characters[characterIndex].Updated = time.Now().Unix()
+		userData.Characters[characterIndex].LodestoneData = lodestoneProfile
 	}
-	userData.Characters = append(userData.Characters, &character)
 
 	_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, userData)
 	if err != nil {
@@ -68,7 +80,7 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 	}
 
 	w.WriteHeader(http.StatusOK)
-	err = json.NewEncoder(w).Encode(character)
+	err = json.NewEncoder(w).Encode(userData.Characters[characterIndex])
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		log.Printf("failed to send Character data: %v", err)
@@ -77,7 +89,7 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 }
 
 func removeCharacter(w http.ResponseWriter, userData *models.User, characterID string) {
-	if !characterIsInUser(userData, characterID) {
+	if utils.CharacterIndexInUser(userData, characterID) == -1 {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 		log.Println("character is not in user")
 		return
@@ -100,15 +112,5 @@ func removeCharacter(w http.ResponseWriter, userData *models.User, characterID s
 }
 
 func userHasMaxCharacters(userData *models.User) bool {
-	return len(userData.Characters) > 16
-}
-
-func characterIsInUser(userData *models.User, id string) bool {
-	for _, v := range userData.Characters {
-		if strconv.Itoa(int(v.LodestoneData.Character.ID)) == id {
-			return true
-		}
-	}
-
-	return false
+	return len(userData.Characters) > 8
 }

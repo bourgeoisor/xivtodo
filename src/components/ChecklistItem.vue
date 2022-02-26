@@ -1,6 +1,6 @@
 <template>
   <label
-    v-if="!hidden && !showHidden"
+    v-if="!itemCopy.hidden && !showHidden"
     class="
       list-group-item list-group-item-action
       d-flex
@@ -12,27 +12,27 @@
     <span>
       <input
         v-if="!showHidden && this.$store.getters.hasCharacter"
-        v-model="checked"
-        :class="{ 'checkbox-checked': checked }"
+        v-model="itemCopy.checked"
+        :class="{ 'checkbox-checked': itemCopy.checked }"
         class="form-check-input"
         type="checkbox"
-        :id="item.Name"
+        :id="item.name"
       />
-      &nbsp;&nbsp;<span :class="{ 'checklist-checked': checked }">{{ item.Name }}</span>
+      &nbsp;&nbsp;<span :class="{ 'checklist-checked': itemCopy.checked }">{{ item.name }}</span>
     </span>
   </label>
   <span v-if="showHidden" class="list-group-item d-flex justify-content-between align-items-center">
-    <span :class="{ 'text-muted': hidden }" class="user-select-none">
-      {{ item.Name }}
+    <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
+      {{ item.name }}
     </span>
     <span v-if="showHidden">
-      <a v-if="item.Custom" class="bi-trash text-danger cursor-pointer tt" @click="remove">
+      <a v-if="item.custom" class="bi-trash text-danger cursor-pointer tt" @click="remove">
         <span class="tt-text">Remove</span>
       </a>
-      <a v-else-if="hidden" class="bi-eye-slash text-secondary cursor-pointer tt" @click="hid">
+      <a v-else-if="itemCopy.hidden" class="bi-eye-slash text-secondary cursor-pointer tt" @click="hid">
         <span class="tt-text">Show</span>
       </a>
-      <a v-else-if="!hidden" class="bi-eye text-success cursor-pointer tt" @click="hid">
+      <a v-else-if="!itemCopy.hidden" class="bi-eye text-success cursor-pointer tt" @click="hid">
         <span class="tt-text">Hide</span>
       </a>
     </span>
@@ -71,34 +71,81 @@
 </style>
 
 <script>
+import { updateChecklist } from "@/utilities/backend.js";
+
 export default {
   data() {
     return {
-      checked: this.$store.getters.todosChecked.indexOf(this.item.ID) >= 0,
-      hidden: this.$store.getters.todosHidden.indexOf(this.item.ID) >= 0,
+      itemCopy: this.item,
     };
   },
   props: {
     item: Object,
+    type: String,
     showHidden: Boolean,
     rerender: Number,
   },
   watch: {
-    checked() {
-      this.$store.commit("todoChecked", { id: this.item.ID, checked: this.checked });
+    "itemCopy.checked": function () {
+      this.updateItem(false);
     },
     rerender() {
-      this.checked = this.$store.getters.todosChecked.indexOf(this.item.ID) >= 0;
-      this.hidden = this.$store.getters.todosHidden.indexOf(this.item.ID) >= 0;
+      this.itemCopy = this.item;
     },
   },
   methods: {
     hid() {
-      this.hidden = !this.hidden;
-      this.$store.commit("todoHidden", { id: this.item.ID, hidden: this.hidden });
+      this.itemCopy.hidden = !this.itemCopy.hidden;
+      this.updateItem(false);
     },
     remove() {
-      this.$store.commit("todosRemoveCustom", this.item.ID);
+      this.updateItem(true);
+    },
+    updateItem(toRemove) {
+      if (this.type == "weekly") {
+        let weeklyChecklist = this.$store.getters.checklistWeeklies;
+        for (let i = 0; i < weeklyChecklist.length; i++) {
+          if (weeklyChecklist[i].name == this.item.name) {
+            weeklyChecklist[i] = this.itemCopy;
+            if (toRemove) {
+              weeklyChecklist.splice(i, 1);
+            }
+          }
+        }
+
+        this.$store.commit("setChecklistWeeklies", weeklyChecklist);
+      }
+
+      if (this.type == "daily") {
+        let dailyChecklist = this.$store.getters.checklistDailies;
+        for (let i = 0; i < dailyChecklist.length; i++) {
+          if (dailyChecklist[i].name == this.item.name) {
+            dailyChecklist[i] = this.itemCopy;
+            if (toRemove) {
+              dailyChecklist.splice(i, 1);
+            }
+          }
+        }
+
+        this.$store.commit("setChecklistDailies", dailyChecklist);
+      }
+
+      if (this.type == "adhoc") {
+        let adhocChecklist = this.$store.getters.checklistAdhocs;
+        for (let i = 0; i < adhocChecklist.length; i++) {
+          if (adhocChecklist[i].name == this.item.name) {
+            adhocChecklist[i] = this.itemCopy;
+            if (toRemove) {
+              adhocChecklist.splice(i, 1);
+            }
+          }
+        }
+
+        this.$store.commit("setChecklistAdhocs", adhocChecklist);
+      }
+
+      let characterID = this.$store.getters.lodestoneData.Character.ID;
+      updateChecklist(characterID, this.$store.getters.checklistData);
     },
   },
 };
