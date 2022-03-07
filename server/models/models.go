@@ -91,8 +91,8 @@ type ClassJob struct {
 }
 
 type AchievementInfo struct {
-	*NamedEntity
-	Date time.Time
+	*IDdEntity // *NamedEntity
+	Date       time.Time
 }
 
 type AllAchievementInfo struct {
@@ -131,11 +131,11 @@ type Title struct {
 }
 
 type Minion struct {
-	*IconedNamedEntity
+	*IDdEntity // *IconedNamedEntity
 }
 
 type Mount struct {
-	*IconedNamedEntity
+	*IDdEntity // *IconedNamedEntity
 }
 
 type TitleInternal struct {

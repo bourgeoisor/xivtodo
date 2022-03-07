@@ -29,7 +29,11 @@
       <a v-if="item.custom" class="bi-trash text-danger cursor-pointer tt" @click="remove">
         <span class="tt-text">Remove</span>
       </a>
-      <a v-else-if="itemCopy.hidden" class="bi-eye-slash text-secondary cursor-pointer tt" @click="hid">
+      <a
+        v-else-if="itemCopy.hidden"
+        class="bi-eye-slash text-secondary cursor-pointer tt"
+        @click="hid"
+      >
         <span class="tt-text">Show</span>
       </a>
       <a v-else-if="!itemCopy.hidden" class="bi-eye text-success cursor-pointer tt" @click="hid">

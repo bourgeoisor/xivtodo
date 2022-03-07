@@ -4,7 +4,7 @@
       {{ $t("page.profile") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
         {{ $t("message.ofCharacter", { characterName: this.$store.getters.character.Name }) }}
-        <div v-if="this.$store.getters.characterOutOfDateACT" class="text-info fs-6">
+        <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
           <div class="spinner-border spinner-border-sm" role="status"></div>
           Updating character data, this may take a minute...
         </div>

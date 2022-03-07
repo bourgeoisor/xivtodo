@@ -181,6 +181,8 @@ export default {
       // Skip this if no active character is set.
       if (!this.$store.getters.hasCharacter) return;
 
+      let offSync = false;
+
       // Sync weekly checklist with DB
       let weeklyChecklist = [...this.$store.getters.checklistWeeklies];
       for (let dbItem of this.db.weeklyChecklist) {
@@ -198,6 +200,7 @@ export default {
             hidden: false,
           };
           weeklyChecklist.push(newItem);
+          offSync = true;
         }
       }
       for (let i = 0; i < this.$store.getters.checklistWeeklies.length; i++) {
@@ -210,6 +213,7 @@ export default {
         }
         if (!found && !item.custom) {
           weeklyChecklist.splice(i, 1);
+          offSync = true;
         }
       }
       this.$store.commit("setChecklistWeeklies", weeklyChecklist);
@@ -231,6 +235,7 @@ export default {
             hidden: false,
           };
           dailyChecklist.push(newItem);
+          offSync = true;
         }
       }
       for (let i = 0; i < this.$store.getters.checklistDailies.length; i++) {
@@ -243,12 +248,15 @@ export default {
         }
         if (!found && !item.custom) {
           dailyChecklist.splice(i, 1);
+          offSync = true;
         }
       }
       this.$store.commit("setChecklistDailies", dailyChecklist);
 
-      let characterID = this.$store.getters.lodestoneData.Character.ID;
-      updateChecklist(characterID, this.$store.getters.checklistData);
+      if (offSync) {
+        let characterID = this.$store.getters.lodestoneData.Character.ID;
+        updateChecklist(characterID, this.$store.getters.checklistData);
+      }
 
       // Reset old completions.
       this.resetDailliesWeeklies();
@@ -307,30 +315,32 @@ export default {
       this.weeklyReset = this.formatTimeDiff(this.weeklyResetTime(), true);
       this.dailyReset = this.formatTimeDiff(this.dailyResetTime(), false);
       this.rerender++;
+      let resetHappened = false;
 
       // Skip this if no active character is set.
       if (!this.$store.getters.hasCharacter) return;
 
       // Clear checked if past weekly reset time.
       if (this.$store.getters.checklistNextWeeklyReset < Date.now()) {
+        resetHappened = true;
         this.$store.commit("checklistNextWeeklyReset", this.weeklyResetTime());
         let checklistWeeklies = this.$store.getters.checklistWeeklies;
         for (let i = 0; i < checklistWeeklies.length; i++) {
           checklistWeeklies[i].checked = false;
         }
-
-        let characterID = this.$store.getters.lodestoneData.Character.ID;
-        updateChecklist(characterID, this.$store.getters.checklistData);
       }
 
       // Clear checked if past daily reset time.
       if (this.$store.getters.checklistNextDailyReset < Date.now()) {
+        resetHappened = true;
         this.$store.commit("checklistNextDailyReset", this.dailyResetTime());
         let checklistDailies = this.$store.getters.checklistDailies;
         for (let i = 0; i < checklistDailies.length; i++) {
           checklistDailies[i].checked = false;
         }
+      }
 
+      if (resetHappened) {
         let characterID = this.$store.getters.lodestoneData.Character.ID;
         updateChecklist(characterID, this.$store.getters.checklistData);
       }

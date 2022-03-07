@@ -3,10 +3,17 @@ import { createStore } from "vuex";
 const store = createStore({
   state: {
     env: {},
+    upstreamVersion: "",
     userData: null,
     activeCharacterID: 0,
   },
   getters: {
+    versionMatches(state) {
+      return state.env.VUE_APP_BUILD_NUM == state.upstreamVersion || state.upstreamVersion == null;
+    },
+    backendOffline(state) {
+      return state.upstreamVersion == "OFFLINE";
+    },
     userData(state) {
       return state.userData || null;
     },
@@ -79,27 +86,15 @@ const store = createStore({
     checklistNextDailyReset(state, getters) {
       return getters.checklistData.nextDailyReset || 0;
     },
-
-
-
-    characterOutOfDateACT(state, getters) {
+    activeCharacterOutOfDate(state, getters) {
       return getters.characterOutOfDate(state.activeCharacterID);
     },
-    characterOutOfDate: (state) => (id) => {
-      if (state) {
-        id;
-      }
-      return false;
-    },
-    // characterOutOfDate: (state) => (id) => {
-    //   let now = new Date();
-    //   let msBeforeUpdate = 1000 * 60 * 60 * 48; // 48 hours
+    characterOutOfDate: (state, getters) => (id) => {
+      let now = new Date();
+      let msBeforeUpdate = 1000 * 60 * 60 * 24; // 24 hours
 
-    //   return (
-    //     state.characters[id].modelVersion != "v2" ||
-    //     now > state.characters[id].lastUpdated + msBeforeUpdate
-    //   );
-    // },
+      return now > getters.characters[id].updated * 1000 + msBeforeUpdate;
+    },
   },
   mutations: {
     initialiseStore(state) {
@@ -126,6 +121,9 @@ const store = createStore({
       state.signIn = payload;
     },
 
+    setUpstreamVersion(state, payload) {
+      state.upstreamVersion = payload;
+    },
     setUserData(state, payload) {
       state.userData = { ...payload };
       if (state.userData.characters == null) {

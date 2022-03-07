@@ -55,6 +55,7 @@ func withRateLimit(handler http.Handler) http.Handler {
 
 func main() {
 	mux := http.NewServeMux()
+	mux.Handle("/version", withHeaders(withRateLimit(handlers.VersionHandler())))
 	mux.Handle("/auth", withHeaders(withRateLimit(handlers.AuthHandler())))
 	mux.Handle("/users", withHeaders(withRateLimit(handlers.UsersHandler())))
 	mux.Handle("/characters", withHeaders(withRateLimit(handlers.CharactersHandler())))

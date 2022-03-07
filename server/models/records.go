@@ -1,5 +1,9 @@
 package models
 
+type IDdEntity struct {
+	ID uint32
+}
+
 type NamedEntity struct {
 	ID   uint32
 	Name string

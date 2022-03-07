@@ -2,6 +2,18 @@
   <div :class="{ night: true }" class="d-flex flex-column min-vh-100">
     <TheNavbar />
     <main class="flex-shrink-0">
+      <div v-if="this.$store.getters.backendOffline" class="container">
+        <Alert
+          type="error"
+          msg="The backend is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update."
+        />
+      </div>
+      <!-- <div v-else-if="!this.$store.getters.versionMatches" class="container">
+        <Alert
+          type="success"
+          msg="A new version is available! <a href='javascript:window.location.reload()' class='alert-link'>Reload and update the page</a>."
+        />
+      </div> -->
       <div
         v-if="this.$store.state.characters && this.$store.state.characters.length > 0"
         class="container"
@@ -241,7 +253,7 @@ hr {
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import Alert from "@/components/Alert.vue";
-// import { fetchCharacterData } from "@/utilities/gcf.js";
+import { getVersion, getUserData, addCharacter } from "@/utilities/backend.js";
 
 export default {
   name: "App",
@@ -252,8 +264,13 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
+      this.checkUpstreamVersion();
+      this.updateUserData();
       this.updateCharactersData();
     });
+    setInterval(() => {
+      this.checkUpstreamVersion();
+    }, 1000 * 10); // 10 seconds
     setInterval(() => {
       this.updateCharactersData();
     }, 1000 * 60); // 1 minute
@@ -318,23 +335,43 @@ export default {
 
       return str;
     },
+    checkUpstreamVersion() {
+      getVersion()
+        .then((version) => {
+          this.$store.commit("setUpstreamVersion", version);
+        })
+        .catch(() => {
+          this.$store.commit("setUpstreamVersion", "OFFLINE");
+        });
+    },
+    updateUserData() {
+      getUserData()
+        .then((userData) => {
+          this.$store.commit("setUserData", userData);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
     updateCharactersData() {
-      // let i = 0;
-      // for (let character of this.$store.state.characters) {
-      //   if (this.$store.getters.characterOutOfDate(i)) {
-      //     console.log("Updating data for " + character.characterData.Character.Name + "...");
-      //     fetchCharacterData(character.characterData.Character.ID)
-      //       .then((characterData) => {
-      //         this.$store.commit("addCharacter", characterData);
-      //         console.log("Data for " + character.characterData.Character.Name + " updated.");
-      //       })
-      //       .catch((err) => {
-      //         console.log(err);
-      //         this.error = err;
-      //       });
-      //   }
-      //   i++;
-      // }
+      let i = 0;
+      for (let character of this.$store.getters.characters) {
+        if (this.$store.getters.characterOutOfDate(i)) {
+          console.log("Updating data for " + character.lodestoneData.Character.Name + "...");
+
+          let characterID = character.lodestoneData.Character.ID;
+          addCharacter(characterID)
+            .then((characterData) => {
+              this.$store.commit("addCharacter", characterData);
+              console.log("Data for " + characterData.lodestoneData.Character.Name + " updated.");
+            })
+            .catch((err) => {
+              console.log(err);
+              this.error = err;
+            });
+        }
+        i++;
+      }
     },
   },
 };

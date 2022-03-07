@@ -73,9 +73,57 @@ function injectData(characterData) {
   }
 }
 
+const getVersion = () =>
+  new Promise((resolve, reject) => {
+    fetch(apiEndpoint + "/version", {
+      method: "GET",
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          reject();
+        }
+      })
+      .then((version) => {
+        resolve(version.version);
+      })
+      .catch((err) => {
+        console.log(err);
+        reject();
+      });
+  });
+
 const authenticate = (code) =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/auth?code=" + code, {
+      method: "GET",
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw response;
+        }
+      })
+      .then((userData) => {
+        for (let character of userData.characters) {
+          injectData(character);
+        }
+        resolve(userData);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+
+const getUserData = () =>
+  new Promise((resolve, reject) => {
+    fetch(apiEndpoint + "/users", {
+      headers: {
+        Authorization:
+          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+      },
       method: "GET",
     })
       .then((response) => {
@@ -199,4 +247,12 @@ const updateChecklist = (id, payload) =>
       });
   });
 
-export { authenticate, updateSettings, addCharacter, removeCharacter, updateChecklist };
+export {
+  getVersion,
+  authenticate,
+  getUserData,
+  updateSettings,
+  addCharacter,
+  removeCharacter,
+  updateChecklist,
+};
