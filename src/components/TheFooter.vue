@@ -19,8 +19,8 @@
         <small>{{ $t("page.privacy") }}</small>
       </router-link>
       ·
-      <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
-        <small>{{ $t("page.contact") }}</small>
+      <a href="https://discord.gg/zfzhKhG3zj" target="_blank" rel="noopener noreferrer">
+        <small>{{ $t("page.discord") }}</small>
       </a>
       ·
       <a href="https://github.com/bourgeoisor/xivtodo" target="_blank" rel="noopener noreferrer">

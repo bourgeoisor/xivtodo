@@ -9,11 +9,12 @@
     "settings": "Settings",
     "about": "About",
     "help": "Help",
-    "privacy": "Privacy Policy",
+    "privacy": "Privacy",
     "contact": "Contact",
     "donate": "Support XIV ToDo",
     "twitter": "Twitter",
-    "github": "GitHub"
+    "github": "GitHub",
+    "discord": "Discord"
   },
   "message": {
     "changeActiveCharacter": "Active character",
