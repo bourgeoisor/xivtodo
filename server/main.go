@@ -63,7 +63,9 @@ func main() {
 	mux.Handle("/checklist", withHeaders(withRateLimit(handlers.ChecklistHandler())))
 
 	port := os.Getenv("PORT")
-	if port == "" {
+	if port != "" {
+		port = ":" + port
+	} else {
 		port = "localhost:8181"
 	}
 
