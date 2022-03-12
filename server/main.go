@@ -3,12 +3,11 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 	"server/handlers"
 	"server/utils"
 	"strings"
 )
-
-const listenTo = "localhost:8181"
 
 func withHeaders(handler http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
@@ -63,6 +62,11 @@ func main() {
 	mux.Handle("/encounters", withHeaders(withRateLimit(handlers.EncountersHandler())))
 	mux.Handle("/checklist", withHeaders(withRateLimit(handlers.ChecklistHandler())))
 
-	log.Println("listening to", listenTo)
-	log.Fatal(http.ListenAndServe(listenTo, mux))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "localhost:8181"
+	}
+
+	log.Println("listening to", port)
+	log.Fatal(http.ListenAndServe(port, mux))
 }
