@@ -5,7 +5,7 @@
       <div v-if="this.$store.getters.backendOffline" class="container">
         <Alert
           type="error"
-          msg="The backend is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update."
+          msg="XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update."
         />
       </div>
       <!-- <div v-else-if="!this.$store.getters.versionMatches" class="container">
