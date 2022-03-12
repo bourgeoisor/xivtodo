@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"cloud.google.com/go/firestore"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -26,7 +27,6 @@ func ChecklistHandler() http.Handler {
 			log.Println("missing id query")
 			return
 		}
-		characterIndex := utils.CharacterIndexInUser(&userData, characterID)
 
 		checklistData := models.ChecklistData{}
 		err := json.NewDecoder(r.Body).Decode(&checklistData)
@@ -36,9 +36,13 @@ func ChecklistHandler() http.Handler {
 			return
 		}
 
-		userData.Characters[characterIndex].ChecklistData = &checklistData
-
-		_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, userData)
+		_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, map[string]interface{}{
+			"Characters": map[string]interface{}{
+				characterID: map[string]interface{}{
+					"ChecklistData": checklistData,
+				},
+			},
+		}, firestore.MergeAll)
 		if err != nil {
 			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 			log.Printf("failed to store User data: %v", err)

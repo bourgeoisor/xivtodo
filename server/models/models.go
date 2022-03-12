@@ -23,9 +23,9 @@ type DiscordUser struct {
 }
 
 type User struct {
-	DiscordUser *DiscordUser `json:"discordUser"`
-	Characters  []*Character `json:"characters"`
-	Settings    *Settings    `json:"settings"`
+	DiscordUser *DiscordUser          `json:"discordUser"`
+	Characters  map[string]*Character `json:"characters"`
+	Settings    *Settings             `json:"settings"`
 }
 
 type Settings struct {

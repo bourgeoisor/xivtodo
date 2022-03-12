@@ -87,14 +87,13 @@ export default {
     item: Object,
     type: String,
     showHidden: Boolean,
-    rerender: Number,
   },
   watch: {
+    item() {
+      this.itemCopy = this.item;
+    },
     "itemCopy.checked": function () {
       this.updateItem(false);
-    },
-    rerender() {
-      this.itemCopy = this.item;
     },
   },
   methods: {

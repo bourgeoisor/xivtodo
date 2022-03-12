@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"cloud.google.com/go/firestore"
 	"encoding/json"
 	"errors"
 	"log"
@@ -36,9 +37,9 @@ func SettingsHandler() http.Handler {
 			return
 		}
 
-		userData.Settings = &settings
-
-		_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, userData)
+		_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, map[string]interface{}{
+			"Settings": settings,
+		}, firestore.MergeAll)
 		if err != nil {
 			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 			log.Printf("failed to store User data: %v", err)
@@ -46,7 +47,7 @@ func SettingsHandler() http.Handler {
 		}
 
 		w.WriteHeader(http.StatusOK)
-		err = json.NewEncoder(w).Encode(userData.Settings)
+		err = json.NewEncoder(w).Encode(settings)
 		if err != nil {
 			http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 			log.Printf("failed to send settings data: %v", err)

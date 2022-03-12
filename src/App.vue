@@ -345,13 +345,15 @@ export default {
         });
     },
     updateUserData() {
-      getUserData()
-        .then((userData) => {
-          this.$store.commit("setUserData", userData);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+      if (this.$store.getters.userData) {
+        getUserData()
+          .then((userData) => {
+            this.$store.commit("setUserData", userData);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
     },
     updateCharactersData() {
       let i = 0;

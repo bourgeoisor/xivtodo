@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"server/models"
 	"server/store"
-	"strconv"
 	"strings"
 )
 
@@ -37,6 +36,7 @@ func GetUserWithAuthnOrFail(w http.ResponseWriter, r *http.Request, userData *mo
 	user, err := store.Client.Collection("users").Doc(discordID).Get(store.Ctx)
 	if err != nil || !user.Exists() {
 		http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
+		log.Println(err)
 		return err
 	}
 
@@ -44,10 +44,12 @@ func GetUserWithAuthnOrFail(w http.ResponseWriter, r *http.Request, userData *mo
 	jsonBody, err := json.Marshal(m)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		log.Println(err)
 		return err
 	}
 	if err := json.Unmarshal(jsonBody, userData); err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		log.Println(err)
 		return err
 	}
 
@@ -66,12 +68,7 @@ func GetUserWithAuthnOrFail(w http.ResponseWriter, r *http.Request, userData *mo
 	return nil
 }
 
-func CharacterIndexInUser(userData *models.User, id string) int {
-	for i, character := range userData.Characters {
-		if strconv.Itoa(int(character.LodestoneData.Character.ID)) == id {
-			return i
-		}
-	}
-
-	return -1
+func CharacterInUser(userData *models.User, id string) bool {
+	_, exists := userData.Characters[id]
+	return exists
 }

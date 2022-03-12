@@ -192,7 +192,8 @@
         </div>
         <br />
         <div class="info-block">
-          <b>{{ $t("profile.elementalLevel") }}</b><br />
+          <b>{{ $t("profile.elementalLevel") }}</b>
+          <br />
           <span
             :class="{
               'fw-bold': this.$store.getters.character.ClassJobElemental?.Level == 60,
@@ -203,7 +204,8 @@
           </span>
         </div>
         <div class="info-block">
-          <b>{{ $t("profile.resistanceRank") }}</b><br />
+          <b>{{ $t("profile.resistanceRank") }}</b>
+          <br />
           <span
             :class="{
               'fw-bold': this.$store.getters.character.ClassJobBozjan?.Level == 25,

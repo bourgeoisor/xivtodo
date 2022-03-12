@@ -107,9 +107,14 @@ const authenticate = (code) =>
         }
       })
       .then((userData) => {
-        for (let character of userData.characters) {
-          injectData(character);
+        let characters = [];
+        if (userData.characters != null) {
+          for (let characterID in userData.characters) {
+            injectData(userData.characters[characterID]);
+            characters.push(userData.characters[characterID]);
+          }
         }
+        userData.characters = characters;
         resolve(userData);
       })
       .catch((err) => {
@@ -134,9 +139,14 @@ const getUserData = () =>
         }
       })
       .then((userData) => {
-        for (let character of userData.characters) {
-          injectData(character);
+        let characters = [];
+        if (userData.characters != null) {
+          for (let characterID in userData.characters) {
+            injectData(userData.characters[characterID]);
+            characters.push(userData.characters[characterID]);
+          }
         }
+        userData.characters = characters;
         resolve(userData);
       })
       .catch((err) => {

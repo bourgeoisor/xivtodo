@@ -1,13 +1,13 @@
 package handlers
 
 import (
+	"cloud.google.com/go/firestore"
 	"encoding/json"
 	"log"
 	"net/http"
 	"server/models"
 	"server/store"
 	"server/utils"
-	"strconv"
 	"time"
 )
 
@@ -40,8 +40,7 @@ func CharactersHandler() http.Handler {
 }
 
 func addCharacter(w http.ResponseWriter, userData *models.User, characterID string) {
-	characterIndex := utils.CharacterIndexInUser(userData, characterID)
-	if userHasMaxCharacters(userData) && characterIndex == -1 {
+	if userHasMaxCharacters(userData) && !utils.CharacterInUser(userData, characterID) {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 		log.Println("user already has 8 characters")
 		return
@@ -55,24 +54,26 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 		return
 	}
 
-	if characterIndex == -1 {
-		character := models.Character{
-			Updated:       time.Now().Unix(),
-			LodestoneData: lodestoneProfile,
-			ChecklistData: &models.ChecklistData{
-				WeeklyChecklist: []*models.ChecklistItem{},
-				DailyChecklist:  []*models.ChecklistItem{},
-				AdhocChecklist:  []*models.ChecklistItem{},
-			},
-		}
-		userData.Characters = append(userData.Characters, &character)
-		characterIndex = len(userData.Characters) - 1
-	} else {
-		userData.Characters[characterIndex].Updated = time.Now().Unix()
-		userData.Characters[characterIndex].LodestoneData = lodestoneProfile
+	character := models.Character{
+		Updated:       time.Now().Unix(),
+		LodestoneData: lodestoneProfile,
+		ChecklistData: &models.ChecklistData{
+			WeeklyChecklist: []*models.ChecklistItem{},
+			DailyChecklist:  []*models.ChecklistItem{},
+			AdhocChecklist:  []*models.ChecklistItem{},
+		},
+	}
+	if utils.CharacterInUser(userData, characterID) {
+		character = *userData.Characters[characterID]
+		character.Updated = time.Now().Unix()
+		character.LodestoneData = lodestoneProfile
 	}
 
-	_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, userData)
+	_, err = store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, map[string]interface{}{
+		"Characters": map[string]interface{}{
+			characterID: character,
+		},
+	}, firestore.MergeAll)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		log.Printf("failed to store User data: %v", err)
@@ -80,7 +81,7 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 	}
 
 	w.WriteHeader(http.StatusOK)
-	err = json.NewEncoder(w).Encode(userData.Characters[characterIndex])
+	err = json.NewEncoder(w).Encode(character)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		log.Printf("failed to send Character data: %v", err)
@@ -89,19 +90,19 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 }
 
 func removeCharacter(w http.ResponseWriter, userData *models.User, characterID string) {
-	if utils.CharacterIndexInUser(userData, characterID) == -1 {
+	if !utils.CharacterInUser(userData, characterID) {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 		log.Println("character is not in user")
 		return
 	}
 
-	for i, v := range userData.Characters {
-		if strconv.Itoa(int(v.LodestoneData.Character.ID)) == characterID {
-			userData.Characters = append(userData.Characters[:i], userData.Characters[i+1:]...)
-		}
-	}
+	_, err := store.Client.Collection("users").Doc(userData.DiscordUser.ID).Update(store.Ctx, []firestore.Update{
+		{
+			Path:  "Characters." + characterID,
+			Value: firestore.Delete,
+		},
+	})
 
-	_, err := store.Client.Collection("users").Doc(userData.DiscordUser.ID).Set(store.Ctx, userData)
 	if err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		log.Printf("Failed to store User data: %v", err)

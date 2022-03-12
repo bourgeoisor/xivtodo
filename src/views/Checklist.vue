@@ -60,11 +60,10 @@
         <ul class="list-group list-group-flush">
           <ChecklistItem
             v-for="item of [...this.$store.getters.checklistWeeklies]"
-            :key="item.ID"
+            :key="item.name"
             :item="item"
             type="weekly"
             :showHidden="showHidden"
-            :rerender="rerender"
           />
         </ul>
         <br />
@@ -99,7 +98,6 @@
             :item="item"
             type="daily"
             :showHidden="showHidden"
-            :rerender="rerender"
           />
         </ul>
         <br />
@@ -142,7 +140,6 @@
             :item="item"
             type="adhoc"
             :showHidden="showHidden"
-            :rerender="rerender"
           />
         </ul>
         <br />
@@ -163,7 +160,6 @@ export default {
   data() {
     return {
       db: dbJson,
-      rerender: 0,
       showHidden: false,
       weeklyReset: this.formatTimeDiff(this.weeklyResetTime(), true),
       dailyReset: this.formatTimeDiff(this.dailyResetTime(), false),
@@ -314,7 +310,6 @@ export default {
     resetDailliesWeeklies() {
       this.weeklyReset = this.formatTimeDiff(this.weeklyResetTime(), true);
       this.dailyReset = this.formatTimeDiff(this.dailyResetTime(), false);
-      this.rerender++;
       let resetHappened = false;
 
       // Skip this if no active character is set.
