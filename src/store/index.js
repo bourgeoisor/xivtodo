@@ -91,7 +91,7 @@ const store = createStore({
     },
     characterOutOfDate: (state, getters) => (id) => {
       let now = new Date();
-      let msBeforeUpdate = 1000 * 60 * 60 * 24; // 24 hours
+      let msBeforeUpdate = 1000 * 60 * 60 * 48; // 48 hours
 
       return now > getters.characters[id].updated * 1000 + msBeforeUpdate;
     },

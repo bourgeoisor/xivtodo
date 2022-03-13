@@ -270,7 +270,7 @@ export default {
     });
     setInterval(() => {
       this.checkUpstreamVersion();
-    }, 1000 * 10); // 10 seconds
+    }, 1000 * 15); // 15 seconds
     setInterval(() => {
       this.updateCharactersData();
     }, 1000 * 60); // 1 minute
@@ -331,7 +331,7 @@ export default {
       str +=
         "<br /><br />Make sure to note this information down, as it will disappear once you <a href='" +
         this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
-        "' class='alert-link'>sign in with Discord</a>.";
+        "' class='alert-link'>sign in with Discord</a>. Need help? Visit the new <a href='https://discord.gg/zfzhKhG3zj' target='_blank' rel='noopener noreferrer' class='alert-link'>Discord</a> server or <a href='https://twitter.com/XIVToDo' target='_blank' rel='noopener noreferrer' class='alert-link'>Twitter</a>!";
 
       return str;
     },
