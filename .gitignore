@@ -3,6 +3,7 @@ node_modules
 /dist
 *.csv*
 *Zone.Identifier
+server/backend-sa.json
 
 # local env files
 .env.local
