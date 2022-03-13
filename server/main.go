@@ -5,8 +5,6 @@ import (
 	"net/http"
 	"os"
 	"server/handlers"
-	"server/utils"
-	"strings"
 )
 
 func withHeaders(handler http.Handler) http.Handler {
@@ -22,13 +20,6 @@ func withHeaders(handler http.Handler) http.Handler {
 			return
 		}
 
-		handler.ServeHTTP(w, r)
-	}
-	return http.HandlerFunc(fn)
-}
-
-func withRateLimit(handler http.Handler) http.Handler {
-	fn := func(w http.ResponseWriter, r *http.Request) {
 		remoteHost := r.Header.Get("X-REAL-IP")
 		if remoteHost == "" {
 			remoteHost = r.Header.Get("X-FORWARDED-FOR")
@@ -36,16 +27,7 @@ func withRateLimit(handler http.Handler) http.Handler {
 		if remoteHost == "" {
 			remoteHost = r.RemoteAddr
 		}
-		remoteHost = strings.Split(remoteHost, ":")[0]
-
 		log.Println(remoteHost, "-->", r.Method, r.RequestURI)
-
-		ok := utils.RateLimiter.Log(remoteHost)
-		if !ok {
-			http.Error(w, http.StatusText(http.StatusTooManyRequests), http.StatusTooManyRequests)
-			log.Printf("TooManyRequests: %s", remoteHost)
-			return
-		}
 
 		handler.ServeHTTP(w, r)
 	}
@@ -54,21 +36,20 @@ func withRateLimit(handler http.Handler) http.Handler {
 
 func main() {
 	mux := http.NewServeMux()
-	mux.Handle("/version", withHeaders(withRateLimit(handlers.VersionHandler())))
-	mux.Handle("/auth", withHeaders(withRateLimit(handlers.AuthHandler())))
-	mux.Handle("/users", withHeaders(withRateLimit(handlers.UsersHandler())))
-	mux.Handle("/characters", withHeaders(withRateLimit(handlers.CharactersHandler())))
-	mux.Handle("/settings", withHeaders(withRateLimit(handlers.SettingsHandler())))
-	mux.Handle("/encounters", withHeaders(withRateLimit(handlers.EncountersHandler())))
-	mux.Handle("/checklist", withHeaders(withRateLimit(handlers.ChecklistHandler())))
+	mux.Handle("/version", withHeaders(handlers.VersionHandler()))
+	mux.Handle("/auth", withHeaders(handlers.AuthHandler()))
+	mux.Handle("/users", withHeaders(handlers.UsersHandler()))
+	mux.Handle("/characters", withHeaders(handlers.CharactersHandler()))
+	mux.Handle("/settings", withHeaders(handlers.SettingsHandler()))
+	mux.Handle("/encounters", withHeaders(handlers.EncountersHandler()))
+	mux.Handle("/checklist", withHeaders(handlers.ChecklistHandler()))
 
+	host := "localhost:8181"
 	port := os.Getenv("PORT")
 	if port != "" {
-		port = ":" + port
-	} else {
-		port = "localhost:8181"
+		host = ":" + port
 	}
 
-	log.Println("listening to", port)
-	log.Fatal(http.ListenAndServe(port, mux))
+	log.Println("listening to", host)
+	log.Fatal(http.ListenAndServe(host, mux))
 }

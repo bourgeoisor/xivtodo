@@ -6,6 +6,7 @@ import (
 	"encoding/base64"
 	"encoding/binary"
 	"encoding/json"
+	"errors"
 	"log"
 	"math/rand"
 	"net/http"
@@ -125,6 +126,10 @@ func getDiscordUserResponse(discordUser *models.DiscordUser, discordAuthResponse
 		return err
 	}
 	defer resp.Body.Close()
+
+	if resp.StatusCode != 200 {
+		return errors.New(resp.Status)
+	}
 
 	err = json.NewDecoder(resp.Body).Decode(discordUser)
 	if err != nil {

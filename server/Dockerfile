@@ -3,14 +3,9 @@ FROM golang:1.17-buster AS build
 
 WORKDIR /app
 
-# COPY go.mod ./
-# COPY go.sum ./
-
 COPY . ./
 
 RUN go mod download
-
-# COPY *.go ./
 
 RUN go build -o /xivtodo-server
 
