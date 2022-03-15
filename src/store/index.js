@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import { injectWeeklyChecklist, injectDailyChecklist } from "@/utilities/checklist";
 
 const store = createStore({
   state: {
@@ -58,10 +59,10 @@ const store = createStore({
       return getters.activeCharacter?.checklistData || {};
     },
     checklistWeeklies(state, getters) {
-      return getters.checklistData.weeklyChecklist || [];
+      return injectWeeklyChecklist(getters.checklistData.weeklyChecklist || []);
     },
     checklistDailies(state, getters) {
-      return getters.checklistData.dailyChecklist || [];
+      return injectDailyChecklist(getters.checklistData.dailyChecklist || []);
     },
     checklistAdhocs(state, getters) {
       return getters.checklistData.adhocChecklist || [];

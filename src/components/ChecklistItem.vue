@@ -17,6 +17,7 @@
         class="form-check-input"
         type="checkbox"
         :id="item.name"
+        @change="check"
       />
       &nbsp;&nbsp;<span :class="{ 'checklist-checked': itemCopy.checked }">{{ item.name }}</span>
     </span>
@@ -92,19 +93,22 @@ export default {
     item() {
       this.itemCopy = this.item;
     },
-    "itemCopy.checked": function () {
-      this.updateItem(false);
-    },
   },
   methods: {
     hid() {
       this.itemCopy.hidden = !this.itemCopy.hidden;
       this.updateItem(false);
     },
+    check() {
+      this.updateItem(false);
+    },
     remove() {
       this.updateItem(true);
     },
     updateItem(toRemove) {
+      // Skip this if no active character is set.
+      if (!this.$store.getters.hasCharacter) return;
+
       if (this.type == "weekly") {
         let weeklyChecklist = this.$store.getters.checklistWeeklies;
         for (let i = 0; i < weeklyChecklist.length; i++) {

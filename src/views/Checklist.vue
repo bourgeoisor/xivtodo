@@ -153,13 +153,10 @@ import Alert from "@/components/Alert.vue";
 import ChecklistItem from "@/components/ChecklistItem.vue";
 import { updateChecklist } from "@/utilities/backend.js";
 
-import dbJson from "@/assets/db.json";
-
 export default {
   name: "Checklist",
   data() {
     return {
-      db: dbJson,
       showHidden: false,
       weeklyReset: this.formatTimeDiff(this.weeklyResetTime(), true),
       dailyReset: this.formatTimeDiff(this.dailyResetTime(), false),
@@ -174,87 +171,6 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
-      // Skip this if no active character is set.
-      if (!this.$store.getters.hasCharacter) return;
-
-      let offSync = false;
-
-      // Sync weekly checklist with DB
-      let weeklyChecklist = [...this.$store.getters.checklistWeeklies];
-      for (let dbItem of this.db.weeklyChecklist) {
-        let found = false;
-        for (let item of weeklyChecklist) {
-          if (item.name == dbItem.Name && !item.custom) {
-            found = true;
-          }
-        }
-        if (!found) {
-          let newItem = {
-            name: dbItem.Name,
-            custom: false,
-            checked: false,
-            hidden: false,
-          };
-          weeklyChecklist.push(newItem);
-          offSync = true;
-        }
-      }
-      for (let i = 0; i < this.$store.getters.checklistWeeklies.length; i++) {
-        let item = this.$store.getters.checklistWeeklies[i];
-        let found = false;
-        for (let dbItem of this.db.weeklyChecklist) {
-          if (dbItem.Name == item.name) {
-            found = true;
-          }
-        }
-        if (!found && !item.custom) {
-          weeklyChecklist.splice(i, 1);
-          offSync = true;
-        }
-      }
-      this.$store.commit("setChecklistWeeklies", weeklyChecklist);
-
-      // Sync daily checklist with DB
-      let dailyChecklist = [...this.$store.getters.checklistDailies];
-      for (let dbItem of this.db.dailyChecklist) {
-        let found = false;
-        for (let item of dailyChecklist) {
-          if (item.name == dbItem.Name && !item.custom) {
-            found = true;
-          }
-        }
-        if (!found) {
-          let newItem = {
-            name: dbItem.Name,
-            custom: false,
-            checked: false,
-            hidden: false,
-          };
-          dailyChecklist.push(newItem);
-          offSync = true;
-        }
-      }
-      for (let i = 0; i < this.$store.getters.checklistDailies.length; i++) {
-        let item = this.$store.getters.checklistDailies[i];
-        let found = false;
-        for (let dbItem of this.db.dailyChecklist) {
-          if (dbItem.Name == item.name) {
-            found = true;
-          }
-        }
-        if (!found && !item.custom) {
-          dailyChecklist.splice(i, 1);
-          offSync = true;
-        }
-      }
-      this.$store.commit("setChecklistDailies", dailyChecklist);
-
-      if (offSync) {
-        let characterID = this.$store.getters.lodestoneData.Character.ID;
-        updateChecklist(characterID, this.$store.getters.checklistData);
-      }
-
-      // Reset old completions.
       this.resetDailliesWeeklies();
     });
     setInterval(() => {
