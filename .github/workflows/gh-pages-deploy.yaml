@@ -32,7 +32,7 @@ jobs:
             echo "VUE_APP_BUILD_NUM=$APP_BUILD_NUM" > .env.production
             echo "VUE_APP_BUILD_DATE=$APP_BUILD_DATE" >> .env.production
             echo "VUE_APP_BACKEND_API_URI=https://api.xivtodo.com" >> .env.production
-            echo "VUE_APP_DISCORD_REDIRECT_URI=https%3A%2F%2Fxivtodo.com%2Fauth" >> .env.production
+            echo "VUE_APP_DISCORD_AUTH_URI=https://discord.com/api/oauth2/authorize?response_type=code&client_id=933567168912719923&scope=identify&redirect_uri=https%3A%2F%2Fxivtodo.com%2Fauth&prompt=consent" >> .env.production
 
         - name: Deploy to gh-pages
           run: |
