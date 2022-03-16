@@ -21,8 +21,8 @@ const routes = [
   {
     path: "/auth",
     beforeEnter: (_to, _from, next) => {
-      console.log(_to.query);
-      console.log(_to.query.code);
+      console.log(_from);
+      console.log(_to);
       authenticate(_to.query.code)
         .then((userData) => {
           store.commit("setUserData", userData);
