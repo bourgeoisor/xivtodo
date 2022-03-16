@@ -4,7 +4,7 @@
       {{ $t("page.profile") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
         {{ $t("message.ofCharacter", { characterName: this.$store.getters.character.Name }) }}
-        <div v-if="this.$store.getters.characterOutOfDateACT" class="text-info fs-6">
+        <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
           <div class="spinner-border spinner-border-sm" role="status"></div>
           Updating character data, this may take a minute...
         </div>
@@ -103,7 +103,7 @@
             </b>
             <br />
             <i class="bi bi-arrow-return-right text-muted"></i>
-            {{ new Date(this.$store.getters.characterData.PlayingSince).toDateString() }}
+            {{ new Date(this.$store.getters.lodestoneData.PlayingSince).toDateString() }}
           </div>
           <div class="info-block">
             <b>{{ $t("profile.achievements") }}</b>
@@ -192,7 +192,8 @@
         </div>
         <br />
         <div class="info-block">
-          <b>{{ $t("profile.elementalLevel") }}</b><br />
+          <b>{{ $t("profile.elementalLevel") }}</b>
+          <br />
           <span
             :class="{
               'fw-bold': this.$store.getters.character.ClassJobElemental?.Level == 60,
@@ -203,7 +204,8 @@
           </span>
         </div>
         <div class="info-block">
-          <b>{{ $t("profile.resistanceRank") }}</b><br />
+          <b>{{ $t("profile.resistanceRank") }}</b>
+          <br />
           <span
             :class="{
               'fw-bold': this.$store.getters.character.ClassJobBozjan?.Level == 25,

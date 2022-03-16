@@ -18,7 +18,16 @@
       </button>
     </h1>
     <Alert
-      v-if="!this.$store.getters.hasCharacter"
+      v-if="!this.$store.getters.userData"
+      type="normal"
+      :msg="
+        'No characters found. You can <a href=\'' +
+        this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
+        '\' class=\'alert-link\'>sign in with Discord</a> to add them.'
+      "
+    />
+    <Alert
+      v-else-if="!this.$store.getters.hasCharacter"
       type="normal"
       msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
     />
@@ -28,7 +37,7 @@
 
       <div class="col-md">
         <h3>Weeklies</h3>
-        <span v-if="!showHidden" class="fw-lighter text-muted">{{ weeklyReset }} until reset</span>
+        <span class="fw-lighter text-muted">{{ weeklyReset }} until reset</span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
           <input
@@ -50,11 +59,11 @@
 
         <ul class="list-group list-group-flush">
           <ChecklistItem
-            v-for="item of [...db.weeklyChecklist, ...this.$store.getters.todosCustomWeeklies]"
-            :key="item.ID"
+            v-for="item of [...this.$store.getters.checklistWeeklies]"
+            :key="item.name"
             :item="item"
+            type="weekly"
             :showHidden="showHidden"
-            :rerender="rerender"
           />
         </ul>
         <br />
@@ -62,7 +71,7 @@
 
       <div class="col-md">
         <h3>Dailies</h3>
-        <span v-if="!showHidden" class="fw-lighter text-muted">{{ dailyReset }} until reset</span>
+        <span class="fw-lighter text-muted">{{ dailyReset }} until reset</span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
           <input
@@ -84,26 +93,56 @@
 
         <ul class="list-group list-group-flush">
           <ChecklistItem
-            v-for="item of [...db.dailyChecklist, ...this.$store.getters.todosCustomDailies]"
+            v-for="item of [...this.$store.getters.checklistDailies]"
             :key="item.ID"
             :item="item"
+            type="daily"
             :showHidden="showHidden"
-            :rerender="rerender"
           />
         </ul>
         <br />
         <span
-          v-if="this.$store.getters.todosHidden.length == 1"
+          v-if="this.$store.getters.checklistLenHiddens == 1"
           class="text-muted fw-light float-end"
         >
           1 hidden task<br /><br />
         </span>
         <span
-          v-else-if="this.$store.getters.todosHidden.length > 1"
+          v-else-if="this.$store.getters.checklistLenHiddens > 1"
           class="text-muted fw-light float-end"
         >
-          {{ this.$store.getters.todosHidden.length }} hidden tasks<br /><br />
+          {{ this.$store.getters.checklistLenHiddens }} hidden tasks<br /><br />
         </span>
+      </div>
+    </div>
+    <div v-if="showHidden || this.$store.getters.checklistAdhocs.length > 0" class="row">
+      <div class="col">
+        <h3>Scratchpad</h3>
+        <span class="fw-lighter text-muted">Checklist without deadlines</span>
+
+        <div v-if="showHidden" class="input-group mt-3 mb-2">
+          <input v-model="customAdhoc" type="text" class="form-control" placeholder="Custom item" />
+          <button
+            class="btn btn-outline-success"
+            :class="{ disabled: !customAdhoc }"
+            type="button"
+            id="button-addon2"
+            @click="addCustomAdhoc"
+          >
+            Add custom item
+          </button>
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <ChecklistItem
+            v-for="item of [...this.$store.getters.checklistAdhocs]"
+            :key="item.ID"
+            :item="item"
+            type="adhoc"
+            :showHidden="showHidden"
+          />
+        </ul>
+        <br />
       </div>
     </div>
   </div>
@@ -112,20 +151,18 @@
 <script>
 import Alert from "@/components/Alert.vue";
 import ChecklistItem from "@/components/ChecklistItem.vue";
-
-import dbJson from "@/assets/db.json";
+import { updateChecklist } from "@/utilities/backend.js";
 
 export default {
   name: "Checklist",
   data() {
     return {
-      db: dbJson,
-      rerender: 0,
       showHidden: false,
       weeklyReset: this.formatTimeDiff(this.weeklyResetTime(), true),
       dailyReset: this.formatTimeDiff(this.dailyResetTime(), false),
       customWeekly: "",
       customDaily: "",
+      customAdhoc: "",
     };
   },
   components: {
@@ -134,32 +171,6 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
-      // Skip this if no active character is set.
-      if (!this.$store.getters.hasCharacter) return;
-
-      let dailiesIds = this.db.dailyChecklist.map((item) => item.ID);
-      let weekliesIds = this.db.weeklyChecklist.map((item) => item.ID);
-      let customDailiesIds = this.$store.getters.todosCustomDailies.map((item) => item.ID);
-      let customWeekliesIds = this.$store.getters.todosCustomWeeklies.map((item) => item.ID);
-      let ids = [...dailiesIds, ...weekliesIds, ...customDailiesIds, ...customWeekliesIds];
-
-      // Clear checked if they don't exist anymore.
-      let todosChecked = this.$store.getters.todosChecked;
-      for (let id of todosChecked) {
-        if (ids.indexOf(id) == -1) {
-          this.$store.commit("todoChecked", { id: id, checked: false });
-        }
-      }
-
-      // Clear hidden if they don't exist anymore.
-      let todosHidden = this.$store.getters.todosHidden;
-      for (let id of todosHidden) {
-        if (ids.indexOf(id) == -1) {
-          this.$store.commit("todoHidden", { id: id, checked: false });
-        }
-      }
-
-      // Reset old completions.
       this.resetDailliesWeeklies();
     });
     setInterval(() => {
@@ -173,7 +184,6 @@ export default {
 
       then.setUTCHours(8, 0, 0);
       then.setUTCDate(now.getUTCDate() + (7 + 2 - now.getUTCDay()));
-      
 
       let diff = then - now;
       let delta = 1000 * 60 * 60 * 24 * 7;
@@ -216,40 +226,83 @@ export default {
     resetDailliesWeeklies() {
       this.weeklyReset = this.formatTimeDiff(this.weeklyResetTime(), true);
       this.dailyReset = this.formatTimeDiff(this.dailyResetTime(), false);
-      this.rerender++;
+      let resetHappened = false;
 
       // Skip this if no active character is set.
       if (!this.$store.getters.hasCharacter) return;
 
       // Clear checked if past weekly reset time.
-      if (this.$store.getters.todosNextWeeklyReset < Date.now()) {
-        this.$store.commit("todosNextWeeklyReset", this.weeklyResetTime());
-        let todosChecked = this.$store.getters.todosChecked;
-        for (let id of todosChecked) {
-          if (id >= 1000 && id < 2000) {
-            this.$store.commit("todoChecked", { id: id, checked: false });
-          }
+      if (this.$store.getters.checklistNextWeeklyReset < Date.now()) {
+        resetHappened = true;
+        this.$store.commit("checklistNextWeeklyReset", this.weeklyResetTime());
+        let checklistWeeklies = this.$store.getters.checklistWeeklies;
+        for (let i = 0; i < checklistWeeklies.length; i++) {
+          checklistWeeklies[i].checked = false;
         }
       }
 
       // Clear checked if past daily reset time.
-      if (this.$store.getters.todosNextDailyReset < Date.now()) {
-        this.$store.commit("todosNextDailyReset", this.dailyResetTime());
-        let todosChecked = this.$store.getters.todosChecked;
-        for (let id of todosChecked) {
-          if (id >= 2000 && id < 3000) {
-            this.$store.commit("todoChecked", { id: id, checked: false });
-          }
+      if (this.$store.getters.checklistNextDailyReset < Date.now()) {
+        resetHappened = true;
+        this.$store.commit("checklistNextDailyReset", this.dailyResetTime());
+        let checklistDailies = this.$store.getters.checklistDailies;
+        for (let i = 0; i < checklistDailies.length; i++) {
+          checklistDailies[i].checked = false;
         }
+      }
+
+      if (resetHappened) {
+        let characterID = this.$store.getters.lodestoneData.Character.ID;
+        updateChecklist(characterID, this.$store.getters.checklistData);
       }
     },
     addCustomWeekly() {
-      this.$store.commit("todosAddCustomWeekly", this.customWeekly);
+      let newItem = {
+        name: this.customWeekly,
+        custom: true,
+        checked: false,
+        hidden: false,
+      };
+
+      let weeklyChecklist = [...this.$store.getters.checklistWeeklies];
+      weeklyChecklist.push(newItem);
+      this.$store.commit("setChecklistWeeklies", weeklyChecklist);
+
       this.customWeekly = "";
+      let characterID = this.$store.getters.lodestoneData.Character.ID;
+      updateChecklist(characterID, this.$store.getters.checklistData);
     },
     addCustomDaily() {
-      this.$store.commit("todosAddCustomDaily", this.customDaily);
+      let newItem = {
+        name: this.customDaily,
+        custom: true,
+        checked: false,
+        hidden: false,
+      };
+
+      let dailyChecklist = [...this.$store.getters.checklistDailies];
+      dailyChecklist.push(newItem);
+      this.$store.commit("setChecklistDailies", dailyChecklist);
+
       this.customDaily = "";
+      let characterID = this.$store.getters.lodestoneData.Character.ID;
+      updateChecklist(characterID, this.$store.getters.checklistData);
+    },
+    addCustomAdhoc() {
+      let newItem = {
+        name: this.customAdhoc,
+        custom: true,
+        checked: false,
+        hidden: false,
+      };
+
+      let adhocChecklist = [...this.$store.getters.checklistAdhocs];
+      adhocChecklist.push(newItem);
+      this.$store.commit("setChecklistAdhocs", adhocChecklist);
+
+      this.customAdhoc = "";
+      let characterID = this.$store.getters.lodestoneData.Character.ID;
+      updateChecklist(characterID, this.$store.getters.checklistData);
     },
   },
 };

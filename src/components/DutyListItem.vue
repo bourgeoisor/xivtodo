@@ -7,12 +7,13 @@
     }"
   >
     <span
+      class="duty-list-item"
       :class="{
         'bi-question-circle': duty.cleared == -1,
         'bi-check-circle': duty.cleared == 1,
         'bi-circle': duty.cleared == 0,
       }"
-      :title="clearedIconTitle"
+      :title="duty.Name"
     >
       &nbsp;
       <a
@@ -68,19 +69,18 @@
   color: transparent;
   text-shadow: 0 0 20px #c2c2c2;
 }
+
+.duty-list-item {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: "… ";
+}
 </style>
 
 <script>
 export default {
   props: {
     duty: Object,
-  },
-  computed: {
-    clearedIconTitle() {
-      if (this.duty.cleared == 0) return "Uncleared";
-      if (this.duty.cleared == 1) return "Cleared";
-      else return "Unknown based on current achievements";
-    },
   },
 };
 </script>

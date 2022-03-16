@@ -42,7 +42,7 @@ export default {
         achievements.set(achievementList[i].ID, achievementList[i].Date);
       }
 
-      let spoilersOption = this.$store.state.settings.spoilersOption;
+      let spoilersOption = this.$store.getters.settings.spoilersOption || 0;
 
       for (let item of duties) {
         let cleared = 0;
@@ -64,7 +64,7 @@ export default {
         if (item.Spoilers && spoilersOption != "2") {
           let showIfAllowed = false;
           if (item.SpoilersUntil && achievements.has(item.SpoilersUntil)) showIfAllowed = true;
-          if (spoilersOption == "0" || (cleared == 0 && !showIfAllowed)) {
+          if (spoilersOption == "1" || (cleared == 0 && !showIfAllowed)) {
             blur = true;
           }
           if (!this.$store.getters.achievementsPublic && !showIfAllowed) blur = true;

@@ -1,10 +1,28 @@
 <template>
-  <div
-    :class="{ night: this.$store.state.settings.nightMode }"
-    class="d-flex flex-column min-vh-100"
-  >
+  <div :class="{ night: true }" class="d-flex flex-column min-vh-100">
     <TheNavbar />
     <main class="flex-shrink-0">
+      <div v-if="this.$store.getters.backendOffline" class="container">
+        <Alert
+          type="error"
+          msg="XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update."
+        />
+      </div>
+      <!-- <div v-else-if="!this.$store.getters.versionMatches" class="container">
+        <Alert
+          type="success"
+          msg="A new version is available! <a href='javascript:window.location.reload()' class='alert-link'>Reload and update the page</a>."
+        />
+      </div> -->
+      <div
+        v-if="this.$store.state.characters && this.$store.state.characters.length > 0"
+        class="container"
+      >
+        <Alert type="normal" :msg="getMigrationMessage()" />
+      </div>
+      <div v-if="this.$store.state.signIn" class="container">
+        <Alert type="normal" msg="Signing in with Discord..." />
+      </div>
       <router-view />
     </main>
     <TheFooter />
@@ -234,18 +252,25 @@ hr {
 <script>
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import { fetchCharacterData } from "@/utilities/gcf.js";
+import Alert from "@/components/Alert.vue";
+import { getVersion, getUserData, addCharacter } from "@/utilities/backend.js";
 
 export default {
   name: "App",
   components: {
     TheNavbar,
     TheFooter,
+    Alert,
   },
   mounted() {
     this.$nextTick(function () {
+      this.checkUpstreamVersion();
+      this.updateUserData();
       this.updateCharactersData();
     });
+    setInterval(() => {
+      this.checkUpstreamVersion();
+    }, 1000 * 15); // 15 seconds
     setInterval(() => {
       this.updateCharactersData();
     }, 1000 * 60); // 1 minute
@@ -274,15 +299,73 @@ export default {
     setWindowTitle() {
       document.title = this.computeWindowTitle;
     },
+    // @TODO: remove this after a few months
+    getMigrationMessage() {
+      let str =
+        "Since the last time you've used XIV ToDo, support for Discord sign ins was added.<br /><br />" +
+        "This means being able to sign in from multiple places (like both your desktop and your mobile), and keeping the data in-sync. " +
+        "To help you start out with the new account system, below is a list of your previously-added characters.<br />";
+
+      for (let character of this.$store.state.characters) {
+        str +=
+          "<br />&nbsp;&nbsp;&nbsp;" +
+          "<a href='https://na.finalfantasyxiv.com/lodestone/character/" +
+          character.characterData.Character.ID +
+          "' class='alert-link'>" +
+          character.characterData.Character.Name +
+          "</a>";
+        if (character.todosCustomWeeklies && character.todosCustomWeeklies.length > 0) {
+          str += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom weeklies:";
+          for (let weekly of character.todosCustomWeeklies) {
+            str += " '" + weekly.Name + "'";
+          }
+        }
+        if (character.todosCustomDailies && character.todosCustomDailies.length > 0) {
+          str += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom dailies:";
+          for (let weekly of character.todosCustomDailies) {
+            str += " '" + weekly.Name + "'";
+          }
+        }
+      }
+
+      str +=
+        "<br /><br />Make sure to note this information down, as it will disappear once you <a href='" +
+        this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
+        "' class='alert-link'>sign in with Discord</a>. Need help? Visit the new <a href='https://discord.gg/zfzhKhG3zj' target='_blank' rel='noopener noreferrer' class='alert-link'>Discord</a> server or <a href='https://twitter.com/XIVToDo' target='_blank' rel='noopener noreferrer' class='alert-link'>Twitter</a>!";
+
+      return str;
+    },
+    checkUpstreamVersion() {
+      getVersion()
+        .then((version) => {
+          this.$store.commit("setUpstreamVersion", version);
+        })
+        .catch(() => {
+          this.$store.commit("setUpstreamVersion", "OFFLINE");
+        });
+    },
+    updateUserData() {
+      if (this.$store.getters.userData) {
+        getUserData()
+          .then((userData) => {
+            this.$store.commit("setUserData", userData);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    },
     updateCharactersData() {
       let i = 0;
-      for (let character of this.$store.state.characters) {
+      for (let character of this.$store.getters.characters) {
         if (this.$store.getters.characterOutOfDate(i)) {
-          console.log("Updating data for " + character.characterData.Character.Name + "...");
-          fetchCharacterData(character.characterData.Character.ID)
+          console.log("Updating data for " + character.lodestoneData.Character.Name + "...");
+
+          let characterID = character.lodestoneData.Character.ID;
+          addCharacter(characterID)
             .then((characterData) => {
               this.$store.commit("addCharacter", characterData);
-              console.log("Data for " + character.characterData.Character.Name + " updated.");
+              console.log("Data for " + characterData.lodestoneData.Character.Name + " updated.");
             })
             .catch((err) => {
               console.log(err);

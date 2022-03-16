@@ -21,9 +21,11 @@
 
 ## Development
 
-This project requires Node.js version 10+ as well as a Node package manager such as `npm` installed.
+### Frontend
 
-To install the required dependencies, run the following from the `xivtodo` directory:
+The frontend requires Node.js version 10+ as well as a Node package manager such as `npm` installed.
+
+To install the required dependencies (including VueJS), run the following from the `xivtodo` directory:
 ```
 npm install
 ```
@@ -41,6 +43,17 @@ npm run lint
 
 # Runs Vue.js' UI
 vue ui
+```
+
+### Backend
+
+The backend requires Go 1.17+.
+
+The following environment variables are required:
+```
+GOOGLE_APPLICATION_CREDENTIALS=
+DISCORD_CLIENT_SECRET=
+DISCORD_REDIRECT_URI=
 ```
 
 ## Contributing

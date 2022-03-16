@@ -19,8 +19,8 @@
         <small>{{ $t("page.privacy") }}</small>
       </router-link>
       ·
-      <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
-        <small>{{ $t("page.contact") }}</small>
+      <a href="https://discord.gg/zfzhKhG3zj" target="_blank" rel="noopener noreferrer">
+        <small>{{ $t("page.discord") }}</small>
       </a>
       ·
       <a href="https://github.com/bourgeoisor/xivtodo" target="_blank" rel="noopener noreferrer">
@@ -36,8 +36,8 @@
       </a>
     </div>
     <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-4">
-      {{ $t("footer.buildVersion", { buildNum: buildNum }) }}<br />
-      {{ $t("footer.buildDate", { buildDate: buildDate }) }}
+      {{ $t("footer.buildVersion", { buildNum: this.$store.state.env.VUE_APP_BUILD_NUM }) }}<br />
+      {{ $t("footer.buildDate", { buildDate: this.$store.state.env.VUE_APP_BUILD_DATE }) }}
     </div>
   </footer>
 </template>
@@ -93,11 +93,5 @@ footer img:hover {
 <script>
 export default {
   Name: "TheFooter",
-  data() {
-    return {
-      buildNum: process.env.VUE_APP_BUILD_NUM,
-      buildDate: process.env.VUE_APP_BUILD_DATE,
-    };
-  },
 };
 </script>

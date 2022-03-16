@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
+import store from "../store";
 import Home from "../views/Home.vue";
+import { authenticate } from "../utilities/backend";
 
 const routes = [
   {
@@ -17,9 +19,32 @@ const routes = [
     },
   },
   {
+    path: "/auth",
+    beforeEnter: (_to, _from, next) => {
+      authenticate(_to.query.code)
+        .then((userData) => {
+          store.commit("setUserData", userData);
+        })
+        .catch((err) => {
+          // @TODO: handle rendering error to user
+          store.commit("signIn", false);
+          console.log(err);
+        });
+
+      store.commit("signIn", true);
+      next("Home");
+    },
+  },
+  {
     path: "/profile",
     name: "Profile",
     component: () => import(/* webpackChunkName: "profile" */ "../views/Profile.vue"),
+    beforeEnter: (_to, _from, next) => {
+      if (!store.getters.hasCharacter) {
+        next("Home");
+      }
+      next();
+    },
   },
   {
     path: "/encounters",
@@ -45,6 +70,12 @@ const routes = [
     path: "/settings",
     name: "Settings",
     component: () => import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
+    beforeEnter: (_to, _from, next) => {
+      if (!store.getters.userData) {
+        next("Home");
+      }
+      next();
+    },
   },
   {
     path: "/character/:id",

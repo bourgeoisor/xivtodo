@@ -6,7 +6,7 @@
         {{
           $t("message.clearedByCharacter", { characterName: this.$store.getters.character.Name })
         }}
-        <div v-if="this.$store.getters.characterOutOfDateACT" class="text-info fs-6">
+        <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
           <div class="spinner-border spinner-border-sm" role="status"></div>
           Updating character data, this may take a minute...
         </div>
@@ -16,7 +16,16 @@
       </span>
     </h1>
     <Alert
-      v-if="!this.$store.getters.hasCharacter"
+      v-if="!this.$store.getters.userData"
+      type="normal"
+      :msg="
+        'No characters found. You can <a href=\'' +
+        this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
+        '\' class=\'alert-link\'>sign in with Discord</a> to add them.'
+      "
+    />
+    <Alert
+      v-else-if="!this.$store.getters.hasCharacter"
       type="normal"
       msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
     />
@@ -24,7 +33,7 @@
     <div class="row">
       <h2>{{ $t("misc.expansion.arr") }}</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.dungeons')"
           :duties="db.arrDungeons"
@@ -32,7 +41,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.trials')"
           :duties="db.arrTrials"
@@ -46,7 +55,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.raids')"
           :duties="db.arrRaids"
@@ -65,7 +74,7 @@
     <div class="row">
       <h2>{{ $t("misc.expansion.hw") }}</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.dungeons')"
           :duties="db.hwDungeons"
@@ -73,7 +82,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.trials')"
           :duties="db.hwTrials"
@@ -87,7 +96,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.raids')"
           :duties="db.hwRaids"
@@ -106,7 +115,7 @@
     <div class="row">
       <h2>{{ $t("misc.expansion.sb") }}</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.dungeons')"
           :duties="db.sbDungeons"
@@ -114,7 +123,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.trials')"
           :duties="db.sbTrials"
@@ -128,7 +137,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.raids')"
           :duties="db.sbRaids"
@@ -153,7 +162,7 @@
     <div class="row">
       <h2>{{ $t("misc.expansion.shb") }}</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.dungeons')"
           :duties="db.shbDungeons"
@@ -161,7 +170,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.trials')"
           :duties="db.shbTrials"
@@ -175,7 +184,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.raids')"
           :duties="db.shbRaids"
@@ -200,7 +209,7 @@
     <div class="row">
       <h2>{{ $t("misc.expansion.ew") }}</h2>
 
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.dungeons')"
           :duties="db.ewDungeons"
@@ -208,7 +217,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.trials')"
           :duties="db.ewTrials"
@@ -222,7 +231,7 @@
           :showTotal="true"
         />
       </div>
-      <div class="col-lg">
+      <div class="col-12 col-lg-4">
         <DutyList
           :title="$t('encounters.raids')"
           :duties="db.ewRaids"

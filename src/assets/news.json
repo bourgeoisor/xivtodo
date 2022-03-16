@@ -18,8 +18,14 @@
       "start": 1643104800
     }
   ],
-  "latestID": 211202,
+  "latestID": 220313,
   "news": [
+    {
+      "ID": 220313,
+      "title": "Implementation of accounts system",
+      "published": "March 13, 2022",
+      "content": "Following a small break due to me going through Endwalker and a busy season at work, I have an important update: XIV ToDo now supports Discord sign-ins! This means that your data is stored on the cloud instead of your local device, allowing you to sign in from multiple devices at once. This required a lot of work behind the scenes, and has two big implications: it costs me more due to the additional infrastructure, and everyone has a 'fresh slate' and will need to re-add their characters and re-do their checklists. I apologize for the inconvenience. Lastly, I now have a <a href='https://discord.gg/zfzhKhG3zj' target='_blank' rel='noopener noreferrer'>Discord</a> server in addition of the <a href='https://twitter.com/XIVToDo' target='_blank' rel='noopener noreferrer'>Twitter</a> account. As always, thank you for your support and patience!"
+    },
     {
       "ID": 211202,
       "title": "Release of Endwalker",
