@@ -21,6 +21,8 @@ const routes = [
   {
     path: "/auth",
     beforeEnter: (_to, _from, next) => {
+      console.log(_to.query);
+      console.log(_to.query.code);
       authenticate(_to.query.code)
         .then((userData) => {
           store.commit("setUserData", userData);
@@ -28,6 +30,7 @@ const routes = [
         .catch((err) => {
           // @TODO: handle rendering error to user
           store.commit("signIn", false);
+          console.log("oh no");
           console.log(err);
         });
 
