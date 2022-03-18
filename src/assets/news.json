@@ -24,9 +24,11 @@
       "description": "Release of patch 6.08, which brings a number of additions and refinements to the realm, and marks the opening of the Oceanian data center.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/9325d2a5dae2ac34b9f970c803848e8fb1c3aaf7' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1643104800
     },
+    {
       "title": "Patch 6.1",
       "description": "Release of patch 6.1, which brings new story, encounters, quests, and more.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/patch_6_1/' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
       "start": 1649757600
+    }
   ],
   "latestID": 220313,
   "news": [
