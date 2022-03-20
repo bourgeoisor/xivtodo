@@ -45,7 +45,6 @@ const jobInitials = {
   40: "sge",
 };
 
-// @TODO: make this prettier
 function injectData(characterData) {
   let achievementList = characterData.lodestoneData.Achievements || [];
   for (let i = 0; i < achievementList.length; i++) {

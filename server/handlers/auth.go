@@ -154,12 +154,6 @@ func getUserDataOrDefault(userData *models.User, discordUser *models.DiscordUser
 		if err := json.Unmarshal(jsonbody, userData); err != nil {
 			return err
 		}
-
-		// @TODO: figure out why this is not working
-		//err = user.DataTo(&userData)
-		//if err != nil {
-		//	return err
-		//}
 	}
 
 	userData.DiscordUser = discordUser

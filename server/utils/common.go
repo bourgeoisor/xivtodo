@@ -53,12 +53,6 @@ func GetUserWithAuthnOrFail(w http.ResponseWriter, r *http.Request, userData *mo
 		return err
 	}
 
-	// @TODO: figure out why this is not working
-	//err = user.DataTo(&userData)
-	//if err != nil {
-	//	return err
-	//}
-
 	if userData.Settings.AuthorizationCode != authorizationCode {
 		http.Error(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
 		log.Println("invalid Authorization code")
