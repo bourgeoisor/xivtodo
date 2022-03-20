@@ -250,7 +250,16 @@
         </small>
         <small v-else class="text-success">Currently available</small>
         <br />
-        <p v-html="item.description"></p>
+        <p>
+          <span v-html="item.description"></span>
+          <br />
+          <span v-if="item.url">
+            <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">
+              More details
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+          </span>
+        </p>
         <br />
       </div>
     </div>

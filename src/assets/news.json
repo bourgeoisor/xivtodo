@@ -3,30 +3,35 @@
   "countdowns": [
     {
       "title": "Little Ladies' Day",
-      "description": "The 2022 edition of the Little Ladies' Day event.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/2022/Little_Ladies_Day/jsuk7gn8z4' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "The 2022 edition of the Little Ladies' Day event.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/Little_Ladies_Day/jsuk7gn8z4",
       "start": 1647244800,
       "end": 1648738800
     },
     {
       "title": "Moogle Treasure Trove",
-      "description": "The spring 2022 edition of the Moogle Treasure Trove event.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202203/dceh8sj926' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "The spring 2022 edition of the Moogle Treasure Trove event.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202203/dceh8sj926",
       "start": 1647244800,
       "end": 1649757600
     },
     {
       "title": "Letter from the Producer LIVE Part LXX",
-      "description": "The 70th iteration of the LPL, focusing on the upcoming 6.1 patch.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/f5fe9d2a2e158b555484600a79b70fc13f80a313' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "The 70th iteration of the LPL, focusing on the upcoming 6.1 patch.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/f5fe9d2a2e158b555484600a79b70fc13f80a313",
       "start": 1648810800,
       "end": 1648821600
     },
     {
       "title": "Patch 6.08",
-      "description": "Release of patch 6.08, which brings a number of additions and refinements to the realm, and marks the opening of the Oceanian data center.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/lodestone/topics/detail/9325d2a5dae2ac34b9f970c803848e8fb1c3aaf7' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "Release of patch 6.08, which brings a number of additions and refinements to the realm, and marks the opening of the Oceanian data center.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/9325d2a5dae2ac34b9f970c803848e8fb1c3aaf7",
       "start": 1643104800
     },
     {
       "title": "Patch 6.1",
-      "description": "Release of patch 6.1, which brings new story, encounters, quests, and more.<br /><a class='text-reset' href='https://na.finalfantasyxiv.com/endwalker/patch_6_1/' target='_blank' rel='noopener noreferrer'>More details</a> <i class='bi bi-box-arrow-up-right'></i>",
+      "description": "Release of patch 6.1, which brings new story, encounters, quests, and more.",
+      "url": "https://na.finalfantasyxiv.com/endwalker/patch_6_1/",
       "start": 1649757600
     }
   ],
