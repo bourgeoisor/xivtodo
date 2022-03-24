@@ -23,7 +23,7 @@
 
 ### Frontend
 
-The frontend requires Node.js version 10+ as well as a Node package manager such as `npm` installed.
+The frontend requires `node v16` as well as `npm` installed.
 
 To install the required dependencies (including VueJS), run the following from the `xivtodo` directory:
 ```
@@ -47,7 +47,7 @@ vue ui
 
 ### Backend
 
-The backend requires Go 1.17+.
+The backend requires `go v1.17`.
 
 The following environment variables are required:
 ```
