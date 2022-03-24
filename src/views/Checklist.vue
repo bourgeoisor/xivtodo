@@ -17,7 +17,7 @@
         Customize
       </button>
     </h1>
-    <Alert
+    <AlertMsg
       v-if="!this.$store.getters.userData"
       type="normal"
       :msg="
@@ -26,7 +26,7 @@
         '\' class=\'alert-link\'>sign in with Discord</a> to add them.'
       "
     />
-    <Alert
+    <AlertMsg
       v-else-if="!this.$store.getters.hasCharacter"
       type="normal"
       msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
@@ -149,12 +149,12 @@
 </template>
 
 <script>
-import Alert from "@/components/Alert.vue";
+import AlertMsg from "@/components/AlertMsg.vue";
 import ChecklistItem from "@/components/ChecklistItem.vue";
 import { updateChecklist } from "@/utilities/backend.js";
 
 export default {
-  name: "Checklist",
+  name: "ChecklistView",
   data() {
     return {
       showHidden: false,
@@ -166,7 +166,7 @@ export default {
     };
   },
   components: {
-    Alert,
+    AlertMsg,
     ChecklistItem,
   },
   mounted() {

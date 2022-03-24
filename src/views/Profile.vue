@@ -255,7 +255,7 @@
 import JobLevel from "@/components/JobLevel.vue";
 
 export default {
-  name: "Profile",
+  name: "ProfileView",
   components: {
     JobLevel,
   },

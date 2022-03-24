@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h1>{{ $t("page.settings") }}</h1>
-    <Alert v-if="error.msg" :type="error.type" :msg="error.msg" />
+    <AlertMsg v-if="error.msg" :type="error.type" :msg="error.msg" />
     <hr />
     <form name="settings-form" id="settings-form">
       <div class="row">
@@ -199,11 +199,11 @@
 </style>
 
 <script>
-import Alert from "@/components/Alert.vue";
+import AlertMsg from "@/components/AlertMsg.vue";
 import { updateSettings, addCharacter, removeCharacter } from "@/utilities/backend.js";
 
 export default {
-  name: "Settings",
+  name: "SettingsView",
   data() {
     return {
       adding: false,
@@ -215,7 +215,7 @@ export default {
     };
   },
   components: {
-    Alert,
+    AlertMsg,
   },
   methods: {
     updateSettings() {

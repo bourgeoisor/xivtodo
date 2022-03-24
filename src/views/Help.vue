@@ -102,6 +102,6 @@
 
 <script>
 export default {
-  name: "Help",
+  name: "HelpView",
 };
 </script>

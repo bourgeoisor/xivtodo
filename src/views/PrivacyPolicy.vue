@@ -223,6 +223,6 @@
 
 <script>
 export default {
-  name: "Privacy Policy",
+  name: "PrivacyPolicyView",
 };
 </script>

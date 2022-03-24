@@ -62,16 +62,7 @@
                 <span class="bi bi-clock position-relative">
                   <span
                     v-if="this.$store.getters.latestCountdownSeen < news.latestCountdownID"
-                    class="
-                      position-absolute
-                      top-0
-                      start-100
-                      translate-middle
-                      p-1
-                      bg-success
-                      border border-light
-                      rounded-circle
-                    "
+                    class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
                   >
                   </span>
                 </span>
@@ -90,16 +81,7 @@
                 <span class="bi bi-bell position-relative">
                   <span
                     v-if="this.$store.getters.latestNewsSeen < news.latestID"
-                    class="
-                      position-absolute
-                      top-0
-                      start-100
-                      translate-middle
-                      p-1
-                      bg-success
-                      border border-light
-                      rounded-circle
-                    "
+                    class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
                   >
                   </span>
                 </span>

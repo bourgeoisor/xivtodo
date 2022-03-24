@@ -3,7 +3,7 @@
     <TheNavbar />
     <main class="flex-shrink-0">
       <div v-if="this.$store.getters.backendOffline" class="container">
-        <Alert
+        <AlertMsg
           type="error"
           msg="XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update."
         />
@@ -252,7 +252,7 @@ hr {
 <script>
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
-import Alert from "@/components/Alert.vue";
+import AlertMsg from "@/components/AlertMsg.vue";
 import { getVersion, getUserData, addCharacter } from "@/utilities/backend.js";
 
 export default {
@@ -260,7 +260,7 @@ export default {
   components: {
     TheNavbar,
     TheFooter,
-    Alert,
+    AlertMsg,
   },
   mounted() {
     this.$nextTick(function () {

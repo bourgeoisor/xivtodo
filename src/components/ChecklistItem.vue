@@ -1,13 +1,7 @@
 <template>
   <label
     v-if="!itemCopy.hidden && !showHidden"
-    class="
-      list-group-item list-group-item-action
-      d-flex
-      justify-content-between
-      align-items-center
-      user-select-none
-    "
+    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center user-select-none"
   >
     <span>
       <input

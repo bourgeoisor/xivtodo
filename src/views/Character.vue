@@ -48,7 +48,7 @@ import Questlines from "@/views/Questlines.vue";
 // this.$route.params.id
 
 export default {
-  name: "Character",
+  name: "CharacterView",
   components: {
     Profile,
     Encounters,

@@ -198,7 +198,7 @@
 
 <script>
 export default {
-  name: "Home",
+  name: "HomeView",
   methods: {
     goto(refName) {
       var element = this.$refs[refName];

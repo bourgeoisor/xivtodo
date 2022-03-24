@@ -15,7 +15,7 @@
         </div>
       </span>
     </h1>
-    <Alert
+    <AlertMsg
       v-if="!this.$store.getters.userData"
       type="normal"
       :msg="
@@ -24,7 +24,7 @@
         '\' class=\'alert-link\'>sign in with Discord</a> to add them.'
       "
     />
-    <Alert
+    <AlertMsg
       v-else-if="!this.$store.getters.hasCharacter"
       type="normal"
       msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
@@ -71,20 +71,20 @@
 </template>
 
 <script>
-import Alert from "@/components/Alert.vue";
+import AlertMsg from "@/components/AlertMsg.vue";
 import DutyList from "@/components/DutyList.vue";
 
 import dbJson from "@/assets/db.json";
 
 export default {
-  name: "Questlines",
+  name: "QuestlinesView",
   data() {
     return {
       db: dbJson,
     };
   },
   components: {
-    Alert,
+    AlertMsg,
     DutyList,
   },
 };
