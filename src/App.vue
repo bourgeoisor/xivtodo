@@ -9,7 +9,7 @@
         />
       </div>
       <!-- <div v-else-if="!this.$store.getters.versionMatches" class="container">
-        <Alert
+        <AlertMsg
           type="success"
           msg="A new version is available! <a href='javascript:window.location.reload()' class='alert-link'>Reload and update the page</a>."
         />
@@ -18,10 +18,10 @@
         v-if="this.$store.state.characters && this.$store.state.characters.length > 0"
         class="container"
       >
-        <Alert type="normal" :msg="getMigrationMessage()" />
+        <AlertMsg type="normal" :msg="getMigrationMessage()" />
       </div>
       <div v-if="this.$store.state.signIn" class="container">
-        <Alert type="normal" msg="Signing in with Discord..." />
+        <AlertMsg type="normal" msg="Signing in with Discord..." />
       </div>
       <router-view />
     </main>
