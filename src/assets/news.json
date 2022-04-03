@@ -2,25 +2,11 @@
   "latestCountdownID": 13,
   "countdowns": [
     {
-      "title": "Little Ladies' Day",
-      "description": "The 2022 edition of the Little Ladies' Day event.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/Little_Ladies_Day/jsuk7gn8z4",
-      "start": 1647244800,
-      "end": 1648738800
-    },
-    {
       "title": "Moogle Treasure Trove",
       "description": "The spring 2022 edition of the Moogle Treasure Trove event.",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202203/dceh8sj926",
       "start": 1647244800,
-      "end": 1649757600
-    },
-    {
-      "title": "Letter from the Producer LIVE Part LXX",
-      "description": "The 70th iteration of the LPL, focusing on the upcoming 6.1 patch.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/f5fe9d2a2e158b555484600a79b70fc13f80a313",
-      "start": 1648810800,
-      "end": 1648821600
+      "end": 1649671200
     },
     {
       "title": "Patch 6.08",
