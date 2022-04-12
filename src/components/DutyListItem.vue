@@ -12,6 +12,7 @@
         'bi-question-circle': duty.cleared == -1,
         'bi-check-circle': duty.cleared == 1,
         'bi-circle': duty.cleared == 0,
+        'duty-list-item-blur': duty.blur,
       }"
       :title="duty.Name"
     >
@@ -51,6 +52,13 @@
       data-bs-placement="top"
       title="MSQ content"
     ></span>
+    <span
+      v-if="duty.Expansion && duty.blur"
+      :class="'icon-exp-' + duty.Expansion"
+      data-bs-toggle="tooltip"
+      data-bs-placement="top"
+      title="Expansion unlocked in"
+    ></span>
   </li>
 </template>
 
@@ -63,17 +71,23 @@
 .blur-cleared {
   color: transparent;
   text-shadow: 0 0 20px #53b462;
+  text-overflow: unset;
 }
 
 .blur-uncleared {
   color: transparent;
   text-shadow: 0 0 20px #c2c2c2;
+  text-overflow: unset;
 }
 
 .duty-list-item {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: "… ";
+}
+
+.duty-list-item-blur {
+  text-overflow: " ";
 }
 </style>
 

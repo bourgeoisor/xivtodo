@@ -61,7 +61,7 @@ export default {
         item.cleared = cleared;
 
         let blur = false;
-        if (item.Spoilers && spoilersOption != "2") {
+        if (item.Spoilers) {
           let showIfAllowed = false;
           if (item.SpoilersUntil && achievements.has(item.SpoilersUntil)) showIfAllowed = true;
           if (spoilersOption == "1" || (cleared == 0 && !showIfAllowed)) {
@@ -69,6 +69,12 @@ export default {
           }
           if (!this.$store.getters.achievementsPublic && !showIfAllowed) blur = true;
         }
+        if (item.Expansion == "2x" && !achievements.has(788)) blur = true;
+        if (item.Expansion == "3x" && !achievements.has(1139)) blur = true;
+        if (item.Expansion == "4x" && !achievements.has(1794)) blur = true;
+        if (item.Expansion == "5x" && !achievements.has(2298)) blur = true;
+        if (item.Expansion == "6x" && !achievements.has(2958)) blur = true;
+        if (spoilersOption == "2") blur = false;
         item.blur = blur;
       }
       return duties;

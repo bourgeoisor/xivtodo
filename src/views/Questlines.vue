@@ -44,8 +44,8 @@
       </div>
 
       <div class="col-12 col-lg-4">
-        <DutyList title="Beast Tribe Quests" :duties="db.beastTribeQuests" />
-        <DutyList title="Allied Beast Tribe Quests" :duties="db.alliedBeastTribeQuests" />
+        <DutyList title="Tribal Quests" :duties="db.beastTribeQuests" />
+        <DutyList title="Allied Tribal Quests" :duties="db.alliedBeastTribeQuests" />
         <DutyList title="Custom Delivery Quests" :duties="db.customDeliveryQuests" />
       </div>
     </div>
