@@ -8,12 +8,6 @@
           msg="XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update."
         />
       </div>
-      <div class="container">
-        <AlertMsg
-          type="normal"
-          msg="XIV ToDo is currently unable to reach the Lodestone, and is being worked on. Note that for characters already added, checklists remain in working order. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update."
-        />
-      </div>
       <!-- <div v-else-if="!this.$store.getters.versionMatches" class="container">
         <AlertMsg
           type="success"
