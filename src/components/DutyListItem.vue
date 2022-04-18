@@ -14,7 +14,7 @@
         'bi-circle': duty.cleared == 0,
         'duty-list-item-blur': duty.blur,
       }"
-      :title="duty.Name"
+      :title="title"
     >
       &nbsp;
       <a
@@ -95,6 +95,11 @@
 export default {
   props: {
     duty: Object,
+  },
+  computed: {
+    title() {
+      return this.duty.LodestoneID || this.duty.blur ? "" : this.duty.Name;
+    },
   },
 };
 </script>
