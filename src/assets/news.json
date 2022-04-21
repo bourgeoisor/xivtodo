@@ -2,6 +2,13 @@
   "latestCountdownID": 14,
   "countdowns": [
     {
+      "title": "The Maiden's Rhapsody",
+      "description": "The 2022 edition of the Maiden's Rhapsody event.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/The_Maidens_Rhapsody/u8fwlp9ev3",
+      "start": 1651132800,
+      "end": 1652886000
+    },
+    {
       "title": "Hatching-tide",
       "description": "The 2022 edition of the Hatching-tide event.",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/Hatching_tide/qeng0r6k46",
