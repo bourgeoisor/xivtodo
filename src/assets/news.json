@@ -1,5 +1,5 @@
 {
-  "latestCountdownID": 14,
+  "latestCountdownID": 15,
   "countdowns": [
     {
       "title": "The Maiden's Rhapsody",
@@ -16,10 +16,14 @@
       "end": 1651071600
     },
     {
-      "title": "Patch 6.1",
-      "description": "Release of patch 6.1, which brings new story, encounters, quests, and more.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/c73cd284013587066d8f9e697fab1db9f007372c",
-      "start": 1649757600
+      "title": "Patch 6.11",
+      "description": "Release of patch 6.11, which brings a new Ultimate encounter, and more.",
+      "start": 1650967200
+    },
+    {
+      "title": "Patch 6.15",
+      "description": "(Estimated) release of patch 6.15, which brings new story, custom delivery, tribal quests, and more.",
+      "start": 1653386400
     }
   ],
   "latestID": 220313,
