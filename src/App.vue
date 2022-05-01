@@ -262,6 +262,11 @@ export default {
     TheFooter,
     AlertMsg,
   },
+  data() {
+    return {
+      tabFocused: true,
+    };
+  },
   mounted() {
     this.$nextTick(function () {
       this.checkUpstreamVersion();
@@ -269,10 +274,14 @@ export default {
       this.updateCharactersData();
     });
     setInterval(() => {
-      this.checkUpstreamVersion();
-    }, 1000 * 15); // 15 seconds
+      if (this.tabFocused) {
+        this.checkUpstreamVersion();
+      }
+    }, 1000 * 60); // 1 minute
     setInterval(() => {
-      this.updateCharactersData();
+      if (this.tabFocused) {
+        this.updateCharactersData();
+      }
     }, 1000 * 60); // 1 minute
   },
   computed: {
@@ -294,10 +303,30 @@ export default {
   },
   created() {
     this.setWindowTitle();
+    this.detectFocusOut();
   },
   methods: {
     setWindowTitle() {
       document.title = this.computeWindowTitle;
+    },
+    detectFocusOut() {
+      let inView = false;
+
+      const onWindowFocusChange = (e) => {
+        if ({ focus: 1, pageshow: 1 }[e.type]) {
+          if (inView) return;
+          this.tabFocused = true;
+          inView = true;
+        } else if (inView) {
+          this.tabFocused = !this.tabFocused;
+          inView = false;
+        }
+      };
+
+      window.addEventListener("focus", onWindowFocusChange);
+      window.addEventListener("blur", onWindowFocusChange);
+      window.addEventListener("pageshow", onWindowFocusChange);
+      window.addEventListener("pagehide", onWindowFocusChange);
     },
     // @TODO: remove this after a few months
     getMigrationMessage() {
