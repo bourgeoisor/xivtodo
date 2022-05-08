@@ -40,7 +40,6 @@
       <div class="col-12 col-lg-4">
         <DutyList title="Side Story Quests" :duties="db.sideStoryQuests" />
         <DutyList title="Encounter Quests" :duties="db.dutiesQuests" />
-        <DutyList title="Relic Quests" :duties="db.relicQuests" />
       </div>
 
       <div class="col-12 col-lg-4">
@@ -51,7 +50,7 @@
     </div>
     <hr />
     <div class="row">
-      <h2>Job Quests</h2>
+      <h2>Jobs, Roles, &amp; Relics</h2>
 
       <div class="col-12 col-lg-4">
         <DutyList title="Combat Job Quests" :duties="db.combatJobQuests" />
@@ -61,6 +60,7 @@
       <div class="col-12 col-lg-4">
         <DutyList title="Role Quests - Shadowbringers" :duties="db.shbRoleQuests" />
         <DutyList title="Role Quests - Endwalker" :duties="db.ewRoleQuests" />
+        <DutyList title="Relic Quests" :duties="db.relicQuests" />
       </div>
       <div class="col-12 col-lg-4">
         <DutyList title="Crystalline Mean Quests" :duties="db.crystallineMeanQuests" />
