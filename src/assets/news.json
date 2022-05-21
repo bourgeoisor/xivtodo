@@ -2,13 +2,6 @@
   "latestCountdownID": 15,
   "countdowns": [
     {
-      "title": "The Maiden's Rhapsody",
-      "description": "The 2022 edition of the Maiden's Rhapsody event.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/The_Maidens_Rhapsody/u8fwlp9ev3",
-      "start": 1651132800,
-      "end": 1652886000
-    },
-    {
       "title": "Patch 6.11",
       "description": "Release of patch 6.11, which brings a new Ultimate encounter, and more.",
       "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/6a3e8bf216810babcbe07b2842488577ec22cb54",
@@ -17,7 +10,7 @@
     {
       "title": "Patch 6.15",
       "description": "(Estimated) release of patch 6.15, which brings new story, custom delivery, tribal quests, and more.",
-      "start": 1653386400
+      "start": 1653991200
     }
   ],
   "latestID": 220313,
