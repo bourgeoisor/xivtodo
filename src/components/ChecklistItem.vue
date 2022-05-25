@@ -1,41 +1,50 @@
 <template>
-  <label
-    v-if="!itemCopy.hidden && !showHidden"
-    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center user-select-none"
+  <li
+    v-if="showHidden || (!itemCopy.hidden && !showHidden)"
+    class="list-group-item list-group-item-action"
+    :class="{ dragHovered: dragHovered }"
   >
-    <span>
-      <input
-        v-if="!showHidden && this.$store.getters.hasCharacter"
-        v-model="itemCopy.checked"
-        :class="{ 'checkbox-checked': itemCopy.checked }"
-        class="form-check-input"
-        type="checkbox"
-        :id="item.name"
-        @change="check"
-      />
-      &nbsp;&nbsp;<span :class="{ 'checklist-checked': itemCopy.checked }">{{ item.name }}</span>
+    <label
+      v-if="!itemCopy.hidden && !showHidden"
+      class="d-flex justify-content-between align-items-center user-select-none"
+    >
+      <span>
+        <input
+          v-if="!showHidden && this.$store.getters.hasCharacter"
+          v-model="itemCopy.checked"
+          :class="{ 'checkbox-checked': itemCopy.checked }"
+          class="form-check-input"
+          type="checkbox"
+          :id="item.name"
+          @change="check"
+        />
+        &nbsp;&nbsp;<span :class="{ 'checklist-checked': itemCopy.checked }">{{ item.name }}</span>
+        <!-- <br /><small class="text-muted">Token and gear coffer lockout for the Savage raid</small> -->
+      </span>
+    </label>
+
+    <span v-if="showHidden" class="d-flex justify-content-between align-items-center">
+      <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
+        <i class="bi bi-grip-horizontal cursor-grab" title="Drag to reorder"></i> &nbsp;
+        {{ item.name }}
+      </span>
+      <span v-if="showHidden">
+        <a v-if="item.custom" class="bi-trash text-danger cursor-pointer tt" @click="remove">
+          <span class="tt-text">Remove</span>
+        </a>
+        <a
+          v-else-if="itemCopy.hidden"
+          class="bi-eye-slash text-secondary cursor-pointer tt"
+          @click="hid"
+        >
+          <span class="tt-text">Show</span>
+        </a>
+        <a v-else-if="!itemCopy.hidden" class="bi-eye text-success cursor-pointer tt" @click="hid">
+          <span class="tt-text">Hide</span>
+        </a>
+      </span>
     </span>
-  </label>
-  <span v-if="showHidden" class="list-group-item d-flex justify-content-between align-items-center">
-    <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
-      {{ item.name }}
-    </span>
-    <span v-if="showHidden">
-      <a v-if="item.custom" class="bi-trash text-danger cursor-pointer tt" @click="remove">
-        <span class="tt-text">Remove</span>
-      </a>
-      <a
-        v-else-if="itemCopy.hidden"
-        class="bi-eye-slash text-secondary cursor-pointer tt"
-        @click="hid"
-      >
-        <span class="tt-text">Show</span>
-      </a>
-      <a v-else-if="!itemCopy.hidden" class="bi-eye text-success cursor-pointer tt" @click="hid">
-        <span class="tt-text">Hide</span>
-      </a>
-    </span>
-  </span>
+  </li>
 </template>
 
 <style lang="scss">
@@ -43,6 +52,14 @@
   color: #53b462;
   text-decoration: line-through;
   text-decoration-thickness: 2px;
+}
+
+.dragHovered {
+  border-top: 2px solid #41b883 !important;
+}
+
+.cursor-grab {
+  cursor: grab;
 }
 
 .night {
@@ -82,6 +99,7 @@ export default {
     item: Object,
     type: String,
     showHidden: Boolean,
+    dragHovered: Boolean,
   },
   watch: {
     item() {

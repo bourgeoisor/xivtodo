@@ -13,8 +13,14 @@
       "start": 1653991200
     }
   ],
-  "latestID": 220313,
+  "latestID": 220525,
   "news": [
+    {
+      "ID": 220525,
+      "title": "Checklist customization",
+      "published": "May 25, 2022",
+      "content": "Hi all! It's been a (very) long time coming, but I've just published a few additional QoL features and tweaks for the checklists, including the long-awaited feature of being able to sort / move checklist items around! Try it out and let me know what you think! You can move checklist items by clicking the green 'Customize' button and drag-and-dropping items around."
+    },
     {
       "ID": 220313,
       "title": "Implementation of accounts system",

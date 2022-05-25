@@ -64,6 +64,15 @@
             :item="item"
             type="weekly"
             :showHidden="showHidden"
+            :draggable="showHidden"
+            @dragstart="startDrag($event, item)"
+            @dragend="endDrag()"
+            @dragleave="endDrag()"
+            @drop="onDrop($event, item)"
+            @dragover="onDragOver($event, item)"
+            @dragover.prevent
+            @dragenter.prevent
+            :dragHovered="item.name == this.draggedOverName"
           />
         </ul>
         <br />
@@ -98,6 +107,15 @@
             :item="item"
             type="daily"
             :showHidden="showHidden"
+            :draggable="showHidden"
+            @dragstart="startDrag($event, item)"
+            @dragend="endDrag()"
+            @dragleave="endDrag()"
+            @drop="onDrop($event, item)"
+            @dragover="onDragOver($event, item)"
+            @dragover.prevent
+            @dragenter.prevent
+            :dragHovered="item.name == this.draggedOverName"
           />
         </ul>
         <br />
@@ -140,6 +158,15 @@
             :item="item"
             type="adhoc"
             :showHidden="showHidden"
+            :draggable="showHidden"
+            @dragstart="startDrag($event, item)"
+            @dragend="endDrag()"
+            @dragleave="endDrag()"
+            @drop="onDrop($event, item)"
+            @dragover="onDragOver($event, item)"
+            @dragover.prevent
+            @dragenter.prevent
+            :dragHovered="item.name == this.draggedOverName"
           />
         </ul>
         <br />
@@ -152,6 +179,7 @@
 import AlertMsg from "@/components/AlertMsg.vue";
 import ChecklistItem from "@/components/ChecklistItem.vue";
 import { updateChecklist } from "@/utilities/backend.js";
+import { swapChecklistItems } from "@/utilities/checklist.js";
 
 export default {
   name: "ChecklistView",
@@ -163,6 +191,7 @@ export default {
       customWeekly: "",
       customDaily: "",
       customAdhoc: "",
+      draggedOverName: "",
     };
   },
   components: {
@@ -303,6 +332,26 @@ export default {
       this.customAdhoc = "";
       let characterID = this.$store.getters.lodestoneData.Character.ID;
       updateChecklist(characterID, this.$store.getters.checklistData);
+    },
+    startDrag(evt, item) {
+      evt.dataTransfer.dropEffect = "move";
+      evt.dataTransfer.effectAllowed = "move";
+      evt.dataTransfer.setData("itemName", item.name);
+    },
+    endDrag() {
+      this.draggedOverName = "";
+    },
+    onDrop(evt, item) {
+      let fromName = evt.dataTransfer.getData("itemName");
+      let toName = item.name;
+      swapChecklistItems(fromName, toName);
+
+      this.draggedOverName = "";
+      let characterID = this.$store.getters.lodestoneData.Character.ID;
+      updateChecklist(characterID, this.$store.getters.checklistData);
+    },
+    onDragOver(evt, item) {
+      this.draggedOverName = item.name;
     },
   },
 };

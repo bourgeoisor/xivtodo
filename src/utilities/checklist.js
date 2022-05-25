@@ -1,4 +1,5 @@
 import db from "@/assets/db.json";
+import store from "../store";
 
 function injectWeeklyChecklist(payload) {
   let weeklyChecklist = [...payload];
@@ -88,4 +89,61 @@ function injectDailyChecklist(payload) {
   return dailyChecklist;
 }
 
-export { injectWeeklyChecklist, injectDailyChecklist };
+function swapChecklistItems(fromName, toName) {
+  let adhocChecklist = [...store.getters.checklistAdhocs];
+  let weeklyChecklist = [...store.getters.checklistWeeklies];
+  let dailyChecklist = [...store.getters.checklistDailies];
+
+  let fromObj = null;
+
+  for (let i = 0; i < adhocChecklist.length; i++) {
+    if (adhocChecklist[i].name == fromName) {
+      fromObj = adhocChecklist[i];
+      adhocChecklist.splice(i, 1);
+      store.commit("setChecklistAdhocs", adhocChecklist);
+      break;
+    }
+  }
+  for (let i = 0; i < weeklyChecklist.length; i++) {
+    if (weeklyChecklist[i].name == fromName) {
+      fromObj = weeklyChecklist[i];
+      weeklyChecklist.splice(i, 1);
+      store.commit("setChecklistWeeklies", weeklyChecklist);
+      break;
+    }
+  }
+  for (let i = 0; i < dailyChecklist.length; i++) {
+    if (dailyChecklist[i].name == fromName) {
+      fromObj = dailyChecklist[i];
+      dailyChecklist.splice(i, 1);
+      store.commit("setChecklistDailies", dailyChecklist);
+      break;
+    }
+  }
+
+  if (fromObj == null) return;
+
+  for (let i = 0; i < adhocChecklist.length; i++) {
+    if (adhocChecklist[i].name == toName) {
+      adhocChecklist.splice(i, 0, fromObj);
+      store.commit("setChecklistAdhocs", adhocChecklist);
+      break;
+    }
+  }
+  for (let i = 0; i < weeklyChecklist.length; i++) {
+    if (weeklyChecklist[i].name == toName) {
+      weeklyChecklist.splice(i, 0, fromObj);
+      store.commit("setChecklistWeeklies", weeklyChecklist);
+      break;
+    }
+  }
+  for (let i = 0; i < dailyChecklist.length; i++) {
+    if (dailyChecklist[i].name == toName) {
+      dailyChecklist.splice(i, 0, fromObj);
+      store.commit("setChecklistDailies", dailyChecklist);
+      break;
+    }
+  }
+}
+
+export { injectWeeklyChecklist, injectDailyChecklist, swapChecklistItems };
