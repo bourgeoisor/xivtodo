@@ -4,7 +4,18 @@
     <hr />
     <div class="row">
       <div class="col-lg-10 indent-paragraphs">
-        <h2>Add characters</h2>
+        <h2>Discord sign-in</h2>
+        <p>
+          To use XIV ToDo, you must sign in with a Discord account. This is an official
+          authentication integration provided by Discord and allows for a much more secure system
+          than a XIV ToDo-specific username and password would be, since no confidential information
+          needs to be stored. By signing in with your Discord account, it provides your Discord
+          username (but not your password) which is used to map to your characters, checklists, and
+          completion.
+        </p>
+
+        <br />
+        <h2>Adding characters</h2>
         <p>
           To add one of your characters, you first find its Lodestone URL. You can find it by
           logging into
@@ -27,12 +38,20 @@
           <b>Add character</b> button.
         </p>
         <p>
-          You can add as many characters as you want, and switch between them at any time using the
+          You can add as many as 8 characters, and switch between them at any time using the
           dropdown at the end of the main navigation bar.
         </p>
 
         <br />
-        <h2>Enable public achievements</h2>
+        <h2>Free trial characters</h2>
+        <p>
+          Free trial characters are supported in XIV ToDo and can be added, but since the Lodestone
+          privacy settings are unavailable on those accounts, the automatic completion tracker does
+          not work for those characters.
+        </p>
+
+        <br />
+        <h2>Enabling public achievements</h2>
         <p>
           If you add a character and your encounter and questline completions aren't getting
           registered, likely the achievements are not set to public visibility for that character.
@@ -60,7 +79,7 @@
         </p>
 
         <br />
-        <h2>Customize character checklists</h2>
+        <h2>Customizing character checklists</h2>
         <p>
           Daily and weekly checklists can be customized by clicking on the
           <b>Customize</b> button near the top right of the
@@ -71,6 +90,20 @@
 
         <br />
         <h2>Encounter and questline completion</h2>
+        <p>
+          Encounter and questlines are automatically marked as cleared once the relevant
+          achievements have been obtained. Since encounters or questlines don't always map directly
+          directly to in-game achievement, automated completion tracking is not always fully
+          accurate.
+        </p>
+        <p>
+          XIV ToDo takes in-game achievements data from the Lodestone, which can take multiple hours
+          to be up-to-date. Once a new in-game achievement is obtained, it may take up to 48 hours
+          for the relevant encounter or questline to be marked as complete in XIV ToDo. You can also
+          try forcing a refresh of the data through the
+          <router-link to="/settings">Settings</router-link>.
+        </p>
+        <p>The following are the three possible statuses for each encounter and questline:</p>
         <p>
           <span class="bi bi-check-circle text-success"> Sastasha</span><br />
           &nbsp;&nbsp;Your active character has cleared this encounter.<br />
@@ -86,7 +119,11 @@
         <p>
           Contact me
           <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
-            here</a
+            on this form</a
+          >
+          , on
+          <a href="https://discord.gg/zfzhKhG3zj" target="_blank" rel="noopener noreferrer">
+            Discord</a
           >
           or on
           <a href="https://twitter.com/xivtodo" target="_blank" rel="noopener noreferrer">
