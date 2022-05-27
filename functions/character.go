@@ -38,7 +38,11 @@ func LodestoneCharacter(w http.ResponseWriter, r *http.Request) {
 
 	character, err := scraper.FetchCharacter(uint32(id))
 	if err != nil {
-		http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
+		if err.Error() == http.StatusText(http.StatusServiceUnavailable) {
+			http.Error(w, http.StatusText(http.StatusServiceUnavailable), http.StatusServiceUnavailable)
+		} else {
+			http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
+		}
 		log.Println(err)
 		return
 	}

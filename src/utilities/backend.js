@@ -55,20 +55,7 @@ function injectData(characterData) {
 
   characterData.lodestoneData.Jobs = {};
   for (let classJob of characterData.lodestoneData.Character.ClassJobs) {
-    // @TODO: fix this
-    if (classJob.JobID == 0) {
-      if (classJob.Name == "Sage") {
-        characterData.lodestoneData.Jobs["sge"] = classJob;
-      }
-
-      if (classJob.Name == "Reaper") {
-        characterData.lodestoneData.Jobs["rpr"] = classJob;
-      }
-
-      continue;
-    }
-
-    characterData.lodestoneData.Jobs[jobInitials[classJob.JobID]] = classJob;
+    characterData.lodestoneData.Jobs[jobInitials[classJob.UnlockedState.ID]] = classJob;
   }
 }
 
