@@ -1,6 +1,13 @@
 {
-  "latestCountdownID": 15,
+  "latestCountdownID": 16,
   "countdowns": [
+    {
+      "title": "The Make It Rain Campaign",
+      "description": "The 2022 edition of the Make It Rain Campaign event.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/the_make_it_rain_campaign/gvewqi34l6",
+      "start": 1654243200,
+      "end": 1655737200
+    },
     {
       "title": "Patch 6.11",
       "description": "Release of patch 6.11, which brings a new Ultimate encounter, and more.",
@@ -9,8 +16,8 @@
     },
     {
       "title": "Patch 6.15",
-      "description": "(Estimated) release of patch 6.15, which brings new story, custom delivery, tribal quests, and more.",
-      "start": 1653991200
+      "description": "Release of patch 6.15, which brings new story, custom delivery, tribal quests, and more.",
+      "start": 1654596000
     }
   ],
   "latestID": 220525,
