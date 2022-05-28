@@ -105,12 +105,12 @@
         </p>
         <p>The following are the three possible statuses for each encounter and questline:</p>
         <p>
-          <span class="bi bi-check-circle text-success"> Sastasha</span><br />
+          <span class="text-success"><i class="fa-fw fal fa-check-circle text-success"></i> Sastasha</span><br />
           &nbsp;&nbsp;Your active character has cleared this encounter.<br />
-          <span class="bi bi-question-circle text-secondary"> Sastasha</span><br />
+          <span class="text-secondary"><i class="fa-fw fal fa-question-circle"></i> Sastasha</span><br />
           &nbsp;&nbsp;Your active character's current achievements cannot determine encounter
           clear.<br />
-          <span class="bi bi-circle"> Sastasha</span><br />
+          <span><i class="fa-fw fal fa-circle"></i> Sastasha</span><br />
           &nbsp;&nbsp;Your active character has not cleared this encounter yet.
         </p>
 

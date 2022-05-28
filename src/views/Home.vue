@@ -1,29 +1,5 @@
 <template>
   <div>
-    <!-- <div class="container col-xxl-8 px-4 pb-5" style="margin: 0; background-color: rgb(33, 38, 43); width: 100%; max-width: 100%; border-bottom: 1px solid #333333;">
-      <div class="row align-items-center g-5 pb-5">
-        <img
-          style="width: 300px"
-          :src="this.$store.getters.character.Portrait"
-          alt="Portrait of your character"
-        />
-
-        <h3>My Characters</h3>
-        <ul style="margin: 0px">
-        <li v-for="(item, i) of this.$store.state.characters" :key="item.ID">
-          <span
-            v-if="i == this.$store.state.activeCharacterID"
-            class="active"
-          >
-            {{ item.characterData.Character.Name }} <span class="bi-check" />
-          </span>
-          <a v-else href="#" @click="changeActiveCharacter(i)">
-            {{ item.characterData.Character.Name }}
-          </a>
-        </li>
-        </ul>
-      </div>
-    </div> -->
     <div class="px-4 py-4 my-4 text-center">
       <img
         class="d-block mx-auto mb-4"
@@ -106,42 +82,42 @@
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
         <div class="col d-flex align-items-start">
-          <i class="bi bi-list-ul flex-shrink-0 me-3"></i>
+          <i class="fa-fw fad fa-list flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.encountersQuestlines.title") }}</h4>
             <p>{{ $t("home.feature.encountersQuestlines.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="bi bi-card-checklist flex-shrink-0 me-3"></i>
+          <i class="fa-fw fad fa-chart-pie flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.contentCompletion.title") }}</h4>
             <p>{{ $t("home.feature.contentCompletion.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="bi bi-list-check flex-shrink-0 me-3"></i>
+          <i class="fa-fw fad fa-clipboard-list flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.dailiesWeeklies.title") }}</h4>
             <p>{{ $t("home.feature.dailiesWeeklies.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="bi bi-person-plus flex-shrink-0 me-3"></i>
+          <i class="fa-fw fad fa-user-friends flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.altFriendly.title") }}</h4>
             <p>{{ $t("home.feature.altFriendly.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="bi bi-eye-slash flex-shrink-0 me-3"></i>
+          <i class="fa-fw fad fa-eye-slash flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.spoilerFree.title") }}</h4>
             <p>{{ $t("home.feature.spoilerFree.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="bi bi-palette flex-shrink-0 me-3"></i>
+          <i class="fa-fw fad fa-palette flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.customizable.title") }}</h4>
             <p>{{ $t("home.feature.customizable.description") }}</p>
@@ -179,7 +155,7 @@
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
               <button type="button" class="btn btn-success btn-lg px-4 me-md-2">
-                <i class="bi bi-chat-heart"></i> {{ $t("page.donate") }}
+                <i class="fa-fw fal fa-heart"></i> {{ $t("page.donate") }}
               </button>
             </a>
           </div>
@@ -190,7 +166,7 @@
 </template>
 
 <style lang="scss">
-#features-grid .bi {
+#features-grid .fad {
   color: #41b883;
   font-size: 1.75em;
 }

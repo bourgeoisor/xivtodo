@@ -11,16 +11,15 @@
     }"
     role="alert"
   >
-    <span
-      class="bi"
+    <i
+      class="mx-1 fa-fw fas"
       :class="{
-        'bi-info-circle-fill': type == 'normal' || type == 'muted',
-        'bi-exclamation-triangle-fill': type == 'error' || type == 'warning',
-        'bi-check-circle-fill': type == 'success',
+        'fa-info-circle': type == 'normal' || type == 'muted',
+        'fa-exclamation-triangle': type == 'error' || type == 'warning',
+        'fa-check-circle': type == 'success',
       }"
     >
-    </span
-    >&nbsp;
+    </i>
     <span v-html="msg"></span>
   </div>
 </template>

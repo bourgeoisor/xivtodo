@@ -9,14 +9,18 @@
     <span
       class="duty-list-item"
       :class="{
-        'bi-question-circle': duty.cleared == -1,
-        'bi-check-circle': duty.cleared == 1,
-        'bi-circle': duty.cleared == 0,
         'duty-list-item-blur': duty.blur,
       }"
       :title="title"
     >
-      &nbsp;
+      <i
+        class="me-2 fa-fw fal"
+        :class="{
+          'fa-question-circle': duty.cleared == -1,
+          'fa-check-circle': duty.cleared == 1,
+          'fa-circle': duty.cleared == 0,
+        }"
+      ></i>
       <a
         v-if="duty.LodestoneID && !duty.blur"
         class="text-reset lodestone-tooltip eorzeadb_link"

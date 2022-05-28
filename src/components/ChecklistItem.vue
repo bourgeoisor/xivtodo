@@ -25,21 +25,20 @@
 
     <span v-if="showHidden" class="d-flex justify-content-between align-items-center">
       <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
-        <i class="bi bi-grip-horizontal cursor-grab" title="Drag to reorder"></i> &nbsp;
+        <i class="fa-fw fad fa-grip-lines cursor-grab" title="Drag to reorder"></i> &nbsp;
         {{ item.name }}
       </span>
       <span v-if="showHidden">
-        <a v-if="item.custom" class="bi-trash text-danger cursor-pointer tt" @click="remove">
+        <a v-if="item.custom" class="text-danger cursor-pointer tt" @click="remove">
+          <i class="fa-fw fad fa-trash-alt"></i>
           <span class="tt-text">Remove</span>
         </a>
-        <a
-          v-else-if="itemCopy.hidden"
-          class="bi-eye-slash text-secondary cursor-pointer tt"
-          @click="hid"
-        >
+        <a v-else-if="itemCopy.hidden" class="text-secondary cursor-pointer tt" @click="hid">
+          <i class="fa-fw fad fa-eye-slash"></i>
           <span class="tt-text">Show</span>
         </a>
-        <a v-else-if="!itemCopy.hidden" class="bi-eye text-success cursor-pointer tt" @click="hid">
+        <a v-else-if="!itemCopy.hidden" class="text-success cursor-pointer tt" @click="hid">
+          <i class="fa-fw fad fa-eye"></i>
           <span class="tt-text">Hide</span>
         </a>
       </span>

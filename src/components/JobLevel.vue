@@ -44,7 +44,7 @@
 <style lang="scss">
 .job-level {
   float: left;
-  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
   width: 22px;

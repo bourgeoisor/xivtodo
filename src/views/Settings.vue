@@ -105,17 +105,15 @@
               </div>
               <a
                 v-if="!updating && !this.$store.getters.characterOutOfDate(i)"
-                class="bi-arrow-repeat text-secondary cursor-pointer tt"
+                class="text-secondary cursor-pointer tt"
                 @click="updateCharacter(item.lodestoneData.Character.ID)"
               >
+                <i class="fa-fw fad fa-sync-alt"></i>
                 <span class="tt-text">Update data</span>
               </a>
               &nbsp;&nbsp;
-              <a
-                v-if="!updating"
-                class="bi-trash text-danger cursor-pointer tt"
-                @click="removeCharacter(i)"
-              >
+              <a v-if="!updating" class="text-danger cursor-pointer tt" @click="removeCharacter(i)">
+                <i class="fa-fw fad fa-trash-alt"></i>
                 <span class="tt-text">Remove character</span>
               </a>
             </li>

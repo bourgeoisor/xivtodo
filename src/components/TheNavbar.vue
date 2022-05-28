@@ -42,6 +42,34 @@
                 {{ $t("page.challenges") }}
               </router-link>
             </li>
+            <!-- <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="collectionDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Collection
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
+                aria-labelledby="collectionDropdown"
+              >
+                <li>
+                  <router-link to="/achievements" class="dropdown-item" @click="collapseNav">
+                    <i class="fa-fw fad fa-award"></i> {{ $t("page.achievements") }}
+                  </router-link>
+                  <router-link to="/mounts" class="dropdown-item" @click="collapseNav">
+                    <i class="fa-fw fad fa-horse-saddle"></i> {{ $t("page.mounts") }}
+                  </router-link>
+                  <router-link to="/minions" class="dropdown-item" @click="collapseNav">
+                    <i class="fa-fw fad fa-squirrel"></i> {{ $t("page.minions") }}
+                  </router-link>
+                </li>
+              </ul>
+            </li> -->
             <li class="nav-item">
               <router-link to="/checklist" class="nav-link" @click="collapseNav">
                 {{ $t("page.checklist") }}
@@ -59,7 +87,7 @@
                 @click="seenLatestCountdown()"
               >
                 <span class="d-inline d-lg-none">Countdowns </span>
-                <span class="bi bi-clock position-relative">
+                <span class="fa-fw fal fa-clock position-relative">
                   <span
                     v-if="this.$store.getters.latestCountdownSeen < news.latestCountdownID"
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
@@ -78,7 +106,7 @@
                 @click="seenLatestNews()"
               >
                 <span class="d-inline d-lg-none">Updates </span>
-                <span class="bi bi-bell position-relative">
+                <span class="fa-fw fal fa-bell position-relative">
                   <span
                     v-if="this.$store.getters.latestNewsSeen < news.latestID"
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
@@ -122,7 +150,8 @@
                       class="dropdown-item active"
                     >
                       <b>{{ item.lodestoneData.Character.Name }}</b>
-                      – {{ item.lodestoneData.Character.World }} <span class="bi-check" />
+                      – {{ item.lodestoneData.Character.World }}
+                      <i class="fa-fw fal fa-check"></i>
                     </span>
                     <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
                       <b>{{ item.lodestoneData.Character.Name }}</b>
@@ -140,13 +169,13 @@
                 </li>
                 <li>
                   <a class="dropdown-item cursor-pointer" @click="signOut">
-                    <span class="bi-power" /> Sign out
+                    <i class="fa-fw fad fa-power-off"></i> Sign out
                   </a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <router-link to="/settings" class="dropdown-item" @click="collapseNav">
-                    <span class="bi-gear" /> {{ $t("page.settings") }}
+                    <i class="fa-fw fad fa-cog"></i> {{ $t("page.settings") }}
                   </router-link>
                 </li>
               </ul>
@@ -238,7 +267,7 @@
           <span v-if="item.url">
             <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">
               More details
-              <i class="bi bi-box-arrow-up-right"></i>
+              <i class="fa-fw fal fa-external-link"></i>
             </a>
           </span>
         </p>

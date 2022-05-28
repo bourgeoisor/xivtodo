@@ -30,47 +30,39 @@
         <div class="info-block">
           <b>{{ $t("profile.world") }}</b>
           <br />
-          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.World }} ({{ this.$store.getters.character.DC }})
         </div>
 
         <div class="info-block">
           <b>{{ $t("profile.raceClan") }}</b>
           <br />
-          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.Race?.Name }} /
           {{ this.$store.getters.character.Tribe?.Name }}
-          <i v-if="this.$store.getters.character.Gender == 1" class="bi bi-gender-male"></i>
-          <i v-else class="bi bi-gender-female"></i>
+          <i v-if="this.$store.getters.character.Gender == 1" class="fa-fw fal fa-mars"></i>
+          <i v-else class="fa-fw fal fa-venus"></i>
         </div>
 
         <div class="info-block">
           <b>{{ $t("profile.nameday") }}</b>
           <br />
-          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.Nameday }}
         </div>
 
         <div class="info-block">
           <b>{{ $t("profile.guardian") }}</b>
           <br />
-          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.GuardianDeity?.Name }}
         </div>
-
-        <br />
 
         <div v-if="this.$store.getters.character.FreeCompanyName" class="info-block">
           <b>{{ $t("profile.freeCompany") }}</b>
           <br />
-          <i class="bi bi-arrow-return-right text-muted"></i>
           {{ this.$store.getters.character.FreeCompanyName }}
         </div>
 
         <div class="info-block">
           <b>{{ $t("profile.cityState") }}</b>
           <br />
-          <i class="bi bi-arrow-return-right text-muted"></i>
           <img :src="'/icons/town-' + this.$store.getters.character.Town?.ID + '.png'" />
           {{ this.$store.getters.character.Town?.Name }}
         </div>
@@ -79,7 +71,6 @@
           <div class="info-block">
             <b>{{ $t("profile.grandCompany") }}</b>
             <br />
-            <i class="bi bi-arrow-return-right text-muted"></i>
             <img
               :src="
                 '/icons/gc-' +
@@ -102,13 +93,11 @@
               </abbr>
             </b>
             <br />
-            <i class="bi bi-arrow-return-right text-muted"></i>
             {{ new Date(this.$store.getters.lodestoneData.PlayingSince).toDateString() }}
           </div>
           <div class="info-block">
             <b>{{ $t("profile.achievements") }}</b>
             <br />
-            <i class="bi bi-arrow-return-right text-muted"></i>
             {{ this.$store.getters.achievements.length }}
           </div>
         </template>
@@ -190,28 +179,25 @@
             <JobLevel initial="fsh" :title="$t('profile.job.fsh')" type="gatherer" />
           </div>
         </div>
-        <br />
+        <!-- <br /> -->
         <div class="info-block">
-          <b>{{ $t("profile.elementalLevel") }}</b>
+          <b>Exploratory missions</b>
           <br />
+          {{ $t("profile.elementalLevel") }}:
           <span
             :class="{
               'fw-bold': this.$store.getters.character.ClassJobElemental?.Level == 60,
             }"
           >
-            <i class="bi bi-arrow-return-right text-muted"></i>
             {{ this.$store.getters.character.ClassJobElemental?.Level || "0" }}
           </span>
-        </div>
-        <div class="info-block">
-          <b>{{ $t("profile.resistanceRank") }}</b>
           <br />
+          {{ $t("profile.resistanceRank") }}:
           <span
             :class="{
               'fw-bold': this.$store.getters.character.ClassJobBozjan?.Level == 25,
             }"
           >
-            <i class="bi bi-arrow-return-right text-muted"></i>
             {{ this.$store.getters.character.ClassJobBozjan?.Level || "0" }}
           </span>
         </div>
@@ -225,7 +211,7 @@
 .info-block {
   line-height: 1.3;
   margin-bottom: 5px;
-  margin-top: 5px;
+  margin-top: 8px;
   font-weight: 300;
 
   b {
