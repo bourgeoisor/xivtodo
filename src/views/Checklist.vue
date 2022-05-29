@@ -344,9 +344,11 @@ export default {
     onDrop(evt, item) {
       let fromName = evt.dataTransfer.getData("itemName");
       let toName = item.name;
+
+      if (toName == fromName) return;
+
       swapChecklistItems(fromName, toName);
 
-      this.draggedOverName = "";
       let characterID = this.$store.getters.lodestoneData.Character.ID;
       updateChecklist(characterID, this.$store.getters.checklistData);
     },
