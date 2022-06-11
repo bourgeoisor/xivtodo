@@ -5,6 +5,9 @@
     "encounters": "Encounters",
     "questlines": "Questlines",
     "challenges": "Challenges",
+    "achievements": "Achievements",
+    "minions": "Minions",
+    "mounts": "Mounts",
     "checklist": "Checklist",
     "settings": "Settings",
     "about": "About",
@@ -20,7 +23,8 @@
     "changeActiveCharacter": "Active character",
     "ofCharacter": "of {characterName}",
     "clearedByCharacter": "cleared by {characterName}",
-    "forCharacter": "for {characterName}"
+    "forCharacter": "for {characterName}",
+    "obtainedByCharacter": "obtained by {characterName}"
   },
   "misc": {
     "expansion": {
@@ -46,7 +50,7 @@
     "buildDate": "{buildDate}"
   },
   "home": {
-    "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV; whether you are a new player to the game or more experienced. In its current form, XIV ToDo offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come!",
+    "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV. Whether you are a new player to the game or more experienced, there is something for everyone! In its current form, it offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come.",
     "addCharacter": "Add a character",
     "learnMore": "Learn more",
     "viewProfile": "View your profile",
@@ -88,7 +92,7 @@
   "profile": {
     "characterInfo": "Character Information",
     "world": "World",
-    "raceClan": "Race / Clan",
+    "raceClan": "Race & clan",
     "nameday": "Nameday",
     "guardian": "Guardian",
     "freeCompany": "Free Company",

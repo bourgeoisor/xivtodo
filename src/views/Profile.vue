@@ -85,7 +85,6 @@
           </div>
         </template>
         <template v-if="this.$store.getters.achievementsPublic">
-          <br />
           <div class="info-block">
             <b>
               <abbr title="May not be accurate for legacy characters">
@@ -95,12 +94,28 @@
             <br />
             {{ new Date(this.$store.getters.lodestoneData.PlayingSince).toDateString() }}
           </div>
-          <div class="info-block">
-            <b>{{ $t("profile.achievements") }}</b>
-            <br />
-            {{ this.$store.getters.achievements.length }}
-          </div>
         </template>
+        <div class="info-block">
+          <b>Exploratory missions</b>
+          <br />
+          {{ $t("profile.elementalLevel") }}:
+          <span
+            :class="{
+              'fw-bold': this.$store.getters.character.ClassJobElemental?.Level == 60,
+            }"
+          >
+            {{ this.$store.getters.character.ClassJobElemental?.Level || "0" }}
+          </span>
+          <br />
+          {{ $t("profile.resistanceRank") }}:
+          <span
+            :class="{
+              'fw-bold': this.$store.getters.character.ClassJobBozjan?.Level == 25,
+            }"
+          >
+            {{ this.$store.getters.character.ClassJobBozjan?.Level || "0" }}
+          </span>
+        </div>
         <br />
       </div>
       <div class="col-lg">
@@ -178,28 +193,6 @@
             <JobLevel initial="btn" :title="$t('profile.job.btn')" type="gatherer" />
             <JobLevel initial="fsh" :title="$t('profile.job.fsh')" type="gatherer" />
           </div>
-        </div>
-        <!-- <br /> -->
-        <div class="info-block">
-          <b>Exploratory missions</b>
-          <br />
-          {{ $t("profile.elementalLevel") }}:
-          <span
-            :class="{
-              'fw-bold': this.$store.getters.character.ClassJobElemental?.Level == 60,
-            }"
-          >
-            {{ this.$store.getters.character.ClassJobElemental?.Level || "0" }}
-          </span>
-          <br />
-          {{ $t("profile.resistanceRank") }}:
-          <span
-            :class="{
-              'fw-bold': this.$store.getters.character.ClassJobBozjan?.Level == 25,
-            }"
-          >
-            {{ this.$store.getters.character.ClassJobBozjan?.Level || "0" }}
-          </span>
         </div>
         <br />
       </div>

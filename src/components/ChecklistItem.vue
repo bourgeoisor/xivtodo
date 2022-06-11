@@ -1,27 +1,28 @@
 <template>
   <li
     v-if="showHidden || (!itemCopy.hidden && !showHidden)"
-    class="list-group-item list-group-item-action"
-    :class="{ dragHovered: dragHovered }"
+    class="list-group-item"
+    :class="{
+      'drag-hovered': dragHovered,
+      'list-group-item-action': this.$store.getters.hasCharacter,
+    }"
+    @click="check"
+    @mouseover="isHovering = true"
+    @mouseout="isHovering = false"
   >
-    <label
-      v-if="!itemCopy.hidden && !showHidden"
-      class="d-flex justify-content-between align-items-center user-select-none"
-    >
-      <span>
-        <input
-          v-if="!showHidden && this.$store.getters.hasCharacter"
-          v-model="itemCopy.checked"
-          :class="{ 'checkbox-checked': itemCopy.checked }"
-          class="form-check-input"
-          type="checkbox"
-          :id="item.name"
-          @change="check"
-        />
-        &nbsp;&nbsp;<span :class="{ 'checklist-checked': itemCopy.checked }">{{ item.name }}</span>
-        <!-- <br /><small class="text-muted">Token and gear coffer lockout for the Savage raid</small> -->
-      </span>
-    </label>
+    <span v-if="!itemCopy.hidden && !showHidden" class="user-select-none">
+      <i
+        v-if="!showHidden && this.$store.getters.hasCharacter"
+        class="me-2 fa-fw fal"
+        :class="{
+          'fa-check-circle': itemCopy.checked || isHovering,
+          'fa-circle': !itemCopy.checked && !isHovering,
+          'text-success': itemCopy.checked,
+        }"
+      ></i>
+      <span :class="{ 'checklist-checked': itemCopy.checked }">{{ item.name }}</span>
+      <!-- <br /><small class="text-muted">Token and gear coffer lockout for the Savage raid</small> -->
+    </span>
 
     <span v-if="showHidden" class="d-flex justify-content-between align-items-center">
       <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
@@ -53,7 +54,7 @@
   text-decoration-thickness: 2px;
 }
 
-.dragHovered {
+.drag-hovered {
   border-top: 2px solid #41b883 !important;
 }
 
@@ -62,18 +63,6 @@
 }
 
 .night {
-  .form-check-input.checkbox-checked[type="checkbox"] {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23198754' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
-  }
-
-  .form-check-input[type="checkbox"]:hover:not(.checkbox-checked) {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23dddddd' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
-  }
-
-  .form-check-input.checkbox-checked {
-    border-color: #53b462;
-  }
-
   .list-group-item-action:focus,
   .list-group-item-action:hover {
     background-color: #212529 !important;
@@ -92,6 +81,7 @@ export default {
   data() {
     return {
       itemCopy: this.item,
+      isHovering: false,
     };
   },
   props: {
@@ -111,15 +101,15 @@ export default {
       this.updateItem(false);
     },
     check() {
+      if (!this.$store.getters.hasCharacter) return;
+
+      this.itemCopy.checked = !this.itemCopy.checked;
       this.updateItem(false);
     },
     remove() {
       this.updateItem(true);
     },
     updateItem(toRemove) {
-      // Skip this if no active character is set.
-      if (!this.$store.getters.hasCharacter) return;
-
       if (this.type == "weekly") {
         let weeklyChecklist = this.$store.getters.checklistWeeklies;
         for (let i = 0; i < weeklyChecklist.length; i++) {
