@@ -158,6 +158,19 @@ main {
   padding-bottom: 0.4rem;
 }
 
+table {
+  color: #ddd !important;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: #484848;
+}
+
 a,
 a:focus {
   color: #41b883;
@@ -218,6 +231,14 @@ hr {
 
 .text-info {
   color: #9dd1ff !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.form-text {
+  color: #6c757d;
 }
 
 .btn-outline-success {
