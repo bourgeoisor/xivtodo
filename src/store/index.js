@@ -44,16 +44,41 @@ const store = createStore({
       return getters.lodestoneData.Character || {};
     },
     achievements(state, getters) {
-      return getters.lodestoneData.Achievements || [];
+      let achievements = new Map();
+      for (let achievement of getters.lodestoneData.Achievements || []) {
+        achievements.set(achievement.ID, achievement.Date);
+      }
+      return achievements;
     },
     achievementsPublic(state, getters) {
       return getters.lodestoneData.Achievements?.length > 0 || false;
+    },
+    mounts(state, getters) {
+      let mounts = {};
+      for (let mount of getters.lodestoneData.Mounts || []) {
+        mounts[mount.ID] = true;
+      }
+      return mounts;
+    },
+    minions(state, getters) {
+      let minions = {};
+      for (let minion of getters.lodestoneData.Minions || []) {
+        minions[minion.ID] = true;
+      }
+      return minions;
     },
     latestNewsSeen(state, getters) {
       return getters.settings.latestNewsSeen || 0;
     },
     latestCountdownSeen(state, getters) {
       return getters.settings.latestCountdownSeen || 0;
+    },
+    encounterIDs(state, getters) {
+      let encounterIDs = new Map();
+      for (let encounterID of getters.activeCharacter?.encounterIDs || []) {
+        encounterIDs.set(encounterID, true);
+      }
+      return encounterIDs;
     },
     checklistData(state, getters) {
       return getters.activeCharacter?.checklistData || {};
@@ -161,6 +186,9 @@ const store = createStore({
     },
     changeActiveCharacter(state, payload) {
       state.activeCharacterID = payload;
+    },
+    setEncounterIDs(state, payload) {
+      state.userData.characters[state.activeCharacterID].encounterIDs = payload;
     },
     checklistNextWeeklyReset(state, payload) {
       state.userData.characters[state.activeCharacterID].checklistData.nextWeeklyReset = payload;

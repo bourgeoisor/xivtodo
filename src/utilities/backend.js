@@ -243,6 +243,28 @@ const updateChecklist = (id, payload) =>
       });
   });
 
+const updateEncounterIDs = (id, payload) =>
+  new Promise((resolve, reject) => {
+    fetch(apiEndpoint + "/encounters?id=" + id, {
+      headers: {
+        Authorization:
+          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+      },
+      body: JSON.stringify(payload),
+      method: "PUT",
+    })
+      .then((response) => {
+        if (response.ok) {
+          resolve(response);
+        } else {
+          throw response;
+        }
+      })
+      .catch((err) => {
+        reject("Could not update encounter IDs. Please try again later." + err);
+      });
+  });
+
 export {
   getVersion,
   authenticate,
@@ -251,4 +273,5 @@ export {
   addCharacter,
   removeCharacter,
   updateChecklist,
+  updateEncounterIDs,
 };

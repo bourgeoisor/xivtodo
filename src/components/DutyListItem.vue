@@ -3,8 +3,13 @@
     class="list-group-item d-flex justify-content-between align-items-center"
     :class="{
       'text-secondary': duty.cleared == -1,
-      'text-success': duty.cleared == 1,
+      'text-success': duty.cleared >= 1,
+      'list-group-item-action':
+        this.$store.getters.hasCharacter && isHovering && (duty.cleared == -1 || duty.cleared == 2),
     }"
+    @click="check"
+    @mouseover="isHovering = true"
+    @mouseout="isHovering = false"
   >
     <span
       class="duty-list-item"
@@ -16,9 +21,11 @@
       <i
         class="me-2 fa-fw fal"
         :class="{
-          'fa-question-circle': duty.cleared == -1,
-          'fa-check-circle': duty.cleared == 1,
+          'fa-question-circle': duty.cleared == -1 && !(duty.cleared == -1 && isHovering),
+          'fa-badge-check': duty.cleared == 1,
+          'fa-check-circle': duty.cleared == 2 || (duty.cleared == -1 && isHovering),
           'fa-circle': duty.cleared == 0,
+          'cursor-pointer': duty.cleared == -1 || duty.cleared == 2,
         }"
       ></i>
       <a
@@ -93,16 +100,61 @@
 .duty-list-item-blur {
   text-overflow: " ";
 }
+
+.night {
+  .list-group-item-action:focus,
+  .list-group-item-action:hover {
+    background-color: #212529 !important;
+  }
+
+  .list-group-item-action:active {
+    background-color: #1c2024 !important;
+  }
+}
 </style>
 
 <script>
+import { updateEncounterIDs } from "@/utilities/backend.js";
+
 export default {
+  data() {
+    return {
+      isHovering: false,
+    };
+  },
   props: {
     duty: Object,
   },
   computed: {
     title() {
       return this.duty.LodestoneID || this.duty.blur ? "" : this.duty.Name;
+    },
+  },
+  methods: {
+    check() {
+      if (!this.$store.getters.hasCharacter) return;
+      if (this.duty.cleared == 0 || this.duty.cleared == 1) return;
+
+      let uuid = ~~this.duty.UUID;
+
+      let encounterIDs = this.$store.getters.encounterIDs;
+      if (encounterIDs.has(uuid)) {
+        encounterIDs.set(uuid, false);
+      } else {
+        encounterIDs.set(uuid, true);
+      }
+
+      let encounterIDsAsArray = [];
+      encounterIDs.forEach((v, k) => {
+        if (v) {
+          encounterIDsAsArray.push(k);
+        }
+      });
+
+      this.$store.commit("setEncounterIDs", encounterIDsAsArray);
+
+      let characterID = this.$store.getters.lodestoneData.Character.ID;
+      updateEncounterIDs(characterID, encounterIDsAsArray);
     },
   },
 };

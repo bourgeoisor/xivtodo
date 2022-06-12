@@ -15,8 +15,14 @@
       "start": 1654596000
     }
   ],
-  "latestID": 220525,
+  "latestID": 220612,
   "news": [
+    {
+      "ID": 220612,
+      "title": "Encounter & questline manual tracking",
+      "published": "June 12, 2022",
+      "content": "Another weekend, another long-awaited feature is here! Is the automatic encounter & questline tracker not working quite right? You can now mark those as cleared manually! Just click on the question mark icon besides the questline or encounter! (Bonus points: I've also added all of the Guildhests in the list of ARR encounters.)"
+    },
     {
       "ID": 220525,
       "title": "Checklist customization",

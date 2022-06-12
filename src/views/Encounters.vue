@@ -68,6 +68,12 @@
           type="high"
           :showTotal="true"
         />
+        <DutyList
+          :title="$t('encounters.guildhests')"
+          :duties="db.arrGuildhests"
+          type="guild"
+          :showTotal="true"
+        />
       </div>
     </div>
     <hr />

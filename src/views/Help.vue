@@ -94,7 +94,7 @@
           Encounter and questlines are automatically marked as cleared once the relevant
           achievements have been obtained. Since encounters or questlines don't always map directly
           directly to in-game achievement, automated completion tracking is not always fully
-          accurate.
+          accurate. You can correct the tracking by clicking on the encounter or questline.
         </p>
         <p>
           XIV ToDo takes in-game achievements data from the Lodestone, which can take multiple hours
@@ -105,6 +105,8 @@
         </p>
         <p>The following are the three possible statuses for each encounter and questline:</p>
         <p>
+          <span class="text-success"><i class="fa-fw fal fa-badge-check text-success"></i> Sastasha</span><br />
+          &nbsp;&nbsp;Your active character has cleared this encounter (verified).<br />
           <span class="text-success"><i class="fa-fw fal fa-check-circle text-success"></i> Sastasha</span><br />
           &nbsp;&nbsp;Your active character has cleared this encounter.<br />
           <span class="text-secondary"><i class="fa-fw fal fa-question-circle"></i> Sastasha</span><br />

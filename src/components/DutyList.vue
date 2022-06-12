@@ -36,13 +36,9 @@ export default {
       return false;
     },
     injectDutyCompletion(duties) {
-      let achievementList = this.$store.getters.achievements;
-      let achievements = new Map();
-      for (let i = 0; i < achievementList.length; i++) {
-        achievements.set(achievementList[i].ID, achievementList[i].Date);
-      }
-
+      let achievements = this.$store.getters.achievements;
       let spoilersOption = this.$store.getters.settings.spoilersOption || 0;
+      let encounterIDs = this.$store.getters.encounterIDs;
 
       for (let item of duties) {
         let cleared = 0;
@@ -58,6 +54,7 @@ export default {
         else if (item.MinID && !achievements.has(item.MinID)) cleared = 0;
         else if (!item.MinID && item.MaxIDOneOf) cleared = 0;
         else if (!item.ID) cleared = -1;
+        if (cleared == -1 && encounterIDs.has(~~item.UUID)) cleared = 2;
         item.cleared = cleared;
 
         let blur = false;
