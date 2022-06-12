@@ -40,7 +40,7 @@ type Character struct {
 	Updated       int64             `json:"updated"`
 	LodestoneData *LodestoneProfile `json:"lodestoneData"`
 	ChecklistData *ChecklistData    `json:"checklistData"`
-	//EncounterData *EncounterData
+	EncounterIDs  []*int            `json:"encounterIDs"`
 }
 
 type LodestoneProfile struct {

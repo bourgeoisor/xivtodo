@@ -46,10 +46,8 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 		return
 	}
 
-	lodestoneProfile, err := utils.GetLodestoneProfile(characterID, false)
+	lodestoneProfile, err := utils.GetLodestoneProfile(w, characterID, false)
 	if err != nil {
-		// @TODO: handle 404 vs. Lodestone maintenance
-		http.Error(w, http.StatusText(http.StatusNotFound), http.StatusNotFound)
 		log.Printf("failed to get Lodestone data: %v", err)
 		return
 	}
