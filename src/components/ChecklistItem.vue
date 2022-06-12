@@ -102,6 +102,7 @@ export default {
     },
     check() {
       if (!this.$store.getters.hasCharacter) return;
+      if (this.showHidden) return;
 
       this.itemCopy.checked = !this.itemCopy.checked;
       this.updateItem(false);
