@@ -1,5 +1,5 @@
 {
-  "latestCountdownID": 16,
+  "latestCountdownID": 17,
   "countdowns": [
     {
       "title": "The Make It Rain Campaign",
@@ -7,6 +7,13 @@
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/the_make_it_rain_campaign/gvewqi34l6",
       "start": 1654243200,
       "end": 1655737200
+    },
+    {
+      "title": "Letter from the Producer LIVE Part LXXI",
+      "description": "Keynote presentation covering information from the upcoming patch 6.2 and miscellaneous updates.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/64cdbeaaa0761db550e4a143b5a8cee363c3d490",
+      "start": 1656673200,
+      "end": 1656684000
     },
     {
       "title": "Patch 6.15",
