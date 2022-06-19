@@ -168,6 +168,9 @@
             @dragenter.prevent
             :dragHovered="item.name == this.draggedOverName"
           />
+          <li v-if="this.$store.getters.checklistAdhocs.length == 0" class="list-group-item">
+            Once you add checklist items, they will appear here
+          </li>
         </ul>
         <br />
       </div>
