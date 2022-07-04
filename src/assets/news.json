@@ -2,14 +2,9 @@
   "latestCountdownID": 17,
   "countdowns": [
     {
-      "title": "Patch 6.15",
-      "description": "Release of patch 6.15, which brings new story, custom delivery, tribal quests, and more.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/91ca242abdbf0750db28d01f4f38d27c3aea617b",
-      "start": 1654596000
-    },
-    {
       "title": "Patch 6.18",
       "description": "Release of patch 6.18, which brings additional worlds, cross-DC travel, and the start of Crystalline Conflict Season 2.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/aa641701b181ebf66aaf3264896b65acdbd23850",
       "start": 1657015200
     }
   ],
