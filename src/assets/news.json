@@ -1,17 +1,25 @@
 {
-  "latestCountdownID": 18,
+  "latestCountdownID": 19,
   "countdowns": [
+    {
+      "title": "Letter from the Producer LIVE Part LXXII",
+      "description": "The 72nd edition of the LPL, covering the upcoming release of patch 6.2.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/e09dd99176ee29cd7352c23b25332b133987b35f",
+      "start": 1660302000,
+      "end": 1660312800
+    },
     {
       "title": "Moogle Treasure Trove",
       "description": "The Hunt for Verity edition of the Moogle Treasure Trove event.",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202207/ujz24q0uim",
-      "start": 1658736000
+      "start": 1658736000,
+      "end": 1661248800
     },
     {
-      "title": "Patch 6.18",
-      "description": "Release of patch 6.18, which brings additional worlds, cross-DC travel, and the start of Crystalline Conflict Season 2.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/aa641701b181ebf66aaf3264896b65acdbd23850",
-      "start": 1657015200
+      "title": "Patch 6.2",
+      "description": "Release of patch 6.2, which brings new stories, encounters, and more.",
+      "url": "https://na.finalfantasyxiv.com/endwalker/patch_6_2/",
+      "start": 1661248800
     }
   ],
   "latestID": 220612,
