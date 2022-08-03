@@ -1,9 +1,9 @@
 {
-  "latestCountdownID": 19,
+  "latestCountdownID": 20,
   "countdowns": [
     {
       "title": "Letter from the Producer LIVE Part LXXII",
-      "description": "The 72nd edition of the LPL, covering the upcoming release of patch 6.2.",
+      "description": "The 72nd edition of the LPL, covering the upcoming release of patch 6.2 and miscellaneous updates.",
       "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/e09dd99176ee29cd7352c23b25332b133987b35f",
       "start": 1660302000,
       "end": 1660312800
@@ -14,6 +14,13 @@
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202207/ujz24q0uim",
       "start": 1658736000,
       "end": 1661248800
+    },
+    {
+      "title": "Moonfire Faire",
+      "description": "The 2022 edition of the Moonfire Faire event.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/Moonfire_Faire/0vfxyiytu0",
+      "start": 1660118400,
+      "end": 1661526000
     },
     {
       "title": "Patch 6.2",
