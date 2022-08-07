@@ -292,7 +292,7 @@ export default {
     this.$nextTick(function () {
       this.checkUpstreamVersion();
       this.updateUserData();
-      this.updateCharactersData();
+      setTimeout(() => this.updateCharactersData(), 10000);
     });
     setInterval(() => {
       if (this.tabFocused) {
