@@ -65,7 +65,7 @@
                     <i class="fa-fw fad fa-horse-saddle"></i> {{ $t("page.mounts") }}
                   </router-link>
                   <router-link to="/minions" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fad fa-squirrel"></i> {{ $t("page.minions") }}
+                    <i class="fa-fw fad fa-cat-space"></i> {{ $t("page.minions") }}
                   </router-link>
                 </li>
               </ul>
@@ -122,7 +122,7 @@
             </li>
             <li v-else class="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link"
                 href="#"
                 id="navbarDropdown"
                 role="button"
@@ -131,6 +131,12 @@
               >
                 <span v-if="this.$store.getters.hasCharacter">
                   {{ this.$store.getters.lodestoneData.Character.Name }}
+                  <img
+                    v-if="this.$store.getters.hasCharacter"
+                    class="avatar-nav d-none d-lg-inline"
+                    :src="this.$store.getters.character.Avatar"
+                    alt="Portrait of your character"
+                  />
                 </span>
                 <span v-else>
                   {{ $t("page.settings") }}
@@ -180,12 +186,6 @@
                 </li>
               </ul>
             </li>
-            <img
-              v-if="this.$store.getters.hasCharacter"
-              class="avatar-nav d-none d-lg-inline"
-              :src="this.$store.getters.character.Avatar"
-              alt="Portrait of your character"
-            />
           </ul>
         </div>
 
@@ -329,8 +329,11 @@ span.nav-link:hover {
 
 .avatar-nav {
   border-radius: 50%;
-  height: 43px;
+  height: 35px;
   margin-left: 10px;
+  margin-right: -5px;
+  margin-top: -5px;
+  float: right;
 }
 
 .dropdown-menu-dark .dropdown-item.active,
