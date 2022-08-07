@@ -6,6 +6,7 @@
       'text-success': duty.cleared >= 1,
       'list-group-item-action':
         this.$store.getters.hasCharacter && isHovering && (duty.cleared == -1 || duty.cleared == 2),
+      'cursor-pointer': duty.cleared == -1 || duty.cleared == 2,
     }"
     @click="check"
     @mouseover="isHovering = true"
@@ -25,7 +26,6 @@
           'fa-badge-check': duty.cleared == 1,
           'fa-check-circle': duty.cleared == 2 || (duty.cleared == -1 && isHovering),
           'fa-circle': duty.cleared == 0,
-          'cursor-pointer': duty.cleared == -1 || duty.cleared == 2,
         }"
       ></i>
       <a
