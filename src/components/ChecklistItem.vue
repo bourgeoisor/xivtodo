@@ -26,7 +26,11 @@
 
     <span v-if="showHidden" class="d-flex justify-content-between align-items-center">
       <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
-        <i class="fa-fw fad fa-grip-lines cursor-grab" title="Drag to reorder"></i> &nbsp;
+        <i
+          class="fa-fw fad fa-grip-lines cursor-grab d-none d-md-inline"
+          title="Drag to reorder"
+        ></i>
+        &nbsp;
         {{ item.name }}
       </span>
       <span v-if="showHidden">
