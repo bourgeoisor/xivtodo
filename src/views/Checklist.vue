@@ -32,9 +32,8 @@
       msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
     />
     <hr />
+    <h2>Things to do</h2>
     <div class="row">
-      <h2>Things to do</h2>
-
       <div class="col-md">
         <h3>Weeklies</h3>
         <span class="fw-lighter text-muted">{{ weeklyReset }} until reset</span>
@@ -78,7 +77,7 @@
         <br />
       </div>
 
-      <div class="col-md">
+      <div class="col-md order-first order-md-last">
         <h3>Dailies</h3>
         <span class="fw-lighter text-muted">{{ dailyReset }} until reset</span>
 
@@ -119,17 +118,19 @@
           />
         </ul>
         <br />
-        <span
-          v-if="this.$store.getters.checklistLenHiddens == 1"
-          class="text-muted fw-light float-end"
-        >
-          1 hidden task<br /><br />
-        </span>
-        <span
-          v-else-if="this.$store.getters.checklistLenHiddens > 1"
-          class="text-muted fw-light float-end"
-        >
-          {{ this.$store.getters.checklistLenHiddens }} hidden tasks<br /><br />
+        <span class="d-none d-md-block">
+          <span
+            v-if="this.$store.getters.checklistLenHiddens == 1"
+            class="text-muted fw-light float-end"
+          >
+            1 hidden task<br /><br />
+          </span>
+          <span
+            v-else-if="this.$store.getters.checklistLenHiddens > 1"
+            class="text-muted fw-light float-end"
+          >
+            {{ this.$store.getters.checklistLenHiddens }} hidden tasks<br /><br />
+          </span>
         </span>
       </div>
     </div>
