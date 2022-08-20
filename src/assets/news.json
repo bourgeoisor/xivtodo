@@ -1,5 +1,5 @@
 {
-  "latestCountdownID": 20,
+  "latestCountdownID": 21,
   "countdowns": [
     {
       "title": "Moogle Treasure Trove",
@@ -16,9 +16,16 @@
       "end": 1661526000
     },
     {
+      "title": "The Rising",
+      "description": "The 2022 edition of the Rising event.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/The_Rising/hirh6wbu52",
+      "start": 1661583600,
+      "end": 1662994800
+    },
+    {
       "title": "Patch 6.2",
       "description": "Release of patch 6.2, which brings new stories, encounters, and more.",
-      "url": "https://na.finalfantasyxiv.com/endwalker/patch_6_2/",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/27bd3bc448b9208f4bd67a94f37d9ee6a81f96e0",
       "start": 1661248800
     }
   ],
