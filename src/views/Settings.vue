@@ -298,6 +298,11 @@ export default {
       let characterID = this.$store.getters.characters[id].lodestoneData.Character.ID;
       let characterName = this.$store.getters.characters[id].lodestoneData.Character.Name;
 
+      if (!confirm("Are you sure you want to delete " + characterName + "?")) {
+        this.updating = false;
+        return;
+      }
+
       removeCharacter(characterID)
         .then(() => {
           this.$store.commit("removeCharacter", id);
