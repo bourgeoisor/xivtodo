@@ -2,6 +2,13 @@
   "latestCountdownID": 21,
   "countdowns": [
     {
+      "title": "Letter from the Producer LIVE Part LXXIII",
+      "description": "Upcoming LPL keynote, featuring details on patch 6.25.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/3cadcc5b80b7b3cf6cca72d9d016fc0c913c63a0",
+      "start": 1665203400,
+      "end": 1665171000
+    },
+    {
       "title": "Patch 6.21",
       "description": "Release of patch 6.2.",
       "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/3740d2052d6f21aa5d3b8d4cc94795a082fca0f6",
