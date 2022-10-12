@@ -1,6 +1,13 @@
 {
-  "latestCountdownID": 21,
+  "latestCountdownID": 22,
   "countdowns": [
+    {
+      "title": "All Saints' Wake",
+      "description": "2022 edition of the All Saints' Wake event.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/All_Saints_Wake/34nzplu2qj",
+      "start": 1666166400,
+      "end": 1667314800
+    },
     {
       "title": "Patch 6.21",
       "description": "Release of patch 6.21.",
