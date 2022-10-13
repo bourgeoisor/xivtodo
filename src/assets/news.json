@@ -18,6 +18,11 @@
       "title": "Patch 6.25",
       "description": "Release of patch 6.25.",
       "start": 1666087200
+    },
+    {
+      "title": "Patch 6.28",
+      "description": "Release of patch 6.28.",
+      "start": 1667296800
     }
   ],
   "latestID": 220612,
