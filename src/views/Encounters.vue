@@ -222,6 +222,12 @@
           type="dngs"
           :showTotal="true"
         />
+        <DutyList
+          :title="$t('encounters.variantsCriterions')"
+          :duties="db.ewVariantsCriterions"
+          type="vc"
+          :showTotal="true"
+        />
       </div>
       <div class="col-12 col-lg-4">
         <DutyList

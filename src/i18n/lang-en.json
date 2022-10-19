@@ -153,6 +153,7 @@
   },
   "encounters": {
     "dungeons": "Dungeons",
+    "variantsCriterions": "Variants & Criterions",
     "trials": "Trials",
     "raids": "Raids",
     "heTrials": "High-end Trials",
