@@ -153,7 +153,7 @@
   },
   "encounters": {
     "dungeons": "Dungeons",
-    "variantsCriterions": "Variants & Criterions",
+    "vcDungeons": "V&C Dungeons",
     "trials": "Trials",
     "raids": "Raids",
     "heTrials": "High-end Trials",

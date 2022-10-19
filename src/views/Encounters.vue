@@ -223,7 +223,7 @@
           :showTotal="true"
         />
         <DutyList
-          :title="$t('encounters.variantsCriterions')"
+          :title="$t('encounters.vcDungeons')"
           :duties="db.ewVariantsCriterions"
           type="vc"
           :showTotal="true"
