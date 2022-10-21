@@ -73,10 +73,12 @@
       <div class="col-12 col-lg-4">
         <DutyList title="Bozjan Southern Front" :duties="db.bozjanChallenges" />
         <DutyList title="Zadnor" :duties="db.zadnorChallenges" />
+        <DutyList title="Variant Dungeons" :duties="db.variantChallenges" />
       </div>
       <div class="col-12 col-lg-4">
         <DutyList title="Treasure Hunt Clears" :duties="db.treasureHunts" />
         <DutyList title="Trusts" :duties="db.trusts" />
+        <DutyList title="Island Sanctuary" :duties="db.islandSanctuary" />
       </div>
     </div>
     <hr />
