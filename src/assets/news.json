@@ -2,11 +2,11 @@
   "latestCountdownID": 22,
   "countdowns": [
     {
-      "title": "All Saints' Wake",
-      "description": "2022 edition of the All Saints' Wake event.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2022/All_Saints_Wake/34nzplu2qj",
-      "start": 1666166400,
-      "end": 1667314800
+      "title": "Letter from the Producer LIVE Part LXXIV",
+      "description": "The 74th LPL keynote, focusing on patch 6.3.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/da88a163265b3a15d69349c48ed9902f71f1c4ce",
+      "start": 1668164400,
+      "end": 1668175200
     },
     {
       "title": "Patch 6.25",
@@ -17,6 +17,7 @@
     {
       "title": "Patch 6.28",
       "description": "Release of patch 6.28.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/c8900c4aae544f7a013a49553aa104c1961a5c87",
       "start": 1667296800
     }
   ],
