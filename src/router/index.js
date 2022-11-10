@@ -20,6 +20,7 @@ const routes = [
   },
   {
     path: "/auth",
+    component: Home,
     beforeEnter: (_to, _from, next) => {
       authenticate(_to.query.code)
         .then((userData) => {
@@ -32,7 +33,7 @@ const routes = [
         });
 
       store.commit("signIn", true);
-      next("Home");
+      next("/");
     },
   },
   {
@@ -41,7 +42,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "profile" */ "../views/Profile.vue"),
     beforeEnter: (_to, _from, next) => {
       if (!store.getters.hasCharacter) {
-        next("Home");
+        next("/");
       }
       next();
     },
@@ -72,7 +73,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "settings" */ "../views/Settings.vue"),
     beforeEnter: (_to, _from, next) => {
       if (!store.getters.userData) {
-        next("Home");
+        next("/");
       }
       next();
     },
@@ -93,7 +94,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "privacy" */ "../views/PrivacyPolicy.vue"),
   },
   {
-    path: "/:catchAll(.*)",
+    path: "/:pathMatch(.*)",
     redirect: {
       name: "Home",
     },
