@@ -2,19 +2,6 @@
   "latestCountdownID": 22,
   "countdowns": [
     {
-      "title": "Letter from the Producer LIVE Part LXXIV",
-      "description": "The 74th LPL keynote, focusing on patch 6.3.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/da88a163265b3a15d69349c48ed9902f71f1c4ce",
-      "start": 1668164400,
-      "end": 1668175200
-    },
-    {
-      "title": "Patch 6.25",
-      "description": "Release of patch 6.25.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/0210a35806ead4c80482b12a3edd9eb5e4db5bb0/",
-      "start": 1666087200
-    },
-    {
       "title": "Patch 6.28",
       "description": "Release of patch 6.28.",
       "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/c8900c4aae544f7a013a49553aa104c1961a5c87",
