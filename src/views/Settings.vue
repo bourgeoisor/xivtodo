@@ -31,7 +31,7 @@
           </div>
           <button
             v-if="adding"
-            type="button"
+            type="submit"
             id="settings-save-btn"
             class="btn btn-success"
             disabled
@@ -42,7 +42,7 @@
           <button
             v-else
             @click="addCharacter"
-            type="button"
+            type="submit"
             id="settings-save-btn"
             class="btn btn-success"
             :class="{ disabled: !profileURL }"
@@ -243,8 +243,14 @@ export default {
       this.adding = true;
       this.error = {};
 
-      if (this.profileURL.endsWith("/")) this.profileURL = this.profileURL.slice(0, -1);
-      let characterID = this.profileURL.split("/").slice(-1).pop();
+      let characterID = "0";
+      let URLSplit = this.profileURL.split("/");
+      for (let i = 0; i < URLSplit.length; i++) {
+        if (Number.isInteger(parseInt(URLSplit[i]))) {
+          characterID = URLSplit[i];
+          break;
+        }
+      }
 
       addCharacter(characterID)
         .then((characterData) => {
