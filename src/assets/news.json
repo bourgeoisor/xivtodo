@@ -1,5 +1,5 @@
 {
-  "latestCountdownID": 23,
+  "latestCountdownID": 24,
   "countdowns": [
     {
       "title": "Starlight Celebration",
@@ -12,13 +12,20 @@
       "title": "Moogle Treasure Trove",
       "description": "The Hunt of Creation edition of the Moogle Treasure Trove event.",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202212/cx604we391",
-      "start": 1670832000
+      "start": 1670832000,
+      "end": 1673348400
     },
     {
-      "title": "Patch 6.28",
-      "description": "Release of patch 6.28.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/c8900c4aae544f7a013a49553aa104c1961a5c87",
-      "start": 1667296800
+      "title": "Letter from the Producer LIVE Part LXXV",
+      "description": "The upcoming LPL, focusing on patch 6.3.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/6d007b7491c0dc229461b3d4fbeeb5b0142fe401",
+      "start": 1671793200,
+      "end": 1671804000
+    },
+    {
+      "title": "Patch 6.3",
+      "description": "Release of patch 6.3.",
+      "start": 1673348400
     }
   ],
   "latestID": 220612,
