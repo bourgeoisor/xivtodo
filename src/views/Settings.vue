@@ -112,7 +112,11 @@
                 <span class="tt-text">Update data</span>
               </a>
               &nbsp;&nbsp;
-              <a v-if="!updating" class="text-danger cursor-pointer tt" @click="removeCharacter(i)">
+              <a
+                v-if="!updating && !this.$store.getters.characterOutOfDate(i)"
+                class="text-danger cursor-pointer tt"
+                @click="removeCharacter(i)"
+              >
                 <i class="fa-fw fad fa-trash-alt"></i>
                 <span class="tt-text">Remove character</span>
               </a>
