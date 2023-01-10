@@ -1,5 +1,5 @@
 {
-  "latestCountdownID": 24,
+  "latestCountdownID": 25,
   "countdowns": [
     {
       "title": "Heavensturn",
@@ -9,20 +9,20 @@
       "end": 1673881200
     },
     {
-      "title": "Moogle Treasure Trove",
-      "description": "The Hunt of Creation edition of the Moogle Treasure Trove event.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202212/cx604we391",
-      "start": 1670832000,
-      "end": 1673348400
-    },
-    {
       "title": "Patch 6.3",
       "description": "Release of patch 6.3.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/764840557caa22a8f77550b480aa3c79b2e733d2",
       "start": 1673348400
     }
   ],
-  "latestID": 220612,
+  "latestID": 230110,
   "news": [
+    {
+      "ID": 230110,
+      "title": "Happy year 2023!",
+      "published": "January 10, 2023",
+      "content": "A few days late, but happy year 2023 to all! XIV ToDo is now updated with 6.3 content. As always, let me know of any issues! Additionally, there seem to be some intermittent issues with signing in. If such issue happen, please try again 30-60 minutes later -- I am looking into it. Thank you everyone for supporting me and enjoying this tool!"
+    },
     {
       "ID": 220612,
       "title": "Encounter & questline manual tracking",
