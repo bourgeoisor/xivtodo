@@ -1,12 +1,12 @@
 {
-  "latestCountdownID": 25,
+  "latestCountdownID": 26,
   "countdowns": [
     {
-      "title": "Valentione's Day",
-      "description": "The 2023 edition of the Valentione's Day event.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/Valentiones_Day/6ahu1ryjqv",
-      "start": 1675238400,
-      "end": 1676473200
+      "title": "Little Ladies' Day",
+      "description": "The 2023 edition of the Little Ladies' Day event.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/Little_Ladies_Day/mtqd47qw49",
+      "start": 1677657600,
+      "end": 1678892400
     },
     {
       "title": "Patch 6.31",
