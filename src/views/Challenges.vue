@@ -35,13 +35,15 @@
 
       <div class="col-12 col-lg-4">
         <DutyList title="Palace of the Dead" :duties="db.potd" />
+        <DutyList title="Palace of the Dead (Solo)" :duties="db.potdSolo" />
       </div>
       <div class="col-12 col-lg-4">
         <DutyList title="Heaven-on-High" :duties="db.hoh" />
+        <DutyList title="Heaven-on-High (Solo)" :duties="db.hohSolo" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Palace of the Dead (Solo)" :duties="db.potdSolo" />
-        <DutyList title="Heaven-on-High (Solo)" :duties="db.hohSolo" />
+        <DutyList title="Eureka Orthos" :duties="db.eo" />
+        <DutyList title="Eureka Orthos (Solo)" :duties="db.eoSolo" />
       </div>
     </div>
     <hr />
