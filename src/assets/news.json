@@ -2,16 +2,16 @@
   "latestCountdownID": 26,
   "countdowns": [
     {
-      "title": "Little Ladies' Day",
-      "description": "The 2023 edition of the Little Ladies' Day event.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/Little_Ladies_Day/mtqd47qw49",
-      "start": 1677657600,
-      "end": 1678892400
+      "title": "Letter from the Producer LIVE Part LXXVI",
+      "description": "Upcoming LPL keynote for patch 6.4 and miscellaneous updates.",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/1160542ee9942500b397c83fca8ca1f3cf23f423",
+      "start": 1680260400,
+      "end": 1680271200
     },
     {
       "title": "Patch 6.35",
       "description": "Release of patch 6.35.",
-      "url": "",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/549b10141c2add85f11595f5ba39127cc0433327/",
       "start": 1678186800
     }
   ],
