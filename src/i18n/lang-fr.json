@@ -26,9 +26,9 @@
     "changeActiveCharacter": "Active character"
   },
   "pageHeader": {
-    "ofCharacter": "of {characterName}",
+    "ofCharacter": "de {characterName}",
     "clearedByCharacter": "cleared by {characterName}",
-    "forCharacter": "for {characterName}",
+    "forCharacter": "pour {characterName}",
     "obtainedByCharacter": "obtained by {characterName}"
   },
   "message": {
@@ -40,7 +40,7 @@
     "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
   },
   "footer": {
-    "trademark": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.",
+    "trademark": "FINAL FANTASY est une marque déposée de Square Enix Holdings Co., Ltd.",
     "copyright": "FINAL FANTASY XIV © SQUARE ENIX CO., LTD.",
     "buildVersion": "{buildNum}",
     "buildDate": "{buildDate}"
@@ -82,7 +82,6 @@
     "about": {
       "header": "About XIV ToDo",
       "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
-      "name": "Olivier Bourgeois",
       "contact": "contact me"
     }
   },
