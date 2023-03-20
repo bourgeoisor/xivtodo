@@ -141,7 +141,7 @@
           <p class="lead text-justify">
             <i18n-t keypath="home.about.text">
               <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer">
-                {{ $t("home.about.name") }}
+                Olivier Bourgeois
               </a>
               <a
                 href="https://forms.gle/2t5nLB28xDyi3Tn6A"
