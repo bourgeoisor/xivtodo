@@ -4,10 +4,10 @@
       <span class="me-auto">
         {{ $t("page.checklist") }}
         <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
-          {{ $t("message.forCharacter", { characterName: this.$store.getters.character.Name }) }}
+          {{ $t("pageHeader.forCharacter", { characterName: this.$store.getters.character.Name }) }}
           <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
             <div class="spinner-border spinner-border-sm" role="status"></div>
-            Updating character data, this may take a minute...
+            {{ $t("message.updatingCharacter") }}
           </div>
         </span>
       </span>
@@ -18,36 +18,34 @@
         :class="{ 'btn-outline-success': !showHidden, 'btn-success': showHidden }"
         @click="showHidden = !showHidden"
       >
-        Customize
+      {{ $t("shared.customize") }}
       </button>
     </h1>
     <AlertMsg
       v-if="!this.$store.getters.userData"
       type="normal"
-      :msg="
-        'No characters found. You can <a href=\'' +
-        this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
-        '\' class=\'alert-link\'>sign in with Discord</a> to add them.'
-      "
+      :msg="$t('message.notSignedIn', { url: this.$store.state.env.VUE_APP_DISCORD_AUTH_URI })"
     />
     <AlertMsg
       v-else-if="!this.$store.getters.hasCharacter"
       type="normal"
-      msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
+      :msg="$t('message.noCharacters')"
     />
     <hr />
-    <h2>Things to do</h2>
+    <h2>{{ $t("checklist.thingsToDo") }}</h2>
     <div class="row">
       <div class="col-md">
-        <h3>Weeklies</h3>
-        <span class="fw-lighter text-muted">{{ weeklyReset }} until reset</span>
+        <h3>{{ $t("checklist.weeklies") }}</h3>
+        <span class="fw-lighter text-muted">
+          {{ $t("checklist.untilReset", { time: weeklyReset }) }}
+        </span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
           <input
             v-model="customWeekly"
             type="text"
             class="form-control"
-            placeholder="Custom weekly"
+            :placeholder="$t('encounters.customWeekly')"
           />
           <button
             class="btn btn-outline-success"
@@ -56,7 +54,7 @@
             id="button-addon2"
             @click="addCustomWeekly"
           >
-            Add custom weekly
+          {{ $t("checklist.addCustomWeekly") }}
           </button>
         </div>
 
@@ -82,15 +80,17 @@
       </div>
 
       <div class="col-md order-first order-md-last">
-        <h3>Dailies</h3>
-        <span class="fw-lighter text-muted">{{ dailyReset }} until reset</span>
+        <h3>{{ $t("checklist.dailies") }}</h3>
+        <span class="fw-lighter text-muted">
+          {{ $t("checklist.untilReset", { time: dailyReset }) }}
+        </span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
           <input
             v-model="customDaily"
             type="text"
             class="form-control"
-            placeholder="Custom daily"
+            :placeholder="$t('encounters.customDaily')"
           />
           <button
             class="btn btn-outline-success"
@@ -99,7 +99,7 @@
             id="button-addon2"
             @click="addCustomDaily"
           >
-            Add custom daily
+          {{ $t("checklist.addCustomDaily") }}
           </button>
         </div>
 
@@ -123,28 +123,24 @@
         </ul>
         <br />
         <span class="d-none d-md-block">
-          <span
-            v-if="this.$store.getters.checklistLenHiddens == 1"
-            class="text-muted fw-light float-end"
-          >
-            1 hidden task<br /><br />
-          </span>
-          <span
-            v-else-if="this.$store.getters.checklistLenHiddens > 1"
-            class="text-muted fw-light float-end"
-          >
-            {{ this.$store.getters.checklistLenHiddens }} hidden tasks<br /><br />
+          <span class="text-muted fw-light float-end">
+            {{ $tc("checklist.hiddenTasks", this.$store.getters.checklistLenHiddens) }}<br /><br />
           </span>
         </span>
       </div>
     </div>
     <div v-if="showHidden || this.$store.getters.checklistAdhocs.length > 0" class="row">
       <div class="col">
-        <h3>Scratchpad</h3>
-        <span class="fw-lighter text-muted">Checklist without deadlines</span>
+        <h3>{{ $t("checklist.scratchpad") }}</h3>
+        <span class="fw-lighter text-muted">{{ $t("checklist.scratchpadDesc") }}</span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input v-model="customAdhoc" type="text" class="form-control" placeholder="Custom item" />
+          <input
+            v-model="customAdhoc"
+            type="text"
+            class="form-control"
+            :placeholder="$t('encounters.customItem')"
+          />
           <button
             class="btn btn-outline-success"
             :class="{ disabled: !customAdhoc }"
@@ -152,7 +148,7 @@
             id="button-addon2"
             @click="addCustomAdhoc"
           >
-            Add custom item
+          {{ $t("checklist.addCustomItem") }}
           </button>
         </div>
 
@@ -174,7 +170,7 @@
             :dragHovered="item.name == this.draggedOverName"
           />
           <li v-if="this.$store.getters.checklistAdhocs.length == 0" class="list-group-item">
-            Once you add checklist items, they will appear here
+            {{ $t("checklist.scratchpadHelp") }}
           </li>
         </ul>
         <br />
@@ -253,11 +249,20 @@ export default {
       let seconds = Math.floor(diff / dsecond) - 60 * Math.floor(diff / dminute);
 
       if (days > 0 && showDays) {
-        return `${days}d ${hours}h`;
+        return (
+          this.$t("shared.time.daysShort", { days: days }) + " " +
+          this.$t("shared.time.hoursShort", { hours: hours })
+        );
       } else if (hours > 0) {
-        return `${hours}h ${minutes}m`;
+        return (
+          this.$t("shared.time.hoursShort", { hours: hours }) + " " +
+          this.$t("shared.time.minutesShort", { minutes: minutes })
+        );
       } else {
-        return `${minutes}m ${seconds}s`;
+        return (
+          this.$t("shared.time.minutesShort", { minutes: minutes }) + " " +
+          this.$t("shared.time.secondsShort", { seconds: seconds })
+        );
       }
     },
     resetDailliesWeeklies() {

@@ -28,7 +28,7 @@
       <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
         <i
           class="fa-fw fad fa-grip-lines cursor-grab d-none d-md-inline"
-          title="Drag to reorder"
+          :title="$t('shared.dragToReorder')"
         ></i>
         &nbsp;
         {{ item.name }}
@@ -36,15 +36,15 @@
       <span v-if="showHidden">
         <a v-if="item.custom" class="text-danger cursor-pointer tt" @click="remove">
           <i class="fa-fw fad fa-trash-alt"></i>
-          <span class="tt-text">Remove</span>
+          <span class="tt-text">{{ $t("shared.remove") }}</span>
         </a>
         <a v-else-if="itemCopy.hidden" class="text-secondary cursor-pointer tt" @click="hid">
           <i class="fa-fw fad fa-eye-slash"></i>
-          <span class="tt-text">Show</span>
+          <span class="tt-text">{{ $t("shared.show") }}</span>
         </a>
         <a v-else-if="!itemCopy.hidden" class="text-success cursor-pointer tt" @click="hid">
           <i class="fa-fw fad fa-eye"></i>
-          <span class="tt-text">Hide</span>
+          <span class="tt-text">{{ $t("shared.hide") }}</span>
         </a>
       </span>
     </span>

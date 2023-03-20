@@ -86,7 +86,7 @@
                 aria-controls="offcanvasCountdowns"
                 @click="seenLatestCountdown()"
               >
-                <span class="d-inline d-lg-none">Countdowns </span>
+                <span class="d-inline d-lg-none">{{ $t("page.countdowns") }} </span>
                 <span class="fa-fw fal fa-clock position-relative">
                   <span
                     v-if="this.$store.getters.latestCountdownSeen < news.latestCountdownID"
@@ -105,7 +105,7 @@
                 aria-controls="offcanvasUpdates"
                 @click="seenLatestNews()"
               >
-                <span class="d-inline d-lg-none">Updates </span>
+                <span class="d-inline d-lg-none">{{ $t("page.newsUpdates") }} </span>
                 <span class="fa-fw fal fa-bell position-relative">
                   <span
                     v-if="this.$store.getters.latestNewsSeen < news.latestID"
@@ -117,7 +117,7 @@
             </li>
             <li v-if="!this.$store.getters.userData" class="nav-item">
               <a class="nav-link" :href="this.$store.state.env.VUE_APP_DISCORD_AUTH_URI">
-                Sign in with Discord
+                {{ $t("home.signInDiscord") }}
               </a>
             </li>
             <li v-else class="nav-item dropdown">
@@ -135,7 +135,7 @@
                     v-if="this.$store.getters.hasCharacter"
                     class="avatar-nav d-none d-lg-inline"
                     :src="this.$store.getters.character.Avatar"
-                    alt="Portrait of your character"
+                    :alt="$t('shared.portraitAlt')"
                   />
                 </span>
                 <span v-else>
@@ -148,7 +148,7 @@
               >
                 <div v-if="this.$store.getters.hasCharacter">
                   <li>
-                    <h6 class="dropdown-header">{{ $t("message.changeActiveCharacter") }}</h6>
+                    <h6 class="dropdown-header">{{ $t("navbar.changeActiveCharacter") }}</h6>
                   </li>
                   <li v-for="(item, i) of this.$store.getters.characters" :key="item.ID">
                     <span
@@ -175,7 +175,7 @@
                 </li>
                 <li>
                   <a class="dropdown-item cursor-pointer" @click="signOut">
-                    <i class="fa-fw fad fa-power-off"></i> Sign out
+                    <i class="fa-fw fad fa-power-off"></i> {{ $t("page.signOut") }}
                   </a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
@@ -238,7 +238,7 @@
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCountdowns">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasCountdownsLabel">XIV ToDo - Countdowns</h5>
+      <h5 class="offcanvas-title" id="offcanvasCountdownsLabel">{{ $t("page.countdowns") }}</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
@@ -278,7 +278,7 @@
 
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasUpdates">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasUpdatesLabel">XIV ToDo - Updates</h5>
+      <h5 class="offcanvas-title" id="offcanvasUpdatesLabel">{{ $t("page.newsUpdates") }}</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">

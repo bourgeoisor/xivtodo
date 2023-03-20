@@ -3,10 +3,7 @@
     <TheNavbar />
     <main class="flex-shrink-0">
       <div v-if="this.$store.getters.backendOffline" class="container">
-        <AlertMsg
-          type="error"
-          msg="XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update."
-        />
+        <AlertMsg type="error" :msg="$t(message.backendUnavailable)" />
       </div>
       <!-- <div v-else-if="!this.$store.getters.versionMatches" class="container">
         <AlertMsg
@@ -21,7 +18,7 @@
         <AlertMsg type="normal" :msg="getMigrationMessage()" />
       </div>
       <div v-if="this.$store.state.signIn" class="container">
-        <AlertMsg type="normal" msg="Signing in with Discord..." />
+        <AlertMsg type="normal" :msg="$t('message.signingDiscord')" />
       </div>
       <router-view />
     </main>

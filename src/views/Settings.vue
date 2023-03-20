@@ -6,27 +6,28 @@
     <form name="settings-form" id="settings-form">
       <div class="row">
         <div class="col-lg-6">
-          <h2>Characters</h2>
+          <h2>{{ $t("settings.characters") }}</h2>
 
-          <h3>Add a new character</h3>
+          <h3>{{ $t("settings.addNewCharacter") }}</h3>
           <div class="mb-3">
-            <label for="inputCharacterID" class="form-label">Profile URL</label>
+            <label for="inputCharacterID" class="form-label">{{ $t("settings.profileUrl.label") }}</label>
             <input
               v-model="profileURL"
               type="text"
               class="form-control"
               id="inputCharacterID"
-              placeholder="https://na.finalfantasyxiv.com/lodestone/character/12345/"
+              placeholder="https://finalfantasyxiv.com/lodestone/character/12345/"
             />
             <div class="form-text">
-              The URL for your character profile. You can find it in
-              <a
-                class="text-reset"
-                href="https://na.finalfantasyxiv.com/lodestone/character/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Lodestone</a
-              >.
+              <i18n-t keypath="settings.profileUrl.hint">
+                <a
+                  class="text-reset"
+                  href="https://finalfantasyxiv.com/lodestone/character/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Lodestone</a
+                >
+              </i18n-t>
             </div>
           </div>
           <button
@@ -37,7 +38,7 @@
             disabled
           >
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Adding, please wait...
+            {{ $t("shared.addingWait") }}
           </button>
           <button
             v-else
@@ -47,14 +48,14 @@
             class="btn btn-success"
             :class="{ disabled: !profileURL }"
           >
-            Add character
+          {{ $t("settings.addCharacter") }}
           </button>
           <br /><br />
 
-          <h3>Your characters</h3>
+          <h3>{{ $t("settings.myCharacters") }}</h3>
           <ul v-if="!this.$store.getters.hasCharacter" class="list-group list-group-flush">
             <li class="list-group-item d-flex justify-content-between align-items-start">
-              Once you add your characters, they will appear here
+              {{ $t("settings.myCharactersHelp") }}
             </li>
           </ul>
           <ul v-else class="list-group list-group-flush">
@@ -68,7 +69,7 @@
                   style="display: block; float: left; height: 50px"
                   class="avatar-list"
                   :src="item.lodestoneData.Character.Avatar"
-                  alt="Portrait of your character"
+                  :alt="$t('shared.portraitAlt')"
                 />
                 <div style="float: left">
                   <span class="fw-bold">{{ item.lodestoneData.Character.Name }}</span>
@@ -82,10 +83,10 @@
                     class="text-info fw-light"
                   >
                     <div class="spinner-border spinner-border-sm" role="status"></div>
-                    Updating character data...
+                    {{ $t("shared.updatingWait") }}
                   </span>
                   <span v-else class="text-muted fw-light">
-                    Last updated {{ lastUpdatedAt(item.updated) }}
+                    {{ $t("settings.lastUpdated", { time: lastUpdatedAt(item.updated) }) }}
                     <span
                       v-if="
                         !item.lodestoneData.Achievements ||
@@ -94,10 +95,8 @@
                       class="text-warning"
                     >
                       <br />
-                      <abbr
-                        title="The achievements for this characters are not set to public in Lodestone."
-                      >
-                        Achievements are not public
+                      <abbr :title="$t('settings.achievementsNotPublicAlt')">
+                        {{ $t("settings.achievementsNotPublic") }}
                       </abbr>
                     </span>
                   </span>
@@ -109,7 +108,7 @@
                 @click="updateCharacter(item.lodestoneData.Character.ID)"
               >
                 <i class="fa-fw fad fa-sync-alt"></i>
-                <span class="tt-text">Update data</span>
+                <span class="tt-text">{{ $t("shared.update") }}</span>
               </a>
               &nbsp;&nbsp;
               <a
@@ -118,15 +117,15 @@
                 @click="removeCharacter(i)"
               >
                 <i class="fa-fw fad fa-trash-alt"></i>
-                <span class="tt-text">Remove character</span>
+                <span class="tt-text">{{ $t("shared.remove") }}</span>
               </a>
             </li>
           </ul>
           <br />
         </div>
         <div class="col-lg-6">
-          <h2>General</h2>
-          <h3>Content spoilers</h3>
+          <h2>{{ $t("settings.general") }}</h2>
+          <h3>{{ $t("settings.contentSpoilers.label") }}</h3>
           <div class="form-check">
             <input
               v-model="settings.spoilersOption"
@@ -137,7 +136,7 @@
               :value="0"
             />
             <label class="form-check-label" for="inputSpoilersOption0">
-              Blur out non-completed story-related encounters
+              {{ $t("settings.contentSpoilers.option0") }}
             </label>
           </div>
           <div class="form-check">
@@ -150,7 +149,7 @@
               :value="1"
             />
             <label class="form-check-label" for="inputSpoilersOption1">
-              Blur out all story-related encounters
+              {{ $t("settings.contentSpoilers.option1") }}
             </label>
           </div>
           <div class="form-check">
@@ -162,9 +161,11 @@
               id="inputSpoilersOption2"
               :value="2"
             />
-            <label class="form-check-label" for="inputSpoilersOption2">Show all encounters</label>
+            <label class="form-check-label" for="inputSpoilersOption2">
+              {{ $t("settings.contentSpoilers.option2") }}
+            </label>
           </div>
-          <div class="form-text">Preference in hiding potential spoilers.</div>
+          <div class="form-text">{{ $t("settings.contentSpoilers.hint") }}</div>
           <br />
           <button
             v-if="updatingSettings"
@@ -174,7 +175,7 @@
             disabled
           >
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Updating, please wait...
+            {{ $t("shared.updatingWait") }}
           </button>
           <button
             v-else
@@ -183,7 +184,7 @@
             id="settings-save-btn"
             class="btn btn-success"
           >
-            Update settings
+          {{ $t("settings.updateSettings") }}
           </button>
           <br /><br />
         </div>
@@ -230,13 +231,13 @@ export default {
 
           this.error = {
             type: "success",
-            msg: `Settings updated!`,
+            msg: this.$t("settings.message.settingsUpdated"),
           };
         })
         .catch((err) => {
           this.error = {
             type: "error",
-            msg: `Settings could not be updated: ${err}`,
+            msg: this.$t("settings.message.settingsNotUpdated", { error: err }),
           };
         })
         .finally(() => {
@@ -266,12 +267,16 @@ export default {
           ) {
             this.error = {
               type: "warning",
-              msg: `Character <b>${characterData.lodestoneData.Character.Name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then update the character's data.`,
+              msg: this.$t("settings.message.characterAddedNotPublic", {
+                name: characterData.lodestoneData.Character.Name,
+              }),
             };
           } else {
             this.error = {
               type: "success",
-              msg: `Character <b>${characterData.lodestoneData.Character.Name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.`,
+              msg: this.$t("settings.message.characterAdded", {
+                name: characterData.lodestoneData.Character.Name,
+              }),
             };
           }
         })
@@ -308,7 +313,7 @@ export default {
       let characterID = this.$store.getters.characters[id].lodestoneData.Character.ID;
       let characterName = this.$store.getters.characters[id].lodestoneData.Character.Name;
 
-      if (!confirm("Are you sure you want to delete " + characterName + "?")) {
+      if (!confirm(this.$t("settings.message.characterRemoveConfirm", { name: characterName }))) {
         this.updating = false;
         return;
       }
@@ -319,7 +324,7 @@ export default {
 
           this.error = {
             type: "success",
-            msg: `Character <b>${characterName}</b> removed!`,
+            msg: this.$t("settings.message.characterRemoved", { name: characterName }),
           };
         })
         .catch((err) => {
@@ -338,11 +343,11 @@ export default {
       let hours = Math.floor(diff / (60 * 60));
       let minutes = Math.floor(diff / 60);
 
-      if (minutes < 2) return "a couple seconds ago";
-      else if (minutes < 120) return minutes + " minutes ago";
-      else if (hours < 48) return hours + " hours ago";
-      else if (days < 60) return days + " days ago";
-      else return months + " months ago";
+      if (minutes < 2) return this.$t("shared.time.coupleSecondsAgo");
+      else if (minutes < 120) return this.$t("shared.time.minutesAgo", { minutes: minutes });
+      else if (hours < 48) return this.$t("shared.time.hoursAgo", { hours: hours });
+      else if (days < 60) return this.$t("shared.time.daysAgo", { days: days });
+      else return this.$t("shared.time.monthsAgo", { months: months });
     },
   },
 };

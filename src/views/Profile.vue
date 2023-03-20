@@ -3,10 +3,10 @@
     <h1>
       {{ $t("page.profile") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
-        {{ $t("message.ofCharacter", { characterName: this.$store.getters.character.Name }) }}
+        {{ $t("pageHeader.ofCharacter", { characterName: this.$store.getters.character.Name }) }}
         <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
           <div class="spinner-border spinner-border-sm" role="status"></div>
-          Updating character data, this may take a minute...
+          {{ $t("message.updatingCharacter") }}
         </div>
       </span>
     </h1>
@@ -16,7 +16,7 @@
         <img
           id="character-portrait"
           :src="this.$store.getters.character.Portrait"
-          alt="Portrait of your character"
+          :alt="$t('shared.portraitAlt')"
         />
         <br />
         <div v-if="this.$store.getters.character.Bio != '-'" class="fst-italic text-break pt-2">
@@ -96,7 +96,7 @@
           </div>
         </template>
         <div class="info-block">
-          <b>Exploratory missions</b>
+          <b>{{ $t("profile.exploratoryMissions") }}</b>
           <br />
           {{ $t("profile.elementalLevel") }}:
           <span

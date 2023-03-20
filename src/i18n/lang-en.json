@@ -10,6 +10,7 @@
     "mounts": "Mounts",
     "checklist": "Checklist",
     "settings": "Settings",
+    "signOut": "Sign out",
     "about": "About",
     "help": "Help",
     "privacy": "Privacy",
@@ -17,31 +18,26 @@
     "donate": "Support XIV ToDo",
     "twitter": "Twitter",
     "github": "GitHub",
-    "discord": "Discord"
+    "discord": "Discord",
+    "countdowns": "Countdowns",
+    "newsUpdates": "News & Updates"
   },
-  "message": {
-    "changeActiveCharacter": "Active character",
+  "navbar": {
+    "changeActiveCharacter": "Active character"
+  },
+  "pageHeader": {
     "ofCharacter": "of {characterName}",
     "clearedByCharacter": "cleared by {characterName}",
     "forCharacter": "for {characterName}",
     "obtainedByCharacter": "obtained by {characterName}"
   },
-  "misc": {
-    "expansion": {
-      "arr": "A Realm Reborn",
-      "hw": "Heavensward",
-      "sb": "Stormblood",
-      "shb": "Shadowbringers",
-      "ew": "Endwalker"
-    },
-    "errors": {
-      "notPublic": "The achievements for this characters are not set to public in Lodestone.",
-      "noCharacters": "No characters found. You can add your characters from the {0}",
-      "characterAddedSuccess": "Character {0} added! You can now access your {0} and all character completion pages.",
-      "characterAddedNoPublic": "Character {0} added, but their achievements are not set to public. You can change that setting {0}, and then re-add the character.",
-      "characterNotExist": "The character profile you have entered does not exist.",
-      "unknownError": "An unknown error has ocurred while fetching character data. Please try again."
-    }
+  "message": {
+    "backendUnavailable": "XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
+    "signingDiscord": "Signing in with Discord...",
+    "updatingCharacter": "Updating character data, this may take a minute...",
+    "achievementsNotPublic": "The achievements for this characters are not set to public in Lodestone.",
+    "notSignedIn": "No characters found. You can <a href='{url}' class='alert-link'>sign in with Discord</a> to add them.",
+    "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
   },
   "footer": {
     "trademark": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.",
@@ -54,6 +50,8 @@
     "addCharacter": "Add a character",
     "learnMore": "Learn more",
     "viewProfile": "View your profile",
+    "viewGitHub": "View project on GitHub",
+    "signInDiscord": "Sign in with Discord",
     "features": "Features",
     "feature": {
       "encountersQuestlines": {
@@ -86,11 +84,11 @@
       "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
       "name": "Olivier Bourgeois",
       "contact": "contact me"
-    },
-    "viewGitHub": "View project on GitHub"
+    }
   },
   "profile": {
     "characterInfo": "Character Information",
+    "jobLevels": "Job Levels",
     "world": "World",
     "raceClan": "Race & clan",
     "nameday": "Nameday",
@@ -100,12 +98,12 @@
     "grandCompany": "Grand Company",
     "playingSince": "Playing since",
     "achievements": "Achievements",
-    "jobLevels": "Job Levels",
     "tanks": "Tanks",
     "healers": "Healers",
     "dps": "DPS",
     "crafters": "Crafters",
     "gatherers": "Gatherers",
+    "exploratoryMissions": "Exploratory missions",
     "elementalLevel": "Elemental level",
     "resistanceRank": "Resistance rank",
     "job": {
@@ -152,6 +150,8 @@
     }
   },
   "encounters": {
+    "msqContent": "Main Scenario Quests content",
+    "unlockedInExp": "Unlocked in this expansion",
     "dungeons": "Dungeons",
     "vcDungeons": "V&C Dungeons",
     "trials": "Trials",
@@ -163,68 +163,126 @@
   },
   "questlines": {
     "stories": "Stories",
-    "mainStoryQuest": "Main Story Quest",
+    "jobsRolesRelics": "Jobs, Roles, & Relics",
+    "mainScenarioQuests": "Main Scenario Quests",
     "sideStoryQuests": "Side Story Quests",
     "encounterQuests": "Encounter Quests",
     "relicQuests": "Relic Quests",
-    "beastTribeQuests": "Beast Tribe Quests",
-    "alliedBeastTribeQuests": "Allied Beast Tribe Quests",
+    "tribalQuests": "Tribal Quests",
+    "alliedTribalQuests": "Allied Tribal Quests",
     "customDeliveryQuests": "Custom Delivery Quests",
     "jobQuests": "Job Quests",
     "combatJobQuests": "Combat Job Quests",
     "gathererJobQuests": "Gatherer Job Quests",
     "crafterJobQuests": "Crafter Job Quests",
-    "roleQuests": "Role Quests",
-    "crystallineMeanQuests": "Crystalline Mean Quests"
+    "roleQuestsShB": "Role Quests (ShB)",
+    "roleQuestsEW": "Role Quests (EW)",
+    "crystallineMeanQuests": "Crystalline Mean Quests",
+    "studiumDeliveryQuests": "Studium Delivery Quests"
   },
   "challenges": {
     "deepDungeons": "Deep Dungeons",
     "potd": "Palace of the Dead",
-    "hoh": "Heaven-on-High",
     "potdSolo": "Palace of the Dead (Solo)",
+    "hoh": "Heaven-on-High",
     "hohSolo": "Heaven-on-High (Solo)",
+    "eo": "Eureka Orthos",
+    "eoSolo": "Eureka Orthos (Solo)",
+    "exploration": "Exploration",
+    "exploratoryMissions": "Exploratory Missions",
+    "sightseeingLogs": "Sightseeing Logs",
+    "miscellaneous": "Miscellaneous",
+    "sharedFateShB": "Shared Fate (ShB)",
+    "sharedFateEW": "Shared Fate (EW)",
+    "bozjanSouthernFront": "Bozjan Southern Front",
+    "zadnor": "Zadnor",
+    "variantDungeons": "Variant Dungeons",
+    "treasureHuntClears": "Treasure Hunt Clears",
+    "trusts": "Trusts",
+    "islandSanctuary": "Island Sanctuary",
+    "achievementFates": "Achievement FATEs",
     "blueMage": "Blue Mage",
-    "blueArr": "BLU Encounters (ARR)",
-    "blueHw": "BLU Encounters (HW)",
-    "blueSb": "BLU Encounters (SB)",
+    "blueARR": "BLU Encounters (ARR)",
+    "blueHW": "BLU Encounters (HW)",
+    "blueSB": "BLU Encounters (SB)",
     "maskedCarnivale": "Masked Carnivale"
   },
   "checklist": {
     "thingsToDo": "Things to do",
     "weeklies": "Weeklies",
     "dailies": "Dailies",
-    "customize": "Customize",
+    "scratchpad": "Scratchpad",
+    "scratchpadDesc": "Checklist without deadlines",
+    "scratchpadHelp": "Once you add checklist items, they will appear here.",
     "customWeekly": "Custom weekly",
     "customDaily": "Custom daily",
+    "customItem": "Custom item",
     "addCustomWeekly": "Add custom weekly",
     "addCustomDaily": "Add custom daily",
-    "hide": "Hide",
-    "show": "Show",
-    "remove": "Remove"
+    "addCustomItem": "Add custom item",
+    "untilReset": "{time} until reset",
+    "hiddenTasks": "1 hidden task | {count} hidden tasks"
   },
   "settings": {
     "characters": "Characters",
-    "addNew": "Add a new character",
-    "profileUrl": "Profile URL",
-    "profileUrlPlaceholder": "https://na.finalfantasyxiv.com/lodestone/character/12345/",
-    "profileUrlHint": "The URL for your character profile. You can find it in {0}",
-    "lodestone": "Lodestone",
-    "lodestoneUrl": "https://na.finalfantasyxiv.com/lodestone/character/",
-    "lodestoneSettingsUrl": "https://na.finalfantasyxiv.com/lodestone/my/setting/account/",
+    "addNewCharacter": "Add a new character",
+    "profileUrl": {
+      "label": "Profile URL",
+      "hint": "The URL for your character profile. You can find it in {0}."
+    },
     "addCharacter": "Add character",
-    "yourCharacters": "Your characters",
-    "characterPlaceholder": "Once you add your characters, they will appear here.",
-    "characterLoading": "Loading latest character data...",
+    "myCharacters": "My characters",
+    "myCharactersHelp": "Once you add your characters, they will appear here.",
     "characterNotPublic": "The achievements for this characters are not set to public in Lodestone.",
-    "updateData": "Update data",
-    "removeCharacter": "Remove character",
-    "lastUpdated": "Last updated",
+    "lastUpdated": "Last updated {time}",
     "general": "General",
-    "contentSpoilers": "Content spoilers",
-    "contentSpoilers1": "Blur out all story-related encounters",
-    "contentSpoilers2": "Blur out non-completed story-related encounters",
-    "contentSpoilers3": "Show all encounters",
-    "contentSpoilersHint": "Preference in hiding potential spoilers.",
-    "updateSettings": "Update settings"
+    "contentSpoilers": {
+      "label": "Content spoilers",
+      "option0": "Blur out all story-related encounters",
+      "option1": "Blur out non-completed story-related encounters",
+      "option2": "Show all encounters",
+      "hint": "Preference in hiding potential spoilers."
+    },
+    "updateSettings": "Update settings",
+    "achievementsNotPublic": "Achievements are not public",
+    "achievementsNotPublicAlt": "The achievements for this characters are not set to public in Lodestone",
+    "message": {
+      "settingsUpdated": "Settings updated!",
+      "settingsNotUpdated": "Settings could not be updated: {error}",
+      "characterAdded": "Character <b>{name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.",
+      "characterAddedNotPublic": "Character <b>{name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then update the character's data.",
+      "characterRemoveConfirm": "Are you sure you want to remove {name}?",
+      "characterRemoved": "Character <b>{name}</b> removed!"
+    }
+  },
+  "shared": {
+    "hide": "Hide",
+    "show": "Show",
+    "remove": "Remove",
+    "update": "Update",
+    "customize": "Customize",
+    "dragToReorder": "Drag to reorder",
+    "countTotal": "{count} total",
+    "updatingWait": "Updating, please wait...",
+    "addingWait": "Adding, please wait...",
+    "portraitAlt": "Portrait of your character",
+    "expansion": {
+      "arr": "A Realm Reborn",
+      "hw": "Heavensward",
+      "sb": "Stormblood",
+      "shb": "Shadowbringers",
+      "ew": "Endwalker"
+    },
+    "time": {
+      "daysShort": "{days}d",
+      "hoursShort": "{hours}h",
+      "minutesShort": "{minutes}m",
+      "secondsShort": "{seconds}s",
+      "monthsAgo": "{months} months ago",
+      "daysAgo": "{days} days ago",
+      "hoursAgo": "{hours} hours ago",
+      "minutesAgo": "{minutes} minutes ago",
+      "coupleSecondsAgo": "a couple seconds ago"
+    }
   }
 }

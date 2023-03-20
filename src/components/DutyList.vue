@@ -1,6 +1,8 @@
 <template>
   <h3><img v-if="type" :src="'/icons/duty-' + type + '.png'" />{{ title }}</h3>
-  <span v-if="showTotal" class="fw-lighter text-muted">{{ duties.length }} total</span>
+  <span v-if="showTotal" class="fw-lighter text-muted">
+    {{ $t("shared.countTotal", { count: duties.length }) }}
+  </span>
   <ul class="list-group list-group-flush">
     <DutyListItem
       v-for="item of injectDutyCompletion(duties)"

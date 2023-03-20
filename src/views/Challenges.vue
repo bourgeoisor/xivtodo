@@ -4,114 +4,110 @@
       {{ $t("page.challenges") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
         {{
-          $t("message.clearedByCharacter", { characterName: this.$store.getters.character.Name })
+          $t("pageHeader.clearedByCharacter", { characterName: this.$store.getters.character.Name })
         }}
         <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
           <div class="spinner-border spinner-border-sm" role="status"></div>
-          Updating character data, this may take a minute...
+          {{ $t("message.updatingCharacter") }}
         </div>
         <div v-else-if="!this.$store.getters.achievementsPublic" class="text-warning fs-6">
-          The achievements for this characters are not set to public in Lodestone.
+          {{ $t("message.achievementsNotPublic") }}
         </div>
       </span>
     </h1>
     <AlertMsg
       v-if="!this.$store.getters.userData"
       type="normal"
-      :msg="
-        'No characters found. You can <a href=\'' +
-        this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
-        '\' class=\'alert-link\'>sign in with Discord</a> to add them.'
-      "
+      :msg="$t('message.notSignedIn', { url: this.$store.state.env.VUE_APP_DISCORD_AUTH_URI })"
     />
     <AlertMsg
       v-else-if="!this.$store.getters.hasCharacter"
       type="normal"
-      msg="No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
+      :msg="$t('message.noCharacters')"
     />
     <hr />
     <div class="row">
-      <h2>Deep Dungeons</h2>
+      <h2>{{ $t("challenges.deepDungeons") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList title="Palace of the Dead" :duties="db.potd" />
-        <DutyList title="Palace of the Dead (Solo)" :duties="db.potdSolo" />
+        <DutyList :title="$t('challenges.potd')" :duties="db.potd" />
+        <DutyList :title="$t('challenges.potdSolo')" :duties="db.potdSolo" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Heaven-on-High" :duties="db.hoh" />
-        <DutyList title="Heaven-on-High (Solo)" :duties="db.hohSolo" />
+        <DutyList :title="$t('challenges.hoh')" :duties="db.hoh" />
+        <DutyList :title="$t('challenges.hohSolo')" :duties="db.hohSolo" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Eureka Orthos" :duties="db.eo" />
-        <DutyList title="Eureka Orthos (Solo)" :duties="db.eoSolo" />
+        <DutyList :title="$t('challenges.eo')" :duties="db.eo" />
+        <DutyList :title="$t('challenges.eoSolo')" :duties="db.eoSolo" />
       </div>
     </div>
     <hr />
     <div class="row">
-      <h2>Exploration</h2>
+      <h2>{{ $t("challenges.exploration") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList title="A Realm Reborn" :duties="db.arrExploration" />
-        <DutyList title="Heavensward" :duties="db.hwExploration" />
+        <DutyList :title="$t('shared.expansion.arr')" :duties="db.arrExploration" />
+        <DutyList :title="$t('shared.expansion.hw')" :duties="db.hwExploration" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Stormblood" :duties="db.sbExploration" />
-        <DutyList title="Shadowbringers" :duties="db.shbExploration" />
-        <DutyList title="Endwalker" :duties="db.ewExploration" />
+        <DutyList :title="$t('shared.expansion.sb')" :duties="db.sbExploration" />
+        <DutyList :title="$t('shared.expansion.shb')" :duties="db.shbExploration" />
+        <DutyList :title="$t('shared.expansion.ew')" :duties="db.ewExploration" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Exploratory Missions" :duties="db.explExploration" />
-        <DutyList title="Sightseeing Logs" :duties="db.sightseeingLogs" />
+        <DutyList :title="$t('challenges.exploratoryMissions')" :duties="db.explExploration" />
+        <DutyList :title="$t('challenges.sightseeingLogs')" :duties="db.sightseeingLogs" />
       </div>
     </div>
     <hr />
     <div class="row">
-      <h2>Miscellaneous</h2>
+      <h2>{{ $t("challenges.miscellaneous") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList title="Shared FATE (ShB)" :duties="db.shbSharedFATE" />
-        <DutyList title="Shared FATE (EW)" :duties="db.ewSharedFATE" />
+        <DutyList :title="$t('challenges.sharedFateShB')" :duties="db.shbSharedFATE" />
+        <DutyList :title="$t('challenges.sharedFateEW')" :duties="db.ewSharedFATE" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Bozjan Southern Front" :duties="db.bozjanChallenges" />
-        <DutyList title="Zadnor" :duties="db.zadnorChallenges" />
-        <DutyList title="Variant Dungeons" :duties="db.variantChallenges" />
+        <DutyList :title="$t('challenges.bozjanSouthernFront')" :duties="db.bozjanChallenges" />
+        <DutyList :title="$t('challenges.zadnor')" :duties="db.zadnorChallenges" />
+        <DutyList :title="$t('challenges.variantDungeons')" :duties="db.variantChallenges" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Treasure Hunt Clears" :duties="db.treasureHunts" />
-        <DutyList title="Trusts" :duties="db.trusts" />
-        <DutyList title="Island Sanctuary" :duties="db.islandSanctuary" />
+        <DutyList :title="$t('challenges.treasureHuntClears')" :duties="db.treasureHunts" />
+        <DutyList :title="$t('challenges.trusts')" :duties="db.trusts" />
+        <DutyList :title="$t('challenges.islandSanctuary')" :duties="db.islandSanctuary" />
       </div>
     </div>
     <hr />
     <div class="row">
-      <h2>Achievement FATEs</h2>
+      <h2>{{ $t("challenges.achievementFates") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList title="A Realm Reborn" :duties="db.arrFATEs" />
+        <DutyList :title="$t('shared.expansion.arr')" :duties="db.arrFATEs" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Heavensward" :duties="db.hwFATEs" />
-        <DutyList title="Stormblood" :duties="db.sbFATEs" />
+        <DutyList :title="$t('shared.expansion.hw')" :duties="db.hwFATEs" />
+        <DutyList :title="$t('shared.expansion.sb')" :duties="db.sbFATEs" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Shadowbringer" :duties="db.shbFATEs" />
-        <DutyList title="Endwalker" :duties="db.ewFATEs" />
+        <DutyList :title="$t('shared.expansion.shb')" :duties="db.shbFATEs" />
+        <DutyList :title="$t('shared.expansion.ew')" :duties="db.ewFATEs" />
       </div>
     </div>
     <hr />
     <div class="row">
-      <h2>Blue Mage</h2>
+      <h2>{{ $t("challenges.blueMage") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList title="BLU Encounters (ARR)" :duties="db.arrBlu" />
-        <DutyList title="BLU Encounters (HW)" :duties="db.hwBlu" />
+        <DutyList :title="$t('challenges.blueARR')" :duties="db.arrBlu" />
+        <DutyList :title="$t('challenges.blueHW')" :duties="db.hwBlu" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="BLU Encounters (SB)" :duties="db.sbBlu" />
+        <DutyList :title="$t('challenges.blueSB')" :duties="db.sbBlu" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList title="Masked Carnivale" :duties="db.maskedCarnivale" />
+        <DutyList :title="$t('challenges.maskedCarnivale')" :duties="db.maskedCarnivale" />
       </div>
     </div>
   </div>

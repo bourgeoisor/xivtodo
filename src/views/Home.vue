@@ -21,7 +21,7 @@
             </router-link>
             <a v-else :href="this.$store.state.env.VUE_APP_DISCORD_AUTH_URI">
               <button type="button" class="btn btn-success btn-lg px-4 gap-3">
-                Sign in with Discord
+                {{ $t("home.signInDiscord") }}
               </button>
             </a>
             <button

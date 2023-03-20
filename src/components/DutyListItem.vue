@@ -61,14 +61,14 @@
       class="icon-marker-msq"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="MSQ content"
+      :title="$t('encounters.msqContent')"
     ></span>
     <span
       v-if="duty.Expansion && duty.blur"
       :class="'icon-exp-' + duty.Expansion"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
-      title="Expansion unlocked in"
+      :title="$t('encounters.unlockedInExp')"
     ></span>
   </li>
 </template>
