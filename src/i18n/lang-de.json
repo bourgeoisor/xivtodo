@@ -82,7 +82,6 @@
     "about": {
       "header": "About XIV ToDo",
       "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
-      "name": "Olivier Bourgeois",
       "contact": "contact me"
     }
   },
