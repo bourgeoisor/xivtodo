@@ -20,7 +20,7 @@
     "github": "GitHub",
     "discord": "Discord",
     "countdowns": "Countdowns",
-    "newsUpdates": "News & Updates"
+    "newsUpdates": "Nouvelles et mises à jour"
   },
   "navbar": {
     "changeActiveCharacter": "Personnage actif"
@@ -32,12 +32,12 @@
     "obtainedByCharacter": "obtained by {characterName}"
   },
   "message": {
-    "backendUnavailable": "XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
+    "backendUnavailable": "XIV ToDo est actuellement inaccessible. Réessayez plus tard, ou regardez <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> ou <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> pour une mise à jour du statut.",
     "signingDiscord": "Signing in with Discord...",
-    "updatingCharacter": "Updating character data, this may take a minute...",
-    "achievementsNotPublic": "The achievements for this characters are not set to public in Lodestone.",
-    "notSignedIn": "No characters found. You can <a href='{url}' class='alert-link'>sign in with Discord</a> to add them.",
-    "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
+    "updatingCharacter": "Mise à jour des données du personnage, cela peut prendre une minute...",
+    "achievementsNotPublic": "Les hauts faits pour ce personnage ne sont pas mis en public dans Lodestone.",
+    "notSignedIn": "Aucun personnage trouvé. Vous pouvez <a href='{url}' class='alert-link'>vous connecter avec Discord</a> pour les ajouter.",
+    "noCharacters": "Aucun caractère trouvé. Vous pouvez ajouter vos personnages dans les <a href='/settings' class='alert-link'>Paramètres</a>."
   },
   "footer": {
     "trademark": "FINAL FANTASY est une marque déposée de SQUARE ENIX holdings Co, Ltd.",
@@ -51,7 +51,7 @@
     "learnMore": "Apprendre plus",
     "viewProfile": "Voir ton profil",
     "viewGitHub": "Voir le projet sur GitHub",
-    "signInDiscord": "Sign in with Discord",
+    "signInDiscord": "Se connecter avec Discord",
     "features": "Fonctionnalités",
     "feature": {
       "encountersQuestlines": {
@@ -180,7 +180,7 @@
     "studiumDeliveryQuests": "Studium Delivery Quests"
   },
   "challenges": {
-    "deepDungeons": "Deep Dungeons",
+    "deepDungeons": "Donjons sans fonds",
     "potd": "Palais des morts",
     "potdSolo": "Palais des morts (solo)",
     "hoh": "Pilier des Cieux",
@@ -220,21 +220,21 @@
     "addCustomDaily": "Add custom daily",
     "addCustomItem": "Add custom item",
     "untilReset": "{time} until reset",
-    "hiddenTasks": "1 hidden task | {count} hidden tasks"
+    "hiddenTasks": "1 tâche masquée | {count} tâches masquées"
   },
   "settings": {
-    "characters": "Characters",
-    "addNewCharacter": "Add a new character",
+    "characters": "Personnages",
+    "addNewCharacter": "Ajouter un personnage",
     "profileUrl": {
-      "label": "Profile URL",
-      "hint": "The URL for your character profile. You can find it in {0}."
+      "label": "URL du profil",
+      "hint": "L'URL de votre profil de personnage. Vous pouvez le trouver dans {0}."
     },
-    "addCharacter": "Add character",
+    "addCharacter": "Ajouter un personnage",
     "myCharacters": "Mes personnages",
-    "myCharactersHelp": "Once you add your characters, they will appear here.",
-    "characterNotPublic": "The achievements for this characters are not set to public in Lodestone.",
-    "lastUpdated": "Last updated {time}",
-    "general": "General",
+    "myCharactersHelp": "Une fois que vous aurez ajouté vos personnages, ils apparaîtront ici.",
+    "characterNotPublic": "Les hauts faits pour ce personnage ne sont pas mis en public dans Lodestone.",
+    "lastUpdated": "Dernière mise à jour {time}",
+    "general": "Paramètres généraux",
     "contentSpoilers": {
       "label": "Content spoilers",
       "option0": "Blur out all story-related encounters",
@@ -242,29 +242,29 @@
       "option2": "Show all encounters",
       "hint": "Preference in hiding potential spoilers."
     },
-    "updateSettings": "Update settings",
-    "achievementsNotPublic": "Achievements are not public",
-    "achievementsNotPublicAlt": "The achievements for this characters are not set to public in Lodestone",
+    "updateSettings": "Mettre à jour les paramètres",
+    "achievementsNotPublic": "Les hauts faits ne sont pas mis en public",
+    "achievementsNotPublicAlt": "Les hauts faits pour ce personnage ne sont pas mis en public dans Lodestone",
     "message": {
-      "settingsUpdated": "Settings updated!",
-      "settingsNotUpdated": "Settings could not be updated: {error}",
-      "characterAdded": "Character <b>{name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.",
-      "characterAddedNotPublic": "Character <b>{name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then update the character's data.",
-      "characterRemoveConfirm": "Are you sure you want to remove {name}?",
-      "characterRemoved": "Character <b>{name}</b> removed!"
+      "settingsUpdated": "Paramètres mis à jour !",
+      "settingsNotUpdated": "Les paramètres n'ont pas pu être mis à jour : {error}",
+      "characterAdded": "Le personnage <b>{name}</b> a été ajouté ! Vous pouvez maintenant accéder à votre <a href='/profile' class='alert-link'>profil</a> et à toutes les pages de complétion du personnage.",
+      "characterAddedNotPublic": "Le personnage <b>{name}</b> a été ajouté, mais leurs hauts faits ne sont pas mis en public. Vous pouvez modifier ce paramètre <a href='https://fr.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>ici</a>, puis mettre à jour les données du personnage.",
+      "characterRemoveConfirm": "Êtes-vous sûr de vouloir supprimer {name} ?",
+      "characterRemoved": "Personnage <b>{name}</b> supprimé !"
     }
   },
   "shared": {
-    "hide": "Hide",
-    "show": "Show",
-    "remove": "Remove",
-    "update": "Update",
-    "customize": "Customize",
-    "dragToReorder": "Drag to reorder",
-    "countTotal": "{count} total",
-    "updatingWait": "Updating, please wait...",
-    "addingWait": "Adding, please wait...",
-    "portraitAlt": "Portrait of your character",
+    "hide": "Masquer",
+    "show": "Afficher",
+    "remove": "Supprimer",
+    "update": "Mettre à jour",
+    "customize": "Personnaliser",
+    "dragToReorder": "Faites glisser pour organiser",
+    "countTotal": "{count} au total",
+    "updatingWait": "Mise à jour en cours, veuillez patienter...",
+    "addingWait": "Ajout en cours, veuillez patienter...",
+    "portraitAlt": "Portrait de votre personnage",
     "expansion": {
       "arr": "A Realm Reborn",
       "hw": "Heavensward",
@@ -277,11 +277,11 @@
       "hoursShort": "{hours}h",
       "minutesShort": "{minutes}m",
       "secondsShort": "{seconds}s",
-      "monthsAgo": "{months} months ago",
-      "daysAgo": "{days} days ago",
-      "hoursAgo": "{hours} hours ago",
-      "minutesAgo": "{minutes} minutes ago",
-      "coupleSecondsAgo": "a couple seconds ago"
+      "monthsAgo": "il y a {months} mois",
+      "daysAgo": "il y a {days} jours",
+      "hoursAgo": "il y a {hours} heures",
+      "minutesAgo": "il y a {minutes} minutes",
+      "coupleSecondsAgo": "il y a quelques instants"
     }
   }
 }
