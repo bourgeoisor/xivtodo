@@ -1,5 +1,6 @@
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fxivtodo.com)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bourgeoisor/xivtodo)
+[![Crowdin](https://badges.crowdin.net/xiv-todo/localized.svg)](https://crowdin.com/project/xiv-todo)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V569BFY)
 
