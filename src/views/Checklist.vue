@@ -45,7 +45,7 @@
             v-model="customWeekly"
             type="text"
             class="form-control"
-            :placeholder="$t('encounters.customWeekly')"
+            :placeholder="$t('checklist.customWeekly')"
           />
           <button
             class="btn btn-outline-success"
@@ -90,7 +90,7 @@
             v-model="customDaily"
             type="text"
             class="form-control"
-            :placeholder="$t('encounters.customDaily')"
+            :placeholder="$t('checklist.customDaily')"
           />
           <button
             class="btn btn-outline-success"
@@ -139,7 +139,7 @@
             v-model="customAdhoc"
             type="text"
             class="form-control"
-            :placeholder="$t('encounters.customItem')"
+            :placeholder="$t('checklist.customItem')"
           />
           <button
             class="btn btn-outline-success"
