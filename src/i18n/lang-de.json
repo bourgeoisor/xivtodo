@@ -1,29 +1,29 @@
 {
   "page": {
-    "home": "Home",
+    "home": "Startseite",
     "profile": "Profil",
     "encounters": "Missionen",
     "questlines": "Aufträge",
-    "challenges": "Challenges",
+    "challenges": "Herausforderungen",
     "achievements": "Errungenschaften",
     "minions": "Begleiter",
     "mounts": "Reittiere",
-    "checklist": "Checklist",
-    "settings": "Settings",
-    "signOut": "Sign out",
-    "about": "About",
-    "help": "Help",
-    "privacy": "Privacy",
-    "contact": "Contact",
-    "donate": "Support XIV ToDo",
+    "checklist": "Checkliste",
+    "settings": "Einstellungen",
+    "signOut": "Abmelden",
+    "about": "Über uns",
+    "help": "Hilfe",
+    "privacy": "Datenschutzerklärung",
+    "contact": "Kontakt",
+    "donate": "Unterstütze XIV ToDo",
     "twitter": "Twitter",
     "github": "GitHub",
     "discord": "Discord",
     "countdowns": "Countdowns",
-    "newsUpdates": "News & Updates"
+    "newsUpdates": "Neuigkeiten & Updates"
   },
   "navbar": {
-    "changeActiveCharacter": "Active character"
+    "changeActiveCharacter": "Aktiver Charakter"
   },
   "pageHeader": {
     "ofCharacter": "of {characterName}",
