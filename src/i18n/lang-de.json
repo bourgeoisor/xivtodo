@@ -26,83 +26,83 @@
     "changeActiveCharacter": "Aktiver Charakter"
   },
   "pageHeader": {
-    "ofCharacter": "of {characterName}",
-    "clearedByCharacter": "cleared by {characterName}",
-    "forCharacter": "for {characterName}",
-    "obtainedByCharacter": "obtained by {characterName}"
+    "ofCharacter": "von {characterName}",
+    "clearedByCharacter": "beendet von {characterName}",
+    "forCharacter": "für {characterName}",
+    "obtainedByCharacter": "von {characterName} erhalten"
   },
   "message": {
-    "backendUnavailable": "XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
-    "signingDiscord": "Signing in with Discord...",
-    "updatingCharacter": "Updating character data, this may take a minute...",
-    "achievementsNotPublic": "The achievements for this characters are not set to public in Lodestone.",
-    "notSignedIn": "No characters found. You can <a href='{url}' class='alert-link'>sign in with Discord</a> to add them.",
-    "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
+    "backendUnavailable": "XIV ToDo ist momentan nicht erreichbar. Versuche es später noch einmal, oder schau auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> nach einem Statusupdate.",
+    "signingDiscord": "Anmelden mit Discord...",
+    "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
+    "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
+    "notSignedIn": "Keine Charaktere gefunden. Du kannst dich <a href='{url}' class='alert-link'>mit Discord anmelden</a>, um diese hinzuzufügen.",
+    "noCharacters": "Keine Charaktere gefunden. Über die <a href='/settings' class='alert-link'>Einstellungen</a> kannst du diese hinzufügen."
   },
   "footer": {
-    "trademark": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.",
+    "trademark": "FINAL FANTASY ist eine eingetragene Marke der Square Enix Holdings Co., Ltd.",
     "copyright": "FINAL FANTASY XIV © SQUARE ENIX CO., LTD.",
     "buildVersion": "{buildNum}",
     "buildDate": "{buildDate}"
   },
   "home": {
-    "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV. Whether you are a new player to the game or more experienced, there is something for everyone! In its current form, it offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come.",
-    "addCharacter": "Add a character",
-    "learnMore": "Learn more",
-    "viewProfile": "View your profile",
-    "viewGitHub": "View project on GitHub",
-    "signInDiscord": "Sign in with Discord",
-    "features": "Features",
+    "intro": "XIV ToDo bietet nützliche Dashboards, maßgeschneiderte Checklisten und Tools für Final Fantasy XIV. Egal, ob du ein neuer Spieler oder schon etwas erfahrener bist - es gibt für jeden etwas! In seiner aktuellen Form bietet er anpassbare tägliche und wöchentliche Checklisten sowie automatisierte Abschlussverfolgung von Begegnungen und Questlinien, später wird noch viel mehr dazukommen.",
+    "addCharacter": "Charakter hinzufügen",
+    "learnMore": "Mehr erfahren",
+    "viewProfile": "Profil anzeigen",
+    "viewGitHub": "Projekt auf Github anzeigen",
+    "signInDiscord": "Mit Discord anmelden",
+    "features": "Funktionen",
     "feature": {
       "encountersQuestlines": {
-        "title": "Encounters & questlines",
-        "description": "Complete listing of all encounters, main and side story questlines available in the game."
+        "title": "Begegnungen & Questlinien",
+        "description": "Komplette Auflistung aller im Spiel verfügbaren Begegnungen und Questlinien für Haupt- und Nebengeschichten."
       },
       "contentCompletion": {
-        "title": "Content completion",
-        "description": "Add your character to quickly visualize which content you've cleared and which ones are still pending."
+        "title": "Inhaltsabschluss",
+        "description": "Füge deinen Charakter hinzu, um schnell zu visualisieren, welche Inhalte du abgeschlossen hast und welche noch ausstehen."
       },
       "dailiesWeeklies": {
-        "title": "Dailies & weeklies",
-        "description": "Comprehensive list of daily and weekly objectives which can be ticked off and get automatically cleared on reset."
+        "title": "Tägliche & Wöchentliche Aufgaben",
+        "description": "Umfassende Liste der täglichen und wöchentlichen Ziele, die abgehakt werden können und beim Reset automatisch zurückgesetzt werden."
       },
       "altFriendly": {
-        "title": "Alt-friendly",
-        "description": "Support for adding as many alt characters as you need, with all features being kept character-specific."
+        "title": "Zweit-Charakterfreundlich",
+        "description": "Unterstützung für das Hinzufügen beliebig vieler Zweit-Charaktere, wobei alle Funktionen Charakterspezifisch erhalten bleiben."
       },
       "spoilerFree": {
-        "title": "Spoiler-free",
-        "description": "Main story content is blurred by default until they are cleared to avoid accidental spoilers."
+        "title": "Spoiler-frei",
+        "description": "Die Inhalte der Hauptgeschichte sind standardmäßig verschwommen dargestellt, bis diese abgeschlossen wurden, um versehentliche Spoiler zu vermeiden."
       },
       "customizable": {
-        "title": "Customizable",
-        "description": "Personalization is available like hiding select objectives from the checklists, with more to come soon."
+        "title": "Anpassbar",
+        "description": "Personalisierung wie das Verstecken ausgewählter Ziele in den Checklisten ist bereits verfügbar, weitere Optionen werden demnächst folgen."
       }
     },
     "about": {
-      "header": "About XIV ToDo",
-      "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
-      "contact": "contact me"
+      "header": "Über XIV ToDo",
+      "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Begegnungen und Questlinien von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst {1} mit jeder Frage oder Feedback. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
+      "contact": "kontaktiere mich"
     }
   },
   "profile": {
-    "characterInfo": "Character Information",
-    "jobLevels": "Job Levels",
-    "world": "World",
-    "raceClan": "Race & clan",
+    "characterInfo": "Charakterinformationen",
+    "jobLevels": "Job-Level",
+    "world": "Welt",
+    "raceClan": "Rasse & Clan",
     "nameday": "Namenstag",
     "guardian": "Schutzgott",
     "freeCompany": "Freie Gesellschaft",
     "cityState": "Stadtstaat",
     "grandCompany": "Staatliche Gesellschaft",
-    "playingSince": "Playing since",
+    "playingSince": "Spielt seit",
     "achievements": "Errungenschaften",
     "tanks": "Verteidiger",
     "healers": "Heiler",
     "dps": "DPS",
     "crafters": "Handwerker",
     "gatherers": "Sammler",
-    "exploratoryMissions": "Exploratory missions",
+    "exploratoryMissions": "Erkundungsmissionen",
     "elementalLevel": "Elementarstufe",
     "resistanceRank": "Widerstandsstufe",
     "job": {
@@ -149,26 +149,26 @@
     }
   },
   "encounters": {
-    "msqContent": "Main Scenario Quests content",
-    "unlockedInExp": "Unlocked in this expansion",
+    "msqContent": "Inhalte der Haupt-Szenario-Quest (MSQ)",
+    "unlockedInExp": "In dieser Erweiterung freigeschaltet",
     "dungeons": "Dungeons",
     "vcDungeons": "V&C Dungeons",
     "trials": "Prüfungen",
     "raids": "Raids",
-    "heTrials": "High-end Trials",
-    "heRaids": "High-end Raids",
-    "exploratory": "Exploratory Missions",
+    "heTrials": "High-End-Prüfungen",
+    "heRaids": "High-End-Raids",
+    "exploratory": "Erkundungsmissionen",
     "guildhests": "Gildengeheiße"
   },
   "questlines": {
-    "stories": "Stories",
-    "jobsRolesRelics": "Jobs, Roles, & Relics",
-    "mainScenarioQuests": "Main Scenario Quests",
-    "sideStoryQuests": "Side Story Quests",
-    "encounterQuests": "Encounter Quests",
-    "relicQuests": "Relic Quests",
-    "tribalQuests": "Tribal Quests",
-    "alliedTribalQuests": "Allied Tribal Quests",
+    "stories": "Geschichten",
+    "jobsRolesRelics": "Jobs, Rollen & Relikte",
+    "mainScenarioQuests": "Haupt-Szenario-Quests",
+    "sideStoryQuests": "Nebengeschichten-Quests",
+    "encounterQuests": "Begegnungs-Quests",
+    "relicQuests": "Relikt-Quests",
+    "tribalQuests": "Stammes-Quests",
+    "alliedTribalQuests": "Verbündete Stammes-Quests",
     "customDeliveryQuests": "Custom Delivery Quests",
     "jobQuests": "Job Quests",
     "combatJobQuests": "Combat Job Quests",
