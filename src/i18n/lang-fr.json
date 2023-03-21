@@ -23,7 +23,7 @@
     "newsUpdates": "News & Updates"
   },
   "navbar": {
-    "changeActiveCharacter": "Active character"
+    "changeActiveCharacter": "Personnage actif"
   },
   "pageHeader": {
     "ofCharacter": "de {characterName}",
@@ -47,12 +47,12 @@
   },
   "home": {
     "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV. Whether you are a new player to the game or more experienced, there is something for everyone! In its current form, it offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come.",
-    "addCharacter": "Add a character",
-    "learnMore": "Learn more",
-    "viewProfile": "View your profile",
-    "viewGitHub": "View project on GitHub",
+    "addCharacter": "Ajoute un personnage",
+    "learnMore": "Apprendre plus",
+    "viewProfile": "Voir ton profil",
+    "viewGitHub": "Voir le project sur GitHub",
     "signInDiscord": "Sign in with Discord",
-    "features": "Features",
+    "features": "Fonctionnalités",
     "feature": {
       "encountersQuestlines": {
         "title": "Encounters & questlines",
@@ -80,23 +80,23 @@
       }
     },
     "about": {
-      "header": "About XIV ToDo",
+      "header": "À propos de XIV ToDo",
       "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
       "contact": "contact me"
     }
   },
   "profile": {
-    "characterInfo": "Character Information",
+    "characterInfo": "Info du personnage",
     "jobLevels": "Job Levels",
-    "world": "World",
+    "world": "Monde",
     "raceClan": "Race & clan",
-    "nameday": "Nameday",
+    "nameday": "Date de naissance",
     "guardian": "Guardian",
     "freeCompany": "Free Company",
-    "cityState": "City-state",
-    "grandCompany": "Grand Company",
-    "playingSince": "Playing since",
-    "achievements": "Achievements",
+    "cityState": "Cité de départ",
+    "grandCompany": "Grande compagnie",
+    "playingSince": "Joueur depuis",
+    "achievements": "Hauts faits",
     "tanks": "Tanks",
     "healers": "Healers",
     "dps": "DPS",
