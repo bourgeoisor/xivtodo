@@ -87,7 +87,7 @@
         <template v-if="this.$store.getters.achievementsPublic">
           <div class="info-block">
             <b>
-              <abbr title="May not be accurate for legacy characters">
+              <abbr :title="$t('profile.playingSinceAlt')">
                 {{ $t("profile.playingSince") }}
               </abbr>
             </b>
