@@ -21,11 +21,11 @@
     "discord": "Discord",
     "countdowns": "Countdowns",
     "newsUpdates": "Nouvelles et mises à jour",
-    "language": "Language"
+    "language": "Langage"
   },
   "navbar": {
     "changeActiveCharacter": "Personnage actif",
-    "preferredLanguage": "Preferred language"
+    "preferredLanguage": "Langue préférée"
   },
   "pageHeader": {
     "ofCharacter": "de {characterName}",
