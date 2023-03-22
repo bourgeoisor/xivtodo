@@ -1,6 +1,6 @@
 {
   "page": {
-    "home": "Home",
+    "home": "ホーム",
     "profile": "プロフィール",
     "encounters": "Encounters",
     "questlines": "クエスト",
@@ -12,18 +12,20 @@
     "settings": "Settings",
     "signOut": "ログアウト",
     "about": "About",
-    "help": "Help",
-    "privacy": "Privacy",
+    "help": "ヘルプ",
+    "privacy": "プライバシー",
     "contact": "Contact",
     "donate": "Support XIV ToDo",
     "twitter": "Twitter",
     "github": "GitHub",
     "discord": "Discord",
     "countdowns": "Countdowns",
-    "newsUpdates": "News & Updates"
+    "newsUpdates": "News & Updates",
+    "language": "Language"
   },
   "navbar": {
-    "changeActiveCharacter": "Active character"
+    "changeActiveCharacter": "Active character",
+    "preferredLanguage": "Preferred language"
   },
   "pageHeader": {
     "ofCharacter": "of {characterName}",
@@ -96,6 +98,7 @@
     "cityState": "開始都市",
     "grandCompany": "所属グランドカンパニー",
     "playingSince": "Playing since",
+    "playingSinceAlt": "May not be accurate for legacy characters",
     "achievements": "アチーブメント",
     "tanks": "Tanks",
     "healers": "Healers",
