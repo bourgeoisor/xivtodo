@@ -20,10 +20,12 @@
     "github": "GitHub",
     "discord": "Discord",
     "countdowns": "Countdowns",
-    "newsUpdates": "Neuigkeiten & Updates"
+    "newsUpdates": "Neuigkeiten & Updates",
+    "language": "Sprache"
   },
   "navbar": {
-    "changeActiveCharacter": "Aktiver Charakter"
+    "changeActiveCharacter": "Aktiver Charakter",
+    "preferredLanguage": "Bevorzugte Sprache"
   },
   "pageHeader": {
     "ofCharacter": "von {characterName}",
@@ -96,6 +98,7 @@
     "cityState": "Stadtstaat",
     "grandCompany": "Staatliche Gesellschaft",
     "playingSince": "Spielt seit",
+    "playingSinceAlt": "Kann bei älteren Charakteren ungenau sein (FFXIV 1.0)",
     "achievements": "Errungenschaften",
     "tanks": "Verteidiger",
     "healers": "Heiler",

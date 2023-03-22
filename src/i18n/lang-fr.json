@@ -20,10 +20,12 @@
     "github": "GitHub",
     "discord": "Discord",
     "countdowns": "Countdowns",
-    "newsUpdates": "Nouvelles et mises à jour"
+    "newsUpdates": "Nouvelles et mises à jour",
+    "language": "Langage"
   },
   "navbar": {
-    "changeActiveCharacter": "Personnage actif"
+    "changeActiveCharacter": "Personnage actif",
+    "preferredLanguage": "Langue préférée"
   },
   "pageHeader": {
     "ofCharacter": "de {characterName}",
@@ -96,6 +98,7 @@
     "cityState": "Cité de départ",
     "grandCompany": "Grande compagnie",
     "playingSince": "Joueur depuis",
+    "playingSinceAlt": "May not be accurate for legacy characters",
     "achievements": "Hauts faits",
     "tanks": "Tank",
     "healers": "Soigneur",
