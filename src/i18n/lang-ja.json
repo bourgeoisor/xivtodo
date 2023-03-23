@@ -2,7 +2,7 @@
   "page": {
     "home": "ホーム",
     "profile": "プロフィール",
-    "encounters": "Encounters",
+    "encounters": "コンテンツ",
     "questlines": "クエスト",
     "challenges": "Challenges",
     "achievements": "アチーブメント",
@@ -156,7 +156,7 @@
     "unlockedInExp": "Unlocked in this expansion",
     "dungeons": "ダンジョン",
     "vcDungeons": "V&C Dungeons",
-    "trials": "Trials",
+    "trials": "討伐・討滅戦",
     "raids": "レイド",
     "heTrials": "High-end Trials",
     "heRaids": "High-end Raids",

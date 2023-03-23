@@ -15,11 +15,11 @@
     "help": "Aide",
     "privacy": "Confidentialité",
     "contact": "Contact",
-    "donate": "Support XIV ToDo",
+    "donate": "Soutenez XIV ToDo",
     "twitter": "Twitter",
     "github": "GitHub",
     "discord": "Discord",
-    "countdowns": "Countdowns",
+    "countdowns": "Compte à rebours",
     "newsUpdates": "Nouvelles et mises à jour",
     "language": "Langage"
   },
@@ -29,13 +29,13 @@
   },
   "pageHeader": {
     "ofCharacter": "de {characterName}",
-    "clearedByCharacter": "cleared by {characterName}",
+    "clearedByCharacter": "vaincus par {characterName}",
     "forCharacter": "pour {characterName}",
-    "obtainedByCharacter": "obtained by {characterName}"
+    "obtainedByCharacter": "obtenus par {characterName}"
   },
   "message": {
     "backendUnavailable": "XIV ToDo est actuellement inaccessible. Réessayez plus tard, ou regardez <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> ou <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> pour une mise à jour du statut.",
-    "signingDiscord": "Signing in with Discord...",
+    "signingDiscord": "Connexion avec Discord...",
     "updatingCharacter": "Mise à jour des données du personnage, cela peut prendre une minute...",
     "achievementsNotPublic": "Les hauts faits pour ce personnage ne sont pas mis en public dans Lodestone.",
     "notSignedIn": "Aucun personnage trouvé. Vous pouvez <a href='{url}' class='alert-link'>vous connecter avec Discord</a> pour les ajouter.",
@@ -48,7 +48,7 @@
     "buildDate": "{buildDate}"
   },
   "home": {
-    "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV. Whether you are a new player to the game or more experienced, there is something for everyone! In its current form, it offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come.",
+    "intro": "XIV ToDo fournit des tableaux de bord utiles, des listes de contrôle sur mesure et des outils pour Final Fantasy XIV. Que vous soyez un nouveau joueur ou plus expérimenté, il y a quelque chose pour tout le monde! Dans sa forme actuelle, il propose des listes de contrôle journalières et hebdomadaires personnalisables ainsi que des traqueurs automatisés de missions et de quêtes avec beaucoup plus à venir.",
     "addCharacter": "Ajoute un personnage",
     "learnMore": "Apprendre plus",
     "viewProfile": "Voir ton profil",
@@ -57,34 +57,34 @@
     "features": "Fonctionnalités",
     "feature": {
       "encountersQuestlines": {
-        "title": "Encounters & questlines",
-        "description": "Complete listing of all encounters, main and side story questlines available in the game."
+        "title": "Missions et quêtes",
+        "description": "Liste complète de toutes les missions, les lignes de quêtes principales et les quêtes annexes disponibles dans le jeu."
       },
       "contentCompletion": {
-        "title": "Content completion",
-        "description": "Add your character to quickly visualize which content you've cleared and which ones are still pending."
+        "title": "Traqueurs de progrès",
+        "description": "Ajoutez votre personnage pour visualiser rapidement les missions et les quêtes que vous avez complétées."
       },
       "dailiesWeeklies": {
-        "title": "Dailies & weeklies",
-        "description": "Comprehensive list of daily and weekly objectives which can be ticked off and get automatically cleared on reset."
+        "title": "Activités et tâches",
+        "description": "Liste complète d'objectifs quotidiens et hebdomadaires qui peuvent être cochés et être automatiquement effacés lors de la réinitialisation."
       },
       "altFriendly": {
-        "title": "Alt-friendly",
-        "description": "Support for adding as many alt characters as you need, with all features being kept character-specific."
+        "title": "Compatible avec alts",
+        "description": "Prise en charge de l'ajout d'autant de personnages que vous le souhaitez, toutes les fonctionnalités étant maintenues spécifiques à chaque personnage."
       },
       "spoilerFree": {
-        "title": "Spoiler-free",
-        "description": "Main story content is blurred by default until they are cleared to avoid accidental spoilers."
+        "title": "Sans spoiler",
+        "description": "Le contenu de l'épopée est flou par défaut jusqu'à ce qu'ils soient vaincues pour éviter les spoilers accidentels."
       },
       "customizable": {
-        "title": "Customizable",
-        "description": "Personalization is available like hiding select objectives from the checklists, with more to come soon."
+        "title": "Personnalisable",
+        "description": "Personnalisation disponible comme pour ajouter ou cacher certaines activités, avec plus à venir."
       }
     },
     "about": {
       "header": "À propos de XIV ToDo",
-      "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
-      "contact": "contact me"
+      "text": "XIV ToDo est un projet lancé au milieu de 2021 par {0}, un développeur de logiciels du Canada. Après avoir remarqué qu'il n'y avait pas de méthode pour visualiser rapidement laquelle des nombreuses missions et quêtes qui avaient été completées par mes personnages, le project a débuté. XIV ToDo est présentement et reste gratuit pour tout le monde. Vous pouvez {1} avec n'importe quelle question ou commentaire. Merci beaucoup pour l'utilisation et le soutien de ce projet!",
+      "contact": "me contacter"
     }
   },
   "profile": {
@@ -98,14 +98,14 @@
     "cityState": "Cité de départ",
     "grandCompany": "Grande compagnie",
     "playingSince": "Joueur depuis",
-    "playingSinceAlt": "May not be accurate for legacy characters",
+    "playingSinceAlt": "Peut ne pas être exact pour les personnages de FFXIV 1.0",
     "achievements": "Hauts faits",
     "tanks": "Tank",
     "healers": "Soigneur",
     "dps": "DPS",
     "crafters": "Disciplines de la main",
     "gatherers": "Disciplines de la terre",
-    "exploratoryMissions": "Exploratory missions",
+    "exploratoryMissions": "Missions d'exploration",
     "elementalLevel": "Niveau élémentaire",
     "resistanceRank": "Niveau de résistant",
     "job": {
@@ -152,35 +152,35 @@
     }
   },
   "encounters": {
-    "msqContent": "Main Scenario Quests content",
-    "unlockedInExp": "Unlocked in this expansion",
+    "msqContent": "Proviens de l'épopée",
+    "unlockedInExp": "Débloqué dans cette extension",
     "dungeons": "Donjons",
     "vcDungeons": "Donjons spéciaux",
     "trials": "Défis",
     "raids": "Raids",
     "heTrials": "Défis de haut niveau",
     "heRaids": "Raids de haut niveau",
-    "exploratory": "Exploratory Missions",
+    "exploratory": "Missions d'exploration",
     "guildhests": "Opérations de guilde"
   },
   "questlines": {
     "stories": "Récits",
-    "jobsRolesRelics": "Jobs, Roles, & Relics",
-    "mainScenarioQuests": "Main Scenario Quests",
-    "sideStoryQuests": "Side Story Quests",
-    "encounterQuests": "Encounter Quests",
-    "relicQuests": "Relic Quests",
-    "tribalQuests": "Tribal Quests",
-    "alliedTribalQuests": "Allied Tribal Quests",
-    "customDeliveryQuests": "Custom Delivery Quests",
-    "jobQuests": "Job Quests",
-    "combatJobQuests": "Combat Job Quests",
-    "gathererJobQuests": "Gatherer Job Quests",
-    "crafterJobQuests": "Crafter Job Quests",
-    "roleQuestsShB": "Role Quests (ShB)",
-    "roleQuestsEW": "Role Quests (EW)",
-    "crystallineMeanQuests": "Crystalline Mean Quests",
-    "studiumDeliveryQuests": "Studium Delivery Quests"
+    "jobsRolesRelics": "Classes, rôles et armes légendaires",
+    "mainScenarioQuests": "Épopée",
+    "sideStoryQuests": "Quêtes annexes",
+    "encounterQuests": "Quêtes de mission",
+    "relicQuests": "Saga des armes légendaires",
+    "tribalQuests": "Quêtes tribales",
+    "alliedTribalQuests": "Quêtes des tribus alliées",
+    "customDeliveryQuests": "Commandes spéciales",
+    "jobQuests": "Quêtes de job",
+    "combatJobQuests": "Quêtes de job : combattants",
+    "gathererJobQuests": "Quêtes de classe : récolteurs",
+    "crafterJobQuests": "Quêtes de classe : artisans",
+    "roleQuestsShB": "Quêtes de rôle (ShB)",
+    "roleQuestsEW": "Quêtes de rôle (EW)",
+    "crystallineMeanQuests": "Quêtes de classe : halle du Juste",
+    "studiumDeliveryQuests": "Quêtes de classe : académie de magie de Sharlayan"
   },
   "challenges": {
     "deepDungeons": "Donjons sans fonds",
@@ -191,38 +191,38 @@
     "eo": "Eurêka Orthos",
     "eoSolo": "Eurêka Orthos (solo)",
     "exploration": "Exploration",
-    "exploratoryMissions": "Exploratory Missions",
-    "sightseeingLogs": "Sightseeing Logs",
-    "miscellaneous": "Miscellaneous",
-    "sharedFateShB": "Shared Fate (ShB)",
-    "sharedFateEW": "Shared Fate (EW)",
-    "bozjanSouthernFront": "Bozjan Southern Front",
-    "zadnor": "Zadnor",
-    "variantDungeons": "Variant Dungeons",
-    "treasureHuntClears": "Treasure Hunt Clears",
-    "trusts": "Trusts",
-    "islandSanctuary": "Island Sanctuary",
-    "achievementFates": "Achievement FATEs",
-    "blueMage": "Blue Mage",
-    "blueARR": "BLU Encounters (ARR)",
-    "blueHW": "BLU Encounters (HW)",
-    "blueSB": "BLU Encounters (SB)",
-    "maskedCarnivale": "Masked Carnivale"
+    "exploratoryMissions": "Missions d'exploration",
+    "sightseeingLogs": "Carnet d'exploration",
+    "miscellaneous": "Divers",
+    "sharedFateShB": "ALÉA (ShB)",
+    "sharedFateEW": "ALÉA (EW)",
+    "bozjanSouthernFront": "Front sud de Bozja",
+    "zadnor": "Hauts plateaux de Zadnor",
+    "variantDungeons": "Donjons à embranchements",
+    "treasureHuntClears": "Chasse aux trésors",
+    "trusts": "Adjuration",
+    "islandSanctuary": "Félicité insulaire",
+    "achievementFates": "ALÉA de défi",
+    "blueMage": "Mage bleu",
+    "blueARR": "Des bleus (ARR)",
+    "blueHW": "Des bleus (HW)",
+    "blueSB": "Des bleus (SB)",
+    "maskedCarnivale": "La Grande Mascarade"
   },
   "checklist": {
-    "thingsToDo": "Things to do",
-    "weeklies": "Weeklies",
-    "dailies": "Dailies",
-    "scratchpad": "Scratchpad",
-    "scratchpadDesc": "Checklist without deadlines",
-    "scratchpadHelp": "Once you add checklist items, they will appear here.",
-    "customWeekly": "Custom weekly",
-    "customDaily": "Custom daily",
-    "customItem": "Custom item",
-    "addCustomWeekly": "Add custom weekly",
-    "addCustomDaily": "Add custom daily",
-    "addCustomItem": "Add custom item",
-    "untilReset": "{time} until reset",
+    "thingsToDo": "Activités",
+    "weeklies": "Hebdomadaires",
+    "dailies": "Quotidiens",
+    "scratchpad": "Bloc-notes",
+    "scratchpadDesc": "Liste d'activités sans échéance",
+    "scratchpadHelp": "Une fois que vous avez ajouté des activités, elles apparaîtront ici.",
+    "customWeekly": "Activité hebdomadaire personnalisée",
+    "customDaily": "Activité quotidienne personnalisée",
+    "customItem": "Activité personalisée",
+    "addCustomWeekly": "Ajouter l'activité",
+    "addCustomDaily": "Ajouter l'activité",
+    "addCustomItem": "Ajouter l'activité",
+    "untilReset": "{time} avant réinitialisation",
     "hiddenTasks": "1 tâche masquée | {count} tâches masquées"
   },
   "settings": {
@@ -239,11 +239,11 @@
     "lastUpdated": "Dernière mise à jour {time}",
     "general": "Paramètres généraux",
     "contentSpoilers": {
-      "label": "Content spoilers",
-      "option0": "Blur out all story-related encounters",
-      "option1": "Blur out non-completed story-related encounters",
-      "option2": "Show all encounters",
-      "hint": "Preference in hiding potential spoilers."
+      "label": "Éviter les spoilers",
+      "option0": "Flou de toutes les missions liées à l'épopée",
+      "option1": "Flou de toutes les missions non complétées liées à l'épopée",
+      "option2": "Afficher toutes les missions",
+      "hint": "Préférence en cachant des spoilers potentiels."
     },
     "updateSettings": "Mettre à jour les paramètres",
     "achievementsNotPublic": "Les hauts faits ne sont pas mis en public",
