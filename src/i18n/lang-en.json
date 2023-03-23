@@ -38,7 +38,7 @@
     "backendUnavailable": "XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
     "signingDiscord": "Signing in with Discord...",
     "updatingCharacter": "Updating character data, this may take a minute...",
-    "achievementsNotPublic": "The achievements for this characters are not set to public in Lodestone.",
+    "achievementsNotPublic": "The achievements for this character are not set to public in Lodestone.",
     "notSignedIn": "No characters found. You can <a href='{url}' class='alert-link'>sign in with Discord</a> to add them.",
     "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
   },
@@ -236,7 +236,7 @@
     "addCharacter": "Add character",
     "myCharacters": "My characters",
     "myCharactersHelp": "Once you add your characters, they will appear here.",
-    "characterNotPublic": "The achievements for this characters are not set to public in Lodestone.",
+    "characterNotPublic": "The achievements for this character are not set to public in Lodestone.",
     "lastUpdated": "Last updated {time}",
     "general": "General",
     "contentSpoilers": {
@@ -248,7 +248,7 @@
     },
     "updateSettings": "Update settings",
     "achievementsNotPublic": "Achievements are not public",
-    "achievementsNotPublicAlt": "The achievements for this characters are not set to public in Lodestone",
+    "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
     "message": {
       "settingsUpdated": "Settings updated!",
       "settingsNotUpdated": "Settings could not be updated: {error}",
