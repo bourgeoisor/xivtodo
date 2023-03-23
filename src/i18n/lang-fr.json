@@ -26,7 +26,7 @@
   "navbar": {
     "changeActiveCharacter": "Personnage actif",
     "preferredLanguage": "Langue préférée",
-    "feedback": "Feedback"
+    "feedback": "Commentaires"
   },
   "pageHeader": {
     "ofCharacter": "de {characterName}",
@@ -38,7 +38,7 @@
     "backendUnavailable": "XIV ToDo est actuellement inaccessible. Réessayez plus tard, ou consultez notre <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> ou <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> pour obtenir une mise à jour du statut.",
     "signingDiscord": "Connexion via Discord...",
     "updatingCharacter": "Mise à jour des données du personnage, cela peut prendre une minute...",
-    "achievementsNotPublic": "Les hauts faits pour ce personnage ne sont pas mis en public dans Lodestone.",
+    "achievementsNotPublic": "Les hauts faits pour ce personnage ne sont pas public dans Lodestone.",
     "notSignedIn": "Aucun personnage trouvé. Vous pouvez <a href='{url}' class='alert-link'>vous connecter avec Discord</a> pour les ajouter.",
     "noCharacters": "Aucun caractère trouvé. Vous pouvez ajouter vos personnages dans les <a href='/settings' class='alert-link'>Paramètres</a>."
   },
