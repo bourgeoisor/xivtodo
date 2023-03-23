@@ -38,7 +38,7 @@
     "backendUnavailable": "XIV ToDo est actuellement inaccessible. Merci de réessayer plus tard, ou de consulter notre <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> ou <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> pour obtenir une mise à jour du statut.",
     "signingDiscord": "Connexion via Discord...",
     "updatingCharacter": "Mise à jour des données du personnage, cela peut prendre une minute...",
-    "achievementsNotPublic": "The achievements for this character are not set to public in Lodestone.",
+    "achievementsNotPublic": "Les hauts faits pour ce personnage ne sont pas public dans Lodestone.",
     "notSignedIn": "Aucun personnage trouvé. Vous pouvez <a href='{url}' class='alert-link'>vous connecter avec Discord</a> pour les ajouter.",
     "noCharacters": "Aucun caractère trouvé. Vous pouvez ajouter vos personnages dans les <a href='/settings' class='alert-link'>Paramètres</a>."
   },
@@ -236,7 +236,7 @@
     "addCharacter": "Ajouter un personnage",
     "myCharacters": "Mes personnages",
     "myCharactersHelp": "Une fois que vous aurez ajouté vos personnages, ils apparaîtront ici.",
-    "characterNotPublic": "The achievements for this character are not set to public in Lodestone.",
+    "characterNotPublic": "Les hauts faits pour ce personnage ne sont pas public dans Lodestone.",
     "lastUpdated": "Dernière mise à jour {time}",
     "general": "Paramètres généraux",
     "contentSpoilers": {
@@ -248,7 +248,7 @@
     },
     "updateSettings": "Mettre à jour les paramètres",
     "achievementsNotPublic": "Les hauts faits ne sont pas public",
-    "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
+    "achievementsNotPublicAlt": "Les hauts faits pour ce personnage ne sont pas public dans Lodestone",
     "message": {
       "settingsUpdated": "Paramètres mis à jour !",
       "settingsNotUpdated": "Les paramètres n'ont pas pu être mis à jour : {error}",
