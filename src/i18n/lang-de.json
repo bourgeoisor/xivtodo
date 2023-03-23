@@ -53,7 +53,7 @@
     "addCharacter": "Charakter hinzufügen",
     "learnMore": "Mehr erfahren",
     "viewProfile": "Profil anzeigen",
-    "viewGitHub": "Projekt auf Github anzeigen",
+    "viewGitHub": "Projekt auf GitHub anzeigen",
     "signInDiscord": "Mit Discord anmelden",
     "features": "Funktionen",
     "feature": {
@@ -103,7 +103,7 @@
     "achievements": "Errungenschaften",
     "tanks": "Verteidiger",
     "healers": "Heiler",
-    "dps": "Angreifer",
+    "dps": "Angreifer (DPS)",
     "crafters": "Handwerker",
     "gatherers": "Sammler",
     "exploratoryMissions": "Feldexkursion",
