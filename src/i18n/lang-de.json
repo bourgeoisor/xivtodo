@@ -203,11 +203,11 @@
     "treasureHuntClears": "Schatzkarten Abschlüsse",
     "trusts": "Seite an Seite",
     "islandSanctuary": "Inselparadies",
-    "achievementFates": "Errungenschaften FATEs",
+    "achievementFates": "FATE Errungenschaften",
     "blueMage": "Blaumagier",
-    "blueARR": "BLU Begegnungen (ARR)",
-    "blueHW": "BLU Begegnungen (HW)",
-    "blueSB": "BLU Begegnungen (SB)",
+    "blueARR": "BMA Inhalte (ARR)",
+    "blueHW": "BMA Inhalte (HW)",
+    "blueSB": "BMA Inhalte (SB)",
     "maskedCarnivale": "Große Maskerade"
   },
   "checklist": {
@@ -219,10 +219,10 @@
     "scratchpadHelp": "Sobald der Checkliste Einträge hinzugefügt werden, erscheinen diese hier.",
     "customWeekly": "Eigene wöchentliche Aufgaben",
     "customDaily": "Eigene tägliche Aufgaben",
-    "customItem": "Benutzerdefinierter Gegenstand",
-    "addCustomWeekly": "Eigene wöchentliche Aufgabe hinzufügen",
-    "addCustomDaily": "Eigene tägliche Aufgabe hinzufügen",
-    "addCustomItem": "Benutzerdefinierten Gegenstand hinzufügen",
+    "customItem": "Benutzerdefinierter Eintrag",
+    "addCustomWeekly": "Aufgabe hinzufügen",
+    "addCustomDaily": "Aufgabe hinzufügen",
+    "addCustomItem": "Aufgabe hinzufügen",
     "untilReset": "{time} bis zum Reset",
     "hiddenTasks": "1 versteckte Aufgabe | {count} versteckte Aufgaben"
   },
@@ -231,7 +231,7 @@
     "addNewCharacter": "Einen neuen Charakter hinzufügen",
     "profileUrl": {
       "label": "Profil-URL",
-      "hint": "Die URL für dein Charakterprofil. Du findest sie in {0}."
+      "hint": "Die URL für dein Charakterprofil. Du findest sie im {0}."
     },
     "addCharacter": "Charakter hinzufügen",
     "myCharacters": "Meine Charaktere",
@@ -241,9 +241,9 @@
     "general": "Allgemeines",
     "contentSpoilers": {
       "label": "Inhaltspoiler",
-      "option0": "Verwische alle Hauptinhalts-relevanten Begegnungen",
-      "option1": "Verwische alle nicht abgeschlossenen Hauptinhalts-relevanten Begegnungen",
-      "option2": "Zeige alle Begegnungen",
+      "option0": "Verwische alle Hauptszenario-relevanten Inhalte",
+      "option1": "Verwische alle nicht abgeschlossene Hauptszenario-relevanten Inhalte",
+      "option2": "Zeige alle Inhalte",
       "hint": "Präferenz beim Verstecken potenzieller Spoiler."
     },
     "updateSettings": "Einstellungen aktualisieren",
