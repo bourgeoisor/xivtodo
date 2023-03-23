@@ -38,7 +38,7 @@
     "backendUnavailable": "XIV ToDo ist momentan nicht erreichbar. Versuche es später noch einmal, oder schau auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> nach einem Statusupdate.",
     "signingDiscord": "Anmelden mit Discord...",
     "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
-    "achievementsNotPublic": "The achievements for this character are not set to public in Lodestone.",
+    "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "notSignedIn": "Keine Charaktere gefunden. Du kannst dich <a href='{url}' class='alert-link'>mit Discord anmelden</a>, um diese hinzuzufügen.",
     "noCharacters": "Keine Charaktere gefunden. Über die <a href='/settings' class='alert-link'>Einstellungen</a> kannst du diese hinzufügen."
   },
@@ -236,7 +236,7 @@
     "addCharacter": "Charakter hinzufügen",
     "myCharacters": "Meine Charaktere",
     "myCharactersHelp": "Sobald Charaktere hinzugefügt wurden, erscheinen diese hier.",
-    "characterNotPublic": "The achievements for this character are not set to public in Lodestone.",
+    "characterNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "lastUpdated": "Zuletzt aktualisiert: {time}",
     "general": "Allgemeines",
     "contentSpoilers": {
@@ -248,12 +248,12 @@
     },
     "updateSettings": "Einstellungen aktualisieren",
     "achievementsNotPublic": "Errungenschaften sind nicht öffentlich",
-    "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
+    "achievementsNotPublicAlt": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "message": {
       "settingsUpdated": "Einstellungen aktualisiert!",
       "settingsNotUpdated": "Einstellungen konnten nicht aktualisiert werden: {error}",
       "characterAdded": "Charakter <b>{name}</b> hinzugefügt! Du hast nun Zugriff auf dein <a href='/profile' class='alert-link'>Profil</a> und alle Charakter-Checklisten.",
-      "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend musst du nur nochmal die Charakterdaten aktualisieren.",
+      "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://de.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend muss dein Charakter erneut aktualisiert werden.",
       "characterRemoveConfirm": "Bist du sicher, dass du {name} entfernen möchtest?",
       "characterRemoved": "Charakter <b>{name}</b> entfernt!"
     }
