@@ -2,7 +2,7 @@
   "page": {
     "home": "Startseite",
     "profile": "Profil",
-    "encounters": "Spielinhalte",
+    "encounters": "Inhalte",
     "questlines": "Aufträge",
     "challenges": "Herausforderungen",
     "achievements": "Errungenschaften",
@@ -38,7 +38,7 @@
     "backendUnavailable": "XIV ToDo ist momentan nicht erreichbar. Versuche es später noch einmal, oder schau auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> nach einem Statusupdate.",
     "signingDiscord": "Anmelden mit Discord...",
     "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
-    "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
+    "achievementsNotPublic": "The achievements for this character are not set to public in Lodestone.",
     "notSignedIn": "Keine Charaktere gefunden. Du kannst dich <a href='{url}' class='alert-link'>mit Discord anmelden</a>, um diese hinzuzufügen.",
     "noCharacters": "Keine Charaktere gefunden. Über die <a href='/settings' class='alert-link'>Einstellungen</a> kannst du diese hinzufügen."
   },
@@ -58,8 +58,8 @@
     "features": "Funktionen",
     "feature": {
       "encountersQuestlines": {
-        "title": "Begegnungen & Questlinien",
-        "description": "Komplette Auflistung aller im Spiel verfügbaren Begegnungen und Questlinien für Haupt- und Nebengeschichten."
+        "title": "Inhalte & Auftragsreihen",
+        "description": "Komplette Auflistung aller im Spiel verfügbaren Inhalte und Auftragsreihen für Haupt- und Nebengeschichten."
       },
       "contentCompletion": {
         "title": "Inhaltsabschluss",
@@ -84,7 +84,7 @@
     },
     "about": {
       "header": "Über XIV ToDo",
-      "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Begegnungen und Questlinien von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst {1} mit jeder Frage oder Feedback. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
+      "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Spielinhalte und Questlinien von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst {1} mit jeder Frage oder Feedback. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
       "contact": "kontaktiere mich"
     }
   },
@@ -153,7 +153,7 @@
     }
   },
   "encounters": {
-    "msqContent": "Inhalte der Haupt-Szenario-Quest (MSQ)",
+    "msqContent": "Teil der Hauptszenario-Aufträge (MSQ)",
     "unlockedInExp": "In dieser Erweiterung freigeschaltet",
     "dungeons": "Dungeons",
     "vcDungeons": "Unstete & kuriose Gewölbe",
@@ -167,21 +167,21 @@
   "questlines": {
     "stories": "Geschichten",
     "jobsRolesRelics": "Jobs, Rollen & Relikte",
-    "mainScenarioQuests": "Haupt-Szenario-Quests",
-    "sideStoryQuests": "Nebengeschichten-Quests",
-    "encounterQuests": "Inhalts-Quests",
-    "relicQuests": "Relikt-Quests",
-    "tribalQuests": "Stammesvölker-Quests",
-    "alliedTribalQuests": "Verbündete Stammesvölker-Quests",
+    "mainScenarioQuests": "Hauptszenario-Aufträge",
+    "sideStoryQuests": "Nebengeschichts-Aufträge",
+    "encounterQuests": "Inhalts-Aufträge",
+    "relicQuests": "Relikt-Aufträge",
+    "tribalQuests": "Stammesvölker-Aufträge",
+    "alliedTribalQuests": "Verbündete Stammesvölker-Aufträge",
     "customDeliveryQuests": "Wunschlieferungs-Aufträge",
-    "jobQuests": "Job-Quests",
-    "combatJobQuests": "Kampfjob-Quests",
-    "gathererJobQuests": "Sammeljob-Quests",
-    "crafterJobQuests": "Handwerkerjob-Quests",
-    "roleQuestsShB": "Rollen-Quests (ShB)",
-    "roleQuestsEW": "Rollen-Quests (EW)",
-    "crystallineMeanQuests": "Manufaktur der Gesellschaft Quests",
-    "studiumDeliveryQuests": "Lieferaufträge der Magieakademie"
+    "jobQuests": "Job-Aufträge",
+    "combatJobQuests": "Kampfklassen-Aufträge",
+    "gathererJobQuests": "Sammelklassen-Aufträge",
+    "crafterJobQuests": "Handwerkerklassen-Aufträge",
+    "roleQuestsShB": "Rollen-Aufträge (ShB)",
+    "roleQuestsEW": "Rollen-Aufträge (EW)",
+    "crystallineMeanQuests": "Manufaktur der Gemeinschaft",
+    "studiumDeliveryQuests": "Magieakademie von Sharlayan"
   },
   "challenges": {
     "deepDungeons": "Tiefes Gewölbe",
@@ -236,7 +236,7 @@
     "addCharacter": "Charakter hinzufügen",
     "myCharacters": "Meine Charaktere",
     "myCharactersHelp": "Sobald Charaktere hinzugefügt wurden, erscheinen diese hier.",
-    "characterNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
+    "characterNotPublic": "The achievements for this character are not set to public in Lodestone.",
     "lastUpdated": "Zuletzt aktualisiert: {time}",
     "general": "Allgemeines",
     "contentSpoilers": {
@@ -248,7 +248,7 @@
     },
     "updateSettings": "Einstellungen aktualisieren",
     "achievementsNotPublic": "Errungenschaften sind nicht öffentlich",
-    "achievementsNotPublicAlt": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt",
+    "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
     "message": {
       "settingsUpdated": "Einstellungen aktualisiert!",
       "settingsNotUpdated": "Einstellungen konnten nicht aktualisiert werden: {error}",
@@ -266,7 +266,7 @@
     "customize": "Anpassen",
     "dragToReorder": "Ziehen zum Umordnen",
     "countTotal": "{count} insgesamt",
-    "updatingWait": "Aktualisieren, bitte warten...",
+    "updatingWait": "Aktualisiert, bitte warten...",
     "addingWait": "Wird hinzugefügt, bitte warten...",
     "portraitAlt": "Porträt deines Charakters",
     "expansion": {
@@ -283,8 +283,8 @@
       "secondsShort": "{seconds}Sek",
       "monthsAgo": "{months} Monat(e) zuvor",
       "daysAgo": "{days} Tag(e) zuvor",
-      "hoursAgo": "{hours} Std. zuvor",
-      "minutesAgo": "{minutes} Min. zuvor",
+      "hoursAgo": "{hours} Stunde(n) zuvor",
+      "minutesAgo": "{minutes} Minute(n) zuvor",
       "coupleSecondsAgo": "vor ein paar Sekunden"
     }
   }
