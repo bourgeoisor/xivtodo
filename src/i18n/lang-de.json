@@ -2,7 +2,7 @@
   "page": {
     "home": "Startseite",
     "profile": "Profil",
-    "encounters": "Spielinhalte",
+    "encounters": "Inhalte",
     "questlines": "Aufträge",
     "challenges": "Herausforderungen",
     "achievements": "Errungenschaften",
@@ -53,13 +53,13 @@
     "addCharacter": "Charakter hinzufügen",
     "learnMore": "Mehr erfahren",
     "viewProfile": "Profil anzeigen",
-    "viewGitHub": "Projekt auf Github anzeigen",
+    "viewGitHub": "Projekt auf GitHub anzeigen",
     "signInDiscord": "Mit Discord anmelden",
     "features": "Funktionen",
     "feature": {
       "encountersQuestlines": {
-        "title": "Begegnungen & Questlinien",
-        "description": "Komplette Auflistung aller im Spiel verfügbaren Begegnungen und Questlinien für Haupt- und Nebengeschichten."
+        "title": "Inhalte & Auftragsreihen",
+        "description": "Komplette Auflistung aller im Spiel verfügbaren Inhalte und Auftragsreihen für Haupt- und Nebengeschichten."
       },
       "contentCompletion": {
         "title": "Inhaltsabschluss",
@@ -70,8 +70,8 @@
         "description": "Umfassende Liste der täglichen und wöchentlichen Ziele, die abgehakt werden können und beim Reset automatisch zurückgesetzt werden."
       },
       "altFriendly": {
-        "title": "Zweit-Charakterfreundlich",
-        "description": "Unterstützung für das Hinzufügen beliebig vieler Zweit-Charaktere, wobei alle Funktionen Charakterspezifisch erhalten bleiben."
+        "title": "Twink-freundlich",
+        "description": "Unterstützung für das Hinzufügen beliebig vieler Twinks, wobei alle Funktionen Charakterspezifisch erhalten bleiben."
       },
       "spoilerFree": {
         "title": "Spoiler-frei",
@@ -84,7 +84,7 @@
     },
     "about": {
       "header": "Über XIV ToDo",
-      "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Begegnungen und Questlinien von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst {1} mit jeder Frage oder Feedback. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
+      "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Spielinhalte und Questlinien von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst {1} mit jeder Frage oder Feedback. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
       "contact": "kontaktiere mich"
     }
   },
@@ -103,7 +103,7 @@
     "achievements": "Errungenschaften",
     "tanks": "Verteidiger",
     "healers": "Heiler",
-    "dps": "Angreifer",
+    "dps": "Angreifer (DPS)",
     "crafters": "Handwerker",
     "gatherers": "Sammler",
     "exploratoryMissions": "Feldexkursion",
@@ -153,7 +153,7 @@
     }
   },
   "encounters": {
-    "msqContent": "Inhalte der Haupt-Szenario-Quest (MSQ)",
+    "msqContent": "Teil der Hauptszenario-Aufträge (MSQ)",
     "unlockedInExp": "In dieser Erweiterung freigeschaltet",
     "dungeons": "Dungeons",
     "vcDungeons": "Unstete & kuriose Gewölbe",
@@ -167,21 +167,21 @@
   "questlines": {
     "stories": "Geschichten",
     "jobsRolesRelics": "Jobs, Rollen & Relikte",
-    "mainScenarioQuests": "Haupt-Szenario-Quests",
-    "sideStoryQuests": "Nebengeschichten-Quests",
-    "encounterQuests": "Begegnungs-Quests",
-    "relicQuests": "Relikt-Quests",
-    "tribalQuests": "Stammes-Quests",
-    "alliedTribalQuests": "Verbündete Stammes-Quests",
-    "customDeliveryQuests": "Sonderlieferungs-Quests",
-    "jobQuests": "Job Quests",
-    "combatJobQuests": "Kampfjob Quests",
-    "gathererJobQuests": "Sammeljob Quests",
-    "crafterJobQuests": "Handwerkerjob Quests",
-    "roleQuestsShB": "Rollen-Quests (ShB)",
-    "roleQuestsEW": "Rollen-Quests (EW)",
-    "crystallineMeanQuests": "Manufaktur der Gesellschaft Quests",
-    "studiumDeliveryQuests": "Lieferaufträge der Magieakademie"
+    "mainScenarioQuests": "Hauptszenario-Aufträge",
+    "sideStoryQuests": "Nebengeschichts-Aufträge",
+    "encounterQuests": "Inhalts-Aufträge",
+    "relicQuests": "Relikt-Aufträge",
+    "tribalQuests": "Stammesvölker-Aufträge",
+    "alliedTribalQuests": "Verbündete Stammesvölker-Aufträge",
+    "customDeliveryQuests": "Wunschlieferungs-Aufträge",
+    "jobQuests": "Job-Aufträge",
+    "combatJobQuests": "Kampfklassen-Aufträge",
+    "gathererJobQuests": "Sammelklassen-Aufträge",
+    "crafterJobQuests": "Handwerkerklassen-Aufträge",
+    "roleQuestsShB": "Rollen-Aufträge (ShB)",
+    "roleQuestsEW": "Rollen-Aufträge (EW)",
+    "crystallineMeanQuests": "Manufaktur der Gemeinschaft",
+    "studiumDeliveryQuests": "Magieakademie von Sharlayan"
   },
   "challenges": {
     "deepDungeons": "Tiefes Gewölbe",
@@ -199,15 +199,15 @@
     "sharedFateEW": "FATE-Fortschritt (EW)",
     "bozjanSouthernFront": "Bozja-Südfront",
     "zadnor": "Zadnor",
-    "variantDungeons": "Variant Dungeons",
-    "treasureHuntClears": "Schatzsuche Abschlüsse",
+    "variantDungeons": "Unstete Gewölbe",
+    "treasureHuntClears": "Schatzkarten Abschlüsse",
     "trusts": "Seite an Seite",
     "islandSanctuary": "Inselparadies",
-    "achievementFates": "Errungenschaften FATEs",
+    "achievementFates": "FATE Errungenschaften",
     "blueMage": "Blaumagier",
-    "blueARR": "BLU Begegnungen (ARR)",
-    "blueHW": "BLU Begegnungen (HW)",
-    "blueSB": "BLU Begegnungen (SB)",
+    "blueARR": "BMA Inhalte (ARR)",
+    "blueHW": "BMA Inhalte (HW)",
+    "blueSB": "BMA Inhalte (SB)",
     "maskedCarnivale": "Große Maskerade"
   },
   "checklist": {
@@ -219,10 +219,10 @@
     "scratchpadHelp": "Sobald der Checkliste Einträge hinzugefügt werden, erscheinen diese hier.",
     "customWeekly": "Eigene wöchentliche Aufgaben",
     "customDaily": "Eigene tägliche Aufgaben",
-    "customItem": "Benutzerdefinierter Gegenstand",
-    "addCustomWeekly": "Eigene wöchentliche Aufgabe hinzufügen",
-    "addCustomDaily": "Eigene tägliche Aufgabe hinzufügen",
-    "addCustomItem": "Benutzerdefinierten Gegenstand hinzufügen",
+    "customItem": "Benutzerdefinierter Eintrag",
+    "addCustomWeekly": "Aufgabe hinzufügen",
+    "addCustomDaily": "Aufgabe hinzufügen",
+    "addCustomItem": "Aufgabe hinzufügen",
     "untilReset": "{time} bis zum Reset",
     "hiddenTasks": "1 versteckte Aufgabe | {count} versteckte Aufgaben"
   },
@@ -231,7 +231,7 @@
     "addNewCharacter": "Einen neuen Charakter hinzufügen",
     "profileUrl": {
       "label": "Profil-URL",
-      "hint": "Die URL für dein Charakterprofil. Du findest sie in {0}."
+      "hint": "Die URL für dein Charakterprofil. Du findest sie im {0}."
     },
     "addCharacter": "Charakter hinzufügen",
     "myCharacters": "Meine Charaktere",
@@ -241,19 +241,19 @@
     "general": "Allgemeines",
     "contentSpoilers": {
       "label": "Inhaltspoiler",
-      "option0": "Verwische alle Hauptinhalts-relevanten Begegnungen",
-      "option1": "Verwische alle nicht abgeschlossenen Hauptinhalts-relevanten Begegnungen",
-      "option2": "Zeige alle Begegnungen",
+      "option0": "Verwische alle Hauptszenario-relevanten Inhalte",
+      "option1": "Verwische alle nicht abgeschlossene Hauptszenario-relevanten Inhalte",
+      "option2": "Zeige alle Inhalte",
       "hint": "Präferenz beim Verstecken potenzieller Spoiler."
     },
     "updateSettings": "Einstellungen aktualisieren",
     "achievementsNotPublic": "Errungenschaften sind nicht öffentlich",
-    "achievementsNotPublicAlt": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt",
+    "achievementsNotPublicAlt": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "message": {
       "settingsUpdated": "Einstellungen aktualisiert!",
       "settingsNotUpdated": "Einstellungen konnten nicht aktualisiert werden: {error}",
       "characterAdded": "Charakter <b>{name}</b> hinzugefügt! Du hast nun Zugriff auf dein <a href='/profile' class='alert-link'>Profil</a> und alle Charakter-Checklisten.",
-      "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend musst du nur nochmal die Charakterdaten aktualisieren.",
+      "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://de.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend muss dein Charakter erneut aktualisiert werden.",
       "characterRemoveConfirm": "Bist du sicher, dass du {name} entfernen möchtest?",
       "characterRemoved": "Charakter <b>{name}</b> entfernt!"
     }
@@ -266,7 +266,7 @@
     "customize": "Anpassen",
     "dragToReorder": "Ziehen zum Umordnen",
     "countTotal": "{count} insgesamt",
-    "updatingWait": "Aktualisieren, bitte warten...",
+    "updatingWait": "Aktualisiert, bitte warten...",
     "addingWait": "Wird hinzugefügt, bitte warten...",
     "portraitAlt": "Porträt deines Charakters",
     "expansion": {
@@ -283,8 +283,8 @@
       "secondsShort": "{seconds}Sek",
       "monthsAgo": "{months} Monat(e) zuvor",
       "daysAgo": "{days} Tag(e) zuvor",
-      "hoursAgo": "{hours} Std. zuvor",
-      "minutesAgo": "{minutes} Min. zuvor",
+      "hoursAgo": "{hours} Stunde(n) zuvor",
+      "minutesAgo": "{minutes} Minute(n) zuvor",
       "coupleSecondsAgo": "vor ein paar Sekunden"
     }
   }
