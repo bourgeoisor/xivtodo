@@ -36,10 +36,16 @@
         <div class="info-block">
           <b>{{ $t("profile.raceClan") }}</b>
           <br />
-          {{ this.$store.getters.character.Race?.Name }} /
-          {{ this.$store.getters.character.Tribe?.Name }}
-          <i v-if="this.$store.getters.character.Gender == 1" class="fa-fw fal fa-mars"></i>
-          <i v-else class="fa-fw fal fa-venus"></i>
+          <span v-if="this.$store.getters.character.Gender == 1">
+            {{ this.getGenderedLocaleName(this.$store.getters.character.Race, "Masculine") }} /
+            {{ this.getGenderedLocaleName(this.$store.getters.character.Tribe, "Masculine") }}
+            <i class="fa-fw fal fa-mars"></i>
+          </span>
+          <span v-else>
+            {{ this.getGenderedLocaleName(this.$store.getters.character.Race, "Feminine") }} /
+            {{ this.getGenderedLocaleName(this.$store.getters.character.Tribe, "Feminine") }}
+            <i class="fa-fw fal fa-venus"></i>
+          </span>
         </div>
 
         <div class="info-block">
@@ -51,7 +57,7 @@
         <div class="info-block">
           <b>{{ $t("profile.guardian") }}</b>
           <br />
-          {{ this.$store.getters.character.GuardianDeity?.Name }}
+          {{ this.getLocaleName(this.$store.getters.character.GuardianDeity) }}
         </div>
 
         <div v-if="this.$store.getters.character.FreeCompanyName" class="info-block">
@@ -63,25 +69,24 @@
         <div class="info-block">
           <b>{{ $t("profile.cityState") }}</b>
           <br />
-          <img :src="'/icons/town-' + this.$store.getters.character.Town?.ID + '.png'" />
-          {{ this.$store.getters.character.Town?.Name }}
+          <img :src="'/icons/town-' + this.$store.getters.character.Town.ID + '.png'" />
+          {{ this.getLocaleName(this.$store.getters.character.Town) }}
         </div>
 
-        <template v-if="this.$store.getters.character.GrandCompany">
+        <template v-if="this.$store.getters.character.GrandCompanyInfo?.GrandCompany">
           <div class="info-block">
             <b>{{ $t("profile.grandCompany") }}</b>
             <br />
             <img
               :src="
                 '/icons/gc-' +
-                this.$store.getters.character.GrandCompany.Company?.ID +
+                this.$store.getters.character.GrandCompanyInfo.GrandCompany.ID +
                 '-' +
-                this.$store.getters.character.GrandCompany.Rank?.ID +
+                this.$store.getters.character.GrandCompanyInfo.RankID +
                 '.png'
               "
             />
-            {{ this.$store.getters.character.GrandCompany.Company?.Name }} /
-            {{ this.$store.getters.character.GrandCompany.Rank?.Name }}
+            {{ this.getLocaleName(this.$store.getters.character.GrandCompanyInfo.GrandCompany) }}
           </div>
         </template>
         <template v-if="this.$store.getters.achievementsPublic">
@@ -92,7 +97,7 @@
               </abbr>
             </b>
             <br />
-            {{ new Date(this.$store.getters.lodestoneData.PlayingSince).toDateString() }}
+            {{ playingSince }}
           </div>
         </template>
         <div class="info-block">
@@ -237,6 +242,24 @@ export default {
   name: "ProfileView",
   components: {
     JobLevel,
+  },
+  computed: {
+    playingSince() {
+      const date = new Date(this.$store.getters.lodestoneData.PlayingSince);
+      const locale = this.$i18n.locale;
+      return date.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" });
+    },
+  },
+  methods: {
+    getLocaleName(payload) {
+      const locale = this.$i18n.locale;
+      return payload["Name" + locale.toUpperCase()];
+    },
+    getGenderedLocaleName(payload, gender) {
+      const locale = this.$i18n.locale;
+      console.log("Name" + gender + locale.toUpperCase());
+      return payload["Name" + gender + locale.toUpperCase()];
+    },
   },
 };
 </script>

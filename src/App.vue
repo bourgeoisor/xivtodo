@@ -28,7 +28,7 @@
 
 <style lang="scss">
 #app {
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito", "Noto Sans JP", sans-serif;
   font-size: 18px;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
@@ -287,6 +287,7 @@ export default {
   },
   mounted() {
     this.$nextTick(function () {
+      this.setLanguage();
       this.checkUpstreamVersion();
       this.updateUserData();
       setTimeout(() => this.updateCharactersData(), 10000);
@@ -381,6 +382,17 @@ export default {
         "' class='alert-link'>sign in with Discord</a>. Need help? Visit the new <a href='https://discord.gg/zfzhKhG3zj' target='_blank' rel='noopener noreferrer' class='alert-link'>Discord</a> server or <a href='https://twitter.com/XIVToDo' target='_blank' rel='noopener noreferrer' class='alert-link'>Twitter</a>!";
 
       return str;
+    },
+    setLanguage() {
+      if (this.$store.getters.language === null) {
+        let locale = navigator.language.split("-")[0];
+        if (locale === "fr" || locale === "de" || locale === "ja") {
+          this.$store.commit("setLanguage", locale);
+        } else {
+          this.$store.commit("setLanguage", "en");
+        }
+      }
+      this.$i18n.locale = this.$store.getters.language;
     },
     checkUpstreamVersion() {
       getVersion()

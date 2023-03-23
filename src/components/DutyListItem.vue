@@ -31,7 +31,7 @@
       <a
         v-if="duty.LodestoneID && !duty.blur"
         class="text-reset lodestone-tooltip eorzeadb_link"
-        :href="'https://na.finalfantasyxiv.com/lodestone/playguide/db/duty/' + duty.LodestoneID"
+        :href="lodestoneDBURL"
         target="_blank"
         rel="noopener noreferrer"
         :class="{
@@ -41,7 +41,7 @@
           'user-select-none': duty.blur,
         }"
       >
-        {{ duty.Name }}
+        {{ duty["Name" + $i18n.locale.toUpperCase()] || duty["NameEN"] }}
       </a>
       <span
         v-else
@@ -53,7 +53,7 @@
           'text-bold': duty.Bold,
         }"
       >
-        {{ duty.Name }}
+        {{ duty["Name" + $i18n.locale.toUpperCase()] || duty["NameEN"] }}
       </span>
     </span>
     <span
@@ -128,6 +128,24 @@ export default {
   computed: {
     title() {
       return this.duty.LodestoneID || this.duty.blur ? "" : this.duty.Name;
+    },
+    lodestoneDBURL() {
+      let url = "https://";
+      switch (this.$store.getters.language) {
+        case "ja":
+          url += "jp";
+          break;
+        case "de":
+          url += "de";
+          break;
+        case "fr":
+          url += "fr";
+          break;
+        default:
+          url += "na";
+          break;
+      }
+      return url + ".finalfantasyxiv.com/lodestone/playguide/db/duty/" + this.duty.LodestoneID;
     },
   },
   methods: {

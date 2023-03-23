@@ -115,6 +115,81 @@
                 </span>
               </a>
             </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="collectionDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                @click="this.$store.commit('setFlag', { key: 'languageClicked', value: true })"
+              >
+                <span class="d-inline d-lg-none">{{ $t("page.language") }} </span>
+                <span class="fa-fw fal fa-globe-americas position-relative">
+                  <span
+                    v-if="!this.$store.getters.flag('languageClicked')"
+                    class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
+                  >
+                  </span>
+                </span>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
+                aria-labelledby="collectionDropdown"
+              >
+                <li>
+                  <h6 class="dropdown-header">{{ $t("navbar.preferredLanguage") }}</h6>
+                </li>
+                <li v-if="this.$store.getters.language == 'en'">
+                  <span class="dropdown-item active" @click="collapseNav">
+                    English
+                    <i class="fa-fw fal fa-check"></i>
+                  </span>
+                </li>
+                <li v-else>
+                  <a class="dropdown-item" href="#" @click="changeLanguage('en')">English</a>
+                </li>
+                <li v-if="this.$store.getters.language == 'fr'">
+                  <span class="dropdown-item active" @click="collapseNav">
+                    Français (TEC)
+                    <i class="fa-fw fal fa-check"></i>
+                  </span>
+                </li>
+                <li v-else>
+                  <a class="dropdown-item" href="#" @click="changeLanguage('fr')">Français (TEC)</a>
+                </li>
+                <li v-if="this.$store.getters.language == 'de'">
+                  <span class="dropdown-item active" @click="collapseNav">
+                    Deutsch (WIP)
+                    <i class="fa-fw fal fa-check"></i>
+                  </span>
+                </li>
+                <li v-else>
+                  <a class="dropdown-item" href="#" @click="changeLanguage('de')">Deutsch (WIP)</a>
+                </li>
+                <li v-if="this.$store.getters.language == 'ja'">
+                  <span class="dropdown-item active" @click="collapseNav">
+                    日本語 (仕掛品)
+                    <i class="fa-fw fal fa-check"></i>
+                  </span>
+                </li>
+                <li v-else>
+                  <a class="dropdown-item" href="#" @click="changeLanguage('ja')">日本語 (仕掛品)</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="https://crowdin.com/project/xiv-todo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-fw fal fa-comments-alt"></i> {{ $t("navbar.feedback")}}
+                  </a>
+                </li>
+              </ul>
+            </li>
             <li v-if="!this.$store.getters.userData" class="nav-item">
               <a class="nav-link" :href="this.$store.state.env.VUE_APP_DISCORD_AUTH_URI">
                 {{ $t("home.signInDiscord") }}
@@ -175,13 +250,13 @@
                 </li>
                 <li>
                   <a class="dropdown-item cursor-pointer" @click="signOut">
-                    <i class="fa-fw fad fa-power-off"></i> {{ $t("page.signOut") }}
+                    <i class="fa-fw fal fa-power-off"></i> {{ $t("page.signOut") }}
                   </a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <router-link to="/settings" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fad fa-cog"></i> {{ $t("page.settings") }}
+                    <i class="fa-fw fal fa-cog"></i> {{ $t("page.settings") }}
                   </router-link>
                 </li>
               </ul>
@@ -364,6 +439,11 @@ export default {
     };
   },
   methods: {
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+      this.$store.commit("setLanguage", lang);
+      this.collapseNav();
+    },
     signOut() {
       this.$store.commit("deleteUserData");
       this.$router.push("/");

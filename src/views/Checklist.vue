@@ -189,6 +189,7 @@ export default {
   name: "ChecklistView",
   data() {
     return {
+      intervalFunction: null,
       showHidden: false,
       weeklyReset: this.formatTimeDiff(this.weeklyResetTime(), true),
       dailyReset: this.formatTimeDiff(this.dailyResetTime(), false),
@@ -206,9 +207,12 @@ export default {
     this.$nextTick(function () {
       this.resetDailliesWeeklies();
     });
-    setInterval(() => {
+    this.intervalFunction = setInterval(() => {
       this.resetDailliesWeeklies();
     }, 1000);
+  },
+  unmounted() {
+    clearInterval(this.intervalFunction);
   },
   methods: {
     weeklyResetTime() {

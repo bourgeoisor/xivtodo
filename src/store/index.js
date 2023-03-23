@@ -7,6 +7,8 @@ const store = createStore({
     upstreamVersion: "",
     userData: null,
     activeCharacterID: 0,
+    language: null,
+    flags: {},
   },
   getters: {
     versionMatches(state) {
@@ -15,8 +17,14 @@ const store = createStore({
     backendOffline(state) {
       return state.upstreamVersion == "OFFLINE";
     },
+    language(state) {
+      return state.language;
+    },
+    flag: (state) => (flag) => {
+      return state.flags[flag] || false;
+    },
     userData(state) {
-      return state.userData || null;
+      return state.userData;
     },
     discordUser(state) {
       return state.userData?.discordUser || {};
@@ -149,6 +157,12 @@ const store = createStore({
 
     setUpstreamVersion(state, payload) {
       state.upstreamVersion = payload;
+    },
+    setLanguage(state, payload) {
+      state.language = payload;
+    },
+    setFlag(state, payload) {
+      state.flags[payload.key] = payload.value;
     },
     setUserData(state, payload) {
       state.userData = { ...payload };
