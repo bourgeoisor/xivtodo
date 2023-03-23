@@ -25,7 +25,8 @@
   },
   "navbar": {
     "changeActiveCharacter": "Active character",
-    "preferredLanguage": "Preferred language"
+    "preferredLanguage": "好みの言語",
+    "feedback": "フィードバック"
   },
   "pageHeader": {
     "ofCharacter": "of {characterName}",

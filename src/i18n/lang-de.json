@@ -25,7 +25,8 @@
   },
   "navbar": {
     "changeActiveCharacter": "Aktiver Charakter",
-    "preferredLanguage": "Bevorzugte Sprache"
+    "preferredLanguage": "Bevorzugte Sprache",
+    "feedback": "Feedback"
   },
   "pageHeader": {
     "ofCharacter": "von {characterName}",
