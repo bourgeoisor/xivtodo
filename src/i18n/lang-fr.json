@@ -35,10 +35,10 @@
     "obtainedByCharacter": "obtenus par {characterName}"
   },
   "message": {
-    "backendUnavailable": "XIV ToDo est actuellement inaccessible. Réessayez plus tard, ou consultez notre <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> ou <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> pour obtenir une mise à jour du statut.",
+    "backendUnavailable": "XIV ToDo est actuellement inaccessible. Merci de réessayer plus tard, ou de consulter notre <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> ou <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> pour obtenir une mise à jour du statut.",
     "signingDiscord": "Connexion via Discord...",
     "updatingCharacter": "Mise à jour des données du personnage, cela peut prendre une minute...",
-    "achievementsNotPublic": "Les hauts faits pour ce personnage ne sont pas public dans Lodestone.",
+    "achievementsNotPublic": "The achievements for this character are not set to public in Lodestone.",
     "notSignedIn": "Aucun personnage trouvé. Vous pouvez <a href='{url}' class='alert-link'>vous connecter avec Discord</a> pour les ajouter.",
     "noCharacters": "Aucun caractère trouvé. Vous pouvez ajouter vos personnages dans les <a href='/settings' class='alert-link'>Paramètres</a>."
   },
@@ -49,17 +49,17 @@
     "buildDate": "{buildDate}"
   },
   "home": {
-    "intro": "XIV ToDo fournit des tableaux de bord utiles, des listes de contrôle sur mesure et des outils pour Final Fantasy XIV. Que vous soyez un nouveau joueur ou plus expérimenté, il y a quelque chose pour tout le monde! Dans sa forme actuelle, il propose des listes de contrôle journalières et hebdomadaires personnalisables ainsi que des traqueurs automatisés de missions et de quêtes avec beaucoup plus à venir.",
-    "addCharacter": "Ajoute un personnage",
-    "learnMore": "Apprendre plus",
-    "viewProfile": "Voir ton profil",
+    "intro": "XIV ToDo fournit des tableaux de bord utiles, des listes de contrôle sur mesure et des outils pour Final Fantasy XIV. Que vous soyez un nouveau joueur ou un vétéran, il y a quelque chose pour tout le monde! Dans sa forme actuelle, il propose des listes personnalisables pour vos activités journalières et hebdomadaires ainsi que des traqueurs automatisés de missions et de quêtes. Nous prévoyons ajouter de nouvelles fonctionnalités.",
+    "addCharacter": "Ajouter un personnage",
+    "learnMore": "En apprendre davantage",
+    "viewProfile": "Voir votre profil",
     "viewGitHub": "Voir le projet sur GitHub",
     "signInDiscord": "Se connecter avec Discord",
     "features": "Fonctionnalités",
     "feature": {
       "encountersQuestlines": {
         "title": "Missions et quêtes",
-        "description": "Liste complète de toutes les missions, les lignes de quêtes principales et les quêtes annexes disponibles dans le jeu."
+        "description": "Liste complète des missions et des quêtes principales et annexes disponibles dans le jeu."
       },
       "contentCompletion": {
         "title": "Traqueurs de progrès",
@@ -67,24 +67,24 @@
       },
       "dailiesWeeklies": {
         "title": "Activités et tâches",
-        "description": "Liste complète d'objectifs quotidiens et hebdomadaires qui peuvent être cochés et être automatiquement effacés lors de la réinitialisation."
+        "description": "Liste complète des objectifs quotidiens et hebdomadaires qui peuvent être cochés et être automatiquement décochées lors de la réinitialisation."
       },
       "altFriendly": {
         "title": "Compatible avec alts",
-        "description": "Prise en charge de l'ajout d'autant de personnages que vous le souhaitez, toutes les fonctionnalités étant maintenues spécifiques à chaque personnage."
+        "description": "Possibilité d'ajouter autant de personnages que souhaité, toutes les fonctionnalités sont spécifiques à chaque personnage."
       },
       "spoilerFree": {
         "title": "Sans spoiler",
-        "description": "Le contenu de l'épopée est flou par défaut jusqu'à ce qu'ils soient vaincues pour éviter les spoilers accidentels."
+        "description": "Le contenu de l'épopée est brouillé par défaut jusqu'à ce que les quêtes concernées soient complétées pour éviter les spoilers accidentels."
       },
       "customizable": {
         "title": "Personnalisable",
-        "description": "Personnalisation disponible comme pour ajouter ou cacher certaines activités, avec plus à venir."
+        "description": "Possibilité d'ajouter de nouvelles activités ou de cacher celles affichées par défaut. D'autres fonctionnalités seront éventuellement ajoutées."
       }
     },
     "about": {
       "header": "À propos de XIV ToDo",
-      "text": "XIV ToDo est un projet lancé au milieu de 2021 par {0}, un développeur de logiciels du Canada. Après avoir remarqué qu'il n'y avait pas de méthode pour visualiser rapidement laquelle des nombreuses missions et quêtes qui avaient été completées par mes personnages, le project a débuté. XIV ToDo est présentement et reste gratuit pour tout le monde. Vous pouvez {1} avec n'importe quelle question ou commentaire. Merci beaucoup pour l'utilisation et le soutien de ce projet!",
+      "text": "XIV ToDo est un projet lancé mi-2021 par {0}, un développeur de logiciels du Canada. Il a été motivé par l'absence de méthode pour visualiser rapidement quelles missions et quêtes avaient été completées par mes personnages. XIV ToDo est gratuit pour tout le monde et le restera. Vous pouvez {1} à n'importe quel sujet, question comme commentaire. Merci beaucoup d'utiliser ce site et de soutenir ce projet!",
       "contact": "me contacter"
     }
   },
@@ -96,7 +96,7 @@
     "nameday": "Date de naissance",
     "guardian": "Divinité",
     "freeCompany": "Compagnie libre",
-    "cityState": "Cité de départ",
+    "cityState": "Cité-État",
     "grandCompany": "Grande compagnie",
     "playingSince": "Joueur depuis",
     "playingSinceAlt": "Peut ne pas être exact pour les personnages de FFXIV 1.0",
@@ -159,8 +159,8 @@
     "vcDungeons": "Donjons spéciaux",
     "trials": "Défis",
     "raids": "Raids",
-    "heTrials": "Défis de haut niveau",
-    "heRaids": "Raids de haut niveau",
+    "heTrials": "Défis à difficulté élevée",
+    "heRaids": "Raids à difficulté élevée",
     "exploratory": "Missions d'exploration",
     "guildhests": "Opérations de guilde"
   },
@@ -173,7 +173,7 @@
     "relicQuests": "Saga des armes légendaires",
     "tribalQuests": "Quêtes tribales",
     "alliedTribalQuests": "Quêtes des tribus alliées",
-    "customDeliveryQuests": "Commandes spéciales",
+    "customDeliveryQuests": "Quêtes liées aux commandes spéciales",
     "jobQuests": "Quêtes de job",
     "combatJobQuests": "Quêtes de job : combattants",
     "gathererJobQuests": "Quêtes de classe : récolteurs",
@@ -216,10 +216,10 @@
     "dailies": "Quotidiens",
     "scratchpad": "Bloc-notes",
     "scratchpadDesc": "Liste d'activités sans échéance",
-    "scratchpadHelp": "Une fois que vous avez ajouté des activités, elles apparaîtront ici.",
+    "scratchpadHelp": "Les activités ajoutées au bloc-notes apparaîtront ici.",
     "customWeekly": "Activité hebdomadaire personnalisée",
     "customDaily": "Activité quotidienne personnalisée",
-    "customItem": "Activité personalisée",
+    "customItem": "Activité personnalisée",
     "addCustomWeekly": "Ajouter l'activité",
     "addCustomDaily": "Ajouter l'activité",
     "addCustomItem": "Ajouter l'activité",
@@ -236,24 +236,24 @@
     "addCharacter": "Ajouter un personnage",
     "myCharacters": "Mes personnages",
     "myCharactersHelp": "Une fois que vous aurez ajouté vos personnages, ils apparaîtront ici.",
-    "characterNotPublic": "Les hauts faits pour ce personnage ne sont pas mis en public dans Lodestone.",
+    "characterNotPublic": "The achievements for this character are not set to public in Lodestone.",
     "lastUpdated": "Dernière mise à jour {time}",
     "general": "Paramètres généraux",
     "contentSpoilers": {
       "label": "Éviter les spoilers",
-      "option0": "Flou de toutes les missions liées à l'épopée",
-      "option1": "Flou de toutes les missions non complétées liées à l'épopée",
+      "option0": "Brouiller toutes les missions liées à l'épopée",
+      "option1": "Brouiller toutes les missions non complétées liées à l'épopée",
       "option2": "Afficher toutes les missions",
-      "hint": "Préférence en cachant des spoilers potentiels."
+      "hint": "Préférence concernant les spoilers potentiels."
     },
     "updateSettings": "Mettre à jour les paramètres",
-    "achievementsNotPublic": "Les hauts faits ne sont pas mis en public",
-    "achievementsNotPublicAlt": "Les hauts faits pour ce personnage ne sont pas mis en public dans Lodestone",
+    "achievementsNotPublic": "Les hauts faits ne sont pas public",
+    "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
     "message": {
       "settingsUpdated": "Paramètres mis à jour !",
       "settingsNotUpdated": "Les paramètres n'ont pas pu être mis à jour : {error}",
       "characterAdded": "Le personnage <b>{name}</b> a été ajouté ! Vous pouvez maintenant accéder à votre <a href='/profile' class='alert-link'>profil</a> et à toutes les pages de complétion du personnage.",
-      "characterAddedNotPublic": "Le personnage <b>{name}</b> a été ajouté, mais leurs hauts faits ne sont pas mis en public. Vous pouvez modifier ce paramètre <a href='https://fr.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>ici</a>, puis mettre à jour les données du personnage.",
+      "characterAddedNotPublic": "Le personnage <b>{name}</b> a été ajouté, mais leurs hauts faits ne sont pas public. Vous pouvez modifier ce paramètre <a href='https://fr.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>ici</a>, puis mettre à jour les données du personnage.",
       "characterRemoveConfirm": "Êtes-vous sûr de vouloir supprimer {name} ?",
       "characterRemoved": "Personnage <b>{name}</b> supprimé !"
     }
