@@ -257,7 +257,6 @@ export default {
     },
     getGenderedLocaleName(payload, gender) {
       const locale = this.$i18n.locale;
-      console.log("Name" + gender + locale.toUpperCase());
       return payload["Name" + gender + locale.toUpperCase()];
     },
   },
