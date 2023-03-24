@@ -90,8 +90,8 @@ const routes = [
   },
   {
     path: "/privacy",
-    name: "Privacy Policy",
-    component: () => import(/* webpackChunkName: "privacy" */ "../views/PrivacyPolicy.vue"),
+    name: "Privacy",
+    component: () => import(/* webpackChunkName: "privacy" */ "../views/Privacy.vue"),
   },
   {
     path: "/:pathMatch(.*)",
