@@ -3,7 +3,7 @@
     <TheNavbar />
     <main class="flex-shrink-0">
       <div v-if="this.$store.getters.backendOffline" class="container">
-        <AlertMsg type="error" :msg="$t(message.backendUnavailable)" />
+        <AlertMsg type="error" :msg="$t('message.backendUnavailable')" />
       </div>
       <!-- <div v-else-if="!this.$store.getters.versionMatches" class="container">
         <AlertMsg
@@ -307,14 +307,12 @@ export default {
     computeWindowTitle() {
       const routeName = this.$route.name;
 
-      let title = "XIV ToDo";
-      if (routeName === "Home") {
-        title = `${title}: Dashboards, checklists, and tools for FFXIV`;
+      if (routeName === undefined || routeName === "Home") {
+        return `XIV ToDo: ${this.$t("page.homeTitle")}`;
       } else {
-        title = `${title} - ${routeName}`;
+        const i18nRouteName = this.$t(`page.${routeName.toLowerCase()}`);
+        return `XIV ToDo - ${i18nRouteName}`;
       }
-
-      return title;
     },
   },
   watch: {
