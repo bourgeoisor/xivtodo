@@ -6,7 +6,8 @@
       'text-success': duty.cleared >= 1,
       'list-group-item-action':
         this.$store.getters.hasCharacter && isHovering && (duty.cleared == -1 || duty.cleared == 2),
-      'cursor-pointer': duty.cleared == -1 || duty.cleared == 2,
+      'cursor-pointer':
+        this.$store.getters.hasCharacter && (duty.cleared == -1 || duty.cleared == 2),
     }"
     @click="check"
     @mouseover="isHovering = true"
