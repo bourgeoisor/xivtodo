@@ -26,6 +26,9 @@ const store = createStore({
     userData(state) {
       return state.userData;
     },
+    isSignedIn(state) {
+      return state.userData != null && state.userData != {};
+    },
     discordUser(state) {
       return state.userData?.discordUser || {};
     },

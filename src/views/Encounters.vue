@@ -16,7 +16,7 @@
       </span>
     </h1>
     <AlertMsg
-      v-if="!this.$store.getters.userData"
+      v-if="!this.$store.getters.isSignedIn"
       type="normal"
       :msg="$t('message.notSignedIn', { url: this.$store.state.env.VUE_APP_DISCORD_AUTH_URI })"
     />

@@ -14,7 +14,7 @@
         </p>
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
           <template v-if="!this.$store.getters.hasCharacter">
-            <router-link v-if="this.$store.getters.userData" to="/settings">
+            <router-link v-if="this.$store.getters.isSignedIn" to="/settings">
               <button type="button" class="btn btn-success btn-lg px-4 gap-3">
                 {{ $t("home.addCharacter") }}
               </button>

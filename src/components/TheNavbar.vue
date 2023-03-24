@@ -89,7 +89,10 @@
                 <span class="d-inline d-lg-none">{{ $t("page.countdowns") }} </span>
                 <span class="fa-fw fal fa-clock position-relative">
                   <span
-                    v-if="this.$store.getters.latestCountdownSeen < news.latestCountdownID"
+                    v-if="
+                      this.$store.getters.isSignedIn &&
+                      this.$store.getters.latestCountdownSeen < news.latestCountdownID
+                    "
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
                   >
                   </span>
@@ -108,7 +111,10 @@
                 <span class="d-inline d-lg-none">{{ $t("page.newsUpdates") }} </span>
                 <span class="fa-fw fal fa-bell position-relative">
                   <span
-                    v-if="this.$store.getters.latestNewsSeen < news.latestID"
+                    v-if="
+                      this.$store.getters.isSignedIn &&
+                      this.$store.getters.latestNewsSeen < news.latestID
+                    "
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
                   >
                   </span>
@@ -190,7 +196,7 @@
                 </li>
               </ul>
             </li>
-            <li v-if="!this.$store.getters.userData" class="nav-item">
+            <li v-if="!this.$store.getters.isSignedIn" class="nav-item">
               <a class="nav-link" :href="this.$store.state.env.VUE_APP_DISCORD_AUTH_URI">
                 {{ $t("home.signInDiscord") }}
               </a>
@@ -457,12 +463,16 @@ export default {
       this.collapseNav();
     },
     seenLatestNews() {
+      if (!this.$store.getters.isSignedIn) return;
+
       let settings = { ...this.$store.getters.settings };
       settings.latestNewsSeen = news.latestID;
       this.$store.commit("setSettings", settings);
       updateSettings(settings);
     },
     seenLatestCountdown() {
+      if (!this.$store.getters.isSignedIn) return;
+
       let settings = { ...this.$store.getters.settings };
       settings.latestCountdownSeen = news.latestCountdownID;
       this.$store.commit("setSettings", settings);

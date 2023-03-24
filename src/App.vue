@@ -402,7 +402,7 @@ export default {
         });
     },
     updateUserData() {
-      if (this.$store.getters.userData) {
+      if (this.$store.getters.isSignedIn) {
         getUserData()
           .then((userData) => {
             this.$store.commit("setUserData", userData);
