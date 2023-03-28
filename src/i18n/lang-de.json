@@ -237,11 +237,11 @@
     "addCharacter": "Charakter hinzufügen",
     "myCharacters": "Meine Charaktere",
     "myCharactersHelp": "Sobald Charaktere hinzugefügt wurden, erscheinen diese hier.",
-    "characterNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
+    "characterNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht öffentlich einsehbar.",
     "lastUpdated": "Zuletzt aktualisiert: {time}",
     "general": "Allgemeines",
     "contentSpoilers": {
-      "label": "Inhaltspoiler",
+      "label": "Inhaltsspoiler",
       "option0": "Verwische alle Hauptszenario-relevanten Inhalte",
       "option1": "Verwische alle nicht abgeschlossene Hauptszenario-relevanten Inhalte",
       "option2": "Zeige alle Inhalte",
