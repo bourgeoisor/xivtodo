@@ -5,11 +5,11 @@
     "profile": "プロフィール",
     "encounters": "コンテンツ",
     "questlines": "クエスト",
-    "challenges": "Challenges",
+    "challenges": "チャレンジ",
     "achievements": "アチーブメント",
     "minions": "ミニオン",
     "mounts": "マウント",
-    "checklist": "Checklist",
+    "checklist": "チェックリスト",
     "settings": "Settings",
     "signOut": "ログアウト",
     "about": "About",
@@ -271,11 +271,11 @@
     "addingWait": "Adding, please wait...",
     "portraitAlt": "Portrait of your character",
     "expansion": {
-      "arr": "A Realm Reborn",
-      "hw": "Heavensward",
-      "sb": "Stormblood",
-      "shb": "Shadowbringers",
-      "ew": "Endwalker"
+      "arr": "新生エオルゼア",
+      "hw": "蒼天のイシュガルド",
+      "sb": "紅蓮のリベレーター",
+      "shb": "漆黒のヴィランズ",
+      "ew": "暁月のフィナーレ"
     },
     "time": {
       "daysShort": "{days}d",
