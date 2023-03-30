@@ -169,7 +169,7 @@
     "stories": "Geschichten",
     "jobsRolesRelics": "Jobs, Rollen & Relikte",
     "mainScenarioQuests": "Hauptszenario-Aufträge",
-    "sideStoryQuests": "Nebengeschichts-Aufträge",
+    "sideStoryQuests": "Nebenaufträge",
     "encounterQuests": "Inhalts-Aufträge",
     "relicQuests": "Relikt-Aufträge",
     "tribalQuests": "Stammesvölker-Aufträge",
@@ -282,10 +282,10 @@
       "hoursShort": "{hours}Std",
       "minutesShort": "{minutes}Min",
       "secondsShort": "{seconds}Sek",
-      "monthsAgo": "{months} Monat(e) zuvor",
+      "monthsAgo": "vor {months} Monat(en)",
       "daysAgo": "{days} Tag(e) zuvor",
-      "hoursAgo": "{hours} Stunde(n) zuvor",
-      "minutesAgo": "{minutes} Minute(n) zuvor",
+      "hoursAgo": "vor {hours} Stunde(n)",
+      "minutesAgo": "vor {minutes} Minute(n)",
       "coupleSecondsAgo": "vor ein paar Sekunden"
     }
   }
