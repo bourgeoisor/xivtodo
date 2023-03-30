@@ -27,23 +27,6 @@
     />
     <hr />
     <div class="row">
-      <h2>{{ $t("challenges.deepDungeons") }}</h2>
-
-      <div class="col-12 col-lg-4">
-        <DutyList :title="$t('challenges.potd')" :duties="db.potd" />
-        <DutyList :title="$t('challenges.potdSolo')" :duties="db.potdSolo" />
-      </div>
-      <div class="col-12 col-lg-4">
-        <DutyList :title="$t('challenges.hoh')" :duties="db.hoh" />
-        <DutyList :title="$t('challenges.hohSolo')" :duties="db.hohSolo" />
-      </div>
-      <div class="col-12 col-lg-4">
-        <DutyList :title="$t('challenges.eo')" :duties="db.eo" />
-        <DutyList :title="$t('challenges.eoSolo')" :duties="db.eoSolo" />
-      </div>
-    </div>
-    <hr />
-    <div class="row">
       <h2>{{ $t("challenges.exploration") }}</h2>
 
       <div class="col-12 col-lg-4">
@@ -58,6 +41,23 @@
       <div class="col-12 col-lg-4">
         <DutyList :title="$t('challenges.exploratoryMissions')" :duties="db.explExploration" />
         <DutyList :title="$t('challenges.sightseeingLogs')" :duties="db.sightseeingLogs" />
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <h2>{{ $t("challenges.deepDungeons") }}</h2>
+
+      <div class="col-12 col-lg-4">
+        <DutyList :title="$t('challenges.potd')" :duties="db.potd" />
+        <DutyList :title="$t('challenges.potdSolo')" :duties="db.potdSolo" />
+      </div>
+      <div class="col-12 col-lg-4">
+        <DutyList :title="$t('challenges.hoh')" :duties="db.hoh" />
+        <DutyList :title="$t('challenges.hohSolo')" :duties="db.hohSolo" />
+      </div>
+      <div class="col-12 col-lg-4">
+        <DutyList :title="$t('challenges.eo')" :duties="db.eo" />
+        <DutyList :title="$t('challenges.eoSolo')" :duties="db.eoSolo" />
       </div>
     </div>
     <hr />
