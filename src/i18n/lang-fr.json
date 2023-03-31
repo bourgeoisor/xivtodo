@@ -260,6 +260,7 @@
     }
   },
   "shared": {
+    "lodestone": "Lodestone",
     "hide": "Masquer",
     "show": "Afficher",
     "remove": "Supprimer",
