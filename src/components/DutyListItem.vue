@@ -32,7 +32,7 @@
       <a
         v-if="duty.LodestoneID && !duty.blur"
         class="text-reset lodestone-tooltip eorzeadb_link"
-        :href="lodestoneDBURL"
+        :href="getLodestoneURL() + 'playguide/db/duty/' + duty.LodestoneID"
         target="_blank"
         rel="noopener noreferrer"
         :class="{
@@ -131,11 +131,9 @@ export default {
     title() {
       return this.duty.LodestoneID || this.duty.blur ? "" : this.duty.Name;
     },
-    lodestoneDBURL() {
-      return getLodestoneURL() + "playguide/db/duty/" + this.duty.LodestoneID;
-    },
   },
   methods: {
+    getLodestoneURL: getLodestoneURL,
     check() {
       if (!this.$store.getters.hasCharacter) return;
       if (this.duty.cleared == 0 || this.duty.cleared == 1) return;
