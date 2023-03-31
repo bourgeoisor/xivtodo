@@ -16,13 +16,13 @@
               type="text"
               class="form-control"
               id="inputCharacterID"
-              placeholder="https://finalfantasyxiv.com/lodestone/character/12345/"
+              :placeholder="getLodestoneURL() + 'character/12345/'"
             />
             <div class="form-text">
               <i18n-t keypath="settings.profileUrl.hint">
                 <a
                   class="text-reset"
-                  href="https://finalfantasyxiv.com/lodestone/character/"
+                  :href="getLodestoneURL() + 'character/'"
                   target="_blank"
                   rel="noopener noreferrer"
                   >Lodestone</a
@@ -203,6 +203,7 @@
 
 <script>
 import AlertMsg from "@/components/AlertMsg.vue";
+import { getLodestoneURL } from "@/utilities/shared.js";
 import { updateSettings, addCharacter, removeCharacter } from "@/utilities/backend.js";
 
 export default {
@@ -221,6 +222,7 @@ export default {
     AlertMsg,
   },
   methods: {
+    getLodestoneURL: getLodestoneURL,
     updateSettings() {
       this.updatingSettings = true;
       this.error = {};

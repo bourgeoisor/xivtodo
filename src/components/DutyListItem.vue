@@ -115,6 +115,7 @@
 </style>
 
 <script>
+import { getLodestoneURL } from "@/utilities/shared.js";
 import { updateEncounterIDs } from "@/utilities/backend.js";
 
 export default {
@@ -131,22 +132,7 @@ export default {
       return this.duty.LodestoneID || this.duty.blur ? "" : this.duty.Name;
     },
     lodestoneDBURL() {
-      let url = "https://";
-      switch (this.$store.getters.language) {
-        case "ja":
-          url += "jp";
-          break;
-        case "de":
-          url += "de";
-          break;
-        case "fr":
-          url += "fr";
-          break;
-        default:
-          url += "na";
-          break;
-      }
-      return url + ".finalfantasyxiv.com/lodestone/playguide/db/duty/" + this.duty.LodestoneID;
+      return getLodestoneURL() + "playguide/db/duty/" + this.duty.LodestoneID;
     },
   },
   methods: {
