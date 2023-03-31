@@ -112,6 +112,15 @@
               </a>
               &nbsp;&nbsp;
               <a
+                class="text-secondary cursor-pointer tt"
+                :href="getLodestoneURL() + 'character/' + item.lodestoneData.Character.ID + '/'"
+                target="_blank" rel="noopener noreferrer"
+              >
+                <i class="fa-fw fad fa-external-link"></i>
+                <span class="tt-text">{{ $t("shared.lodestone") }}</span>
+              </a>
+              &nbsp;&nbsp;
+              <a
                 v-if="!updating && !this.$store.getters.characterOutOfDate(i)"
                 class="text-danger cursor-pointer tt"
                 @click="removeCharacter(i)"
