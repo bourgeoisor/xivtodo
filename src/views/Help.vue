@@ -103,7 +103,7 @@
           try forcing a refresh of the data through the
           <router-link to="/settings">Settings</router-link>.
         </p>
-        <p>The following are the three possible statuses for each encounter and questline:</p>
+        <p>The following are the four possible statuses for each encounter and questline:</p>
         <p>
           <span class="text-success"><i class="fa-fw fal fa-badge-check text-success"></i> Sastasha</span><br />
           &nbsp;&nbsp;Your active character has cleared this encounter (verified).<br />
