@@ -142,8 +142,8 @@ const store = createStore({
       state.env = process.env;
     },
 
-    signIn(state, payload) {
-      state.signIn = payload;
+    signingIn(state, payload) {
+      state.signingIn = payload;
     },
 
     setUpstreamVersion(state, payload) {
@@ -161,7 +161,7 @@ const store = createStore({
         state.userData.characters = [];
       }
 
-      delete state.signIn;
+      delete state.signingIn;
     },
     deleteUserData(state) {
       state.userData = null;
