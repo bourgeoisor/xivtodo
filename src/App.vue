@@ -11,12 +11,6 @@
           msg="A new version is available! <a href='javascript:window.location.reload()' class='alert-link'>Reload and update the page</a>."
         />
       </div> -->
-      <div
-        v-if="this.$store.state.characters && this.$store.state.characters.length > 0"
-        class="container"
-      >
-        <AlertMsg type="normal" :msg="getMigrationMessage()" />
-      </div>
       <div v-if="this.$store.state.signIn" class="container">
         <AlertMsg type="normal" :msg="$t('message.signingDiscord')" />
       </div>
@@ -344,42 +338,6 @@ export default {
       window.addEventListener("blur", onWindowFocusChange);
       window.addEventListener("pageshow", onWindowFocusChange);
       window.addEventListener("pagehide", onWindowFocusChange);
-    },
-    // @TODO: remove this after a few months
-    getMigrationMessage() {
-      let str =
-        "Since the last time you've used XIV ToDo, support for Discord sign ins was added.<br /><br />" +
-        "This means being able to sign in from multiple places (like both your desktop and your mobile), and keeping the data in-sync. " +
-        "To help you start out with the new account system, below is a list of your previously-added characters.<br />";
-
-      for (let character of this.$store.state.characters) {
-        str +=
-          "<br />&nbsp;&nbsp;&nbsp;" +
-          "<a href='https://na.finalfantasyxiv.com/lodestone/character/" +
-          character.characterData.Character.ID +
-          "' class='alert-link'>" +
-          character.characterData.Character.Name +
-          "</a>";
-        if (character.todosCustomWeeklies && character.todosCustomWeeklies.length > 0) {
-          str += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom weeklies:";
-          for (let weekly of character.todosCustomWeeklies) {
-            str += " '" + weekly.Name + "'";
-          }
-        }
-        if (character.todosCustomDailies && character.todosCustomDailies.length > 0) {
-          str += "<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom dailies:";
-          for (let weekly of character.todosCustomDailies) {
-            str += " '" + weekly.Name + "'";
-          }
-        }
-      }
-
-      str +=
-        "<br /><br />Make sure to note this information down, as it will disappear once you <a href='" +
-        this.$store.state.env.VUE_APP_DISCORD_AUTH_URI +
-        "' class='alert-link'>sign in with Discord</a>. Need help? Visit the new <a href='https://discord.gg/zfzhKhG3zj' target='_blank' rel='noopener noreferrer' class='alert-link'>Discord</a> server or <a href='https://twitter.com/XIVToDo' target='_blank' rel='noopener noreferrer' class='alert-link'>Twitter</a>!";
-
-      return str;
     },
     setLanguage() {
       if (this.$store.getters.language === null) {

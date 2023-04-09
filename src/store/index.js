@@ -143,18 +143,6 @@ const store = createStore({
     },
 
     signIn(state, payload) {
-      // @TODO: deprecate this cleanup step
-      delete state.characters;
-      delete state.characterData;
-      delete state.latestNewsSeen;
-      delete state.latestNewsSeenPrevious;
-      delete state.latestCountdownSeen;
-      delete state.settings;
-      delete state.todosChecked;
-      delete state.todosHidden;
-      delete state.todosNextDailyReset;
-      delete state.todosNextWeeklyReset;
-
       state.signIn = payload;
     },
 
