@@ -11,7 +11,10 @@
           msg="A new version is available! <a href='javascript:window.location.reload()' class='alert-link'>Reload and update the page</a>."
         />
       </div> -->
-      <div v-if="this.$store.state.signIn" class="container">
+      <div v-if="this.globalError" class="container">
+        <AlertMsg type="error" :msg="this.globalError" />
+      </div>
+      <div v-if="this.$store.state.signingIn == true" class="container">
         <AlertMsg type="normal" :msg="$t('message.signingDiscord')" />
       </div>
       <router-view />
@@ -304,8 +307,20 @@ export default {
       if (routeName === undefined || routeName === "Home") {
         return `XIV ToDo: ${this.$t("page.homeTitle")}`;
       } else {
+        // Erase any previous sign-in error
+        this.$store.commit("signingIn", false);
+
         const i18nRouteName = this.$t(`page.${routeName.toLowerCase()}`);
         return `XIV ToDo - ${i18nRouteName}`;
+      }
+    },
+    globalError() {
+      if (this.$store.state.signingIn?.status == 401) {
+        return this.$t("message.signingUnauthorizedError");
+      } else if (this.$store.state.signingIn?.status == 500) {
+        return this.$t("message.signingUnknownError");
+      } else {
+        return "";
       }
     },
   },

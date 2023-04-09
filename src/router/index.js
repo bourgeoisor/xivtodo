@@ -27,12 +27,11 @@ const routes = [
           store.commit("setUserData", userData);
         })
         .catch((err) => {
-          // @TODO: handle rendering error to user
-          store.commit("signIn", false);
+          store.commit("signingIn", err);
           console.log(err);
         });
 
-      store.commit("signIn", true);
+      store.commit("signingIn", true);
       next("/");
     },
   },
