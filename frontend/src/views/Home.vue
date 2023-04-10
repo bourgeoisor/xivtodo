@@ -3,12 +3,12 @@
     <div class="px-4 py-4 my-4 text-center">
       <img
         class="d-block mx-auto mb-4"
-        src="../assets/brand.png"
+        src="@/assets/img/brand.png"
         alt="XIV ToDo branding"
         width="300"
       />
       <h1 class="visually-hidden">XIV ToDo</h1>
-      <div class="col-lg-6 mx-auto">
+      <div class="container col-lg-6 mx-auto">
         <p class="lead mb-4">
           {{ $t("home.intro") }}
         </p>
@@ -47,12 +47,12 @@
         </div>
       </div>
       <div
-        class="overflow-hidden border-bottom border-grey row justify-content-center"
-        style="max-height: 25vh"
+        class="container overflow-hidden border-bottom border-grey row justify-content-center"
+        style="max-height: 20vh; margin: auto"
       >
         <div class="d-none d-md-block col-2 col-lg-1 px-0 pt-5">
           <img
-            src="../assets/screen_checklist_mockup.png"
+            src="@/assets/screenshots/en-checklist.png"
             class="border rounded-3 mb-4"
             alt="Screenshot of checklist page"
             style="width: 400%"
@@ -60,7 +60,7 @@
         </div>
         <div class="col-11 col-md-7 col-lg-5 px-0">
           <img
-            src="../assets/screen_duties_mockup.png"
+            :src="require(`@/assets/screenshots/${this.$i18n.locale}-encounters.png`)"
             class="border rounded-3 mb-4"
             alt="Screenshot of encounters page"
             style="z-index: +1000; position: relative; width: 100%"
@@ -68,7 +68,7 @@
         </div>
         <div class="d-none d-md-block col-2 col-lg-1 px-0 pt-5">
           <img
-            src="../assets/screen_questlines_mockup.png"
+            src="@/assets/screenshots/en-questlines.png"
             class="border rounded-3 mb-4 float-end"
             alt="Screenshot of questlines page"
             style="width: 400%"
@@ -130,7 +130,7 @@
       <div class="row align-items-center g-5 pb-5">
         <div class="d-none d-md-block col-md-3 col-lg-3">
           <img
-            src="../assets/hamster_avatar.png"
+            src="@/assets/img/hamster_avatar.png"
             style="border-radius: 50%; width: 100%"
             class="d-block mx-lg-auto"
             alt="Drawing of a hamster"

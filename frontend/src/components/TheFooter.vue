@@ -5,7 +5,7 @@
       {{ $t("footer.copyright") }}
     </div>
     <div class="flex-fill text-center text-muted">
-      <img src="../assets/brand.png" alt="XIV ToDo branding" />
+      <img src="@/assets/img/brand.png" alt="XIV ToDo branding" />
       <br />
       <router-link to="/">
         <small>{{ $t("page.about") }}</small>

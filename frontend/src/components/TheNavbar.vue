@@ -3,7 +3,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid user-select-none">
         <router-link to="/" class="navbar-brand mb-0 h1">
-          <img style="height: 28px" src="../assets/brand.png" alt="XIV ToDo branding" />
+          <img style="height: 28px" src="@/assets/img/brand.png" alt="XIV ToDo branding" />
         </router-link>
         <button
           class="navbar-toggler"
