@@ -2,13 +2,6 @@
   "latestCountdownID": 27,
   "countdowns": [
     {
-      "title": "Hatching-tide",
-      "description": "The 2023 edition of the Hatching-tide event.",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/Hatching_tide/gkonsy0g3l",
-      "start": 1679904000,
-      "end": 1681138800
-    },
-    {
       "title": "Patch 6.35",
       "description": "Release of patch 6.35.",
       "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/549b10141c2add85f11595f5ba39127cc0433327/",
