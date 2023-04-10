@@ -287,17 +287,25 @@
     "general": "General",
     "contentSpoilers": {
       "label": "Content spoilers",
-      "option0": "Blur out all story-related encounters",
-      "option1": "Blur out non-completed story-related encounters",
-      "option2": "Show all encounters",
+      "option0": "Blur out non-completed story-related content",
+      "option1": "Blur out all story-related content",
+      "option2": "Show all content",
       "hint": "Preference in hiding potential spoilers."
+    },
+    "patchNumbers": {
+      "label": "Patch numbers",
+      "option0": "Show patch numbers for blurred out content",
+      "option1": "Show patch numbers for non-completed content",
+      "option2": "Always show patch numbers",
+      "hint": "Preference in showing patch numbers for content."
     },
     "updateSettings": "Update settings",
     "achievementsNotPublic": "Achievements are not public",
     "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
     "message": {
       "settingsUpdated": "Settings updated!",
-      "settingsNotUpdated": "Settings could not be updated: {error}",
+      "settingsUpdateClientError": "Could not update settings. You may have entered invalid settings.",
+      "settingsUpdateUnknownError": "Could not update settings. Please try again later.",
       "characterAdded": "Character <b>{name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.",
       "characterAddedNotPublic": "Character <b>{name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then update the character's data.",
       "characterAddNotFoundError": "The character profile you have entered does not exist.",

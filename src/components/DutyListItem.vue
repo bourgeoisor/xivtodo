@@ -65,7 +65,7 @@
       :title="$t('encounters.msqContent')"
     ></span>
     <span
-      v-if="duty.Expansion && duty.blur"
+      v-if="duty.Expansion && showPatchNums"
       :class="'icon-exp-' + duty.Expansion"
       data-bs-toggle="tooltip"
       data-bs-placement="top"
@@ -130,6 +130,15 @@ export default {
   computed: {
     title() {
       return this.duty.LodestoneID || this.duty.blur ? "" : this.duty.Name;
+    },
+    showPatchNums() {
+      let patchNumsSetting = this.$store.getters.settings.patchNumsOption || 0;
+
+      return (
+        (patchNumsSetting == 0 && this.duty.blur) ||
+        (patchNumsSetting == 1 && this.duty.cleared != 1 && this.duty.cleared != 2) ||
+        patchNumsSetting == 2
+      );
     },
   },
   methods: {
