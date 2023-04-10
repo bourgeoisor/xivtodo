@@ -66,5 +66,13 @@ func validateSettings(userData *models.User, payload *models.Settings) error {
 		return errors.New("CharacterClaimCode is immutable")
 	}
 
+	if payload.SpoilersOption < 0 || payload.SpoilersOption > 2 {
+		return errors.New("SpoilersOption invalid, must be between [0-2]")
+	}
+
+	if payload.PatchNumsOption < 0 || payload.PatchNumsOption > 2 {
+		return errors.New("PatchNumsOption invalid, must be between [0-2]")
+	}
+
 	return nil
 }
