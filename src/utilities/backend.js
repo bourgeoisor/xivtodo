@@ -161,7 +161,7 @@ const updateSettings = (payload) =>
         resolve(settings);
       })
       .catch((err) => {
-        reject("Could not update settings: " + err);
+        reject(err);
       });
   });
 
@@ -186,17 +186,7 @@ const addCharacter = (id) =>
         resolve(characterData);
       })
       .catch((err) => {
-        if (err.status == 404) {
-          reject("The character profile you have entered does not exist.");
-        } else if (err.status == 400) {
-          reject(
-            "Could not add character. You may have already added this character, or have reached the limit of characters. "
-          );
-        } else {
-          reject(
-            "Could not reach Lodestone; There may be an ongoing maintenance. Please try again later."
-          );
-        }
+        reject(err);
       });
   });
 
@@ -217,7 +207,7 @@ const removeCharacter = (id) =>
         }
       })
       .catch((err) => {
-        reject("Could not delete character. Please try again later." + err);
+        reject(err);
       });
   });
 
@@ -239,7 +229,7 @@ const updateChecklist = (id, payload) =>
         }
       })
       .catch((err) => {
-        reject("Could not update checklist. Please try again later." + err);
+        reject(err);
       });
   });
 
@@ -261,7 +251,7 @@ const updateEncounterIDs = (id, payload) =>
         }
       })
       .catch((err) => {
-        reject("Could not update encounter IDs. Please try again later." + err);
+        reject(err);
       });
   });
 
