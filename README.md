@@ -2,6 +2,10 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/bourgeoisor/xivtodo)
 [![Crowdin](https://badges.crowdin.net/xiv-todo/localized.svg)](https://crowdin.com/project/xiv-todo)
 
+![fr translation](https://img.shields.io/badge/dynamic/json?color=blue&label=fr&style=flat&logo=crowdin&query=%24.progress.1.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
+![de translation](https://img.shields.io/badge/dynamic/json?color=blue&label=de&style=flat&logo=crowdin&query=%24.progress.0.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
+![ja translation](https://img.shields.io/badge/dynamic/json?color=blue&label=ja&style=flat&logo=crowdin&query=%24.progress.2.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V569BFY)
 
 # XIV ToDo
@@ -48,7 +52,7 @@ vue ui
 
 ### Backend
 
-The backend requires `go v1.17`.
+The backend requires `go v1.20`.
 
 The following environment variables are required:
 ```
