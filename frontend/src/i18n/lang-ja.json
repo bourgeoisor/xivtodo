@@ -6,7 +6,9 @@
     "encounters": "コンテンツ",
     "questlines": "クエスト",
     "challenges": "チャレンジ",
+    "collection": "コレクション",
     "achievements": "アチーブメント",
+    "titles": "Titles",
     "minions": "ミニオン",
     "mounts": "マウント",
     "checklist": "チェックリスト",
@@ -38,6 +40,8 @@
   "message": {
     "backendUnavailable": "XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
     "signingDiscord": "Signing in with Discord...",
+    "signingUnauthorizedError": "XIV ToDo was unable to authenticate with Discord. Make sure you are using valid Discord credentials.",
+    "signingUnknownError": "XIV ToDo was unable to reach Discord. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
     "updatingCharacter": "Updating character data, this may take a minute...",
     "achievementsNotPublic": "The achievements for this character are not set to public in Lodestone.",
     "notSignedIn": "No characters found. You can <a href='{url}' class='alert-link'>sign in with Discord</a> to add them.",
@@ -87,6 +91,47 @@
       "header": "About XIV ToDo",
       "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
       "contact": "contact me"
+    }
+  },
+  "help": {
+    "discordSignIn": {
+      "header": "Discord sign-in",
+      "text": "To use XIV ToDo, you must sign in with a Discord account. This is an official authentication integration provided by Discord and is very secure, since no confidential information is ever stored."
+    },
+    "addingCharacters": {
+      "header": "Adding characters",
+      "text1": "To add one of your characters, you first find its Lodestone URL. You can find it by logging into {0} and searching for your character profile. Your Lodestone URL will look similar to this example:",
+      "text2": "Once you have found your profile URL, you can input it in the {0} page and then click the {1} button. You can add as many as 8 characters, and switch between them at any time using the dropdown at the end of the main navigation bar."
+    },
+    "freeTrialCharacters": {
+      "header": "Free trial characters",
+      "text": "Free trial characters are supported in XIV ToDo and can be added, but since the Lodestone privacy settings are unavailable on the free trial, the automatic completion tracker will not work for those characters."
+    },
+    "enablingPublicAchievements": {
+      "header": "Enabling public achievements",
+      "text1": "If you add a character and their encounter and questline completions aren't getting registered, it's likely that the achievements are not set to visible publicly for that character. You can verify this by logging into {0}, and then accessing the {1} section. From there, make sure {2} is set to {3} and save the changes.",
+      "text2": "Once your achievements are public, you may need to re-add your character or refresh it from the {0} page on XIV ToDo for it to take effect.",
+      "lodestoneAccountManagement": "キャラクター管理",
+      "lodestonePublic": "公開"
+    },
+    "customizingCharacterChecklists": {
+      "header": "Customizing character checklists",
+      "text": "Daily and weekly checklists can be customized by clicking on the {0} button near the top right of the {1} page. From there, you can add custom entries as well as hide entries that you don't want to see. To stop customizing, simply click the {2} button again."
+    },
+    "encounterQuestlineCompletion": {
+      "header": "Encounter and questline completion",
+      "text1": "Encounter and questlines are automatically marked as cleared once the relevant achievements have been obtained. Since encounters or questlines don't always map directly directly to in-game achievement, automated completion tracking is not always fully accurate. You can correct the tracking by manually marking the encounter or questline as cleared.",
+      "text2": "XIV ToDo takes in-game achievements data from the Lodestone, which can take a few hours to be up-to-date. Once a new in-game achievement is obtained, it may take up to 48 hours for the relevant encounter or questline to be marked as complete in XIV ToDo. You can also manually initiate a refresh of the data from the {0} page.",
+      "textState": "The following are the four possible statuses for each encounter and questline:",
+      "stateClearedVerified": "Your active character has cleared this encounter (verified).",
+      "stateCleared": "Your active character has cleared this encounter.",
+      "stateUnknown": "Your active character's current achievements cannot determine encounter clear.",
+      "stateNotCleared": "Your active character has not cleared this encounter yet."
+    },
+    "otherQuestions": {
+      "header": "Other questions",
+      "text": "Contact me {0}, on {1} or on {2} and I will reply as soon as possible.",
+      "textHere": "here"
     }
   },
   "profile": {
@@ -242,21 +287,33 @@
     "general": "General",
     "contentSpoilers": {
       "label": "Content spoilers",
-      "option0": "Blur out all story-related encounters",
-      "option1": "Blur out non-completed story-related encounters",
-      "option2": "Show all encounters",
+      "option0": "Blur out non-completed story-related content",
+      "option1": "Blur out all story-related content",
+      "option2": "Show all content",
       "hint": "Preference in hiding potential spoilers."
+    },
+    "patchNumbers": {
+      "label": "Patch numbers",
+      "option0": "Show patch numbers for blurred out content",
+      "option1": "Show patch numbers for non-completed content",
+      "option2": "Always show patch numbers",
+      "hint": "Preference in showing patch numbers for content."
     },
     "updateSettings": "Update settings",
     "achievementsNotPublic": "Achievements are not public",
     "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
     "message": {
       "settingsUpdated": "Settings updated!",
-      "settingsNotUpdated": "Settings could not be updated: {error}",
+      "settingsUpdateClientError": "Could not update settings. You may have entered invalid settings.",
+      "settingsUpdateUnknownError": "Could not update settings. Please try again later.",
       "characterAdded": "Character <b>{name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.",
       "characterAddedNotPublic": "Character <b>{name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then update the character's data.",
+      "characterAddNotFoundError": "The character profile you have entered does not exist.",
+      "characterAddClientError": "Could not add character. You may have already added this character, or have reached the limit of characters.",
+      "characterAddServerError": "Could not reach Lodestone. There may be an ongoing maintenance. Please try again later.",
       "characterRemoveConfirm": "Are you sure you want to remove {name}?",
-      "characterRemoved": "Character <b>{name}</b> removed!"
+      "characterRemoved": "Character <b>{name}</b> removed!",
+      "characterRemoveError": "Character <b>{name}</b> could not be removed. Please try again later."
     }
   },
   "shared": {
