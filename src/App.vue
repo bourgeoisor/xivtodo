@@ -279,6 +279,7 @@ export default {
   },
   data() {
     return {
+      intervalFunction: null,
       tabFocused: true,
     };
   },
@@ -287,18 +288,18 @@ export default {
       this.setLanguage();
       this.checkUpstreamVersion();
       this.updateUserData();
-      setTimeout(() => this.updateCharactersData(), 10000);
+      setTimeout(() => this.updateCharactersData(), 1000 * 10); // 10 seconds
     });
-    setInterval(() => {
+    this.intervalFunction = setInterval(() => {
       if (this.tabFocused) {
         this.checkUpstreamVersion();
-      }
-    }, 1000 * 60); // 1 minute
-    setInterval(() => {
-      if (this.tabFocused) {
         this.updateCharactersData();
       }
     }, 1000 * 60); // 1 minute
+  },
+  unmounted() {
+    console.log("unmounted")
+    clearInterval(this.intervalFunction);
   },
   computed: {
     computeWindowTitle() {
