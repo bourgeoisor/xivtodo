@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - frontend/**
 jobs:
   gh-pages-deploy:
     name: Deploying to GitHub Pages
