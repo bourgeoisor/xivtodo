@@ -1,9 +1,8 @@
 # XIV ToDo
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fxivtodo.com)
-![Discord](https://img.shields.io/discord/946996969354690600)
+![Discord](https://img.shields.io/discord/946996969354690600?label=discord)
 [![ko-fi](https://img.shields.io/badge/buy%20me%20a%20coffee!-donate-success)](https://ko-fi.com/V7V569BFY)
-
 ![fr translation](https://img.shields.io/badge/dynamic/json?color=blue&label=fr&style=flat&logo=crowdin&query=%24.progress.1.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
 ![de translation](https://img.shields.io/badge/dynamic/json?color=blue&label=de&style=flat&logo=crowdin&query=%24.progress.0.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
 ![ja translation](https://img.shields.io/badge/dynamic/json?color=blue&label=ja&style=flat&logo=crowdin&query=%24.progress.2.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
@@ -20,7 +19,7 @@
 
 ## Screenshots
 
-<img src="https://user-images.githubusercontent.com/3271352/123179273-6cf66200-d45f-11eb-8090-4817af88b9d2.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/123179295-74b60680-d45f-11eb-93a8-0f7271d7c6af.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/123179310-7aabe780-d45f-11eb-8fd2-606aaa03b8a2.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/123179315-7da6d800-d45f-11eb-907d-0254f08455b2.png" width=400 />
+<img src="https://user-images.githubusercontent.com/3271352/231013111-2b3e6dcb-7efa-4628-9998-39d869658d5b.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/231013112-eaf34cc8-3b6a-4180-b90e-c6825eec787a.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/231013106-2c46d733-ffeb-49b1-b574-e322083ba506.png" width=400 /> <img src="https://user-images.githubusercontent.com/3271352/231013109-e77d2faf-6bdd-4f0b-95d5-0f4c6aab4c16.png" width=400 />
 
 ## Development
 
