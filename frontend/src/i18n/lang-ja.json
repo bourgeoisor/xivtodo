@@ -1,0 +1,293 @@
+{
+  "page": {
+    "home": "ホーム",
+    "homeTitle": "Dashboards, checklists, and tools for FFXIV",
+    "profile": "プロフィール",
+    "encounters": "コンテンツ",
+    "questlines": "クエスト",
+    "challenges": "チャレンジ",
+    "achievements": "アチーブメント",
+    "minions": "ミニオン",
+    "mounts": "マウント",
+    "checklist": "チェックリスト",
+    "settings": "Settings",
+    "signOut": "ログアウト",
+    "about": "About",
+    "help": "ヘルプ",
+    "privacy": "プライバシー",
+    "contact": "Contact",
+    "donate": "Support XIV ToDo",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "discord": "Discord",
+    "countdowns": "Countdowns",
+    "newsUpdates": "News & Updates",
+    "language": "言語"
+  },
+  "navbar": {
+    "changeActiveCharacter": "Active character",
+    "preferredLanguage": "好みの言語",
+    "feedback": "フィードバック"
+  },
+  "pageHeader": {
+    "ofCharacter": "of {characterName}",
+    "clearedByCharacter": "cleared by {characterName}",
+    "forCharacter": "for {characterName}",
+    "obtainedByCharacter": "obtained by {characterName}"
+  },
+  "message": {
+    "backendUnavailable": "XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
+    "signingDiscord": "Signing in with Discord...",
+    "updatingCharacter": "Updating character data, this may take a minute...",
+    "achievementsNotPublic": "The achievements for this character are not set to public in Lodestone.",
+    "notSignedIn": "No characters found. You can <a href='{url}' class='alert-link'>sign in with Discord</a> to add them.",
+    "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
+  },
+  "footer": {
+    "trademark": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.",
+    "copyright": "FINAL FANTASY XIV © SQUARE ENIX CO., LTD.",
+    "buildVersion": "{buildNum}",
+    "buildDate": "{buildDate}"
+  },
+  "home": {
+    "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV. Whether you are a new player to the game or more experienced, there is something for everyone! In its current form, it offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come.",
+    "addCharacter": "Add a character",
+    "learnMore": "Learn more",
+    "viewProfile": "View your profile",
+    "viewGitHub": "View project on GitHub",
+    "signInDiscord": "Sign in with Discord",
+    "features": "Features",
+    "feature": {
+      "encountersQuestlines": {
+        "title": "Encounters & questlines",
+        "description": "Complete listing of all encounters, main and side story questlines available in the game."
+      },
+      "contentCompletion": {
+        "title": "Content completion",
+        "description": "Add your character to quickly visualize which content you've cleared and which ones are still pending."
+      },
+      "dailiesWeeklies": {
+        "title": "Dailies & weeklies",
+        "description": "Comprehensive list of daily and weekly objectives which can be ticked off and get automatically cleared on reset."
+      },
+      "altFriendly": {
+        "title": "Alt-friendly",
+        "description": "Support for adding as many alt characters as you need, with all features being kept character-specific."
+      },
+      "spoilerFree": {
+        "title": "Spoiler-free",
+        "description": "Main story content is blurred by default until they are cleared to avoid accidental spoilers."
+      },
+      "customizable": {
+        "title": "Customizable",
+        "description": "Personalization is available like hiding select objectives from the checklists, with more to come soon."
+      }
+    },
+    "about": {
+      "header": "About XIV ToDo",
+      "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
+      "contact": "contact me"
+    }
+  },
+  "profile": {
+    "characterInfo": "Character Information",
+    "jobLevels": "Job Levels",
+    "world": "ワールド",
+    "raceClan": "種族/部族",
+    "nameday": "誕生日",
+    "guardian": "守護神",
+    "freeCompany": "所属フリーカンパニー",
+    "cityState": "開始都市",
+    "grandCompany": "所属グランドカンパニー",
+    "playingSince": "Playing since",
+    "playingSinceAlt": "May not be accurate for legacy characters",
+    "achievements": "アチーブメント",
+    "tanks": "Tanks",
+    "healers": "Healers",
+    "dps": "DPS",
+    "crafters": "Crafters",
+    "gatherers": "Gatherers",
+    "exploratoryMissions": "Exploratory missions",
+    "elementalLevel": "エレメンタルレベル",
+    "resistanceRank": "レジスタンスランク",
+    "job": {
+      "pld": "ナイト",
+      "war": "戦士",
+      "drk": "暗黒騎士",
+      "gnb": "ガンブレイカー",
+      "whm": "白魔道士",
+      "sch": "学者",
+      "ast": "占星術師",
+      "sge": "賢者",
+      "mnk": "モンク",
+      "drg": "竜騎士",
+      "nin": "忍者",
+      "sam": "侍",
+      "rpr": "リーパー",
+      "brd": "吟遊詩人",
+      "mch": "機工士",
+      "dnc": "踊り子",
+      "blm": "黒魔道士",
+      "smn": "召喚士",
+      "rdm": "赤魔道士",
+      "blu": "青魔道士",
+      "crp": "木工師",
+      "bsm": "鍛冶師",
+      "arm": "甲冑師",
+      "gsm": "彫金師",
+      "ltw": "革細工師",
+      "wvr": "裁縫師",
+      "alc": "錬金術師",
+      "cul": "調理師",
+      "min": "採掘師",
+      "btn": "園芸師",
+      "fsh": "漁師",
+      "gla": "剣術士",
+      "mrd": "斧術士",
+      "cnj": "幻術士",
+      "pgl": "格闘士",
+      "lnc": "槍術士",
+      "rog": "双剣士",
+      "arc": "弓術士",
+      "acn": "巴術士",
+      "thm": "呪術士"
+    }
+  },
+  "encounters": {
+    "msqContent": "Main Scenario Quests content",
+    "unlockedInExp": "Unlocked in this expansion",
+    "dungeons": "ダンジョン",
+    "vcDungeons": "V&C Dungeons",
+    "trials": "討伐・討滅戦",
+    "raids": "レイド",
+    "heTrials": "High-end Trials",
+    "heRaids": "High-end Raids",
+    "exploratory": "Exploratory Missions",
+    "guildhests": "ギルドオーダー"
+  },
+  "questlines": {
+    "stories": "Stories",
+    "jobsRolesRelics": "Jobs, Roles, & Relics",
+    "mainScenarioQuests": "Main Scenario Quests",
+    "sideStoryQuests": "Side Story Quests",
+    "encounterQuests": "Encounter Quests",
+    "relicQuests": "Relic Quests",
+    "tribalQuests": "Tribal Quests",
+    "alliedTribalQuests": "Allied Tribal Quests",
+    "customDeliveryQuests": "Custom Delivery Quests",
+    "jobQuests": "Job Quests",
+    "combatJobQuests": "Combat Job Quests",
+    "gathererJobQuests": "Gatherer Job Quests",
+    "crafterJobQuests": "Crafter Job Quests",
+    "roleQuestsShB": "Role Quests (ShB)",
+    "roleQuestsEW": "Role Quests (EW)",
+    "crystallineMeanQuests": "Crystalline Mean Quests",
+    "studiumDeliveryQuests": "Studium Delivery Quests"
+  },
+  "challenges": {
+    "deepDungeons": "Deep Dungeons",
+    "potd": "死者の宮殿",
+    "potdSolo": "Palace of the Dead (Solo)",
+    "hoh": "アメノミハシラ",
+    "hohSolo": "Heaven-on-High (Solo)",
+    "eo": "オルト・エウレカ",
+    "eoSolo": "Eureka Orthos (Solo)",
+    "exploration": "Exploration",
+    "exploratoryMissions": "Exploratory Missions",
+    "sightseeingLogs": "Sightseeing Logs",
+    "miscellaneous": "Miscellaneous",
+    "sharedFateShB": "Shared Fate (ShB)",
+    "sharedFateEW": "Shared Fate (EW)",
+    "bozjanSouthernFront": "Bozjan Southern Front",
+    "zadnor": "Zadnor",
+    "variantDungeons": "Variant Dungeons",
+    "treasureHuntClears": "Treasure Hunt Clears",
+    "trusts": "Trusts",
+    "islandSanctuary": "Island Sanctuary",
+    "achievementFates": "Achievement FATEs",
+    "blueMage": "Blue Mage",
+    "blueARR": "BLU Encounters (ARR)",
+    "blueHW": "BLU Encounters (HW)",
+    "blueSB": "BLU Encounters (SB)",
+    "maskedCarnivale": "Masked Carnivale"
+  },
+  "checklist": {
+    "thingsToDo": "Things to do",
+    "weeklies": "Weeklies",
+    "dailies": "Dailies",
+    "scratchpad": "Scratchpad",
+    "scratchpadDesc": "Checklist without deadlines",
+    "scratchpadHelp": "Once you add checklist items, they will appear here.",
+    "customWeekly": "Custom weekly",
+    "customDaily": "Custom daily",
+    "customItem": "Custom item",
+    "addCustomWeekly": "Add custom weekly",
+    "addCustomDaily": "Add custom daily",
+    "addCustomItem": "Add custom item",
+    "untilReset": "{time} until reset",
+    "hiddenTasks": "1 hidden task | {count} hidden tasks"
+  },
+  "settings": {
+    "characters": "Characters",
+    "addNewCharacter": "Add a new character",
+    "profileUrl": {
+      "label": "Profile URL",
+      "hint": "The URL for your character profile. You can find it in {0}."
+    },
+    "addCharacter": "Add character",
+    "myCharacters": "My characters",
+    "myCharactersHelp": "Once you add your characters, they will appear here.",
+    "characterNotPublic": "The achievements for this character are not set to public in Lodestone.",
+    "lastUpdated": "Last updated {time}",
+    "general": "General",
+    "contentSpoilers": {
+      "label": "Content spoilers",
+      "option0": "Blur out all story-related encounters",
+      "option1": "Blur out non-completed story-related encounters",
+      "option2": "Show all encounters",
+      "hint": "Preference in hiding potential spoilers."
+    },
+    "updateSettings": "Update settings",
+    "achievementsNotPublic": "Achievements are not public",
+    "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
+    "message": {
+      "settingsUpdated": "Settings updated!",
+      "settingsNotUpdated": "Settings could not be updated: {error}",
+      "characterAdded": "Character <b>{name}</b> added! You can now access your <a href='/profile' class='alert-link'>Profile</a> and all character completion pages.",
+      "characterAddedNotPublic": "Character <b>{name}</b> added, but their achievements are not set to public. You can change that setting <a href='https://na.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>here</a>, and then update the character's data.",
+      "characterRemoveConfirm": "Are you sure you want to remove {name}?",
+      "characterRemoved": "Character <b>{name}</b> removed!"
+    }
+  },
+  "shared": {
+    "lodestone": "Lodestone",
+    "hide": "Hide",
+    "show": "Show",
+    "remove": "Remove",
+    "update": "Update",
+    "customize": "Customize",
+    "dragToReorder": "Drag to reorder",
+    "countTotal": "{count} total",
+    "updatingWait": "Updating, please wait...",
+    "addingWait": "Adding, please wait...",
+    "portraitAlt": "Portrait of your character",
+    "expansion": {
+      "arr": "新生エオルゼア",
+      "hw": "蒼天のイシュガルド",
+      "sb": "紅蓮のリベレーター",
+      "shb": "漆黒のヴィランズ",
+      "ew": "暁月のフィナーレ"
+    },
+    "time": {
+      "daysShort": "{days}d",
+      "hoursShort": "{hours}h",
+      "minutesShort": "{minutes}m",
+      "secondsShort": "{seconds}s",
+      "monthsAgo": "{months} months ago",
+      "daysAgo": "{days} days ago",
+      "hoursAgo": "{hours} hours ago",
+      "minutesAgo": "{minutes} minutes ago",
+      "coupleSecondsAgo": "a couple seconds ago"
+    }
+  }
+}
