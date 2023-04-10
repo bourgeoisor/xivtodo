@@ -293,7 +293,23 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-          this.error = { type: "error", msg: err.toString() };
+
+          if (err.status == 404) {
+            this.error = {
+              type: "error",
+              msg: this.$t("settings.message.characterAddNotFoundError"),
+            };
+          } else if (err.status == 400) {
+            this.error = {
+              type: "error",
+              msg: this.$t("settings.message.characterAddClientError"),
+            };
+          } else {
+            this.error = {
+              type: "error",
+              msg: this.$t("settings.message.characterAddServerError"),
+            };
+          }
         })
         .finally(() => {
           this.profileURL = "";
@@ -340,7 +356,10 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-          this.error = { type: "error", msg: err.toString() };
+          this.error = {
+            type: "error",
+            msg: this.$t("settings.message.characterRemoveError", { name: characterName }),
+          };
         })
         .finally(() => {
           this.updating = false;
