@@ -258,7 +258,7 @@
                   </h6>
                 </li>
                 <li>
-                  <a class="dropdown-item cursor-pointer" @click="signOut">
+                  <a class="dropdown-item" href="#" @click="signOut">
                     <i class="fa-fw fal fa-power-off"></i> {{ $t("page.signOut") }}
                   </a>
                 </li>
