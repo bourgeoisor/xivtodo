@@ -34,6 +34,7 @@ type Settings struct {
 	LatestNewsSeen      int    `json:"latestNewsSeen"`
 	LatestCountdownSeen int    `json:"latestCountdownSeen"`
 	SpoilersOption      int    `json:"spoilersOption"`
+	PatchNumsOption     int    `json:"patchNumsOption"`
 }
 
 type Character struct {

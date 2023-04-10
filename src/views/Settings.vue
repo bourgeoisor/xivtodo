@@ -132,6 +132,7 @@
           </ul>
           <br />
         </div>
+
         <div class="col-lg-6">
           <h2>{{ $t("settings.general") }}</h2>
           <h3>{{ $t("settings.contentSpoilers.label") }}</h3>
@@ -175,7 +176,52 @@
             </label>
           </div>
           <div class="form-text">{{ $t("settings.contentSpoilers.hint") }}</div>
+
           <br />
+
+          <h3>{{ $t("settings.patchNumbers.label") }}</h3>
+          <div class="form-check">
+            <input
+              v-model="settings.patchNumsOption"
+              class="form-check-input"
+              type="radio"
+              name="inputPatchNumsOption"
+              id="inputPatchNumsOption0"
+              :value="0"
+            />
+            <label class="form-check-label" for="inputPatchNumsOption0">
+              {{ $t("settings.patchNumbers.option0") }}
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              v-model="settings.patchNumsOption"
+              class="form-check-input"
+              type="radio"
+              name="inputPatchNumsOption"
+              id="inputPatchNumsOption1"
+              :value="1"
+            />
+            <label class="form-check-label" for="inputPatchNumsOption1">
+              {{ $t("settings.patchNumbers.option1") }}
+            </label>
+          </div>
+          <div class="form-check">
+            <input
+              v-model="settings.patchNumsOption"
+              class="form-check-input"
+              type="radio"
+              name="inputPatchNumsOption"
+              id="inputPatchNumsOption2"
+              :value="2"
+            />
+            <label class="form-check-label" for="inputPatchNumsOption2">
+              {{ $t("settings.patchNumbers.option2") }}
+            </label>
+          </div>
+          <div class="form-text">{{ $t("settings.patchNumbers.hint") }}</div>
+          <br />
+
           <button
             v-if="updatingSettings"
             type="button"
@@ -193,7 +239,7 @@
             id="settings-save-btn"
             class="btn btn-success"
           >
-          {{ $t("settings.updateSettings") }}
+            {{ $t("settings.updateSettings") }}
           </button>
           <br /><br />
         </div>
@@ -246,9 +292,16 @@ export default {
           };
         })
         .catch((err) => {
-          this.error = {
-            type: "error",
-            msg: this.$t("settings.message.settingsNotUpdated", { error: err }),
+          if (err.status == 400) {
+            this.error = {
+              type: "error",
+              msg: this.$t("settings.message.settingsUpdateClientError"),
+            };
+          } else {
+            this.error = {
+              type: "error",
+              msg: this.$t("settings.message.settingsUpdateUnknownError"),
+            };
           };
         })
         .finally(() => {
