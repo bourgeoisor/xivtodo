@@ -106,6 +106,10 @@ func getDiscordAuthResponse(discordAuthResponse *models.DiscordAuthResponse, cod
 	}
 	defer resp.Body.Close()
 
+	if resp.StatusCode != 200 {
+		return errors.New(resp.Status)
+	}
+
 	err = json.NewDecoder(resp.Body).Decode(discordAuthResponse)
 	if err != nil {
 		return err
@@ -126,6 +130,10 @@ func getDiscordUserResponse(discordUser *models.DiscordUser, discordAuthResponse
 		return err
 	}
 	defer resp.Body.Close()
+
+	rateLimitRemaining := resp.Header.Get("X-RateLimit-Remaining")
+	rateLimitLimit := resp.Header.Get("X-RateLimit-Limit")
+	log.Printf("rate limit for /users/@me: %s/%s", rateLimitRemaining, rateLimitLimit)
 
 	if resp.StatusCode != 200 {
 		return errors.New(resp.Status)
