@@ -1,0 +1,293 @@
+{
+  "page": {
+    "home": "Startseite",
+    "homeTitle": "Dashboards, Checklisten und Werkzeuge für FFXIV",
+    "profile": "Profil",
+    "encounters": "Inhalte",
+    "questlines": "Aufträge",
+    "challenges": "Herausforderungen",
+    "achievements": "Errungenschaften",
+    "minions": "Begleiter",
+    "mounts": "Reittiere",
+    "checklist": "Checkliste",
+    "settings": "Einstellungen",
+    "signOut": "Abmelden",
+    "about": "Über uns",
+    "help": "Hilfe",
+    "privacy": "Datenschutzerklärung",
+    "contact": "Kontakt",
+    "donate": "Unterstütze XIV ToDo",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "discord": "Discord",
+    "countdowns": "Countdowns",
+    "newsUpdates": "Neuigkeiten & Updates",
+    "language": "Sprache"
+  },
+  "navbar": {
+    "changeActiveCharacter": "Aktiver Charakter",
+    "preferredLanguage": "Bevorzugte Sprache",
+    "feedback": "Feedback"
+  },
+  "pageHeader": {
+    "ofCharacter": "von {characterName}",
+    "clearedByCharacter": "beendet von {characterName}",
+    "forCharacter": "für {characterName}",
+    "obtainedByCharacter": "von {characterName} erhalten"
+  },
+  "message": {
+    "backendUnavailable": "XIV ToDo ist momentan nicht erreichbar. Versuche es später noch einmal, oder schau auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> nach einem Statusupdate.",
+    "signingDiscord": "Anmelden mit Discord...",
+    "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
+    "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
+    "notSignedIn": "Keine Charaktere gefunden. Du kannst dich <a href='{url}' class='alert-link'>mit Discord anmelden</a>, um diese hinzuzufügen.",
+    "noCharacters": "Keine Charaktere gefunden. Über die <a href='/settings' class='alert-link'>Einstellungen</a> kannst du diese hinzufügen."
+  },
+  "footer": {
+    "trademark": "FINAL FANTASY ist eine eingetragene Marke der Square Enix Holdings Co., Ltd.",
+    "copyright": "FINAL FANTASY XIV © SQUARE ENIX CO., LTD.",
+    "buildVersion": "{buildNum}",
+    "buildDate": "{buildDate}"
+  },
+  "home": {
+    "intro": "XIV ToDo bietet nützliche Dashboards, maßgeschneiderte Checklisten und Tools für Final Fantasy XIV. Egal, ob du ein neuer Spieler oder schon etwas erfahrener bist - es gibt für jeden etwas! In seiner aktuellen Form bietet er anpassbare tägliche und wöchentliche Checklisten sowie automatisierte Abschlussverfolgung von Spielinhalten und Questlinien, später wird noch viel mehr dazukommen.",
+    "addCharacter": "Charakter hinzufügen",
+    "learnMore": "Mehr erfahren",
+    "viewProfile": "Profil anzeigen",
+    "viewGitHub": "Projekt auf GitHub anzeigen",
+    "signInDiscord": "Mit Discord anmelden",
+    "features": "Funktionen",
+    "feature": {
+      "encountersQuestlines": {
+        "title": "Inhalte & Auftragsreihen",
+        "description": "Komplette Auflistung aller im Spiel verfügbaren Inhalte und Auftragsreihen für Haupt- und Nebengeschichten."
+      },
+      "contentCompletion": {
+        "title": "Inhaltsabschluss",
+        "description": "Füge deinen Charakter hinzu, um schnell zu visualisieren, welche Inhalte du abgeschlossen hast und welche noch ausstehen."
+      },
+      "dailiesWeeklies": {
+        "title": "Tägliche & Wöchentliche Aufgaben",
+        "description": "Umfassende Liste der täglichen und wöchentlichen Ziele, die abgehakt werden können und beim Reset automatisch zurückgesetzt werden."
+      },
+      "altFriendly": {
+        "title": "Twink-freundlich",
+        "description": "Unterstützung für das Hinzufügen beliebig vieler Twinks, wobei alle Funktionen Charakterspezifisch erhalten bleiben."
+      },
+      "spoilerFree": {
+        "title": "Spoiler-frei",
+        "description": "Die Inhalte der Hauptgeschichte sind standardmäßig verschwommen dargestellt, bis diese abgeschlossen wurden, um versehentliche Spoiler zu vermeiden."
+      },
+      "customizable": {
+        "title": "Anpassbar",
+        "description": "Personalisierung wie das Verstecken ausgewählter Ziele in den Checklisten ist bereits verfügbar, weitere Optionen werden demnächst folgen."
+      }
+    },
+    "about": {
+      "header": "Über XIV ToDo",
+      "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Spielinhalte und Questlinien von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst mich gerne mit jeder Frage oder Feedback hier {1}. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
+      "contact": "kontaktieren"
+    }
+  },
+  "profile": {
+    "characterInfo": "Charakterinformationen",
+    "jobLevels": "Job-Stufe",
+    "world": "Welt",
+    "raceClan": "Volk & Stamm",
+    "nameday": "Namenstag",
+    "guardian": "Schutzgottheit",
+    "freeCompany": "Freie Gesellschaft",
+    "cityState": "Stadtstaat",
+    "grandCompany": "Staatliche Gesellschaft",
+    "playingSince": "Spielt seit",
+    "playingSinceAlt": "Kann bei älteren Charakteren ungenau sein (FFXIV 1.0)",
+    "achievements": "Errungenschaften",
+    "tanks": "Verteidiger",
+    "healers": "Heiler",
+    "dps": "Angreifer (DPS)",
+    "crafters": "Handwerker",
+    "gatherers": "Sammler",
+    "exploratoryMissions": "Feldexkursion",
+    "elementalLevel": "Elementarstufe",
+    "resistanceRank": "Widerstandsstufe",
+    "job": {
+      "pld": "Paladin",
+      "war": "Krieger",
+      "drk": "Dunkelritter",
+      "gnb": "Revolverklinge",
+      "whm": "Weißmagier",
+      "sch": "Gelehrter",
+      "ast": "Astrologe",
+      "sge": "Weiser",
+      "mnk": "Mönch",
+      "drg": "Dragoon",
+      "nin": "Ninja",
+      "sam": "Samurai",
+      "rpr": "Schnitter",
+      "brd": "Barde",
+      "mch": "Maschinist",
+      "dnc": "Tänzer",
+      "blm": "Schwarzmagier",
+      "smn": "Beschwörer",
+      "rdm": "Rotmagier",
+      "blu": "Blaumagier",
+      "crp": "Zimmerer",
+      "bsm": "Grobschmied",
+      "arm": "Plattner",
+      "gsm": "Goldschmied",
+      "ltw": "Gerber",
+      "wvr": "Weber",
+      "alc": "Alchemist",
+      "cul": "Gourmet",
+      "min": "Minenarbeiter",
+      "btn": "Gärtner",
+      "fsh": "Fischer",
+      "gla": "Gladiator",
+      "mrd": "Marodeur",
+      "cnj": "Druide",
+      "pgl": "Faustkämpfer",
+      "lnc": "Pikenier",
+      "rog": "Schurke",
+      "arc": "Waldläufer",
+      "acn": "Hermetiker",
+      "thm": "Thaumaturg"
+    }
+  },
+  "encounters": {
+    "msqContent": "Teil der Hauptszenario-Aufträge (MSQ)",
+    "unlockedInExp": "In dieser Erweiterung freigeschaltet",
+    "dungeons": "Dungeons",
+    "vcDungeons": "Unstete & kuriose Gewölbe",
+    "trials": "Prüfungen",
+    "raids": "Raids",
+    "heTrials": "High-End-Prüfungen",
+    "heRaids": "High-End-Raids",
+    "exploratory": "Erkundungsmissionen",
+    "guildhests": "Gildengeheiße"
+  },
+  "questlines": {
+    "stories": "Geschichten",
+    "jobsRolesRelics": "Jobs, Rollen & Relikte",
+    "mainScenarioQuests": "Hauptszenario-Aufträge",
+    "sideStoryQuests": "Nebenaufträge",
+    "encounterQuests": "Inhalts-Aufträge",
+    "relicQuests": "Relikt-Aufträge",
+    "tribalQuests": "Stammesvölker-Aufträge",
+    "alliedTribalQuests": "Verbündete Stammesvölker-Aufträge",
+    "customDeliveryQuests": "Wunschlieferungs-Aufträge",
+    "jobQuests": "Job-Aufträge",
+    "combatJobQuests": "Kampfklassen-Aufträge",
+    "gathererJobQuests": "Sammelklassen-Aufträge",
+    "crafterJobQuests": "Handwerkerklassen-Aufträge",
+    "roleQuestsShB": "Rollen-Aufträge (ShB)",
+    "roleQuestsEW": "Rollen-Aufträge (EW)",
+    "crystallineMeanQuests": "Manufaktur der Gemeinschaft",
+    "studiumDeliveryQuests": "Magieakademie von Sharlayan"
+  },
+  "challenges": {
+    "deepDungeons": "Tiefes Gewölbe",
+    "potd": "Palast der Toten",
+    "potdSolo": "Palast der Toten (Solo)",
+    "hoh": "Himmelssäule",
+    "hohSolo": "Himmelssäule (Solo)",
+    "eo": "Eureka Orthos",
+    "eoSolo": "Eureka Orthos (Solo)",
+    "exploration": "Erkundung",
+    "exploratoryMissions": "Erkundungsmissionen",
+    "sightseeingLogs": "Eorzea Incognita",
+    "miscellaneous": "Verschiedenes",
+    "sharedFateShB": "FATE-Fortschritt (ShB)",
+    "sharedFateEW": "FATE-Fortschritt (EW)",
+    "bozjanSouthernFront": "Bozja-Südfront",
+    "zadnor": "Zadnor",
+    "variantDungeons": "Unstete Gewölbe",
+    "treasureHuntClears": "Schatzkarten Abschlüsse",
+    "trusts": "Seite an Seite",
+    "islandSanctuary": "Inselparadies",
+    "achievementFates": "FATE Errungenschaften",
+    "blueMage": "Blaumagier",
+    "blueARR": "BMA Inhalte (ARR)",
+    "blueHW": "BMA Inhalte (HW)",
+    "blueSB": "BMA Inhalte (SB)",
+    "maskedCarnivale": "Große Maskerade"
+  },
+  "checklist": {
+    "thingsToDo": "Aktivitäten",
+    "weeklies": "Wöchentlich",
+    "dailies": "Täglich",
+    "scratchpad": "Notizbuch",
+    "scratchpadDesc": "Checkliste ohne Fristen",
+    "scratchpadHelp": "Sobald der Checkliste Einträge hinzugefügt werden, erscheinen diese hier.",
+    "customWeekly": "Eigene wöchentliche Aufgaben",
+    "customDaily": "Eigene tägliche Aufgaben",
+    "customItem": "Benutzerdefinierter Eintrag",
+    "addCustomWeekly": "Aufgabe hinzufügen",
+    "addCustomDaily": "Aufgabe hinzufügen",
+    "addCustomItem": "Aufgabe hinzufügen",
+    "untilReset": "{time} bis zum Reset",
+    "hiddenTasks": "1 versteckte Aufgabe | {count} versteckte Aufgaben"
+  },
+  "settings": {
+    "characters": "Charaktere",
+    "addNewCharacter": "Einen neuen Charakter hinzufügen",
+    "profileUrl": {
+      "label": "Profil-URL",
+      "hint": "Die URL für dein Charakterprofil. Du findest sie im {0}."
+    },
+    "addCharacter": "Charakter hinzufügen",
+    "myCharacters": "Meine Charaktere",
+    "myCharactersHelp": "Sobald Charaktere hinzugefügt wurden, erscheinen diese hier.",
+    "characterNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht öffentlich einsehbar.",
+    "lastUpdated": "Zuletzt aktualisiert: {time}",
+    "general": "Allgemeines",
+    "contentSpoilers": {
+      "label": "Inhaltsspoiler",
+      "option0": "Verwische alle Hauptszenario-relevanten Inhalte",
+      "option1": "Verwische alle nicht abgeschlossene Hauptszenario-relevanten Inhalte",
+      "option2": "Zeige alle Inhalte",
+      "hint": "Präferenz beim Verstecken potenzieller Spoiler."
+    },
+    "updateSettings": "Einstellungen aktualisieren",
+    "achievementsNotPublic": "Errungenschaften sind nicht öffentlich",
+    "achievementsNotPublicAlt": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
+    "message": {
+      "settingsUpdated": "Einstellungen aktualisiert!",
+      "settingsNotUpdated": "Einstellungen konnten nicht aktualisiert werden: {error}",
+      "characterAdded": "Charakter <b>{name}</b> hinzugefügt! Du hast nun Zugriff auf dein <a href='/profile' class='alert-link'>Profil</a> und alle Charakter-Checklisten.",
+      "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://de.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend muss dein Charakter erneut aktualisiert werden.",
+      "characterRemoveConfirm": "Bist du sicher, dass du {name} entfernen möchtest?",
+      "characterRemoved": "Charakter <b>{name}</b> entfernt!"
+    }
+  },
+  "shared": {
+    "lodestone": "Lodestone",
+    "hide": "Ausblenden",
+    "show": "Anzeigen",
+    "remove": "Entfernen",
+    "update": "Aktualisieren",
+    "customize": "Anpassen",
+    "dragToReorder": "Ziehen zum Umordnen",
+    "countTotal": "{count} insgesamt",
+    "updatingWait": "Aktualisiert, bitte warten...",
+    "addingWait": "Wird hinzugefügt, bitte warten...",
+    "portraitAlt": "Porträt deines Charakters",
+    "expansion": {
+      "arr": "A Realm Reborn",
+      "hw": "Heavensward",
+      "sb": "Stormblood",
+      "shb": "Shadowbringers",
+      "ew": "Endwalker"
+    },
+    "time": {
+      "daysShort": "{days}T",
+      "hoursShort": "{hours}Std",
+      "minutesShort": "{minutes}Min",
+      "secondsShort": "{seconds}Sek",
+      "monthsAgo": "vor {months} Monat(en)",
+      "daysAgo": "{days} Tag(e) zuvor",
+      "hoursAgo": "vor {hours} Stunde(n)",
+      "minutesAgo": "vor {minutes} Minute(n)",
+      "coupleSecondsAgo": "vor ein paar Sekunden"
+    }
+  }
+}
