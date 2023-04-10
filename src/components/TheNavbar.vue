@@ -51,7 +51,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Collection
+              {{ $t("page.collection") }}
               </a>
               <ul
                 class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
@@ -59,13 +59,16 @@
               >
                 <li>
                   <router-link to="/achievements" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fad fa-award"></i> {{ $t("page.achievements") }}
+                    <i class="fa-fw fal fa-trophy"></i> {{ $t("page.achievements") }}
+                  </router-link>
+                  <router-link to="/titles" class="dropdown-item" @click="collapseNav">
+                    <i class="fa-fw fal fa-scroll"></i> {{ $t("page.titles") }}
                   </router-link>
                   <router-link to="/mounts" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fad fa-horse-saddle"></i> {{ $t("page.mounts") }}
+                    <i class="fa-fw fal fa-horse-saddle"></i> {{ $t("page.mounts") }}
                   </router-link>
                   <router-link to="/minions" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fad fa-cat-space"></i> {{ $t("page.minions") }}
+                    <i class="fa-fw fal fa-cat-space"></i> {{ $t("page.minions") }}
                   </router-link>
                 </li>
               </ul>
@@ -466,6 +469,8 @@ export default {
       if (!this.$store.getters.isSignedIn) return;
 
       let settings = { ...this.$store.getters.settings };
+      if (settings.latestNewsSeen == news.latestID) return;
+
       settings.latestNewsSeen = news.latestID;
       this.$store.commit("setSettings", settings);
       updateSettings(settings);
@@ -474,6 +479,8 @@ export default {
       if (!this.$store.getters.isSignedIn) return;
 
       let settings = { ...this.$store.getters.settings };
+      if (settings.latestCountdownSeen == news.latestCountdownID) return;
+
       settings.latestCountdownSeen = news.latestCountdownID;
       this.$store.commit("setSettings", settings);
       updateSettings(settings);
