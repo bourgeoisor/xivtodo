@@ -1,14 +1,12 @@
+# XIV ToDo
+
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fxivtodo.com)
-![GitHub last commit](https://img.shields.io/github/last-commit/bourgeoisor/xivtodo)
-[![Crowdin](https://badges.crowdin.net/xiv-todo/localized.svg)](https://crowdin.com/project/xiv-todo)
+![Discord](https://img.shields.io/discord/946996969354690600)
+[![ko-fi](https://img.shields.io/badge/buy%20me%20a%20coffee!-donate-success)](https://ko-fi.com/V7V569BFY)
 
 ![fr translation](https://img.shields.io/badge/dynamic/json?color=blue&label=fr&style=flat&logo=crowdin&query=%24.progress.1.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
 ![de translation](https://img.shields.io/badge/dynamic/json?color=blue&label=de&style=flat&logo=crowdin&query=%24.progress.0.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
 ![ja translation](https://img.shields.io/badge/dynamic/json?color=blue&label=ja&style=flat&logo=crowdin&query=%24.progress.2.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/V7V569BFY)
-
-# XIV ToDo
 
 [XIV ToDo](https://xivtodo.com) provides useful dashboards, tailored checklists and tools for Final Fantasy XIV; whether you are a new player to the game or more experienced. In its current form, XIV ToDo offers customizable daily and weekly checklists as well as automated completion trackers of duties and questlines, with much more to come! 
 
