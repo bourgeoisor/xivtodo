@@ -6,7 +6,9 @@
     "encounters": "Inhalte",
     "questlines": "Aufträge",
     "challenges": "Herausforderungen",
+    "collection": "Collection",
     "achievements": "Errungenschaften",
+    "titles": "Titles",
     "minions": "Begleiter",
     "mounts": "Reittiere",
     "checklist": "Checkliste",
@@ -38,6 +40,8 @@
   "message": {
     "backendUnavailable": "XIV ToDo ist momentan nicht erreichbar. Versuche es später noch einmal, oder schau auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> nach einem Statusupdate.",
     "signingDiscord": "Anmelden mit Discord...",
+    "signingUnauthorizedError": "XIV ToDo was unable to authenticate with Discord. Make sure you are using valid Discord credentials.",
+    "signingUnknownError": "XIV ToDo was unable to reach Discord. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
     "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
     "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "notSignedIn": "Keine Charaktere gefunden. Du kannst dich <a href='{url}' class='alert-link'>mit Discord anmelden</a>, um diese hinzuzufügen.",
@@ -87,6 +91,47 @@
       "header": "Über XIV ToDo",
       "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Spielinhalte und Questlinien von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst mich gerne mit jeder Frage oder Feedback hier {1}. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
       "contact": "kontaktieren"
+    }
+  },
+  "help": {
+    "discordSignIn": {
+      "header": "Discord sign-in",
+      "text": "To use XIV ToDo, you must sign in with a Discord account. This is an official authentication integration provided by Discord and is very secure, since no confidential information is ever stored."
+    },
+    "addingCharacters": {
+      "header": "Adding characters",
+      "text1": "To add one of your characters, you first find its Lodestone URL. You can find it by logging into {0} and searching for your character profile. Your Lodestone URL will look similar to this example:",
+      "text2": "Once you have found your profile URL, you can input it in the {0} page and then click the {1} button. You can add as many as 8 characters, and switch between them at any time using the dropdown at the end of the main navigation bar."
+    },
+    "freeTrialCharacters": {
+      "header": "Free trial characters",
+      "text": "Free trial characters are supported in XIV ToDo and can be added, but since the Lodestone privacy settings are unavailable on the free trial, the automatic completion tracker will not work for those characters."
+    },
+    "enablingPublicAchievements": {
+      "header": "Enabling public achievements",
+      "text1": "If you add a character and their encounter and questline completions aren't getting registered, it's likely that the achievements are not set to visible publicly for that character. You can verify this by logging into {0}, and then accessing the {1} section. From there, make sure {2} is set to {3} and save the changes.",
+      "text2": "Once your achievements are public, you may need to re-add your character or refresh it from the {0} page on XIV ToDo for it to take effect.",
+      "lodestoneAccountManagement": "Account Management",
+      "lodestonePublic": "Public"
+    },
+    "customizingCharacterChecklists": {
+      "header": "Customizing character checklists",
+      "text": "Daily and weekly checklists can be customized by clicking on the {0} button near the top right of the {1} page. From there, you can add custom entries as well as hide entries that you don't want to see. To stop customizing, simply click the {2} button again."
+    },
+    "encounterQuestlineCompletion": {
+      "header": "Encounter and questline completion",
+      "text1": "Encounter and questlines are automatically marked as cleared once the relevant achievements have been obtained. Since encounters or questlines don't always map directly directly to in-game achievement, automated completion tracking is not always fully accurate. You can correct the tracking by manually marking the encounter or questline as cleared.",
+      "text2": "XIV ToDo takes in-game achievements data from the Lodestone, which can take a few hours to be up-to-date. Once a new in-game achievement is obtained, it may take up to 48 hours for the relevant encounter or questline to be marked as complete in XIV ToDo. You can also manually initiate a refresh of the data from the {0} page.",
+      "textState": "The following are the four possible statuses for each encounter and questline:",
+      "stateClearedVerified": "Your active character has cleared this encounter (verified).",
+      "stateCleared": "Your active character has cleared this encounter.",
+      "stateUnknown": "Your active character's current achievements cannot determine encounter clear.",
+      "stateNotCleared": "Your active character has not cleared this encounter yet."
+    },
+    "otherQuestions": {
+      "header": "Other questions",
+      "text": "Contact me {0}, on {1} or on {2} and I will reply as soon as possible.",
+      "textHere": "here"
     }
   },
   "profile": {
@@ -242,21 +287,33 @@
     "general": "Allgemeines",
     "contentSpoilers": {
       "label": "Inhaltsspoiler",
-      "option0": "Verwische alle Hauptszenario-relevanten Inhalte",
-      "option1": "Verwische alle nicht abgeschlossene Hauptszenario-relevanten Inhalte",
-      "option2": "Zeige alle Inhalte",
+      "option0": "Blur out non-completed story-related content",
+      "option1": "Blur out all story-related content",
+      "option2": "Show all content",
       "hint": "Präferenz beim Verstecken potenzieller Spoiler."
+    },
+    "patchNumbers": {
+      "label": "Patch numbers",
+      "option0": "Show patch numbers for blurred out content",
+      "option1": "Show patch numbers for non-completed content",
+      "option2": "Always show patch numbers",
+      "hint": "Preference in showing patch numbers for content."
     },
     "updateSettings": "Einstellungen aktualisieren",
     "achievementsNotPublic": "Errungenschaften sind nicht öffentlich",
     "achievementsNotPublicAlt": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "message": {
       "settingsUpdated": "Einstellungen aktualisiert!",
-      "settingsNotUpdated": "Einstellungen konnten nicht aktualisiert werden: {error}",
+      "settingsUpdateClientError": "Could not update settings. You may have entered invalid settings.",
+      "settingsUpdateUnknownError": "Could not update settings. Please try again later.",
       "characterAdded": "Charakter <b>{name}</b> hinzugefügt! Du hast nun Zugriff auf dein <a href='/profile' class='alert-link'>Profil</a> und alle Charakter-Checklisten.",
       "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://de.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend muss dein Charakter erneut aktualisiert werden.",
+      "characterAddNotFoundError": "The character profile you have entered does not exist.",
+      "characterAddClientError": "Could not add character. You may have already added this character, or have reached the limit of characters.",
+      "characterAddServerError": "Could not reach Lodestone. There may be an ongoing maintenance. Please try again later.",
       "characterRemoveConfirm": "Bist du sicher, dass du {name} entfernen möchtest?",
-      "characterRemoved": "Charakter <b>{name}</b> entfernt!"
+      "characterRemoved": "Charakter <b>{name}</b> entfernt!",
+      "characterRemoveError": "Character <b>{name}</b> could not be removed. Please try again later."
     }
   },
   "shared": {
