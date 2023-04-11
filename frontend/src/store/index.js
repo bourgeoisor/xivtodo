@@ -171,10 +171,7 @@ const store = createStore({
     },
     addCharacter(state, payload) {
       for (let i = 0; i < state.userData.characters.length; i++) {
-        if (
-          state.userData.characters[i].lodestoneData.Character.ID ==
-          payload.lodestoneData.Character.ID
-        ) {
+        if (state.userData.characters[i].lodestoneData.Character.ID == payload.lodestoneData.Character.ID) {
           state.userData.characters[i] = payload;
           return;
         }

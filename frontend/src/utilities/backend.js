@@ -112,8 +112,7 @@ const getUserData = () =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/users", {
       headers: {
-        Authorization:
-          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+        Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       method: "GET",
     })
@@ -144,8 +143,7 @@ const updateSettings = (payload) =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/settings", {
       headers: {
-        Authorization:
-          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+        Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       body: JSON.stringify(payload),
       method: "PUT",
@@ -169,8 +167,7 @@ const addCharacter = (id) =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/characters?id=" + id, {
       headers: {
-        Authorization:
-          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+        Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       method: "GET",
     })
@@ -194,8 +191,7 @@ const removeCharacter = (id) =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/characters?id=" + id, {
       headers: {
-        Authorization:
-          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+        Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       method: "DELETE",
     })
@@ -215,8 +211,7 @@ const updateChecklist = (id, payload) =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/checklist?id=" + id, {
       headers: {
-        Authorization:
-          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+        Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       body: JSON.stringify(payload),
       method: "PUT",
@@ -237,8 +232,7 @@ const updateEncounterIDs = (id, payload) =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/encounters?id=" + id, {
       headers: {
-        Authorization:
-          store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+        Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       body: JSON.stringify(payload),
       method: "PUT",

@@ -37,12 +37,8 @@
             <a :href="getLodestoneURL()" target="_blank" rel="noopener noreferrer">
               {{ $t("shared.lodestone") }}
             </a>
-            <a
-              :href="getLodestoneURL() + 'my/setting/account/'"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-            {{ $t("help.enablingPublicAchievements.lodestoneAccountManagement") }}
+            <a :href="getLodestoneURL() + 'my/setting/account/'" target="_blank" rel="noopener noreferrer">
+              {{ $t("help.enablingPublicAchievements.lodestoneAccountManagement") }}
             </a>
             <b>{{ $t("page.achievements") }}</b>
             <b>{{ $t("help.enablingPublicAchievements.lodestonePublic") }}</b>
@@ -86,7 +82,8 @@
           </span>
           <br />
           &nbsp;&nbsp;{{ $t("help.encounterQuestlineCompletion.stateCleared") }}<br />
-          <span class="text-secondary"><i class="fa-fw fal fa-question-circle"></i>
+          <span class="text-secondary">
+            <i class="fa-fw fal fa-question-circle"></i>
             {{ db.arrDungeons[0]["Name" + $i18n.locale.toUpperCase()] }}
           </span>
           <br />

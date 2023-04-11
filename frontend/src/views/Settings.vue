@@ -10,7 +10,9 @@
 
           <h3>{{ $t("settings.addNewCharacter") }}</h3>
           <div class="mb-3">
-            <label for="inputCharacterID" class="form-label">{{ $t("settings.profileUrl.label") }}</label>
+            <label for="inputCharacterID" class="form-label">
+              {{ $t("settings.profileUrl.label") }}
+            </label>
             <input
               v-model="profileURL"
               type="text"
@@ -25,18 +27,13 @@
                   :href="getLodestoneURL() + 'character/'"
                   target="_blank"
                   rel="noopener noreferrer"
-                  >Lodestone</a
                 >
+                  Lodestone
+                </a>
               </i18n-t>
             </div>
           </div>
-          <button
-            v-if="adding"
-            type="submit"
-            id="settings-save-btn"
-            class="btn btn-success"
-            disabled
-          >
+          <button v-if="adding" type="submit" id="settings-save-btn" class="btn btn-success" disabled>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             {{ $t("shared.addingWait") }}
           </button>
@@ -48,7 +45,7 @@
             class="btn btn-success"
             :class="{ disabled: !profileURL }"
           >
-          {{ $t("settings.addCharacter") }}
+            {{ $t("settings.addCharacter") }}
           </button>
           <br /><br />
 
@@ -76,10 +73,7 @@
                   – {{ item.lodestoneData.Character.World }}
                   <br />
                   <span
-                    v-if="
-                      this.updating == item.lodestoneData.Character.ID ||
-                      this.$store.getters.characterOutOfDate(i)
-                    "
+                    v-if="this.updating == item.lodestoneData.Character.ID || this.$store.getters.characterOutOfDate(i)"
                     class="text-info fw-light"
                   >
                     <div class="spinner-border spinner-border-sm" role="status"></div>
@@ -88,10 +82,7 @@
                   <span v-else class="text-muted fw-light">
                     {{ $t("settings.lastUpdated", { time: lastUpdatedAt(item.updated) }) }}
                     <span
-                      v-if="
-                        !item.lodestoneData.Achievements ||
-                        item.lodestoneData.Achievements.length == 0
-                      "
+                      v-if="!item.lodestoneData.Achievements || item.lodestoneData.Achievements.length == 0"
                       class="text-warning"
                     >
                       <br />
@@ -114,7 +105,8 @@
               <a
                 class="text-secondary cursor-pointer tt"
                 :href="getLodestoneURL() + 'character/' + item.lodestoneData.Character.ID + '/'"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <i class="fa-fw fad fa-external-link"></i>
                 <span class="tt-text">{{ $t("shared.lodestone") }}</span>
@@ -222,23 +214,11 @@
           <div class="form-text">{{ $t("settings.patchNumbers.hint") }}</div>
           <br />
 
-          <button
-            v-if="updatingSettings"
-            type="button"
-            id="settings-save-btn"
-            class="btn btn-success"
-            disabled
-          >
+          <button v-if="updatingSettings" type="button" id="settings-save-btn" class="btn btn-success" disabled>
             <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             {{ $t("shared.updatingWait") }}
           </button>
-          <button
-            v-else
-            @click="updateSettings"
-            type="button"
-            id="settings-save-btn"
-            class="btn btn-success"
-          >
+          <button v-else @click="updateSettings" type="button" id="settings-save-btn" class="btn btn-success">
             {{ $t("settings.updateSettings") }}
           </button>
           <br /><br />
@@ -302,7 +282,7 @@ export default {
               type: "error",
               msg: this.$t("settings.message.settingsUpdateUnknownError"),
             };
-          };
+          }
         })
         .finally(() => {
           this.updatingSettings = false;
@@ -325,10 +305,7 @@ export default {
         .then((characterData) => {
           this.$store.commit("addCharacter", characterData);
 
-          if (
-            !characterData.lodestoneData.Achievements ||
-            characterData.lodestoneData.Achievements.length == 0
-          ) {
+          if (!characterData.lodestoneData.Achievements || characterData.lodestoneData.Achievements.length == 0) {
             this.error = {
               type: "warning",
               msg: this.$t("settings.message.characterAddedNotPublic", {

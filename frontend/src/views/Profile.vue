@@ -13,11 +13,7 @@
     <hr />
     <div class="row">
       <div class="col-lg d-none d-lg-block">
-        <img
-          id="character-portrait"
-          :src="this.$store.getters.character.Portrait"
-          :alt="$t('shared.portraitAlt')"
-        />
+        <img id="character-portrait" :src="this.$store.getters.character.Portrait" :alt="$t('shared.portraitAlt')" />
         <br />
         <div v-if="this.$store.getters.character.Bio != '-'" class="fst-italic text-break pt-2">
           “{{ this.$store.getters.character.Bio }}”

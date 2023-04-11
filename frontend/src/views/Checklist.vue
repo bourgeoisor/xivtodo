@@ -18,7 +18,7 @@
         :class="{ 'btn-outline-success': !showHidden, 'btn-success': showHidden }"
         @click="showHidden = !showHidden"
       >
-      {{ $t("shared.customize") }}
+        {{ $t("shared.customize") }}
       </button>
     </h1>
     <AlertMsg
@@ -26,11 +26,7 @@
       type="normal"
       :msg="$t('message.notSignedIn', { url: this.$store.state.env.VUE_APP_DISCORD_AUTH_URI })"
     />
-    <AlertMsg
-      v-else-if="!this.$store.getters.hasCharacter"
-      type="normal"
-      :msg="$t('message.noCharacters')"
-    />
+    <AlertMsg v-else-if="!this.$store.getters.hasCharacter" type="normal" :msg="$t('message.noCharacters')" />
     <hr />
     <h2>{{ $t("checklist.thingsToDo") }}</h2>
     <div class="row">
@@ -41,12 +37,7 @@
         </span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input
-            v-model="customWeekly"
-            type="text"
-            class="form-control"
-            :placeholder="$t('checklist.customWeekly')"
-          />
+          <input v-model="customWeekly" type="text" class="form-control" :placeholder="$t('checklist.customWeekly')" />
           <button
             class="btn btn-outline-success"
             :class="{ disabled: !customWeekly }"
@@ -54,7 +45,7 @@
             id="button-addon2"
             @click="addCustomWeekly"
           >
-          {{ $t("checklist.addCustomWeekly") }}
+            {{ $t("checklist.addCustomWeekly") }}
           </button>
         </div>
 
@@ -86,12 +77,7 @@
         </span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input
-            v-model="customDaily"
-            type="text"
-            class="form-control"
-            :placeholder="$t('checklist.customDaily')"
-          />
+          <input v-model="customDaily" type="text" class="form-control" :placeholder="$t('checklist.customDaily')" />
           <button
             class="btn btn-outline-success"
             :class="{ disabled: !customDaily }"
@@ -99,7 +85,7 @@
             id="button-addon2"
             @click="addCustomDaily"
           >
-          {{ $t("checklist.addCustomDaily") }}
+            {{ $t("checklist.addCustomDaily") }}
           </button>
         </div>
 
@@ -135,12 +121,7 @@
         <span class="fw-lighter text-muted">{{ $t("checklist.scratchpadDesc") }}</span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input
-            v-model="customAdhoc"
-            type="text"
-            class="form-control"
-            :placeholder="$t('checklist.customItem')"
-          />
+          <input v-model="customAdhoc" type="text" class="form-control" :placeholder="$t('checklist.customItem')" />
           <button
             class="btn btn-outline-success"
             :class="{ disabled: !customAdhoc }"
@@ -148,7 +129,7 @@
             id="button-addon2"
             @click="addCustomAdhoc"
           >
-          {{ $t("checklist.addCustomItem") }}
+            {{ $t("checklist.addCustomItem") }}
           </button>
         </div>
 
@@ -254,17 +235,18 @@ export default {
 
       if (days > 0 && showDays) {
         return (
-          this.$t("shared.time.daysShort", { days: days }) + " " +
-          this.$t("shared.time.hoursShort", { hours: hours })
+          this.$t("shared.time.daysShort", { days: days }) + " " + this.$t("shared.time.hoursShort", { hours: hours })
         );
       } else if (hours > 0) {
         return (
-          this.$t("shared.time.hoursShort", { hours: hours }) + " " +
+          this.$t("shared.time.hoursShort", { hours: hours }) +
+          " " +
           this.$t("shared.time.minutesShort", { minutes: minutes })
         );
       } else {
         return (
-          this.$t("shared.time.minutesShort", { minutes: minutes }) + " " +
+          this.$t("shared.time.minutesShort", { minutes: minutes }) +
+          " " +
           this.$t("shared.time.secondsShort", { seconds: seconds })
         );
       }

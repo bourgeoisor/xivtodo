@@ -298,7 +298,6 @@ export default {
     }, 1000 * 60); // 1 minute
   },
   unmounted() {
-    console.log("unmounted")
     clearInterval(this.intervalFunction);
   },
   computed: {

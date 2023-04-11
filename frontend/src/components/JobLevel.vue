@@ -15,22 +15,12 @@
       ><i :class="iconClass"></i>
     </span>
     <br />
-    <span
-      v-if="this.$store.getters.lodestoneData.Jobs[this.initial].Level == 0"
-      class="text-secondary"
-    >
-      -
-    </span>
-    <span
-      v-else-if="this.$store.getters.lodestoneData.Jobs[this.initial].Level == 90"
-      class="fw-bold"
-    >
+    <span v-if="this.$store.getters.lodestoneData.Jobs[this.initial].Level == 0" class="text-secondary">-</span>
+    <span v-else-if="this.$store.getters.lodestoneData.Jobs[this.initial].Level == 90" class="fw-bold">
       {{ this.$store.getters.lodestoneData.Jobs[this.initial].Level }}
     </span>
     <span
-      v-else-if="
-        this.$store.getters.lodestoneData.Jobs[this.initial].Level == 70 && this.initial == 'blu'
-      "
+      v-else-if="this.$store.getters.lodestoneData.Jobs[this.initial].Level == 70 && this.initial == 'blu'"
       class="fw-bold"
     >
       {{ this.$store.getters.lodestoneData.Jobs[this.initial].Level }}

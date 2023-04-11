@@ -16,11 +16,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          v-if="this.$route.name != 'Character'"
-          class="collapse navbar-collapse"
-          id="navbarSupportedContent"
-        >
+        <div v-if="this.$route.name != 'Character'" class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li v-if="this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/profile" class="nav-link" @click="collapseNav">
@@ -93,8 +89,7 @@
                 <span class="fa-fw fal fa-clock position-relative">
                   <span
                     v-if="
-                      this.$store.getters.isSignedIn &&
-                      this.$store.getters.latestCountdownSeen < news.latestCountdownID
+                      this.$store.getters.isSignedIn && this.$store.getters.latestCountdownSeen < news.latestCountdownID
                     "
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
                   >
@@ -114,10 +109,7 @@
                 <span class="d-inline d-lg-none">{{ $t("page.newsUpdates") }} </span>
                 <span class="fa-fw fal fa-bell position-relative">
                   <span
-                    v-if="
-                      this.$store.getters.isSignedIn &&
-                      this.$store.getters.latestNewsSeen < news.latestID
-                    "
+                    v-if="this.$store.getters.isSignedIn && this.$store.getters.latestNewsSeen < news.latestID"
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
                   >
                   </span>
@@ -143,10 +135,7 @@
                   </span>
                 </span>
               </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
-                aria-labelledby="collectionDropdown"
-              >
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="collectionDropdown">
                 <li>
                   <h6 class="dropdown-header">{{ $t("navbar.preferredLanguage") }}</h6>
                 </li>
@@ -184,7 +173,7 @@
                   </span>
                 </li>
                 <li v-else>
-                  <a class="dropdown-item" href="#" @click="changeLanguage('ja')">日本語 (仕掛品)</a>
+                  <a class="dropdown-item" href="#" @click="changeLanguage('ja')"> 日本語 (仕掛品) </a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
@@ -194,7 +183,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i class="fa-fw fal fa-comments-alt"></i> {{ $t("navbar.feedback")}}
+                    <i class="fa-fw fal fa-comments-alt"></i> {{ $t("navbar.feedback") }}
                   </a>
                 </li>
               </ul>
@@ -226,19 +215,13 @@
                   {{ $t("page.settings") }}
                 </span>
               </a>
-              <ul
-                class="dropdown-menu dropdown-menu-end dropdown-menu-dark"
-                aria-labelledby="navbarDropdown"
-              >
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
                 <div v-if="this.$store.getters.hasCharacter">
                   <li>
                     <h6 class="dropdown-header">{{ $t("navbar.changeActiveCharacter") }}</h6>
                   </li>
                   <li v-for="(item, i) of this.$store.getters.characters" :key="item.ID">
-                    <span
-                      v-if="i == this.$store.state.activeCharacterID"
-                      class="dropdown-item active"
-                    >
+                    <span v-if="i == this.$store.state.activeCharacterID" class="dropdown-item active">
                       <b>{{ item.lodestoneData.Character.Name }}</b>
                       – {{ item.lodestoneData.Character.World }}
                       <i class="fa-fw fal fa-check"></i>
@@ -252,9 +235,7 @@
                 </div>
                 <li>
                   <h6 class="dropdown-header">
-                    {{ this.$store.getters.discordUser.username }}#{{
-                      this.$store.getters.discordUser.discriminator
-                    }}
+                    {{ this.$store.getters.discordUser.username }}#{{ this.$store.getters.discordUser.discriminator }}
                   </h6>
                 </li>
                 <li>
@@ -328,9 +309,7 @@
     <div class="offcanvas-body">
       <div v-for="item in news.countdowns" :key="item.title">
         <h3>{{ item.title }}</h3>
-        <small v-if="item.end && new Date() / 1000 > item.end" class="text-danger">
-          This event has ended
-        </small>
+        <small v-if="item.end && new Date() / 1000 > item.end" class="text-danger">This event has ended </small>
         <small v-else-if="item.start && new Date() / 1000 < item.start" class="text-muted">
           Starting in
           <b class="text-info">

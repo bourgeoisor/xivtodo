@@ -3,9 +3,7 @@
     <h1>
       {{ $t("page.encounters") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
-        {{
-          $t("pageHeader.clearedByCharacter", { characterName: this.$store.getters.character.Name })
-        }}
+        {{ $t("pageHeader.clearedByCharacter", { characterName: this.$store.getters.character.Name }) }}
         <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
           <div class="spinner-border spinner-border-sm" role="status"></div>
           {{ $t("message.updatingCharacter") }}
@@ -20,56 +18,22 @@
       type="normal"
       :msg="$t('message.notSignedIn', { url: this.$store.state.env.VUE_APP_DISCORD_AUTH_URI })"
     />
-    <AlertMsg
-      v-else-if="!this.$store.getters.hasCharacter"
-      type="normal"
-      :msg="$t('message.noCharacters')"
-    />
+    <AlertMsg v-else-if="!this.$store.getters.hasCharacter" type="normal" :msg="$t('message.noCharacters')" />
     <hr />
     <div class="row">
       <h2>{{ $t("shared.expansion.arr") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.dungeons')"
-          :duties="db.arrDungeons"
-          type="dngs"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.dungeons')" :duties="db.arrDungeons" type="dngs" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.trials')"
-          :duties="db.arrTrials"
-          type="trials"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heTrials')"
-          :duties="db.arrTrialsEx"
-          type="high"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.trials')" :duties="db.arrTrials" type="trials" :showTotal="true" />
+        <DutyList :title="$t('encounters.heTrials')" :duties="db.arrTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.raids')"
-          :duties="db.arrRaids"
-          type="raids"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heRaids')"
-          :duties="db.arrRaidsSavUlt"
-          type="high"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.guildhests')"
-          :duties="db.arrGuildhests"
-          type="guild"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.raids')" :duties="db.arrRaids" type="raids" :showTotal="true" />
+        <DutyList :title="$t('encounters.heRaids')" :duties="db.arrRaidsSavUlt" type="high" :showTotal="true" />
+        <DutyList :title="$t('encounters.guildhests')" :duties="db.arrGuildhests" type="guild" :showTotal="true" />
       </div>
     </div>
     <hr />
@@ -77,40 +41,15 @@
       <h2>{{ $t("shared.expansion.hw") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.dungeons')"
-          :duties="db.hwDungeons"
-          type="dngs"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.dungeons')" :duties="db.hwDungeons" type="dngs" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.trials')"
-          :duties="db.hwTrials"
-          type="trials"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heTrials')"
-          :duties="db.hwTrialsEx"
-          type="high"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.trials')" :duties="db.hwTrials" type="trials" :showTotal="true" />
+        <DutyList :title="$t('encounters.heTrials')" :duties="db.hwTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.raids')"
-          :duties="db.hwRaids"
-          type="raids"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heRaids')"
-          :duties="db.hwRaidsSavUlt"
-          type="high"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.raids')" :duties="db.hwRaids" type="raids" :showTotal="true" />
+        <DutyList :title="$t('encounters.heRaids')" :duties="db.hwRaidsSavUlt" type="high" :showTotal="true" />
       </div>
     </div>
     <hr />
@@ -118,46 +57,16 @@
       <h2>{{ $t("shared.expansion.sb") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.dungeons')"
-          :duties="db.sbDungeons"
-          type="dngs"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.dungeons')" :duties="db.sbDungeons" type="dngs" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.trials')"
-          :duties="db.sbTrials"
-          type="trials"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heTrials')"
-          :duties="db.sbTrialsEx"
-          type="high"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.trials')" :duties="db.sbTrials" type="trials" :showTotal="true" />
+        <DutyList :title="$t('encounters.heTrials')" :duties="db.sbTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.raids')"
-          :duties="db.sbRaids"
-          type="raids"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heRaids')"
-          :duties="db.sbRaidsSavUlt"
-          type="high"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.exploratory')"
-          :duties="db.sbExploratory"
-          type="expl"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.raids')" :duties="db.sbRaids" type="raids" :showTotal="true" />
+        <DutyList :title="$t('encounters.heRaids')" :duties="db.sbRaidsSavUlt" type="high" :showTotal="true" />
+        <DutyList :title="$t('encounters.exploratory')" :duties="db.sbExploratory" type="expl" :showTotal="true" />
       </div>
     </div>
     <hr />
@@ -165,46 +74,16 @@
       <h2>{{ $t("shared.expansion.shb") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.dungeons')"
-          :duties="db.shbDungeons"
-          type="dngs"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.dungeons')" :duties="db.shbDungeons" type="dngs" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.trials')"
-          :duties="db.shbTrials"
-          type="trials"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heTrials')"
-          :duties="db.shbTrialsEx"
-          type="high"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.trials')" :duties="db.shbTrials" type="trials" :showTotal="true" />
+        <DutyList :title="$t('encounters.heTrials')" :duties="db.shbTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.raids')"
-          :duties="db.shbRaids"
-          type="raids"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heRaids')"
-          :duties="db.shbRaidsSavUlt"
-          type="high"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.exploratory')"
-          :duties="db.shbExploratory"
-          type="expl"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.raids')" :duties="db.shbRaids" type="raids" :showTotal="true" />
+        <DutyList :title="$t('encounters.heRaids')" :duties="db.shbRaidsSavUlt" type="high" :showTotal="true" />
+        <DutyList :title="$t('encounters.exploratory')" :duties="db.shbExploratory" type="expl" :showTotal="true" />
       </div>
     </div>
     <hr />
@@ -212,46 +91,16 @@
       <h2>{{ $t("shared.expansion.ew") }}</h2>
 
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.dungeons')"
-          :duties="db.ewDungeons"
-          type="dngs"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.vcDungeons')"
-          :duties="db.ewVariantsCriterions"
-          type="vc"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.dungeons')" :duties="db.ewDungeons" type="dngs" :showTotal="true" />
+        <DutyList :title="$t('encounters.vcDungeons')" :duties="db.ewVariantsCriterions" type="vc" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.trials')"
-          :duties="db.ewTrials"
-          type="trials"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heTrials')"
-          :duties="db.ewTrialsEx"
-          type="high"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.trials')" :duties="db.ewTrials" type="trials" :showTotal="true" />
+        <DutyList :title="$t('encounters.heTrials')" :duties="db.ewTrialsEx" type="high" :showTotal="true" />
       </div>
       <div class="col-12 col-lg-4">
-        <DutyList
-          :title="$t('encounters.raids')"
-          :duties="db.ewRaids"
-          type="raids"
-          :showTotal="true"
-        />
-        <DutyList
-          :title="$t('encounters.heRaids')"
-          :duties="db.ewRaidsSavUlt"
-          type="high"
-          :showTotal="true"
-        />
+        <DutyList :title="$t('encounters.raids')" :duties="db.ewRaids" type="raids" :showTotal="true" />
+        <DutyList :title="$t('encounters.heRaids')" :duties="db.ewRaidsSavUlt" type="high" :showTotal="true" />
       </div>
     </div>
   </div>

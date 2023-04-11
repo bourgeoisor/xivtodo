@@ -4,7 +4,9 @@
       {{ $t("page.mounts") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
         {{
-          $t("pageHeader.obtainedByCharacter", { characterName: this.$store.getters.character.Name })
+          $t("pageHeader.obtainedByCharacter", {
+            characterName: this.$store.getters.character.Name,
+          })
         }}
         <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
           <div class="spinner-border spinner-border-sm" role="status"></div>
@@ -20,11 +22,7 @@
       type="normal"
       :msg="$t('message.notSignedIn', { url: this.$store.state.env.VUE_APP_DISCORD_AUTH_URI })"
     />
-    <AlertMsg
-      v-else-if="!this.$store.getters.hasCharacter"
-      type="normal"
-      :msg="$t('message.noCharacters')"
-    />
+    <AlertMsg v-else-if="!this.$store.getters.hasCharacter" type="normal" :msg="$t('message.noCharacters')" />
     <hr />
     <br />
     <div class="row">
@@ -48,9 +46,7 @@
             <th scope="row"><img :src="item.icon" /></th>
             <td>{{ item.name }}</td>
             <td class="d-none d-md-table-cell">
-              <span v-for="source of item.sources" :key="source.text">
-                {{ source.text }}<br />
-              </span>
+              <span v-for="source of item.sources" :key="source.text">{{ source.text }}<br /> </span>
             </td>
             <td>{{ item.patch }}</td>
           </tr>

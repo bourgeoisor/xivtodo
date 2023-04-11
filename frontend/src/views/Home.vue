@@ -1,12 +1,7 @@
 <template>
   <div>
     <div class="px-4 py-4 my-4 text-center">
-      <img
-        class="d-block mx-auto mb-4"
-        src="@/assets/img/brand.png"
-        alt="XIV ToDo branding"
-        width="300"
-      />
+      <img class="d-block mx-auto mb-4" src="@/assets/img/brand.png" alt="XIV ToDo branding" width="300" />
       <h1 class="visually-hidden">XIV ToDo</h1>
       <div class="container col-lg-6 mx-auto">
         <p class="lead mb-4">
@@ -24,11 +19,7 @@
                 {{ $t("home.signInDiscord") }}
               </button>
             </a>
-            <button
-              type="button"
-              class="btn btn-outline-secondary btn-lg px-4"
-              @click="goto('features')"
-            >
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="goto('features')">
               {{ $t("home.learnMore") }}
             </button>
           </template>
@@ -140,14 +131,8 @@
           <h1 class="pb-2 border-bottom mb-3">{{ $t("home.about.header") }}</h1>
           <p class="lead text-justify">
             <i18n-t keypath="home.about.text">
-              <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer"
-                >Olivier Bourgeois</a
-              >
-              <a
-                href="https://forms.gle/2t5nLB28xDyi3Tn6A"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer">Olivier Bourgeois</a>
+              <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
                 {{ $t("home.about.contact") }}
               </a>
             </i18n-t>

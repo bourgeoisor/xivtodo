@@ -26,10 +26,7 @@
 
     <span v-if="showHidden" class="d-flex justify-content-between align-items-center">
       <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
-        <i
-          class="fa-fw fad fa-grip-lines cursor-grab d-none d-md-inline"
-          :title="$t('shared.dragToReorder')"
-        ></i>
+        <i class="fa-fw fad fa-grip-lines cursor-grab d-none d-md-inline" :title="$t('shared.dragToReorder')"></i>
         &nbsp;
         {{ item.name }}
       </span>

@@ -4,7 +4,9 @@
       {{ $t("page.questlines") }}
       <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
         {{
-          $t("pageHeader.clearedByCharacter", 2, { characterName: this.$store.getters.character.Name })
+          $t("pageHeader.clearedByCharacter", 2, {
+            characterName: this.$store.getters.character.Name,
+          })
         }}
         <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
           <div class="spinner-border spinner-border-sm" role="status"></div>
@@ -20,11 +22,7 @@
       type="normal"
       :msg="$t('message.notSignedIn', { url: this.$store.state.env.VUE_APP_DISCORD_AUTH_URI })"
     />
-    <AlertMsg
-      v-else-if="!this.$store.getters.hasCharacter"
-      type="normal"
-      :msg="$t('message.noCharacters')"
-    />
+    <AlertMsg v-else-if="!this.$store.getters.hasCharacter" type="normal" :msg="$t('message.noCharacters')" />
     <hr />
     <div class="row">
       <h2>{{ $t("questlines.stories") }}</h2>

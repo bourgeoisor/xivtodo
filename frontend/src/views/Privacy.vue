@@ -1,3 +1,4 @@
+<!-- eslint-disable prettier/prettier -->
 <template>
   <div class="container">
     <h1>{{ $t("page.privacy") }}</h1>
