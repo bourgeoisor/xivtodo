@@ -1,21 +1,21 @@
 # XIV ToDo
 
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fxivtodo.com)
-![Discord](https://img.shields.io/discord/946996969354690600?label=discord)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fxivtodo.com)](https://xivtodo.com/)
+[![Discord](https://img.shields.io/discord/946996969354690600?label=discord)](https://discord.gg/zfzhKhG3zj)
 [![ko-fi](https://img.shields.io/badge/buy%20me%20a%20coffee!-donate-success)](https://ko-fi.com/V7V569BFY)
-![fr translation](https://img.shields.io/badge/dynamic/json?color=blue&label=fr&style=flat&logo=crowdin&query=%24.progress.1.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
-![de translation](https://img.shields.io/badge/dynamic/json?color=blue&label=de&style=flat&logo=crowdin&query=%24.progress.0.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
-![ja translation](https://img.shields.io/badge/dynamic/json?color=blue&label=ja&style=flat&logo=crowdin&query=%24.progress.2.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)
+[![fr translation](https://img.shields.io/badge/dynamic/json?color=blue&label=fr&style=flat&logo=crowdin&query=%24.progress.1.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)](https://crowdin.com/project/xiv-todo)
+[![de translation](https://img.shields.io/badge/dynamic/json?color=blue&label=de&style=flat&logo=crowdin&query=%24.progress.0.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)](https://crowdin.com/project/xiv-todo)
+[![ja translation](https://img.shields.io/badge/dynamic/json?color=blue&label=ja&style=flat&logo=crowdin&query=%24.progress.2.data.translationProgress&url=https%3A%2F%2Fbadges.awesome-crowdin.com%2Fstats-15746609-575411.json)](https://crowdin.com/project/xiv-todo)
 
-[XIV ToDo](https://xivtodo.com) provides useful dashboards, tailored checklists and tools for Final Fantasy XIV; whether you are a new player to the game or more experienced. In its current form, XIV ToDo offers customizable daily and weekly checklists as well as automated completion trackers of duties and questlines, with much more to come! 
+[XIV ToDo](https://xivtodo.com) provides useful dashboards, tailored checklists and tools for Final Fantasy XIV. Whether you are a new player to the game or more experienced, you will find it useful! In its current form, XIV ToDo offers customizable daily and weekly checklists as well as automated completion trackers of emcounters and questlines, with much more to come!
 
 ## Features
 
-- Support for adding multiple characters;
-- Profile containing publicly accessible Lodestone information;
-- List of all duties up-to-date with automatic character completion status;
-- List of important questlines with automatic character completion status;
-- Comprehensive list of dailies and weeklies with per-character completion and customization;
+- Support for adding multiple characters.
+- Profile containing publicly accessible Lodestone information.
+- List of all encounters up-to-date with automatic character completion status.
+- List of all important questlines with automatic character completion status.
+- Comprehensive list of dailies and weeklies with per-character completion and customization.
 
 ## Screenshots
 
@@ -25,44 +25,61 @@
 
 ### Frontend
 
-The frontend requires `node v16` as well as `npm` installed.
+1. Make sure the following requirements are installed:
+   - NodeJS 16+
+   - npm
 
-To install the required dependencies (including VueJS), run the following from the `xivtodo` directory:
+2. Clone the repository:
+   ```sh
+   git clone https://github.com/bourgeoisor/xivtodo
+   cd xivtodo/frontend/
+   ```
+
+3. Fetch dependencies:
+   ```sh
+   npm install
+   ```
+
+4. Run one of the following commands:
+   ```sh
+   npm run serve # serve the frontend locally
+   npm run build # built the dist directory
+   npm run lint # lint the frontend
+   vue ui # open vue's interactive ui
+   ```
+
+By default, the frontend will attempt to use a local backend (`localhost:8181`). To develop against the production backend, modify the following environment variable in the `.env` file before serving:
+```sh
+VUE_APP_BACKEND_API_URI=https://api.xivtodo.com
 ```
-npm install
-```
 
-The following commands then becomes available:
-```
-# Compiles and hot-reloads for development
-npm run serve
-
-# Compiles and minifies for production
-npm run build 
-
-# Lints and fixes files
-npm run lint
-
-# Runs Vue.js' UI
-vue ui
-```
+**Note**: With that setup, you will not be able to sign in with Discord due to security policies. It is recommended to run both the frontend and backend locally.
 
 ### Backend
 
-The backend requires `go v1.20`.
+1. Make sure the following requirements are installed:
+   - Go 1.20+
 
-The following environment variables are required:
-```
-GOOGLE_APPLICATION_CREDENTIALS=
-DISCORD_CLIENT_SECRET=
-DISCORD_REDIRECT_URI=
-```
+2. Clone the repository:
+   ```sh
+   git clone https://github.com/bourgeoisor/xivtodo
+   cd xivtodo/backend/
+   ```
+
+3. Fetch dependencies:
+   ```sh
+   go mod
+   ```
+
+4. Set the following environment variables:
+   ```
+   GOOGLE_APPLICATION_CREDENTIALS=backend-sa.json # Google Cloud service account key
+   DISCORD_CLIENT_SECRET=<discord_client_secret>
+   DISCORD_REDIRECT_URI=http://localhost:8080/auth
+   ```
+
+**Note**: As seen by the environment variables, running the backend locally requires both a Discord application client secret as well as a Google Cloud service account with permissions to a Firestore database. Ideally, it would be possible to run the backend with an internal mock database and a mock Discord sign-in to avoid those requirements.
 
 ## Contributing
 
 Contributions are welcome and appreciated. Simply open up a new issue, or fork the repository to open up a new pull request against the upstream main branch.
-
----
-
-FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.<br />
-FINAL FANTASY XIV © SQUARE ENIX CO., LTD.
