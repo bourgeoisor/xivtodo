@@ -40,8 +40,8 @@
   "message": {
     "backendUnavailable": "XIV ToDo ist momentan nicht erreichbar. Versuche es später noch einmal, oder schau auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> nach einem Statusupdate.",
     "signingDiscord": "Anmelden mit Discord...",
-    "signingUnauthorizedError": "XIV ToDo was unable to authenticate with Discord. Make sure you are using valid Discord credentials.",
-    "signingUnknownError": "XIV ToDo was unable to reach Discord. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
+    "signingUnauthorizedError": "XIV ToDo konnte nicht von Discord authentifiziert werden. Stelle sicher, dass du gültige Discord Zugangsdaten verwendest.",
+    "signingUnknownError": "XIV ToDo konnte Discord nicht erreichen. Versuche es später noch einmal oder schaue für ein eventuelles Statusupdate auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> vorbei.",
     "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
     "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "notSignedIn": "Keine Charaktere gefunden. Du kannst dich <a href='{url}' class='alert-link'>mit Discord anmelden</a>, um diese hinzuzufügen.",
@@ -95,17 +95,17 @@
   },
   "help": {
     "discordSignIn": {
-      "header": "Discord sign-in",
-      "text": "To use XIV ToDo, you must sign in with a Discord account. This is an official authentication integration provided by Discord and is very secure, since no confidential information is ever stored."
+      "header": "Discord-Anmeldung",
+      "text": "Um XIV ToDo nutzen zu können, musst du dich mit einem Discord-Account anmelden. Die offizielle von Discord bereitgestellte Authentifizierungsintegration ist sehr sicher, da keine vertraulichen Informationen auf unserer Seite gespeichert werden."
     },
     "addingCharacters": {
-      "header": "Adding characters",
-      "text1": "To add one of your characters, you first find its Lodestone URL. You can find it by logging into {0} and searching for your character profile. Your Lodestone URL will look similar to this example:",
-      "text2": "Once you have found your profile URL, you can input it in the {0} page and then click the {1} button. You can add as many as 8 characters, and switch between them at any time using the dropdown at the end of the main navigation bar."
+      "header": "Charaktere hinzufügen",
+      "text1": "Um einen deiner Charaktere hinzuzufügen, benötigst du dessen Lodestone-URL, diese kannst du finden, indem du dich im {0} anmeldest und nach deinem Charakterprofil suchst. Die benötigte URL sieht dann so ähnlich wie das folgende Beispiel aus:",
+      "text2": "Sobald du deine Profil-URL gefunden hast, kannst du diese in den {0} über die Schaltfläche {1} einbinden. Bis zu 8 Charaktere können hinzugefügt werden, zwischen diesen kannst du jederzeit über das Dropdown-Menu am Ende der Hauptnavigationsleiste wechseln."
     },
     "freeTrialCharacters": {
-      "header": "Free trial characters",
-      "text": "Free trial characters are supported in XIV ToDo and can be added, but since the Lodestone privacy settings are unavailable on the free trial, the automatic completion tracker will not work for those characters."
+      "header": "Charaktere der kostenlosen Testversion",
+      "text": "Charaktere aus der kostenlosen Testversion werden in XIV ToDo zwar unterstützt und können auch hinzugefügt werden, jedoch sind deren Privatspähre-Einstellungen im Lodestone nicht verfügbar. Dementsprechend wird der automatische Vervollständigungstracker für diese nicht funktionieren."
     },
     "enablingPublicAchievements": {
       "header": "Enabling public achievements",
