@@ -289,11 +289,11 @@
       "label": "Inhaltsspoiler",
       "option0": "Blur out non-completed story-related content",
       "option1": "Blur out all story-related content",
-      "option2": "Show all content",
+      "option2": "Alle Inhalte anzeigen",
       "hint": "Präferenz beim Verstecken potenzieller Spoiler."
     },
     "patchNumbers": {
-      "label": "Patch numbers",
+      "label": "Patch Nummer",
       "option0": "Show patch numbers for blurred out content",
       "option1": "Show patch numbers for non-completed content",
       "option2": "Always show patch numbers",
