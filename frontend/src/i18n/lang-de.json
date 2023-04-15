@@ -126,12 +126,12 @@
       "stateClearedVerified": "Your active character has cleared this encounter (verified).",
       "stateCleared": "Your active character has cleared this encounter.",
       "stateUnknown": "Your active character's current achievements cannot determine encounter clear.",
-      "stateNotCleared": "Your active character has not cleared this encounter yet."
+      "stateNotCleared": "Dein aktiver Charakter hat diesen Inhalt noch nicht beendet."
     },
     "otherQuestions": {
-      "header": "Other questions",
-      "text": "Contact me {0}, on {1} or on {2} and I will reply as soon as possible.",
-      "textHere": "here"
+      "header": "Weitere Fragen",
+      "text": "Kontaktiere mich {0}, auf {1} oder auf {2} und ich werde so bald wie möglich antworten.",
+      "textHere": "hier"
     }
   },
   "profile": {
