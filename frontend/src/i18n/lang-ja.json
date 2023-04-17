@@ -1,49 +1,49 @@
 {
   "page": {
     "home": "ホーム",
-    "homeTitle": "Dashboards, checklists, and tools for FFXIV",
+    "homeTitle": "FF14のダッシュボード、チェックリスト、ツール",
     "profile": "プロフィール",
     "encounters": "コンテンツ",
     "questlines": "クエスト",
     "challenges": "チャレンジ",
     "collection": "コレクション",
     "achievements": "アチーブメント",
-    "titles": "Titles",
+    "titles": "タイトル",
     "minions": "ミニオン",
     "mounts": "マウント",
     "checklist": "チェックリスト",
-    "settings": "Settings",
+    "settings": "設定",
     "signOut": "ログアウト",
-    "about": "About",
+    "about": "その他",
     "help": "ヘルプ",
     "privacy": "プライバシー",
-    "contact": "Contact",
-    "donate": "Support XIV ToDo",
+    "contact": "お問い合わせ",
+    "donate": "XIV ToDoを支援する",
     "twitter": "Twitter",
     "github": "GitHub",
     "discord": "Discord",
-    "countdowns": "Countdowns",
-    "newsUpdates": "News & Updates",
+    "countdowns": "カウントダウン",
+    "newsUpdates": "ニュース&アップデート",
     "language": "言語"
   },
   "navbar": {
-    "changeActiveCharacter": "Active character",
+    "changeActiveCharacter": "アクティブなキャラクター",
     "preferredLanguage": "好みの言語",
     "feedback": "フィードバック"
   },
   "pageHeader": {
-    "ofCharacter": "of {characterName}",
-    "clearedByCharacter": "cleared by {characterName}",
+    "ofCharacter": "{characterName}",
+    "clearedByCharacter": "{characterName} がクリアしました",
     "forCharacter": "for {characterName}",
-    "obtainedByCharacter": "obtained by {characterName}"
+    "obtainedByCharacter": "{characterName} が取得"
   },
   "message": {
     "backendUnavailable": "XIV ToDo is currently unreachable. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
-    "signingDiscord": "Signing in with Discord...",
-    "signingUnauthorizedError": "XIV ToDo was unable to authenticate with Discord. Make sure you are using valid Discord credentials.",
+    "signingDiscord": "Discordでサインイン中...",
+    "signingUnauthorizedError": "XIV ToDoはDiscordで認証できませんでした。有効なDiscord認証情報を使用していることを確認してください。",
     "signingUnknownError": "XIV ToDo was unable to reach Discord. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
-    "updatingCharacter": "Updating character data, this may take a minute...",
-    "achievementsNotPublic": "The achievements for this character are not set to public in Lodestone.",
+    "updatingCharacter": "キャラクターデータを更新しています。数分かかる場合があります...",
+    "achievementsNotPublic": "このキャラクターの実績はLodestoneで公開されていません。",
     "notSignedIn": "No characters found. You can <a href='{url}' class='alert-link'>sign in with Discord</a> to add them.",
     "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
   },
@@ -55,11 +55,11 @@
   },
   "home": {
     "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV. Whether you are a new player to the game or more experienced, there is something for everyone! In its current form, it offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come.",
-    "addCharacter": "Add a character",
-    "learnMore": "Learn more",
-    "viewProfile": "View your profile",
-    "viewGitHub": "View project on GitHub",
-    "signInDiscord": "Sign in with Discord",
+    "addCharacter": "キャラクターを追加する",
+    "learnMore": "もっと詳しく",
+    "viewProfile": "あなたのプロフィールを見る",
+    "viewGitHub": "GitHubでプロジェクトを表示",
+    "signInDiscord": "Discordでログイン",
     "features": "Features",
     "feature": {
       "encountersQuestlines": {
@@ -71,7 +71,7 @@
         "description": "Add your character to quickly visualize which content you've cleared and which ones are still pending."
       },
       "dailiesWeeklies": {
-        "title": "Dailies & weeklies",
+        "title": "デイリー&ウィークリー",
         "description": "Comprehensive list of daily and weekly objectives which can be ticked off and get automatically cleared on reset."
       },
       "altFriendly": {
@@ -79,7 +79,7 @@
         "description": "Support for adding as many alt characters as you need, with all features being kept character-specific."
       },
       "spoilerFree": {
-        "title": "Spoiler-free",
+        "title": "ネタバレなし",
         "description": "Main story content is blurred by default until they are cleared to avoid accidental spoilers."
       },
       "customizable": {
@@ -88,7 +88,7 @@
       }
     },
     "about": {
-      "header": "About XIV ToDo",
+      "header": "XIV ToDoについて",
       "text": "XIV ToDo is a project started in mid-2021 by {0}, a software developer from Canada. After realizing that there were no methods for quickly visualizing which of the numerous encounters and questlines that had been cleared by my characters, the idea had sparked. XIV ToDo is and remains free for everyone to enjoy. You can {1} with any question or feedback. Thank you so much for using and supporting this project!",
       "contact": "contact me"
     }
@@ -135,8 +135,8 @@
     }
   },
   "profile": {
-    "characterInfo": "Character Information",
-    "jobLevels": "Job Levels",
+    "characterInfo": "キャラクター情報",
+    "jobLevels": "ジョブのレベル",
     "world": "ワールド",
     "raceClan": "種族/部族",
     "nameday": "誕生日",
@@ -147,11 +147,11 @@
     "playingSince": "Playing since",
     "playingSinceAlt": "May not be accurate for legacy characters",
     "achievements": "アチーブメント",
-    "tanks": "Tanks",
-    "healers": "Healers",
+    "tanks": "タンク",
+    "healers": "ヒーラー",
     "dps": "DPS",
-    "crafters": "Crafters",
-    "gatherers": "Gatherers",
+    "crafters": "クラフター",
+    "gatherers": "ギャザラー",
     "exploratoryMissions": "Exploratory missions",
     "elementalLevel": "エレメンタルレベル",
     "resistanceRank": "レジスタンスランク",
@@ -205,41 +205,41 @@
     "vcDungeons": "V&C Dungeons",
     "trials": "討伐・討滅戦",
     "raids": "レイド",
-    "heTrials": "High-end Trials",
-    "heRaids": "High-end Raids",
+    "heTrials": "極",
+    "heRaids": "零式",
     "exploratory": "Exploratory Missions",
     "guildhests": "ギルドオーダー"
   },
   "questlines": {
     "stories": "Stories",
     "jobsRolesRelics": "Jobs, Roles, & Relics",
-    "mainScenarioQuests": "Main Scenario Quests",
-    "sideStoryQuests": "Side Story Quests",
+    "mainScenarioQuests": "メインクエスト",
+    "sideStoryQuests": "サイドストーリークエスト",
     "encounterQuests": "Encounter Quests",
     "relicQuests": "Relic Quests",
-    "tribalQuests": "Tribal Quests",
+    "tribalQuests": "友好部族クエスト",
     "alliedTribalQuests": "Allied Tribal Quests",
-    "customDeliveryQuests": "Custom Delivery Quests",
-    "jobQuests": "Job Quests",
-    "combatJobQuests": "Combat Job Quests",
-    "gathererJobQuests": "Gatherer Job Quests",
-    "crafterJobQuests": "Crafter Job Quests",
-    "roleQuestsShB": "Role Quests (ShB)",
-    "roleQuestsEW": "Role Quests (EW)",
+    "customDeliveryQuests": "お得意様取引",
+    "jobQuests": "ジョブクエスト",
+    "combatJobQuests": "戦闘ジョブクエスト",
+    "gathererJobQuests": "ギャザラークエスト",
+    "crafterJobQuests": "クラフタークエスト",
+    "roleQuestsShB": "ロールクエスト(漆黒)",
+    "roleQuestsEW": "ロールクエスト(暁月)",
     "crystallineMeanQuests": "Crystalline Mean Quests",
     "studiumDeliveryQuests": "Studium Delivery Quests"
   },
   "challenges": {
-    "deepDungeons": "Deep Dungeons",
+    "deepDungeons": "ディープダンジョン",
     "potd": "死者の宮殿",
-    "potdSolo": "Palace of the Dead (Solo)",
+    "potdSolo": "死者の宮殿(ソロ)",
     "hoh": "アメノミハシラ",
-    "hohSolo": "Heaven-on-High (Solo)",
+    "hohSolo": "アメノミハシラ(ソロ)",
     "eo": "オルト・エウレカ",
-    "eoSolo": "Eureka Orthos (Solo)",
+    "eoSolo": "オルト・エウレカ(ソロ)",
     "exploration": "Exploration",
     "exploratoryMissions": "Exploratory Missions",
-    "sightseeingLogs": "Sightseeing Logs",
+    "sightseeingLogs": "探検手帳",
     "miscellaneous": "Miscellaneous",
     "sharedFateShB": "Shared Fate (ShB)",
     "sharedFateEW": "Shared Fate (EW)",
@@ -248,19 +248,19 @@
     "variantDungeons": "Variant Dungeons",
     "treasureHuntClears": "Treasure Hunt Clears",
     "trusts": "Trusts",
-    "islandSanctuary": "Island Sanctuary",
-    "achievementFates": "Achievement FATEs",
-    "blueMage": "Blue Mage",
+    "islandSanctuary": "無人島開拓",
+    "achievementFates": "アチーブメントFATE",
+    "blueMage": "青魔道士",
     "blueARR": "BLU Encounters (ARR)",
     "blueHW": "BLU Encounters (HW)",
     "blueSB": "BLU Encounters (SB)",
-    "maskedCarnivale": "Masked Carnivale"
+    "maskedCarnivale": "マスクカーニバル"
   },
   "checklist": {
     "thingsToDo": "Things to do",
-    "weeklies": "Weeklies",
-    "dailies": "Dailies",
-    "scratchpad": "Scratchpad",
+    "weeklies": "ウィークリー",
+    "dailies": "デイリー",
+    "scratchpad": "メモ欄",
     "scratchpadDesc": "Checklist without deadlines",
     "scratchpadHelp": "Once you add checklist items, they will appear here.",
     "customWeekly": "Custom weekly",
@@ -270,25 +270,25 @@
     "addCustomDaily": "Add custom daily",
     "addCustomItem": "Add custom item",
     "untilReset": "{time} until reset",
-    "hiddenTasks": "1 hidden task | {count} hidden tasks"
+    "hiddenTasks": "1つの非表示タスク | {count} の非表示タスク"
   },
   "settings": {
-    "characters": "Characters",
-    "addNewCharacter": "Add a new character",
+    "characters": "キャラクター",
+    "addNewCharacter": "新しいキャラクターを追加する",
     "profileUrl": {
-      "label": "Profile URL",
+      "label": "プロフィール URL",
       "hint": "The URL for your character profile. You can find it in {0}."
     },
-    "addCharacter": "Add character",
+    "addCharacter": "キャラクターを追加する",
     "myCharacters": "My characters",
-    "myCharactersHelp": "Once you add your characters, they will appear here.",
-    "characterNotPublic": "The achievements for this character are not set to public in Lodestone.",
-    "lastUpdated": "Last updated {time}",
-    "general": "General",
+    "myCharactersHelp": "キャラクターを追加するとここに表示されます。",
+    "characterNotPublic": "このキャラクターの実績はLodestoneで公開されていません。",
+    "lastUpdated": "最終更新: {time}",
+    "general": "一般",
     "contentSpoilers": {
-      "label": "Content spoilers",
-      "option0": "Blur out non-completed story-related content",
-      "option1": "Blur out all story-related content",
+      "label": "ネタバレあり",
+      "option0": "未クリアのストーリー関連コンテンツをぼかす",
+      "option1": "全てのストーリー関連コンテンツをぼかす",
       "option2": "Show all content",
       "hint": "Preference in hiding potential spoilers."
     },
@@ -318,16 +318,16 @@
   },
   "shared": {
     "lodestone": "Lodestone",
-    "hide": "Hide",
-    "show": "Show",
-    "remove": "Remove",
-    "update": "Update",
-    "customize": "Customize",
-    "dragToReorder": "Drag to reorder",
-    "countTotal": "{count} total",
-    "updatingWait": "Updating, please wait...",
-    "addingWait": "Adding, please wait...",
-    "portraitAlt": "Portrait of your character",
+    "hide": "非表示",
+    "show": "表示",
+    "remove": "削除",
+    "update": "更新",
+    "customize": "カスタマイズ",
+    "dragToReorder": "ドラッグして並べ替え",
+    "countTotal": "合計{count}",
+    "updatingWait": "更新中、しばらくお待ちください",
+    "addingWait": "追加中、お待ちください",
+    "portraitAlt": "あなたのキャラクターのポートレート",
     "expansion": {
       "arr": "新生エオルゼア",
       "hw": "蒼天のイシュガルド",
@@ -336,15 +336,15 @@
       "ew": "暁月のフィナーレ"
     },
     "time": {
-      "daysShort": "{days}d",
-      "hoursShort": "{hours}h",
-      "minutesShort": "{minutes}m",
-      "secondsShort": "{seconds}s",
-      "monthsAgo": "{months} months ago",
-      "daysAgo": "{days} days ago",
-      "hoursAgo": "{hours} hours ago",
-      "minutesAgo": "{minutes} minutes ago",
-      "coupleSecondsAgo": "a couple seconds ago"
+      "daysShort": "{days}日",
+      "hoursShort": "{hours}時",
+      "minutesShort": "{minutes}分",
+      "secondsShort": "{seconds}秒",
+      "monthsAgo": "{months} ヶ月前",
+      "daysAgo": "{days} 日前",
+      "hoursAgo": "{hours} 時間前",
+      "minutesAgo": "{minutes} 分前",
+      "coupleSecondsAgo": "数秒前"
     }
   }
 }
