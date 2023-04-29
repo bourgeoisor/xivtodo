@@ -22,14 +22,9 @@
             />
             <div class="form-text">
               <i18n-t keypath="settings.profileUrl.hint">
-                <a
-                  class="text-reset"
-                  :href="getLodestoneURL() + 'character/'"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a class="text-reset" :href="getLodestoneURL() + 'character/'" target="_blank" rel="noopener noreferrer"
+                  >Lodestone</a
                 >
-                  Lodestone
-                </a>
               </i18n-t>
             </div>
           </div>
