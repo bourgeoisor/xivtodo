@@ -311,7 +311,7 @@
         <h3>{{ item.title }}</h3>
         <small v-if="item.end && new Date() / 1000 > item.end" class="text-danger">This event has ended </small>
         <small v-else-if="item.start && new Date() / 1000 < item.start" class="text-muted">
-          Starting in
+          Available in
           <b class="text-info">
             <abbr :title="dateFormat(item.start)">{{ timeLeft(item.start) }}</abbr>
           </b>
@@ -324,17 +324,14 @@
         </small>
         <small v-else class="text-success">Currently available</small>
         <br />
-        <p>
-          <span v-html="item.description"></span>
-          <br />
-          <span v-if="item.url">
-            <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">
-              More details
-              <i class="fa-fw fal fa-external-link"></i>
-            </a>
-          </span>
-        </p>
-        <br />
+        <p v-if="item.description" v-html="item.description"></p>
+        <span v-if="item.url">
+          <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">
+            More details
+            <i class="fa-fw fal fa-external-link"></i>
+          </a>
+        </span>
+        <br /><br /><br />
       </div>
     </div>
   </div>
