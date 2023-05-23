@@ -2,24 +2,19 @@
   "latestCountdownID": 28,
   "countdowns": [
     {
-      "title": "Moogle Treasure Trove",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202304/y7377p4z7j",
-      "start": 1682323200,
-      "end": 1684836000
-    },
-    {
-      "title": "Letter from the Producer LIVE Part LXXVII",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/ac2f96f1405d7eb4de66ec8c5d521671ca4c2c7c",
-      "start": 1683889200,
-      "end": 1683900000
-    },
-    {
       "title": "Patch 6.4",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/7533e7a9b6b72d8e5aad3c1e7c4247967b3ee196",
       "start": 1684836000
     }
   ],
-  "latestID": 230321,
+  "latestID": 230523,
   "news": [
+    {
+      "ID": 230523,
+      "title": "Release of patch 6.4",
+      "published": "May 23, 2023",
+      "content": "Patch 6.4 is now live, and XIV ToDo has been updated with the new content! As always, let me know if you encounter any issues. Thank you for your support!"
+    },
     {
       "ID": 230321,
       "title": "XIV ToDo localization",
