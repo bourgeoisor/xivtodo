@@ -296,7 +296,7 @@
       "label": "Patch Nummer",
       "option0": "Show patch numbers for blurred out content",
       "option1": "Show patch numbers for non-completed content",
-      "option2": "Always show patch numbers",
+      "option2": "Patch-Nummern immer anzeigen",
       "hint": "Preference in showing patch numbers for content."
     },
     "updateSettings": "Einstellungen aktualisieren",
