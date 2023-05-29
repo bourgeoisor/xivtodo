@@ -297,7 +297,7 @@
       "option0": "Show patch numbers for blurred out content",
       "option1": "Show patch numbers for non-completed content",
       "option2": "Patch-Nummern immer anzeigen",
-      "hint": "Preference in showing patch numbers for content."
+      "hint": "Präferenz bei der Anzeige von Patch-Nummern für Inhalte."
     },
     "updateSettings": "Einstellungen aktualisieren",
     "achievementsNotPublic": "Errungenschaften sind nicht öffentlich",
