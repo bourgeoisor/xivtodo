@@ -120,7 +120,7 @@
     },
     "encounterQuestlineCompletion": {
       "header": "Abschluss von Inhalten und Auftragsreihen",
-      "text1": "Encounter and questlines are automatically marked as cleared once the relevant achievements have been obtained. Since encounters or questlines don't always map directly to in-game achievement, automated completion tracking is not always fully accurate. You can correct the tracking by manually marking the encounter or questline as cleared.",
+      "text1": "Inhalte und Auftragsreihen werden automatisch als beendet markiert, sobald die Errungenschaft dafür erreicht wurde. Da Inhalte oder Auftragsreihen nicht immer direkt im Spiel einer Errungenschaft zugeordnet sind, ist es nicht immer möglich eine genaue Verfolgung des Fortschritts zu gewährleisten. Du kannst dies korrigieren indem du manuell den Inhalt oder Auftragsreihe als beendet markierst.",
       "text2": "XIV ToDo überprüft die Errungenschaften deines Charakters vom Lodestone, welches ein paar Stunden dauern kann bis diese aktuell sind. Sobald eine neue Errungenschaft im Spiel erreicht wurde, kann es bis zu 48 Stunden dauern bis der Inhalt oder die Auftragsreihe auf XIV ToDo als beendet angezeigt wird. Du kannst deinen Charakter auch manuell synchronisieren in den {0}.",
       "textState": "Die folgenden vier Möglichkeiten gibt es für jeden Inhalt und Auftragsreihe:",
       "stateClearedVerified": "Dein aktiver Charakter hat diesen Inhalt beendet. (Verifiziert)",
