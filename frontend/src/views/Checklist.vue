@@ -108,7 +108,7 @@
           />
         </ul>
         <br />
-        <span class="d-none d-md-block">
+        <span v-if="this.$store.getters.checklistLenHiddens > 0" class="d-none d-md-block">
           <span class="text-muted fw-light float-end">
             {{ $tc("checklist.hiddenTasks", this.$store.getters.checklistLenHiddens) }}<br /><br />
           </span>
