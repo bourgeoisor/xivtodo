@@ -304,16 +304,16 @@
     "achievementsNotPublicAlt": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "message": {
       "settingsUpdated": "Einstellungen aktualisiert!",
-      "settingsUpdateClientError": "Could not update settings. You may have entered invalid settings.",
-      "settingsUpdateUnknownError": "Could not update settings. Please try again later.",
+      "settingsUpdateClientError": "Die Einstellungen konnten nicht aktualisiert werden. Möglicherweise wurden ungültige Angaben eingegeben.",
+      "settingsUpdateUnknownError": "Die Einstellungen konnten nicht aktualisiert werden. Bitte versuche es später erneut.",
       "characterAdded": "Charakter <b>{name}</b> hinzugefügt! Du hast nun Zugriff auf dein <a href='/profile' class='alert-link'>Profil</a> und alle Charakter-Checklisten.",
       "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://de.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend muss dein Charakter erneut aktualisiert werden.",
-      "characterAddNotFoundError": "The character profile you have entered does not exist.",
+      "characterAddNotFoundError": "Das eingegebene Charakterprofil existiert nicht.",
       "characterAddClientError": "Could not add character. You may have already added this character, or have reached the limit of characters.",
       "characterAddServerError": "Could not reach Lodestone. There may be an ongoing maintenance. Please try again later.",
       "characterRemoveConfirm": "Bist du sicher, dass du {name} entfernen möchtest?",
       "characterRemoved": "Charakter <b>{name}</b> entfernt!",
-      "characterRemoveError": "Character <b>{name}</b> could not be removed. Please try again later."
+      "characterRemoveError": "Der Charakter <b>{name}</b> konnte nicht entfernt werden. Bitte versuche es später erneut."
     }
   },
   "shared": {
