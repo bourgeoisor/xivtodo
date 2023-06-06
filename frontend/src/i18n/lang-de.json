@@ -80,7 +80,7 @@
       },
       "spoilerFree": {
         "title": "Spoiler-frei",
-        "description": "Die Inhalte der Hauptgeschichte sind standardmäßig verschwommen dargestellt, bis diese abgeschlossen wurden, um versehentliche Spoiler zu vermeiden."
+        "description": "Die Inhalte der Hauptgeschichte sind standardmäßig zensiert, bis diese abgeschlossen wurden, um versehentliche Spoiler zu vermeiden."
       },
       "customizable": {
         "title": "Anpassbar",
@@ -115,17 +115,17 @@
       "lodestonePublic": "Öffentlich"
     },
     "customizingCharacterChecklists": {
-      "header": "Customizing character checklists",
+      "header": "Anpassbare Charakter Checklisten",
       "text": "Daily and weekly checklists can be customized by clicking on the {0} button near the top right of the {1} page. From there, you can add custom entries as well as hide entries that you don't want to see. To stop customizing, simply click the {2} button again."
     },
     "encounterQuestlineCompletion": {
-      "header": "Encounter and questline completion",
-      "text1": "Encounter and questlines are automatically marked as cleared once the relevant achievements have been obtained. Since encounters or questlines don't always map directly directly to in-game achievement, automated completion tracking is not always fully accurate. You can correct the tracking by manually marking the encounter or questline as cleared.",
-      "text2": "XIV ToDo takes in-game achievements data from the Lodestone, which can take a few hours to be up-to-date. Once a new in-game achievement is obtained, it may take up to 48 hours for the relevant encounter or questline to be marked as complete in XIV ToDo. You can also manually initiate a refresh of the data from the {0} page.",
-      "textState": "The following are the four possible statuses for each encounter and questline:",
-      "stateClearedVerified": "Your active character has cleared this encounter (verified).",
-      "stateCleared": "Your active character has cleared this encounter.",
-      "stateUnknown": "Your active character's current achievements cannot determine encounter clear.",
+      "header": "Abschluss von Inhalten und Auftragsreihen",
+      "text1": "Inhalte und Auftragsreihen werden automatisch als beendet markiert, sobald die Errungenschaft dafür erreicht wurde. Da Inhalte oder Auftragsreihen nicht immer direkt im Spiel einer Errungenschaft zugeordnet sind, ist es nicht immer möglich eine genaue Verfolgung des Fortschritts zu gewährleisten. Du kannst dies korrigieren indem du manuell den Inhalt oder Auftragsreihe als beendet markierst.",
+      "text2": "XIV ToDo überprüft die Errungenschaften deines Charakters vom Lodestone, welches ein paar Stunden dauern kann bis diese aktuell sind. Sobald eine neue Errungenschaft im Spiel erreicht wurde, kann es bis zu 48 Stunden dauern bis der Inhalt oder die Auftragsreihe auf XIV ToDo als beendet angezeigt wird. Du kannst deinen Charakter auch manuell synchronisieren in den {0}.",
+      "textState": "Die folgenden vier Möglichkeiten gibt es für jeden Inhalt und Auftragsreihe:",
+      "stateClearedVerified": "Dein aktiver Charakter hat diesen Inhalt beendet. (Verifiziert)",
+      "stateCleared": "Dein aktiver Charakter hat diesen Inhalt beendet.",
+      "stateUnknown": "Deines aktiven Charakters derzeitige Errungenschaften konnten nicht genau ermittelt werden ob dieser Inhalt beendet wurde.",
       "stateNotCleared": "Dein aktiver Charakter hat diesen Inhalt noch nicht beendet."
     },
     "otherQuestions": {
@@ -287,15 +287,15 @@
     "general": "Allgemeines",
     "contentSpoilers": {
       "label": "Inhaltsspoiler",
-      "option0": "Blur out non-completed story-related content",
-      "option1": "Blur out all story-related content",
+      "option0": "Zensiere alle nicht abgeschlossenen Hauptszenario-Aufträge",
+      "option1": "Zensiere alle Hauptszenario-Aufträge",
       "option2": "Alle Inhalte anzeigen",
       "hint": "Präferenz beim Verstecken potenzieller Spoiler."
     },
     "patchNumbers": {
-      "label": "Patch Nummer",
-      "option0": "Show patch numbers for blurred out content",
-      "option1": "Show patch numbers for non-completed content",
+      "label": "Patch-Nummern",
+      "option0": "Zeige Patch-Nummern für zensierte Inhalte",
+      "option1": "Zeige Patch-Nummern für nicht abgeschlossene Inhalte",
       "option2": "Patch-Nummern immer anzeigen",
       "hint": "Präferenz bei der Anzeige von Patch-Nummern für Inhalte."
     },
@@ -309,8 +309,8 @@
       "characterAdded": "Charakter <b>{name}</b> hinzugefügt! Du hast nun Zugriff auf dein <a href='/profile' class='alert-link'>Profil</a> und alle Charakter-Checklisten.",
       "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://de.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend muss dein Charakter erneut aktualisiert werden.",
       "characterAddNotFoundError": "Das eingegebene Charakterprofil existiert nicht.",
-      "characterAddClientError": "Could not add character. You may have already added this character, or have reached the limit of characters.",
-      "characterAddServerError": "Could not reach Lodestone. There may be an ongoing maintenance. Please try again later.",
+      "characterAddClientError": "Der Charakter konnte nicht hinzugefügt werden. Möglicherweise ist dieser Charakter bereits hinzugefügt oder du hast das Limit erreicht.",
+      "characterAddServerError": "Der Lodestone konnte nicht erreicht werden. Möglicherweise ist dieser derzeit in Wartung. Bitte versuche es später erneut.",
       "characterRemoveConfirm": "Bist du sicher, dass du {name} entfernen möchtest?",
       "characterRemoved": "Charakter <b>{name}</b> entfernt!",
       "characterRemoveError": "Der Charakter <b>{name}</b> konnte nicht entfernt werden. Bitte versuche es später erneut."
