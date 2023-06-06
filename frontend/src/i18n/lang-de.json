@@ -54,7 +54,7 @@
     "buildDate": "{buildDate}"
   },
   "home": {
-    "intro": "XIV ToDo bietet nützliche Dashboards, maßgeschneiderte Checklisten und Tools für Final Fantasy XIV. Egal, ob du ein neuer Spieler oder schon etwas erfahrener bist - es gibt für jeden etwas! In seiner aktuellen Form bietet er anpassbare tägliche und wöchentliche Checklisten sowie automatisierte Abschlussverfolgung von Spielinhalten und Questlinien, später wird noch viel mehr dazukommen.",
+    "intro": "XIV ToDo bietet nützliche Dashboards, maßgeschneiderte Checklisten und Tools für Final Fantasy XIV. Egal, ob du ein neuer Spieler oder schon etwas erfahrener bist - es gibt für jeden etwas! In seiner aktuellen Form bietet er anpassbare tägliche und wöchentliche Checklisten sowie automatisierte Abschlussverfolgung von Spielinhalten und Auftragsreihen, später wird noch viel mehr dazukommen.",
     "addCharacter": "Charakter hinzufügen",
     "learnMore": "Mehr erfahren",
     "viewProfile": "Profil anzeigen",
@@ -89,7 +89,7 @@
     },
     "about": {
       "header": "Über XIV ToDo",
-      "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Spielinhalte und Questlinien von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst mich gerne mit jeder Frage oder Feedback hier {1}. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
+      "text": "XIV ToDo ist ein Projekt, das Mitte 2021 von {0} gestartet wurde, einem Software-Entwickler aus Kanada. Nach der Erkenntnis, dass es keine Methoden gab, schnell zu visualisieren, welche der zahlreichen Spielinhalte und Auftragsreihen von meinen Charakteren bereits abgeschlossen wurden, war die Idee für diese Seite geboren. XIV ToDo ist und bleibt kostenlos für jedermann zu genießen. Du kannst mich gerne mit jeder Frage oder Feedback hier {1}. Vielen Dank für die Verwendung und Unterstützung dieses Projekts!",
       "contact": "kontaktieren"
     }
   },
