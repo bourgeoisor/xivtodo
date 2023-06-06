@@ -109,14 +109,14 @@
     },
     "enablingPublicAchievements": {
       "header": "Errungenschaften auf öffentlich setzen",
-      "text1": "If you add a character and their encounter and questline completions aren't getting registered, it's likely that the achievements are not set to visible publicly for that character. You can verify this by logging into {0}, and then accessing the {1} section. From there, make sure {2} is set to {3} and save the changes.",
-      "text2": "Once your achievements are public, you may need to re-add your character or refresh it from the {0} page on XIV ToDo for it to take effect.",
+      "text1": "Wenn für deinen Charakter die Inhalte und Auftragsreihen nicht erkannt werden, dann ist es wahrscheinlich dass, die Errungenschaften nicht auf öffentlich sichtbar gestellt sind. Du kannst dies überprüfen, indem du dich in den {0} einloggst und dann die {1} überprüfst. Von dort, stelle sicher dass die {2} auf {3} gestellt sind und speichere diese.",
+      "text2": "Sobald deine Errungenschaften öffentlich sind, müsstest du dein Charakter erneut hinzufügen oder ihn in den {0} aktualisieren damit diese auf XIV ToDo wirksam werden.",
       "lodestoneAccountManagement": "Charakterverwaltung",
       "lodestonePublic": "Öffentlich"
     },
     "customizingCharacterChecklists": {
       "header": "Anpassbare Charakter Checklisten",
-      "text": "Daily and weekly checklists can be customized by clicking on the {0} button near the top right of the {1} page. From there, you can add custom entries as well as hide entries that you don't want to see. To stop customizing, simply click the {2} button again."
+      "text": "Tägliche und wöchentliche Checklisten können angepasst werden, indem man sie über der {0} Schaltfläche in der oberen rechten Ecke der {1} andrückt. Von dort kannst du eigene Einträge einfügen und andere verstecken die du nicht sehen möchtest. Wenn du fertig bist, kannst du erneut auf {2} drücken um deine Änderungen zu übernehmen."
     },
     "encounterQuestlineCompletion": {
       "header": "Abschluss von Inhalten und Auftragsreihen",
@@ -340,10 +340,10 @@
       "hoursShort": "{hours}Std",
       "minutesShort": "{minutes}Min",
       "secondsShort": "{seconds}Sek",
-      "monthsAgo": "vor {months} Monat(en)",
-      "daysAgo": "{days} Tag(e) zuvor",
-      "hoursAgo": "vor {hours} Stunde(n)",
-      "minutesAgo": "vor {minutes} Minute(n)",
+      "monthsAgo": "vor {months} Monaten",
+      "daysAgo": "vor {days} Tagen",
+      "hoursAgo": "vor {hours} Stunden",
+      "minutesAgo": "vor {minutes} Minuten",
       "coupleSecondsAgo": "vor ein paar Sekunden"
     }
   }
