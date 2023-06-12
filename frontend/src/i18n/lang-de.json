@@ -109,14 +109,14 @@
     },
     "enablingPublicAchievements": {
       "header": "Errungenschaften auf öffentlich setzen",
-      "text1": "Wenn für deinen Charakter die Inhalte und Auftragsreihen nicht erkannt werden, dann ist es wahrscheinlich dass, die Errungenschaften nicht auf öffentlich sichtbar gestellt sind. Du kannst dies überprüfen, indem du dich in den {0} einloggst und dann die {1} überprüfst. Von dort, stelle sicher dass die {2} auf {3} gestellt sind und speichere diese.",
-      "text2": "Sobald deine Errungenschaften öffentlich sind, müsstest du dein Charakter erneut hinzufügen oder ihn in den {0} aktualisieren damit diese auf XIV ToDo wirksam werden.",
+      "text1": "Wenn für deinen Charakter die Inhalte und Auftragsreihen nicht erkannt werden, dann ist es wahrscheinlich, dass die Errungenschaften nicht auf öffentlich sichtbar gestellt sind. Du kannst dies überprüfen, indem du dich in den {0} einloggst und dann die {1} überprüfst. Von dort, stelle sicher, dass die {2} auf {3} gestellt sind und speichere diese.",
+      "text2": "Sobald deine Errungenschaften öffentlich sind, müsstest du deinen Charakter evtl. erneut hinzufügen oder ihn in den {0} aktualisieren, damit diese auf XIV ToDo wirksam werden.",
       "lodestoneAccountManagement": "Charakterverwaltung",
       "lodestonePublic": "Öffentlich"
     },
     "customizingCharacterChecklists": {
       "header": "Anpassbare Charakter Checklisten",
-      "text": "Tägliche und wöchentliche Checklisten können angepasst werden, indem man sie über der {0} Schaltfläche in der oberen rechten Ecke der {1} andrückt. Von dort kannst du eigene Einträge einfügen und andere verstecken die du nicht sehen möchtest. Wenn du fertig bist, kannst du erneut auf {2} drücken um deine Änderungen zu übernehmen."
+      "text": "Tägliche und wöchentliche Checklisten können angepasst werden, indem man die {0}-Schaltfläche in der oberen rechten Ecke der {1} anklickt. Von dort kannst du sowohl eigene Einträge hinzufügen, als auch diejenigen verstecken, die du nicht sehen möchtest. Sobald du fertig bist, kannst du erneut auf {2} drücken, um deine Änderungen zu übernehmen."
     },
     "encounterQuestlineCompletion": {
       "header": "Abschluss von Inhalten und Auftragsreihen",
