@@ -32,6 +32,13 @@ const store = createStore({
     discordUser(state) {
       return state.userData?.discordUser || {};
     },
+    discordUsername(state, getters) {
+      let username = getters.discordUser.username;
+      if (getters.discordUser.discriminator != 0) {
+        username += "#" + getters.discordUser.discriminator;
+      }
+      return username;
+    },
     settings(state) {
       return state.userData?.settings || {};
     },

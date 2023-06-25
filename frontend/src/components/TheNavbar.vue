@@ -235,7 +235,7 @@
                 </div>
                 <li>
                   <h6 class="dropdown-header">
-                    {{ this.$store.getters.discordUser.username }}#{{ this.$store.getters.discordUser.discriminator }}
+                    {{ this.$store.getters.discordUsername }}
                   </h6>
                 </li>
                 <li>
