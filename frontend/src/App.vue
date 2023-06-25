@@ -389,6 +389,7 @@ export default {
       let i = 0;
       for (let character of this.$store.getters.characters) {
         if (this.$store.getters.characterOutOfDate(i)) {
+          let localID = i;
           console.log("Updating data for " + character.lodestoneData.Character.Name + "...");
 
           let characterID = character.lodestoneData.Character.ID;
@@ -400,6 +401,9 @@ export default {
             .catch((err) => {
               console.log(err);
               this.error = err;
+              if (err.status == 404) {
+                this.$store.commit("invalidateCharacter", localID);
+              }
             });
         }
         i++;

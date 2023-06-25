@@ -74,6 +74,11 @@
                     <div class="spinner-border spinner-border-sm" role="status"></div>
                     {{ $t("shared.updatingWait") }}
                   </span>
+                  <span v-else-if="item.invalid" class="text-danger fw-light">
+                    <abbr :title="$t('settings.characterNotFoundAlt')">
+                      {{ $t("settings.characterNotFound") }}
+                    </abbr>
+                  </span>
                   <span v-else class="text-muted fw-light">
                     {{ $t("settings.lastUpdated", { time: lastUpdatedAt(item.updated) }) }}
                     <span

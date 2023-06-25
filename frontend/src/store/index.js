@@ -127,6 +127,10 @@ const store = createStore({
       return getters.characterOutOfDate(state.activeCharacterID);
     },
     characterOutOfDate: (state, getters) => (id) => {
+      if (getters.characters[id].invalid) {
+        return false;
+      }
+
       let now = new Date();
       let msBeforeUpdate = 1000 * 60 * 60 * 48; // 48 hours
 
@@ -185,6 +189,9 @@ const store = createStore({
       if (state.activeCharacterID == payload) {
         state.activeCharacterID = 0;
       }
+    },
+    invalidateCharacter(state, payload) {
+      state.userData.characters[payload].invalid = true;
     },
     changeActiveCharacter(state, payload) {
       state.activeCharacterID = payload;
