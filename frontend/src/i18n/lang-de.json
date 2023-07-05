@@ -300,6 +300,8 @@
       "hint": "Präferenz bei der Anzeige von Patch-Nummern für Inhalte."
     },
     "updateSettings": "Einstellungen aktualisieren",
+    "characterNotFound": "Charakter nicht im Lodestone auffindbar",
+    "characterNotFoundAlt": "Dieser Charakter konnte im Lodestone nicht gefunden werden. Wenn du erst kürzlich einen Stammweltentransfer vollzogen hast, versuche es später erneut.",
     "achievementsNotPublic": "Errungenschaften sind nicht öffentlich",
     "achievementsNotPublicAlt": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "message": {

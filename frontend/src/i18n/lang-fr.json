@@ -300,6 +300,8 @@
       "hint": "Preference in showing patch numbers for content."
     },
     "updateSettings": "Mettre à jour les paramètres",
+    "characterNotFound": "Character not in Lodestone",
+    "characterNotFoundAlt": "This character does not exist in Lodestone. If you recently transfered world, try updating again later",
     "achievementsNotPublic": "Les hauts faits ne sont pas public",
     "achievementsNotPublicAlt": "Les hauts faits pour ce personnage ne sont pas public dans Lodestone",
     "message": {
