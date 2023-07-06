@@ -300,6 +300,8 @@
       "hint": "Preference in showing patch numbers for content."
     },
     "updateSettings": "Update settings",
+    "characterNotFound": "Character not in Lodestone",
+    "characterNotFoundAlt": "This character does not exist in Lodestone. If you recently transfered world, try updating again later",
     "achievementsNotPublic": "Achievements are not public",
     "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
     "message": {
