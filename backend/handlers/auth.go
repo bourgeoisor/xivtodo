@@ -164,6 +164,7 @@ func getUserDataOrDefault(userData *models.User, discordUser *models.DiscordUser
 		}
 	}
 
+	// Generate default settings if doesn't exist
 	userData.DiscordUser = discordUser
 	if userData.Settings == nil {
 		authorizationHash := sha1.New()
@@ -178,6 +179,13 @@ func getUserDataOrDefault(userData *models.User, discordUser *models.DiscordUser
 		userData.Settings = &models.Settings{
 			AuthorizationCode:  authorizationCode,
 			CharacterClaimCode: characterClaimCode,
+		}
+	}
+
+	// Delete characters that have empty Lodestone data
+	for id, character := range userData.Characters {
+		if character.LodestoneData == nil {
+			delete(userData.Characters, id)
 		}
 	}
 

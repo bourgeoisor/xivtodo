@@ -46,8 +46,6 @@ const jobInitials = {
 };
 
 function injectData(characterData) {
-  console.log(characterData);
-
   let achievementList = characterData.lodestoneData.Achievements || [];
   for (let i = 0; i < achievementList.length; i++) {
     if (achievementList[i].ID == 789) {
