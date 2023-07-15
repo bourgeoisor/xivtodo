@@ -109,7 +109,7 @@
     },
     "enablingPublicAchievements": {
       "header": "Activer les succès publics",
-      "text1": "If you add a character and their encounter and questline completions aren't getting registered, it's likely that the achievements are not set to visible publicly for that character. You can verify this by logging into {0}, and then accessing the {1} section. From there, make sure {2} is set to {3} and save the changes.",
+      "text1": "Si vous ajoutez un personnage et que ses succès de rencontres et de quêtes ne sont pas enregistrés, il est probable que les succès ne soient pas définis comme visibles publiquement pour ce personnage. Vous pouvez vérifier cela en vous connectant à {0}, puis en accédant à la section {1}. À partir de là, assurez-vous que {2} est défini sur {3} et enregistrez les modifications.",
       "text2": "Once your achievements are public, you may need to re-add your character or refresh it from the {0} page on XIV ToDo for it to take effect.",
       "lodestoneAccountManagement": "Paramètres du personnage",
       "lodestonePublic": "Public"
