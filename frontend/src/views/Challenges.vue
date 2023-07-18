@@ -99,6 +99,7 @@
       </div>
       <div class="col-12 col-lg-4">
         <DutyList :title="$t('challenges.blueSB')" :duties="db.sbBlu" />
+        <DutyList :title="$t('challenges.blueShB')" :duties="db.shbBlu" />
       </div>
       <div class="col-12 col-lg-4">
         <DutyList :title="$t('challenges.maskedCarnivale')" :duties="db.maskedCarnivale" />
