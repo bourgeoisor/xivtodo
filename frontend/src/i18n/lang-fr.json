@@ -129,8 +129,8 @@
       "stateNotCleared": "Your active character has not cleared this encounter yet."
     },
     "otherQuestions": {
-      "header": "Other questions",
-      "text": "Contact me {0}, on {1} or on {2} and I will reply as soon as possible.",
+      "header": "Autres questions",
+      "text": "Contactez-moi {0}, sur {1} ou sur {2} et je vous répondrai dès que possible.",
       "textHere": "ici"
     }
   },
@@ -254,7 +254,7 @@
     "blueARR": "Des bleus (ARR)",
     "blueHW": "Des bleus (HW)",
     "blueSB": "Des bleus (SB)",
-    "blueShB": "BLU Encounters (ShB)",
+    "blueShB": "Des bleus (ShB)",
     "maskedCarnivale": "La Grande Mascarade"
   },
   "checklist": {
