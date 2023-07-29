@@ -2,12 +2,6 @@
   "latestCountdownID": 30,
   "countdowns": [
     {
-      "title": "Letter from the Producer LIVE Part LXXVIII",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/f37b6f458b5e2d9cbc6a7676a84e487ad71ebd35",
-      "start": 1690650000,
-      "end": 1690657200
-    },
-    {
       "title": "Patch 6.45",
       "start": 1689674400
     }
