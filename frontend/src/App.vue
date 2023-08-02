@@ -142,6 +142,10 @@ main {
     color: #dbdcdd;
     background-color: #262b2f;
   }
+
+  .form-control::placeholder {
+    color: rgba(97, 108, 120, 0.75);
+  }
 }
 
 .indent-paragraphs p {
@@ -286,13 +290,13 @@ export default {
   mounted() {
     this.$nextTick(function () {
       this.setLanguage();
-      this.checkUpstreamVersion();
+      // this.checkUpstreamVersion();
       this.updateUserData();
       setTimeout(() => this.updateCharactersData(), 1000 * 10); // 10 seconds
     });
     this.intervalFunction = setInterval(() => {
       if (this.tabFocused) {
-        this.checkUpstreamVersion();
+        // this.checkUpstreamVersion();
         this.updateCharactersData();
       }
     }, 1000 * 60); // 1 minute

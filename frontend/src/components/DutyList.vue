@@ -3,15 +3,16 @@
   <span v-if="showTotal" class="fw-lighter text-muted">
     {{ $t("shared.countTotal", { count: duties.length }) }}
   </span>
-  <ul class="list-group list-group-flush">
+  <div class="list-group list-group-flush">
     <DutyListItem
       v-for="item of injectDutyCompletion(duties)"
       :key="item.Name"
       :duty="item"
       :clearedMaybe="true"
       :blur="false"
+      :filters="this.$parent.$data.filters || {}"
     />
-  </ul>
+  </div>
   <br />
 </template>
 

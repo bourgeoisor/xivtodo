@@ -1,17 +1,23 @@
 <template>
   <div class="container">
-    <h1>
-      {{ $t("page.encounters") }}
-      <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
-        {{ $t("pageHeader.clearedByCharacter", { characterName: this.$store.getters.character.Name }) }}
-        <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
-          <div class="spinner-border spinner-border-sm" role="status"></div>
-          {{ $t("message.updatingCharacter") }}
-        </div>
-        <div v-else-if="!this.$store.getters.achievementsPublic" class="text-warning fs-6">
-          {{ $t("message.achievementsNotPublic") }}
-        </div>
+    <h1 class="d-flex align-items-end">
+      <span class="me-auto">
+        {{ $t("page.encounters") }}
+        <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
+          {{ $t("pageHeader.clearedByCharacter", { characterName: this.$store.getters.character.Name }) }}
+          <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
+            <div class="spinner-border spinner-border-sm" role="status"></div>
+            {{ $t("message.updatingCharacter") }}
+          </div>
+          <div v-else-if="!this.$store.getters.achievementsPublic" class="text-warning fs-6">
+            {{ $t("message.achievementsNotPublic") }}
+          </div>
+        </span>
       </span>
+      <div class="btn-group" role="group" aria-label="Filter buttons">
+        <input v-model="filters.rewards" type="checkbox" class="btn-check" id="btn-rewards" autocomplete="off" />
+        <label class="btn btn-outline-success" for="btn-rewards">{{ $t("encounters.viewRewards") }}</label>
+      </div>
     </h1>
     <AlertMsg
       v-if="!this.$store.getters.isSignedIn"
@@ -117,6 +123,9 @@ export default {
   data() {
     return {
       db: dbJson,
+      filters: {
+        rewards: false,
+      },
     };
   },
   components: {
