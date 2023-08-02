@@ -403,6 +403,7 @@ span.nav-link:hover {
 
 .offcanvas {
   background-color: #1c2024;
+  color: #ddd;
 }
 
 .offcanvas-header .btn-close {
