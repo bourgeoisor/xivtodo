@@ -61,26 +61,26 @@ const routes = [
     name: "Challenges",
     component: () => import(/* webpackChunkName: "challenges" */ "../views/Challenges.vue"),
   },
-  {
-    path: "/achievements",
-    name: "Achievements",
-    component: () => import(/* webpackChunkName: "achievements" */ "../views/Achievements.vue"),
-  },
-  {
-    path: "/titles",
-    name: "Titles",
-    component: () => import(/* webpackChunkName: "titles" */ "../views/Titles.vue"),
-  },
-  {
-    path: "/minions",
-    name: "Minions",
-    component: () => import(/* webpackChunkName: "minions" */ "../views/Minions.vue"),
-  },
-  {
-    path: "/mounts",
-    name: "Mounts",
-    component: () => import(/* webpackChunkName: "mounts" */ "../views/Mounts.vue"),
-  },
+  // {
+  //   path: "/achievements",
+  //   name: "Achievements",
+  //   component: () => import(/* webpackChunkName: "achievements" */ "../views/Achievements.vue"),
+  // },
+  // {
+  //   path: "/titles",
+  //   name: "Titles",
+  //   component: () => import(/* webpackChunkName: "titles" */ "../views/Titles.vue"),
+  // },
+  // {
+  //   path: "/minions",
+  //   name: "Minions",
+  //   component: () => import(/* webpackChunkName: "minions" */ "../views/Minions.vue"),
+  // },
+  // {
+  //   path: "/mounts",
+  //   name: "Mounts",
+  //   component: () => import(/* webpackChunkName: "mounts" */ "../views/Mounts.vue"),
+  // },
   {
     path: "/checklist",
     name: "Checklist",
