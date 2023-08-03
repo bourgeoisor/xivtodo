@@ -209,7 +209,9 @@
     "heRaids": "零式",
     "exploratory": "Exploratory Missions",
     "guildhests": "ギルドオーダー",
-    "viewRewards": "View rewards"
+    "viewRewards": "View rewards",
+    "obtained": "Obtained",
+    "tradeable": "Tradeable"
   },
   "questlines": {
     "stories": "Stories",
