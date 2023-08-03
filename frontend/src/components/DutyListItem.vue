@@ -88,6 +88,7 @@
           <img v-if="mountID" :src="dbs.mounts[mountID].icon" />
           {{ dbs.mounts[mountID].name }}
           <i v-if="this.$store.getters.mounts[mountID]" class="fa-fw fal fa-check"></i>
+          <i v-else-if="dbs.mounts[mountID].tradeable" class="fa-fw fal fa-comments-dollar"></i>
         </div>
       </div>
       <div v-if="'Minions' in duty">
@@ -101,6 +102,7 @@
           <img v-if="minionID" :src="dbs.minions[minionID].icon" />
           {{ dbs.minions[minionID].name }}
           <i v-if="this.$store.getters.minions[minionID]" class="fa-fw fal fa-check"></i>
+          <i v-else-if="dbs.minions[minionID].tradeable" class="fa-fw fal fa-comments-dollar"></i>
         </div>
       </div>
     </div>
