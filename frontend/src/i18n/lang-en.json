@@ -209,7 +209,9 @@
     "heRaids": "High-end Raids",
     "exploratory": "Exploratory Missions",
     "guildhests": "Guildhests",
-    "viewRewards": "View rewards"
+    "viewRewards": "View rewards",
+    "obtained": "Obtained",
+    "tradeable": "Tradeable"
   },
   "questlines": {
     "stories": "Stories",
