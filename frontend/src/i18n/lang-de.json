@@ -209,7 +209,9 @@
     "heRaids": "High-End-Raids",
     "exploratory": "Erkundungsmissionen",
     "guildhests": "Gildengeheiße",
-    "viewRewards": "Belohnungen anzeigen"
+    "viewRewards": "Belohnungen anzeigen",
+    "obtained": "Erhalten",
+    "tradeable": "Handelbar"
   },
   "questlines": {
     "stories": "Geschichten",

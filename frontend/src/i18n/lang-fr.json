@@ -209,7 +209,9 @@
     "heRaids": "Raids à difficulté élevée",
     "exploratory": "Missions d'exploration",
     "guildhests": "Opérations de guilde",
-    "viewRewards": "View rewards"
+    "viewRewards": "View rewards",
+    "obtained": "Obtenu",
+    "tradeable": "Échangeable"
   },
   "questlines": {
     "stories": "Récits",
