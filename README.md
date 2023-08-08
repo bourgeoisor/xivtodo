@@ -26,10 +26,12 @@
 ### Frontend
 
 1. Make sure the following requirements are installed:
+
    - NodeJS 16+
    - npm
 
 2. Clone the repository:
+
    ```sh
    git clone https://github.com/bourgeoisor/xivtodo
    cd xivtodo/frontend/
@@ -39,8 +41,9 @@
    ```sh
    npm install
    ```
+4. Update environment variables in `.env` for local development
 
-4. Run one of the following commands:
+5. Run one of the following commands:
    ```sh
    npm run serve # serve the frontend locally
    npm run build # built the dist directory
@@ -49,6 +52,7 @@
    ```
 
 By default, the frontend will attempt to use a local backend (`localhost:8181`). To develop against the production backend, modify the following environment variable in the `.env` file before serving:
+
 ```sh
 VUE_APP_BACKEND_API_URI=https://api.xivtodo.com
 ```
@@ -58,24 +62,34 @@ VUE_APP_BACKEND_API_URI=https://api.xivtodo.com
 ### Backend
 
 1. Make sure the following requirements are installed:
+
    - Go 1.20+
 
 2. Clone the repository:
+
    ```sh
    git clone https://github.com/bourgeoisor/xivtodo
    cd xivtodo/backend/
    ```
 
 3. Fetch dependencies:
+
    ```sh
    go mod
    ```
 
 4. Set the following environment variables:
+
    ```
    GOOGLE_APPLICATION_CREDENTIALS=backend-sa.json # Google Cloud service account key
+   DISCORD_CLIENT_ID=12345678
    DISCORD_CLIENT_SECRET=<discord_client_secret>
    DISCORD_REDIRECT_URI=http://localhost:8080/auth
+   ```
+
+5. Run the go application
+   ```sh
+   go run main
    ```
 
 **Note**: As seen by the environment variables, running the backend locally requires both a Discord application client secret as well as a Google Cloud service account with permissions to a Firestore database. Ideally, it would be possible to run the backend with an internal mock database and a mock Discord sign-in to avoid those requirements.
