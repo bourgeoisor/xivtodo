@@ -189,7 +189,7 @@
               </ul>
             </li>
             <li v-if="!this.$store.getters.isSignedIn" class="nav-item">
-              <a class="nav-link" :href="this.$store.state.env.VUE_APP_DISCORD_AUTH_URI">
+              <a class="nav-link" :href="this.$store.getters.discordAuthURL">
                 {{ $t("home.signInDiscord") }}
               </a>
             </li>

@@ -16,7 +16,7 @@
     <AlertMsg
       v-if="!this.$store.getters.isSignedIn"
       type="normal"
-      :msg="$t('message.notSignedIn', { url: this.$store.state.env.VUE_APP_DISCORD_AUTH_URI })"
+      :msg="$t('message.notSignedIn', { url: this.$store.getters.discordAuthURL })"
     />
     <AlertMsg v-else-if="!this.$store.getters.hasCharacter" type="normal" :msg="$t('message.noCharacters')" />
     <hr />

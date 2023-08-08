@@ -20,26 +20,32 @@ import (
 )
 
 const (
-	discordClientID    = "933567168912719923"
 	discordAPIEndpoint = "https://discord.com/api/v8"
 )
 
 var (
+	discordClientID string
 	discordClientSecret string
 	discordRedirectUri  string
 )
 
 func init() {
+	discordClientID = os.Getenv("DISCORD_CLIENT_ID")
+	if discordClientID == "" {
+		log.Fatalln("fatal: The DISCORD_CLIENT_ID env is not set")
+	}
+
+	discordClientSecret = os.Getenv("DISCORD_CLIENT_SECRET")
+	if discordClientSecret == "" {
+		log.Fatalln("fatal: The DISCORD_CLIENT_SECRET env is not set")
+	}
+
 	discordRedirectUri = os.Getenv("DISCORD_REDIRECT_URI")
 	if discordRedirectUri == "" {
 		log.Fatalln("fatal: The DISCORD_REDIRECT_URI env is not set")
 	}
-
-	discordClientSecret = os.Getenv("DISCORD_CLIENT_SECRET")
-	if discordRedirectUri == "" {
-		log.Fatalln("fatal: The DISCORD_CLIENT_SECRET env is not set")
-	}
 }
+
 
 func AuthHandler() http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
