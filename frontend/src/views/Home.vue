@@ -14,7 +14,7 @@
                 {{ $t("home.addCharacter") }}
               </button>
             </router-link>
-            <a v-else :href="this.$store.getters.discordAuthURL">
+            <a v-else :href="this.$store.getters.discordauthURI">
               <button type="button" class="btn btn-success btn-lg px-4 gap-3">
                 {{ $t("home.signInDiscord") }}
               </button>

@@ -20,7 +20,7 @@
     <AlertMsg
       v-if="!this.$store.getters.isSignedIn"
       type="normal"
-      :msg="$t('message.notSignedIn', { url: this.$store.getters.discordAuthURL })"
+      :msg="$t('message.notSignedIn', { url: this.$store.getters.discordauthURI })"
     />
     <AlertMsg v-else-if="!this.$store.getters.hasCharacter" type="normal" :msg="$t('message.noCharacters')" />
     <hr />
