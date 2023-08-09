@@ -82,7 +82,7 @@ VUE_APP_BACKEND_API_URI=https://api.xivtodo.com
 
    ```
    GOOGLE_APPLICATION_CREDENTIALS=backend-sa.json # Google Cloud service account key
-   DISCORD_CLIENT_ID=12345678
+   DISCORD_CLIENT_ID=<discord_client_id>
    DISCORD_CLIENT_SECRET=<discord_client_secret>
    DISCORD_REDIRECT_URI=http://localhost:8080/auth
    ```
