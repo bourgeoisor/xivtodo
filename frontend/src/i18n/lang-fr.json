@@ -115,8 +115,8 @@
       "lodestonePublic": "Public"
     },
     "customizingCharacterChecklists": {
-      "header": "Customizing character checklists",
-      "text": "Daily and weekly checklists can be customized by clicking on the {0} button near the top right of the {1} page. From there, you can add custom entries as well as hide entries that you don't want to see. To stop customizing, simply click the {2} button again."
+      "header": "Personnalisation des tâches des personnages",
+      "text": "Les tâches quotidiennes et hebdomadaires peuvent être personnalisées en cliquant sur le bouton {0} en haut à droite de la page {1} . À partir de là, vous pouvez ajouter des entrées personnalisées ainsi que cacher les entrées que vous ne voulez pas voir. Pour arrêter la personnalisation, il vous suffit de cliquer à nouveau sur le bouton {2}."
     },
     "encounterQuestlineCompletion": {
       "header": "Encounter and questline completion",
