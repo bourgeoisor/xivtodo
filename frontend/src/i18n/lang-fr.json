@@ -110,7 +110,7 @@
     "enablingPublicAchievements": {
       "header": "Activer les succès publics",
       "text1": "Si vous ajoutez un personnage et que ses succès de rencontres et de quêtes ne sont pas enregistrés, il est probable que les succès ne soient pas définis comme visibles publiquement pour ce personnage. Vous pouvez vérifier cela en vous connectant à {0}, puis en accédant à la section {1}. À partir de là, assurez-vous que {2} est défini sur {3} et enregistrez les modifications.",
-      "text2": "Once your achievements are public, you may need to re-add your character or refresh it from the {0} page on XIV ToDo for it to take effect.",
+      "text2": "Une fois que vos réalisations sont publiques, vous devrez peut-être rajouter votre personnage ou l'actualiser à partir de la page {0} sur XIV ToDo pour que cela prenne effet.",
       "lodestoneAccountManagement": "Paramètres du personnage",
       "lodestonePublic": "Public"
     },
@@ -209,7 +209,7 @@
     "heRaids": "Raids à difficulté élevée",
     "exploratory": "Missions d'exploration",
     "guildhests": "Opérations de guilde",
-    "viewRewards": "View rewards",
+    "viewRewards": "Voir les récompenses",
     "obtained": "Obtenu",
     "tradeable": "Échangeable"
   },
