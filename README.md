@@ -41,9 +41,8 @@
    ```sh
    npm install
    ```
-4. Update environment variables in `.env` for local development
 
-5. Run one of the following commands:
+4. Run one of the following commands:
    ```sh
    npm run serve # serve the frontend locally
    npm run build # built the dist directory
