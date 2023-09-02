@@ -1,22 +1,25 @@
 {
-  "latestCountdownID": 31,
+  "latestCountdownID": 32,
   "countdowns": [
     {
-      "title": "Moon Fire Faire",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/Moonfire_Faire/oct9miki0d",
-      "start": 1691654400,
-      "end": 1693062000
-    },
-    {
       "title": "The Rising",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/The_Rising/eykg76bc2d",
       "start": 1693119600
     },
     {
       "title": "Moogle Treasure Trove",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202308/1ny0ji96di",
       "start": 1693119600
     },
     {
+      "title": "Letter from the Producer LIVE Part LXXIX",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/0f699c77ac8fae0f73ca75ec326206313b1ea771",
+      "start": 1695535200,
+      "end": 1695546000
+    },
+    {
       "title": "FanFest Europe",
+      "url": "https://fanfest2.finalfantasyxiv.com/2023-24/eu/",
       "start": 1697878800
     },
     {
