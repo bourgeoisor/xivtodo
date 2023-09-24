@@ -326,10 +326,8 @@
         <br v-if="item.description || item.url" />
         <p v-if="item.description" v-html="item.description"></p>
         <span v-if="item.url">
-          <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">
-            More details
-            <i class="fa-fw fal fa-external-link"></i>
-          </a>
+          <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">More details</a>
+          <i class="fa-fw fal fa-external-link"></i>
         </span>
         <br /><br /><br />
       </div>
