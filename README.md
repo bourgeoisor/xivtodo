@@ -90,6 +90,7 @@ VUE_APP_BACKEND_API_URI=https://api.xivtodo.com
 
    ```sh
    go run main
+   ```
 
 **Note**: As seen by the environment variables, running the backend locally requires both a Discord application client secret as well as a Google Cloud service account with permissions to a Firestore database. Ideally, it would be possible to run the backend with an internal mock database and a mock Discord sign-in to avoid those requirements.
 
