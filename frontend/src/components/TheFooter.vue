@@ -8,7 +8,7 @@
       <img src="@/assets/img/brand.png" alt="XIV ToDo branding" />
       <br />
       <router-link to="/">
-        <small>{{ $t("page.about") }}</small>
+        <small>{{ $t("page.home") }}</small>
       </router-link>
       ·
       <router-link to="/help">
