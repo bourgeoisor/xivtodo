@@ -1,11 +1,13 @@
 .DS_Store
 node_modules
-frontend/dist
 *.csv*
 *Zone.Identifier
-backend/backend-sa.json
 
-# local env files
+frontend/dist
+backend/backend-sa.json
+scripts/db.json
+
+# Local env files
 .env.local
 .env.*.local
 
