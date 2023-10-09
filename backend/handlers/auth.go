@@ -20,24 +20,29 @@ import (
 )
 
 const (
-	discordClientID    = "933567168912719923"
 	discordAPIEndpoint = "https://discord.com/api/v8"
 )
 
 var (
+	discordClientID     string
 	discordClientSecret string
 	discordRedirectUri  string
 )
 
 func init() {
-	discordRedirectUri = os.Getenv("DISCORD_REDIRECT_URI")
-	if discordRedirectUri == "" {
-		log.Fatalln("fatal: The DISCORD_REDIRECT_URI env is not set")
+	discordClientID = os.Getenv("DISCORD_CLIENT_ID")
+	if discordClientID == "" {
+		log.Fatalln("fatal: The DISCORD_CLIENT_ID env is not set")
 	}
 
 	discordClientSecret = os.Getenv("DISCORD_CLIENT_SECRET")
-	if discordRedirectUri == "" {
+	if discordClientSecret == "" {
 		log.Fatalln("fatal: The DISCORD_CLIENT_SECRET env is not set")
+	}
+
+	discordRedirectUri = os.Getenv("DISCORD_REDIRECT_URI")
+	if discordRedirectUri == "" {
+		log.Fatalln("fatal: The DISCORD_REDIRECT_URI env is not set")
 	}
 }
 
@@ -105,6 +110,16 @@ func getDiscordAuthResponse(discordAuthResponse *models.DiscordAuthResponse, cod
 		return err
 	}
 	defer resp.Body.Close()
+
+	// @TODO: Print useful Discord API rate limit data
+	//log.Println(resp.Header.Get("X-RateLimit-Global"))
+	//log.Println(resp.Header.Get("X-RateLimit-Scope"))
+	//log.Println(resp.Header.Get("X-RateLimit-Reset"))
+	//log.Println(resp.Header.Get("X-RateLimit-Reset-After"))
+	//log.Println(resp.Header.Get("X-RateLimit-Bucket"))
+	//rateLimitRemaining := resp.Header.Get("X-RateLimit-Remaining")
+	//rateLimitLimit := resp.Header.Get("X-RateLimit-Limit")
+	//log.Printf("rate limit for /oauth2/token: %s/%s", rateLimitRemaining, rateLimitLimit)
 
 	if resp.StatusCode != 200 {
 		return errors.New(resp.Status)
