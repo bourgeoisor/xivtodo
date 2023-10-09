@@ -174,7 +174,7 @@ a:focus {
   color: #41b883;
 }
 
-a:hover {
+a:hover:not(.alert-link) {
   color: #22e38d;
 }
 

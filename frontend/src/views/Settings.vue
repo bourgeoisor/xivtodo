@@ -59,7 +59,7 @@
               <div class="ms-2 me-auto">
                 <img
                   style="display: block; float: left; height: 50px"
-                  class="avatar-list"
+                  class="avatar-list d-none d-sm-inline"
                   :src="item.lodestoneData.Character.Avatar"
                   :alt="$t('shared.portraitAlt')"
                 />
