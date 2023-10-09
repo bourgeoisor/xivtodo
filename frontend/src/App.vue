@@ -169,12 +169,12 @@ tr {
   border-color: #484848;
 }
 
-a,
-a:focus {
+p a,
+p a:focus {
   color: #41b883;
 }
 
-a:hover:not(.alert-link) {
+p a:hover {
   color: #22e38d;
 }
 
