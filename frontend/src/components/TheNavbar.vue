@@ -420,7 +420,19 @@ export default {
   data() {
     return {
       news: news,
+      now: new Date() / 1000,
     };
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.now = new Date() / 1000;
+    });
+    this.intervalFunction = setInterval(() => {
+      this.now = new Date() / 1000;
+    }, 60 * 1000);
+  },
+  unmounted() {
+    clearInterval(this.intervalFunction);
   },
   methods: {
     changeLanguage(lang) {
@@ -461,8 +473,7 @@ export default {
       updateSettings(settings);
     },
     timeLeft(timestamp) {
-      let now = new Date() / 1000;
-      let diff = timestamp - now;
+      let diff = timestamp - this.now;
       let days = Math.floor(diff / (1 * 60 * 60 * 24));
       let hours = Math.floor(diff / (1 * 60 * 60));
       let minutes = Math.floor(diff / (1 * 60));
