@@ -1,6 +1,12 @@
 {
-  "latestCountdownID": 33,
+  "latestCountdownID": 34,
   "countdowns": [
+    {
+      "title": "All Saints' Wake",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/All_Saints_Wake/gtjs3j7xq6",
+      "start": 1698393600,
+      "end": 1699887600
+    },
     {
       "title": "FanFest Europe Keynote",
       "url": "https://fanfest2.finalfantasyxiv.com/2023-24/eu/",
