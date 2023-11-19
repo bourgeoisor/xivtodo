@@ -24,7 +24,7 @@ const (
 )
 
 var (
-	discordClientID string
+	discordClientID     string
 	discordClientSecret string
 	discordRedirectUri  string
 )
@@ -45,7 +45,6 @@ func init() {
 		log.Fatalln("fatal: The DISCORD_REDIRECT_URI env is not set")
 	}
 }
-
 
 func AuthHandler() http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
@@ -111,6 +110,16 @@ func getDiscordAuthResponse(discordAuthResponse *models.DiscordAuthResponse, cod
 		return err
 	}
 	defer resp.Body.Close()
+
+	// @TODO: Print useful Discord API rate limit data
+	//log.Println(resp.Header.Get("X-RateLimit-Global"))
+	//log.Println(resp.Header.Get("X-RateLimit-Scope"))
+	//log.Println(resp.Header.Get("X-RateLimit-Reset"))
+	//log.Println(resp.Header.Get("X-RateLimit-Reset-After"))
+	//log.Println(resp.Header.Get("X-RateLimit-Bucket"))
+	//rateLimitRemaining := resp.Header.Get("X-RateLimit-Remaining")
+	//rateLimitLimit := resp.Header.Get("X-RateLimit-Limit")
+	//log.Printf("rate limit for /oauth2/token: %s/%s", rateLimitRemaining, rateLimitLimit)
 
 	if resp.StatusCode != 200 {
 		return errors.New(resp.Status)
