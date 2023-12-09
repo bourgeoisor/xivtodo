@@ -2,6 +2,12 @@
   "latestCountdownID": 35,
   "countdowns": [
     {
+      "title": "Starlight Celebration",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/Starlight_Celebration/1zhfx0729r",
+      "start": 1702616400,
+      "end": 1704024000
+    },
+    {
       "title": "FanFest Japan Keynote",
       "url": "https://fanfest.finalfantasyxiv.com/2023-24/jp/",
       "start": 1704589200,
