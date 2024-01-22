@@ -291,8 +291,8 @@
     "general": "Paramètres généraux",
     "contentSpoilers": {
       "label": "Éviter les spoilers",
-      "option0": "Blur out non-completed story-related content",
-      "option1": "Flouter tout le contenu lié à l'histoire",
+      "option0": "Flouter toutes les missions non complétées liées à l'épopée",
+      "option1": "Flouter tout le contenu lié à l'épopée",
       "option2": "Afficher tout le contenu",
       "hint": "Préférence concernant les spoilers potentiels."
     },
@@ -310,12 +310,12 @@
     "achievementsNotPublicAlt": "Les hauts faits pour ce personnage ne sont pas public dans Lodestone",
     "message": {
       "settingsUpdated": "Paramètres mis à jour !",
-      "settingsUpdateClientError": "Could not update settings. You may have entered invalid settings.",
+      "settingsUpdateClientError": "Impossible de mettre à jour les paramètres. Vous avez peut-être entré des paramètres invalides.",
       "settingsUpdateUnknownError": "Impossible de mettre à jour les paramètres. Veuillez réessayer plus tard.",
       "characterAdded": "Le personnage <b>{name}</b> a été ajouté ! Vous pouvez maintenant accéder à votre <a href='/profile' class='alert-link'>profil</a> et à toutes les pages de complétion du personnage.",
       "characterAddedNotPublic": "Le personnage <b>{name}</b> a été ajouté, mais leurs hauts faits ne sont pas public. Vous pouvez modifier ce paramètre <a href='https://fr.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>ici</a>, puis mettre à jour les données du personnage.",
-      "characterAddNotFoundError": "The character profile you have entered does not exist.",
-      "characterAddClientError": "Could not add character. You may have already added this character, or have reached the limit of characters.",
+      "characterAddNotFoundError": "Le profil de personnage que vous avez saisi n'existe pas.",
+      "characterAddClientError": "Impossible d'ajouter le personnage. Vous avez peut-être déjà ajouté ce personnage, ou avez atteint la limite de personnages.",
       "characterAddServerError": "Impossible d'atteindre Lodestone. Il peut y avoir une maintenance en cours. Veuillez réessayer plus tard.",
       "characterRemoveConfirm": "Êtes-vous sûr de vouloir supprimer {name} ?",
       "characterRemoved": "Personnage <b>{name}</b> supprimé !",
