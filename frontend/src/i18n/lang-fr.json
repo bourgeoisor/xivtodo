@@ -292,8 +292,8 @@
     "contentSpoilers": {
       "label": "Éviter les spoilers",
       "option0": "Blur out non-completed story-related content",
-      "option1": "Blur out all story-related content",
-      "option2": "Show all content",
+      "option1": "Flouter tout le contenu lié à l'histoire",
+      "option2": "Afficher tout le contenu",
       "hint": "Préférence concernant les spoilers potentiels."
     },
     "patchNumbers": {
@@ -311,15 +311,15 @@
     "message": {
       "settingsUpdated": "Paramètres mis à jour !",
       "settingsUpdateClientError": "Could not update settings. You may have entered invalid settings.",
-      "settingsUpdateUnknownError": "Could not update settings. Please try again later.",
+      "settingsUpdateUnknownError": "Impossible de mettre à jour les paramètres. Veuillez réessayer plus tard.",
       "characterAdded": "Le personnage <b>{name}</b> a été ajouté ! Vous pouvez maintenant accéder à votre <a href='/profile' class='alert-link'>profil</a> et à toutes les pages de complétion du personnage.",
       "characterAddedNotPublic": "Le personnage <b>{name}</b> a été ajouté, mais leurs hauts faits ne sont pas public. Vous pouvez modifier ce paramètre <a href='https://fr.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>ici</a>, puis mettre à jour les données du personnage.",
       "characterAddNotFoundError": "The character profile you have entered does not exist.",
       "characterAddClientError": "Could not add character. You may have already added this character, or have reached the limit of characters.",
-      "characterAddServerError": "Could not reach Lodestone. There may be an ongoing maintenance. Please try again later.",
+      "characterAddServerError": "Impossible d'atteindre Lodestone. Il peut y avoir une maintenance en cours. Veuillez réessayer plus tard.",
       "characterRemoveConfirm": "Êtes-vous sûr de vouloir supprimer {name} ?",
       "characterRemoved": "Personnage <b>{name}</b> supprimé !",
-      "characterRemoveError": "Character <b>{name}</b> could not be removed. Please try again later."
+      "characterRemoveError": "Le personnage <b>{name}</b> n'a pas pu être supprimé. Veuillez réessayer plus tard."
     }
   },
   "shared": {
