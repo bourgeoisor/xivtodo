@@ -1,11 +1,17 @@
 {
-  "latestCountdownID": 36,
+  "latestCountdownID": 37,
   "countdowns": [
     {
       "title": "The Maiden's Rhapsody",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/The_Maidens_Rhapsody/flf9m2g38k",
       "start": 1705910400,
       "end": 1707145200
+    },
+    {
+      "title": "Moogle Treasure Trove",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202401/8degg9wgnk",
+      "start": 1706601600,
+      "end": 1710169200
     },
     {
       "title": "Patch 6.55",
