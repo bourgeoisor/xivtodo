@@ -1,17 +1,11 @@
 {
-  "latestCountdownID": 38,
+  "latestCountdownID": 39,
   "countdowns": [
     {
-      "title": "The Maiden's Rhapsody",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/The_Maidens_Rhapsody/flf9m2g38k",
-      "start": 1705910400,
-      "end": 1707145200
-    },
-    {
-      "title": "Valentione's Day",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/Valentiones_Day/ob5mppsb6x",
-      "start": 1707292800,
-      "end": 1708527600
+      "title": "A Nocturne for Heroes",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/ffxv/9tkdm9tw1g",
+      "start": 1709107200,
+      "end": 1710342000
     },
     {
       "title": "Moogle Treasure Trove",
@@ -20,7 +14,7 @@
       "end": 1710169200
     },
     {
-      "title": "Patch 6.55",
+      "title": "Patch 6.57",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/patchnote_log/",
       "start": 1705402800
     }
