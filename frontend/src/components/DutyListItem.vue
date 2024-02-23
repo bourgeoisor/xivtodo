@@ -1,14 +1,11 @@
 <template>
   <div
-    class="list-group-item align-items-center"
+    class="list-group-item align-items-center duty-list-group"
     :class="{
       'list-group-item-action':
-        this.$store.getters.hasCharacter && isHovering && (duty.cleared == -1 || duty.cleared == 2),
+        this.$store.getters.hasCharacter && isHoveringListItem && (duty.cleared == -1 || duty.cleared == 2),
       'cursor-pointer': this.$store.getters.hasCharacter && (duty.cleared == -1 || duty.cleared == 2),
     }"
-    @click="check"
-    @mouseover="isHovering = true"
-    @mouseout="isHovering = false"
   >
     <div
       class="d-flex justify-content-between align-items-center"
@@ -16,6 +13,9 @@
         'text-secondary': duty.cleared == -1,
         'text-success': duty.cleared >= 1,
       }"
+      @click="check"
+      @mouseover="isHoveringListItem = true"
+      @mouseout="isHoveringListItem = false"
     >
       <span
         class="duty-list-item"
@@ -27,9 +27,10 @@
         <i
           class="me-2 fa-fw fal"
           :class="{
-            'fa-question-circle': duty.cleared == -1 && !(duty.cleared == -1 && isHovering),
+            'fa-question-circle':
+              duty.cleared == -1 && !(duty.cleared == -1 && isHoveringListItem && !isHoveringWikiLink),
             'fa-badge-check': duty.cleared == 1,
-            'fa-check-circle': duty.cleared == 2 || (duty.cleared == -1 && isHovering),
+            'fa-check-circle': duty.cleared == 2 || (duty.cleared == -1 && isHoveringListItem && !isHoveringWikiLink),
             'fa-circle': duty.cleared == 0,
           }"
         ></i>
@@ -46,7 +47,7 @@
             'user-select-none': duty.blur,
           }"
         >
-          {{ duty["Name" + $i18n.locale.toUpperCase()] || duty["NameEN"] }}
+          {{ dutyName }}
         </a>
         <span
           v-else
@@ -58,23 +59,36 @@
             'text-bold': duty.Bold,
           }"
         >
-          {{ duty["Name" + $i18n.locale.toUpperCase()] || duty["NameEN"] }}
+          {{ dutyName }}
         </span>
       </span>
-      <span
-        v-if="duty.IsMSQ"
-        class="icon-marker-msq"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        :title="$t('encounters.msqContent')"
-      ></span>
-      <span
-        v-if="duty.Expansion && showPatchNums"
-        :class="'icon-exp-' + duty.Expansion"
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        :title="$t('encounters.unlockedInExp')"
-      ></span>
+      <div class="d-inline-flex align-items-center duty-icons">
+        <span
+          v-if="duty.IsMSQ"
+          class="icon-marker-msq"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          :title="$t('encounters.msqContent')"
+        ></span>
+        <span
+          v-if="duty.Expansion && showPatchNums"
+          :class="'icon-exp-' + duty.Expansion"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          :title="$t('encounters.unlockedInExp')"
+        ></span>
+        <a
+          v-if="showWikiLink"
+          :href="duty.WikiUrl"
+          class="text-success tt duty-wiki-link"
+          @click.stop=""
+          @mouseover="isHoveringWikiLink = true"
+          @mouseout="isHoveringWikiLink = false"
+        >
+          <i class="fa-fw fad fa-external-link"></i>
+          <span class="tt-text">Wiki resource</span>
+        </a>
+      </div>
     </div>
     <div id="rewards" v-if="filters.rewards && !duty.blur && ('Mounts' in duty || 'Minions' in duty)">
       <div v-if="'Mounts' in duty">
@@ -143,10 +157,24 @@
   text-overflow: unset;
 }
 
+.duty-list-group {
+  padding: 0;
+}
+
 .duty-list-item {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: "… ";
+  width: 100%;
+}
+
+.duty-wiki-link,
+.duty-list-item {
+  padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
+}
+
+.duty-icons > :not(.duty-wiki-link):last-child {
+  padding-right: var(--bs-list-group-item-padding-x);
 }
 
 .duty-list-item-blur {
@@ -192,7 +220,8 @@ import dbs from "@/utilities/dbs.js";
 export default {
   data() {
     return {
-      isHovering: false,
+      isHoveringListItem: false,
+      isHoveringWikiLink: false,
     };
   },
   props: {
@@ -206,6 +235,9 @@ export default {
     title() {
       return this.duty.LodestoneID || this.duty.blur ? "" : this.duty.Name;
     },
+    dutyName() {
+      return this.duty["Name" + this.$i18n.locale.toUpperCase()] || this.duty["NameEN"];
+    },
     showPatchNums() {
       let patchNumsSetting = this.$store.getters.settings.patchNumsOption || 0;
 
@@ -214,6 +246,9 @@ export default {
         (patchNumsSetting == 1 && this.duty.cleared != 1 && this.duty.cleared != 2) ||
         patchNumsSetting == 2
       );
+    },
+    showWikiLink() {
+      return !this.duty.blur && this.duty.WikiUrl ? true : false;
     },
   },
   methods: {
