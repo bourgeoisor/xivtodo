@@ -1,16 +1,18 @@
 <template>
   <li
     v-if="showHidden || (!itemCopy.hidden && !showHidden)"
-    class="list-group-item cursor-pointer"
+    class="list-group-item"
     :class="{
       'drag-hovered': dragHovered,
       'list-group-item-action': this.$store.getters.hasCharacter,
+      'cursor-pointer': this.$store.getters.hasCharacter,
+      'user-select-none': this.$store.getters.hasCharacter,
     }"
     @click="check"
     @mouseover="isHovering = true"
     @mouseout="isHovering = false"
   >
-    <span v-if="!itemCopy.hidden && !showHidden" class="user-select-none">
+    <span v-if="!itemCopy.hidden && !showHidden">
       <i
         v-if="!showHidden && this.$store.getters.hasCharacter"
         class="me-2 fa-fw fal"
@@ -25,7 +27,7 @@
     </span>
 
     <span v-if="showHidden" class="d-flex justify-content-between align-items-center">
-      <span :class="{ 'text-muted': itemCopy.hidden }" class="user-select-none">
+      <span :class="{ 'text-muted': itemCopy.hidden }">
         <i class="fa-fw fad fa-grip-lines cursor-grab d-none d-md-inline" :title="$t('shared.dragToReorder')"></i>
         &nbsp;
         {{ item.name }}

@@ -326,10 +326,8 @@
         <br v-if="item.description || item.url" />
         <p v-if="item.description" v-html="item.description"></p>
         <span v-if="item.url">
-          <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">
-            More details
-            <i class="fa-fw fal fa-external-link"></i>
-          </a>
+          <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">More details</a>
+          <i class="fa-fw fal fa-external-link"></i>
         </span>
         <br /><br /><br />
       </div>
@@ -422,7 +420,19 @@ export default {
   data() {
     return {
       news: news,
+      now: new Date() / 1000,
     };
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.now = new Date() / 1000;
+    });
+    this.intervalFunction = setInterval(() => {
+      this.now = new Date() / 1000;
+    }, 60 * 1000);
+  },
+  unmounted() {
+    clearInterval(this.intervalFunction);
   },
   methods: {
     changeLanguage(lang) {
@@ -463,8 +473,7 @@ export default {
       updateSettings(settings);
     },
     timeLeft(timestamp) {
-      let now = new Date() / 1000;
-      let diff = timestamp - now;
+      let diff = timestamp - this.now;
       let days = Math.floor(diff / (1 * 60 * 60 * 24));
       let hours = Math.floor(diff / (1 * 60 * 60));
       let minutes = Math.floor(diff / (1 * 60));

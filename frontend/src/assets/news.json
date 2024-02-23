@@ -1,32 +1,32 @@
 {
-  "latestCountdownID": 31,
+  "latestCountdownID": 39,
   "countdowns": [
     {
-      "title": "Moon Fire Faire 2023",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2023/Moonfire_Faire/oct9miki0d",
-      "start": 1691654400,
-      "end": 1693062000
-    },
-    {
-      "title": "The Rising 2023",
-      "start": 1693123200
+      "title": "A Nocturne for Heroes",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/ffxv/9tkdm9tw1g",
+      "start": 1709107200,
+      "end": 1710342000
     },
     {
       "title": "Moogle Treasure Trove",
-      "start": 1693123200
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202401/8degg9wgnk",
+      "start": 1706601600,
+      "end": 1710169200
     },
     {
-      "title": "FanFest Europe 2023",
-      "start": 1697878800
-    },
-    {
-      "title": "Patch 6.48",
+      "title": "Patch 6.57",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/patchnote_log/",
-      "start": 1691488800
+      "start": 1705402800
     }
   ],
   "latestID": 230523,
   "news": [
+    {
+      "ID": 231003,
+      "title": "Release of patch 6.5",
+      "published": "October 3, 2023",
+      "content": "Patch 6.5 is now live, and XIV ToDo has been updated with the new content! As always, let me know if you encounter any issues. Thank you for your support!"
+    },
     {
       "ID": 230523,
       "title": "Release of patch 6.4",
