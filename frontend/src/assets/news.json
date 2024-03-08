@@ -1,6 +1,12 @@
 {
-  "latestCountdownID": 39,
+  "latestCountdownID": 40,
   "countdowns": [
+    {
+      "title": "Little Ladies' Day & Hatching-tide",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/Little_Ladies_Day_Hatching_tide/fnvycqn3ol",
+      "start": 1710403200,
+      "end": 1711983600
+    },
     {
       "title": "A Nocturne for Heroes",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/ffxv/9tkdm9tw1g",
