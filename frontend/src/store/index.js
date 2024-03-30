@@ -30,8 +30,12 @@ const store = createStore({
       return state.userData != null && state.userData != {};
     },
     discordAuthURI(state) {
-      // eslint-disable-next-line max-len, prettier/prettier
-      return `${state.env.VUE_APP_DISCORD_AUTH_URI}?response_type=code&client_id=${state.env.VUE_APP_DISCORD_CLIENT_ID}&scope=identify&redirect_uri=${encodeURIComponent(state.env.VUE_APP_DISCORD_REDIRECT_URI)}&prompt=consent`;
+      return "https://discord.com/api/oauth2/authorize" +
+        "?response_type=code" +
+        "&client_id=" + state.env.VUE_APP_DISCORD_CLIENT_ID +
+        "&scope=identify" +
+        "&redirect_uri=" + encodeURIComponent(state.env.VUE_APP_DISCORD_REDIRECT_URI) +
+        "&prompt=consent";
     },
     discordUser(state) {
       return state.userData?.discordUser || {};
