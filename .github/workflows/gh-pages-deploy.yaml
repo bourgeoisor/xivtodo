@@ -38,7 +38,7 @@ jobs:
             VUE_APP_BUILD_DATE=$APP_BUILD_DATE
             VUE_APP_BACKEND_API_URI=https://api.xivtodo.com
             VUE_APP_DISCORD_CLIENT_ID=933567168912719923
-            VUE_APP_DISCORD_REDIRECT_URI=https://xivtodo.com/auth&prompt=consent
+            VUE_APP_DISCORD_REDIRECT_URI=https://xivtodo.com/auth
           EOF
 
       - name: Deploy to gh-pages
