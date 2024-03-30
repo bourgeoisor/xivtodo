@@ -26,8 +26,9 @@
 ### Frontend
 
 1. Make sure you have the following requirements:
-   - NodeJS 16+ installed locally
+   - Node.js 20+ installed locally
    - npm installed locally
+   - Vue's CLI installed locally (`npm install -g @vue/cli`)
 
 2. Clone the repository:
    ```sh
@@ -43,7 +44,7 @@
 4. Run one of the following commands:
    ```sh
    npm run serve # serve the frontend locally
-   npm run build # built the dist directory
+   npm run build # build the dist directory
    npm run lint # lint the frontend
    vue ui # open vue's interactive ui
    ```
@@ -61,7 +62,7 @@ VUE_APP_BACKEND_API_URI=https://api.xivtodo.com
    - Google Cloud project with the Firestore API enabled
    - Service Account with RW permissions to Firestore
    - Discord application with an OAuth2 redirect to `http://localhost:8080/auth`
-   - Go 1.20+ installed locally
+   - Go 1.22+ installed locally
 
 2. Clone the repository:
    ```sh
