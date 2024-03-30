@@ -4,6 +4,7 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/gh-pages-deploy.yaml
       - frontend/**
 jobs:
   gh-pages-deploy:
