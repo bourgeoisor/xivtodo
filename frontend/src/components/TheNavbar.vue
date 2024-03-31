@@ -16,8 +16,8 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div v-if="this.$route.name != 'Character'" class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav navbar-nav-scroll ms-auto flex-grow-1 mb-2 mb-lg-0">
             <li v-if="this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/profile" class="nav-link" @click="collapseNav">
                 {{ $t("page.profile") }}
@@ -74,8 +74,11 @@
                 {{ $t("page.checklist") }}
               </router-link>
             </li>
-          </ul>
-          <ul class="navbar-nav mb-2 mb-lg-0">
+
+            <!-- Items above are left-aligned -->
+            <li class="nav-item flex-grow-1"></li>
+            <!-- Items below are right-aligned -->
+
             <li class="nav-item">
               <a
                 class="nav-link"
@@ -85,7 +88,6 @@
                 aria-controls="offcanvasCountdowns"
                 @click="seenLatestCountdown()"
               >
-                <span class="d-inline d-lg-none">{{ $t("page.countdowns") }} </span>
                 <span class="fa-fw fal fa-clock position-relative">
                   <span
                     v-if="
@@ -95,6 +97,7 @@
                   >
                   </span>
                 </span>
+                <span class="d-inline d-lg-none ms-2">{{ $t("page.countdowns") }}</span>
               </a>
             </li>
             <li class="nav-item">
@@ -105,8 +108,7 @@
                 data-bs-target="#offcanvasUpdates"
                 aria-controls="offcanvasUpdates"
                 @click="seenLatestNews()"
-              >
-                <span class="d-inline d-lg-none">{{ $t("page.newsUpdates") }} </span>
+              > 
                 <span class="fa-fw fal fa-bell position-relative">
                   <span
                     v-if="this.$store.getters.isSignedIn && this.$store.getters.latestNewsSeen < news.latestID"
@@ -114,6 +116,7 @@
                   >
                   </span>
                 </span>
+                <span class="d-inline d-lg-none ms-2">{{ $t("page.newsUpdates") }}</span>
               </a>
             </li>
             <li class="nav-item dropdown">
@@ -126,7 +129,6 @@
                 aria-expanded="false"
                 @click="this.$store.commit('setFlag', { key: 'languageClicked', value: true })"
               >
-                <span class="d-inline d-lg-none">{{ $t("page.language") }} </span>
                 <span class="fa-fw fal fa-globe-americas position-relative">
                   <span
                     v-if="!this.$store.getters.flag('languageClicked')"
@@ -134,46 +136,39 @@
                   >
                   </span>
                 </span>
+                <span class="d-inline d-lg-none ms-2">{{ $t("page.language") }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="collectionDropdown">
                 <li>
                   <h6 class="dropdown-header">{{ $t("navbar.preferredLanguage") }}</h6>
                 </li>
-                <li v-if="this.$store.getters.language == 'en'">
-                  <span class="dropdown-item active" @click="collapseNav">
+                <li>
+                  <span v-if="this.$store.getters.language == 'en'" class="dropdown-item active" @click="collapseNav">
                     English
                     <i class="fa-fw fal fa-check"></i>
                   </span>
+                  <a v-else class="dropdown-item" href="#" @click="changeLanguage('en')">English</a>
                 </li>
-                <li v-else>
-                  <a class="dropdown-item" href="#" @click="changeLanguage('en')">English</a>
-                </li>
-                <li v-if="this.$store.getters.language == 'fr'">
-                  <span class="dropdown-item active" @click="collapseNav">
-                    Français (TEC)
+                <li>
+                  <span v-if="this.$store.getters.language == 'fr'" class="dropdown-item active" @click="collapseNav">
+                    Français
                     <i class="fa-fw fal fa-check"></i>
                   </span>
+                  <a v-else class="dropdown-item" href="#" @click="changeLanguage('fr')">Français</a>
                 </li>
-                <li v-else>
-                  <a class="dropdown-item" href="#" @click="changeLanguage('fr')">Français (TEC)</a>
-                </li>
-                <li v-if="this.$store.getters.language == 'de'">
-                  <span class="dropdown-item active" @click="collapseNav">
-                    Deutsch (WIP)
+                <li>
+                  <span v-if="this.$store.getters.language == 'de'" class="dropdown-item active" @click="collapseNav">
+                    Deutsch
                     <i class="fa-fw fal fa-check"></i>
                   </span>
+                  <a v-else class="dropdown-item" href="#" @click="changeLanguage('de')">Deutsch</a>
                 </li>
-                <li v-else>
-                  <a class="dropdown-item" href="#" @click="changeLanguage('de')">Deutsch (WIP)</a>
-                </li>
-                <li v-if="this.$store.getters.language == 'ja'">
-                  <span class="dropdown-item active" @click="collapseNav">
-                    日本語 (仕掛品)
+                <li>
+                  <span v-if="this.$store.getters.language == 'ja'" class="dropdown-item active" @click="collapseNav">
+                    日本語
                     <i class="fa-fw fal fa-check"></i>
                   </span>
-                </li>
-                <li v-else>
-                  <a class="dropdown-item" href="#" @click="changeLanguage('ja')"> 日本語 (仕掛品) </a>
+                  <a v-else class="dropdown-item" href="#" @click="changeLanguage('ja')">日本語</a>
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
@@ -190,7 +185,8 @@
             </li>
             <li v-if="!this.$store.getters.isSignedIn" class="nav-item">
               <a class="nav-link" :href="this.$store.getters.discordAuthURI">
-                {{ $t("home.signInDiscord") }}
+                <span class="d-inline-block d-lg-none fa-fw fal fa-sign-in me-2"></span>
+                <span>{{ $t("home.signInDiscord") }}</span>
               </a>
             </li>
             <li v-else class="nav-item dropdown">
@@ -203,7 +199,8 @@
                 aria-expanded="false"
               >
                 <span v-if="this.$store.getters.hasCharacter">
-                  {{ this.$store.getters.lodestoneData.Character.Name }}
+                  <span class="d-inline-block d-lg-none fa-fw fal fa-cog me-2"></span>
+                  <span>{{ this.$store.getters.lodestoneData.Character.Name }}</span>
                   <img
                     v-if="this.$store.getters.hasCharacter"
                     class="avatar-nav d-none d-lg-inline"
@@ -211,14 +208,17 @@
                     :alt="$t('shared.portraitAlt')"
                   />
                 </span>
-                <span v-else>
-                  {{ $t("page.settings") }}
-                </span>
+                <template v-else>
+                  <span class="d-inline-block d-lg-none fa-fw fal fa-cog me-2"></span>
+                  <span>{{ $t("navbar.settingsAndCharacters") }}</span>
+                </template>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                <div v-if="this.$store.getters.hasCharacter">
                   <li>
                     <h6 class="dropdown-header">{{ $t("navbar.changeActiveCharacter") }}</h6>
+                  </li>
+                  <li v-if="!this.$store.getters.hasCharacter">
+                    <span class="dropdown-item disabled">{{ $t("navbar.noCharacters") }}</span>
                   </li>
                   <li v-for="(item, i) of this.$store.getters.characters" :key="item.ID">
                     <span v-if="i == this.$store.state.activeCharacterID" class="dropdown-item active">
@@ -232,7 +232,6 @@
                     </a>
                   </li>
                   <li><hr class="dropdown-divider" /></li>
-                </div>
                 <li>
                   <h6 class="dropdown-header">
                     {{ this.$store.getters.discordUsername }}
@@ -250,50 +249,6 @@
                   </router-link>
                 </li>
               </ul>
-            </li>
-          </ul>
-        </div>
-
-        <div v-else class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="nav navbar-nav me-auto mb-2 mb-lg-0" id="nav-tab" role="tablist">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                id="nav-profile-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#nav-profile"
-                type="button"
-                role="tab"
-                @click="collapseNav"
-              >
-                Profile
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="nav-duties-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#nav-duties"
-                type="button"
-                role="tab"
-                @click="collapseNav"
-              >
-                Encounters
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="nav-questlines-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#nav-questlines"
-                type="button"
-                role="tab"
-                @click="collapseNav"
-              >
-                Questlines
-              </a>
             </li>
           </ul>
         </div>
