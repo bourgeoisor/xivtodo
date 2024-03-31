@@ -29,7 +29,9 @@
   "navbar": {
     "changeActiveCharacter": "Personnage actif",
     "preferredLanguage": "Langue préférée",
-    "feedback": "Commentaires"
+    "feedback": "Commentaires",
+    "settingsAndCharacters": "Settings & Characters",
+    "noCharacters": "Add your characters in Settings"
   },
   "pageHeader": {
     "ofCharacter": "de {characterName}",
