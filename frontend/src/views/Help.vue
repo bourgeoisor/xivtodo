@@ -2,12 +2,15 @@
   <div class="container">
     <h1>{{ $t("page.help") }}</h1>
     <hr />
+
     <div class="row">
       <div class="col-lg-10 indent-paragraphs">
+        <!-- Discord sign-in -->
         <h2>{{ $t("help.discordSignIn.header") }}</h2>
         <p>{{ $t("help.discordSignIn.text") }}</p>
-
         <br />
+
+        <!-- Adding characters -->
         <h2>{{ $t("help.addingCharacters.header") }}</h2>
         <p>
           <i18n-t keypath="help.addingCharacters.text1">
@@ -25,12 +28,14 @@
             <b>{{ $t("settings.addCharacter") }}</b>
           </i18n-t>
         </p>
-
         <br />
+
+        <!-- Free trial characters -->
         <h2>{{ $t("help.freeTrialCharacters.header") }}</h2>
         <p>{{ $t("help.freeTrialCharacters.text") }}</p>
-
         <br />
+
+        <!-- Enabling public achievements -->
         <h2>{{ $t("help.enablingPublicAchievements.header") }}</h2>
         <p>
           <i18n-t keypath="help.enablingPublicAchievements.text1">
@@ -49,8 +54,9 @@
             <router-link to="/settings">{{ $t("page.settings") }}</router-link>
           </i18n-t>
         </p>
-
         <br />
+
+        <!-- Customizing character checklists -->
         <h2>{{ $t("help.customizingCharacterChecklists.header") }}</h2>
         <p>
           <i18n-t keypath="help.customizingCharacterChecklists.text">
@@ -59,8 +65,9 @@
             <b>{{ $t("shared.customize") }}</b>
           </i18n-t>
         </p>
-
         <br />
+
+        <!-- Encounter and questline completion -->
         <h2>{{ $t("help.encounterQuestlineCompletion.header") }}</h2>
         <p>{{ $t("help.encounterQuestlineCompletion.text1") }}</p>
         <p>
@@ -95,8 +102,9 @@
           <br />
           &nbsp;&nbsp;{{ $t("help.encounterQuestlineCompletion.stateNotCleared") }}
         </p>
-
         <br />
+
+        <!-- Other questions -->
         <h2>{{ $t("help.otherQuestions.header") }}</h2>
         <p>
           <i18n-t keypath="help.otherQuestions.text">

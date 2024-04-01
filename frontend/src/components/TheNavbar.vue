@@ -16,28 +16,38 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav navbar-nav-scroll ms-auto flex-grow-1 mb-2 mb-lg-0">
+            <!-- Profile -->
             <li v-if="this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/profile" class="nav-link" @click="collapseNav">
                 {{ $t("page.profile") }}
               </router-link>
             </li>
+
+            <!-- Encounters -->
             <li class="nav-item">
               <router-link to="/encounters" class="nav-link" @click="collapseNav">
                 {{ $t("page.encounters") }}
               </router-link>
             </li>
+
+            <!-- Questlines -->
             <li class="nav-item">
               <router-link to="/questlines" class="nav-link" @click="collapseNav">
                 {{ $t("page.questlines") }}
               </router-link>
             </li>
+
+            <!-- Challenges -->
             <li class="nav-item">
               <router-link to="/challenges" class="nav-link" @click="collapseNav">
                 {{ $t("page.challenges") }}
               </router-link>
             </li>
+
+            <!-- Collection -->
             <!-- <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -69,6 +79,8 @@
                 </li>
               </ul>
             </li> -->
+
+            <!-- Checklist -->
             <li class="nav-item">
               <router-link to="/checklist" class="nav-link" @click="collapseNav">
                 {{ $t("page.checklist") }}
@@ -79,6 +91,7 @@
             <li class="nav-item flex-grow-1"></li>
             <!-- Items below are right-aligned -->
 
+            <!-- Countdowns -->
             <li class="nav-item">
               <a
                 class="nav-link"
@@ -100,6 +113,8 @@
                 <span class="d-inline d-lg-none ms-2">{{ $t("page.countdowns") }}</span>
               </a>
             </li>
+
+            <!-- News -->
             <li class="nav-item">
               <a
                 class="nav-link"
@@ -119,6 +134,8 @@
                 <span class="d-inline d-lg-none ms-2">{{ $t("page.newsUpdates") }}</span>
               </a>
             </li>
+
+            <!-- Language -->
             <li class="nav-item dropdown">
               <a
                 class="nav-link"
@@ -139,6 +156,7 @@
                 <span class="d-inline d-lg-none ms-2">{{ $t("page.language") }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="collectionDropdown">
+                <!-- Preferred language -->
                 <li>
                   <h6 class="dropdown-header">{{ $t("navbar.preferredLanguage") }}</h6>
                 </li>
@@ -170,7 +188,10 @@
                   </span>
                   <a v-else class="dropdown-item" href="#" @click="changeLanguage('ja')">日本語</a>
                 </li>
+
                 <li><hr class="dropdown-divider" /></li>
+
+                <!-- Feedback -->
                 <li>
                   <a
                     class="dropdown-item"
@@ -183,12 +204,16 @@
                 </li>
               </ul>
             </li>
+
+            <!-- Sign-in -->
             <li v-if="!this.$store.getters.isSignedIn" class="nav-item">
               <a class="nav-link" :href="this.$store.getters.discordAuthURI">
                 <span class="d-inline-block d-lg-none fa-fw fal fa-sign-in me-2"></span>
                 <span>{{ $t("home.signInDiscord") }}</span>
               </a>
             </li>
+
+            <!-- Settings & character -->
             <li v-else class="nav-item dropdown">
               <a
                 class="nav-link"
@@ -214,24 +239,28 @@
                 </template>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
-                  <li>
-                    <h6 class="dropdown-header">{{ $t("navbar.changeActiveCharacter") }}</h6>
-                  </li>
-                  <li v-if="!this.$store.getters.hasCharacter">
-                    <span class="dropdown-item disabled">{{ $t("navbar.noCharacters") }}</span>
-                  </li>
-                  <li v-for="(item, i) of this.$store.getters.characters" :key="item.ID">
-                    <span v-if="i == this.$store.state.activeCharacterID" class="dropdown-item active">
-                      <b>{{ item.lodestoneData.Character.Name }}</b>
-                      – {{ item.lodestoneData.Character.World }}
-                      <i class="fa-fw fal fa-check"></i>
-                    </span>
-                    <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
-                      <b>{{ item.lodestoneData.Character.Name }}</b>
-                      – {{ item.lodestoneData.Character.World }}
-                    </a>
-                  </li>
-                  <li><hr class="dropdown-divider" /></li>
+                <!-- Active character -->
+                <li>
+                  <h6 class="dropdown-header">{{ $t("navbar.changeActiveCharacter") }}</h6>
+                </li>
+                <li v-if="!this.$store.getters.hasCharacter">
+                  <span class="dropdown-item disabled">{{ $t("navbar.noCharacters") }}</span>
+                </li>
+                <li v-for="(item, i) of this.$store.getters.characters" :key="item.ID">
+                  <span v-if="i == this.$store.state.activeCharacterID" class="dropdown-item active">
+                    <b>{{ item.lodestoneData.Character.Name }}</b>
+                    – {{ item.lodestoneData.Character.World }}
+                    <i class="fa-fw fal fa-check"></i>
+                  </span>
+                  <a v-else class="dropdown-item" href="#" @click="changeActiveCharacter(i)">
+                    <b>{{ item.lodestoneData.Character.Name }}</b>
+                    – {{ item.lodestoneData.Character.World }}
+                  </a>
+                </li>
+
+                <li><hr class="dropdown-divider" /></li>
+
+                <!-- Discord username & sign-out -->
                 <li>
                   <h6 class="dropdown-header">
                     {{ this.$store.getters.discordUsername }}
@@ -242,7 +271,10 @@
                     <i class="fa-fw fal fa-power-off"></i> {{ $t("page.signOut") }}
                   </a>
                 </li>
+
                 <li><hr class="dropdown-divider" /></li>
+
+                <!-- Settings -->
                 <li>
                   <router-link to="/settings" class="dropdown-item" @click="collapseNav">
                     <i class="fa-fw fal fa-cog"></i> {{ $t("page.settings") }}
@@ -256,6 +288,7 @@
     </nav>
   </header>
 
+  <!-- Countdowns off-canvas -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCountdowns">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasCountdownsLabel">{{ $t("page.countdowns") }}</h5>
@@ -289,6 +322,7 @@
     </div>
   </div>
 
+  <!-- News off-canvas -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasUpdates">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasUpdatesLabel">{{ $t("page.newsUpdates") }}</h5>
