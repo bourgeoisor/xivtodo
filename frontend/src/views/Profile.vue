@@ -11,116 +11,115 @@
       </span>
     </h1>
     <hr />
+
     <div class="row">
+      <!-- Character portrait & bio -->
       <div class="col-lg d-none d-lg-block">
+        <!-- Portrait -->
         <img id="character-portrait" :src="this.$store.getters.character.Portrait" :alt="$t('shared.portraitAlt')" />
         <br />
-        <div v-if="this.$store.getters.character.Bio != '-'" class="fst-italic text-break pt-2">
-          “{{ this.$store.getters.character.Bio }}”
-        </div>
-        <br />
+
+        <!-- Bio -->
+        <blockquote v-if="this.hasBio" class="blockquote fs-6 text-break p-2">
+          <p>“{{ this.$store.getters.character.Bio }}”</p>
+        </blockquote>
       </div>
 
+      <!-- Character info -->
       <div class="col-lg">
         <h2>{{ $t("profile.characterInfo") }}</h2>
+
+        <!-- Info: World -->
         <div class="info-block">
           <b>{{ $t("profile.world") }}</b>
           <br />
           {{ this.$store.getters.character.World }} ({{ this.$store.getters.character.DC }})
         </div>
 
+        <!-- Info: Race & clan -->
         <div class="info-block">
           <b>{{ $t("profile.raceClan") }}</b>
           <br />
-          <span v-if="this.$store.getters.character.Gender == 1">
-            {{ this.getGenderedLocaleName(this.$store.getters.character.Race, "Masculine") }} /
-            {{ this.getGenderedLocaleName(this.$store.getters.character.Tribe, "Masculine") }}
-            <i class="fa-fw fal fa-mars"></i>
-          </span>
-          <span v-else>
-            {{ this.getGenderedLocaleName(this.$store.getters.character.Race, "Feminine") }} /
-            {{ this.getGenderedLocaleName(this.$store.getters.character.Tribe, "Feminine") }}
-            <i class="fa-fw fal fa-venus"></i>
-          </span>
+          <!-- <span> -->
+            {{ this.race }} / {{ this.clan }}
+            <i class="fa-fw fal" :class="{'fa-mars': this.isMasculine, 'fa-venus': !this.isMasculine}"></i>
+          <!-- </span> -->
         </div>
 
+        <!-- Info: Nameday -->
         <div class="info-block">
           <b>{{ $t("profile.nameday") }}</b>
           <br />
           {{ this.$store.getters.character.Nameday }}
         </div>
 
+        <!-- Info: Guardian -->
         <div class="info-block">
           <b>{{ $t("profile.guardian") }}</b>
           <br />
-          {{ this.getLocaleName(this.$store.getters.character.GuardianDeity) }}
+          <img :src="this.guardianImageURI"/>
+          {{ this.localeName(this.$store.getters.character.GuardianDeity) }}
         </div>
 
+        <!-- Info: Free Company -->
         <div v-if="this.$store.getters.character.FreeCompanyName" class="info-block">
           <b>{{ $t("profile.freeCompany") }}</b>
           <br />
           {{ this.$store.getters.character.FreeCompanyName }}
         </div>
 
+        <!-- Info: City-state -->
         <div class="info-block">
           <b>{{ $t("profile.cityState") }}</b>
           <br />
-          <img :src="'/icons/town-' + this.$store.getters.character.Town.ID + '.png'" />
-          {{ this.getLocaleName(this.$store.getters.character.Town) }}
+          <img :src="this.cityStateImageURI"/>
+          {{ this.localeName(this.$store.getters.character.Town) }}
         </div>
 
-        <template v-if="this.$store.getters.character.GrandCompanyInfo?.GrandCompany">
-          <div class="info-block">
-            <b>{{ $t("profile.grandCompany") }}</b>
-            <br />
-            <img
-              :src="
-                '/icons/gc-' +
-                this.$store.getters.character.GrandCompanyInfo.GrandCompany.ID +
-                '-' +
-                this.$store.getters.character.GrandCompanyInfo.RankID +
-                '.png'
-              "
-            />
-            {{ this.getLocaleName(this.$store.getters.character.GrandCompanyInfo.GrandCompany) }}
-          </div>
-        </template>
-        <template v-if="this.$store.getters.achievementsPublic">
-          <div class="info-block">
-            <b>
-              <abbr :title="$t('profile.playingSinceAlt')">
-                {{ $t("profile.playingSince") }}
-              </abbr>
-            </b>
-            <br />
-            {{ playingSince }}
-          </div>
-        </template>
+        <!-- Info: Grand Company -->
+        <div v-if="this.$store.getters.character.GrandCompanyInfo?.GrandCompany" class="info-block">
+          <b>{{ $t("profile.grandCompany") }}</b>
+          <br />
+          <img :src="this.grandCompanyImageURI"/>
+          {{ this.localeName(this.$store.getters.character.GrandCompanyInfo.GrandCompany) }}
+        </div>
+
+        <!-- Info: Playing since -->
+        <div v-if="this.$store.getters.achievementsPublic" class="info-block">
+          <b>
+            <abbr :title="$t('profile.playingSinceAlt')">
+              {{ $t("profile.playingSince") }}
+            </abbr>
+          </b>
+          <br />
+          {{ this.playingSince }}
+        </div>
+
+        <!-- Info: Exploratory missions -->
         <div class="info-block">
           <b>{{ $t("profile.exploratoryMissions") }}</b>
           <br />
+
+          <!-- Eureka -->
           {{ $t("profile.elementalLevel") }}:
-          <span
-            :class="{
-              'fw-bold': this.$store.getters.character.ClassJobElemental?.Level == 60,
-            }"
-          >
-            {{ this.$store.getters.character.ClassJobElemental?.Level || "0" }}
+          <span :class="{'fw-bold': this.isMaxLevelEureka}">
+            {{ this.levelEureka }}
           </span>
           <br />
+
+          <!-- Bozja -->
           {{ $t("profile.resistanceRank") }}:
-          <span
-            :class="{
-              'fw-bold': this.$store.getters.character.ClassJobBozjan?.Level == 25,
-            }"
-          >
-            {{ this.$store.getters.character.ClassJobBozjan?.Level || "0" }}
+          <span :class="{'fw-bold': this.isMaxLevelBozja}">
+            {{ this.levelBozja }}
           </span>
         </div>
-        <br />
       </div>
+
+      <!-- Job levels -->
       <div class="col-lg">
         <h2>{{ $t("profile.jobLevels") }}</h2>
+
+        <!-- Tanks -->
         <div class="info-block row">
           <b>{{ $t("profile.tanks") }}</b>
           <br />
@@ -133,6 +132,8 @@
             <JobLevel initial="gnb" :title="$t('profile.job.gnb')" type="tank" />
           </div>
         </div>
+
+        <!-- Healers -->
         <div class="info-block row">
           <b>{{ $t("profile.healers") }}</b>
           <br />
@@ -144,6 +145,8 @@
             <JobLevel initial="sge" :title="$t('profile.job.sge')" type="healer" />
           </div>
         </div>
+
+        <!-- DPS -->
         <div class="info-block row">
           <b>{{ $t("profile.dps") }}</b>
           <br />
@@ -172,6 +175,8 @@
             </div>
           </div>
         </div>
+
+        <!-- Crafters -->
         <div class="info-block row">
           <b>{{ $t("profile.crafters") }}</b>
           <br />
@@ -186,6 +191,8 @@
             <JobLevel initial="cul" :title="$t('profile.job.cul')" type="crafter" />
           </div>
         </div>
+
+        <!-- Gatherers -->
         <div class="info-block row">
           <b>{{ $t("profile.gatherers") }}</b>
           <br />
@@ -195,8 +202,8 @@
             <JobLevel initial="fsh" :title="$t('profile.job.fsh')" type="gatherer" />
           </div>
         </div>
-        <br />
       </div>
+
     </div>
   </div>
 </template>
@@ -204,8 +211,7 @@
 <style lang="scss">
 .info-block {
   line-height: 1.3;
-  margin-bottom: 5px;
-  margin-top: 8px;
+  margin-bottom: 15px;
   font-weight: 300;
 
   b {
@@ -236,22 +242,66 @@ import JobLevel from "@/components/JobLevel.vue";
 
 export default {
   name: "ProfileView",
+  data() {
+    return {
+      maxLevelEureka: 60,
+      maxLevelBozja: 25,
+    };
+  },
   components: {
     JobLevel,
   },
   computed: {
+    hasBio() {
+      return this.$store.getters.character.Bio != "-";
+    },
+    isMasculine() {
+      return this.$store.getters.character.Gender == 1;
+    },
+    gender() {
+      return this.isMasculine ? "Masculine" : "Feminine";
+    },
+    race() {
+      return this.genderedLocaleName(this.$store.getters.character.Race, this.gender);
+    },
+    clan() {
+      return this.genderedLocaleName(this.$store.getters.character.Tribe, this.gender);
+    },
+    guardianImageURI() {
+      return "/icons/guardian-" + this.$store.getters.character.GuardianDeity.ID + ".png";
+    },
+    cityStateImageURI() {
+      return "/icons/town-" + this.$store.getters.character.Town.ID + ".png";
+    },
+    grandCompanyImageURI() {
+      const grandCompanyID = this.$store.getters.character.GrandCompanyInfo.GrandCompany.ID;
+      const grandCompanyRankID = this.$store.getters.character.GrandCompanyInfo.RankID;
+      return "/icons/gc-" + grandCompanyID + "-" + grandCompanyRankID + ".png";
+    },
     playingSince() {
       const date = new Date(this.$store.getters.lodestoneData.PlayingSince);
       const locale = this.$i18n.locale;
       return date.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric" });
     },
+    levelEureka() {
+      return this.$store.getters.character.ClassJobElemental?.Level || 0;
+    },
+    levelBozja() {
+      return this.$store.getters.character.ClassJobBozjan?.Level || 0;
+    },
+    isMaxLevelEureka() {
+      return this.levelEureka == this.maxLevelEureka;
+    },
+    isMaxLevelBozja() {
+      return this.levelBozja == this.maxLevelBozja;
+    }
   },
   methods: {
-    getLocaleName(payload) {
+    localeName(payload) {
       const locale = this.$i18n.locale;
       return payload["Name" + locale.toUpperCase()];
     },
-    getGenderedLocaleName(payload, gender) {
+    genderedLocaleName(payload, gender) {
       const locale = this.$i18n.locale;
       return payload["Name" + gender + locale.toUpperCase()];
     },

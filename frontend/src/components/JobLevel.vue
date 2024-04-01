@@ -1,8 +1,5 @@
 <template>
-  <div
-    v-if="this.$store.getters.lodestoneData.Jobs[this.initial]"
-    class="job-level text-center fw-lighter user-select-none tt"
-  >
+  <div v-if="this.jobExists" class="job-level text-center fw-lighter user-select-none tt">
     <!-- Tooltip -->
     <span class="tt-text">{{ title }}</span>
 
@@ -42,7 +39,6 @@
   float: left;
   margin-right: 10px;
   margin-top: 5px;
-  margin-bottom: 5px;
   width: 22px;
 }
 
@@ -93,8 +89,11 @@ export default {
     type: String,
   },
   computed: {
+    jobExists() {
+      return this.$store.getters.lodestoneData.Jobs[this.initial] != null;
+    },
     currentLevel() {
-      return this.$store.getters.lodestoneData.Jobs[this.initial].Level;
+      return this.$store.getters.lodestoneData.Jobs[this.initial].Level || 0;
     },
     jobUnlocked() {
       return this.currentLevel != 0;
