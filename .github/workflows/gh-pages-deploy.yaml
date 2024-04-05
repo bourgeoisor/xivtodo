@@ -42,12 +42,12 @@ jobs:
             VUE_APP_DISCORD_REDIRECT_URI=https://xivtodo.com/auth
           EOF
 
-      - name: Deploy to gh-pages
+      - name: Build and deploy to gh-pages
         run: |
           git checkout --orphan gh-pages-test
           cd frontend
           npm run build
-          pathnames=(
+          paths=(
             "profile"
             "encounters"
             "questlines"
@@ -57,7 +57,7 @@ jobs:
             "help"
             "privacy"
           )
-          for path in pathnames; do
+          for path in $paths; do
             mkdir -p dist/$path
             cp dist/index.html dist/$path/index.html
           done
