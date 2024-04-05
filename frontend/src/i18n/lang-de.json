@@ -30,8 +30,8 @@
     "changeActiveCharacter": "Aktiver Charakter",
     "preferredLanguage": "Bevorzugte Sprache",
     "feedback": "Feedback",
-    "settingsAndCharacters": "Settings & Characters",
-    "noCharacters": "Add your characters in Settings"
+    "settingsAndCharacters": "Einstellungen & Zeichen",
+    "noCharacters": "Füge deine Zeichen in den Einstellungen hinzu"
   },
   "pageHeader": {
     "ofCharacter": "von {characterName}",
