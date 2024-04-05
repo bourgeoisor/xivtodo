@@ -14,11 +14,11 @@
         <small>{{ $t("page.home") }}</small>
       </router-link>
       ·
-      <router-link to="/help">
+      <router-link to="/help/">
         <small>{{ $t("page.help") }}</small>
       </router-link>
       ·
-      <router-link to="/privacy">
+      <router-link to="/privacy/">
         <small>{{ $t("page.privacy") }}</small>
       </router-link>
       ·

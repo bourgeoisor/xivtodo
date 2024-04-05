@@ -47,7 +47,20 @@ jobs:
           git checkout --orphan gh-pages-test
           cd frontend
           npm run build
-          cd ..
-          git --work-tree frontend/dist add --all
-          git --work-tree frontend/dist commit -m "Automated dist build"
+          pathnames=(
+            "profile"
+            "encounters"
+            "questlines"
+            "challenges"
+            "checklist"
+            "settings"
+            "help"
+            "privacy"
+          )
+          for path in pathnames; do
+            mkdir -p dist/$path
+            cp dist/index.html dist/$path/index.html
+          done
+          git --work-tree dist add --all
+          git --work-tree dist commit -m "Automated dist build"
           git push origin HEAD:gh-pages --force

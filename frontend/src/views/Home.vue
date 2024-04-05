@@ -9,7 +9,7 @@
         </p>
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
           <template v-if="!this.$store.getters.hasCharacter">
-            <router-link v-if="this.$store.getters.isSignedIn" to="/settings">
+            <router-link v-if="this.$store.getters.isSignedIn" to="/settings/">
               <button type="button" class="btn btn-success btn-lg px-4 gap-3">
                 {{ $t("home.addCharacter") }}
               </button>
@@ -24,12 +24,12 @@
             </button>
           </template>
           <template v-else>
-            <router-link to="/profile">
+            <router-link to="/profile/">
               <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">
                 {{ $t("home.viewProfile") }}
               </button>
             </router-link>
-            <router-link to="/settings">
+            <router-link to="/settings/">
               <button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3">
                 {{ $t("page.settings") }}
               </button>

@@ -21,28 +21,28 @@
           <ul class="navbar-nav navbar-nav-scroll ms-auto flex-grow-1 mb-2 mb-lg-0">
             <!-- Profile -->
             <li v-if="this.$store.getters.hasCharacter" class="nav-item">
-              <router-link to="/profile" class="nav-link" @click="collapseNav">
+              <router-link to="/profile/" class="nav-link" @click="collapseNav">
                 {{ $t("page.profile") }}
               </router-link>
             </li>
 
             <!-- Encounters -->
             <li class="nav-item">
-              <router-link to="/encounters" class="nav-link" @click="collapseNav">
+              <router-link to="/encounters/" class="nav-link" @click="collapseNav">
                 {{ $t("page.encounters") }}
               </router-link>
             </li>
 
             <!-- Questlines -->
             <li class="nav-item">
-              <router-link to="/questlines" class="nav-link" @click="collapseNav">
+              <router-link to="/questlines/" class="nav-link" @click="collapseNav">
                 {{ $t("page.questlines") }}
               </router-link>
             </li>
 
             <!-- Challenges -->
             <li class="nav-item">
-              <router-link to="/challenges" class="nav-link" @click="collapseNav">
+              <router-link to="/challenges/" class="nav-link" @click="collapseNav">
                 {{ $t("page.challenges") }}
               </router-link>
             </li>
@@ -64,16 +64,16 @@
                 aria-labelledby="collectionDropdown"
               >
                 <li>
-                  <router-link to="/achievements" class="dropdown-item" @click="collapseNav">
+                  <router-link to="/achievements/" class="dropdown-item" @click="collapseNav">
                     <i class="fa-fw fal fa-trophy"></i> {{ $t("page.achievements") }}
                   </router-link>
-                  <router-link to="/titles" class="dropdown-item" @click="collapseNav">
+                  <router-link to="/titles/" class="dropdown-item" @click="collapseNav">
                     <i class="fa-fw fal fa-scroll"></i> {{ $t("page.titles") }}
                   </router-link>
-                  <router-link to="/mounts" class="dropdown-item" @click="collapseNav">
+                  <router-link to="/mounts/" class="dropdown-item" @click="collapseNav">
                     <i class="fa-fw fal fa-horse-saddle"></i> {{ $t("page.mounts") }}
                   </router-link>
-                  <router-link to="/minions" class="dropdown-item" @click="collapseNav">
+                  <router-link to="/minions/" class="dropdown-item" @click="collapseNav">
                     <i class="fa-fw fal fa-cat-space"></i> {{ $t("page.minions") }}
                   </router-link>
                 </li>
@@ -82,7 +82,7 @@
 
             <!-- Checklist -->
             <li class="nav-item">
-              <router-link to="/checklist" class="nav-link" @click="collapseNav">
+              <router-link to="/checklist/" class="nav-link" @click="collapseNav">
                 {{ $t("page.checklist") }}
               </router-link>
             </li>
@@ -276,7 +276,7 @@
 
                 <!-- Settings -->
                 <li>
-                  <router-link to="/settings" class="dropdown-item" @click="collapseNav">
+                  <router-link to="/settings/" class="dropdown-item" @click="collapseNav">
                     <i class="fa-fw fal fa-cog"></i> {{ $t("page.settings") }}
                   </router-link>
                 </li>
