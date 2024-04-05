@@ -28,21 +28,21 @@
 
     <span v-if="showHidden" class="d-flex justify-content-between align-items-center">
       <span :class="{ 'text-muted': itemCopy.hidden }">
-        <i class="fa-fw fad fa-grip-lines cursor-grab d-none d-md-inline" :title="$t('shared.dragToReorder')"></i>
+        <i class="fa-fw fas fa-grip-lines cursor-grab d-none d-md-inline" :title="$t('shared.dragToReorder')"></i>
         &nbsp;
         {{ item.name }}
       </span>
       <span v-if="showHidden">
         <a v-if="item.custom" class="text-danger cursor-pointer tt" @click="remove">
-          <i class="fa-fw fad fa-trash-alt"></i>
+          <i class="fa-fw fas fa-trash-alt"></i>
           <span class="tt-text">{{ $t("shared.remove") }}</span>
         </a>
         <a v-else-if="itemCopy.hidden" class="text-secondary cursor-pointer tt" @click="hid">
-          <i class="fa-fw fad fa-eye-slash"></i>
+          <i class="fa-fw fas fa-eye-slash"></i>
           <span class="tt-text">{{ $t("shared.show") }}</span>
         </a>
         <a v-else-if="!itemCopy.hidden" class="text-success cursor-pointer tt" @click="hid">
-          <i class="fa-fw fad fa-eye"></i>
+          <i class="fa-fw fas fa-eye"></i>
           <span class="tt-text">{{ $t("shared.hide") }}</span>
         </a>
       </span>

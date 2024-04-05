@@ -78,25 +78,25 @@
         <p>{{ $t("help.encounterQuestlineCompletion.textState") }}</p>
         <p>
           <span class="text-success">
-            <i class="fa-fw fal fa-badge-check text-success"></i>
+            <i class="fa-fw fas fa-badge-check text-success"></i>
             {{ db.arrDungeons[0]["Name" + $i18n.locale.toUpperCase()] }}
           </span>
           <br />
           &nbsp;&nbsp;{{ $t("help.encounterQuestlineCompletion.stateClearedVerified") }}<br />
           <span class="text-success">
-            <i class="fa-fw fal fa-check-circle text-success"></i>
+            <i class="fa-fw fas fa-check-circle text-success"></i>
             {{ db.arrDungeons[0]["Name" + $i18n.locale.toUpperCase()] }}
           </span>
           <br />
           &nbsp;&nbsp;{{ $t("help.encounterQuestlineCompletion.stateCleared") }}<br />
           <span class="text-secondary">
-            <i class="fa-fw fal fa-question-circle"></i>
+            <i class="fa-fw fas fa-question-circle"></i>
             {{ db.arrDungeons[0]["Name" + $i18n.locale.toUpperCase()] }}
           </span>
           <br />
           &nbsp;&nbsp;{{ $t("help.encounterQuestlineCompletion.stateUnknown") }}<br />
           <span>
-            <i class="fa-fw fal fa-circle"></i>
+            <i class="fa-fw fas fa-circle"></i>
             {{ db.arrDungeons[0]["Name" + $i18n.locale.toUpperCase()] }}
           </span>
           <br />

@@ -35,7 +35,7 @@
       </a>
       <br />
       <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
-        <small>{{ $t("page.donate") }} <i class="fa-fw fal fa-heart"></i></small>
+        <small>{{ $t("page.donate") }} <i class="fa-fw fas fa-heart"></i></small>
       </a>
     </div>
 

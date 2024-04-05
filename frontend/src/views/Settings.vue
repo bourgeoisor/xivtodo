@@ -98,7 +98,7 @@
                 class="text-secondary cursor-pointer tt"
                 @click="updateCharacter(item.lodestoneData.Character.ID)"
               >
-                <i class="fa-fw fad fa-sync-alt"></i>
+                <i class="fa-fw fas fa-sync-alt"></i>
                 <span class="tt-text">{{ $t("shared.update") }}</span>
               </a>
               &nbsp;&nbsp;
@@ -108,7 +108,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i class="fa-fw fad fa-external-link"></i>
+                <i class="fa-fw fas fa-external-link"></i>
                 <span class="tt-text">{{ $t("shared.lodestone") }}</span>
               </a>
               &nbsp;&nbsp;
@@ -117,7 +117,7 @@
                 class="text-danger cursor-pointer tt"
                 @click="removeCharacter(i)"
               >
-                <i class="fa-fw fad fa-trash-alt"></i>
+                <i class="fa-fw fas fa-trash-alt"></i>
                 <span class="tt-text">{{ $t("shared.remove") }}</span>
               </a>
             </li>

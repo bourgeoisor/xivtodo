@@ -65,16 +65,16 @@
               >
                 <li>
                   <router-link to="/achievements/" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fal fa-trophy"></i> {{ $t("page.achievements") }}
+                    <i class="fa-fw fas fa-trophy"></i> {{ $t("page.achievements") }}
                   </router-link>
                   <router-link to="/titles/" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fal fa-scroll"></i> {{ $t("page.titles") }}
+                    <i class="fa-fw fas fa-scroll"></i> {{ $t("page.titles") }}
                   </router-link>
                   <router-link to="/mounts/" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fal fa-horse-saddle"></i> {{ $t("page.mounts") }}
+                    <i class="fa-fw fas fa-horse-saddle"></i> {{ $t("page.mounts") }}
                   </router-link>
                   <router-link to="/minions/" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fal fa-cat-space"></i> {{ $t("page.minions") }}
+                    <i class="fa-fw fas fa-cat-space"></i> {{ $t("page.minions") }}
                   </router-link>
                 </li>
               </ul>
@@ -101,7 +101,7 @@
                 aria-controls="offcanvasCountdowns"
                 @click="seenLatestCountdown()"
               >
-                <span class="fa-fw fal fa-clock position-relative">
+                <span class="fa-fw fas fa-clock position-relative">
                   <span
                     v-if="
                       this.$store.getters.isSignedIn && this.$store.getters.latestCountdownSeen < news.latestCountdownID
@@ -124,7 +124,7 @@
                 aria-controls="offcanvasUpdates"
                 @click="seenLatestNews()"
               > 
-                <span class="fa-fw fal fa-bell position-relative">
+                <span class="fa-fw fas fa-bell position-relative">
                   <span
                     v-if="this.$store.getters.isSignedIn && this.$store.getters.latestNewsSeen < news.latestID"
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
@@ -146,7 +146,7 @@
                 aria-expanded="false"
                 @click="this.$store.commit('setFlag', { key: 'languageClicked', value: true })"
               >
-                <span class="fa-fw fal fa-globe-americas position-relative">
+                <span class="fa-fw fas fa-globe-americas position-relative">
                   <span
                     v-if="!this.$store.getters.flag('languageClicked')"
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
@@ -199,7 +199,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <i class="fa-fw fal fa-comments-alt"></i> {{ $t("navbar.feedback") }}
+                    <i class="fa-fw fas fa-comments-alt"></i> {{ $t("navbar.feedback") }}
                   </a>
                 </li>
               </ul>
@@ -208,7 +208,7 @@
             <!-- Sign-in -->
             <li v-if="!this.$store.getters.isSignedIn" class="nav-item">
               <a class="nav-link" :href="this.$store.getters.discordAuthURI">
-                <span class="d-inline-block d-lg-none fa-fw fal fa-sign-in me-2"></span>
+                <span class="d-inline-block d-lg-none fa-fw fas fa-sign-in me-2"></span>
                 <span>{{ $t("home.signInDiscord") }}</span>
               </a>
             </li>
@@ -224,7 +224,7 @@
                 aria-expanded="false"
               >
                 <span v-if="this.$store.getters.hasCharacter">
-                  <span class="d-inline-block d-lg-none fa-fw fal fa-cog me-2"></span>
+                  <span class="d-inline-block d-lg-none fa-fw fas fa-cog me-2"></span>
                   <span>{{ this.$store.getters.lodestoneData.Character.Name }}</span>
                   <img
                     v-if="this.$store.getters.hasCharacter"
@@ -234,7 +234,7 @@
                   />
                 </span>
                 <template v-else>
-                  <span class="d-inline-block d-lg-none fa-fw fal fa-cog me-2"></span>
+                  <span class="d-inline-block d-lg-none fa-fw fas fa-cog me-2"></span>
                   <span>{{ $t("navbar.settingsAndCharacters") }}</span>
                 </template>
               </a>
@@ -268,7 +268,7 @@
                 </li>
                 <li>
                   <a class="dropdown-item" href="#" @click="signOut">
-                    <i class="fa-fw fal fa-power-off"></i> {{ $t("page.signOut") }}
+                    <i class="fa-fw fas fa-power-off"></i> {{ $t("page.signOut") }}
                   </a>
                 </li>
 
@@ -277,7 +277,7 @@
                 <!-- Settings -->
                 <li>
                   <router-link to="/settings/" class="dropdown-item" @click="collapseNav">
-                    <i class="fa-fw fal fa-cog"></i> {{ $t("page.settings") }}
+                    <i class="fa-fw fas fa-cog"></i> {{ $t("page.settings") }}
                   </router-link>
                 </li>
               </ul>
@@ -315,7 +315,7 @@
         <p v-if="item.description" v-html="item.description"></p>
         <span v-if="item.url">
           <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">More details</a>
-          <i class="fa-fw fal fa-external-link"></i>
+          <i class="fa-fw fas fa-external-link"></i>
         </span>
         <br /><br /><br />
       </div>
