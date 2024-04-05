@@ -29,7 +29,9 @@
   "navbar": {
     "changeActiveCharacter": "Aktiver Charakter",
     "preferredLanguage": "Bevorzugte Sprache",
-    "feedback": "Feedback"
+    "feedback": "Feedback",
+    "settingsAndCharacters": "Einstellungen & Zeichen",
+    "noCharacters": "Füge deine Zeichen in den Einstellungen hinzu"
   },
   "pageHeader": {
     "ofCharacter": "von {characterName}",

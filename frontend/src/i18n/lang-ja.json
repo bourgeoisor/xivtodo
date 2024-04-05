@@ -29,7 +29,9 @@
   "navbar": {
     "changeActiveCharacter": "アクティブなキャラクター",
     "preferredLanguage": "好みの言語",
-    "feedback": "フィードバック"
+    "feedback": "フィードバック",
+    "settingsAndCharacters": "Settings & Characters",
+    "noCharacters": "Add your characters in Settings"
   },
   "pageHeader": {
     "ofCharacter": "{characterName}",
