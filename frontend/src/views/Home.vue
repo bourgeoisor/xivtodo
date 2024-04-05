@@ -1,42 +1,88 @@
 <template>
-  <div>
+  <!-- <div v-if="this.$store.getters.isSignedIn && this.$store.getters.hasCharacter" class="container"> -->
+  <div v-if="false" class="container">
+    <h1 class="d-flex align-items-end">
+      <span class="me-auto">
+        {{ $t("page.home") }}
+      </span>
+      <router-link to="/settings/">
+        <button type="button" class="btn btn-outline-success">
+          {{ $t("home.addCharacter") }}
+        </button>
+      </router-link>
+    </h1>
+    <hr />
+    <div class="row">
+      <div v-for="(item) of this.$store.getters.characters" :key="item.ID" class="container px-4 py-2 mb-3 border-bottom border-grey">
+        <h2 class="pb-2">
+          <img class="avatar-home d-none d-sm-inline" :src="item.lodestoneData.Character.Avatar" :alt="$t('shared.portraitAlt')" />
+          {{ item.lodestoneData.Character.Name }}
+        </h2>
+        <p>
+          {{ $t("checklist.weeklies") }}
+        </p>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            :style="{'width': taskCompletionPercentage(item.checklistData.weeklyChecklist)}"
+          >
+            {{ item.checklistData.weeklyChecklist.filter((x) => !x.hidden && x.checked).length }} /
+            {{ item.checklistData.weeklyChecklist.filter((x) => !x.hidden).length }}
+            ({{ taskCompletionPercentage(item.checklistData.weeklyChecklist) }})
+          </div>
+        </div>
+        <br />
+        <p>
+          {{ $t("checklist.dailies") }}
+        </p>
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            :style="{'width': taskCompletionPercentage(item.checklistData.dailyChecklist)}"
+          >
+            {{ item.checklistData.dailyChecklist.filter((x) => !x.hidden && x.checked).length }} /
+            {{ item.checklistData.dailyChecklist.filter((x) => !x.hidden).length }}
+            ({{ taskCompletionPercentage(item.checklistData.dailyChecklist) }})
+          </div>
+        </div>
+        <br />
+      </div>
+    </div>
+  </div>
+
+  <div v-else>
     <div class="px-4 py-4 my-4 text-center">
+      <!-- Branding -->
       <img class="d-block mx-auto mb-4" src="@/assets/img/brand.png" alt="XIV ToDo branding" width="300" />
       <h1 class="visually-hidden">XIV ToDo</h1>
+
       <div class="container col-lg-6 mx-auto">
+        <!-- Description -->
         <p class="lead mb-4">
           {{ $t("home.intro") }}
         </p>
+
+        <!-- Buttons -->
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
-          <template v-if="!this.$store.getters.hasCharacter">
-            <router-link v-if="this.$store.getters.isSignedIn" to="/settings/">
-              <button type="button" class="btn btn-success btn-lg px-4 gap-3">
-                {{ $t("home.addCharacter") }}
-              </button>
-            </router-link>
-            <a v-else :href="this.$store.getters.discordAuthURI">
-              <button type="button" class="btn btn-success btn-lg px-4 gap-3">
-                {{ $t("home.signInDiscord") }}
-              </button>
-            </a>
-            <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="goto('features')">
-              {{ $t("home.learnMore") }}
+          <router-link v-if="this.$store.getters.isSignedIn" to="/settings/">
+            <button type="button" class="btn btn-success btn-lg px-4 gap-3">
+              {{ $t("home.addCharacter") }}
             </button>
-          </template>
-          <template v-else>
-            <router-link to="/profile/">
-              <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">
-                {{ $t("home.viewProfile") }}
-              </button>
-            </router-link>
-            <router-link to="/settings/">
-              <button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3">
-                {{ $t("page.settings") }}
-              </button>
-            </router-link>
-          </template>
+          </router-link>
+          <a v-else :href="this.$store.getters.discordAuthURI">
+            <button type="button" class="btn btn-success btn-lg px-4 gap-3">
+              {{ $t("home.signInDiscord") }}
+            </button>
+          </a>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="goto('features')">
+            {{ $t("home.learnMore") }}
+          </button>
         </div>
       </div>
+
+      <!-- Screenshots -->
       <div
         class="container overflow-hidden border-bottom border-grey row justify-content-center"
         style="max-height: 20vh; margin: auto"
@@ -68,47 +114,48 @@
       </div>
     </div>
 
+    <!-- Features -->
     <div id="features-grid" class="container px-4 py-2 mb-5 border-bottom border-grey">
       <h1 ref="features" class="pb-2 border-bottom">{{ $t("home.features") }}</h1>
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
         <div class="col d-flex align-items-start">
-          <i class="fa-fw fad fa-list flex-shrink-0 me-3"></i>
+          <i class="fa-fw fas fa-list flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.encountersQuestlines.title") }}</h4>
             <p>{{ $t("home.feature.encountersQuestlines.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="fa-fw fad fa-chart-pie flex-shrink-0 me-3"></i>
+          <i class="fa-fw fas fa-chart-pie flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.contentCompletion.title") }}</h4>
             <p>{{ $t("home.feature.contentCompletion.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="fa-fw fad fa-clipboard-list flex-shrink-0 me-3"></i>
+          <i class="fa-fw fas fa-clipboard-list flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.dailiesWeeklies.title") }}</h4>
             <p>{{ $t("home.feature.dailiesWeeklies.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="fa-fw fad fa-user-friends flex-shrink-0 me-3"></i>
+          <i class="fa-fw fas fa-user-friends flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.altFriendly.title") }}</h4>
             <p>{{ $t("home.feature.altFriendly.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="fa-fw fad fa-eye-slash flex-shrink-0 me-3"></i>
+          <i class="fa-fw fas fa-eye-slash flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.spoilerFree.title") }}</h4>
             <p>{{ $t("home.feature.spoilerFree.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
-          <i class="fa-fw fad fa-palette flex-shrink-0 me-3"></i>
+          <i class="fa-fw fas fa-palette flex-shrink-0 me-3"></i>
           <div>
             <h4 class="fw-bold mb-0">{{ $t("home.feature.customizable.title") }}</h4>
             <p>{{ $t("home.feature.customizable.description") }}</p>
@@ -117,6 +164,7 @@
       </div>
     </div>
 
+    <!-- About -->
     <div class="container col-xxl-8 px-4 pb-5">
       <div class="row align-items-center g-5 pb-5">
         <div class="d-none d-md-block col-md-3 col-lg-3">
@@ -140,20 +188,39 @@
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
               <button type="button" class="btn btn-success btn-lg px-4 me-md-2">
-                <i class="fa-fw fal fa-heart"></i> {{ $t("page.donate") }}
+                <i class="fa-fw fas fa-heart"></i> {{ $t("page.donate") }}
               </button>
             </a>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
 <style lang="scss">
-#features-grid .fad {
+#features-grid .fas {
   color: #41b883;
   font-size: 1.75em;
+}
+
+.avatar-home {
+  border-radius: 50%;
+  height: 35px;
+  margin-top: -8px;
+}
+
+.progress {
+  background-color: #292c2f;
+}
+
+.progress-bar {
+  background-color: #3ca577;
+  color: #ffffff;
+  overflow: unset;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 </style>
 
@@ -169,6 +236,16 @@ export default {
     },
     changeActiveCharacter(i) {
       this.$store.commit("changeActiveCharacter", i);
+    },
+    taskCompletionPercentage(tasks) {
+      let total = tasks.filter((x) => !x.hidden).length;
+      let checked = tasks.filter((x) => !x.hidden && x.checked).length;
+
+      if (total == 0) {
+        return "100%";
+      }
+
+      return Math.floor(checked / total * 100) + "%";
     },
   },
 };
