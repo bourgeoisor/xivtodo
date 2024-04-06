@@ -63,6 +63,7 @@
 
         <!-- Buttons -->
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
+          <!-- First button -->
           <router-link v-if="this.$store.getters.hasCharacter" to="/checklist/">
             <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">
               {{ $t("page.checklist") }}
@@ -78,7 +79,14 @@
               {{ $t("home.signInDiscord") }}
             </button>
           </a>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4" @click="goto('features')">
+
+          <!-- Second button -->
+          <router-link v-if="this.$store.getters.isSignedIn" to="/settings/">
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4 gap-3">
+              {{ $t("page.settings") }}
+            </button>
+          </router-link>
+          <button v-else type="button" class="btn btn-outline-secondary btn-lg px-4" @click="goto('features')">
             {{ $t("home.learnMore") }}
           </button>
         </div>
