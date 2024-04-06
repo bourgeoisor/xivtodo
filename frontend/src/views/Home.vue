@@ -1,17 +1,14 @@
 <template>
-  <!-- <div v-if="this.$store.getters.isSignedIn && this.$store.getters.hasCharacter" class="container"> -->
-  <div v-if="false" class="container">
-    <h1 class="d-flex align-items-end">
-      <span class="me-auto">
-        {{ $t("page.home") }}
-      </span>
+  <!-- <template v-if="this.$store.getters.isSignedIn && this.$store.getters.hasCharacter"> -->
+  <template v-if="false">
+    <PageHeader title="page.home" hideNotSignedInAlert="true" hideNoCharactersAlert="true">
       <router-link to="/settings/">
         <button type="button" class="btn btn-outline-success">
           {{ $t("home.addCharacter") }}
         </button>
       </router-link>
-    </h1>
-    <hr />
+    </PageHeader>
+
     <div class="row">
       <div v-for="(item) of this.$store.getters.characters" :key="item.ID" class="container px-4 py-2 mb-3 border-bottom border-grey">
         <h2 class="pb-2">
@@ -50,15 +47,15 @@
         <br />
       </div>
     </div>
-  </div>
+  </template>
 
-  <div v-else>
+  <template v-else>
     <div class="px-4 py-4 my-4 text-center">
       <!-- Branding -->
       <img class="d-block mx-auto mb-4" src="@/assets/img/brand.png" alt="XIV ToDo branding" width="300" />
       <h1 class="visually-hidden">XIV ToDo</h1>
 
-      <div class="container col-lg-6 mx-auto">
+      <div class="container col-lg-8 mx-auto">
         <!-- Description -->
         <p class="lead mb-4 fw-normal">
           {{ $t("home.intro") }}
@@ -66,7 +63,12 @@
 
         <!-- Buttons -->
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
-          <router-link v-if="this.$store.getters.isSignedIn" to="/settings/">
+          <router-link v-if="this.$store.getters.hasCharacter" to="/checklist/">
+            <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">
+              {{ $t("page.checklist") }}
+            </button>
+          </router-link>
+          <router-link v-else-if="this.$store.getters.isSignedIn" to="/settings/">
             <button type="button" class="btn btn-success btn-lg px-4 gap-3">
               {{ $t("home.addCharacter") }}
             </button>
@@ -195,8 +197,7 @@
         </div>
       </div>
     </div>
-
-  </div>
+  </template>
 </template>
 
 <style lang="scss">
@@ -225,8 +226,13 @@
 </style>
 
 <script>
+import PageHeader from "@/components/PageHeader.vue";
+
 export default {
   name: "HomeView",
+  components: {
+    PageHeader,
+  },
   methods: {
     goto(refName) {
       var element = this.$refs[refName];

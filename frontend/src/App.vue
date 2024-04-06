@@ -1,24 +1,37 @@
 <template>
   <div :class="{ night: true }" class="d-flex flex-column min-vh-100">
     <TheNavbar />
+
     <main class="flex-shrink-0">
+      <!-- Alert: Backend offline -->
       <div v-if="this.$store.getters.backendOffline" class="container">
         <AlertMsg type="error" :msg="$t('message.backendUnavailable')" />
       </div>
+
+      <!-- Alert: New version available -->
       <!-- <div v-else-if="!this.$store.getters.versionMatches" class="container">
         <AlertMsg
           type="success"
           msg="A new version is available! <a href='javascript:window.location.reload()' class='alert-link'>Reload and update the page</a>."
         />
       </div> -->
+
+      <!-- Alert: Global error -->
       <div v-if="this.globalError" class="container">
         <AlertMsg type="error" :msg="this.globalError" />
       </div>
+
+      <!-- Alert: Signing in... -->
       <div v-if="this.$store.state.signingIn == true" class="container">
         <AlertMsg type="normal" :msg="$t('message.signingDiscord')" />
       </div>
-      <router-view />
+
+      <!-- Page content -->
+      <div class="container">
+        <router-view />
+      </div>
     </main>
+
     <TheFooter />
   </div>
 </template>
@@ -32,8 +45,12 @@
   --bs-offcanvas-transition: transform 0.1s ease-in-out;
 }
 
+.table {
+  --bs-table-color: unset;
+  --bs-table-bg: unset;
+}
+
 #app {
-  // font-family: "Montserrat", "Noto Sans JP", sans-serif;
   font-family: "Montserrat", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 18px;
   font-optical-sizing: auto;

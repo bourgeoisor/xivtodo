@@ -1,167 +1,149 @@
 <template>
-  <div class="container">
-    <h1 class="d-flex align-items-end">
-      <span class="me-auto">
-        {{ $t("page.checklist") }}
-        <span v-if="this.$store.getters.hasCharacter" class="fs-3 fw-lighter">
-          {{ $t("pageHeader.forCharacter", { characterName: this.$store.getters.character.Name }) }}
-          <div v-if="this.$store.getters.activeCharacterOutOfDate" class="text-info fs-6">
-            <div class="spinner-border spinner-border-sm" role="status"></div>
-            {{ $t("message.updatingCharacter") }}
-          </div>
+  <PageHeader title="page.checklist" subtitle="pageHeader.forCharacter">
+    <button
+      v-if="this.$store.getters.hasCharacter"
+      type="button"
+      class="btn float-end"
+      :class="{ 'btn-outline-success': !showHidden, 'btn-success': showHidden }"
+      @click="showHidden = !showHidden"
+    >
+      {{ $t("shared.customize") }}
+    </button>
+  </PageHeader>
+
+  <h2>{{ $t("checklist.thingsToDo") }}</h2>
+  <div class="row">
+    <div class="col-md">
+      <h3>{{ $t("checklist.weeklies") }}</h3>
+      <span class="text-muted">
+        {{ $t("checklist.untilReset", { time: weeklyReset }) }}
+      </span>
+
+      <div v-if="showHidden" class="input-group mt-3 mb-2">
+        <input v-model="customWeekly" type="text" class="form-control" :placeholder="$t('checklist.customWeekly')" />
+        <button
+          class="btn btn-outline-success"
+          :class="{ disabled: !customWeekly }"
+          type="button"
+          id="button-addon2"
+          @click="addCustomWeekly"
+        >
+          {{ $t("checklist.addCustomWeekly") }}
+        </button>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <ChecklistItem
+          v-for="item of [...this.$store.getters.checklistWeeklies]"
+          :key="item.name"
+          :item="item"
+          type="weekly"
+          :showHidden="showHidden"
+          :draggable="showHidden"
+          @dragstart="startDrag($event, item)"
+          @dragend="endDrag()"
+          @dragleave="endDrag()"
+          @drop="onDrop($event, item)"
+          @dragover="onDragOver($event, item)"
+          @dragover.prevent
+          @dragenter.prevent
+          :dragHovered="item.name == this.draggedOverName"
+        />
+      </ul>
+      <br />
+    </div>
+
+    <div class="col-md order-first order-md-last">
+      <h3>{{ $t("checklist.dailies") }}</h3>
+      <span class="text-muted">
+        {{ $t("checklist.untilReset", { time: dailyReset }) }}
+      </span>
+
+      <div v-if="showHidden" class="input-group mt-3 mb-2">
+        <input v-model="customDaily" type="text" class="form-control" :placeholder="$t('checklist.customDaily')" />
+        <button
+          class="btn btn-outline-success"
+          :class="{ disabled: !customDaily }"
+          type="button"
+          id="button-addon2"
+          @click="addCustomDaily"
+        >
+          {{ $t("checklist.addCustomDaily") }}
+        </button>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <ChecklistItem
+          v-for="item of [...this.$store.getters.checklistDailies]"
+          :key="item.ID"
+          :item="item"
+          type="daily"
+          :showHidden="showHidden"
+          :draggable="showHidden"
+          @dragstart="startDrag($event, item)"
+          @dragend="endDrag()"
+          @dragleave="endDrag()"
+          @drop="onDrop($event, item)"
+          @dragover="onDragOver($event, item)"
+          @dragover.prevent
+          @dragenter.prevent
+          :dragHovered="item.name == this.draggedOverName"
+        />
+      </ul>
+      <br />
+      <span v-if="this.$store.getters.checklistLenHiddens > 0" class="d-none d-md-block">
+        <span class="text-muted float-end">
+          {{ $tc("checklist.hiddenTasks", this.$store.getters.checklistLenHiddens) }}<br /><br />
         </span>
       </span>
-      <button
-        v-if="this.$store.getters.hasCharacter"
-        type="button"
-        class="btn float-end"
-        :class="{ 'btn-outline-success': !showHidden, 'btn-success': showHidden }"
-        @click="showHidden = !showHidden"
-      >
-        {{ $t("shared.customize") }}
-      </button>
-    </h1>
-    <AlertMsg
-      v-if="!this.$store.getters.isSignedIn"
-      type="normal"
-      :msg="$t('message.notSignedIn', { url: this.$store.getters.discordAuthURI })"
-    />
-    <AlertMsg v-else-if="!this.$store.getters.hasCharacter" type="normal" :msg="$t('message.noCharacters')" />
-    <hr />
-    <h2>{{ $t("checklist.thingsToDo") }}</h2>
-    <div class="row">
-      <div class="col-md">
-        <h3>{{ $t("checklist.weeklies") }}</h3>
-        <span class="text-muted">
-          {{ $t("checklist.untilReset", { time: weeklyReset }) }}
-        </span>
-
-        <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input v-model="customWeekly" type="text" class="form-control" :placeholder="$t('checklist.customWeekly')" />
-          <button
-            class="btn btn-outline-success"
-            :class="{ disabled: !customWeekly }"
-            type="button"
-            id="button-addon2"
-            @click="addCustomWeekly"
-          >
-            {{ $t("checklist.addCustomWeekly") }}
-          </button>
-        </div>
-
-        <ul class="list-group list-group-flush">
-          <ChecklistItem
-            v-for="item of [...this.$store.getters.checklistWeeklies]"
-            :key="item.name"
-            :item="item"
-            type="weekly"
-            :showHidden="showHidden"
-            :draggable="showHidden"
-            @dragstart="startDrag($event, item)"
-            @dragend="endDrag()"
-            @dragleave="endDrag()"
-            @drop="onDrop($event, item)"
-            @dragover="onDragOver($event, item)"
-            @dragover.prevent
-            @dragenter.prevent
-            :dragHovered="item.name == this.draggedOverName"
-          />
-        </ul>
-        <br />
-      </div>
-
-      <div class="col-md order-first order-md-last">
-        <h3>{{ $t("checklist.dailies") }}</h3>
-        <span class="text-muted">
-          {{ $t("checklist.untilReset", { time: dailyReset }) }}
-        </span>
-
-        <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input v-model="customDaily" type="text" class="form-control" :placeholder="$t('checklist.customDaily')" />
-          <button
-            class="btn btn-outline-success"
-            :class="{ disabled: !customDaily }"
-            type="button"
-            id="button-addon2"
-            @click="addCustomDaily"
-          >
-            {{ $t("checklist.addCustomDaily") }}
-          </button>
-        </div>
-
-        <ul class="list-group list-group-flush">
-          <ChecklistItem
-            v-for="item of [...this.$store.getters.checklistDailies]"
-            :key="item.ID"
-            :item="item"
-            type="daily"
-            :showHidden="showHidden"
-            :draggable="showHidden"
-            @dragstart="startDrag($event, item)"
-            @dragend="endDrag()"
-            @dragleave="endDrag()"
-            @drop="onDrop($event, item)"
-            @dragover="onDragOver($event, item)"
-            @dragover.prevent
-            @dragenter.prevent
-            :dragHovered="item.name == this.draggedOverName"
-          />
-        </ul>
-        <br />
-        <span v-if="this.$store.getters.checklistLenHiddens > 0" class="d-none d-md-block">
-          <span class="text-muted float-end">
-            {{ $tc("checklist.hiddenTasks", this.$store.getters.checklistLenHiddens) }}<br /><br />
-          </span>
-        </span>
-      </div>
     </div>
-    <div v-if="showHidden || this.$store.getters.checklistAdhocs.length > 0" class="row">
-      <div class="col">
-        <h3>{{ $t("checklist.scratchpad") }}</h3>
-        <span class="text-muted">{{ $t("checklist.scratchpadDesc") }}</span>
+  </div>
+  <div v-if="showHidden || this.$store.getters.checklistAdhocs.length > 0" class="row">
+    <div class="col">
+      <h3>{{ $t("checklist.scratchpad") }}</h3>
+      <span class="text-muted">{{ $t("checklist.scratchpadDesc") }}</span>
 
-        <div v-if="showHidden" class="input-group mt-3 mb-2">
-          <input v-model="customAdhoc" type="text" class="form-control" :placeholder="$t('checklist.customItem')" />
-          <button
-            class="btn btn-outline-success"
-            :class="{ disabled: !customAdhoc }"
-            type="button"
-            id="button-addon2"
-            @click="addCustomAdhoc"
-          >
-            {{ $t("checklist.addCustomItem") }}
-          </button>
-        </div>
-
-        <ul class="list-group list-group-flush">
-          <ChecklistItem
-            v-for="item of [...this.$store.getters.checklistAdhocs]"
-            :key="item.ID"
-            :item="item"
-            type="adhoc"
-            :showHidden="showHidden"
-            :draggable="showHidden"
-            @dragstart="startDrag($event, item)"
-            @dragend="endDrag()"
-            @dragleave="endDrag()"
-            @drop="onDrop($event, item)"
-            @dragover="onDragOver($event, item)"
-            @dragover.prevent
-            @dragenter.prevent
-            :dragHovered="item.name == this.draggedOverName"
-          />
-          <li v-if="this.$store.getters.checklistAdhocs.length == 0" class="list-group-item">
-            {{ $t("checklist.scratchpadHelp") }}
-          </li>
-        </ul>
-        <br />
+      <div v-if="showHidden" class="input-group mt-3 mb-2">
+        <input v-model="customAdhoc" type="text" class="form-control" :placeholder="$t('checklist.customItem')" />
+        <button
+          class="btn btn-outline-success"
+          :class="{ disabled: !customAdhoc }"
+          type="button"
+          id="button-addon2"
+          @click="addCustomAdhoc"
+        >
+          {{ $t("checklist.addCustomItem") }}
+        </button>
       </div>
+
+      <ul class="list-group list-group-flush">
+        <ChecklistItem
+          v-for="item of [...this.$store.getters.checklistAdhocs]"
+          :key="item.ID"
+          :item="item"
+          type="adhoc"
+          :showHidden="showHidden"
+          :draggable="showHidden"
+          @dragstart="startDrag($event, item)"
+          @dragend="endDrag()"
+          @dragleave="endDrag()"
+          @drop="onDrop($event, item)"
+          @dragover="onDragOver($event, item)"
+          @dragover.prevent
+          @dragenter.prevent
+          :dragHovered="item.name == this.draggedOverName"
+        />
+        <li v-if="this.$store.getters.checklistAdhocs.length == 0" class="list-group-item">
+          {{ $t("checklist.scratchpadHelp") }}
+        </li>
+      </ul>
+      <br />
     </div>
   </div>
 </template>
 
 <script>
-import AlertMsg from "@/components/AlertMsg.vue";
+import PageHeader from "@/components/PageHeader.vue";
 import ChecklistItem from "@/components/ChecklistItem.vue";
 import { updateChecklist } from "@/utilities/backend.js";
 import { swapChecklistItems } from "@/utilities/checklist.js";
@@ -181,7 +163,7 @@ export default {
     };
   },
   components: {
-    AlertMsg,
+    PageHeader,
     ChecklistItem,
   },
   mounted() {
