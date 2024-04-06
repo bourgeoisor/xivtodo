@@ -1,7 +1,7 @@
 <template>
   <footer class="footer d-flex justify-content-between mt-auto py-2 px-3 bg-light user-select-none">
     <!-- Left-side info -->
-    <div class="footer-copyrights text-muted my-auto d-none d-lg-block col-4">
+    <div class="footer-copyrights text-muted my-auto d-none d-xl-block col-4">
       {{ $t("footer.trademark") }}<br />
       {{ $t("footer.copyright") }}
     </div>
@@ -34,13 +34,13 @@
         <small>{{ $t("page.twitter") }}</small>
       </a>
       <br />
-      <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
-        <small>{{ $t("page.donate") }} <i class="fa-fw fal fa-heart"></i></small>
+      <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer" class="fw-bolder">
+        <small>{{ $t("page.donate") }} <i class="fa-fw fas fa-heart"></i></small>
       </a>
     </div>
 
     <!-- Right-side info -->
-    <div class="footer-copyrights text-muted text-end my-auto d-none d-lg-block col-4">
+    <div class="footer-copyrights text-muted text-end my-auto d-none d-xl-block col-4">
       {{ $t("footer.buildVersion", { buildNum: this.$store.state.env.VUE_APP_BUILD_NUM }) }}<br />
       {{ $t("footer.buildDate", { buildDate: this.$store.state.env.VUE_APP_BUILD_DATE }) }}
     </div>
