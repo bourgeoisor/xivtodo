@@ -1,5 +1,5 @@
 <template>
-  <div v-if="this.jobExists" class="job-level text-center fw-lighter user-select-none tt">
+  <div v-if="this.jobExists" class="job-level text-center user-select-none tt">
     <!-- Tooltip -->
     <span class="tt-text">{{ title }}</span>
 
@@ -19,7 +19,7 @@
 
     <!-- Level -->
     <span v-if="!this.jobUnlocked" class="text-secondary">-</span>
-    <span v-else :class="{'fw-bold': this.isMaxLevel}">
+    <span v-else :class="{'fw-bolder': this.isMaxLevel}">
       {{ this.currentLevel }}
     </span>
 

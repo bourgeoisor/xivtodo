@@ -26,7 +26,7 @@
       </div>
 
       <!-- Character info -->
-      <div class="col-lg">
+      <div class="col-md-6 col-lg">
         <h2>{{ $t("profile.characterInfo") }}</h2>
 
         <!-- Info: World -->
@@ -86,11 +86,7 @@
 
         <!-- Info: Playing since -->
         <div v-if="this.$store.getters.achievementsPublic" class="info-block">
-          <b>
-            <abbr :title="$t('profile.playingSinceAlt')">
-              {{ $t("profile.playingSince") }}
-            </abbr>
-          </b>
+          <b>{{ $t("profile.playingSince") }}</b>
           <br />
           {{ this.playingSince }}
         </div>
@@ -102,21 +98,21 @@
 
           <!-- Eureka -->
           {{ $t("profile.elementalLevel") }}:
-          <span :class="{'fw-bold': this.isMaxLevelEureka}">
+          <span :class="{'fw-bolder': this.isMaxLevelEureka}">
             {{ this.levelEureka }}
           </span>
           <br />
 
           <!-- Bozja -->
           {{ $t("profile.resistanceRank") }}:
-          <span :class="{'fw-bold': this.isMaxLevelBozja}">
+          <span :class="{'fw-bolder': this.isMaxLevelBozja}">
             {{ this.levelBozja }}
           </span>
         </div>
       </div>
 
       <!-- Job levels -->
-      <div class="col-lg">
+      <div class="col-md-6 col-lg">
         <h2>{{ $t("profile.jobLevels") }}</h2>
 
         <!-- Tanks -->
@@ -212,11 +208,9 @@
 .info-block {
   line-height: 1.3;
   margin-bottom: 15px;
-  font-weight: 300;
 
   b {
     color: #41b883;
-    font-weight: 800;
   }
 
   img {

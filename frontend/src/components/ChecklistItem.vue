@@ -1,7 +1,7 @@
 <template>
   <li
     v-if="showHidden || (!itemCopy.hidden && !showHidden)"
-    class="list-group-item"
+    class="list-group-item fw-medium"
     :class="{
       'drag-hovered': dragHovered,
       'list-group-item-action': this.$store.getters.hasCharacter,

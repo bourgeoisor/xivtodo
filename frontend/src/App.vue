@@ -24,10 +24,20 @@
 </template>
 
 <style lang="scss">
+.navbar-nav {
+  --bs-nav-link-font-weight: 600;
+}
+
+.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+  --bs-offcanvas-transition: transform 0.1s ease-in-out;
+}
+
 #app {
-  font-family: "Nunito", "Noto Sans JP", sans-serif;
+  // font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: "Montserrat", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 18px;
-  font-weight: 600;
+  font-optical-sizing: auto;
+  font-kerning: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -169,6 +179,11 @@ tr {
   border-color: #484848;
 }
 
+a,
+abbr {
+  text-underline-offset: 0.25em !important;
+}
+
 p a,
 p a:focus {
   color: #41b883;
@@ -210,10 +225,6 @@ hr {
   cursor: pointer;
 }
 
-.text-bold {
-  font-weight: 800;
-}
-
 .text-justify {
   text-align: justify;
   text-justify: inter-word;
@@ -245,7 +256,7 @@ hr {
 }
 
 .lodestone-tooltip {
-  text-decoration-style: dashed;
+  text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
   cursor: help;

@@ -18,7 +18,7 @@
       }"
     >
       <span
-        class="duty-list-item"
+        class="duty-list-item fw-medium"
         :class="{
           'duty-list-item-blur': duty.blur,
         }"
@@ -55,7 +55,7 @@
             'blur-cleared': duty.blur && duty.cleared == 1,
             'blur-uncleared': duty.blur && duty.cleared == 0,
             'user-select-none': duty.blur,
-            'text-bold': duty.Bold,
+            'fw-bolder': duty.Bold,
           }"
         >
           {{ duty["Name" + $i18n.locale.toUpperCase()] || duty["NameEN"] }}
@@ -165,7 +165,6 @@
 }
 
 #rewards {
-  font-weight: 300;
   padding-top: 5px;
   padding-left: 30px;
   padding-bottom: 5px;

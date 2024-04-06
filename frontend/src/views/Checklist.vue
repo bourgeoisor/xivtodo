@@ -32,7 +32,7 @@
     <div class="row">
       <div class="col-md">
         <h3>{{ $t("checklist.weeklies") }}</h3>
-        <span class="fw-lighter text-muted">
+        <span class="text-muted">
           {{ $t("checklist.untilReset", { time: weeklyReset }) }}
         </span>
 
@@ -72,7 +72,7 @@
 
       <div class="col-md order-first order-md-last">
         <h3>{{ $t("checklist.dailies") }}</h3>
-        <span class="fw-lighter text-muted">
+        <span class="text-muted">
           {{ $t("checklist.untilReset", { time: dailyReset }) }}
         </span>
 
@@ -109,7 +109,7 @@
         </ul>
         <br />
         <span v-if="this.$store.getters.checklistLenHiddens > 0" class="d-none d-md-block">
-          <span class="text-muted fw-light float-end">
+          <span class="text-muted float-end">
             {{ $tc("checklist.hiddenTasks", this.$store.getters.checklistLenHiddens) }}<br /><br />
           </span>
         </span>
@@ -118,7 +118,7 @@
     <div v-if="showHidden || this.$store.getters.checklistAdhocs.length > 0" class="row">
       <div class="col">
         <h3>{{ $t("checklist.scratchpad") }}</h3>
-        <span class="fw-lighter text-muted">{{ $t("checklist.scratchpadDesc") }}</span>
+        <span class="text-muted">{{ $t("checklist.scratchpadDesc") }}</span>
 
         <div v-if="showHidden" class="input-group mt-3 mb-2">
           <input v-model="customAdhoc" type="text" class="form-control" :placeholder="$t('checklist.customItem')" />

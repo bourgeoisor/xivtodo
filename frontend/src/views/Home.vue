@@ -60,7 +60,7 @@
 
       <div class="container col-lg-6 mx-auto">
         <!-- Description -->
-        <p class="lead mb-4">
+        <p class="lead mb-4 fw-normal">
           {{ $t("home.intro") }}
         </p>
 
@@ -177,7 +177,7 @@
         </div>
         <div class="col-11 col-md-9 col-lg-8">
           <h1 class="pb-2 border-bottom mb-3">{{ $t("home.about.header") }}</h1>
-          <p class="lead text-justify">
+          <p class="lead text-justify fw-normal">
             <i18n-t keypath="home.about.text">
               <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer">Olivier Bourgeois</a>
               <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">

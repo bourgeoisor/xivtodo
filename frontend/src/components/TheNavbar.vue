@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
       <div class="container-fluid user-select-none">
         <router-link to="/" class="navbar-brand mb-0 h1">
           <img style="height: 28px" src="@/assets/img/brand.png" alt="XIV ToDo branding" />
@@ -18,7 +18,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav navbar-nav-scroll ms-auto flex-grow-1 mb-2 mb-lg-0">
+          <ul class="navbar-nav navbar-nav-scroll ms-auto flex-grow-1 mb-2 mb-xl-0">
             <!-- Profile -->
             <li v-if="this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/profile/" class="nav-link" @click="collapseNav">
@@ -110,7 +110,7 @@
                   >
                   </span>
                 </span>
-                <span class="d-inline d-lg-none ms-2">{{ $t("page.countdowns") }}</span>
+                <span class="d-inline d-xl-none ms-2">{{ $t("page.countdowns") }}</span>
               </a>
             </li>
 
@@ -131,7 +131,7 @@
                   >
                   </span>
                 </span>
-                <span class="d-inline d-lg-none ms-2">{{ $t("page.newsUpdates") }}</span>
+                <span class="d-inline d-xl-none ms-2">{{ $t("page.newsUpdates") }}</span>
               </a>
             </li>
 
@@ -153,7 +153,7 @@
                   >
                   </span>
                 </span>
-                <span class="d-inline d-lg-none ms-2">{{ $t("page.language") }}</span>
+                <span class="d-inline d-xl-none ms-2">{{ $t("page.language") }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="collectionDropdown">
                 <!-- Preferred language -->
@@ -208,7 +208,7 @@
             <!-- Sign-in -->
             <li v-if="!this.$store.getters.isSignedIn" class="nav-item">
               <a class="nav-link" :href="this.$store.getters.discordAuthURI">
-                <span class="d-inline-block d-lg-none fa-fw fas fa-sign-in me-2"></span>
+                <span class="d-inline-block d-xl-none fa-fw fas fa-sign-in me-2"></span>
                 <span>{{ $t("home.signInDiscord") }}</span>
               </a>
             </li>
@@ -224,17 +224,17 @@
                 aria-expanded="false"
               >
                 <span v-if="this.$store.getters.hasCharacter">
-                  <span class="d-inline-block d-lg-none fa-fw fas fa-cog me-2"></span>
+                  <span class="d-inline-block d-xl-none fa-fw fas fa-cog me-2"></span>
                   <span>{{ this.$store.getters.lodestoneData.Character.Name }}</span>
                   <img
                     v-if="this.$store.getters.hasCharacter"
-                    class="avatar-nav d-none d-lg-inline"
+                    class="avatar-nav d-none d-xl-inline"
                     :src="this.$store.getters.character.Avatar"
                     :alt="$t('shared.portraitAlt')"
                   />
                 </span>
                 <template v-else>
-                  <span class="d-inline-block d-lg-none fa-fw fas fa-cog me-2"></span>
+                  <span class="d-inline-block d-xl-none fa-fw fas fa-cog me-2"></span>
                   <span>{{ $t("navbar.settingsAndCharacters") }}</span>
                 </template>
               </a>
