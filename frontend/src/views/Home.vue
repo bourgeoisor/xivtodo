@@ -56,7 +56,7 @@
       <h1 class="visually-hidden">XIV ToDo</h1>
 
       <div class="container col-lg-8 mx-auto">
-        <!-- Description -->
+        <!-- Lead paragraph -->
         <p class="lead mb-4 fw-normal">
           {{ $t("home.intro") }}
         </p>
@@ -185,11 +185,11 @@
             alt="Drawing of a hamster"
           />
         </div>
-        <div class="col-11 col-md-9 col-lg-8">
+        <div class="col-11 col-md-9">
           <h1 class="pb-2 border-bottom mb-3">{{ $t("home.about.header") }}</h1>
           <p class="lead text-justify fw-normal">
             <i18n-t keypath="home.about.text">
-              <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer">Olivier Bourgeois</a>
+              <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer">Olivier</a>
               <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
                 {{ $t("home.about.contact") }}
               </a>
@@ -198,7 +198,7 @@
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
               <button type="button" class="btn btn-success btn-lg px-4 me-md-2">
-                <i class="fa-fw fas fa-heart"></i> {{ $t("page.donate") }}
+                <i class="fa-fw fal fa-heart"></i> {{ $t("page.donate") }}
               </button>
             </a>
           </div>
