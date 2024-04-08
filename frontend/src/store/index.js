@@ -11,6 +11,9 @@ const store = createStore({
     flags: {},
   },
   getters: {
+    isDevEnv(state) {
+      return state.env.NODE_ENV == "development";
+    },
     versionMatches(state) {
       return state.env.VUE_APP_BUILD_NUM == state.upstreamVersion || state.upstreamVersion == null;
     },

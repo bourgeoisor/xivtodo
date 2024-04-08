@@ -48,28 +48,17 @@
 </template>
 
 <style lang="scss">
-footer {
-  a,
-  a:focus {
-    color: #6c757d;
-  }
-
-  a:hover {
-    color: #222222;
-  }
-}
-
-.night footer {
-  background-color: #212529 !important;
-  border-top: 1px solid #333333;
+.footer {
+  background-color: var(--bs-dark) !important;
+  border-top: 1px solid var(--bs-gray-800);
 
   a,
   a:focus {
-    color: #6c757d;
+    color: var(--bs-secondary-color);
   }
 
   a:hover {
-    color: #eeeeee;
+    color: var(--bs-body-color);
   }
 }
 
@@ -86,12 +75,10 @@ footer img {
   margin-bottom: 5px;
   margin-top: 5px;
   filter: brightness(70%) grayscale(100%);
-  -webkit-filter: brightness(70%) grayscale(100%);
 }
 
 footer img:hover {
   filter: brightness(100%) grayscale(0%);
-  -webkit-filter: brightness(100%) grayscale(0%);
 }
 </style>
 

@@ -13,8 +13,8 @@
     <div
       class="d-flex justify-content-between align-items-center"
       :class="{
-        'text-secondary': duty.cleared == -1,
-        'text-success': duty.cleared >= 1,
+        'text-secondary': duty.cleared == -1 && this.$store.getters.isSignedIn,
+        'text-success': duty.cleared >= 1 && this.$store.getters.isSignedIn,
       }"
     >
       <span
@@ -24,7 +24,9 @@
         }"
         :title="title"
       >
+        <!-- Completion icon -->
         <i
+          v-if="this.$store.getters.isSignedIn"
           class="me-2 fa-fw fal"
           :class="{
             'fa-question-circle': duty.cleared == -1 && !(duty.cleared == -1 && isHovering),
@@ -33,34 +35,22 @@
             'fa-circle': duty.cleared == 0,
           }"
         ></i>
-        <a
-          v-if="duty.LodestoneID && !duty.blur"
-          class="text-reset lodestone-tooltip eorzeadb_link"
-          :href="getLodestoneURL() + 'playguide/db/duty/' + duty.LodestoneID"
-          target="_blank"
-          rel="noopener noreferrer"
-          :class="{
-            'blur-maybe': duty.blur && duty.cleared == -1,
-            'blur-cleared': duty.blur && duty.cleared == 1,
-            'blur-uncleared': duty.blur && duty.cleared == 0,
-            'user-select-none': duty.blur,
-          }"
-        >
-          {{ duty["Name" + $i18n.locale.toUpperCase()] || duty["NameEN"] }}
-        </a>
+
+        <!-- Duty name -->
         <span
-          v-else
           :class="{
-            'blur-maybe': duty.blur && duty.cleared == -1,
+            'blur-maybe': duty.blur && duty.cleared == -1 && this.$store.getters.isSignedIn,
             'blur-cleared': duty.blur && duty.cleared == 1,
             'blur-uncleared': duty.blur && duty.cleared == 0,
-            'user-select-none': duty.blur,
+            'user-select-none': duty.blur && this.$store.getters.isSignedIn,
             'fw-bolder': duty.Bold,
           }"
         >
           {{ duty["Name" + $i18n.locale.toUpperCase()] || duty["NameEN"] }}
         </span>
       </span>
+
+      <!-- MSQ icon -->
       <span
         v-if="duty.IsMSQ"
         class="icon-marker-msq"
@@ -68,6 +58,8 @@
         data-bs-placement="top"
         :title="$t('encounters.msqContent')"
       ></span>
+
+      <!-- Patch number icon -->
       <span
         v-if="duty.Expansion && showPatchNums"
         :class="'icon-exp-' + duty.Expansion"
@@ -76,16 +68,23 @@
         :title="$t('encounters.unlockedInExp')"
       ></span>
     </div>
-    <div id="rewards" v-if="filters.rewards && !duty.blur && ('Mounts' in duty || 'Minions' in duty)">
-      <div v-if="'Mounts' in duty">
+
+    <!-- Rewards -->
+    <div v-if="filters.rewards && !duty.blur && ('Mounts' in duty || 'Minions' in duty)" class="mx-2 mt-2">
+      <!-- Mounts -->
+      <template v-if="'Mounts' in duty">
         <div
           v-for="mountID of duty.Mounts.split(' ')"
           :key="mountID"
-          :class="{
-            'reward-obtained': this.$store.getters.mounts[mountID],
-          }"
+          class="pb-2"
+          :class="{'text-muted': this.$store.getters.minions[minionID]}"
         >
-          <img v-if="mountID" :src="dbs.mounts[mountID].icon" />
+          <img
+            v-if="mountID"
+            loading="lazy"
+            :src="dbs.mounts[mountID].icon"
+            :class="{'filter-bright-50': this.$store.getters.mounts[mountID]}"
+          />
           {{ dbs.mounts[mountID].name }}
           <i
             v-if="this.$store.getters.mounts[mountID]"
@@ -98,16 +97,22 @@
             :title="$t('encounters.tradeable')"
           ></i>
         </div>
-      </div>
-      <div v-if="'Minions' in duty">
+      </template>
+
+      <!-- Minions -->
+      <template v-if="'Minions' in duty">
         <div
           v-for="minionID of duty.Minions.split(' ')"
           :key="minionID"
-          :class="{
-            'reward-obtained': this.$store.getters.minions[minionID],
-          }"
+          class="pb-2"
+          :class="{'text-muted': this.$store.getters.minions[minionID]}"
         >
-          <img v-if="minionID" :src="dbs.minions[minionID].icon" />
+          <img
+            v-if="minionID"
+            loading="lazy"
+            :src="dbs.minions[minionID].icon"
+            :class="{'filter-bright-50': this.$store.getters.minions[minionID]}"
+          />
           {{ dbs.minions[minionID].name }}
           <i
             v-if="this.$store.getters.minions[minionID]"
@@ -120,7 +125,7 @@
             :title="$t('encounters.tradeable')"
           ></i>
         </div>
-      </div>
+      </template>
     </div>
   </div>
 </template>
@@ -128,18 +133,18 @@
 <style lang="scss">
 .blur-maybe {
   color: transparent;
-  text-shadow: 0 0 20px rgb(148, 148, 148);
+  text-shadow: 0 0 20px var(--bs-secondary);
 }
 
 .blur-cleared {
   color: transparent;
-  text-shadow: 0 0 20px #53b462;
+  text-shadow: 0 0 20px var(--bs-success);
   text-overflow: unset;
 }
 
 .blur-uncleared {
   color: transparent;
-  text-shadow: 0 0 20px #c2c2c2;
+  text-shadow: 0 0 20px var(--bs-body-color);
   text-overflow: unset;
 }
 
@@ -151,34 +156,6 @@
 
 .duty-list-item-blur {
   text-overflow: " ";
-}
-
-.night {
-  .list-group-item-action:focus,
-  .list-group-item-action:hover {
-    background-color: #212529 !important;
-  }
-
-  .list-group-item-action:active {
-    background-color: #1c2024 !important;
-  }
-}
-
-#rewards {
-  padding-top: 5px;
-  padding-left: 30px;
-  padding-bottom: 5px;
-
-  div {
-    margin-bottom: 5px;
-  }
-}
-
-.reward-obtained {
-  color: #666;
-  img {
-    filter: brightness(50%);
-  }
 }
 </style>
 

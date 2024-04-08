@@ -33,8 +33,8 @@
 
 <style lang="scss">
 #nav-warning {
-  color: #b5b5b5;
-  background-color: #252a2e;
+  color: #b5b5b5; // @TODO: replace with var
+  background-color: #252a2e; // @TODO: replace with var
   margin-top: -15px;
   margin-bottom: 15px;
 }

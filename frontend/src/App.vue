@@ -1,11 +1,11 @@
 <template>
-  <div :class="{ night: true }" class="d-flex flex-column min-vh-100">
+  <div class="d-flex flex-column min-vh-100">
     <TheNavbar />
 
     <main class="flex-shrink-0">
       <!-- Alert: Backend offline -->
       <div v-if="this.$store.getters.backendOffline" class="container">
-        <AlertMsg type="error" :msg="$t('message.backendUnavailable')" />
+        <AlertMsg type="danger" :msg="$t('message.backendUnavailable')" />
       </div>
 
       <!-- Alert: New version available -->
@@ -18,7 +18,7 @@
 
       <!-- Alert: Global error -->
       <div v-if="this.globalError" class="container">
-        <AlertMsg type="error" :msg="this.globalError" />
+        <AlertMsg type="danger" :msg="this.globalError" />
       </div>
 
       <!-- Alert: Signing in... -->
@@ -37,6 +37,51 @@
 </template>
 
 <style lang="scss">
+///
+// Variables
+///
+
+:root {
+  --bs-body-color: #dddddd;
+  --bs-body-bg: #1c2024;
+  --bs-dark: #212529;
+  --bs-transparent: rgba(255, 255, 255, 0);
+  
+  --bs-primary: #41b883;
+  --bs-primary-color: var(--bs-primary);
+  --bs-primary-hover: #2f8f6f;
+  --bs-primary-active: #2a7d5a;
+
+  --bs-secondary: #838D96;
+  --bs-secondary-color: var(--bs-secondary);
+  
+  --bs-success: #53b462;
+  --bs-success-bg-subtle: var(--bs-success);
+  --bs-success-text-emphasis: #05310d;
+  --bs-success-border-subtle: var(--bs-success-text-emphasis);
+  
+  --bs-warning: #f6e275;
+  --bs-warning-bg-subtle: var(--bs-warning);
+  --bs-warning-text-emphasis: #332d19;
+  --bs-warning-border-subtle: var(--bs-warning-text-emphasis);
+
+  --bs-danger: #b45353;
+  --bs-danger-bg-subtle: var(--bs-danger);
+  --bs-danger-text-emphasis: #310505;
+  --bs-danger-border-subtle: var(--bs-danger-text-emphasis);
+  
+  --bs-info: #9dd1ff;
+  --bs-info-bg-subtle: var(--bs-info);
+  --bs-info-text-emphasis: #071e2d;
+  --bs-info-border-subtle: var(--bs-info-text-emphasis);
+
+  --xt-tank-color: #9dd1ff;
+  --xt-healer-color: #a6ff93;
+  --xt-dps-color: #ff8f8f;
+  --xt-crafter-color: #ffd99d;
+  --xt-gatherer-color: #bdaaff;
+}
+
 .navbar-nav {
   --bs-nav-link-font-weight: 600;
 }
@@ -45,12 +90,13 @@
   --bs-offcanvas-transition: transform 0.1s ease-in-out;
 }
 
-.table {
-  --bs-table-color: unset;
-  --bs-table-bg: unset;
-}
+///
+// Body
+///
 
 #app {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
   font-family: "Montserrat", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 18px;
   font-optical-sizing: auto;
@@ -63,28 +109,33 @@ main {
   padding-top: 75px;
 }
 
-/* Works on Firefox */
+///
+// Scrollbars
+///
+
 * {
   scrollbar-width: thin;
-  scrollbar-color: #41b883 #262b2f;
+  scrollbar-color: var(--bs-primary) var(--bs-gray-800);
 }
 
-/* Works on Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 12px;
 }
 
 *::-webkit-scrollbar-track {
-  background: #262b2f;
+  background: var(--bs-gray-800);
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #41b883;
+  background-color: var(--bs-primary);
   border-radius: 20px;
-  border: 3px solid #262b2f;
+  border: 3px solid var(--bs-gray-800);
 }
 
-/* Tooltips */
+///
+// Tooltips
+///
+
 .tt {
   position: relative;
 }
@@ -93,8 +144,8 @@ main {
   visibility: hidden;
   width: auto;
   white-space: nowrap;
-  background-color: #2b3136;
-  color: #c5c6c7;
+  background-color: var(--bs-gray-800);
+  color: var(--bs-gray-200);
   text-align: center;
   border-radius: 10px;
   padding: 8px 10px;
@@ -117,7 +168,7 @@ main {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #2b3136 transparent transparent transparent;
+  border-color: var(--bs-gray-800) transparent transparent transparent;
 }
 
 @media only screen and (max-width: 800px) {
@@ -130,71 +181,9 @@ main {
   visibility: visible;
 }
 
-.night {
-  color: #dddddd;
-  background-color: #1c2024;
-
-  .text-secondary {
-    color: #a2a4a6 !important;
-  }
-
-  .list-group-item {
-    color: #dddddd;
-    background-color: #1c2024;
-    border-color: #484848;
-  }
-
-  .form-check-input {
-    background-color: #1c2024;
-    border: 1px solid rgb(255, 255, 255);
-  }
-
-  .border {
-    border-color: #444444 !important;
-  }
-
-  .border-bottom {
-    border-color: #41b883 !important;
-  }
-
-  .border-grey {
-    border-color: #444444 !important;
-  }
-
-  .floating-label {
-    color: #b9bbbe;
-  }
-
-  .form-control {
-    color: #dbdcdd;
-    background-color: #262b2f;
-  }
-
-  .form-control::placeholder {
-    color: rgba(97, 108, 120, 0.75);
-  }
-}
-
-.indent-paragraphs p {
-  margin-left: 20px;
-}
-
-.list-group-item {
-  padding-bottom: 0.4rem;
-}
-
-table {
-  color: #ddd !important;
-}
-
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
-  border-color: #484848;
-}
+///
+// Typography
+///
 
 a,
 abbr {
@@ -203,20 +192,24 @@ abbr {
 
 p a,
 p a:focus {
-  color: #41b883;
+  color: var(--bs-primary-color);
 }
 
 p a:hover {
-  color: #22e38d;
+  filter: brightness(150%);
+}
+
+a:hover .fa-fw {
+  filter: brightness(150%)
 }
 
 h1 {
   font-weight: 700;
   margin-bottom: 0px !important;
-}
 
-h1 .border-bottom {
-  border-color: #41b883 !important;
+  .border-bottom {
+    border-color: var(--bs-primary) !important;
+  }
 }
 
 h3 {
@@ -231,15 +224,11 @@ h3 {
 hr {
   height: 0px;
   border: none;
-  border-top: 1px solid #41b883;
+  border-top: 1px solid var(--bs-primary);
   opacity: 1;
   background-color: initial;
   margin-top: 12px;
   margin-bottom: 12px;
-}
-
-.cursor-pointer {
-  cursor: pointer;
 }
 
 .text-justify {
@@ -247,52 +236,176 @@ hr {
   text-justify: inter-word;
 }
 
+.text-decoration-line-through {
+  text-decoration-thickness: 2px !important;
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.text-secondary {
+  color: var(--bs-secondary) !important;
+}
+
 .text-success {
-  color: #53b462 !important;
+  color: var(--bs-success) !important;
 }
 
 .text-danger {
-  color: #b45353 !important;
+  color: var(--bs-danger) !important;
 }
 
 .text-info {
-  color: #9dd1ff !important;
+  color: var(--bs-info) !important;
 }
 
-.text-muted {
-  color: #6c757d !important;
+///
+// Buttons
+///
+
+// Primary
+.btn-primary,
+.btn-outline-primary {
+  --bs-btn-hover-color: var(--bs-dark);
+  --bs-btn-active-color: var(--bs-dark);
+  
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-border-color: var(--bs-primary-hover);
+  --bs-btn-active-border-color: var(--bs-primary-active);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+  
+  --bs-btn-focus-shadow-rgb: 0,0,0;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
-.form-text {
-  color: #6c757d;
+.btn-primary {
+  --bs-btn-color: var(--bs-dark);
+  --bs-btn-disabled-color: var(--bs-dark);
+
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-hover-bg: var(--bs-primary-hover);
+  --bs-btn-active-bg: var(--bs-primary-active);
+  --bs-btn-disabled-bg: var(--bs-primary);
 }
 
+.btn-outline-primary {
+  --bs-btn-color: var(--bs-primary);
+  --bs-btn-disabled-color: var(--bs-primary);
+
+  --bs-btn-bg: var(--bs-transparent);
+  --bs-btn-hover-bg: var(--bs-primary);
+  --bs-btn-active-bg: var(--bs-primary);
+  --bs-btn-disabled-bg: var(--bs-transparent);
+}
+
+// Success outline
 .btn-outline-success {
-  color: #41b883;
-  border-color: #41b883;
+  color: var(--bs-success);
+  border-color: var(--bs-success);
 }
 
-.lodestone-tooltip {
-  text-decoration-style: dotted;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-  cursor: help;
+// Secondary outline
+.btn-outline-secondary {
+  color: var(--bs-secondary);
+  border-color: var(--bs-secondary);
 }
 
-.lodestone-tooltip {
-  text-decoration-color: rgba(255, 255, 255, 0.5);
+///
+// Lists
+///
+
+.list-group-item-action:focus,
+.list-group-item-action:hover {
+  background-color: #212529 !important;
 }
 
-.text-secondary .lodestone-tooltip {
-  text-decoration-color: rgba(162, 164, 166, 0.5);
+.list-group-item-action:active {
+  background-color: #1c2024 !important;
 }
 
-.text-success .lodestone-tooltip {
-  text-decoration-color: rgba(83, 180, 98, 0.5);
+.list-group-item {
+  color: var(--bs-body-color) !important;
+  background-color: var(--bs-transparent);
+  border-color: #484848;
+  padding-bottom: 0.4rem;
 }
 
-.text-danger .lodestone-tooltip {
-  text-decoration-color: rgba(180, 83, 83, 0.5);
+///
+// Tables
+///
+
+table {
+  color: var(--bs-body-color) !important;
+}
+
+.table {
+  --bs-table-color: unset;
+  --bs-table-bg: unset;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: #484848;
+}
+
+///
+// Forms
+///
+
+.form-check-input {
+  background-color: var(var(--bs-transparent));
+  border: 1px solid var(--bs-body-color);
+}
+
+.form-check-input:checked {
+  background-color: var(--bs-transparent);
+  border: 1px solid var(--bs-body-color);
+}
+
+.form-control {
+  color: #dbdcdd;
+  background-color: #262b2f;
+}
+
+.form-control::placeholder {
+  color: rgba(97, 108, 120, 0.75);
+}
+
+///
+// Misc
+///
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.filter-bright-50 {
+  filter: brightness(50%);
+}
+
+.border {
+  border-color: var(--bs-gray-800) !important;
+}
+
+.border-bottom {
+  border-color: var(--bs-primary) !important;
+}
+
+.border-grey {
+  border-color: var(--bs-gray-800) !important;
+}
+
+.indent-paragraphs p {
+  margin-left: 20px;
 }
 </style>
 

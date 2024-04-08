@@ -33,7 +33,7 @@
 
 <style lang="scss">
 .row-obtained {
-  color: #666;
+  color: var(--bs-secondary-color);
   img {
     filter: brightness(50%);
   }

@@ -4,7 +4,7 @@
       v-if="this.$store.getters.hasCharacter"
       type="button"
       class="btn float-end"
-      :class="{ 'btn-outline-success': !showHidden, 'btn-success': showHidden }"
+      :class="{ 'btn-outline-primary': !showHidden, 'btn-primary': showHidden }"
       @click="showHidden = !showHidden"
     >
       {{ $t("shared.customize") }}
@@ -22,7 +22,7 @@
       <div v-if="showHidden" class="input-group mt-3 mb-2">
         <input v-model="customWeekly" type="text" class="form-control" :placeholder="$t('checklist.customWeekly')" />
         <button
-          class="btn btn-outline-success"
+          class="btn btn-outline-primary"
           :class="{ disabled: !customWeekly }"
           type="button"
           id="button-addon2"
@@ -62,7 +62,7 @@
       <div v-if="showHidden" class="input-group mt-3 mb-2">
         <input v-model="customDaily" type="text" class="form-control" :placeholder="$t('checklist.customDaily')" />
         <button
-          class="btn btn-outline-success"
+          class="btn btn-outline-primary"
           :class="{ disabled: !customDaily }"
           type="button"
           id="button-addon2"
@@ -106,7 +106,7 @@
       <div v-if="showHidden" class="input-group mt-3 mb-2">
         <input v-model="customAdhoc" type="text" class="form-control" :placeholder="$t('checklist.customItem')" />
         <button
-          class="btn btn-outline-success"
+          class="btn btn-outline-primary"
           :class="{ disabled: !customAdhoc }"
           type="button"
           id="button-addon2"

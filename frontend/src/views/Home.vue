@@ -65,17 +65,17 @@
         <div class="d-grid gap-2 d-sm-flex mb-5 justify-content-center">
           <!-- First button -->
           <router-link v-if="this.$store.getters.hasCharacter" to="/checklist/">
-            <button type="button" class="btn btn-outline-success btn-lg px-4 gap-3">
+            <button type="button" class="btn btn-outline-primary btn-lg px-4 gap-3">
               {{ $t("page.checklist") }}
             </button>
           </router-link>
           <router-link v-else-if="this.$store.getters.isSignedIn" to="/settings/">
-            <button type="button" class="btn btn-success btn-lg px-4 gap-3">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
               {{ $t("home.addCharacter") }}
             </button>
           </router-link>
           <a v-else :href="this.$store.getters.discordAuthURI">
-            <button type="button" class="btn btn-success btn-lg px-4 gap-3">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
               {{ $t("home.signInDiscord") }}
             </button>
           </a>
@@ -132,42 +132,42 @@
         <div class="col d-flex align-items-start">
           <i class="fa-fw fas fa-list flex-shrink-0 me-3"></i>
           <div>
-            <h4 class="fw-bold mb-0">{{ $t("home.feature.encountersQuestlines.title") }}</h4>
+            <h2 class="h4 fw-bold mb-0">{{ $t("home.feature.encountersQuestlines.title") }}</h2>
             <p>{{ $t("home.feature.encountersQuestlines.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
           <i class="fa-fw fas fa-chart-pie flex-shrink-0 me-3"></i>
           <div>
-            <h4 class="fw-bold mb-0">{{ $t("home.feature.contentCompletion.title") }}</h4>
+            <h2 class="h4 fw-bold mb-0">{{ $t("home.feature.contentCompletion.title") }}</h2>
             <p>{{ $t("home.feature.contentCompletion.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
           <i class="fa-fw fas fa-clipboard-list flex-shrink-0 me-3"></i>
           <div>
-            <h4 class="fw-bold mb-0">{{ $t("home.feature.dailiesWeeklies.title") }}</h4>
+            <h2 class="h4 fw-bold mb-0">{{ $t("home.feature.dailiesWeeklies.title") }}</h2>
             <p>{{ $t("home.feature.dailiesWeeklies.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
           <i class="fa-fw fas fa-user-friends flex-shrink-0 me-3"></i>
           <div>
-            <h4 class="fw-bold mb-0">{{ $t("home.feature.altFriendly.title") }}</h4>
+            <h2 class="h4 fw-bold mb-0">{{ $t("home.feature.altFriendly.title") }}</h2>
             <p>{{ $t("home.feature.altFriendly.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
           <i class="fa-fw fas fa-eye-slash flex-shrink-0 me-3"></i>
           <div>
-            <h4 class="fw-bold mb-0">{{ $t("home.feature.spoilerFree.title") }}</h4>
+            <h2 class="h4 fw-bold mb-0">{{ $t("home.feature.spoilerFree.title") }}</h2>
             <p>{{ $t("home.feature.spoilerFree.description") }}</p>
           </div>
         </div>
         <div class="col d-flex align-items-start">
           <i class="fa-fw fas fa-palette flex-shrink-0 me-3"></i>
           <div>
-            <h4 class="fw-bold mb-0">{{ $t("home.feature.customizable.title") }}</h4>
+            <h2 class="h4 fw-bold mb-0">{{ $t("home.feature.customizable.title") }}</h2>
             <p>{{ $t("home.feature.customizable.description") }}</p>
           </div>
         </div>
@@ -179,6 +179,7 @@
       <div class="row align-items-center g-5 pb-5">
         <div class="d-none d-md-block col-md-3 col-lg-3">
           <img
+            loading="lazy"
             src="@/assets/img/hamster_avatar.png"
             style="border-radius: 50%; width: 100%"
             class="d-block mx-lg-auto"
@@ -197,7 +198,7 @@
           </p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer">
-              <button type="button" class="btn btn-success btn-lg px-4 me-md-2">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
                 <i class="fa-fw fal fa-heart"></i> {{ $t("page.donate") }}
               </button>
             </a>
@@ -210,7 +211,7 @@
 
 <style lang="scss">
 #features-grid .fas {
-  color: #41b883;
+  color: var(--bs-primary-color);
   font-size: 1.75em;
 }
 
@@ -221,12 +222,12 @@
 }
 
 .progress {
-  background-color: #292c2f;
+  background-color: #292c2f; // @TODO: replace with var
 }
 
 .progress-bar {
-  background-color: #3ca577;
-  color: #ffffff;
+  background-color: #3ca577; // @TODO: replace with var
+  color: #ffffff; // @TODO: replace with var
   overflow: unset;
   padding-left: 5px;
   padding-right: 5px;

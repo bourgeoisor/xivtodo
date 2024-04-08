@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-xl navbar-dark">
       <div class="container-fluid user-select-none">
         <router-link to="/" class="navbar-brand mb-0 h1">
           <img style="height: 28px" src="@/assets/img/brand.png" alt="XIV ToDo branding" />
@@ -91,14 +91,24 @@
             <li class="nav-item flex-grow-1"></li>
             <!-- Items below are right-aligned -->
 
+            <!-- Sandbox -->
+            <li v-if="this.$store.getters.isDevEnv" class="nav-item">
+              <router-link to="/sandbox/" class="nav-link" aria-label="Sandbox">
+                <span class="fa-fw fas fa-wrench position-relative"></span>
+                <span class="d-inline d-xl-none ms-2">{{ $t("page.sandbox") }}</span>
+              </router-link>
+            </li>
+
             <!-- Countdowns -->
             <li class="nav-item">
               <a
                 class="nav-link"
+                href="#"
                 type="button"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasCountdowns"
                 aria-controls="offcanvasCountdowns"
+                aria-label="Countdowns"
                 @click="seenLatestCountdown()"
               >
                 <span class="fa-fw fas fa-clock position-relative">
@@ -118,10 +128,12 @@
             <li class="nav-item">
               <a
                 class="nav-link"
+                href="#"
                 type="button"
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasUpdates"
                 aria-controls="offcanvasUpdates"
+                aria-label="News"
                 @click="seenLatestNews()"
               > 
                 <span class="fa-fw fas fa-bell position-relative">
@@ -144,6 +156,7 @@
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
+                aria-label="Language"
                 @click="this.$store.commit('setFlag', { key: 'languageClicked', value: true })"
               >
                 <span class="fa-fw fas fa-globe-americas position-relative">
@@ -345,30 +358,23 @@
 <style lang="scss">
 nav {
   margin-bottom: 10px;
+  background-color: var(--bs-dark);
+  border-bottom: 1px solid var(--bs-gray-800);
 
   .nav-link.router-link-exact-active {
-    color: #41b883 !important;
+    color: var(--bs-primary-color) !important;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 7px;
   }
 }
 
-.night nav {
-  border-bottom: 1px solid #333333;
-}
-
-span.nav-link:hover {
-  color: rgba(255, 255, 255, 0.75) !important;
-  text-decoration: none !important;
-}
-
 .navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--bs-grey-300);
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: rgba(255, 255, 255, 1);
+  color: var(--bs-white);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 7px;
@@ -385,12 +391,12 @@ span.nav-link:hover {
 
 .dropdown-menu-dark .dropdown-item.active,
 .dropdown-menu-dark .dropdown-item:focus {
-  background-color: #262b30;
+  background-color: var(--bs-dark);
 }
 
 .offcanvas {
-  background-color: #1c2024;
-  color: #ddd;
+  background-color: var(--bs-dark);
+  color: var(--bs-body-color);
 }
 
 .offcanvas-header .btn-close {

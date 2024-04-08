@@ -1,5 +1,5 @@
 <template>
-  <h3><img v-if="type" :src="'/icons/duty-' + type + '.png'" />{{ title }}</h3>
+  <h3><img v-if="type" :src="'/icons/duty-' + type + '.png'" :alt="'Duty icon for type ' + type"/>{{ title }}</h3>
   <span v-if="showTotal" class="text-muted">
     {{ $t("shared.countTotal", { count: duties.length }) }}
   </span>
@@ -8,8 +8,6 @@
       v-for="item of injectDutyCompletion(duties)"
       :key="item.Name"
       :duty="item"
-      :clearedMaybe="true"
-      :blur="false"
       :filters="this.$parent.$data.filters || {}"
     />
   </div>

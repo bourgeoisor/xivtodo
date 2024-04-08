@@ -22,7 +22,12 @@
           'text-success': itemCopy.checked,
         }"
       ></i>
-      <span :class="{ 'checklist-checked': itemCopy.checked }">{{ item.name }}</span>
+      <span
+        :class="{
+          'text-decoration-line-through': itemCopy.checked,
+          'text-success': itemCopy.checked,
+        }"
+      >{{ item.name }}</span>
       <!-- <br /><small class="text-muted">Token and gear coffer lockout for the Savage raid</small> -->
     </span>
 
@@ -51,29 +56,8 @@
 </template>
 
 <style lang="scss">
-.checklist-checked {
-  color: #53b462;
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
-}
-
 .drag-hovered {
-  border-top: 2px solid #41b883 !important;
-}
-
-.cursor-grab {
-  cursor: grab;
-}
-
-.night {
-  .list-group-item-action:focus,
-  .list-group-item-action:hover {
-    background-color: #212529 !important;
-  }
-
-  .list-group-item-action:active {
-    background-color: #1c2024 !important;
-  }
+  border-top: 2px solid var(--bs-primary-color) !important;
 }
 </style>
 

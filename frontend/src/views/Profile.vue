@@ -198,7 +198,7 @@
   margin-bottom: 15px;
 
   b {
-    color: #41b883;
+    color: var(--bs-primary-color);
   }
 
   img {
@@ -211,11 +211,7 @@
   width: 100%;
   border-radius: 20px;
   padding: 0.1rem;
-  background-color: #444444;
-}
-
-.night #character-portrait {
-  background-color: #dddddd;
+  background-color: var(--bs-body-color);
 }
 </style>
 

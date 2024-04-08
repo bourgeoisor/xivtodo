@@ -113,6 +113,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "privacy" */ "../views/Privacy.vue"),
   },
   {
+    path: "/sandbox",
+    name: "Sandbox",
+    component: () => import(/* webpackChunkName: "sandbox" */ "../views/Sandbox.vue"),
+  },
+  {
     path: "/:pathMatch(.*)",
     redirect: {
       name: "Home",

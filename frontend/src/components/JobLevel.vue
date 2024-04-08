@@ -44,33 +44,33 @@
 
 .job-level-progress {
   height: 1px;
-  border-bottom: 1px solid #5c5c5c;
+  border-bottom: 1px solid var(--bs-secondary-color);
 }
 
 .job-level-progress-bar {
   height: 1px;
   width: 100%;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid var(--bs-body-color);
 }
 
 .job-type-tank {
-  color: #9dd1ff;
+  color: var(--xt-tank-color);
 }
 
 .job-type-healer {
-  color: #a6ff93;
+  color: var(--xt-healer-color);
 }
 
 .job-type-dps {
-  color: #ff8f8f;
+  color: var(--xt-dps-color);
 }
 
 .job-type-gatherer {
-  color: #ffd99d;
+  color: var(--xt-gatherer-color);
 }
 
 .job-type-crafter {
-  color: #bdaaff;
+  color: var(--xt-crafter-color);
 }
 </style>
 

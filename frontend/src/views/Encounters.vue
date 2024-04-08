@@ -1,9 +1,14 @@
 <template>
   <PageHeader title="page.encounters" subtitle="pageHeader.clearedByCharacter">
-    <div class="btn-group" role="group" aria-label="Filter buttons">
-      <input v-model="filters.rewards" type="checkbox" class="btn-check" id="btn-rewards" autocomplete="off" />
-      <label class="btn btn-outline-success" for="btn-rewards">{{ $t("encounters.viewRewards") }}</label>
-    </div>
+    <button
+      v-if="this.$store.getters.hasCharacter"
+      type="button"
+      class="btn float-end"
+      :class="{ 'btn-outline-primary': !filters.rewards, 'btn-primary': filters.rewards }"
+      @click="filters.rewards = !filters.rewards"
+    >
+      {{ $t("encounters.viewRewards") }}
+    </button>
   </PageHeader>
 
   <div class="row">

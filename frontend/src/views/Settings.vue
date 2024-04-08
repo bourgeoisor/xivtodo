@@ -26,7 +26,7 @@
             </i18n-t>
           </div>
         </div>
-        <button v-if="adding" type="submit" id="settings-save-btn" class="btn btn-success" disabled>
+        <button v-if="adding" type="submit" id="settings-save-btn" class="btn btn-primary" disabled>
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           {{ $t("shared.addingWait") }}
         </button>
@@ -35,7 +35,7 @@
           @click="addCharacter"
           type="submit"
           id="settings-save-btn"
-          class="btn btn-success"
+          class="btn btn-primary"
           :class="{ disabled: !profileURL }"
         >
           {{ $t("settings.addCharacter") }}
@@ -212,11 +212,11 @@
         <div class="form-text">{{ $t("settings.patchNumbers.hint") }}</div>
         <br />
 
-        <button v-if="updatingSettings" type="button" id="settings-save-btn" class="btn btn-success" disabled>
+        <button v-if="updatingSettings" type="button" id="settings-save-btn" class="btn btn-primary" disabled>
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           {{ $t("shared.updatingWait") }}
         </button>
-        <button v-else @click="updateSettings" type="button" id="settings-save-btn" class="btn btn-success">
+        <button v-else @click="updateSettings" type="button" id="settings-save-btn" class="btn btn-primary">
           {{ $t("settings.updateSettings") }}
         </button>
         <br /><br />
@@ -271,12 +271,12 @@ export default {
         .catch((err) => {
           if (err.status == 400) {
             this.error = {
-              type: "error",
+              type: "danger",
               msg: this.$t("settings.message.settingsUpdateClientError"),
             };
           } else {
             this.error = {
-              type: "error",
+              type: "danger",
               msg: this.$t("settings.message.settingsUpdateUnknownError"),
             };
           }
@@ -323,17 +323,17 @@ export default {
 
           if (err.status == 404) {
             this.error = {
-              type: "error",
+              type: "danger",
               msg: this.$t("settings.message.characterAddNotFoundError"),
             };
           } else if (err.status == 400) {
             this.error = {
-              type: "error",
+              type: "danger",
               msg: this.$t("settings.message.characterAddClientError"),
             };
           } else {
             this.error = {
-              type: "error",
+              type: "danger",
               msg: this.$t("settings.message.characterAddServerError"),
             };
           }
@@ -353,7 +353,7 @@ export default {
         })
         .catch((err) => {
           console.log(err);
-          this.error = { type: "error", msg: err.toString() };
+          this.error = { type: "danger", msg: err.toString() };
         })
         .finally(() => {
           this.profileURL = "";
@@ -384,7 +384,7 @@ export default {
         .catch((err) => {
           console.log(err);
           this.error = {
-            type: "error",
+            type: "danger",
             msg: this.$t("settings.message.characterRemoveError", { name: characterName }),
           };
         })
