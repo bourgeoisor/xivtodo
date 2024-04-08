@@ -24,7 +24,8 @@
     "discord": "Discord",
     "countdowns": "カウントダウン",
     "newsUpdates": "ニュース&アップデート",
-    "language": "言語"
+    "language": "言語",
+    "sandbox": "Sandbox"
   },
   "navbar": {
     "changeActiveCharacter": "アクティブなキャラクター",
@@ -46,7 +47,7 @@
     "signingUnknownError": "XIV ToDo was unable to reach Discord. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
     "updatingCharacter": "キャラクターデータを更新しています。数分かかる場合があります...",
     "achievementsNotPublic": "このキャラクターの実績はLodestoneで公開されていません。",
-    "notSignedIn": "No characters found. You can <a href='{url}' class='alert-link'>sign in with Discord</a> to add them.",
+    "notSignedIn": "No characters found. <a href='{url}' class='alert-link'>Sign in with Discord</a> to add and track your characters.",
     "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
   },
   "footer": {
