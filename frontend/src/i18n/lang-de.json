@@ -24,7 +24,8 @@
     "discord": "Discord",
     "countdowns": "Countdowns",
     "newsUpdates": "Neuigkeiten & Updates",
-    "language": "Sprache"
+    "language": "Sprache",
+    "sandbox": "Sandbox"
   },
   "navbar": {
     "changeActiveCharacter": "Aktiver Charakter",
@@ -46,7 +47,7 @@
     "signingUnknownError": "XIV ToDo konnte Discord nicht erreichen. Versuche es später noch einmal oder schaue für ein eventuelles Statusupdate auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> vorbei.",
     "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
     "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
-    "notSignedIn": "Keine Charaktere gefunden. Du kannst dich <a href='{url}' class='alert-link'>mit Discord anmelden</a>, um diese hinzuzufügen.",
+    "notSignedIn": "No characters found. <a href='{url}' class='alert-link'>Sign in with Discord</a> to add and track your characters.",
     "noCharacters": "Keine Charaktere gefunden. Über die <a href='/settings' class='alert-link'>Einstellungen</a> kannst du diese hinzufügen."
   },
   "footer": {
