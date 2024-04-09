@@ -3,9 +3,11 @@
   
   <form name="settings-form" id="settings-form">
     <div class="row">
+      <!-- Characters column -->
       <div class="col-lg-6">
         <h2>{{ $t("settings.characters") }}</h2>
 
+        <!-- Add character -->
         <h3>{{ $t("settings.addNewCharacter") }}</h3>
         <div class="mb-3">
           <label for="inputCharacterID" class="form-label">
@@ -42,6 +44,7 @@
         </button>
         <br /><br />
 
+        <!-- Character list -->
         <h3>{{ $t("settings.myCharacters") }}</h3>
         <ul v-if="!this.$store.getters.hasCharacter" class="list-group list-group-flush">
           <li class="list-group-item d-flex justify-content-between align-items-start">
@@ -123,8 +126,11 @@
         <br />
       </div>
 
+      <!-- Settings column -->
       <div class="col-lg-6">
         <h2>{{ $t("settings.general") }}</h2>
+
+        <!-- Content spoilers -->
         <h3>{{ $t("settings.contentSpoilers.label") }}</h3>
         <div class="form-check">
           <input
@@ -169,6 +175,7 @@
 
         <br />
 
+        <!-- Patch numbers -->
         <h3>{{ $t("settings.patchNumbers.label") }}</h3>
         <div class="form-check">
           <input
@@ -212,6 +219,7 @@
         <div class="form-text">{{ $t("settings.patchNumbers.hint") }}</div>
         <br />
 
+        <!-- Update button -->
         <button v-if="updatingSettings" type="button" id="settings-save-btn" class="btn btn-primary" disabled>
           <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           {{ $t("shared.updatingWait") }}
@@ -221,6 +229,7 @@
         </button>
         <br /><br />
       </div>
+
     </div>
   </form>
 </template>
