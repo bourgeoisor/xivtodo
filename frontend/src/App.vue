@@ -49,8 +49,9 @@
   
   --bs-primary: #41b883;
   --bs-primary-color: var(--bs-primary);
-  --bs-primary-hover: #2f8f6f;
-  --bs-primary-active: #2a7d5a;
+  --bs-primary-hover: #39a273;
+  --bs-primary-active: #2f8c63;
+  --bs-primary-text-emphasis: #0d3724;
 
   --bs-secondary: #838D96;
   --bs-secondary-color: var(--bs-secondary);
@@ -267,8 +268,8 @@ hr {
 // Primary
 .btn-primary,
 .btn-outline-primary {
-  --bs-btn-hover-color: var(--bs-dark);
-  --bs-btn-active-color: var(--bs-dark);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-active-color: var(--bs-white);
   
   --bs-btn-border-color: var(--bs-primary);
   --bs-btn-hover-border-color: var(--bs-primary-hover);
@@ -280,8 +281,8 @@ hr {
 }
 
 .btn-primary {
-  --bs-btn-color: var(--bs-dark);
-  --bs-btn-disabled-color: var(--bs-dark);
+  --bs-btn-color: var(--bs-primary-text-emphasis);
+  --bs-btn-disabled-color: var(--bs-primary-text-emphasis);
 
   --bs-btn-bg: var(--bs-primary);
   --bs-btn-hover-bg: var(--bs-primary-hover);
