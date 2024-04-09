@@ -304,12 +304,12 @@
   <!-- Countdowns off-canvas -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCountdowns">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasCountdownsLabel">{{ $t("page.countdowns") }}</h5>
+      <h3 class="offcanvas-title" id="offcanvasCountdownsLabel">{{ $t("page.countdowns") }}</h3>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
       <div v-for="item in news.countdowns" :key="item.title">
-        <h3>{{ item.title }}</h3>
+        <h4>{{ item.title }}</h4>
         <small v-if="item.end && new Date() / 1000 > item.end" class="text-danger">This event has ended </small>
         <small v-else-if="item.start && new Date() / 1000 < item.start" class="text-muted">
           Available in
@@ -327,7 +327,7 @@
         <br v-if="item.description || item.url" />
         <p v-if="item.description" v-html="item.description"></p>
         <span v-if="item.url">
-          <a class="text-reset" :href="item.url" target="_blank" rel="noopener noreferrer">More details</a>
+          <a class="text-reset me-1" :href="item.url" target="_blank" rel="noopener noreferrer">More details</a>
           <i class="fa-fw fas fa-external-link"></i>
         </span>
         <br /><br /><br />
@@ -338,12 +338,12 @@
   <!-- News off-canvas -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasUpdates">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasUpdatesLabel">{{ $t("page.newsUpdates") }}</h5>
+      <h3 class="offcanvas-title" id="offcanvasUpdatesLabel">{{ $t("page.newsUpdates") }}</h3>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
       <div v-for="item in news.news" :key="item.ID">
-        <h3>{{ item.title }}</h3>
+        <h4>{{ item.title }}</h4>
         <small class="text-muted">
           Posted on <b class="text-success">{{ item.published }}</b>
         </small>
