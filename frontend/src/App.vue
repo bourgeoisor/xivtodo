@@ -447,8 +447,9 @@ export default {
     clearInterval(this.intervalFunction);
   },
   computed: {
-    computeWindowTitle() {
+    windowTitle() {
       const routeName = this.$route.name;
+      console.log(this.$route.path)
 
       if (routeName === undefined || routeName === "Home") {
         return `XIV ToDo: ${this.$t("page.homeTitle")}`;
@@ -460,6 +461,9 @@ export default {
         return `XIV ToDo - ${i18nRouteName}`;
       }
     },
+    canonicalURL() {
+      return "https://xivtodo.com" + this.$route.path;
+    },
     globalError() {
       if (this.$store.state.signingIn?.status == 401) {
         return this.$t("message.signingUnauthorizedError");
@@ -470,17 +474,21 @@ export default {
       }
     },
   },
-  watch: {
-    computeWindowTitle: "setWindowTitle",
+  head() {
+    return {
+      title: this.windowTitle,
+      link: [
+        {
+          rel: "canonical",
+          href: this.canonicalURL,
+        },
+      ],
+    };
   },
   created() {
-    this.setWindowTitle();
     this.detectFocusOut();
   },
   methods: {
-    setWindowTitle() {
-      document.title = this.computeWindowTitle;
-    },
     detectFocusOut() {
       let inView = false;
 
