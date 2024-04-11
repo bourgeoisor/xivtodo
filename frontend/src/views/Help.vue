@@ -1,5 +1,5 @@
 <template>
-  <PageHeader title="page.help" hideNotSignedInAlert="true" hideNoCharactersAlert="true" />
+  <PageHeader title="page.help" :hideNotSignedInAlert="true" :hideNoCharactersAlert="true" />
 
   <div class="row">
     <div class="col-lg-10 indent-paragraphs">

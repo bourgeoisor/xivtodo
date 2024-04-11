@@ -1,6 +1,6 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
-  <PageHeader title="page.privacy" hideNotSignedInAlert="true" hideNoCharactersAlert="true">a</PageHeader>
+  <PageHeader title="page.privacy" :hideNotSignedInAlert="true" :hideNoCharactersAlert="true" />
 
   <div class="row">
     <div class="col-lg-10">

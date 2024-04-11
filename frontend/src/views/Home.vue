@@ -1,7 +1,7 @@
 <template>
   <!-- <template v-if="this.$store.getters.isSignedIn && this.$store.getters.hasCharacter"> -->
   <template v-if="false">
-    <PageHeader title="page.home" hideNotSignedInAlert="true" hideNoCharactersAlert="true">
+    <PageHeader title="page.home" :hideNotSignedInAlert="true" :hideNoCharactersAlert="true">
       <router-link to="/settings/">
         <button type="button" class="btn btn-outline-success">
           {{ $t("home.addCharacter") }}
