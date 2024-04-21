@@ -74,5 +74,9 @@ func validateSettings(userData *models.User, payload *models.Settings) error {
 		return errors.New("PatchNumsOption invalid, must be between [0-2]")
 	}
 
+	if payload.ThemeOption < 0 || payload.ThemeOption > 1 {
+		return errors.New("ThemeOption invalid, must be between [0-1]")
+	}
+
 	return nil
 }
