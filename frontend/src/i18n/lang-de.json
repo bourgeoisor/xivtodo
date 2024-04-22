@@ -24,7 +24,8 @@
     "discord": "Discord",
     "countdowns": "Countdowns",
     "newsUpdates": "Neuigkeiten & Updates",
-    "language": "Sprache"
+    "language": "Sprache",
+    "sandbox": "Sandbox"
   },
   "navbar": {
     "changeActiveCharacter": "Aktiver Charakter",
@@ -46,7 +47,7 @@
     "signingUnknownError": "XIV ToDo konnte Discord nicht erreichen. Versuche es später noch einmal oder schaue für ein eventuelles Statusupdate auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> vorbei.",
     "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
     "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
-    "notSignedIn": "Keine Charaktere gefunden. Du kannst dich <a href='{url}' class='alert-link'>mit Discord anmelden</a>, um diese hinzuzufügen.",
+    "notSignedIn": "No characters found. <a href='{url}' class='alert-link'>Sign in with Discord</a> to add and track your characters.",
     "noCharacters": "Keine Charaktere gefunden. Über die <a href='/settings' class='alert-link'>Einstellungen</a> kannst du diese hinzufügen."
   },
   "footer": {
@@ -147,7 +148,6 @@
     "cityState": "Stadtstaat",
     "grandCompany": "Staatliche Gesellschaft",
     "playingSince": "Spielt seit",
-    "playingSinceAlt": "Kann bei älteren Charakteren ungenau sein (FFXIV 1.0)",
     "achievements": "Errungenschaften",
     "tanks": "Verteidiger",
     "healers": "Heiler",
@@ -305,6 +305,12 @@
       "option2": "Patch-Nummern immer anzeigen",
       "hint": "Präferenz bei der Anzeige von Patch-Nummern für Inhalte."
     },
+    "theme": {
+      "label": "Theme",
+      "option0": "Night",
+      "option1": "Day",
+      "hint": "Preference in the appearance of the site."
+    },
     "updateSettings": "Einstellungen aktualisieren",
     "characterNotFound": "Charakter nicht im Lodestone auffindbar",
     "characterNotFoundAlt": "Dieser Charakter konnte im Lodestone nicht gefunden werden. Wenn du erst kürzlich einen Stammweltentransfer vollzogen hast, versuche es später erneut.",
@@ -336,6 +342,7 @@
     "updatingWait": "Aktualisiert, bitte warten...",
     "addingWait": "Wird hinzugefügt, bitte warten...",
     "portraitAlt": "Porträt deines Charakters",
+    "moreDetails": "More details",
     "expansion": {
       "arr": "A Realm Reborn",
       "hw": "Heavensward",
@@ -352,7 +359,11 @@
       "daysAgo": "vor {days} Tagen",
       "hoursAgo": "vor {hours} Stunden",
       "minutesAgo": "vor {minutes} Minuten",
-      "coupleSecondsAgo": "vor ein paar Sekunden"
+      "coupleSecondsAgo": "vor ein paar Sekunden",
+      "currentlyAvailable": "Currently available",
+      "eventEnded": "This event has ended",
+      "available": "Available",
+      "ending": "Ending"
     }
   }
 }
