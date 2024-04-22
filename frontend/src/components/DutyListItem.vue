@@ -1,6 +1,6 @@
 <template>
   <div
-    class="list-group-item align-items-center"
+    class="list-group-item align-items-center fs-6"
     :class="{
       'list-group-item-action':
         this.$store.getters.hasCharacter && isHovering && (duty.cleared == -1 || duty.cleared == 2),

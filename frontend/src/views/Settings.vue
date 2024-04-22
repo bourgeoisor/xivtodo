@@ -70,17 +70,17 @@
                 <br />
                 <span
                   v-if="this.updating == item.lodestoneData.Character.ID || this.$store.getters.characterOutOfDate(i)"
-                  class="text-info fw-light"
+                  class="text-info"
                 >
                   <div class="spinner-border spinner-border-sm" role="status"></div>
                   {{ $t("shared.updatingWait") }}
                 </span>
-                <span v-else-if="item.invalid" class="text-danger fw-light">
+                <span v-else-if="item.invalid" class="text-danger">
                   <abbr :title="$t('settings.characterNotFoundAlt')">
                     {{ $t("settings.characterNotFound") }}
                   </abbr>
                 </span>
-                <span v-else class="text-muted fw-light">
+                <span v-else class="text-muted">
                   {{ $t("settings.lastUpdated", { time: lastUpdatedAt(item.updated) }) }}
                   <span
                     v-if="!item.lodestoneData.Achievements || item.lodestoneData.Achievements.length == 0"
@@ -131,93 +131,31 @@
         <h2>{{ $t("settings.general") }}</h2>
 
         <!-- Content spoilers -->
-        <h3>{{ $t("settings.contentSpoilers.label") }}</h3>
-        <div class="form-check">
-          <input
-            v-model="settings.spoilersOption"
-            class="form-check-input"
-            type="radio"
-            name="inputSpoilersOption"
-            id="inputSpoilersOption0"
-            :value="0"
-          />
-          <label class="form-check-label" for="inputSpoilersOption0">
-            {{ $t("settings.contentSpoilers.option0") }}
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            v-model="settings.spoilersOption"
-            class="form-check-input"
-            type="radio"
-            name="inputSpoilersOption"
-            id="inputSpoilersOption1"
-            :value="1"
-          />
-          <label class="form-check-label" for="inputSpoilersOption1">
-            {{ $t("settings.contentSpoilers.option1") }}
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            v-model="settings.spoilersOption"
-            class="form-check-input"
-            type="radio"
-            name="inputSpoilersOption"
-            id="inputSpoilersOption2"
-            :value="2"
-          />
-          <label class="form-check-label" for="inputSpoilersOption2">
-            {{ $t("settings.contentSpoilers.option2") }}
-          </label>
-        </div>
-        <div class="form-text">{{ $t("settings.contentSpoilers.hint") }}</div>
-
-        <br />
+        <FormRadioSection
+          id="inputSpoilersOption"
+          i18nPrefix="settings.contentSpoilers."
+          v-model="settings.spoilersOption"
+          @radio-change="settings.spoilersOption = $event"
+          :options="[0, 1, 2]"
+        />
 
         <!-- Patch numbers -->
-        <h3>{{ $t("settings.patchNumbers.label") }}</h3>
-        <div class="form-check">
-          <input
-            v-model="settings.patchNumsOption"
-            class="form-check-input"
-            type="radio"
-            name="inputPatchNumsOption"
-            id="inputPatchNumsOption0"
-            :value="0"
-          />
-          <label class="form-check-label" for="inputPatchNumsOption0">
-            {{ $t("settings.patchNumbers.option0") }}
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            v-model="settings.patchNumsOption"
-            class="form-check-input"
-            type="radio"
-            name="inputPatchNumsOption"
-            id="inputPatchNumsOption1"
-            :value="1"
-          />
-          <label class="form-check-label" for="inputPatchNumsOption1">
-            {{ $t("settings.patchNumbers.option1") }}
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            v-model="settings.patchNumsOption"
-            class="form-check-input"
-            type="radio"
-            name="inputPatchNumsOption"
-            id="inputPatchNumsOption2"
-            :value="2"
-          />
-          <label class="form-check-label" for="inputPatchNumsOption2">
-            {{ $t("settings.patchNumbers.option2") }}
-          </label>
-        </div>
-        <div class="form-text">{{ $t("settings.patchNumbers.hint") }}</div>
-        <br />
+        <FormRadioSection
+          id="inputPatchNumsOption"
+          i18nPrefix="settings.patchNumbers."
+          v-model="settings.patchNumsOption"
+          @radio-change="settings.patchNumsOption = $event"
+          :options="[0, 1, 2]"
+        />
+
+        <!-- Theme -->
+        <FormRadioSection
+          id="inputThemeOption"
+          i18nPrefix="settings.theme."
+          v-model="settings.themeOption"
+          @radio-change="settings.themeOption = $event"
+          :options="[0, 1]"
+        />
 
         <!-- Update button -->
         <button v-if="updatingSettings" type="button" id="settings-save-btn" class="btn btn-primary" disabled>
@@ -244,6 +182,7 @@
 
 <script>
 import PageHeader from "@/components/PageHeader.vue";
+import FormRadioSection from "@/components/FormRadioSection.vue";
 import { getLodestoneURL } from "@/utilities/shared.js";
 import { updateSettings, addCharacter, removeCharacter } from "@/utilities/backend.js";
 
@@ -261,6 +200,7 @@ export default {
   },
   components: {
     PageHeader,
+    FormRadioSection,
   },
   methods: {
     getLodestoneURL: getLodestoneURL,

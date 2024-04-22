@@ -52,7 +52,7 @@
   <template v-else>
     <div class="px-4 py-4 my-4 text-center">
       <!-- Branding -->
-      <img class="d-block mx-auto mb-4" src="@/assets/img/brand.png" alt="XIV ToDo branding" width="300" />
+      <img class="d-block mx-auto mb-4" :src="this.brandURI" alt="XIV ToDo branding" width="300" />
       <h1 class="visually-hidden">XIV ToDo</h1>
 
       <div class="container col-lg-8 mx-auto">
@@ -180,8 +180,8 @@
         <div class="d-none d-md-block col-md-3 col-lg-3">
           <img
             loading="lazy"
-            src="@/assets/img/hamster_avatar.png"
-            style="border-radius: 50%; width: 100%"
+            src="@/assets/img/viera.png"
+            style="border-radius: 50%; width: 100%; border: 1px solid var(--bs-body-color)"
             class="d-block mx-lg-auto"
             alt="Drawing of a hamster"
           />
@@ -241,6 +241,17 @@ export default {
   name: "HomeView",
   components: {
     PageHeader,
+  },
+  computed: {
+    brandURI() {
+      const theme = this.$store.getters.theme;
+
+      if (theme == "night") {
+        return require("@/assets/img/brand.png");
+      } else {
+        return require("@/assets/img/brand_dark.png");
+      }
+    },
   },
   methods: {
     goto(refName) {

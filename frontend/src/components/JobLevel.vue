@@ -44,7 +44,7 @@
 
 .job-level-progress {
   height: 1px;
-  border-bottom: 1px solid var(--bs-secondary-color);
+  border-right: 1px solid var(--bs-body-color);
 }
 
 .job-level-progress-bar {

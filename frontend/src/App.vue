@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex flex-column min-vh-100">
+  <div id="root" class="d-flex flex-column min-vh-100" :data-bs-theme="this.$store.getters.theme">
     <TheNavbar />
 
     <main class="flex-shrink-0">
@@ -41,7 +41,40 @@
 // Variables
 ///
 
-:root {
+[data-bs-theme="day"] {
+  --bs-body-color: #222222;
+  --bs-body-bg: #ffffff;
+  --bs-dark: #212529;
+  --bs-transparent: rgba(255, 255, 255, 0);
+
+  --bs-primary: #148653;
+  --bs-primary-color: var(--bs-primary);
+  --bs-primary-hover: #39a273;
+  --bs-primary-active: #2f8c63;
+  --bs-primary-text-emphasis: var(--bs-white);
+
+  --bs-secondary: #4B5A66;
+  --bs-secondary-color: var(--bs-secondary);
+
+  --bs-warning: #967100;
+
+  --bs-info: #0d7c93;
+
+  --xt-tank-color: #54afff;
+  --xt-healer-color: #4ed232;
+  --xt-dps-color: #ec4040;
+  --xt-crafter-color: #ffbf5a;
+  --xt-gatherer-color: #805bff;
+
+  .form-check-input:checked[type="radio"] {
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23222'/%3e%3c/svg%3e");
+  }
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+[data-bs-theme="night"] {
   --bs-body-color: #dddddd;
   --bs-body-bg: #1c2024;
   --bs-dark: #212529;
@@ -81,6 +114,13 @@
   --xt-dps-color: #ff8f8f;
   --xt-crafter-color: #ffd99d;
   --xt-gatherer-color: #bdaaff;
+
+  .form-check-input:checked[type="radio"] {
+    --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23ddd'/%3e%3c/svg%3e");
+  }
+
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
 }
 
 .navbar-nav {
@@ -95,9 +135,7 @@
 // Body
 ///
 
-#app {
-  background-color: var(--bs-body-bg);
-  color: var(--bs-body-color);
+#root {
   font-family: "Montserrat", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 18px;
   font-optical-sizing: auto;
@@ -116,7 +154,7 @@ main {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--bs-primary) var(--bs-gray-800);
+  scrollbar-color: #41b883 var(--bs-gray-800);
 }
 
 *::-webkit-scrollbar {
@@ -128,7 +166,7 @@ main {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--bs-primary);
+  background-color: #41b883;
   border-radius: 20px;
   border: 3px solid var(--bs-gray-800);
 }
@@ -257,6 +295,10 @@ hr {
   color: var(--bs-danger) !important;
 }
 
+.text-warning {
+  color: var(--bs-warning) !important;
+}
+
 .text-info {
   color: var(--bs-info) !important;
 }
@@ -318,16 +360,18 @@ hr {
 
 .list-group-item-action:focus,
 .list-group-item-action:hover {
-  background-color: #212529 !important;
+  background-color: var(--bs-body-bg);
+  filter: brightness(95%);
 }
 
 .list-group-item-action:active {
-  background-color: #1c2024 !important;
+  background-color: var(--bs-body-bg);
+  filter: brightness(90%);
 }
 
 .list-group-item {
-  color: var(--bs-body-color) !important;
-  background-color: var(--bs-transparent);
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
   border-color: #484848;
   padding-bottom: 0.4rem;
 }
@@ -359,7 +403,7 @@ tr {
 ///
 
 .form-check-input {
-  background-color: var(var(--bs-transparent));
+  background-color: var(--bs-transparent);
   border: 1px solid var(--bs-body-color);
 }
 
@@ -369,12 +413,11 @@ tr {
 }
 
 .form-control {
-  color: #dbdcdd;
-  background-color: #262b2f;
+  border-color: var(--bs-body-color);
 }
 
 .form-control::placeholder {
-  color: rgba(97, 108, 120, 0.75);
+  color: rgba(97, 108, 120, 0.6);
 }
 
 ///

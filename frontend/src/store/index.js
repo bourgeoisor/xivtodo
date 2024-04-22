@@ -53,6 +53,17 @@ const store = createStore({
     settings(state) {
       return state.userData?.settings || {};
     },
+    theme(state, getters) {
+      const themeOption = getters.settings.themeOption || 0;
+      switch (themeOption) {
+        case 0:
+          return "night";
+        case 1:
+          return "day";
+        default:
+          return "night";
+      }
+    },
     characters(state) {
       return state.userData?.characters || [];
     },
