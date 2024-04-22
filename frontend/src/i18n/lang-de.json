@@ -305,6 +305,12 @@
       "option2": "Patch-Nummern immer anzeigen",
       "hint": "Präferenz bei der Anzeige von Patch-Nummern für Inhalte."
     },
+    "theme": {
+      "label": "Theme",
+      "option0": "Night",
+      "option1": "Day",
+      "hint": "Preference in the appearance of the site."
+    },
     "updateSettings": "Einstellungen aktualisieren",
     "characterNotFound": "Charakter nicht im Lodestone auffindbar",
     "characterNotFoundAlt": "Dieser Charakter konnte im Lodestone nicht gefunden werden. Wenn du erst kürzlich einen Stammweltentransfer vollzogen hast, versuche es später erneut.",
@@ -336,6 +342,7 @@
     "updatingWait": "Aktualisiert, bitte warten...",
     "addingWait": "Wird hinzugefügt, bitte warten...",
     "portraitAlt": "Porträt deines Charakters",
+    "moreDetails": "More details",
     "expansion": {
       "arr": "A Realm Reborn",
       "hw": "Heavensward",
@@ -352,7 +359,11 @@
       "daysAgo": "vor {days} Tagen",
       "hoursAgo": "vor {hours} Stunden",
       "minutesAgo": "vor {minutes} Minuten",
-      "coupleSecondsAgo": "vor ein paar Sekunden"
+      "coupleSecondsAgo": "vor ein paar Sekunden",
+      "currentlyAvailable": "Currently available",
+      "eventEnded": "This event has ended",
+      "available": "Available",
+      "ending": "Ending"
     }
   }
 }
