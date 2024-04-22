@@ -305,6 +305,12 @@
       "option2": "Always show patch numbers",
       "hint": "Preference in showing patch numbers for content."
     },
+    "theme": {
+      "label": "Theme",
+      "option0": "Night",
+      "option1": "Day",
+      "hint": "Preference in the appearance of the site."
+    },
     "updateSettings": "Update settings",
     "characterNotFound": "Character not in Lodestone",
     "characterNotFoundAlt": "This character does not exist in Lodestone. If you recently transfered world, try updating again later",
@@ -336,6 +342,7 @@
     "updatingWait": "更新中、しばらくお待ちください",
     "addingWait": "追加中、お待ちください",
     "portraitAlt": "あなたのキャラクターのポートレート",
+    "moreDetails": "More details",
     "expansion": {
       "arr": "新生エオルゼア",
       "hw": "蒼天のイシュガルド",
@@ -352,7 +359,11 @@
       "daysAgo": "{days} 日前",
       "hoursAgo": "{hours} 時間前",
       "minutesAgo": "{minutes} 分前",
-      "coupleSecondsAgo": "数秒前"
+      "coupleSecondsAgo": "数秒前",
+      "currentlyAvailable": "Currently available",
+      "eventEnded": "This event has ended",
+      "available": "Available",
+      "ending": "Ending"
     }
   }
 }
