@@ -305,6 +305,12 @@
       "option2": "Toujours afficher les numéros de correctifs",
       "hint": "Preference in showing patch numbers for content."
     },
+    "theme": {
+      "label": "Theme",
+      "option0": "Night",
+      "option1": "Day",
+      "hint": "Preference in the appearance of the site."
+    },
     "updateSettings": "Mettre à jour les paramètres",
     "characterNotFound": "Personnage non dans Lodestone",
     "characterNotFoundAlt": "Ce personnage n'existe pas dans Lodestone. Si vous avez récemment transféré de monde, réessayez de le mettre à jour plus tard",
@@ -336,6 +342,7 @@
     "updatingWait": "Mise à jour en cours, veuillez patienter...",
     "addingWait": "Ajout en cours, veuillez patienter...",
     "portraitAlt": "Portrait de votre personnage",
+    "moreDetails": "More details",
     "expansion": {
       "arr": "A Realm Reborn",
       "hw": "Heavensward",
@@ -352,7 +359,11 @@
       "daysAgo": "il y a {days} jours",
       "hoursAgo": "il y a {hours} heures",
       "minutesAgo": "il y a {minutes} minutes",
-      "coupleSecondsAgo": "il y a quelques instants"
+      "coupleSecondsAgo": "il y a quelques instants",
+      "currentlyAvailable": "Currently available",
+      "eventEnded": "This event has ended",
+      "available": "Available",
+      "ending": "Ending"
     }
   }
 }
