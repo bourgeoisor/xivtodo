@@ -299,17 +299,17 @@
       "hint": "Préférence concernant les spoilers potentiels."
     },
     "patchNumbers": {
-      "label": "Patch numbers",
+      "label": "Numéros de correctifs",
       "option0": "Afficher les numéros de correctifs pour le contenu flouté",
       "option1": "Afficher les numéros de correctifs pour le contenu non complété",
       "option2": "Toujours afficher les numéros de correctifs",
-      "hint": "Preference in showing patch numbers for content."
+      "hint": "Préférence dans l'affichage des numéros de correctifs pour le contenu."
     },
     "theme": {
-      "label": "Theme",
-      "option0": "Night",
-      "option1": "Day",
-      "hint": "Preference in the appearance of the site."
+      "label": "Thème",
+      "option0": "Nuit",
+      "option1": "Jour",
+      "hint": "Préférence dans l'apparence du site."
     },
     "updateSettings": "Mettre à jour les paramètres",
     "characterNotFound": "Personnage non dans Lodestone",
@@ -342,7 +342,7 @@
     "updatingWait": "Mise à jour en cours, veuillez patienter...",
     "addingWait": "Ajout en cours, veuillez patienter...",
     "portraitAlt": "Portrait de votre personnage",
-    "moreDetails": "More details",
+    "moreDetails": "Plus d'infos",
     "expansion": {
       "arr": "A Realm Reborn",
       "hw": "Heavensward",
@@ -360,10 +360,10 @@
       "hoursAgo": "il y a {hours} heures",
       "minutesAgo": "il y a {minutes} minutes",
       "coupleSecondsAgo": "il y a quelques instants",
-      "currentlyAvailable": "Currently available",
-      "eventEnded": "This event has ended",
-      "available": "Available",
-      "ending": "Ending"
+      "currentlyAvailable": "En cours",
+      "eventEnded": "Cet événement est terminé",
+      "available": "Disponible",
+      "ending": "Fini"
     }
   }
 }
