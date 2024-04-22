@@ -1,25 +1,71 @@
 {
-  "latestCountdownID": 41,
+  "latestCountdownID": 42,
   "countdowns": [
     {
-      "title": "FFXVI Collaboration Event",
+      "title": "FFXVI Collab.",
+      "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/ffxvi/",
       "start": 1712052000,
       "end": 1715162400
     },
     {
-      "title": "Patch 7.0 (Dawntrail) - Early Access",
+      "title": "Yo-kai Watch Collab.",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/youkai-watch/j9rq1fpxxd",
+      "start": 1713945600,
+      "end": 1719565200
+    },
+    {
+      "title": "Moogle Treasure Trove",
+      "type": "event",
+      "start": 1715680800,
+      "end": 1719223200
+    },
+    {
+      "title": "Make It Rain Campaign",
+      "type": "event",
+      "start": 1715767200,
+      "end": 1717149600
+    },
+    {
+      "title": "Dragon Quest X Collab.",
+      "type": "event",
+      "start": 1717581600,
+      "end": 1718877600
+    },
+    {
+      "title": "LPL Part LXXXI",
+      "type": "keynote",
+      "start": 1715853600,
+      "end": 0
+    },
+    {
+      "title": "LPL Part LXXXII",
+      "type": "keynote",
+      "start": 1718359200,
+      "end": 0
+    },
+    {
+      "title": "Patch 7.0 (Dawntrail) - EA",
+      "type": "patch",
       "url": "https://na.finalfantasyxiv.com/dawntrail/",
       "start": 1719565200
     },
     {
       "title": "Patch 7.0 (Dawntrail)",
+      "type": "patch",
       "url": "https://na.finalfantasyxiv.com/dawntrail/",
       "start": 1719910800
     }
   ],
-  "latestID": 230523,
+  "latestID": 240421,
   "news": [
+    {
+      "ID": 240421,
+      "title": "Theme & styling updates",
+      "published": "April 21, 2024",
+      "content": "While waiting for Dawntrail, I've spent some time cleaning up XIV ToDo (and fixing a few issues). More visibly, I've tweaked the styling of the site (text, layout, etc.) and added a light theme, which you can try from the settings page. Do let me know if you have any feedback or issues with either of the current themes, or if you have any ideas for another palette theme!"
+    },
     {
       "ID": 231003,
       "title": "Release of patch 6.5",
