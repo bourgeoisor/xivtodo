@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header data-bs-theme="night">
     <nav class="navbar fixed-top navbar-expand-xl navbar-dark">
       <div class="container-fluid user-select-none">
         <router-link to="/" class="navbar-brand mb-0 h1">
@@ -302,57 +302,10 @@
   </header>
 
   <!-- Countdowns off-canvas -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCountdowns">
-    <div class="offcanvas-header">
-      <h3 class="offcanvas-title" id="offcanvasCountdownsLabel">{{ $t("page.countdowns") }}</h3>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div v-for="item in news.countdowns" :key="item.title">
-        <h4>{{ item.title }}</h4>
-        <small v-if="item.end && new Date() / 1000 > item.end" class="text-danger">This event has ended </small>
-        <small v-else-if="item.start && new Date() / 1000 < item.start" class="text-muted">
-          Available in
-          <b class="text-info">
-            <abbr :title="dateFormat(item.start)">{{ timeLeft(item.start) }}</abbr>
-          </b>
-        </small>
-        <small v-else-if="item.end" class="text-muted">
-          Ending in
-          <b class="text-success">
-            <abbr :title="dateFormat(item.end)">{{ timeLeft(item.end) }}</abbr>
-          </b>
-        </small>
-        <small v-else class="text-success">Currently available</small>
-        <br v-if="item.description || item.url" />
-        <p v-if="item.description" v-html="item.description"></p>
-        <span v-if="item.url">
-          <a class="text-reset me-1" :href="item.url" target="_blank" rel="noopener noreferrer">More details</a>
-          <i class="fa-fw fas fa-external-link"></i>
-        </span>
-        <br /><br /><br />
-      </div>
-    </div>
-  </div>
+  <TheCountdownsCanvas />
 
   <!-- News off-canvas -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasUpdates">
-    <div class="offcanvas-header">
-      <h3 class="offcanvas-title" id="offcanvasUpdatesLabel">{{ $t("page.newsUpdates") }}</h3>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <div v-for="item in news.news" :key="item.ID">
-        <h4>{{ item.title }}</h4>
-        <small class="text-muted">
-          Posted on <b class="text-success">{{ item.published }}</b>
-        </small>
-        <br />
-        <p v-html="item.content"></p>
-        <br />
-      </div>
-    </div>
-  </div>
+  <TheNewsCanvas />
 </template>
 
 <style lang="scss">
@@ -407,6 +360,8 @@ nav {
 </style>
 
 <script>
+import TheNewsCanvas from "@/components/TheNewsCanvas.vue";
+import TheCountdownsCanvas from "@/components/TheCountdownsCanvas.vue";
 import news from "@/assets/news.json";
 import { updateSettings } from "@/utilities/backend.js";
 
@@ -415,19 +370,11 @@ export default {
   data() {
     return {
       news: news,
-      now: new Date() / 1000,
     };
   },
-  mounted() {
-    this.$nextTick(function () {
-      this.now = new Date() / 1000;
-    });
-    this.intervalFunction = setInterval(() => {
-      this.now = new Date() / 1000;
-    }, 60 * 1000);
-  },
-  unmounted() {
-    clearInterval(this.intervalFunction);
+  components: {
+    TheNewsCanvas,
+    TheCountdownsCanvas,
   },
   methods: {
     changeLanguage(lang) {
@@ -466,20 +413,6 @@ export default {
       settings.latestCountdownSeen = news.latestCountdownID;
       this.$store.commit("setSettings", settings);
       updateSettings(settings);
-    },
-    timeLeft(timestamp) {
-      let diff = timestamp - this.now;
-      let days = Math.floor(diff / (1 * 60 * 60 * 24));
-      let hours = Math.floor(diff / (1 * 60 * 60));
-      let minutes = Math.floor(diff / (1 * 60));
-
-      if (days > 0) return days + "d " + (hours - days * 24) + "h";
-      else if (hours > 0) return hours + "h " + (minutes - hours * 60) + "m";
-      else return minutes + "m";
-    },
-    dateFormat(timestamp) {
-      let date = new Date(timestamp * 1000);
-      return date;
     },
   },
 };
