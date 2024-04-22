@@ -31,8 +31,8 @@
     "changeActiveCharacter": "Aktiver Charakter",
     "preferredLanguage": "Bevorzugte Sprache",
     "feedback": "Feedback",
-    "settingsAndCharacters": "Einstellungen & Zeichen",
-    "noCharacters": "Füge deine Zeichen in den Einstellungen hinzu"
+    "settingsAndCharacters": "Einstellungen & Charaktere",
+    "noCharacters": "Füge deine Charaktere in den Einstellungen hinzu"
   },
   "pageHeader": {
     "ofCharacter": "von {characterName}",
@@ -47,7 +47,7 @@
     "signingUnknownError": "XIV ToDo konnte Discord nicht erreichen. Versuche es später noch einmal oder schaue für ein eventuelles Statusupdate auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> vorbei.",
     "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
     "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
-    "notSignedIn": "No characters found. <a href='{url}' class='alert-link'>Sign in with Discord</a> to add and track your characters.",
+    "notSignedIn": "Keine Charaktere gefunden. <a href='{url}' class='alert-link'>Melde dich mit Discord an</a>, um welche hinzuzufügen und nachzuverfolgen.",
     "noCharacters": "Keine Charaktere gefunden. Über die <a href='/settings' class='alert-link'>Einstellungen</a> kannst du diese hinzufügen."
   },
   "footer": {
@@ -306,10 +306,10 @@
       "hint": "Präferenz bei der Anzeige von Patch-Nummern für Inhalte."
     },
     "theme": {
-      "label": "Theme",
-      "option0": "Night",
-      "option1": "Day",
-      "hint": "Preference in the appearance of the site."
+      "label": "Erscheinungsbild",
+      "option0": "Nacht",
+      "option1": "Tag",
+      "hint": "Präferenz der Webseitendarstellung."
     },
     "updateSettings": "Einstellungen aktualisieren",
     "characterNotFound": "Charakter nicht im Lodestone auffindbar",
@@ -342,7 +342,7 @@
     "updatingWait": "Aktualisiert, bitte warten...",
     "addingWait": "Wird hinzugefügt, bitte warten...",
     "portraitAlt": "Porträt deines Charakters",
-    "moreDetails": "More details",
+    "moreDetails": "Mehr Details",
     "expansion": {
       "arr": "A Realm Reborn",
       "hw": "Heavensward",
@@ -360,10 +360,10 @@
       "hoursAgo": "vor {hours} Stunden",
       "minutesAgo": "vor {minutes} Minuten",
       "coupleSecondsAgo": "vor ein paar Sekunden",
-      "currentlyAvailable": "Currently available",
-      "eventEnded": "This event has ended",
-      "available": "Available",
-      "ending": "Ending"
+      "currentlyAvailable": "Derzeit verfügbar",
+      "eventEnded": "Dieses Event ist vorbei",
+      "available": "Verfügbar",
+      "ending": "Endet"
     }
   }
 }
