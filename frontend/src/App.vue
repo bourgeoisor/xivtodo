@@ -43,7 +43,7 @@
 
 [data-bs-theme="day"] {
   --bs-body-color: #222222;
-  --bs-body-bg: #ffffff;
+  --bs-body-bg: #f6f8fc;
   --bs-dark: #212529;
   --bs-transparent: rgba(255, 255, 255, 0);
 
@@ -56,15 +56,17 @@
   --bs-secondary: #4B5A66;
   --bs-secondary-color: var(--bs-secondary);
 
+  --bs-success: #076037;
+
   --bs-warning: #967100;
 
   --bs-info: #0d7c93;
 
-  --xt-tank-color: #54afff;
-  --xt-healer-color: #4ed232;
-  --xt-dps-color: #ec4040;
-  --xt-crafter-color: #ffbf5a;
-  --xt-gatherer-color: #805bff;
+  --xt-tank-color: #0971cd;
+  --xt-healer-color: #167b01;
+  --xt-dps-color: #d02323;
+  --xt-crafter-color: #85670d;
+  --xt-gatherer-color: #6741eb;
 
   .form-check-input:checked[type="radio"] {
     --bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23222'/%3e%3c/svg%3e");
@@ -360,6 +362,7 @@ hr {
 
 .list-group-item-action:focus,
 .list-group-item-action:hover {
+  color: unset;
   background-color: var(--bs-body-bg);
   filter: brightness(95%);
 }

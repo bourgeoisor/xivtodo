@@ -1,6 +1,6 @@
 <template>
   <header data-bs-theme="night">
-    <nav class="navbar fixed-top navbar-expand-xl navbar-dark">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark">
       <div class="container-fluid user-select-none">
         <router-link to="/" class="navbar-brand mb-0 h1">
           <img style="height: 28px" src="@/assets/img/brand.png" alt="XIV ToDo branding" />
@@ -18,32 +18,36 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav navbar-nav-scroll ms-auto flex-grow-1 mb-2 mb-xl-0">
+          <ul class="navbar-nav navbar-nav-scroll ms-auto flex-grow-1 mb-2 mb-md-0">
             <!-- Profile -->
             <li v-if="this.$store.getters.hasCharacter" class="nav-item">
               <router-link to="/profile/" class="nav-link" @click="collapseNav">
-                {{ $t("page.profile") }}
+                <i class="fa-fw fas fa-user d-none d-md-inline-block d-xl-none"></i>
+                <span class="d-md-none d-xl-inline">{{ $t("page.profile") }}</span>
               </router-link>
             </li>
 
             <!-- Encounters -->
             <li class="nav-item">
               <router-link to="/encounters/" class="nav-link" @click="collapseNav">
-                {{ $t("page.encounters") }}
+                <i class="fa-fw fas fa-swords d-none d-md-inline-block d-xl-none"></i>
+                <span class="d-md-none d-xl-inline">{{ $t("page.encounters") }}</span>
               </router-link>
             </li>
 
             <!-- Questlines -->
             <li class="nav-item">
               <router-link to="/questlines/" class="nav-link" @click="collapseNav">
-                {{ $t("page.questlines") }}
+                <i class="fa-fw fas fa-map-marker-exclamation d-none d-md-inline-block d-xl-none"></i>
+                <span class="d-md-none d-xl-inline">{{ $t("page.questlines") }}</span>
               </router-link>
             </li>
 
             <!-- Challenges -->
             <li class="nav-item">
               <router-link to="/challenges/" class="nav-link" @click="collapseNav">
-                {{ $t("page.challenges") }}
+                <i class="fa-fw fas fa-medal d-none d-md-inline-block d-xl-none"></i>
+                <span class="d-md-none d-xl-inline">{{ $t("page.challenges") }}</span>
               </router-link>
             </li>
 
@@ -83,7 +87,8 @@
             <!-- Checklist -->
             <li class="nav-item">
               <router-link to="/checklist/" class="nav-link" @click="collapseNav">
-                {{ $t("page.checklist") }}
+                <span class="fa-fw fas fa-tasks d-none d-md-inline-block d-xl-none"></span>
+                <span class="d-md-none d-xl-inline">{{ $t("page.checklist") }}</span>
               </router-link>
             </li>
 
@@ -94,8 +99,8 @@
             <!-- Sandbox -->
             <li v-if="this.$store.getters.isDevEnv" class="nav-item">
               <router-link to="/sandbox/" class="nav-link" aria-label="Sandbox">
-                <span class="fa-fw fas fa-wrench position-relative"></span>
-                <span class="d-inline d-xl-none ms-2">{{ $t("page.sandbox") }}</span>
+                <span class="fa-fw fas fa-wrench"></span>
+                <span class="d-inline d-md-none ms-2">{{ $t("page.sandbox") }}</span>
               </router-link>
             </li>
 
@@ -120,7 +125,7 @@
                   >
                   </span>
                 </span>
-                <span class="d-inline d-xl-none ms-2">{{ $t("page.countdowns") }}</span>
+                <span class="d-inline d-md-none ms-2">{{ $t("page.countdowns") }}</span>
               </a>
             </li>
 
@@ -143,7 +148,7 @@
                   >
                   </span>
                 </span>
-                <span class="d-inline d-xl-none ms-2">{{ $t("page.newsUpdates") }}</span>
+                <span class="d-inline d-md-none ms-2">{{ $t("page.newsUpdates") }}</span>
               </a>
             </li>
 
@@ -166,7 +171,7 @@
                   >
                   </span>
                 </span>
-                <span class="d-inline d-xl-none ms-2">{{ $t("page.language") }}</span>
+                <span class="d-inline d-md-none ms-2">{{ $t("page.language") }}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="collectionDropdown">
                 <!-- Preferred language -->
@@ -221,7 +226,7 @@
             <!-- Sign-in -->
             <li v-if="!this.$store.getters.isSignedIn" class="nav-item">
               <a class="nav-link" :href="this.$store.getters.discordAuthURI">
-                <span class="d-inline-block d-xl-none fa-fw fas fa-sign-in me-2"></span>
+                <span class="d-inline-block d-md-none fa-fw fas fa-sign-in me-2"></span>
                 <span>{{ $t("home.signInDiscord") }}</span>
               </a>
             </li>
@@ -237,17 +242,17 @@
                 aria-expanded="false"
               >
                 <span v-if="this.$store.getters.hasCharacter">
-                  <span class="d-inline-block d-xl-none fa-fw fas fa-cog me-2"></span>
+                  <span class="d-inline-block d-md-none fa-fw fas fa-cog me-2"></span>
                   <span>{{ this.$store.getters.lodestoneData.Character.Name }}</span>
                   <img
                     v-if="this.$store.getters.hasCharacter"
-                    class="avatar-nav d-none d-xl-inline"
+                    class="avatar-nav d-none d-md-inline"
                     :src="this.$store.getters.character.Avatar"
                     :alt="$t('shared.portraitAlt')"
                   />
                 </span>
                 <template v-else>
-                  <span class="d-inline-block d-xl-none fa-fw fas fa-cog me-2"></span>
+                  <span class="d-inline-block d-md-none fa-fw fas fa-cog me-2"></span>
                   <span>{{ $t("navbar.settingsAndCharacters") }}</span>
                 </template>
               </a>
