@@ -77,7 +77,7 @@
           v-for="mountID of duty.Mounts.split(' ')"
           :key="mountID"
           class="pb-2"
-          :class="{'text-muted': this.$store.getters.minions[minionID]}"
+          :class="{'text-muted': this.$store.getters.mounts[mountID]}"
         >
           <img
             v-if="mountID"
