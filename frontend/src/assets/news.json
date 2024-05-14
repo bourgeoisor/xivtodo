@@ -2,13 +2,6 @@
   "latestCountdownID": 42,
   "countdowns": [
     {
-      "title": "FFXVI Collab.",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/ffxvi/",
-      "start": 1712052000,
-      "end": 1715162400
-    },
-    {
       "title": "Yo-kai Watch Collab.",
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/youkai-watch/j9rq1fpxxd",
