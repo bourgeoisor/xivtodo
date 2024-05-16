@@ -43,7 +43,7 @@
   "message": {
     "backendUnavailable": "XIV ToDo ist momentan nicht erreichbar. Versuche es später noch einmal, oder schau auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> nach einem Statusupdate.",
     "signingDiscord": "Anmelden mit Discord...",
-    "signingUnauthorizedError": "XIV ToDo konnte nicht von Discord authentifiziert werden. Stelle sicher, dass du gültige Discord Zugangsdaten verwendest.",
+    "signingUnauthorizedError": "XIV ToDo konnte sich nicht mit Discord authentifizieren. Stelle sicher, dass du gültige Discord Zugangsdaten verwendest.",
     "signingUnknownError": "XIV ToDo konnte Discord nicht erreichen. Versuche es später noch einmal oder schaue für ein eventuelles Statusupdate auf <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> oder <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> vorbei.",
     "updatingCharacter": "Aktualisiere Charakterinformationen, dies kann kurz dauern...",
     "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
@@ -104,7 +104,7 @@
     "addingCharacters": {
       "header": "Charaktere hinzufügen",
       "text1": "Um einen deiner Charaktere hinzuzufügen, benötigst du dessen Lodestone-URL, diese kannst du finden, indem du dich im {0} anmeldest und nach deinem Charakterprofil suchst. Die benötigte URL sieht dann so ähnlich wie das folgende Beispiel aus:",
-      "text2": "Sobald du deine Profil-URL gefunden hast, kannst du diese in den {0} über die Schaltfläche {1} einbinden. Bis zu 8 Charaktere können hinzugefügt werden, zwischen diesen kannst du jederzeit über das Dropdown-Menu am Ende der Hauptnavigationsleiste wechseln."
+      "text2": "Sobald du deine Profil-URL gefunden hast, kannst du diese in den {0} über die Schaltfläche {1} einbinden. Bis zu 8 Charaktere können hinzugefügt werden, zwischen diesen kannst du jederzeit über das Dropdown-Menü am Ende der Hauptnavigationsleiste wechseln."
     },
     "freeTrialCharacters": {
       "header": "Charaktere der kostenlosen Testversion",
