@@ -495,7 +495,6 @@ export default {
   computed: {
     windowTitle() {
       const routeName = this.$route.name;
-      console.log(this.$route.path)
 
       if (routeName === undefined || routeName === "Home") {
         return `XIV ToDo: ${this.$t("page.homeTitle")}`;
