@@ -47,7 +47,7 @@
     "signingUnknownError": "XIV ToDo n'a pas pu accéder à Discord. Veuillez réessayer ultérieurement ou consulter <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> ou <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> pour obtenir une mise à jour sur l'état de la situation.",
     "updatingCharacter": "Mise à jour des données du personnage, cela peut prendre une minute...",
     "achievementsNotPublic": "Les hauts faits pour ce personnage ne sont pas public dans Lodestone.",
-    "notSignedIn": "No characters found. <a href='{url}' class='alert-link'>Sign in with Discord</a> to add and track your characters.",
+    "notSignedIn": "Aucun personnage trouvé. <a href='{url}' class='alert-link'>Connectez-vous avec Discord</a> pour ajouter et suivre vos personnages.",
     "noCharacters": "Aucun caractère trouvé. Vous pouvez ajouter vos personnages dans les <a href='/settings' class='alert-link'>Paramètres</a>."
   },
   "footer": {
