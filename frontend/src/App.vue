@@ -56,7 +56,7 @@
   --bs-secondary: #4B5A66;
   --bs-secondary-color: var(--bs-secondary);
 
-  --bs-success: #076037;
+  --bs-success: #008045;
 
   --bs-warning: #967100;
 
