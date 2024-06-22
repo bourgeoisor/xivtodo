@@ -5,15 +5,15 @@
  */
 :root, :host {
   --fa-style-family-classic: 'Font Awesome 6 Pro';
-  --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Pro'; }
+  --fa-font-thin: normal 100 1em/1 'Font Awesome 6 Pro'; }
 
 @font-face {
   font-family: 'Font Awesome 6 Pro';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 100;
   font-display: block;
-  src: url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.ttf") format("truetype"); }
+  src: url("../webfonts/fa-thin-100.woff2") format("woff2"), url("../webfonts/fa-thin-100.ttf") format("truetype"); }
 
-.fas,
-.fa-solid {
-  font-weight: 900; }
+.fat,
+.fa-thin {
+  font-weight: 100; }
