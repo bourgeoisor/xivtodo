@@ -6,20 +6,21 @@ function injectWeeklyChecklist(payload) {
 
   // Add missing items in payload from DB
   for (let dbItem of db.weeklyChecklist) {
+    let name = dbItem.NameEN;
     let found = false;
     for (let i = 0; i < payload.length; i++) {
       let item = payload[i];
-      if (item.name == dbItem.Name && found) {
+      if (item.name == name && found) {
         weeklyChecklist.splice(i, 1);
         break;
       }
-      if (item.name == dbItem.Name && !item.custom) {
+      if (item.name == name && !item.custom) {
         found = true;
       }
     }
     if (!found) {
       let newItem = {
-        name: dbItem.Name,
+        name: name,
         custom: false,
         checked: false,
         hidden: false,
@@ -33,7 +34,7 @@ function injectWeeklyChecklist(payload) {
     let item = payload[i];
     let found = false;
     for (let dbItem of db.weeklyChecklist) {
-      if (dbItem.Name == item.name) {
+      if (dbItem.NameEN == item.name) {
         found = true;
       }
     }
@@ -50,20 +51,21 @@ function injectDailyChecklist(payload) {
 
   // Add missing items in payload from DB
   for (let dbItem of db.dailyChecklist) {
+    let name = dbItem.NameEN;
     let found = false;
     for (let i = 0; i < payload.length; i++) {
       let item = payload[i];
-      if (item.name == dbItem.Name && found) {
+      if (item.name == name && found) {
         dailyChecklist.splice(i, 1);
         break;
       }
-      if (item.name == dbItem.Name && !item.custom) {
+      if (item.name == name && !item.custom) {
         found = true;
       }
     }
     if (!found) {
       let newItem = {
-        name: dbItem.Name,
+        name: name,
         custom: false,
         checked: false,
         hidden: false,
@@ -77,7 +79,7 @@ function injectDailyChecklist(payload) {
     let item = payload[i];
     let found = false;
     for (let dbItem of db.dailyChecklist) {
-      if (dbItem.Name == item.name) {
+      if (dbItem.NameEN == item.name) {
         found = true;
       }
     }

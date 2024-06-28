@@ -31,11 +31,13 @@
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('questlines.roleQuestsShB')" :duties="db.shbRoleQuests" />
       <DutyList :title="$t('questlines.roleQuestsEW')" :duties="db.ewRoleQuests" />
+      <DutyList :title="$t('questlines.roleQuestsDT')" :duties="db.dtRoleQuests" />
       <DutyList :title="$t('questlines.relicQuests')" :duties="db.relicQuests" />
     </div>
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('questlines.crystallineMeanQuests')" :duties="db.crystallineMeanQuests" />
       <DutyList :title="$t('questlines.studiumDeliveryQuests')" :duties="db.studiumDeliveryQuests" />
+      <DutyList :title="$t('questlines.wachumeqimeqiDeliveryQuests')" :duties="db.wachumeqimeqiDeliveryQuests" />
     </div>
   </div>
 </template>

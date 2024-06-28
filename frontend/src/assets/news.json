@@ -2,20 +2,6 @@
   "latestCountdownID": 42,
   "countdowns": [
     {
-      "title": "Yo-kai Watch Collab.",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/youkai-watch/j9rq1fpxxd",
-      "start": 1713945600,
-      "end": 1719392400
-    },
-    {
-      "title": "Moogle Treasure Trove",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202405/nprq4eanp3",
-      "start": 1715673600,
-      "end": 1719241200
-    },
-    {
       "title": "Patch 7.0 (Dawntrail) - EA",
       "type": "patch",
       "url": "https://na.finalfantasyxiv.com/dawntrail/",
@@ -28,8 +14,14 @@
       "start": 1719910800
     }
   ],
-  "latestID": 240421,
+  "latestID": 240627,
   "news": [
+    {
+      "ID": 240627,
+      "title": "Release of Dawntrail",
+      "published": "June 27, 2024",
+      "content": "After a two and a half years wait, Dawntrail is finally at our doorstep! I've updated XIV ToDo with placeholders for the new content, which will be updated in the coming days. Any content name considered spoilers will be blurred by default, as always. If you encounter any issues, please let me know! In the meantime, happy new expansion!"
+    },
     {
       "ID": 240421,
       "title": "Theme & styling updates",

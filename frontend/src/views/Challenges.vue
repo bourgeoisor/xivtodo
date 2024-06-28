@@ -14,6 +14,7 @@
       <DutyList :title="$t('shared.expansion.ew')" :duties="db.ewExploration" />
     </div>
     <div class="col-12 col-lg-4">
+      <DutyList :title="$t('shared.expansion.dt')" :duties="db.dtExploration" />
       <DutyList :title="$t('challenges.exploratoryMissions')" :duties="db.explExploration" />
       <DutyList :title="$t('challenges.sightseeingLogs')" :duties="db.sightseeingLogs" />
     </div>
@@ -42,6 +43,7 @@
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('challenges.sharedFateShB')" :duties="db.shbSharedFATE" />
       <DutyList :title="$t('challenges.sharedFateEW')" :duties="db.ewSharedFATE" />
+      <DutyList :title="$t('challenges.sharedFateDT')" :duties="db.dtSharedFATE" />
     </div>
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('challenges.bozjanSouthernFront')" :duties="db.bozjanChallenges" />
@@ -68,6 +70,7 @@
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('shared.expansion.shb')" :duties="db.shbFATEs" />
       <DutyList :title="$t('shared.expansion.ew')" :duties="db.ewFATEs" />
+      <DutyList :title="$t('shared.expansion.dt')" :duties="db.dtFATEs" />
     </div>
   </div>
   <hr />

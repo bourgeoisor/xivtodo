@@ -43,6 +43,8 @@ const jobInitials = {
   38: "dnc",
   39: "rpr",
   40: "sge",
+  41: "vpr",
+  42: "pct",
 };
 
 function injectData(characterData) {

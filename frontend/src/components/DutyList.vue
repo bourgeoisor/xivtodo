@@ -72,6 +72,7 @@ export default {
         if (item.Expansion == "4x" && !achievements.has(1794)) blur = true;
         if (item.Expansion == "5x" && !achievements.has(2298)) blur = true;
         if (item.Expansion == "6x" && !achievements.has(2958)) blur = true;
+        if (item.Expansion == "7x" && !achievements.has(3496)) blur = true;
         if (spoilersOption == "2") blur = false;
         item.blur = blur;
       }

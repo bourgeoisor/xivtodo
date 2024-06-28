@@ -78,7 +78,7 @@
 export default {
   data() {
     return {
-      maxLevel: 90,
+      maxLevel: 100,
       maxLevelBlue: 80,
       iconClass: "icon-job-" + this.initial,
     };

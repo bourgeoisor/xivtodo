@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?9bc0ps');
-  src:  url('fonts/icomoon.eot?9bc0ps#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?9bc0ps') format('truetype'),
-    url('fonts/icomoon.woff?9bc0ps') format('woff'),
-    url('fonts/icomoon.svg?9bc0ps#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?dom3l7');
+  src:  url('fonts/icomoon.eot?dom3l7#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?dom3l7') format('truetype'),
+    url('fonts/icomoon.woff?dom3l7') format('woff'),
+    url('fonts/icomoon.svg?dom3l7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-marker-msq:before {
+  content: "\e901";
+}
 .icon-exp-8x:before {
   content: "\e92e";
 }
@@ -169,6 +172,9 @@
 .icon-job-drk:before {
   content: "\e900";
 }
-.icon-marker-msq:before {
-  content: "\e901";
+.icon-job-vpr:before {
+  content: "\e931";
+}
+.icon-job-pct:before {
+  content: "\e932";
 }

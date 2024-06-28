@@ -94,6 +94,22 @@
       <DutyList :title="$t('encounters.heRaids')" :duties="db.ewRaidsSavUlt" type="high" :showTotal="true" />
     </div>
   </div>
+  <hr />
+  <div class="row">
+    <h2>{{ $t("shared.expansion.dt") }}</h2>
+
+    <div class="col-12 col-lg-4">
+      <DutyList :title="$t('encounters.dungeons')" :duties="db.dtDungeons" type="dngs" :showTotal="true" />
+    </div>
+    <div class="col-12 col-lg-4">
+      <DutyList :title="$t('encounters.trials')" :duties="db.dtTrials" type="trials" :showTotal="true" />
+      <DutyList :title="$t('encounters.heTrials')" :duties="db.dtTrialsEx" type="high" :showTotal="true" />
+    </div>
+    <!-- <div class="col-12 col-lg-4">
+      <DutyList :title="$t('encounters.raids')" :duties="db.dtRaids" type="raids" :showTotal="true" />
+      <DutyList :title="$t('encounters.heRaids')" :duties="db.dtRaidsSavUlt" type="high" :showTotal="true" />
+    </div> -->
+  </div>
 </template>
 
 <script>

@@ -171,12 +171,14 @@
       "nin": "Ninja",
       "sam": "Samurai",
       "rpr": "Reaper",
+      "vpr": "Viper",
       "brd": "Bard",
       "mch": "Machinist",
       "dnc": "Dancer",
       "blm": "Black Mage",
       "smn": "Summoner",
       "rdm": "Red Mage",
+      "pct": "Pictomancer",
       "blu": "Blue Mage",
       "crp": "Carpenter",
       "bsm": "Blacksmith",
@@ -231,8 +233,10 @@
     "crafterJobQuests": "Crafter Job Quests",
     "roleQuestsShB": "Role Quests (ShB)",
     "roleQuestsEW": "Role Quests (EW)",
+    "roleQuestsDT": "Role Quests (DT)",
     "crystallineMeanQuests": "Crystalline Mean Quests",
-    "studiumDeliveryQuests": "Studium Delivery Quests"
+    "studiumDeliveryQuests": "Studium Delivery Quests",
+    "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Delivery Quests"
   },
   "challenges": {
     "deepDungeons": "Deep Dungeons",
@@ -248,6 +252,7 @@
     "miscellaneous": "Miscellaneous",
     "sharedFateShB": "Shared Fate (ShB)",
     "sharedFateEW": "Shared Fate (EW)",
+    "sharedFateDT": "Shared Fate (DT)",
     "bozjanSouthernFront": "Bozjan Southern Front",
     "zadnor": "Zadnor",
     "variantDungeons": "Variant Dungeons",
@@ -348,7 +353,8 @@
       "hw": "Heavensward",
       "sb": "Stormblood",
       "shb": "Shadowbringers",
-      "ew": "Endwalker"
+      "ew": "Endwalker",
+      "dt": "Dawntrail"
     },
     "time": {
       "daysShort": "{days}d",
