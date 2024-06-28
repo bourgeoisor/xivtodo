@@ -171,12 +171,14 @@
       "nin": "Ninja",
       "sam": "Samurai",
       "rpr": "Schnitter",
+      "vpr": "Viper",
       "brd": "Barde",
       "mch": "Maschinist",
       "dnc": "Tänzer",
       "blm": "Schwarzmagier",
       "smn": "Beschwörer",
       "rdm": "Rotmagier",
+      "pct": "Pictomancer",
       "blu": "Blaumagier",
       "crp": "Zimmerer",
       "bsm": "Grobschmied",
@@ -231,8 +233,10 @@
     "crafterJobQuests": "Handwerkerklassen-Aufträge",
     "roleQuestsShB": "Rollen-Aufträge (ShB)",
     "roleQuestsEW": "Rollen-Aufträge (EW)",
+    "roleQuestsDT": "Role Quests (DT)",
     "crystallineMeanQuests": "Manufaktur der Gemeinschaft",
-    "studiumDeliveryQuests": "Magieakademie von Sharlayan"
+    "studiumDeliveryQuests": "Magieakademie von Sharlayan",
+    "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Delivery Quests"
   },
   "challenges": {
     "deepDungeons": "Tiefes Gewölbe",
@@ -248,6 +252,7 @@
     "miscellaneous": "Verschiedenes",
     "sharedFateShB": "FATE-Fortschritt (ShB)",
     "sharedFateEW": "FATE-Fortschritt (EW)",
+    "sharedFateDT": "Shared Fate (DT)",
     "bozjanSouthernFront": "Bozja-Südfront",
     "zadnor": "Zadnor",
     "variantDungeons": "Unstete Gewölbe",
@@ -348,7 +353,8 @@
       "hw": "Heavensward",
       "sb": "Stormblood",
       "shb": "Shadowbringers",
-      "ew": "Endwalker"
+      "ew": "Endwalker",
+      "dt": "Dawntrail"
     },
     "time": {
       "daysShort": "{days}T",
