@@ -171,12 +171,14 @@
       "nin": "忍者",
       "sam": "侍",
       "rpr": "リーパー",
+      "vpr": "Viper",
       "brd": "吟遊詩人",
       "mch": "機工士",
       "dnc": "踊り子",
       "blm": "黒魔道士",
       "smn": "召喚士",
       "rdm": "赤魔道士",
+      "pct": "Pictomancer",
       "blu": "青魔道士",
       "crp": "木工師",
       "bsm": "鍛冶師",
@@ -231,8 +233,10 @@
     "crafterJobQuests": "クラフタークエスト",
     "roleQuestsShB": "ロールクエスト(漆黒)",
     "roleQuestsEW": "ロールクエスト(暁月)",
+    "roleQuestsDT": "Role Quests (DT)",
     "crystallineMeanQuests": "Crystalline Mean Quests",
-    "studiumDeliveryQuests": "Studium Delivery Quests"
+    "studiumDeliveryQuests": "Studium Delivery Quests",
+    "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Delivery Quests"
   },
   "challenges": {
     "deepDungeons": "ディープダンジョン",
@@ -248,6 +252,7 @@
     "miscellaneous": "Miscellaneous",
     "sharedFateShB": "Shared Fate (ShB)",
     "sharedFateEW": "Shared Fate (EW)",
+    "sharedFateDT": "Shared Fate (DT)",
     "bozjanSouthernFront": "Bozjan Southern Front",
     "zadnor": "Zadnor",
     "variantDungeons": "Variant Dungeons",
@@ -348,7 +353,8 @@
       "hw": "蒼天のイシュガルド",
       "sb": "紅蓮のリベレーター",
       "shb": "漆黒のヴィランズ",
-      "ew": "暁月のフィナーレ"
+      "ew": "暁月のフィナーレ",
+      "dt": "Dawntrail"
     },
     "time": {
       "daysShort": "{days}日",
