@@ -8,6 +8,7 @@
       'alert-danger': type == 'danger',
       'alert-warning': type == 'warning',
       'alert-success': type == 'success',
+      'alert-info': type == 'info',
     }"
     role="alert"
   >
@@ -16,7 +17,7 @@
       :class="{
         'fa-info-circle': type == 'normal' || type == 'muted',
         'fa-exclamation-triangle': type == 'warning',
-        'fa-exclamation-circle': type == 'danger',
+        'fa-exclamation-circle': type == 'danger' || type == 'info',
         'fa-check-circle': type == 'success',
       }"
     >

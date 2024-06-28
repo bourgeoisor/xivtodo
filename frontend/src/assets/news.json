@@ -1,16 +1,21 @@
 {
+  "maintenance": {
+    "updated": false,
+    "start": 1719392400,
+    "end": 1719565200
+  },
   "latestCountdownID": 42,
   "countdowns": [
     {
       "title": "Patch 7.0 (Dawntrail) - EA",
       "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/dawntrail/",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/d7db61f938f9cea65e4c5cd261918edb036b3004",
       "start": 1719565200
     },
     {
       "title": "Patch 7.0 (Dawntrail)",
       "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/dawntrail/",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/d7db61f938f9cea65e4c5cd261918edb036b3004",
       "start": 1719910800
     }
   ],

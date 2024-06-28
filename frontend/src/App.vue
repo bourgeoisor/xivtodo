@@ -26,6 +26,14 @@
         <AlertMsg type="normal" :msg="$t('message.signingDiscord')" />
       </div>
 
+      <!-- Alert: Lodestone maintenance -->
+      <div v-if="this.now > this.news.maintenance.start && this.now < this.news.maintenance.end" class="container">
+        <AlertMsg type="warning" :msg="$t('message.lodestoneMaintenance')" />
+      </div>
+      <div v-else-if="!this.updated" class="container">
+        <AlertMsg type="info" :msg="$t('message.lodestoneMaintenanceNotUpdated')" />
+      </div>
+
       <!-- Page content -->
       <div class="container">
         <router-view />
@@ -461,6 +469,7 @@ import TheNavbar from "@/components/TheNavbar.vue";
 import TheFooter from "@/components/TheFooter.vue";
 import AlertMsg from "@/components/AlertMsg.vue";
 import { getVersion, getUserData, addCharacter } from "@/utilities/backend.js";
+import news from "@/assets/news.json";
 
 export default {
   name: "App",
@@ -473,6 +482,8 @@ export default {
     return {
       intervalFunction: null,
       tabFocused: true,
+      news: news,
+      now: new Date() / 1000,
     };
   },
   mounted() {

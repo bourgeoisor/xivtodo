@@ -5,6 +5,31 @@
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body">
+      <!-- Maintenance -->
+      <div v-if="this.now < news.maintenance.end" class="mb-5">
+        <h4>World maintenance</h4>
+        <small>
+          <i class="fa-fw fal me-1 fa-triangle-person-digging text-warning"></i>
+
+          <!-- If maintenance did not start yet... -->
+          <span v-if="this.isEventInFuture(news.maintenance)" class="text-muted">
+            {{ $t("shared.time.starting") }}
+            <b class="text-warning">
+              <abbr :title="dateFormat(news.maintenance.start)">{{ timeLeft(news.maintenance.start) }}</abbr>
+            </b>
+          </span>
+
+          <!-- If maintenance is currently happening... -->
+          <span v-else-if="this.isEventNow(news.maintenance)" class="text-muted">
+            {{ $t("shared.time.ending") }}
+            <b class="text-warning">
+              <abbr :title="dateFormat(news.maintenance.end)">{{ timeLeft(news.maintenance.end) }}</abbr>
+            </b>
+          </span>
+        </small>
+      </div>
+      
+      <!-- Events -->
       <div v-for="item in news.countdowns" :key="item.title" class="mb-5">
         <h4>{{ item.title }}</h4>
         <small>
