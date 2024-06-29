@@ -226,8 +226,8 @@
     "sideStoryQuests": "Nebenaufträge",
     "encounterQuests": "Inhalts-Aufträge",
     "relicQuests": "Relikt-Aufträge",
-    "tribalQuests": "Allied Society Quests",
-    "alliedTribalQuests": "Intersocietal Quests",
+    "tribalQuests": "Aufträge der Freundesvölker",
+    "alliedTribalQuests": "Zusatzaufträge der Freundesvölker",
     "customDeliveryQuests": "Wunschlieferungs-Aufträge",
     "jobQuests": "Job-Aufträge",
     "combatJobQuests": "Kampfklassen-Aufträge",
@@ -235,10 +235,10 @@
     "crafterJobQuests": "Handwerkerklassen-Aufträge",
     "roleQuestsShB": "Rollen-Aufträge (ShB)",
     "roleQuestsEW": "Rollen-Aufträge (EW)",
-    "roleQuestsDT": "Role Quests (DT)",
+    "roleQuestsDT": "Rollen-Aufträge (DT)",
     "crystallineMeanQuests": "Manufaktur der Gemeinschaft",
     "studiumDeliveryQuests": "Magieakademie von Sharlayan",
-    "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Delivery Quests"
+    "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Markt-Lieferungen"
   },
   "challenges": {
     "deepDungeons": "Tiefes Gewölbe",
@@ -254,7 +254,7 @@
     "miscellaneous": "Verschiedenes",
     "sharedFateShB": "FATE-Fortschritt (ShB)",
     "sharedFateEW": "FATE-Fortschritt (EW)",
-    "sharedFateDT": "Shared Fate (DT)",
+    "sharedFateDT": "FATE-Fortschritt (DT)",
     "bozjanSouthernFront": "Bozja-Südfront",
     "zadnor": "Zadnor",
     "variantDungeons": "Unstete Gewölbe",
@@ -372,7 +372,7 @@
       "eventEnded": "Dieses Event ist vorbei",
       "available": "Verfügbar",
       "ending": "Endet",
-      "starting": "Starting"
+      "starting": "Startet"
     }
   }
 }
