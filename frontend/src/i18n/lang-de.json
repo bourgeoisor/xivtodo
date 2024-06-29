@@ -49,8 +49,8 @@
     "achievementsNotPublic": "Die Errungenschaften dieses Charakters sind im Lodestone nicht auf öffentlich sichtbar gestellt.",
     "notSignedIn": "Keine Charaktere gefunden. <a href='{url}' class='alert-link'>Melde dich mit Discord an</a>, um welche hinzuzufügen und nachzuverfolgen.",
     "noCharacters": "Keine Charaktere gefunden. Über die <a href='/settings' class='alert-link'>Einstellungen</a> kannst du diese hinzufügen.",
-    "lodestoneMaintenance": "Lodestone is currently undergoing maintenance. Click on <span class='fa-fw fas fa-clock position-relative'></span> in the menu to see how much time is remaining.",
-    "lodestoneMaintenanceNotUpdated": "Lodestone maintenance has ended, but XIV ToDo is not yet fully updated. Thank you for your patience!"
+    "lodestoneMaintenance": "Der Lodestone befindet sich momentan in einer Wartung. Klicke im Menü auf <span class='fa-fw fas fa-clock position-relative'></span>, um zu sehen, wie lange es noch dauert.",
+    "lodestoneMaintenanceNotUpdated": "Die Wartung des Lodestone wurde beendet, jedoch ist XIV ToDo noch nicht vollständig aktualisiert. Vielen Dank für deine Geduld!"
   },
   "footer": {
     "trademark": "FINAL FANTASY ist eine eingetragene Marke der Square Enix Holdings Co., Ltd.",
@@ -180,7 +180,7 @@
       "blm": "Schwarzmagier",
       "smn": "Beschwörer",
       "rdm": "Rotmagier",
-      "pct": "Pictomancer",
+      "pct": "Piktomant",
       "blu": "Blaumagier",
       "crp": "Zimmerer",
       "bsm": "Grobschmied",
