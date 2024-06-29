@@ -26,6 +26,7 @@
   <AlertMsg type="success" msg="Success message <b>bold</b> and <a href='#' class='alert-link'>link</a>." />
   <AlertMsg type="warning" msg="Warning message <b>bold</b> and <a href='#' class='alert-link'>link</a>." />
   <AlertMsg type="danger" msg="Error message <b>bold</b> and <a href='#' class='alert-link'>link</a>." />
+  <AlertMsg type="info" msg="Info message <b>bold</b> and <a href='#' class='alert-link'>link</a>." />
 
   <hr>
 

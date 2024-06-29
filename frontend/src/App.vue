@@ -30,7 +30,7 @@
       <div v-if="this.now > this.news.maintenance.start && this.now < this.news.maintenance.end" class="container">
         <AlertMsg type="warning" :msg="$t('message.lodestoneMaintenance')" />
       </div>
-      <div v-else-if="!this.updated" class="container">
+      <div v-else-if="!this.news.maintenance.updated" class="container">
         <AlertMsg type="info" :msg="$t('message.lodestoneMaintenanceNotUpdated')" />
       </div>
 
