@@ -173,14 +173,14 @@
       "nin": "Ninja",
       "sam": "Samouraï",
       "rpr": "Faucheur",
-      "vpr": "Viper",
+      "vpr": "Rôdeur vipère",
       "brd": "Barde",
       "mch": "Machiniste",
       "dnc": "Danseur",
       "blm": "Mage noir",
       "smn": "Invocateur",
       "rdm": "Mage rouge",
-      "pct": "Pictomancer",
+      "pct": "Pictomancien",
       "blu": "Mage bleu",
       "crp": "Menuisier",
       "bsm": "Forgeron",
@@ -226,8 +226,8 @@
     "sideStoryQuests": "Quêtes annexes",
     "encounterQuests": "Quêtes de mission",
     "relicQuests": "Saga des armes légendaires",
-    "tribalQuests": "Allied Society Quests",
-    "alliedTribalQuests": "Intersocietal Quests",
+    "tribalQuests": "Quêtes des peuples alliés",
+    "alliedTribalQuests": "Quêtes des peuples alliés",
     "customDeliveryQuests": "Quêtes liées aux commandes spéciales",
     "jobQuests": "Quêtes de job",
     "combatJobQuests": "Quêtes de job : combattants",
@@ -235,10 +235,10 @@
     "crafterJobQuests": "Quêtes de classe : artisans",
     "roleQuestsShB": "Quêtes de rôle (ShB)",
     "roleQuestsEW": "Quêtes de rôle (EW)",
-    "roleQuestsDT": "Role Quests (DT)",
+    "roleQuestsDT": "Quêtes de rôle (DT)",
     "crystallineMeanQuests": "Quêtes de classe : halle du Juste",
     "studiumDeliveryQuests": "Quêtes de classe : académie de magie de Sharlayan",
-    "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Delivery Quests"
+    "wachumeqimeqiDeliveryQuests": "Quêtes de classe : bazar aux Mille Perles"
   },
   "challenges": {
     "deepDungeons": "Donjons sans fonds",
@@ -254,7 +254,7 @@
     "miscellaneous": "Divers",
     "sharedFateShB": "ALÉA (ShB)",
     "sharedFateEW": "ALÉA (EW)",
-    "sharedFateDT": "Shared Fate (DT)",
+    "sharedFateDT": "ALÉA (DT)",
     "bozjanSouthernFront": "Front sud de Bozja",
     "zadnor": "Hauts plateaux de Zadnor",
     "variantDungeons": "Donjons à embranchements",
@@ -372,7 +372,7 @@
       "eventEnded": "Cet événement est terminé",
       "available": "Disponible",
       "ending": "Fini",
-      "starting": "Starting"
+      "starting": "Commence"
     }
   }
 }
