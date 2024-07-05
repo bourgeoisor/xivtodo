@@ -48,7 +48,9 @@
     "updatingCharacter": "キャラクターデータを更新しています。数分かかる場合があります...",
     "achievementsNotPublic": "このキャラクターの実績はLodestoneで公開されていません。",
     "notSignedIn": "No characters found. <a href='{url}' class='alert-link'>Sign in with Discord</a> to add and track your characters.",
-    "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>."
+    "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>.",
+    "lodestoneMaintenance": "Lodestone is currently undergoing maintenance. Click on <span class='fa-fw fas fa-clock position-relative'></span> in the menu to see how much time is remaining.",
+    "lodestoneMaintenanceNotUpdated": "Lodestone maintenance has ended, but XIV ToDo is not yet fully updated. Thank you for your patience!"
   },
   "footer": {
     "trademark": "FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.",
@@ -171,12 +173,14 @@
       "nin": "忍者",
       "sam": "侍",
       "rpr": "リーパー",
+      "vpr": "ヴァイパー",
       "brd": "吟遊詩人",
       "mch": "機工士",
       "dnc": "踊り子",
       "blm": "黒魔道士",
       "smn": "召喚士",
       "rdm": "赤魔道士",
+      "pct": "ピクトマンサー",
       "blu": "青魔道士",
       "crp": "木工師",
       "bsm": "鍛冶師",
@@ -222,8 +226,8 @@
     "sideStoryQuests": "サイドストーリークエスト",
     "encounterQuests": "Encounter Quests",
     "relicQuests": "Relic Quests",
-    "tribalQuests": "友好部族クエスト",
-    "alliedTribalQuests": "Allied Tribal Quests",
+    "tribalQuests": "Allied Society Quests",
+    "alliedTribalQuests": "Intersocietal Quests",
     "customDeliveryQuests": "お得意様取引",
     "jobQuests": "ジョブクエスト",
     "combatJobQuests": "戦闘ジョブクエスト",
@@ -231,8 +235,10 @@
     "crafterJobQuests": "クラフタークエスト",
     "roleQuestsShB": "ロールクエスト(漆黒)",
     "roleQuestsEW": "ロールクエスト(暁月)",
+    "roleQuestsDT": "Role Quests (DT)",
     "crystallineMeanQuests": "Crystalline Mean Quests",
-    "studiumDeliveryQuests": "Studium Delivery Quests"
+    "studiumDeliveryQuests": "Studium Delivery Quests",
+    "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Delivery Quests"
   },
   "challenges": {
     "deepDungeons": "ディープダンジョン",
@@ -248,6 +254,7 @@
     "miscellaneous": "Miscellaneous",
     "sharedFateShB": "Shared Fate (ShB)",
     "sharedFateEW": "Shared Fate (EW)",
+    "sharedFateDT": "Shared Fate (DT)",
     "bozjanSouthernFront": "Bozjan Southern Front",
     "zadnor": "Zadnor",
     "variantDungeons": "Variant Dungeons",
@@ -348,7 +355,8 @@
       "hw": "蒼天のイシュガルド",
       "sb": "紅蓮のリベレーター",
       "shb": "漆黒のヴィランズ",
-      "ew": "暁月のフィナーレ"
+      "ew": "暁月のフィナーレ",
+      "dt": "黄金のレガシー"
     },
     "time": {
       "daysShort": "{days}日",
@@ -363,7 +371,8 @@
       "currentlyAvailable": "Currently available",
       "eventEnded": "This event has ended",
       "available": "Available",
-      "ending": "Ending"
+      "ending": "Ending",
+      "starting": "Starting"
     }
   }
 }
