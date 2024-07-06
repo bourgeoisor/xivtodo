@@ -39,7 +39,7 @@
   float: left;
   margin-right: 10px;
   margin-top: 5px;
-  width: 22px;
+  width: 30px;
 }
 
 .job-level-progress {
