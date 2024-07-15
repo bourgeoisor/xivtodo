@@ -1,8 +1,8 @@
 {
   "maintenance": {
-    "updated": true,
-    "start": 1719392400,
-    "end": 1719565200
+    "updated": false,
+    "start": 1721109600,
+    "end": 1721124000
   },
   "latestCountdownID": 42,
   "countdowns": [
@@ -15,7 +15,7 @@
     {
       "title": "Patch 7.01",
       "type": "patch",
-      "start": 1721120400
+      "start": 1721124000
     },
     {
       "title": "Patch 7.05",
