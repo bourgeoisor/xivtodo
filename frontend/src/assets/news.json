@@ -1,20 +1,15 @@
 {
   "maintenance": {
-    "updated": false,
+    "updated": true,
     "start": 1721109600,
     "end": 1721124000
   },
   "latestCountdownID": 42,
   "countdowns": [
     {
-      "title": "Patch 7.0 (Dawntrail)",
-      "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/d7db61f938f9cea65e4c5cd261918edb036b3004",
-      "start": 1719910800
-    },
-    {
       "title": "Patch 7.01",
       "type": "patch",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/0ad1ca4bbafeb2ee244994bee15b3a74c0278e1d",
       "start": 1721124000
     },
     {

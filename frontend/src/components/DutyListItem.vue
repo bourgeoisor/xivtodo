@@ -107,23 +107,26 @@
           class="pb-2"
           :class="{'text-muted': this.$store.getters.minions[minionID]}"
         >
-          <img
-            v-if="minionID"
-            loading="lazy"
-            :src="dbs.minions[minionID].icon"
-            :class="{'filter-bright-50': this.$store.getters.minions[minionID]}"
-          />
-          {{ dbs.minions[minionID].name }}
-          <i
-            v-if="this.$store.getters.minions[minionID]"
-            class="fa-fw fal fa-check"
-            :title="$t('encounters.obtained')"
-          ></i>
-          <i
-            v-else-if="dbs.minions[minionID].tradeable"
-            class="fa-fw fal fa-comments-dollar"
-            :title="$t('encounters.tradeable')"
-          ></i>
+          <template v-if="minionID in dbs.minions">
+            <img
+              v-if="minionID"
+              loading="lazy"
+              :src="dbs.minions[minionID].icon"
+              :class="{'filter-bright-50': this.$store.getters.minions[minionID]}"
+            />
+            {{ dbs.minions[minionID].name }}
+            <i
+              v-if="this.$store.getters.minions[minionID]"
+              class="fa-fw fal fa-check"
+              :title="$t('encounters.obtained')"
+            ></i>
+            <i
+              v-else-if="dbs.minions[minionID].tradeable"
+              class="fa-fw fal fa-comments-dollar"
+              :title="$t('encounters.tradeable')"
+            ></i>
+          </template>
+          <span v-else>Cannot load minion #{{ minionID }}</span>
         </div>
       </template>
     </div>

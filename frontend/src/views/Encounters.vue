@@ -105,10 +105,10 @@
       <DutyList :title="$t('encounters.trials')" :duties="db.dtTrials" type="trials" :showTotal="true" />
       <DutyList :title="$t('encounters.heTrials')" :duties="db.dtTrialsEx" type="high" :showTotal="true" />
     </div>
-    <!-- <div class="col-12 col-lg-4">
+    <div class="col-12 col-lg-4">
       <DutyList :title="$t('encounters.raids')" :duties="db.dtRaids" type="raids" :showTotal="true" />
-      <DutyList :title="$t('encounters.heRaids')" :duties="db.dtRaidsSavUlt" type="high" :showTotal="true" />
-    </div> -->
+      <!-- <DutyList :title="$t('encounters.heRaids')" :duties="db.dtRaidsSavUlt" type="high" :showTotal="true" /> -->
+    </div>
   </div>
 </template>
 
