@@ -7,15 +7,10 @@
   "latestCountdownID": 42,
   "countdowns": [
     {
-      "title": "Patch 7.01",
-      "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/0ad1ca4bbafeb2ee244994bee15b3a74c0278e1d",
-      "start": 1721124000
-    },
-    {
       "title": "Patch 7.05",
       "type": "patch",
-      "start": 1722416400
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/3a247a30e096e56b701157cd9fb903299a244c2f",
+      "start": 1722333600
     }
   ],
   "latestID": 240627,
