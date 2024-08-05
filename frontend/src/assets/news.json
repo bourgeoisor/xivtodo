@@ -7,6 +7,13 @@
   "latestCountdownID": 42,
   "countdowns": [
     {
+      "title": "Moonfire Faire",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/Moonfire_Faire/vk09iygn4m",
+      "start": 1723104000,
+      "end": 1724684400
+    },
+    {
       "title": "Patch 7.05",
       "type": "patch",
       "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/3a247a30e096e56b701157cd9fb903299a244c2f",
