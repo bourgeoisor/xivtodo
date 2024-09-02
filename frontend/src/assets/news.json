@@ -7,13 +7,6 @@
   "latestCountdownID": 42,
   "countdowns": [
     {
-      "title": "Moonfire Faire",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/Moonfire_Faire/vk09iygn4m",
-      "start": 1723104000,
-      "end": 1724684400
-    },
-    {
       "title": "The Rising",
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/The_Rising/kx9ry8yeix",
