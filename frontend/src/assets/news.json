@@ -4,21 +4,27 @@
     "start": 1721109600,
     "end": 1721124000
   },
-  "latestCountdownID": 42,
+  "latestCountdownID": 43,
   "countdowns": [
     {
-      "title": "The Rising",
+      "title": "All Saints' Wake",
       "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/The_Rising/kx9ry8yeix",
-      "start": 1724742000,
-      "end": 1726066800
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/All_Saints_Wake/5or4qa29uw",
+      "start": 1729238400,
+      "end": 1730732400
     },
     {
-      "title": "Letter from the Producer LIVE Part LXXXIII",
+      "title": "Moogle Treasure Trove",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202410/ik3ur7rfxb",
+      "start": 1728979200
+    },
+    {
+      "title": "Letter from the Producer LIVE Part LXXXIV",
       "type": "keynote",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/a4686d9d1e619de231be3bc0701b0f79b35bc15b",
-      "start": 1727589000,
-      "end": 1727596200
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/f30e1d3c33739710dbabc63f4adac12ea93909ea",
+      "start": 1730458800,
+      "end": 1730466000
     },
     {
       "title": "Patch 7.05",
