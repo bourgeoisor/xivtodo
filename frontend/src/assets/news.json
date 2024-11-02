@@ -17,20 +17,26 @@
       "title": "Moogle Treasure Trove",
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202410/ik3ur7rfxb",
-      "start": 1728979200
+      "start": 1728979200,
+      "end": 1731409200
     },
     {
-      "title": "Letter from the Producer LIVE Part LXXXIV",
-      "type": "keynote",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/f30e1d3c33739710dbabc63f4adac12ea93909ea",
-      "start": 1730458800,
-      "end": 1730466000
-    },
-    {
-      "title": "Patch 7.05",
+      "title": "Patch 7.1",
       "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/3a247a30e096e56b701157cd9fb903299a244c2f",
-      "start": 1722333600
+      "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
+      "start": 1731409200
+    },
+    {
+      "title": "Patch 7.11",
+      "type": "patch",
+      "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
+      "start": 1732618800
+    },
+    {
+      "title": "Patch 7.15",
+      "type": "patch",
+      "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
+      "start": 1735038000
     }
   ],
   "latestID": 240627,
