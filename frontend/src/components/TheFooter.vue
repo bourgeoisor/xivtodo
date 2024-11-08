@@ -33,6 +33,10 @@
       <a href="https://twitter.com/XIVToDo" target="_blank" rel="noopener noreferrer">
         <small>{{ $t("page.twitter") }}</small>
       </a>
+      ·
+      <a href="https://bsky.app/profile/xivtodo.com" target="_blank" rel="noopener noreferrer">
+        <small>{{ $t("page.bluesky") }}</small>
+      </a>
       <br />
       <a href="https://ko-fi.com/olivi_eh" target="_blank" rel="noopener noreferrer" class="fw-bolder">
         <small>{{ $t("page.donate") }} <i class="fa-fw fas fa-heart"></i></small>
