@@ -1,30 +1,23 @@
 {
   "maintenance": {
-    "updated": true,
-    "start": 1721109600,
-    "end": 1721124000
+    "updated": false,
+    "start": 1731380400,
+    "end": 1731405600
   },
-  "latestCountdownID": 43,
+  "latestCountdownID": 44,
   "countdowns": [
-    {
-      "title": "All Saints' Wake",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/All_Saints_Wake/5or4qa29uw",
-      "start": 1729238400,
-      "end": 1730732400
-    },
     {
       "title": "Moogle Treasure Trove",
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202410/ik3ur7rfxb",
       "start": 1728979200,
-      "end": 1731409200
+      "end": 1731380400
     },
     {
       "title": "Patch 7.1",
       "type": "patch",
       "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
-      "start": 1731409200
+      "start": 1731405600
     },
     {
       "title": "Patch 7.11",
