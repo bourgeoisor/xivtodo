@@ -190,7 +190,7 @@
           <h1 class="pb-2 border-bottom mb-3">{{ $t("home.about.header") }}</h1>
           <p class="lead text-justify fw-normal">
             <i18n-t keypath="home.about.text">
-              <a href="https://bourgeois.io" target="_blank" rel="noopener noreferrer">Olivier</a>
+              <a href="https://olivi-eh.dev" target="_blank" rel="noopener noreferrer">Olivier</a>
               <a href="https://forms.gle/2t5nLB28xDyi3Tn6A" target="_blank" rel="noopener noreferrer">
                 {{ $t("home.about.contact") }}
               </a>
