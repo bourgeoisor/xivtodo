@@ -142,8 +142,8 @@
   },
   "profile": {
     "characterInfo": "Charakterinformationen",
-    "encounterCompletion": "Encounter Completion",
-    "questlineCompletion": "Questline Completion",
+    "encounterCompletion": "Inhalte abgeschlossen",
+    "questlineCompletion": "Aufträge abgeschlossen",
     "jobLevels": "Job-Stufe",
     "world": "Welt",
     "raceClan": "Volk & Stamm",
