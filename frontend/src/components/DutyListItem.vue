@@ -82,6 +82,8 @@
           <img
             v-if="mountID"
             loading="lazy"
+            width="40"
+            height="40"
             :src="dbs.mounts[mountID].icon"
             :class="{ 'filter-bright-50': this.$store.getters.mounts[mountID] }"
           />
@@ -111,6 +113,8 @@
             <img
               v-if="minionID"
               loading="lazy"
+              width="40"
+              height="40"
               :src="dbs.minions[minionID].icon"
               :class="{ 'filter-bright-50': this.$store.getters.minions[minionID] }"
             />
