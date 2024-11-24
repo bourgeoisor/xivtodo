@@ -142,6 +142,8 @@
   },
   "profile": {
     "characterInfo": "キャラクター情報",
+    "encounterCompletion": "Encounter Completion",
+    "questlineCompletion": "Questline Completion",
     "jobLevels": "ジョブのレベル",
     "world": "ワールド",
     "raceClan": "種族/部族",
