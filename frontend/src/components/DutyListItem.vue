@@ -77,13 +77,13 @@
           v-for="mountID of duty.Mounts.split(' ')"
           :key="mountID"
           class="pb-2"
-          :class="{'text-muted': this.$store.getters.mounts[mountID]}"
+          :class="{ 'text-muted': this.$store.getters.mounts[mountID] }"
         >
           <img
             v-if="mountID"
             loading="lazy"
             :src="dbs.mounts[mountID].icon"
-            :class="{'filter-bright-50': this.$store.getters.mounts[mountID]}"
+            :class="{ 'filter-bright-50': this.$store.getters.mounts[mountID] }"
           />
           {{ dbs.mounts[mountID].name }}
           <i
@@ -105,14 +105,14 @@
           v-for="minionID of duty.Minions.split(' ')"
           :key="minionID"
           class="pb-2"
-          :class="{'text-muted': this.$store.getters.minions[minionID]}"
+          :class="{ 'text-muted': this.$store.getters.minions[minionID] }"
         >
           <template v-if="minionID in dbs.minions">
             <img
               v-if="minionID"
               loading="lazy"
               :src="dbs.minions[minionID].icon"
-              :class="{'filter-bright-50': this.$store.getters.minions[minionID]}"
+              :class="{ 'filter-bright-50': this.$store.getters.minions[minionID] }"
             />
             {{ dbs.minions[minionID].name }}
             <i

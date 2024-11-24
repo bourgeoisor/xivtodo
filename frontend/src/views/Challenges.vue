@@ -1,6 +1,6 @@
 <template>
   <PageHeader title="page.challenges" subtitle="pageHeader.clearedByCharacter" />
-  
+
   <div class="row">
     <h2>{{ $t("challenges.exploration") }}</h2>
 

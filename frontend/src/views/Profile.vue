@@ -30,8 +30,8 @@
         <b>{{ $t("profile.raceClan") }}</b>
         <br />
         <!-- <span> -->
-          {{ this.race }} / {{ this.clan }}
-          <i class="fa-fw fal" :class="{'fa-mars': this.isMasculine, 'fa-venus': !this.isMasculine}"></i>
+        {{ this.race }} / {{ this.clan }}
+        <i class="fa-fw fal" :class="{ 'fa-mars': this.isMasculine, 'fa-venus': !this.isMasculine }"></i>
         <!-- </span> -->
       </div>
 
@@ -46,7 +46,7 @@
       <div class="info-block">
         <b>{{ $t("profile.guardian") }}</b>
         <br />
-        <img :src="this.guardianImageURI"/>
+        <img :src="this.guardianImageURI" />
         {{ this.localeName(this.$store.getters.character.GuardianDeity) }}
       </div>
 
@@ -61,7 +61,7 @@
       <div class="info-block">
         <b>{{ $t("profile.cityState") }}</b>
         <br />
-        <img :src="this.cityStateImageURI"/>
+        <img :src="this.cityStateImageURI" />
         {{ this.localeName(this.$store.getters.character.Town) }}
       </div>
 
@@ -69,7 +69,7 @@
       <div v-if="this.$store.getters.character.GrandCompanyInfo?.GrandCompany" class="info-block">
         <b>{{ $t("profile.grandCompany") }}</b>
         <br />
-        <img :src="this.grandCompanyImageURI"/>
+        <img :src="this.grandCompanyImageURI" />
         {{ this.localeName(this.$store.getters.character.GrandCompanyInfo.GrandCompany) }}
       </div>
 
@@ -87,14 +87,14 @@
 
         <!-- Eureka -->
         {{ $t("profile.elementalLevel") }}:
-        <span :class="{'fw-bolder': this.isMaxLevelEureka}">
+        <span :class="{ 'fw-bolder': this.isMaxLevelEureka }">
           {{ this.levelEureka }}
         </span>
         <br />
 
         <!-- Bozja -->
         {{ $t("profile.resistanceRank") }}:
-        <span :class="{'fw-bolder': this.isMaxLevelBozja}">
+        <span :class="{ 'fw-bolder': this.isMaxLevelBozja }">
           {{ this.levelBozja }}
         </span>
       </div>
@@ -190,7 +190,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -276,7 +275,7 @@ export default {
     },
     isMaxLevelBozja() {
       return this.levelBozja == this.maxLevelBozja;
-    }
+    },
   },
   methods: {
     localeName(payload) {

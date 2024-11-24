@@ -61,7 +61,7 @@
   --bs-primary-active: #2f8c63;
   --bs-primary-text-emphasis: var(--bs-white);
 
-  --bs-secondary: #4B5A66;
+  --bs-secondary: #4b5a66;
   --bs-secondary-color: var(--bs-secondary);
 
   --bs-success: #008045;
@@ -89,21 +89,21 @@
   --bs-body-bg: #1c2024;
   --bs-dark: #212529;
   --bs-transparent: rgba(255, 255, 255, 0);
-  
+
   --bs-primary: #41b883;
   --bs-primary-color: var(--bs-primary);
   --bs-primary-hover: #39a273;
   --bs-primary-active: #2f8c63;
   --bs-primary-text-emphasis: #0d3724;
 
-  --bs-secondary: #838D96;
+  --bs-secondary: #838d96;
   --bs-secondary-color: var(--bs-secondary);
-  
+
   --bs-success: #53b462;
   --bs-success-bg-subtle: var(--bs-success);
   --bs-success-text-emphasis: #05310d;
   --bs-success-border-subtle: var(--bs-success-text-emphasis);
-  
+
   --bs-warning: #f6e275;
   --bs-warning-bg-subtle: var(--bs-warning);
   --bs-warning-text-emphasis: #332d19;
@@ -113,7 +113,7 @@
   --bs-danger-bg-subtle: var(--bs-danger);
   --bs-danger-text-emphasis: #310505;
   --bs-danger-border-subtle: var(--bs-danger-text-emphasis);
-  
+
   --bs-info: #9dd1ff;
   --bs-info-bg-subtle: var(--bs-info);
   --bs-info-text-emphasis: #071e2d;
@@ -137,7 +137,12 @@
   --bs-nav-link-font-weight: 600;
 }
 
-.offcanvas, .offcanvas-lg, .offcanvas-md, .offcanvas-sm, .offcanvas-xl, .offcanvas-xxl {
+.offcanvas,
+.offcanvas-lg,
+.offcanvas-md,
+.offcanvas-sm,
+.offcanvas-xl,
+.offcanvas-xxl {
   --bs-offcanvas-transition: transform 0.1s ease-in-out;
 }
 
@@ -146,7 +151,22 @@
 ///
 
 #root {
-  font-family: "Montserrat", "Noto Sans JP", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family:
+    "Montserrat",
+    "Noto Sans JP",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    "Noto Sans",
+    "Liberation Sans",
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
   font-size: 18px;
   font-optical-sizing: auto;
   font-kerning: auto;
@@ -249,7 +269,7 @@ p a:hover {
 }
 
 a:hover .fa-fw {
-  filter: brightness(150%)
+  filter: brightness(150%);
 }
 
 h1 {
@@ -322,13 +342,13 @@ hr {
 .btn-outline-primary {
   --bs-btn-hover-color: var(--bs-white);
   --bs-btn-active-color: var(--bs-white);
-  
+
   --bs-btn-border-color: var(--bs-primary);
   --bs-btn-hover-border-color: var(--bs-primary-hover);
   --bs-btn-active-border-color: var(--bs-primary-active);
   --bs-btn-disabled-border-color: var(--bs-primary);
-  
-  --bs-btn-focus-shadow-rgb: 0,0,0;
+
+  --bs-btn-focus-shadow-rgb: 0, 0, 0;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 

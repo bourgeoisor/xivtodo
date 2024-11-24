@@ -10,9 +10,17 @@
     </PageHeader>
 
     <div class="row">
-      <div v-for="(item) of this.$store.getters.characters" :key="item.ID" class="container px-4 py-2 mb-3 border-bottom border-grey">
+      <div
+        v-for="item of this.$store.getters.characters"
+        :key="item.ID"
+        class="container px-4 py-2 mb-3 border-bottom border-grey"
+      >
         <h2 class="pb-2">
-          <img class="avatar-home d-none d-sm-inline" :src="item.lodestoneData.Character.Avatar" :alt="$t('shared.portraitAlt')" />
+          <img
+            class="avatar-home d-none d-sm-inline"
+            :src="item.lodestoneData.Character.Avatar"
+            :alt="$t('shared.portraitAlt')"
+          />
           {{ item.lodestoneData.Character.Name }}
         </h2>
         <p>
@@ -22,7 +30,7 @@
           <div
             class="progress-bar"
             role="progressbar"
-            :style="{'width': taskCompletionPercentage(item.checklistData.weeklyChecklist)}"
+            :style="{ width: taskCompletionPercentage(item.checklistData.weeklyChecklist) }"
           >
             {{ item.checklistData.weeklyChecklist.filter((x) => !x.hidden && x.checked).length }} /
             {{ item.checklistData.weeklyChecklist.filter((x) => !x.hidden).length }}
@@ -37,7 +45,7 @@
           <div
             class="progress-bar"
             role="progressbar"
-            :style="{'width': taskCompletionPercentage(item.checklistData.dailyChecklist)}"
+            :style="{ width: taskCompletionPercentage(item.checklistData.dailyChecklist) }"
           >
             {{ item.checklistData.dailyChecklist.filter((x) => !x.hidden && x.checked).length }} /
             {{ item.checklistData.dailyChecklist.filter((x) => !x.hidden).length }}
@@ -271,7 +279,7 @@ export default {
         return "100%";
       }
 
-      return Math.floor(checked / total * 100) + "%";
+      return Math.floor((checked / total) * 100) + "%";
     },
   },
 };

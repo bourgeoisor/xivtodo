@@ -28,7 +28,7 @@
           </span>
         </small>
       </div>
-      
+
       <!-- Events -->
       <div v-for="item in news.countdowns" :key="item.title" class="mb-5">
         <h4>{{ item.title }}</h4>
@@ -43,7 +43,7 @@
               'text-success': this.isEventNow(item) || this.isEventNowForever(item),
               'text-danger': this.isEventEnded(item),
               'text-muted': this.isEventInFuture(item),
-              }"
+            }"
           ></i>
 
           <!-- If event ended... -->
@@ -75,7 +75,9 @@
           <!-- External link, if available -->
           <span v-if="item.url">
             &bull;
-            <a class="text-reset me-1" :href="item.url" target="_blank" rel="noopener noreferrer">{{ $t("shared.moreDetails") }}</a>
+            <a class="text-reset me-1" :href="item.url" target="_blank" rel="noopener noreferrer">
+              {{ $t("shared.moreDetails") }}
+            </a>
             <i class="fa-fw fas fa-external-link"></i>
           </span>
         </small>
@@ -110,7 +112,7 @@ export default {
     timeLeft(timestamp) {
       const locale = this.$i18n.locale;
       const formatter = new Intl.RelativeTimeFormat(locale, {
-        numericUnit: 'auto',
+        numericUnit: "auto",
       });
 
       const diff = (timestamp - this.now) * 1000;
@@ -119,30 +121,37 @@ export default {
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
       if (days > 0) {
-        return formatter.format(days, 'day');
+        return formatter.format(days, "day");
       } else if (hours > 0) {
-        return formatter.format(hours, 'hour');
+        return formatter.format(hours, "hour");
       } else if (minutes > 0) {
-        return formatter.format(minutes, 'minute');
+        return formatter.format(minutes, "minute");
       }
     },
     dateFormat(timestamp) {
       const date = new Date(timestamp * 1000);
       const locale = this.$i18n.locale;
-      return date.toLocaleDateString(locale, { year: "numeric", month: "long", day: "numeric", hour: "numeric", minute: "numeric", timeZoneName: "short" });
+      return date.toLocaleDateString(locale, {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        timeZoneName: "short",
+      });
     },
     isEventInFuture(event) {
-      return event.start && this.now < event.start
+      return event.start && this.now < event.start;
     },
     isEventEnded(event) {
       return event.end && this.now > event.end;
     },
     isEventNow(event) {
-      return !this.isEventInFuture(event) && !this.isEventEnded(event) && event.end
+      return !this.isEventInFuture(event) && !this.isEventEnded(event) && event.end;
     },
     isEventNowForever(event) {
-      return !this.isEventInFuture(event) && !event.end
-    }
-  }
+      return !this.isEventInFuture(event) && !event.end;
+    },
+  },
 };
 </script>

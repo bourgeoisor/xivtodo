@@ -140,7 +140,7 @@
                 aria-controls="offcanvasUpdates"
                 aria-label="News"
                 @click="seenLatestNews()"
-              > 
+              >
                 <span class="fa-fw fas fa-bell position-relative">
                   <span
                     v-if="this.$store.getters.isSignedIn && this.$store.getters.latestNewsSeen < news.latestID"

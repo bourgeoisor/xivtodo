@@ -65,7 +65,7 @@ const getVersion = () =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/version", {
       method: "GET",
-      cache: 'no-cache'
+      cache: "no-cache",
     })
       .then((response) => {
         if (response.ok) {
@@ -87,7 +87,7 @@ const authenticate = (code) =>
   new Promise((resolve, reject) => {
     fetch(apiEndpoint + "/auth?code=" + code, {
       method: "GET",
-      cache: 'no-cache'
+      cache: "no-cache",
     })
       .then((response) => {
         if (response.ok) {
@@ -119,7 +119,7 @@ const getUserData = () =>
         Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       method: "GET",
-      cache: 'no-cache'
+      cache: "no-cache",
     })
       .then((response) => {
         if (response.ok) {
@@ -152,7 +152,7 @@ const updateSettings = (payload) =>
       },
       body: JSON.stringify(payload),
       method: "PUT",
-      cache: 'no-cache'
+      cache: "no-cache",
     })
       .then((response) => {
         if (response.ok) {
@@ -176,7 +176,7 @@ const addCharacter = (id) =>
         Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       method: "GET",
-      cache: 'no-cache'
+      cache: "no-cache",
     })
       .then((response) => {
         if (response.ok) {
@@ -201,7 +201,7 @@ const removeCharacter = (id) =>
         Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
       },
       method: "DELETE",
-      cache: 'no-cache'
+      cache: "no-cache",
     })
       .then((response) => {
         if (response.ok) {
@@ -223,7 +223,7 @@ const updateChecklist = (id, payload) =>
       },
       body: JSON.stringify(payload),
       method: "PUT",
-      cache: 'no-cache'
+      cache: "no-cache",
     })
       .then((response) => {
         if (response.ok) {
@@ -245,7 +245,7 @@ const updateEncounterIDs = (id, payload) =>
       },
       body: JSON.stringify(payload),
       method: "PUT",
-      cache: 'no-cache'
+      cache: "no-cache",
     })
       .then((response) => {
         if (response.ok) {

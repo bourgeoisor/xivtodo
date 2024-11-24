@@ -19,18 +19,14 @@
 
     <!-- Level -->
     <span v-if="!this.jobUnlocked" class="text-secondary">-</span>
-    <span v-else :class="{'fw-bolder': this.isMaxLevel}">
+    <span v-else :class="{ 'fw-bolder': this.isMaxLevel }">
       {{ this.currentLevel }}
     </span>
 
     <!-- Progress -->
     <div v-if="this.jobUnlocked && !this.isMaxLevel" class="job-level-progress">
-      <div
-        class="job-level-progress-bar"
-        :style="'width: ' + this.levelProgressPercentage + '%'"
-      ></div>
+      <div class="job-level-progress-bar" :style="'width: ' + this.levelProgressPercentage + '%'"></div>
     </div>
-
   </div>
 </template>
 
@@ -112,6 +108,6 @@ export default {
       // Using a logarithmic scale to make the progress bar look more natural
       return (Math.pow(1.03, level + 1) / Math.pow(1.03, maxLevel + 1)) * 100;
     },
-  }
+  },
 };
 </script>

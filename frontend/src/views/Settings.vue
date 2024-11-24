@@ -1,6 +1,6 @@
 <template>
   <PageHeader title="page.settings" :error="this.error" :hideNotSignedInAlert="true" :hideNoCharactersAlert="true" />
-  
+
   <form name="settings-form" id="settings-form">
     <div class="row">
       <!-- Characters column -->
@@ -167,7 +167,6 @@
         </button>
         <br /><br />
       </div>
-
     </div>
   </form>
 </template>

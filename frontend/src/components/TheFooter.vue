@@ -1,5 +1,8 @@
 <template>
-  <footer class="footer d-flex justify-content-between mt-auto py-2 px-3 bg-light user-select-none" data-bs-theme="night">
+  <footer
+    class="footer d-flex justify-content-between mt-auto py-2 px-3 bg-light user-select-none"
+    data-bs-theme="night"
+  >
     <!-- Left-side info -->
     <div class="footer-copyrights text-muted my-auto d-none d-xl-block col-4">
       {{ $t("footer.trademark") }}<br />

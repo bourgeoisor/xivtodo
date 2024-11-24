@@ -39,11 +39,7 @@
   />
 
   <!-- Alert: Error -->
-  <AlertMsg
-    v-if="error && error.msg"
-    :type="error.type"
-    :msg="error.msg"
-  />
+  <AlertMsg v-if="error && error.msg" :type="error.type" :msg="error.msg" />
 
   <!-- Divider line -->
   <hr />
@@ -63,5 +59,5 @@ export default {
   components: {
     AlertMsg,
   },
-}
+};
 </script>
