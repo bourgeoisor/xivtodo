@@ -191,6 +191,94 @@
       </div>
     </div>
   </div>
+
+  <h1>{{ $t("profile.encounterCompletion") }}</h1>
+  <hr />
+
+  <div class="row">
+    <div class="col-lg mb-4">
+      <h2>{{ $t("shared.expansion.arr") }}</h2>
+      <DutyProgress :title="$t('encounters.dungeons')" :duties="db.arrDungeons" type="dngs" />
+      <DutyProgress :title="$t('encounters.trials')" :duties="db.arrTrials" type="trials" />
+      <DutyProgress :title="$t('encounters.raids')" :duties="db.arrRaids" type="raids" />
+      <DutyProgress :title="$t('encounters.guildhests')" :duties="db.arrGuildhests" type="guild" />
+      <DutyProgress :title="$t('encounters.heTrials')" :duties="db.arrTrialsEx" type="high" />
+      <DutyProgress :title="$t('encounters.heRaids')" :duties="db.arrRaidsSavUlt" type="high" />
+    </div>
+    <div class="col-lg mb-4">
+      <h2>{{ $t("shared.expansion.hw") }}</h2>
+      <DutyProgress :title="$t('encounters.dungeons')" :duties="db.hwDungeons" type="dngs" />
+      <DutyProgress :title="$t('encounters.trials')" :duties="db.hwTrials" type="trials" />
+      <DutyProgress :title="$t('encounters.raids')" :duties="db.hwRaids" type="raids" />
+      <DutyProgress :title="$t('encounters.heTrials')" :duties="db.hwTrialsEx" type="high" />
+      <DutyProgress :title="$t('encounters.heRaids')" :duties="db.hwRaidsSavUlt" type="high" />
+    </div>
+    <div class="col-lg mb-4">
+      <h2>{{ $t("shared.expansion.sb") }}</h2>
+      <DutyProgress :title="$t('encounters.dungeons')" :duties="db.sbDungeons" type="dngs" />
+      <DutyProgress :title="$t('encounters.trials')" :duties="db.sbTrials" type="trials" />
+      <DutyProgress :title="$t('encounters.raids')" :duties="db.sbRaids" type="raids" />
+      <DutyProgress :title="$t('encounters.exploratory')" :duties="db.sbExploratory" type="expl" />
+      <DutyProgress :title="$t('encounters.heTrials')" :duties="db.sbTrialsEx" type="high" />
+      <DutyProgress :title="$t('encounters.heRaids')" :duties="db.sbRaidsSavUlt" type="high" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg mb-4">
+      <h2>{{ $t("shared.expansion.shb") }}</h2>
+      <DutyProgress :title="$t('encounters.dungeons')" :duties="db.shbDungeons" type="dngs" />
+      <DutyProgress :title="$t('encounters.trials')" :duties="db.shbTrials" type="trials" />
+      <DutyProgress :title="$t('encounters.raids')" :duties="db.shbRaids" type="raids" />
+      <DutyProgress :title="$t('encounters.exploratory')" :duties="db.shbExploratory" type="expl" />
+      <DutyProgress :title="$t('encounters.heTrials')" :duties="db.shbTrialsEx" type="high" />
+      <DutyProgress :title="$t('encounters.heRaids')" :duties="db.shbRaidsSavUlt" type="high" />
+    </div>
+    <div class="col-lg mb-4">
+      <h2>{{ $t("shared.expansion.ew") }}</h2>
+      <DutyProgress :title="$t('encounters.dungeons')" :duties="db.ewDungeons" type="dngs" />
+      <DutyProgress :title="$t('encounters.trials')" :duties="db.ewTrials" type="trials" />
+      <DutyProgress :title="$t('encounters.raids')" :duties="db.ewRaids" type="raids" />
+      <DutyProgress :title="$t('encounters.vcDungeons')" :duties="db.ewVariantsCriterions" type="vc" />
+      <DutyProgress :title="$t('encounters.heTrials')" :duties="db.ewTrialsEx" type="high" />
+      <DutyProgress :title="$t('encounters.heRaids')" :duties="db.ewRaidsSavUlt" type="high" />
+    </div>
+    <div class="col-lg mb-4">
+      <h2>{{ $t("shared.expansion.dt") }}</h2>
+      <DutyProgress :title="$t('encounters.dungeons')" :duties="db.dtDungeons" type="dngs" />
+      <DutyProgress :title="$t('encounters.trials')" :duties="db.dtTrials" type="trials" />
+      <DutyProgress :title="$t('encounters.raids')" :duties="db.dtRaids" type="raids" />
+      <DutyProgress :title="$t('encounters.heTrials')" :duties="db.dtTrialsEx" type="high" />
+      <DutyProgress :title="$t('encounters.heRaids')" :duties="db.dtRaidsSavUlt" type="high" />
+    </div>
+  </div>
+
+  <h1>{{ $t("profile.questlineCompletion") }}</h1>
+  <hr />
+
+  <div class="row">
+    <div class="col-lg mb-4">
+      <h2>{{ $t("questlines.stories") }}</h2>
+      <DutyProgress :title="$t('questlines.mainScenarioQuests')" :duties="db.mainStoryQuest" />
+      <DutyProgress :title="$t('questlines.sideStoryQuests')" :duties="db.sideStoryQuests" />
+      <DutyProgress :title="$t('questlines.encounterQuests')" :duties="db.dutiesQuests" />
+      <DutyProgress :title="$t('questlines.tribalQuests')" :duties="db.beastTribeQuests" />
+      <DutyProgress :title="$t('questlines.alliedTribalQuests')" :duties="db.alliedBeastTribeQuests" />
+      <DutyProgress :title="$t('questlines.customDeliveryQuests')" :duties="db.customDeliveryQuests" />
+    </div>
+    <div class="col-lg mb-4">
+      <h2>{{ $t("questlines.jobsRolesRelics") }}</h2>
+      <DutyProgress :title="$t('questlines.combatJobQuests')" :duties="db.combatJobQuests" />
+      <DutyProgress :title="$t('questlines.gathererJobQuests')" :duties="db.gathererJobQuests" />
+      <DutyProgress :title="$t('questlines.crafterJobQuests')" :duties="db.crafterJobQuests" />
+      <DutyProgress :title="$t('questlines.roleQuestsShB')" :duties="db.shbRoleQuests" />
+      <DutyProgress :title="$t('questlines.roleQuestsEW')" :duties="db.ewRoleQuests" />
+      <DutyProgress :title="$t('questlines.roleQuestsDT')" :duties="db.dtRoleQuests" />
+      <DutyProgress :title="$t('questlines.relicQuests')" :duties="db.relicQuests" />
+      <DutyProgress :title="$t('questlines.crystallineMeanQuests')" :duties="db.crystallineMeanQuests" />
+      <DutyProgress :title="$t('questlines.studiumDeliveryQuests')" :duties="db.studiumDeliveryQuests" />
+      <DutyProgress :title="$t('questlines.wachumeqimeqiDeliveryQuests')" :duties="db.wachumeqimeqiDeliveryQuests" />
+    </div>
+  </div>
 </template>
 
 <style lang="scss">
@@ -219,6 +307,9 @@
 <script>
 import PageHeader from "@/components/PageHeader.vue";
 import JobLevel from "@/components/JobLevel.vue";
+import DutyProgress from "@/components/DutyProgress.vue";
+
+import dbJson from "@/assets/db.json";
 
 export default {
   name: "ProfileView",
@@ -226,11 +317,13 @@ export default {
     return {
       maxLevelEureka: 60,
       maxLevelBozja: 25,
+      db: dbJson,
     };
   },
   components: {
     PageHeader,
     JobLevel,
+    DutyProgress,
   },
   computed: {
     hasBio() {

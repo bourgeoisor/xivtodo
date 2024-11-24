@@ -28,33 +28,14 @@ export default {
     DutyListItem,
   },
   methods: {
-    hasMaxIDOneOf(achievements, item) {
-      if (item.MaxIDOneOf.length > 0) {
-        for (let id of item.MaxIDOneOf) {
-          if (achievements.has(id)) return true;
-        }
-      }
-      return false;
-    },
     injectDutyCompletion(duties) {
-      let achievements = this.$store.getters.achievements;
-      let spoilersOption = this.$store.getters.settings.spoilersOption || 0;
-      let encounterIDs = this.$store.getters.encounterIDs;
+      const achievements = this.$store.getters.achievements;
+      const spoilersOption = this.$store.getters.settings.spoilersOption || 0;
+      const encounterIDs = this.$store.getters.encounterIDs;
+      const verifiedEncounters = this.$store.getters.encountersVerified;
 
       for (let item of duties) {
-        let cleared = 0;
-        if (!this.$store.getters.achievementsPublic) cleared = -1;
-        else if (item.ID && achievements.has(item.ID)) cleared = 1;
-        else if (item.MaxIDOneOf && this.hasMaxIDOneOf(achievements, item)) cleared = 1;
-        else if (item.MaxIDAllOf && item.MaxIDAllOf.length > 0) {
-          cleared = 1;
-          for (let id of item.MaxIDAllOf) {
-            if (!achievements.has(id)) cleared = 0;
-          }
-        } else if (item.MinID && achievements.has(item.MinID)) cleared = -1;
-        else if (item.MinID && !achievements.has(item.MinID)) cleared = 0;
-        else if (!item.MinID && item.MaxIDOneOf) cleared = 0;
-        else if (!item.ID) cleared = -1;
+        let cleared = verifiedEncounters[item.UUID];
         if (cleared == -1 && encounterIDs.has(~~item.UUID)) cleared = 2;
         item.cleared = cleared;
 
@@ -77,9 +58,6 @@ export default {
         item.blur = blur;
       }
       return duties;
-    },
-    numClearedDuties() {
-      return this.injectDutyCompletion(this.duties).filter((obj) => obj.cleared == 1).length;
     },
   },
 };

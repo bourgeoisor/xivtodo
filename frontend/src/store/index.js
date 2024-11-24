@@ -124,6 +124,9 @@ const store = createStore({
       }
       return encounterIDs;
     },
+    encountersVerified(state, getters) {
+      return getters.activeCharacter?.encountersVerified || {};
+    },
     checklistData(state, getters) {
       return getters.activeCharacter?.checklistData || {};
     },
