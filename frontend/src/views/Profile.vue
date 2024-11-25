@@ -258,25 +258,25 @@
   <div class="row">
     <div class="col-lg mb-4">
       <h2>{{ $t("questlines.stories") }}</h2>
-      <DutyProgress :title="$t('questlines.mainScenarioQuests')" :duties="db.mainStoryQuest" />
-      <DutyProgress :title="$t('questlines.sideStoryQuests')" :duties="db.sideStoryQuests" />
-      <DutyProgress :title="$t('questlines.encounterQuests')" :duties="db.dutiesQuests" />
-      <DutyProgress :title="$t('questlines.tribalQuests')" :duties="db.beastTribeQuests" />
-      <DutyProgress :title="$t('questlines.alliedTribalQuests')" :duties="db.alliedBeastTribeQuests" />
-      <DutyProgress :title="$t('questlines.customDeliveryQuests')" :duties="db.customDeliveryQuests" />
+      <DutyProgress :title="$t('questlines.mainScenarioQuests')" :duties="db.mainStoryQuest" type="msq" />
+      <DutyProgress :title="$t('questlines.sideStoryQuests')" :duties="db.sideStoryQuests" type="sidequest" />
+      <DutyProgress :title="$t('questlines.encounterQuests')" :duties="db.dutiesQuests" type="encounterquest" />
+      <DutyProgress :title="$t('questlines.tribalQuests')" :duties="db.beastTribeQuests" type="tribal" />
+      <DutyProgress :title="$t('questlines.alliedTribalQuests')" :duties="db.alliedBeastTribeQuests" type="tribal" />
+      <DutyProgress :title="$t('questlines.customDeliveryQuests')" :duties="db.customDeliveryQuests" type="deliveries" />
     </div>
     <div class="col-lg mb-4">
       <h2>{{ $t("questlines.jobsRolesRelics") }}</h2>
-      <DutyProgress :title="$t('questlines.combatJobQuests')" :duties="db.combatJobQuests" />
-      <DutyProgress :title="$t('questlines.gathererJobQuests')" :duties="db.gathererJobQuests" />
-      <DutyProgress :title="$t('questlines.crafterJobQuests')" :duties="db.crafterJobQuests" />
-      <DutyProgress :title="$t('questlines.roleQuestsShB')" :duties="db.shbRoleQuests" />
-      <DutyProgress :title="$t('questlines.roleQuestsEW')" :duties="db.ewRoleQuests" />
-      <DutyProgress :title="$t('questlines.roleQuestsDT')" :duties="db.dtRoleQuests" />
-      <DutyProgress :title="$t('questlines.relicQuests')" :duties="db.relicQuests" />
-      <DutyProgress :title="$t('questlines.crystallineMeanQuests')" :duties="db.crystallineMeanQuests" />
-      <DutyProgress :title="$t('questlines.studiumDeliveryQuests')" :duties="db.studiumDeliveryQuests" />
-      <DutyProgress :title="$t('questlines.wachumeqimeqiDeliveryQuests')" :duties="db.wachumeqimeqiDeliveryQuests" />
+      <DutyProgress :title="$t('questlines.combatJobQuests')" :duties="db.combatJobQuests" type="combat" />
+      <DutyProgress :title="$t('questlines.gathererJobQuests')" :duties="db.gathererJobQuests" type="gathering" />
+      <DutyProgress :title="$t('questlines.crafterJobQuests')" :duties="db.crafterJobQuests" type="crafting" />
+      <DutyProgress :title="$t('questlines.roleQuestsShB')" :duties="db.shbRoleQuests" type="combat" />
+      <DutyProgress :title="$t('questlines.roleQuestsEW')" :duties="db.ewRoleQuests" type="combat" />
+      <DutyProgress :title="$t('questlines.roleQuestsDT')" :duties="db.dtRoleQuests" type="combat" />
+      <DutyProgress :title="$t('questlines.relicQuests')" :duties="db.relicQuests" type="relic" />
+      <DutyProgress :title="$t('questlines.crystallineMeanQuests')" :duties="db.crystallineMeanQuests" type="leveling" />
+      <DutyProgress :title="$t('questlines.studiumDeliveryQuests')" :duties="db.studiumDeliveryQuests" type="leveling" />
+      <DutyProgress :title="$t('questlines.wachumeqimeqiDeliveryQuests')" :duties="db.wachumeqimeqiDeliveryQuests" type="leveling" />
     </div>
   </div>
 </template>

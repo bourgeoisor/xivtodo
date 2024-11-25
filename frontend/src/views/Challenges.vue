@@ -5,18 +5,18 @@
     <h2>{{ $t("challenges.exploration") }}</h2>
 
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('shared.expansion.arr')" :duties="db.arrExploration" />
-      <DutyList :title="$t('shared.expansion.hw')" :duties="db.hwExploration" />
+      <DutyList :title="$t('shared.expansion.arr')" :duties="db.arrExploration" type="magnifier" />
+      <DutyList :title="$t('shared.expansion.hw')" :duties="db.hwExploration" type="magnifier" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('shared.expansion.sb')" :duties="db.sbExploration" />
-      <DutyList :title="$t('shared.expansion.shb')" :duties="db.shbExploration" />
-      <DutyList :title="$t('shared.expansion.ew')" :duties="db.ewExploration" />
+      <DutyList :title="$t('shared.expansion.sb')" :duties="db.sbExploration" type="magnifier" />
+      <DutyList :title="$t('shared.expansion.shb')" :duties="db.shbExploration" type="magnifier" />
+      <DutyList :title="$t('shared.expansion.ew')" :duties="db.ewExploration" type="magnifier" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('shared.expansion.dt')" :duties="db.dtExploration" />
-      <DutyList :title="$t('challenges.exploratoryMissions')" :duties="db.explExploration" />
-      <DutyList :title="$t('challenges.sightseeingLogs')" :duties="db.sightseeingLogs" />
+      <DutyList :title="$t('shared.expansion.dt')" :duties="db.dtExploration" type="magnifier" />
+      <DutyList :title="$t('challenges.exploratoryMissions')" :duties="db.explExploration" type="magnifier" />
+      <DutyList :title="$t('challenges.sightseeingLogs')" :duties="db.sightseeingLogs" type="magnifier" />
     </div>
   </div>
   <hr />
@@ -24,16 +24,16 @@
     <h2>{{ $t("challenges.deepDungeons") }}</h2>
 
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.potd')" :duties="db.potd" />
-      <DutyList :title="$t('challenges.potdSolo')" :duties="db.potdSolo" />
+      <DutyList :title="$t('challenges.potd')" :duties="db.potd" type="deepdungeons" />
+      <DutyList :title="$t('challenges.potdSolo')" :duties="db.potdSolo" type="deepdungeons" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.hoh')" :duties="db.hoh" />
-      <DutyList :title="$t('challenges.hohSolo')" :duties="db.hohSolo" />
+      <DutyList :title="$t('challenges.hoh')" :duties="db.hoh" type="deepdungeons" />
+      <DutyList :title="$t('challenges.hohSolo')" :duties="db.hohSolo" type="deepdungeons" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.eo')" :duties="db.eo" />
-      <DutyList :title="$t('challenges.eoSolo')" :duties="db.eoSolo" />
+      <DutyList :title="$t('challenges.eo')" :duties="db.eo" type="deepdungeons" />
+      <DutyList :title="$t('challenges.eoSolo')" :duties="db.eoSolo" type="deepdungeons" />
     </div>
   </div>
   <hr />
@@ -41,19 +41,19 @@
     <h2>{{ $t("challenges.miscellaneous") }}</h2>
 
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.sharedFateShB')" :duties="db.shbSharedFATE" />
-      <DutyList :title="$t('challenges.sharedFateEW')" :duties="db.ewSharedFATE" />
-      <DutyList :title="$t('challenges.sharedFateDT')" :duties="db.dtSharedFATE" />
+      <DutyList :title="$t('challenges.sharedFateShB')" :duties="db.shbSharedFATE" type="fate" />
+      <DutyList :title="$t('challenges.sharedFateEW')" :duties="db.ewSharedFATE" type="fate" />
+      <DutyList :title="$t('challenges.sharedFateDT')" :duties="db.dtSharedFATE" type="fate" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.bozjanSouthernFront')" :duties="db.bozjanChallenges" />
-      <DutyList :title="$t('challenges.zadnor')" :duties="db.zadnorChallenges" />
-      <DutyList :title="$t('challenges.variantDungeons')" :duties="db.variantChallenges" />
+      <DutyList :title="$t('challenges.bozjanSouthernFront')" :duties="db.bozjanChallenges" type="field" />
+      <DutyList :title="$t('challenges.zadnor')" :duties="db.zadnorChallenges" type="field" />
+      <DutyList :title="$t('challenges.variantDungeons')" :duties="db.variantChallenges" type="vc" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.treasureHuntClears')" :duties="db.treasureHunts" />
-      <DutyList :title="$t('challenges.trusts')" :duties="db.trusts" />
-      <DutyList :title="$t('challenges.islandSanctuary')" :duties="db.islandSanctuary" />
+      <DutyList :title="$t('challenges.treasureHuntClears')" :duties="db.treasureHunts" type="treasure" />
+      <DutyList :title="$t('challenges.trusts')" :duties="db.trusts" type="leveling" />
+      <DutyList :title="$t('challenges.islandSanctuary')" :duties="db.islandSanctuary" type="island" />
     </div>
   </div>
   <hr />
@@ -61,16 +61,16 @@
     <h2>{{ $t("challenges.achievementFates") }}</h2>
 
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('shared.expansion.arr')" :duties="db.arrFATEs" />
+      <DutyList :title="$t('shared.expansion.arr')" :duties="db.arrFATEs" type="fate" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('shared.expansion.hw')" :duties="db.hwFATEs" />
-      <DutyList :title="$t('shared.expansion.sb')" :duties="db.sbFATEs" />
+      <DutyList :title="$t('shared.expansion.hw')" :duties="db.hwFATEs" type="fate" />
+      <DutyList :title="$t('shared.expansion.sb')" :duties="db.sbFATEs" type="fate" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('shared.expansion.shb')" :duties="db.shbFATEs" />
-      <DutyList :title="$t('shared.expansion.ew')" :duties="db.ewFATEs" />
-      <DutyList :title="$t('shared.expansion.dt')" :duties="db.dtFATEs" />
+      <DutyList :title="$t('shared.expansion.shb')" :duties="db.shbFATEs" type="fate" />
+      <DutyList :title="$t('shared.expansion.ew')" :duties="db.ewFATEs" type="fate" />
+      <DutyList :title="$t('shared.expansion.dt')" :duties="db.dtFATEs" type="fate" />
     </div>
   </div>
   <hr />
@@ -78,15 +78,15 @@
     <h2>{{ $t("challenges.blueMage") }}</h2>
 
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.blueARR')" :duties="db.arrBlu" />
-      <DutyList :title="$t('challenges.blueHW')" :duties="db.hwBlu" />
+      <DutyList :title="$t('challenges.blueARR')" :duties="db.arrBlu" type="blu" />
+      <DutyList :title="$t('challenges.blueHW')" :duties="db.hwBlu" type="blu" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.blueSB')" :duties="db.sbBlu" />
-      <DutyList :title="$t('challenges.blueShB')" :duties="db.shbBlu" />
+      <DutyList :title="$t('challenges.blueSB')" :duties="db.sbBlu" type="blu" />
+      <DutyList :title="$t('challenges.blueShB')" :duties="db.shbBlu" type="blu" />
     </div>
     <div class="col-12 col-lg-4">
-      <DutyList :title="$t('challenges.maskedCarnivale')" :duties="db.maskedCarnivale" />
+      <DutyList :title="$t('challenges.maskedCarnivale')" :duties="db.maskedCarnivale" type="blu" />
     </div>
   </div>
 </template>
