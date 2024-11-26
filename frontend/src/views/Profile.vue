@@ -192,7 +192,13 @@
     </div>
   </div>
 
-  <h1>{{ $t("profile.encounterCompletion") }}</h1>
+  <!-- Encounters summaries -->
+  <h1>
+    {{ $t("page.encounters")}}
+    <span class="fs-3 fw-lighter d-block d-lg-inline">
+      {{ $t("pageHeader.clearedByCharacter", { characterName: this.$store.getters.character.Name }) }}
+    </span>
+  </h1>
   <hr />
 
   <div class="row">
@@ -252,7 +258,13 @@
     </div>
   </div>
 
-  <h1>{{ $t("profile.questlineCompletion") }}</h1>
+  <!-- Questlines summaries -->
+  <h1>
+    {{ $t("page.questlines")}}
+    <span class="fs-3 fw-lighter d-block d-lg-inline">
+      {{ $t("pageHeader.clearedByCharacter", { characterName: this.$store.getters.character.Name }) }}
+    </span>
+  </h1>
   <hr />
 
   <div class="row">
@@ -277,6 +289,65 @@
       <DutyProgress :title="$t('questlines.crystallineMeanQuests')" :duties="db.crystallineMeanQuests" type="leveling" />
       <DutyProgress :title="$t('questlines.studiumDeliveryQuests')" :duties="db.studiumDeliveryQuests" type="leveling" />
       <DutyProgress :title="$t('questlines.wachumeqimeqiDeliveryQuests')" :duties="db.wachumeqimeqiDeliveryQuests" type="leveling" />
+    </div>
+  </div>
+
+  <!-- Challenges summaries -->
+  <h1>
+    {{ $t("page.challenges")}}
+    <span class="fs-3 fw-lighter d-block d-lg-inline">
+      {{ $t("pageHeader.clearedByCharacter", { characterName: this.$store.getters.character.Name }) }}
+    </span>
+  </h1>
+  <hr />
+
+  <div class="row">
+    <div class="col-lg mb-4">
+      <h2>{{ $t("challenges.exploration") }}</h2>
+      <DutyProgress :title="$t('shared.expansion.arr')" :duties="db.arrExploration" type="magnifier" />
+      <DutyProgress :title="$t('shared.expansion.hw')" :duties="db.hwExploration" type="magnifier" />
+      <DutyProgress :title="$t('shared.expansion.sb')" :duties="db.sbExploration" type="magnifier" />
+      <DutyProgress :title="$t('shared.expansion.shb')" :duties="db.shbExploration" type="magnifier" />
+      <DutyProgress :title="$t('shared.expansion.ew')" :duties="db.ewExploration" type="magnifier" />
+      <DutyProgress :title="$t('shared.expansion.dt')" :duties="db.dtExploration" type="magnifier" />
+      <DutyProgress :title="$t('challenges.exploratoryMissions')" :duties="db.explExploration" type="magnifier" />
+      <DutyProgress :title="$t('challenges.sightseeingLogs')" :duties="db.sightseeingLogs" type="magnifier" />
+      <br />
+      <h2>{{ $t("challenges.achievementFates") }}</h2>
+      <DutyProgress :title="$t('shared.expansion.arr')" :duties="db.arrFATEs" type="fate" />
+      <DutyProgress :title="$t('shared.expansion.hw')" :duties="db.hwFATEs" type="fate" />
+      <DutyProgress :title="$t('shared.expansion.sb')" :duties="db.sbFATEs" type="fate" />
+      <DutyProgress :title="$t('shared.expansion.shb')" :duties="db.shbFATEs" type="fate" />
+      <DutyProgress :title="$t('shared.expansion.ew')" :duties="db.ewFATEs" type="fate" />
+      <DutyProgress :title="$t('shared.expansion.dt')" :duties="db.dtFATEs" type="fate" />
+    </div>
+    <div class="col-lg mb-4">
+      <h2>{{ $t("challenges.deepDungeons") }}</h2>
+      <DutyProgress :title="$t('challenges.potd')" :duties="db.potd" type="deepdungeons" />
+      <DutyProgress :title="$t('challenges.potdSolo')" :duties="db.potdSolo" type="deepdungeons" />
+      <DutyProgress :title="$t('challenges.hoh')" :duties="db.hoh" type="deepdungeons" />
+      <DutyProgress :title="$t('challenges.hohSolo')" :duties="db.hohSolo" type="deepdungeons" />
+      <DutyProgress :title="$t('challenges.eo')" :duties="db.eo" type="deepdungeons" />
+      <DutyProgress :title="$t('challenges.eoSolo')" :duties="db.eoSolo" type="deepdungeons" />
+      <br />
+      <h2>{{ $t("challenges.blueMage") }}</h2>
+      <DutyProgress :title="$t('challenges.blueARR')" :duties="db.arrBlu" type="blu" />
+      <DutyProgress :title="$t('challenges.blueHW')" :duties="db.hwBlu" type="blu" />
+      <DutyProgress :title="$t('challenges.blueSB')" :duties="db.sbBlu" type="blu" />
+      <DutyProgress :title="$t('challenges.blueShB')" :duties="db.shbBlu" type="blu" />
+      <DutyProgress :title="$t('challenges.maskedCarnivale')" :duties="db.maskedCarnivale" type="blu" />
+    </div>
+    <div class="col-lg mb-4">
+      <h2>{{ $t("challenges.miscellaneous") }}</h2>
+      <DutyProgress :title="$t('challenges.sharedFateShB')" :duties="db.shbSharedFATE" type="fate" />
+      <DutyProgress :title="$t('challenges.sharedFateEW')" :duties="db.ewSharedFATE" type="fate" />
+      <DutyProgress :title="$t('challenges.sharedFateDT')" :duties="db.dtSharedFATE" type="fate" />
+      <DutyProgress :title="$t('challenges.bozjanSouthernFront')" :duties="db.bozjanChallenges" type="field" />
+      <DutyProgress :title="$t('challenges.zadnor')" :duties="db.zadnorChallenges" type="field" />
+      <DutyProgress :title="$t('challenges.variantDungeons')" :duties="db.variantChallenges" type="vc" />
+      <DutyProgress :title="$t('challenges.treasureHuntClears')" :duties="db.treasureHunts" type="treasure" />
+      <DutyProgress :title="$t('challenges.trusts')" :duties="db.trusts" type="leveling" />
+      <DutyProgress :title="$t('challenges.islandSanctuary')" :duties="db.islandSanctuary" type="island" />
     </div>
   </div>
 </template>
