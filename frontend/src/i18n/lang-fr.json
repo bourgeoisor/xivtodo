@@ -142,8 +142,6 @@
   },
   "profile": {
     "characterInfo": "Info du personnage",
-    "encounterCompletion": "Encounter Completion",
-    "questlineCompletion": "Questline Completion",
     "jobLevels": "Niveau des jobs",
     "world": "Monde",
     "raceClan": "Race et ethnie",
