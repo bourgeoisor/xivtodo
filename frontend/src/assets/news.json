@@ -4,13 +4,14 @@
     "start": 1731380400,
     "end": 1731405600
   },
-  "latestCountdownID": 44,
+  "latestCountdownID": 45,
   "countdowns": [
     {
-      "title": "Patch 7.1",
-      "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
-      "start": 1731405600
+      "title": "Starlight Celebration",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/Starlight_Celebration/2w4vdz8s0c",
+      "start": 1734336000,
+      "end": 1735657200
     },
     {
       "title": "Patch 7.11",
