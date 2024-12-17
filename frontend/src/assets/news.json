@@ -1,8 +1,8 @@
 {
   "maintenance": {
-    "updated": true,
-    "start": 1731380400,
-    "end": 1731405600
+    "updated": false,
+    "start": 1734415200,
+    "end": 1734429600
   },
   "latestCountdownID": 45,
   "countdowns": [
@@ -14,13 +14,13 @@
       "end": 1735657200
     },
     {
-      "title": "Patch 7.11",
+      "title": "Patch 7.15",
       "type": "patch",
       "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
-      "start": 1732618800
+      "start": 1734429600
     },
     {
-      "title": "Patch 7.15",
+      "title": "Patch 7.16",
       "type": "patch",
       "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
       "start": 1735038000
