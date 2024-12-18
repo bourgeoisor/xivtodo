@@ -1,6 +1,6 @@
 {
   "maintenance": {
-    "updated": false,
+    "updated": true,
     "start": 1734415200,
     "end": 1734429600
   },
@@ -16,14 +16,8 @@
     {
       "title": "Patch 7.15",
       "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/864c7e51128b7a1dced4e193dcaefe7891620f8d",
       "start": 1734429600
-    },
-    {
-      "title": "Patch 7.16",
-      "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/dawntrail/patch_7_1",
-      "start": 1735038000
     }
   ],
   "latestID": 240627,
