@@ -89,7 +89,7 @@ type ClassJob struct {
 	JobID         uint8
 	Level         uint8
 	Name          string
-	UnlockedState ClassJobUnlockedState
+	UnlockedState *ClassJobUnlockedState
 }
 
 type AchievementInfo struct {

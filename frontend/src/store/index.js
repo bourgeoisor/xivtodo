@@ -87,6 +87,9 @@ const store = createStore({
     character(state, getters) {
       return getters.lodestoneData.Character || {};
     },
+    profilePublic(state, getters) {
+      return getters.lodestoneData.Character?.ActiveClassJob != null;
+    },
     achievements(state, getters) {
       let achievements = new Map();
       for (let achievement of getters.lodestoneData.Achievements || []) {

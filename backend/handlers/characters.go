@@ -40,7 +40,7 @@ func CharactersHandler() http.Handler {
 }
 
 func addCharacter(w http.ResponseWriter, userData *models.User, characterID string) {
-	if userHasMaxCharacters(userData) && !utils.CharacterInUser(userData, characterID) {
+	if userHasMaxCharacters(userData) && !CharacterInUser(userData, characterID) {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 		log.Println("user already has 8 characters")
 		return
@@ -61,7 +61,11 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 			AdhocChecklist:  []*models.ChecklistItem{},
 		},
 	}
-	if utils.CharacterInUser(userData, characterID) {
+	if CharacterProfilePrivate(character.LodestoneData) {
+		character.LodestoneData.Character.GuardianDeity = nil
+		character.LodestoneData.Character.Town = nil
+	}
+	if CharacterInUser(userData, characterID) {
 		character = *userData.Characters[characterID]
 		character.Updated = time.Now().Unix()
 		character.LodestoneData = lodestoneProfile
@@ -88,7 +92,7 @@ func addCharacter(w http.ResponseWriter, userData *models.User, characterID stri
 }
 
 func removeCharacter(w http.ResponseWriter, userData *models.User, characterID string) {
-	if !utils.CharacterInUser(userData, characterID) {
+	if !CharacterInUser(userData, characterID) {
 		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
 		log.Println("character is not in user")
 		return
@@ -110,6 +114,15 @@ func removeCharacter(w http.ResponseWriter, userData *models.User, characterID s
 	w.WriteHeader(http.StatusOK)
 }
 
+func CharacterInUser(userData *models.User, id string) bool {
+	_, exists := userData.Characters[id]
+	return exists
+}
+
 func userHasMaxCharacters(userData *models.User) bool {
 	return len(userData.Characters) > 8
+}
+
+func CharacterProfilePrivate(lodestoneData *models.LodestoneProfile) bool {
+	return lodestoneData.Character.ActiveClassJob == nil
 }

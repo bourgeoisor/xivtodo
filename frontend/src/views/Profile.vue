@@ -1,7 +1,10 @@
 <template>
   <PageHeader title="page.profile" subtitle="pageHeader.ofCharacter" />
 
-  <div class="row">
+  <div v-if="!this.$store.getters.profilePublic" class="row">
+    <p>{{ $t('message.profileNotPublic') }}</p>
+  </div>
+  <div v-else class="row">
     <!-- Character portrait & bio -->
     <div class="col-lg d-none d-lg-block">
       <!-- Portrait -->

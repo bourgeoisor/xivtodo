@@ -61,8 +61,3 @@ func GetUserWithAuthnOrFail(w http.ResponseWriter, r *http.Request, userData *mo
 
 	return nil
 }
-
-func CharacterInUser(userData *models.User, id string) bool {
-	_, exists := userData.Characters[id]
-	return exists
-}
