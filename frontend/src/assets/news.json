@@ -7,24 +7,10 @@
   "latestCountdownID": 45,
   "countdowns": [
     {
-      "title": "Starlight Celebration",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2024/Starlight_Celebration/2w4vdz8s0c",
-      "start": 1734336000,
-      "end": 1735657200
-    },
-    {
-      "title": "Heavensturn",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/Heavensturn/xhy9z0p5ev",
-      "start": 1735657200,
-      "end": 1737039600
-    },
-    {
-      "title": "Patch 7.15",
+      "title": "Patch 7.16",
       "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/864c7e51128b7a1dced4e193dcaefe7891620f8d",
-      "start": 1734429600
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/5cf11b096edd33c679bd29894d7e1972ed22c350",
+      "start": 1737457200
     }
   ],
   "latestID": 240627,
