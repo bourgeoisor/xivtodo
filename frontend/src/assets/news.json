@@ -4,8 +4,15 @@
     "start": 1734415200,
     "end": 1734429600
   },
-  "latestCountdownID": 45,
+  "latestCountdownID": 46,
   "countdowns": [
+    {
+      "title": "Letter from the Producer LIVE LXXXV",
+      "type": "keynote",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/329ad452f96b16dec78666be3114da17c3661196",
+      "start": 1738926000,
+      "end": 1738936800
+    },
     {
       "title": "Patch 7.16",
       "type": "patch",
