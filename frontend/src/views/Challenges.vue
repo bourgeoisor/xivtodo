@@ -75,6 +75,17 @@
   </div>
   <hr />
   <div class="row">
+    <h2>{{ $t("challenges.mentorStatus") }}</h2>
+
+    <div class="col-12 col-lg-4">
+      <DutyList :title="$t('challenges.mentorBattle')" :duties="db.mentorBattle" type="mentor" />
+    </div>
+    <div class="col-12 col-lg-4">
+      <DutyList :title="$t('challenges.mentorTrade')" :duties="db.mentorTrade" type="mentor" />
+    </div>
+  </div>
+  <hr />
+  <div class="row">
     <h2>{{ $t("challenges.blueMage") }}</h2>
 
     <div class="col-12 col-lg-4">

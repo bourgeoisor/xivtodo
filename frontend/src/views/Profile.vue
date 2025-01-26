@@ -351,6 +351,10 @@
       <DutyProgress :title="$t('challenges.treasureHuntClears')" :duties="db.treasureHunts" type="treasure" />
       <DutyProgress :title="$t('challenges.trusts')" :duties="db.trusts" type="leveling" />
       <DutyProgress :title="$t('challenges.islandSanctuary')" :duties="db.islandSanctuary" type="island" />
+      <br />
+      <h2>{{ $t("challenges.mentorStatus") }}</h2>
+      <DutyProgress :title="$t('challenges.mentorBattle')" :duties="db.mentorBattle" type="mentor" />
+      <DutyProgress :title="$t('challenges.mentorTrade')" :duties="db.mentorTrade" type="mentor" />
     </div>
   </div>
 </template>
