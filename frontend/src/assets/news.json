@@ -4,8 +4,15 @@
     "start": 1734415200,
     "end": 1734429600
   },
-  "latestCountdownID": 46,
+  "latestCountdownID": 47,
   "countdowns": [
+    {
+      "title": "Valentione's Day",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/Valentiones_Day/xe76ytdwz8",
+      "start": 1738569600,
+      "end": 1739804400
+    },
     {
       "title": "Letter from the Producer LIVE LXXXV",
       "type": "keynote",
