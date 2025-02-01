@@ -285,9 +285,9 @@
                   </h6>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="#" @click="signOut">
+                  <router-link to="/signout/" class="dropdown-item" @click="collapseNav">
                     <i class="fa-fw fas fa-power-off"></i> {{ $t("page.signOut") }}
-                  </a>
+                  </router-link>
                 </li>
 
                 <li><hr class="dropdown-divider" /></li>
@@ -386,10 +386,6 @@ export default {
       this.$i18n.locale = lang;
       this.$store.commit("setLanguage", lang);
       this.collapseNav();
-    },
-    signOut() {
-      this.$store.commit("deleteUserData");
-      this.$router.push("/");
     },
     collapseNav() {
       let navCollapse = document.getElementById("navbarSupportedContent");
