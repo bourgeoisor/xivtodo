@@ -334,7 +334,7 @@
       "settingsUpdateUnknownError": "Impossible de mettre à jour les paramètres. Veuillez réessayer plus tard.",
       "characterAdded": "Le personnage <b>{name}</b> a été ajouté ! Vous pouvez maintenant accéder à votre <a href='/profile' class='alert-link'>profil</a> et à toutes les pages de complétion du personnage.",
       "characterAddedNotPublic": "Le personnage <b>{name}</b> a été ajouté, mais leurs hauts faits ne sont pas public. Vous pouvez modifier ce paramètre <a href='https://fr.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>ici</a>, puis mettre à jour les données du personnage.",
-      "characterAddNotFoundError": "Le profil de personnage que vous avez saisi n'existe pas.",
+      "characterAddNotFoundError": "The character profile you have entered does not exist, or its character profile is hidden in Lodestone.",
       "characterAddClientError": "Impossible d'ajouter le personnage. Vous avez peut-être déjà ajouté ce personnage, ou avez atteint la limite de personnages.",
       "characterAddServerError": "Impossible d'atteindre Lodestone. Il peut y avoir une maintenance en cours. Veuillez réessayer plus tard.",
       "characterRemoveConfirm": "Êtes-vous sûr de vouloir supprimer {name} ?",
