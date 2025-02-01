@@ -7,6 +7,7 @@
       :class="{ 'btn-outline-primary': !showHidden, 'btn-primary': showHidden }"
       @click="showHidden = !showHidden"
     >
+      <i class="fa-regular fa-pen-to-square"></i>
       {{ $t("shared.customize") }}
     </button>
   </PageHeader>

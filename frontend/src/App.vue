@@ -452,6 +452,21 @@ tr {
 }
 
 ///
+// Progress
+///
+
+.progress {
+  background-color: var(--bs-dark);
+}
+
+.progress-bar {
+  background-color: var(--bs-primary-color);
+  overflow: unset;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+///
 // Misc
 ///
 

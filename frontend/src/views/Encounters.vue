@@ -7,6 +7,7 @@
       :class="{ 'btn-outline-primary': !filters.rewards, 'btn-primary': filters.rewards }"
       @click="filters.rewards = !filters.rewards"
     >
+      <i class="fa-regular fa-treasure-chest"></i>
       {{ $t("encounters.viewRewards") }}
     </button>
   </PageHeader>
