@@ -13,10 +13,6 @@
     <div class="flex-fill text-center text-muted">
       <img src="@/assets/img/brand.png" alt="XIV ToDo branding" />
       <br />
-      <router-link to="/">
-        <small>{{ $t("page.home") }}</small>
-      </router-link>
-      ·
       <router-link to="/help/">
         <small>{{ $t("page.help") }}</small>
       </router-link>
@@ -31,10 +27,6 @@
       ·
       <a href="https://github.com/bourgeoisor/xivtodo" target="_blank" rel="noopener noreferrer">
         <small>{{ $t("page.github") }}</small>
-      </a>
-      ·
-      <a href="https://twitter.com/XIVToDo" target="_blank" rel="noopener noreferrer">
-        <small>{{ $t("page.twitter") }}</small>
       </a>
       ·
       <a href="https://bsky.app/profile/xivtodo.com" target="_blank" rel="noopener noreferrer">

@@ -112,8 +112,8 @@
           <a href="https://discord.gg/zfzhKhG3zj" target="_blank" rel="noopener noreferrer">
             {{ $t("page.discord") }}
           </a>
-          <a href="https://twitter.com/xivtodo" target="_blank" rel="noopener noreferrer">
-            {{ $t("page.twitter") }}
+          <a href="https://bsky.app/profile/xivtodo.com" target="_blank" rel="noopener noreferrer">
+            {{ $t("page.bluesky") }}
           </a>
         </i18n-t>
       </p>
