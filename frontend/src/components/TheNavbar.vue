@@ -99,7 +99,7 @@
             <!-- Sandbox -->
             <li v-if="this.$store.getters.isDevEnv" class="nav-item">
               <router-link to="/sandbox/" class="nav-link" aria-label="Sandbox">
-                <span class="fa-fw fas fa-wrench"></span>
+                <span class="fa-fw fas fa-vial"></span>
                 <span class="d-inline d-md-none ms-2">{{ $t("page.sandbox") }}</span>
               </router-link>
             </li>
@@ -116,7 +116,7 @@
                 aria-label="Countdowns"
                 @click="seenLatestCountdown()"
               >
-                <span class="fa-fw fas fa-clock position-relative">
+                <span class="fa-fw fas fa-hourglass-clock position-relative">
                   <span
                     v-if="
                       this.$store.getters.isSignedIn && this.$store.getters.latestCountdownSeen < news.latestCountdownID
@@ -141,7 +141,7 @@
                 aria-label="News"
                 @click="seenLatestNews()"
               >
-                <span class="fa-fw fas fa-bell position-relative">
+                <span class="fa-fw fas fa-newspaper position-relative">
                   <span
                     v-if="this.$store.getters.isSignedIn && this.$store.getters.latestNewsSeen < news.latestID"
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
@@ -164,7 +164,7 @@
                 aria-label="Language"
                 @click="this.$store.commit('setFlag', { key: 'languageClicked', value: true })"
               >
-                <span class="fa-fw fas fa-globe-americas position-relative">
+                <span class="fa-fw fas fa-language position-relative">
                   <span
                     v-if="!this.$store.getters.flag('languageClicked')"
                     class="position-absolute top-0 start-100 translate-middle p-1 bg-success border border-light rounded-circle"
