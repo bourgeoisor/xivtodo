@@ -59,9 +59,10 @@ const getUserData = () =>
     fetch(apiEndpoint + "/users", {
       headers: {
         Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
+        "Cache-Control": "no-store",
       },
       method: "GET",
-      cache: "no-cache",
+      cache: "no-store",
     })
       .then((response) => {
         if (response.ok) {

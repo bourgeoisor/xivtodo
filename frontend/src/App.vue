@@ -533,7 +533,7 @@ export default {
         // this.checkUpstreamVersion();
         this.updateCharactersData();
       }
-    }, 1000 * 60); // 1 minute
+    }, 1000 * 120); // 2 minutes
   },
   unmounted() {
     clearInterval(this.intervalFunction);
