@@ -56,10 +56,11 @@ const authenticate = (code) =>
 
 const getUserData = () =>
   new Promise((resolve, reject) => {
-    fetch(apiEndpoint + "/users", {
+    const timestamp = Date.now();
+    fetch(`${apiEndpoint}/users?t=${timestamp}`, {
       headers: {
         Authorization: store.getters.discordUser.id + ":" + store.getters.settings.authorizationCode,
-        "Cache-Control": "no-store",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
       },
       method: "GET",
       cache: "no-store",
