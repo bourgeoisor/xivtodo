@@ -11,8 +11,6 @@
       {{ $t("shared.customize") }}
     </button>
   </PageHeader>
-  
-  <AlertMsg v-if="this.$store.getters.hasCharacter" type="normal" msg="I've been made aware of an uncommon issue where checklists aren't saved properly.<br>I'm looking into it. Thank you for your patience. If you don't have that issue, carry on!" />
 
   <h2>{{ $t("checklist.thingsToDo") }}</h2>
   <div class="row">
@@ -148,7 +146,6 @@
 <script>
 import PageHeader from "@/components/PageHeader.vue";
 import ChecklistItem from "@/components/ChecklistItem.vue";
-import AlertMsg from "@/components/AlertMsg.vue";
 import { updateChecklist } from "@/utilities/backend.js";
 import { swapChecklistItems } from "@/utilities/checklist.js";
 
@@ -169,7 +166,6 @@ export default {
   components: {
     PageHeader,
     ChecklistItem,
-    AlertMsg,
   },
   mounted() {
     this.$nextTick(function () {
