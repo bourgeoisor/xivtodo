@@ -14,21 +14,20 @@
       "end": 1739804400
     },
     {
-      "title": "Letter from the Producer LIVE LXXXV",
-      "type": "keynote",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/329ad452f96b16dec78666be3114da17c3661196",
-      "start": 1738926000,
-      "end": 1738936800
-    },
-    {
       "title": "Patch 7.16",
       "type": "patch",
       "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/5cf11b096edd33c679bd29894d7e1972ed22c350",
       "start": 1737457200
     }
   ],
-  "latestID": 240627,
+  "latestID": 250214,
   "news": [
+    {
+      "ID": 250214,
+      "title": "Update on checklist issues",
+      "published": "February 14, 2025",
+      "content": "A few people have reported issues with the checklist not updating properly. I've made some changes to the backend to hopefully fix this issue. If you still encounter issues, please let me know! Thank you for your patience."
+    },
     {
       "ID": 240627,
       "title": "Release of Dawntrail",
