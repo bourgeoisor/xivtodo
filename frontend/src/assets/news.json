@@ -4,7 +4,7 @@
     "start": 1734415200,
     "end": 1734429600
   },
-  "latestCountdownID": 47,
+  "latestCountdownID": 48,
   "countdowns": [
     {
       "title": "Moogle Treasure Trove",
@@ -12,6 +12,13 @@
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202502/u3uuk4nsbw",
       "start": 1740556800,
       "end": 1742292000
+    },
+    {
+      "title": "Little Ladies' Day",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/Little_Ladies_Day/7eeibemc8p",
+      "start": 1740988800,
+      "end": 1742223600
     },
     {
       "title": "Patch 7.2",
