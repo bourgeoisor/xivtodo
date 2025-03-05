@@ -333,7 +333,7 @@
       "settingsUpdateUnknownError": "Die Einstellungen konnten nicht aktualisiert werden. Bitte versuche es später erneut.",
       "characterAdded": "Charakter <b>{name}</b> hinzugefügt! Du hast nun Zugriff auf dein <a href='/profile' class='alert-link'>Profil</a> und alle Charakter-Checklisten.",
       "characterAddedNotPublic": "Charakter <b>{name}</b> hinzugefügt, aber deine Errungenschaften sind nicht öffentlich einsehbar. Diese Einstellung kann <a href='https://de.finalfantasyxiv.com/lodestone/my/setting/account/' class='alert-link' target='_blank' rel='noopener noreferrer'>im Lodestone</a> geändert werden. Anschließend muss dein Charakter erneut aktualisiert werden.",
-      "characterAddNotFoundError": "The character profile you have entered does not exist, or its character profile is hidden in Lodestone.",
+      "characterAddNotFoundError": "Das eingegebene Charakterprofil existiert nicht oder ist nicht im Lodestone sichtbar.",
       "characterAddClientError": "Der Charakter konnte nicht hinzugefügt werden. Möglicherweise ist dieser Charakter bereits hinzugefügt oder du hast das Limit erreicht.",
       "characterAddServerError": "Der Lodestone konnte nicht erreicht werden. Möglicherweise ist dieser derzeit in Wartung. Bitte versuche es später erneut.",
       "characterRemoveConfirm": "Bist du sicher, dass du {name} entfernen möchtest?",
