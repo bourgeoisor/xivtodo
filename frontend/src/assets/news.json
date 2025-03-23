@@ -1,7 +1,7 @@
 {
   "maintenance": {
-    "updated": true,
-    "start": 1734415200,
+    "updated": false,
+    "start": 1742810400,
     "end": 1734429600
   },
   "latestCountdownID": 48,
@@ -11,27 +11,23 @@
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202502/u3uuk4nsbw",
       "start": 1740556800,
-      "end": 1742896800
-    },
-    {
-      "title": "Little Ladies' Day",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/Little_Ladies_Day/7eeibemc8p",
-      "start": 1740988800,
-      "end": 1742223600
-    },
-    {
-      "title": "Letter from the Producer LIVE",
-      "type": "keynote",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/5112ebd2c08dbf20e034cd31401761ba6883b34d",
-      "start": 1741946400,
-      "end": 1741953600
+      "end": 1742810400
     },
     {
       "title": "Patch 7.2",
       "type": "patch",
-      "url": "https://press.na.square-enix.com/FINAL-FANTASY-XIV-ONLINE-PATCH-72-SEEKERS-OF-ETERNITY-REVEALED-DURING-",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/5c2fa27a4a0933e0b7522219ae024427f2fd886d",
       "start": 1742896800
+    },
+    {
+      "title": "Patch 7.21",
+      "type": "patch",
+      "start": 1745316000
+    },
+    {
+      "title": "Patch 7.25",
+      "type": "patch",
+      "start": 1748340000
     }
   ],
   "latestID": 250214,
