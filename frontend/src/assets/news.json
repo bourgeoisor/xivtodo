@@ -1,18 +1,11 @@
 {
   "maintenance": {
-    "updated": false,
+    "updated": true,
     "start": 1742810400,
     "end": 1742896800
   },
   "latestCountdownID": 48,
   "countdowns": [
-    {
-      "title": "Moogle Treasure Trove",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202502/u3uuk4nsbw",
-      "start": 1740556800,
-      "end": 1742810400
-    },
     {
       "title": "Patch 7.2",
       "type": "patch",
