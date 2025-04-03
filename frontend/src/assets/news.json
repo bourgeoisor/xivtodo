@@ -7,6 +7,13 @@
   "latestCountdownID": 48,
   "countdowns": [
     {
+      "title": "Hatching-tide",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/Hatching_tide/ta6u6e9be7",
+      "start": 1744185600,
+      "end": 1745506800
+    },
+    {
       "title": "Patch 7.2",
       "type": "patch",
       "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/5c2fa27a4a0933e0b7522219ae024427f2fd886d",
