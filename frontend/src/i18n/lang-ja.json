@@ -89,7 +89,7 @@
         "description": "Main story content is blurred by default until they are cleared to avoid accidental spoilers."
       },
       "customizable": {
-        "title": "Customizable",
+        "title": "カスタマイズ可能",
         "description": "Personalization is available like hiding select objectives from the checklists, with more to come soon."
       }
     },
@@ -236,9 +236,9 @@
     "crafterJobQuests": "クラフタークエスト",
     "roleQuestsShB": "ロールクエスト(漆黒)",
     "roleQuestsEW": "ロールクエスト(暁月)",
-    "roleQuestsDT": "Role Quests (DT)",
-    "crystallineMeanQuests": "Crystalline Mean Quests",
-    "studiumDeliveryQuests": "Studium Delivery Quests",
+    "roleQuestsDT": "ロールクエスト(黄金)",
+    "crystallineMeanQuests": "ミーン工芸館取引クエスト",
+    "studiumDeliveryQuests": "シャーレアン魔法大学取引クエスト",
     "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Delivery Quests"
   },
   "challenges": {
@@ -256,8 +256,8 @@
     "sharedFateShB": "Shared Fate (ShB)",
     "sharedFateEW": "Shared Fate (EW)",
     "sharedFateDT": "Shared Fate (DT)",
-    "bozjanSouthernFront": "Bozjan Southern Front",
-    "zadnor": "Zadnor",
+    "bozjanSouthernFront": "南方ボズヤ戦線",
+    "zadnor": "ザトゥノル高原",
     "variantDungeons": "Variant Dungeons",
     "treasureHuntClears": "Treasure Hunt Clears",
     "trusts": "Trusts",
