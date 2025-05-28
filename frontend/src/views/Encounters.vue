@@ -109,6 +109,7 @@
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('encounters.raids')" :duties="db.dtRaids" type="raids" :showTotal="true" />
       <DutyList :title="$t('encounters.heRaids')" :duties="db.dtRaidsSavUlt" type="high" :showTotal="true" />
+      <DutyList :title="$t('encounters.exploratory')" :duties="db.dtExploratory" type="expl" :showTotal="true" />
     </div>
   </div>
 </template>

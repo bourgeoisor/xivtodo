@@ -48,6 +48,7 @@
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('challenges.bozjanSouthernFront')" :duties="db.bozjanChallenges" type="field" />
       <DutyList :title="$t('challenges.zadnor')" :duties="db.zadnorChallenges" type="field" />
+      <DutyList :title="$t('challenges.occultCrescent')" :duties="db.occultChallenges" type="field" />
       <DutyList :title="$t('challenges.variantDungeons')" :duties="db.variantChallenges" type="vc" />
     </div>
     <div class="col-12 col-lg-4">
