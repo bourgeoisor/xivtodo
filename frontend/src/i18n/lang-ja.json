@@ -60,7 +60,7 @@
     "buildDate": "{buildDate}"
   },
   "home": {
-    "intro": "XIV ToDo provides useful dashboards, tailored checklists, and tools for Final Fantasy XIV. Whether you are a new player to the game or more experienced, there is something for everyone! In its current form, it offers customizable daily and weekly checklists as well as automated completion trackers of encounters and questlines, with much more to come.",
+    "intro": "XIV ToDoは、ファイナルファンタジーXIVに役立つダッシュボード、カスタマイズされたチェックリスト、およびツールを提供します。ゲーム初心者の方からベテランの方まで、どなたでもきっと満足していただけるはずです！現在のバージョンでは、カスタマイズ可能なデイリーおよびウィークリーチェックリストに加え、コンテンツやクエストの自動完了トラッカーを提供しています。今後、さらに多くの機能が追加される予定です。",
     "addCharacter": "キャラクターを追加する",
     "learnMore": "もっと詳しく",
     "viewProfile": "あなたのプロフィールを見る",
@@ -69,7 +69,7 @@
     "features": "Features",
     "feature": {
       "encountersQuestlines": {
-        "title": "Encounters & questlines",
+        "title": "コンテンツ＆クエスト",
         "description": "Complete listing of all encounters, main and side story questlines available in the game."
       },
       "contentCompletion": {
@@ -89,7 +89,7 @@
         "description": "Main story content is blurred by default until they are cleared to avoid accidental spoilers."
       },
       "customizable": {
-        "title": "Customizable",
+        "title": "カスタマイズ可能",
         "description": "Personalization is available like hiding select objectives from the checklists, with more to come soon."
       }
     },
@@ -227,7 +227,7 @@
     "sideStoryQuests": "サイドストーリークエスト",
     "encounterQuests": "Encounter Quests",
     "relicQuests": "Relic Quests",
-    "tribalQuests": "Allied Society Quests",
+    "tribalQuests": "友好部族クエスト",
     "alliedTribalQuests": "Intersocietal Quests",
     "customDeliveryQuests": "お得意様取引",
     "jobQuests": "ジョブクエスト",
@@ -236,10 +236,10 @@
     "crafterJobQuests": "クラフタークエスト",
     "roleQuestsShB": "ロールクエスト(漆黒)",
     "roleQuestsEW": "ロールクエスト(暁月)",
-    "roleQuestsDT": "Role Quests (DT)",
-    "crystallineMeanQuests": "Crystalline Mean Quests",
-    "studiumDeliveryQuests": "Studium Delivery Quests",
-    "wachumeqimeqiDeliveryQuests": "Wachumeqimeqi Delivery Quests"
+    "roleQuestsDT": "ロールクエスト(黄金)",
+    "crystallineMeanQuests": "ミーン工芸館取引",
+    "studiumDeliveryQuests": "シャーレアン魔法大学取引",
+    "wachumeqimeqiDeliveryQuests": "ワチュメキメキ万貨街取引"
   },
   "challenges": {
     "deepDungeons": "ディープダンジョン",
@@ -249,23 +249,24 @@
     "hohSolo": "アメノミハシラ(ソロ)",
     "eo": "オルト・エウレカ",
     "eoSolo": "オルト・エウレカ(ソロ)",
-    "exploration": "Exploration",
+    "exploration": "探検",
     "exploratoryMissions": "Exploratory Missions",
     "sightseeingLogs": "探検手帳",
     "miscellaneous": "Miscellaneous",
     "sharedFateShB": "Shared Fate (ShB)",
     "sharedFateEW": "Shared Fate (EW)",
     "sharedFateDT": "Shared Fate (DT)",
-    "bozjanSouthernFront": "Bozjan Southern Front",
-    "zadnor": "Zadnor",
+    "bozjanSouthernFront": "南方ボズヤ戦線",
+    "zadnor": "ザトゥノル高原",
+    "occultCrescent": "Occult Crescent",
     "variantDungeons": "Variant Dungeons",
     "treasureHuntClears": "Treasure Hunt Clears",
     "trusts": "Trusts",
     "islandSanctuary": "無人島開拓",
     "achievementFates": "アチーブメントFATE",
     "mentorStatus": "Mentor Status",
-    "mentorBattle": "Battle Mentor",
-    "mentorTrade": "Trade Mentor",
+    "mentorBattle": "バトルメンター",
+    "mentorTrade": "制作採集メンター",
     "blueMage": "青魔道士",
     "blueARR": "BLU Encounters (ARR)",
     "blueHW": "BLU Encounters (HW)",
@@ -286,7 +287,7 @@
     "addCustomWeekly": "Add custom weekly",
     "addCustomDaily": "Add custom daily",
     "addCustomItem": "Add custom item",
-    "untilReset": "{time} until reset",
+    "untilReset": "リセットまで {time}",
     "hiddenTasks": "1つの非表示タスク | {count} の非表示タスク"
   },
   "settings": {
@@ -306,7 +307,7 @@
       "label": "ネタバレあり",
       "option0": "未クリアのストーリー関連コンテンツをぼかす",
       "option1": "全てのストーリー関連コンテンツをぼかす",
-      "option2": "Show all content",
+      "option2": "すべてのコンテンツを表示",
       "hint": "Preference in hiding potential spoilers."
     },
     "patchNumbers": {
@@ -317,12 +318,12 @@
       "hint": "Preference in showing patch numbers for content."
     },
     "theme": {
-      "label": "Theme",
-      "option0": "Night",
-      "option1": "Day",
+      "label": "テーマ",
+      "option0": "ダークモード",
+      "option1": "ライトモード",
       "hint": "Preference in the appearance of the site."
     },
-    "updateSettings": "Update settings",
+    "updateSettings": "設定を更新する",
     "characterNotFound": "Character not in Lodestone",
     "characterNotFoundAlt": "This character does not exist in Lodestone. If you recently transfered world, try updating again later",
     "achievementsNotPublic": "Achievements are not public",
@@ -364,7 +365,7 @@
     },
     "time": {
       "daysShort": "{days}日",
-      "hoursShort": "{hours}時",
+      "hoursShort": "{hours}時間",
       "minutesShort": "{minutes}分",
       "secondsShort": "{seconds}秒",
       "monthsAgo": "{months} ヶ月前",
