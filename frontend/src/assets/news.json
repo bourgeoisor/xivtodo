@@ -7,17 +7,16 @@
   "latestCountdownID": 48,
   "countdowns": [
     {
-      "title": "The Make It Rain Campaign",
+      "title": "Moogle Treasure Trove",
       "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/the_make_it_rain_campaign/pP1HUSgIHI",
-      "start": 1747641600,
-      "end": 1749654000
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202507/5jc8r6hlb2",
+      "start": 1751961600,
+      "end": 1754388000
     },
     {
-      "title": "Patch 7.25",
+      "title": "Patch 7.3",
       "type": "patch",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/3c12f110983c5f4288d43aa5ac2ed3c022a75b48",
-      "start": 1748340000
+      "start": 1754388000
     }
   ],
   "latestID": 250214,
