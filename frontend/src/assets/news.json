@@ -7,6 +7,13 @@
   "latestCountdownID": 48,
   "countdowns": [
     {
+      "title": "Letter from the Producer LIVE",
+      "type": "keynote",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/72d735e41d9015ba6515e4d6477ee24700f34c79",
+      "start": 1753351200,
+      "end": 1753358400
+    },
+    {
       "title": "Moogle Treasure Trove",
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/mogmog-collection/202507/5jc8r6hlb2",
