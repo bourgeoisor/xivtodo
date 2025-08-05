@@ -50,7 +50,7 @@
     "profileNotPublic": "The profile for this character is not set to public in Lodestone.",
     "notSignedIn": "Aucun personnage trouvé. <a href='{url}' class='alert-link'>Connectez-vous avec Discord</a> pour ajouter et suivre vos personnages.",
     "noCharacters": "Aucun caractère trouvé. Vous pouvez ajouter vos personnages dans les <a href='/settings' class='alert-link'>Paramètres</a>.",
-    "lodestoneMaintenance": "Lodestone est en cours de maintenance. Cliquez sur le bouton <span class='fa-fw fas fa-clock position-relative'></span> dans le menu pour voir le temps restant.",
+    "lodestoneMaintenance": "Lodestone est en cours de maintenance. Cliquez sur le bouton <span class='fa-fw fas fa-hourglass-clock position-relative'></span> dans le menu pour voir le temps restant.",
     "lodestoneMaintenanceNotUpdated": "La maintenance de Lodestone est terminée, mais XIV ToDo n'est pas encore à jour. Merci de bien vouloir patienter !"
   },
   "footer": {
