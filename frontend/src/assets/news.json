@@ -7,13 +7,6 @@
   "latestCountdownID": 48,
   "countdowns": [
     {
-      "title": "Moonfire Faire",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/Moonfire_Faire/mldbn7bcai",
-      "start": 1755072000,
-      "end": 1756220400
-    },
-    {
       "title": "The Rising",
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/The_Rising/6s3bvkhk74",
@@ -21,9 +14,9 @@
       "end": 1757602800
     },
     {
-      "title": "Patch 7.3",
+      "title": "Patch 7.31",
       "type": "patch",
-      "start": 1754388000
+      "start": 1756807200
     }
   ],
   "latestID": 250214,
