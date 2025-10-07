@@ -25,15 +25,17 @@
 
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('challenges.potd')" :duties="db.potd" type="deepdungeons" />
-      <DutyList :title="$t('challenges.potdSolo')" :duties="db.potdSolo" type="deepdungeons" />
-    </div>
-    <div class="col-12 col-lg-4">
       <DutyList :title="$t('challenges.hoh')" :duties="db.hoh" type="deepdungeons" />
-      <DutyList :title="$t('challenges.hohSolo')" :duties="db.hohSolo" type="deepdungeons" />
     </div>
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('challenges.eo')" :duties="db.eo" type="deepdungeons" />
+      <DutyList :title="$t('challenges.pt')" :duties="db.pt" type="deepdungeons" />
+    </div>
+    <div class="col-12 col-lg-4">
+      <DutyList :title="$t('challenges.potdSolo')" :duties="db.potdSolo" type="deepdungeons" />
+      <DutyList :title="$t('challenges.hohSolo')" :duties="db.hohSolo" type="deepdungeons" />
       <DutyList :title="$t('challenges.eoSolo')" :duties="db.eoSolo" type="deepdungeons" />
+      <DutyList :title="$t('challenges.ptSolo')" :duties="db.ptSolo" type="deepdungeons" />
     </div>
   </div>
   <hr />
