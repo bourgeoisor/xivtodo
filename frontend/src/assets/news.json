@@ -7,14 +7,14 @@
   "latestCountdownID": 48,
   "countdowns": [
     {
-      "title": "The Rising",
+      "title": "All Saints' Wake",
       "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/The_Rising/6s3bvkhk74",
-      "start": 1756278000,
-      "end": 1757602800
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/All_Saints_Wake/385oefpgjf",
+      "start": 1760688000,
+      "end": 1762268400
     },
     {
-      "title": "Patch 7.31",
+      "title": "Patch 7.35",
       "type": "patch",
       "start": 1756807200
     }
