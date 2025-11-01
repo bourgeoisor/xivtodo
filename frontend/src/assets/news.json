@@ -7,13 +7,6 @@
   "latestCountdownID": 48,
   "countdowns": [
     {
-      "title": "Letter from the Producer LIVE",
-      "type": "keynote",
-      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/64232f2eb55f1c838e37faf92544ad98cfeab152",
-      "start": 1761908400,
-      "end": 1761915600
-    },
-    {
       "title": "All Saints' Wake",
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/All_Saints_Wake/385oefpgjf",
@@ -24,6 +17,16 @@
       "title": "Patch 7.35",
       "type": "patch",
       "start": 1756807200
+    },
+    {
+      "title": "Patch 7.38",
+      "type": "patch",
+      "start": 1762858800
+    },
+    {
+      "title": "Patch 7.4",
+      "type": "patch",
+      "start": 1765882800
     }
   ],
   "latestID": 250214,
