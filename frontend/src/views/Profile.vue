@@ -83,24 +83,26 @@
         {{ this.playingSince }}
       </div>
 
-      <!-- Info: Exploratory missions -->
+      <!-- TODO: Fix and add Occult Crescent info
+      <!- - Info: Exploratory missions - ->
       <div class="info-block">
         <b>{{ $t("profile.exploratoryMissions") }}</b>
         <br />
 
-        <!-- Eureka -->
+        <!- - Eureka - ->
         {{ $t("profile.elementalLevel") }}:
         <span :class="{ 'fw-bolder': this.isMaxLevelEureka }">
           {{ this.levelEureka }}
         </span>
         <br />
 
-        <!-- Bozja -->
+        <!- - Bozja - ->
         {{ $t("profile.resistanceRank") }}:
         <span :class="{ 'fw-bolder': this.isMaxLevelBozja }">
           {{ this.levelBozja }}
         </span>
       </div>
+      -->
     </div>
 
     <!-- Job levels -->
