@@ -334,6 +334,8 @@
       <DutyProgress :title="$t('challenges.hohSolo')" :duties="db.hohSolo" type="deepdungeons" />
       <DutyProgress :title="$t('challenges.eo')" :duties="db.eo" type="deepdungeons" />
       <DutyProgress :title="$t('challenges.eoSolo')" :duties="db.eoSolo" type="deepdungeons" />
+      <DutyProgress :title="$t('challenges.pt')" :duties="db.eo" type="deepdungeons" />
+      <DutyProgress :title="$t('challenges.ptSolo')" :duties="db.eoSolo" type="deepdungeons" />
       <br />
       <h2>{{ $t("challenges.blueMage") }}</h2>
       <DutyProgress :title="$t('challenges.blueARR')" :duties="db.arrBlu" type="blu" />
