@@ -1,5 +1,5 @@
 /*!
- * Font Awesome Pro 7.0.0 by @fontawesome - https://fontawesome.com
+ * Font Awesome Pro 7.1.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Commercial License)
  * Copyright 2025 Fonticons, Inc.
  */
@@ -35,6 +35,9 @@
 .fajfr,
 .fajdr,
 .facr,
+.fausb,
+.faudsb,
+.faufsb,
 .fa-solid,
 .fa-semibold,
 .fa-regular,
@@ -55,6 +58,9 @@
 .fa-slab,
 .fa-slab-press,
 .fa-thumbprint,
+.fa-utility,
+.fa-utility-duo,
+.fa-utility-fill,
 .fa-whiteboard,
 .fa {
   --_fa-family: var(--fa-family, var(--fa-style-family, "Font Awesome 7 Pro"));
@@ -101,6 +107,9 @@
 .fajfr,
 .fajdr,
 .facr,
+.fausb,
+.faudsb,
+.faufsb,
 .fa-solid,
 .fa-semibold,
 .fa-regular,
@@ -121,12 +130,74 @@
 .fa-slab,
 .fa-slab-press,
 .fa-thumbprint,
+.fa-utility,
+.fa-utility-duo,
+.fa-utility-fill,
 .fa-whiteboard,
 .fa)::before {
-  content: var(--fa);
   content: var(--fa)/"";
 }
 
+@supports not (content: ""/"") {
+  :is(.fas,
+  .fass,
+  .far,
+  .fasr,
+  .fal,
+  .fasl,
+  .fat,
+  .fast,
+  .fad,
+  .fadr,
+  .fadl,
+  .fadt,
+  .fasds,
+  .fasdr,
+  .fasdl,
+  .fasdt,
+  .fab,
+  .faslr,
+  .faslpr,
+  .fawsb,
+  .fatl,
+  .fans,
+  .fands,
+  .faes,
+  .fajr,
+  .fajfr,
+  .fajdr,
+  .facr,
+  .fausb,
+  .faudsb,
+  .faufsb,
+  .fa-solid,
+  .fa-semibold,
+  .fa-regular,
+  .fa-light,
+  .fa-thin,
+  .fa-brands,
+  .fa-classic,
+  .fa-duotone,
+  .fa-sharp,
+  .fa-sharp-duotone,
+  .fa-chisel,
+  .fa-etch,
+  .fa-jelly,
+  .fa-jelly-duo,
+  .fa-jelly-fill,
+  .fa-notdog,
+  .fa-notdog-duo,
+  .fa-slab,
+  .fa-slab-press,
+  .fa-thumbprint,
+  .fa-utility,
+  .fa-utility-duo,
+  .fa-utility-fill,
+  .fa-whiteboard,
+  .fa)::before {
+    content: var(--fa);
+  }
+}
 :is(.fad,
 .fa-duotone,
 .fadr,
@@ -142,12 +213,35 @@
 .fands,
 .fa-notdog-duo,
 .fajdr,
-.fa-jelly-duo)::after {
+.fa-jelly-duo,
+.faudsb,
+.fa-utility-duo)::after {
   content: var(--fa);
-  content: var(--fa)/"";
   font-feature-settings: "ss01";
 }
 
+@supports not (content: ""/"") {
+  :is(.fad,
+  .fa-duotone,
+  .fadr,
+  .fadl,
+  .fadt,
+  .fasds,
+  .fa-sharp-duotone,
+  .fasdr,
+  .fasdl,
+  .fasdt,
+  .fatl,
+  .fa-thumbprint,
+  .fands,
+  .fa-notdog-duo,
+  .fajdr,
+  .fa-jelly-duo,
+  .faudsb,
+  .fa-utility-duo)::after {
+    content: var(--fa);
+  }
+}
 .fa-1x {
   font-size: 1em;
 }
@@ -499,10 +593,11 @@
 
 .fa-stack-1x,
 .fa-stack-2x {
-  left: 0;
+  --fa-width: 100%;
+  inset: 0;
   position: absolute;
   text-align: center;
-  width: 100%;
+  width: var(--fa-width);
   z-index: var(--fa-stack-z-index, auto);
 }
 
@@ -8389,6 +8484,10 @@
   --fa: "\e773";
 }
 
+.fa-rectangle-hdr {
+  --fa: "\e773";
+}
+
 .fa-rectangle-video-on-demand {
   --fa: "\e774";
 }
@@ -9015,6 +9114,98 @@
 
 .fa-heptagon {
   --fa: "\e820";
+}
+
+.fa-mailbox-open-empty {
+  --fa: "\e821";
+}
+
+.fa-mailbox-open-letter {
+  --fa: "\e823";
+}
+
+.fa-lychee {
+  --fa: "\e824";
+}
+
+.fa-tank-recovery {
+  --fa: "\e825";
+}
+
+.fa-transducer {
+  --fa: "\e826";
+}
+
+.fa-box-arrow-up {
+  --fa: "\e827";
+}
+
+.fa-box-magnifying-glass {
+  --fa: "\e828";
+}
+
+.fa-envelope-ribbon {
+  --fa: "\e829";
+}
+
+.fa-envelope-certificate {
+  --fa: "\e829";
+}
+
+.fa-water-temperature {
+  --fa: "\e82a";
+}
+
+.fa-water-temp {
+  --fa: "\e82a";
+}
+
+.fa-aeropress {
+  --fa: "\e82b";
+}
+
+.fa-caret-large-down {
+  --fa: "\e82c";
+}
+
+.fa-caret-large-left {
+  --fa: "\e82d";
+}
+
+.fa-caret-large-right {
+  --fa: "\e82e";
+}
+
+.fa-caret-large-up {
+  --fa: "\e82f";
+}
+
+.fa-chemex {
+  --fa: "\e830";
+}
+
+.fa-hand-shaka {
+  --fa: "\e831";
+}
+
+.fa-kettlebell {
+  --fa: "\e832";
+}
+
+.fa-foot-wing {
+  --fa: "\e834";
+}
+
+.fa-pump-impeller {
+  --fa: "\e835";
+}
+
+.fa-arrow-rotate-left-10 {
+  --fa: "\e836";
+}
+
+.fa-arrow-rotate-right-10 {
+  --fa: "\e837";
 }
 
 .fa-martini-glass-empty {

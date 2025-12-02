@@ -4,26 +4,26 @@
  * Copyright 2025 Fonticons, Inc.
  */
 :root, :host {
-  --fa-family-whiteboard: "Font Awesome 7 Whiteboard";
-  --fa-font-whiteboard-semibold: normal 600 1em/1 var(--fa-family-whiteboard);
+  --fa-family-utility: "Font Awesome 7 Utility";
+  --fa-font-utility-semibold: normal 600 1em/1 var(--fa-family-utility);
   /* deprecated: this older custom property will be removed next major release */
-  --fa-style-family-whiteboard: var(--fa-family-whiteboard);
+  --fa-style-family-utility: var(--fa-family-utility);
 }
 
 @font-face {
-  font-family: "Font Awesome 7 Whiteboard";
+  font-family: "Font Awesome 7 Utility";
   font-style: normal;
   font-weight: 600;
   font-display: block;
-  src: url("../webfonts/fa-whiteboard-semibold-600.woff2");
+  src: url("../webfonts/fa-utility-semibold-600.woff2");
 }
-.fawsb {
-  --fa-family: var(--fa-family-whiteboard);
+.fausb {
+  --fa-family: var(--fa-family-utility);
   --fa-style: 600;
 }
 
-.fa-whiteboard {
-  --fa-family: var(--fa-family-whiteboard);
+.fa-utility {
+  --fa-family: var(--fa-family-utility);
 }
 
 .fa-semibold {

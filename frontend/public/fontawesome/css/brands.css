@@ -1,5 +1,5 @@
 /*!
- * Font Awesome Pro 7.0.0 by @fontawesome - https://fontawesome.com
+ * Font Awesome Pro 7.1.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Commercial License)
  * Copyright 2025 Fonticons, Inc.
  */
@@ -400,6 +400,14 @@
 
 .fa-duolingo {
   --fa: "\e812";
+}
+
+.fa-supportnow {
+  --fa: "\e833";
+}
+
+.fa-tor-browser {
+  --fa: "\e838";
 }
 
 .fa-square-twitter {
