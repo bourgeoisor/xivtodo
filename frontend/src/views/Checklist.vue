@@ -94,7 +94,7 @@
       <br />
       <span v-if="this.$store.getters.checklistLenHiddens > 0" class="d-none d-md-block">
         <span class="text-muted float-end">
-          {{ $tc("checklist.hiddenTasks", this.$store.getters.checklistLenHiddens) }}<br /><br />
+          {{ $t("checklist.hiddenTasks", this.$store.getters.checklistLenHiddens) }}<br /><br />
         </span>
       </span>
     </div>
