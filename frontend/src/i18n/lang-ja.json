@@ -66,7 +66,7 @@
     "viewProfile": "あなたのプロフィールを見る",
     "viewGitHub": "GitHubでプロジェクトを表示",
     "signInDiscord": "Discordでログイン",
-    "features": "Features",
+    "features": "機能",
     "feature": {
       "encountersQuestlines": {
         "title": "コンテンツ＆クエスト",
@@ -310,20 +310,20 @@
       "option0": "未クリアのストーリー関連コンテンツをぼかす",
       "option1": "全てのストーリー関連コンテンツをぼかす",
       "option2": "すべてのコンテンツを表示",
-      "hint": "Preference in hiding potential spoilers."
+      "hint": "ネタバレになる可能性のある内容を非表示にする設定です。"
     },
     "patchNumbers": {
-      "label": "Patch numbers",
+      "label": "パッチ番号",
       "option0": "Show patch numbers for blurred out content",
       "option1": "Show patch numbers for non-completed content",
       "option2": "Always show patch numbers",
-      "hint": "Preference in showing patch numbers for content."
+      "hint": "コンテンツのパッチ番号の表示に関する設定です。"
     },
     "theme": {
       "label": "テーマ",
       "option0": "ダークモード",
       "option1": "ライトモード",
-      "hint": "Preference in the appearance of the site."
+      "hint": "サイトの外観に関する設定です。"
     },
     "updateSettings": "設定を更新する",
     "characterNotFound": "Character not in Lodestone",
