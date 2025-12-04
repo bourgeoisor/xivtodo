@@ -46,7 +46,7 @@
     "signingUnauthorizedError": "XIV ToDoはDiscordで認証できませんでした。有効なDiscord認証情報を使用していることを確認してください。",
     "signingUnknownError": "XIV ToDo was unable to reach Discord. Try again later, or look on <a href='https://twitter.com/XIVToDo' class='alert-link' target='_blank' rel='noopener noreferrer'>Twitter</a> or <a href='https://discord.gg/zfzhKhG3zj' class='alert-link' target='_blank' rel='noopener noreferrer'>Discord</a> for a status update.",
     "updatingCharacter": "キャラクターデータを更新しています。数分かかる場合があります...",
-    "achievementsNotPublic": "このキャラクターの実績はLodestoneで公開されていません。",
+    "achievementsNotPublic": "このキャラクターのアチーブメントはLodestoneで公開されていません。",
     "profileNotPublic": "The profile for this character is not set to public in Lodestone.",
     "notSignedIn": "No characters found. <a href='{url}' class='alert-link'>Sign in with Discord</a> to add and track your characters.",
     "noCharacters": "No characters found. You can add your characters from the <a href='/settings' class='alert-link'>Settings</a>.",
@@ -101,31 +101,31 @@
   },
   "help": {
     "discordSignIn": {
-      "header": "Discord sign-in",
+      "header": "Discord サインイン",
       "text": "To use XIV ToDo, you must sign in with a Discord account. This is an official authentication integration provided by Discord and is very secure, since no confidential information is ever stored."
     },
     "addingCharacters": {
-      "header": "Adding characters",
+      "header": "キャラクターの追加",
       "text1": "To add one of your characters, you first find its Lodestone URL. You can find it by logging into {0} and searching for your character profile. Your Lodestone URL will look similar to this example:",
       "text2": "Once you have found your profile URL, you can input it in the {0} page and then click the {1} button. You can add as many as 8 characters, and switch between them at any time using the dropdown at the end of the main navigation bar."
     },
     "freeTrialCharacters": {
-      "header": "Free trial characters",
+      "header": "フリートライアルキャラクター",
       "text": "Free trial characters are supported in XIV ToDo and can be added, but since the Lodestone privacy settings are unavailable on the free trial, the automatic completion tracker will not work for those characters."
     },
     "enablingPublicAchievements": {
-      "header": "Enabling public achievements",
+      "header": "アチーブメント公開の有効化",
       "text1": "If you add a character and their encounter and questline completions aren't getting registered, it's likely that the achievements are not set to visible publicly for that character. You can verify this by logging into {0}, and then accessing the {1} section. From there, make sure {2} is set to {3} and save the changes.",
       "text2": "Once your achievements are public, you may need to re-add your character or refresh it from the {0} page on XIV ToDo for it to take effect.",
       "lodestoneAccountManagement": "キャラクター管理",
       "lodestonePublic": "公開"
     },
     "customizingCharacterChecklists": {
-      "header": "Customizing character checklists",
+      "header": "キャラクターチェックリストのカスタマイズ",
       "text": "Daily and weekly checklists can be customized by clicking on the {0} button near the top right of the {1} page. From there, you can add custom entries as well as hide entries that you don't want to see. To stop customizing, simply click the {2} button again."
     },
     "encounterQuestlineCompletion": {
-      "header": "Encounter and questline completion",
+      "header": "コンテンツとクエストの完了",
       "text1": "Encounter and questlines are automatically marked as cleared once the relevant achievements have been obtained. Since encounters or questlines don't always map directly to in-game achievement, automated completion tracking is not always fully accurate. You can correct the tracking by manually marking the encounter or questline as cleared.",
       "text2": "XIV ToDo takes in-game achievements data from the Lodestone, which can take a few hours to be up-to-date. Once a new in-game achievement is obtained, it may take up to 48 hours for the relevant encounter or questline to be marked as complete in XIV ToDo. You can also manually initiate a refresh of the data from the {0} page.",
       "textState": "The following are the four possible statuses for each encounter and questline:",
@@ -135,7 +135,7 @@
       "stateNotCleared": "Your active character has not cleared this encounter yet."
     },
     "otherQuestions": {
-      "header": "Other questions",
+      "header": "その他の質問",
       "text": "Contact me {0}, on {1} or on {2} and I will reply as soon as possible.",
       "textHere": "here"
     }
@@ -150,7 +150,7 @@
     "freeCompany": "所属フリーカンパニー",
     "cityState": "開始都市",
     "grandCompany": "所属グランドカンパニー",
-    "playingSince": "Playing since",
+    "playingSince": "プレイ開始",
     "achievements": "アチーブメント",
     "tanks": "タンク",
     "healers": "ヒーラー",
@@ -255,9 +255,9 @@
     "exploratoryMissions": "Exploratory Missions",
     "sightseeingLogs": "探検手帳",
     "miscellaneous": "Miscellaneous",
-    "sharedFateShB": "Shared Fate (ShB)",
-    "sharedFateEW": "Shared Fate (EW)",
-    "sharedFateDT": "Shared Fate (DT)",
+    "sharedFateShB": "FATE (漆黒)",
+    "sharedFateEW": "FATE (暁月)",
+    "sharedFateDT": "FATE (黄金)",
     "bozjanSouthernFront": "南方ボズヤ戦線",
     "zadnor": "ザトゥノル高原",
     "occultCrescent": "Occult Crescent",
@@ -297,12 +297,12 @@
     "addNewCharacter": "新しいキャラクターを追加する",
     "profileUrl": {
       "label": "プロフィール URL",
-      "hint": "The URL for your character profile. You can find it in {0}."
+      "hint": "あなたのキャラクタープロフィールの URL です。 {0} で見つけることができます。"
     },
     "addCharacter": "キャラクターを追加する",
-    "myCharacters": "My characters",
+    "myCharacters": "マイキャラクター",
     "myCharactersHelp": "キャラクターを追加するとここに表示されます。",
-    "characterNotPublic": "このキャラクターの実績はLodestoneで公開されていません。",
+    "characterNotPublic": "このキャラクターのアチーブメントはLodestoneで公開されていません。",
     "lastUpdated": "最終更新: {time}",
     "general": "一般",
     "contentSpoilers": {
@@ -314,9 +314,9 @@
     },
     "patchNumbers": {
       "label": "パッチ番号",
-      "option0": "Show patch numbers for blurred out content",
-      "option1": "Show patch numbers for non-completed content",
-      "option2": "Always show patch numbers",
+      "option0": "ぼかし処理されたコンテンツのパッチ番号を表示",
+      "option1": "未完了コンテンツのパッチ番号を表示",
+      "option2": "常にパッチ番号を表示",
       "hint": "コンテンツのパッチ番号の表示に関する設定です。"
     },
     "theme": {
@@ -327,9 +327,9 @@
     },
     "updateSettings": "設定を更新する",
     "characterNotFound": "Character not in Lodestone",
-    "characterNotFoundAlt": "This character does not exist in Lodestone. If you recently transfered world, try updating again later",
-    "achievementsNotPublic": "Achievements are not public",
-    "achievementsNotPublicAlt": "The achievements for this character are not set to public in Lodestone",
+    "characterNotFoundAlt": "このキャラクターはLodestoneには存在しません。最近ワールドを変更した場合は、後でもう一度更新をお試しください。",
+    "achievementsNotPublic": "アチーブメントが公開されていません",
+    "achievementsNotPublicAlt": "このキャラクターのアチーブメントはLodestoneで公開されていません。",
     "message": {
       "settingsUpdated": "Settings updated!",
       "settingsUpdateClientError": "Could not update settings. You may have entered invalid settings.",
