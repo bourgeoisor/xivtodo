@@ -4,7 +4,7 @@
     "start": 1754355600,
     "end": 1754388000
   },
-  "latestCountdownID": 48,
+  "latestCountdownID": 49,
   "countdowns": [
     {
       "title": "Starlight Celebration",
@@ -12,6 +12,13 @@
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2025/Starlight_Celebration/1zy049rho1",
       "start": 1765958400,
       "end": 1767193200
+    },
+    {
+      "title": "Heavensturn",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2026/Heavensturn/xqnas3t3m1",
+      "start": 1767193200,
+      "end": 1768489200
     },
     {
       "title": "Patch 7.4",
