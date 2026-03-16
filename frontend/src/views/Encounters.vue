@@ -101,6 +101,7 @@
 
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('encounters.dungeons')" :duties="db.dtDungeons" type="dngs" :showTotal="true" />
+      <DutyList :title="$t('encounters.vcDungeons')" :duties="db.dtVariantsCriterions" type="vc" :showTotal="true" />
     </div>
     <div class="col-12 col-lg-4">
       <DutyList :title="$t('encounters.trials')" :duties="db.dtTrials" type="trials" :showTotal="true" />

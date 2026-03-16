@@ -7,16 +7,9 @@
   "latestCountdownID": 49,
   "countdowns": [
     {
-      "title": "Valentione's Day",
-      "type": "event",
-      "url": "https://na.finalfantasyxiv.com/lodestone/special/2026/Valentiones_Day/wenbvnlh6s",
-      "start": 1770019200,
-      "end": 1771254000
-    },
-    {
-      "title": "Patch 7.41",
+      "title": "Patch 7.5",
       "type": "patch",
-      "start": 1765882800
+      "start": 1777370400
     }
   ],
   "latestID": 250214,
