@@ -7,6 +7,13 @@
   "latestCountdownID": 49,
   "countdowns": [
     {
+      "title": "Hatching-tide",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2026/Hatching_tide/wgtbl3kgc5",
+      "start": 1774252800,
+      "end": 1775487600
+    },
+    {
       "title": "Patch 7.5",
       "type": "patch",
       "start": 1777370400
