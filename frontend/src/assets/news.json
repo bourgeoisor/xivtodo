@@ -7,6 +7,13 @@
   "latestCountdownID": 49,
   "countdowns": [
     {
+      "title": "Letter from the Producer LIVE",
+      "type": "keynote",
+      "url": "https://na.finalfantasyxiv.com/lodestone/topics/detail/a115fee5cea7ef5a62eb3ced6278006e84042b1b",
+      "start": 1776423600,
+      "end": 1776430800
+    },
+    {
       "title": "Hatching-tide",
       "type": "event",
       "url": "https://na.finalfantasyxiv.com/lodestone/special/2026/Hatching_tide/wgtbl3kgc5",
