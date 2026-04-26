@@ -1,8 +1,8 @@
 {
   "maintenance": {
-    "updated": true,
-    "start": 1754355600,
-    "end": 1754388000
+    "updated": false,
+    "start": 1777345200,
+    "end": 1777370400
   },
   "latestCountdownID": 49,
   "countdowns": [
