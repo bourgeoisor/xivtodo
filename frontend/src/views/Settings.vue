@@ -40,17 +40,19 @@
           class="btn btn-primary"
           :class="{ disabled: !profileURL }"
         >
+          <i class="fa-regular fa-user-plus"></i>
           {{ $t("settings.addCharacter") }}
         </button>
         <br /><br />
 
         <!-- Character list -->
         <h3>{{ $t("settings.myCharacters") }}</h3>
-        <ul v-if="!this.$store.getters.hasCharacter" class="list-group list-group-flush">
-          <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div v-if="!this.$store.getters.hasCharacter" class="d-flex flex-column">
+          <p>
             {{ $t("settings.myCharactersHelp") }}
-          </li>
-        </ul>
+          </p>
+          <img src="@/assets/img/altwins.png" style="width: 60%; margin-right: auto; margin-left: auto; margin-top: 30px" />
+        </div>
         <ul v-else class="list-group list-group-flush">
           <li
             v-for="(item, i) of this.$store.getters.characters"
@@ -163,6 +165,7 @@
           {{ $t("shared.updatingWait") }}
         </button>
         <button v-else @click="updateSettings" type="button" id="settings-save-btn" class="btn btn-primary">
+          <i class="fa-regular fa-arrow-rotate-right"></i>
           {{ $t("settings.updateSettings") }}
         </button>
         <br /><br />

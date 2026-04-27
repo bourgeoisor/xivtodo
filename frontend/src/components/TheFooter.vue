@@ -6,7 +6,10 @@
     <!-- Left-side info -->
     <div class="footer-copyrights text-muted my-auto d-none d-xl-block col-4">
       {{ $t("footer.trademark") }}<br />
-      {{ $t("footer.copyright") }}
+      {{ $t("footer.copyright") }}<br />
+      All artworks were drawn by
+      <a href="https://bsky.app/profile/churubirb.bsky.social" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Lumaere</a>
+      for XIV ToDo. All rights reserved.
     </div>
 
     <!-- Center branding and links -->
