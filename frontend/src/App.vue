@@ -27,8 +27,11 @@
       </div>
 
       <!-- Alert: Lodestone maintenance -->
-      <div v-if="this.now > this.news.maintenance.start && this.now < this.news.maintenance.end" class="container">
-        <AlertMsg type="warning" :msg="$t('message.lodestoneMaintenance')" />
+      <div v-if="this.now < this.news.maintenance.start" class="container">
+        <AlertMsg type="info" :msg="this.lodestoneMaintenanceSoonMessage" />
+      </div>
+      <div v-else-if="this.now > this.news.maintenance.start && this.now < this.news.maintenance.end" class="container">
+        <AlertMsg type="warning" :msg="this.lodestoneMaintenanceMessage" />
       </div>
       <div v-else-if="this.now > this.news.maintenance.end && !this.news.maintenance.updated" class="container">
         <AlertMsg type="info" :msg="$t('message.lodestoneMaintenanceNotUpdated')" />
@@ -532,6 +535,7 @@ export default {
       if (this.tabFocused) {
         // this.checkUpstreamVersion();
         this.updateCharactersData();
+        this.now = new Date() / 1000;
       }
     }, 1000 * 120); // 2 minutes
   },
@@ -564,6 +568,12 @@ export default {
         return "";
       }
     },
+    lodestoneMaintenanceSoonMessage() {
+      return this.getMaintenanceMessage("message.lodestoneMaintenanceSoon", this.news.maintenance.start);
+    },
+    lodestoneMaintenanceMessage() {
+      return this.getMaintenanceMessage("message.lodestoneMaintenance", this.news.maintenance.end);
+    },
   },
   head() {
     return {
@@ -580,6 +590,31 @@ export default {
     this.detectFocusOut();
   },
   methods: {
+    getCountdownToTimestamp(targetTimestamp) {
+      const secondsUntilTarget = targetTimestamp - this.now;
+      const totalMinutesUntilTarget = Math.max(0, Math.ceil(secondsUntilTarget / 60));
+
+      return {
+        hours: Math.floor(totalMinutesUntilTarget / 60),
+        minutes: totalMinutesUntilTarget % 60,
+      };
+    },
+    getTimeRemainingText(targetTimestamp) {
+      const countdown = this.getCountdownToTimestamp(targetTimestamp);
+      const hoursRemaining = this.$t("shared.time.hoursShort", {
+        hours: countdown.hours,
+      });
+      const minutesRemaining = this.$t("shared.time.minutesShort", {
+        minutes: countdown.minutes,
+      });
+
+      return `${hoursRemaining} ${minutesRemaining}`;
+    },
+    getMaintenanceMessage(messageKey, targetTimestamp) {
+      return this.$t(messageKey, {
+        timeRemaining: this.getTimeRemainingText(targetTimestamp),
+      });
+    },
     detectFocusOut() {
       let inView = false;
 
