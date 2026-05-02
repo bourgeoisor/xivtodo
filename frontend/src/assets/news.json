@@ -4,8 +4,15 @@
     "start": 1777345200,
     "end": 1777370400
   },
-  "latestCountdownID": 49,
+  "latestCountdownID": 50,
   "countdowns": [
+    {
+      "title": "The Maiden's Rhapsody",
+      "type": "event",
+      "url": "https://na.finalfantasyxiv.com/lodestone/special/2026/The_Maidens_Rhapsody/p3aora58ehzn",
+      "start": 1778227200,
+      "end": 1779721200
+    },
     {
       "title": "Patch 7.5",
       "type": "patch",
